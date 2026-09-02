@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aperçu — Design system L'Établi</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .preview-wrap{ max-width:900px; margin:0 auto; padding:32px 20px 80px; }
+  .theme-switch{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px; }
+  .swatch-row{ display:flex; gap:10px; margin:14px 0; flex-wrap:wrap; }
+  .swatch{
+    width:64px; height:64px; border-radius:var(--radius-sm);
+    display:flex; align-items:flex-end; justify-content:center;
+    font-family:var(--font-mono); font-size:0.62rem; color:#000; padding-bottom:4px;
+    border:1px solid var(--border);
+  }
+  .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  @media (max-width:640px){ .grid-2{ grid-template-columns:1fr; } }
+  section{ margin-bottom:36px; }
+</style>
+</head>
+<body class="theme-etabli" id="preview-body">
+
+<div id="site-nav" data-current="etabli"></div>
+
+<div class="preview-wrap">
+  <h1>Aperçu du design system</h1>
+  <p>Fraunces pour les titres, Nunito pour le texte courant, JetBrains Mono pour les stats et badges. Change de thème pour voir comment chaque page garde son propre accent tout en restant cohérente.</p>
+
+  <div class="theme-switch">
+    <button class="btn btn-ghost" data-theme="theme-etabli">🪵 Établi (or)</button>
+    <button class="btn btn-ghost" data-theme="theme-atlas">🗺️ Atlas (bleu)</button>
+    <button class="btn btn-ghost" data-theme="theme-grimoire">📖 Grimoire (violet)</button>
+    <button class="btn btn-ghost" data-theme="theme-carnet">📓 Carnet (vert)</button>
+  </div>
+
+  <section>
+    <h2>Typographie</h2>
+    <div class="panel">
+      <h1>Titre H1 — Fraunces</h1>
+      <h2>Titre H2 — Fraunces</h2>
+      <h3>Titre H3 — Fraunces</h3>
+      <p style="color:var(--text);">Texte courant en Nunito : Voici un paragraphe de démonstration pour vérifier la lisibilité, les accents français (à, é, è, ç, œ) et le rythme général du texte sur plusieurs lignes.</p>
+      <p class="mono" style="color:var(--muted);">Texte mono JetBrains — 42/128 tâches · 66% · niveau III</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Boutons</h2>
+    <div class="swatch-row">
+      <button class="btn btn-primary">Action principale</button>
+      <button class="btn btn-ghost">Action secondaire</button>
+      <button class="btn btn-danger">Supprimer</button>
+      <button class="btn-small">Petit bouton</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Badges & progression</h2>
+    <div class="swatch-row" style="align-items:center;">
+      <span class="badge badge-accent">Accent</span>
+      <span class="badge badge-green">Terminé</span>
+      <span class="badge badge-red">Manquant</span>
+      <span class="badge">Neutre</span>
+    </div>
+    <div class="progress-track" style="margin-top:14px;"><div class="progress-fill" style="width:64%;"></div></div>
+  </section>
+
+  <section class="grid-2">
+    <div class="card">
+      <h3>Carte / panneau</h3>
+      <p>Même style de carte partout : fond, bordure, rayon, ombrage identiques sur les 4 pages.</p>
+      <label for="demo-input">Champ texte</label>
+      <input type="text" id="demo-input" placeholder="Exemple de saisie">
+    </div>
+    <div class="card">
+      <h3>Onglets</h3>
+      <div class="tabs" style="margin-top:10px;">
+        <button class="tab-btn active">Onglet un</button>
+        <button class="tab-btn">Onglet deux</button>
+        <button class="tab-btn">Onglet trois</button>
+      </div>
+      <p>Le trait actif prend automatiquement la couleur d'accent du thème en cours.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Nuancier des accents disponibles</h2>
+    <div class="swatch-row">
+      <div class="swatch" style="background:var(--gold);">gold</div>
+      <div class="swatch" style="background:var(--blue);">blue</div>
+      <div class="swatch" style="background:var(--purple);">purple</div>
+      <div class="swatch" style="background:var(--green);">green</div>
+      <div class="swatch" style="background:var(--red);">red</div>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">L'Établi · aperçu du design system</footer>
+<div class="toast-wrap" id="toast-wrap"></div>
+
+<script src="assets/nav.js" defer></script>
+<script>
+  document.querySelectorAll('.theme-switch [data-theme]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const body = document.getElementById('preview-body');
+      body.className = btn.dataset.theme;
+    });
+  });
+</script>
+</body>
+</html>
