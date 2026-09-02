@@ -825,11 +825,6 @@
       "id": 8,
       "enchId": "unbreaking",
       "level": 2
-    },
-    {
-      "id": 9,
-      "enchId": "soul_speed",
-      "level": 3
     }
   ],
   "prefs": {
