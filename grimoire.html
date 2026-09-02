@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grimoire — Établi</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/grimoire.css">
+</head>
+<body class="theme-grimoire">
+
+<div id="site-nav" data-current="grimoire"></div>
+<script src="assets/nav.js" defer></script>
+
+<header>
+  <h1>Grimoire</h1>
+  <p>Suis tes équipements enchantés, les offres des villageois, et ce qu'il te reste pour atteindre ton build idéal.</p>
+</header>
+
+<div class="tabs">
+  <button class="tab-btn active" data-tab="items">Mes équipements</button>
+  <button class="tab-btn" data-tab="offers">Offres des villageois</button>
+  <button class="tab-btn" data-tab="ideal">Enchantement idéal</button>
+</div>
+
+
+<main>
+
+  <!-- ============ VIEW: ITEMS ============ -->
+  <section class="view active" id="view-items">
+    <div class="panel plain">
+      <h2>Ajouter un équipement</h2>
+      <div id="item-form">
+        <div class="row2">
+          <div>
+            <label for="i-name">Nom</label>
+            <input type="text" id="i-name" placeholder="Ex : Épée du dimanche">
+          </div>
+          <div>
+            <label for="i-type">Type d'objet</label>
+            <select id="i-type"></select>
+          </div>
+        </div>
+        <button type="button" id="item-add-btn" class="btn btn-primary">Ajouter l'objet</button>
+      </div>
+    </div>
+
+    <div class="row2" style="margin-top:18px;" id="items-filter-row">
+      <div>
+        <label for="items-filter-type">Filtrer par type d'objet</label>
+        <select id="items-filter-type">
+          <option value="">— Tous les types —</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card-list" id="items-list"></div>
+    <div class="empty-note" id="items-empty">
+      Aucun objet pour l'instant. Ajoute ta première armure ou ton premier outil ci-dessus.
+    </div>
+    <div class="empty-note" id="items-empty-filtered" style="display:none;">
+      Aucun objet de ce type pour l'instant.
+    </div>
+
+    <div class="panel plain save-section">
+      <h3 style="margin-top:0;">Sauvegarde</h3>
+      <div class="actions-row">
+        <button class="btn btn-ghost" id="btn-download">Télécharger (.json)</button>
+        <label class="file-label" for="file-import">Importer un fichier</label>
+        <input type="file" id="file-import" accept="application/json" style="display:none;">
+      </div>
+      <div class="msg-line" id="save-msg"></div>
+
+      <details class="gh-sync">
+        <summary>Sauvegarde en ligne (GitHub)</summary>
+        <div class="row2">
+          <div>
+            <label for="gh-owner">Utilisateur / organisation</label>
+            <input type="text" id="gh-owner" placeholder="ton-pseudo">
+          </div>
+          <div>
+            <label for="gh-repo">Nom du dépôt</label>
+            <input type="text" id="gh-repo" placeholder="mon-etabli">
+          </div>
+        </div>
+        <div class="row2">
+          <div>
+            <label for="gh-branch">Branche</label>
+            <input type="text" id="gh-branch" placeholder="main">
+          </div>
+          <div>
+            <label for="gh-token">Jeton d'accès (PAT)</label>
+            <input type="password" id="gh-token" placeholder="ghp_...">
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" id="btn-gh-save" style="margin-top:12px;">Enregistrer en ligne</button>
+        <div class="hint">Le jeton reste uniquement sur cet appareil (stocké dans le navigateur), jamais envoyé ailleurs qu'à l'API GitHub. Ces réglages sont partagés avec les autres outils du même site.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ VIEW: OFFERS ============ -->
+  <section class="view" id="view-offers">
+    <div class="grid2">
+      <div class="panel">
+        <h2>Nouvelle offre</h2>
+        <div id="offer-form">
+          <label for="o-villager">Villageois (optionnel)</label>
+          <input type="text" id="o-villager" placeholder="Ex : Bibliothécaire du spawn">
+
+          <label for="o-kind">Type d'offre</label>
+          <select id="o-kind">
+            <option value="book">Livre enchanté</option>
+            <option value="item">Objet déjà enchanté (armurier, etc.)</option>
+          </select>
+
+          <div id="o-book-fields">
+            <label for="o-ench">Enchantement proposé</label>
+            <select id="o-ench"></select>
+
+            <div class="row2">
+              <div>
+                <label for="o-level">Niveau</label>
+                <input type="number" id="o-level" min="1" value="1">
+              </div>
+              <div>
+                <label for="o-price">Prix (émeraudes)</label>
+                <input type="number" id="o-price" min="0">
+              </div>
+            </div>
+
+            <label for="o-target">Objet visé (optionnel)</label>
+            <select id="o-target">
+              <option value="">— Non ciblé / livre libre —</option>
+            </select>
+          </div>
+
+          <div id="o-item-fields" style="display:none;">
+            <label for="o-item-type">Type d'objet proposé</label>
+            <select id="o-item-type"></select>
+
+            <label>Enchantements sur cet objet</label>
+            <div class="inline-add">
+              <div class="grow">
+                <select id="o-item-ench"></select>
+              </div>
+              <input type="number" id="o-item-ench-level" min="1" value="1" style="width:64px;">
+              <button type="button" class="btn-small" id="o-item-ench-add">+ Ajouter</button>
+            </div>
+            <div class="ench-tags" id="o-item-draft-tags"></div>
+
+            <label for="o-item-price">Prix (émeraudes)</label>
+            <input type="number" id="o-item-price" min="0">
+          </div>
+
+          <label for="o-note">Note (optionnel)</label>
+          <input type="text" id="o-note" placeholder="Ex : Bibliothécaire, couloir n°2">
+
+          <button type="button" id="offer-add-btn" class="btn btn-primary">Ajouter l'offre</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="row2" style="margin-bottom:12px;">
+          <div>
+            <label for="offer-filter-villager">Filtrer par villageois</label>
+            <select id="offer-filter-villager">
+              <option value="">— Tous les villageois —</option>
+            </select>
+          </div>
+          <div>
+            <label for="offer-filter-kind">Filtrer par type</label>
+            <select id="offer-filter-kind">
+              <option value="">— Tout —</option>
+              <option value="book">Livres</option>
+              <option value="item">Objets complets</option>
+            </select>
+          </div>
+        </div>
+        <div class="row2" style="margin-bottom:12px;">
+          <div>
+            <label for="offer-sort-by">Trier par</label>
+            <select id="offer-sort-by">
+              <option value="villager">Villageois (A-Z)</option>
+              <option value="enchant">Enchantement (A-Z)</option>
+              <option value="price">Prix (moins cher d'abord)</option>
+              <option value="note">Note / métier (A-Z)</option>
+            </select>
+          </div>
+        </div>
+        <div class="card-list" id="offers-list"></div>
+        <div class="empty-note" id="offers-empty">
+          Aucune offre enregistrée. Ajoute ce qu'un villageois te propose pour voir si ça vaut le coup.
+        </div>
+        <div class="empty-note" id="offers-empty-filtered" style="display:none;">
+          Aucune offre pour ce filtre.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VIEW: IDEAL ============ -->
+  <section class="view" id="view-ideal">
+
+    <div class="subtabs" id="ideal-subtabs">
+      <button class="subtab-btn active" data-subtab="build">Build idéal</button>
+      <button class="subtab-btn" data-subtab="reserve">Réserve</button>
+      <button class="subtab-btn" data-subtab="prefs">Préférences</button>
+      <button class="subtab-btn" data-subtab="search">À chercher</button>
+      <button class="subtab-btn" data-subtab="market">Chez les villageois</button>
+    </div>
+
+    <div class="subview active" id="subview-build">
+      <div class="card-list" id="ideal-list"></div>
+      <div class="empty-note" id="ideal-empty">
+        Ajoute d'abord des objets dans l'onglet <strong>Mes équipements</strong> pour voir leur build idéal.
+        <div><button class="btn btn-ghost" id="btn-goto-items">Aller à Mes équipements</button></div>
+      </div>
+    </div>
+
+    <div class="subview" id="subview-reserve">
+      <div class="panel plain">
+        <h2>Livres en réserve</h2>
+        <div class="row2">
+          <div>
+            <label for="book-ench">Enchantement</label>
+            <select id="book-ench"></select>
+          </div>
+          <div>
+            <label for="book-level">Niveau</label>
+            <input type="number" id="book-level" min="1" value="1">
+          </div>
+        </div>
+        <button type="button" id="book-add-btn" class="btn btn-primary">Ajouter à la réserve</button>
+        <div class="book-reserve-list" id="book-reserve-list"></div>
+      </div>
+    </div>
+
+    <div class="subview" id="subview-prefs">
+      <div class="panel plain">
+        <h2>Préférences de build</h2>
+        <div class="prefs-grid" id="prefs-grid"></div>
+      </div>
+    </div>
+
+    <div class="subview" id="subview-search">
+      <div class="panel plain">
+        <h2>Livres à chercher chez un nouveau bibliothécaire</h2>
+        <div class="card-list" id="needed-books-list"></div>
+        <div class="empty-note" id="needed-books-empty">
+          Rien à chercher pour l'instant (ou ajoute d'abord des objets dans l'onglet Mes équipements).
+        </div>
+      </div>
+    </div>
+
+    <div class="subview" id="subview-market">
+      <div class="panel plain">
+        <h2>Actuellement chez des villageois</h2>
+        <div class="card-list" id="missing-books-list"></div>
+        <div class="empty-note" id="missing-books-empty">
+          Aucune offre notée pour l'instant qui corresponde à ton build idéal.
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<script>
+  // ===================== DATA =====================
+  const ITEM_TYPES = [
+    {id:'helmet', label:'Helmet'},
+    {id:'chestplate', label:'Chestplate'},
+    {id:'leggings', label:'Leggings'},
+    {id:'boots', label:'Boots'},
+    {id:'elytra', label:'Elytra'},
+    {id:'sword', label:'Sword'},
+    {id:'axe', label:'Axe'},
+    {id:'pickaxe', label:'Pickaxe'},
+    {id:'shovel', label:'Shovel'},
+    {id:'hoe', label:'Hoe'},
+    {id:'bow', label:'Bow'},
+    {id:'crossbow', label:'Crossbow'},
+    {id:'trident', label:'Trident'},
+    {id:'mace', label:'Mace'},
+    {id:'fishing_rod', label:'Fishing Rod'},
+    {id:'shears', label:'Shears'},
+  ];
+  const ITEM_LABEL = Object.fromEntries(ITEM_TYPES.map(t => [t.id, t.label]));
+
+  const ARMOR = ['helmet','chestplate','leggings','boots','elytra'];
+
+  const ENCH = {
+    protection:            {name:'Protection', max:4, items:ARMOR, excludes:['fire_protection','blast_protection','projectile_protection']},
+    fire_protection:       {name:'Fire Protection', max:4, items:ARMOR, excludes:['protection','blast_protection','projectile_protection']},
+    blast_protection:      {name:'Blast Protection', max:4, items:ARMOR, excludes:['protection','fire_protection','projectile_protection']},
+    projectile_protection: {name:'Projectile Protection', max:4, items:ARMOR, excludes:['protection','fire_protection','blast_protection']},
+    feather_falling:       {name:'Feather Falling', max:4, items:['boots'], excludes:[]},
+    respiration:           {name:'Respiration', max:3, items:['helmet'], excludes:[]},
+    aqua_affinity:         {name:'Aqua Affinity', max:1, items:['helmet'], excludes:[]},
+    thorns:                {name:'Thorns', max:3, items:['helmet','chestplate','leggings','boots'], excludes:[]},
+    depth_strider:         {name:'Depth Strider', max:3, items:['boots'], excludes:['frost_walker']},
+    frost_walker:          {name:'Frost Walker', max:2, items:['boots'], excludes:['depth_strider']},
+    curse_binding:         {name:'Curse of Binding', max:1, items:ARMOR, curse:true, excludes:[]},
+    soul_speed:            {name:'Soul Speed', max:3, items:['boots'], excludes:[], tradable:false, source:'coffres de Bastion, ou troc avec les Piglins'},
+    swift_sneak:           {name:'Swift Sneak', max:3, items:['leggings'], excludes:[], tradable:false, source:'coffres de Cité Antique'},
+    sharpness:             {name:'Sharpness', max:5, items:['sword','axe'], excludes:['smite','bane']},
+    smite:                 {name:'Smite', max:5, items:['sword','axe'], excludes:['sharpness','bane']},
+    bane:                  {name:'Bane of Arthropods', max:5, items:['sword','axe'], excludes:['sharpness','smite']},
+    knockback:             {name:'Knockback', max:2, items:['sword'], excludes:[]},
+    fire_aspect:           {name:'Fire Aspect', max:2, items:['sword'], excludes:[]},
+    looting:               {name:'Looting', max:3, items:['sword'], excludes:[]},
+    sweeping:              {name:'Sweeping Edge', max:3, items:['sword'], excludes:[]},
+    efficiency:            {name:'Efficiency', max:5, items:['pickaxe','axe','shovel','hoe','shears'], excludes:[]},
+    silk_touch:            {name:'Silk Touch', max:1, items:['pickaxe','axe','shovel','hoe'], excludes:['fortune']},
+    fortune:               {name:'Fortune', max:3, items:['pickaxe','axe','shovel','hoe'], excludes:['silk_touch']},
+    power:                 {name:'Power', max:5, items:['bow'], excludes:[]},
+    punch:                 {name:'Punch', max:2, items:['bow'], excludes:[]},
+    flame:                 {name:'Flame', max:1, items:['bow'], excludes:[]},
+    infinity:              {name:'Infinity', max:1, items:['bow'], excludes:['mending']},
+    luck_of_sea:           {name:'Luck of the Sea', max:3, items:['fishing_rod'], excludes:[]},
+    lure:                  {name:'Lure', max:3, items:['fishing_rod'], excludes:[]},
+    loyalty:               {name:'Loyalty', max:3, items:['trident'], excludes:['riptide']},
+    impaling:              {name:'Impaling', max:5, items:['trident'], excludes:[]},
+    riptide:               {name:'Riptide', max:3, items:['trident'], excludes:['loyalty','channeling']},
+    channeling:            {name:'Channeling', max:1, items:['trident'], excludes:['riptide']},
+    multishot:             {name:'Multishot', max:1, items:['crossbow'], excludes:['piercing']},
+    quick_charge:          {name:'Quick Charge', max:3, items:['crossbow'], excludes:[]},
+    piercing:              {name:'Piercing', max:4, items:['crossbow'], excludes:['multishot']},
+    density:               {name:'Density', max:5, items:['mace'], excludes:[]},
+    breach:                {name:'Breach', max:4, items:['mace'], excludes:[]},
+    wind_burst:            {name:'Wind Burst', max:3, items:['mace'], excludes:[], tradable:false, source:'coffres des Salles d\'Épreuve'},
+    unbreaking:            {name:'Unbreaking', max:3, items:[], universal:true, excludes:[]},
+    mending:               {name:'Mending', max:1, items:[], universal:true, excludes:['infinity']},
+    curse_vanishing:       {name:'Curse of Vanishing', max:1, items:[], universal:true, curse:true, excludes:[]},
+  };
+
+  const GROUPS = [
+    {id:'protection_type', label:'Protection (armure)', options:['protection','fire_protection','blast_protection','projectile_protection'], defaultPick:'protection'},
+    {id:'boots_water', label:'Bottes : déplacement aquatique', options:['depth_strider','frost_walker'], defaultPick:'depth_strider'},
+    {id:'sword_dmg', label:'Dégâts (épée / hache)', options:['sharpness','smite','bane'], defaultPick:'sharpness'},
+    {id:'mining', label:'Minage : Toucher de soie ou Fortune', options:['silk_touch','fortune'], defaultPick:'fortune'},
+    {id:'bow_ammo', label:'Arc : Infinité ou Raccommodage', options:['infinity','mending'], defaultPick:'infinity'},
+    {id:'trident_move', label:'Trident : déplacement', options:['loyalty','riptide'], defaultPick:'loyalty'},
+    {id:'crossbow_shot', label:'Arbalète : type de tir', options:['multishot','piercing'], defaultPick:'multishot'},
+  ];
+  const GROUPED_IDS = new Set(GROUPS.flatMap(g => g.options));
+
+  function allowedForType(typeId){
+    return Object.keys(ENCH)
+      .filter(id => ENCH[id].items.includes(typeId) || ENCH[id].universal)
+      .sort((a,b) => ENCH[a].name.localeCompare(ENCH[b].name, 'en'));
+  }
+
+  function roman(n){
+    return ['','I','II','III','IV','V'][n] || String(n);
+  }
+
+  // ===================== STATE =====================
+  let items = [];
+  let offers = [];
+  let books = [];
+  let itemIdCounter = 1;
+  let offerIdCounter = 1;
+  let bookIdCounter = 1;
+  let prefs = {};
+  GROUPS.forEach(g => prefs[g.id] = g.defaultPick);
+
+  // ===================== SETUP FORMS =====================
+  const typeSelect = document.getElementById('i-type');
+  ITEM_TYPES.forEach(t => {
+    const opt = document.createElement('option');
+    opt.value = t.id; opt.textContent = t.label;
+    typeSelect.appendChild(opt);
+  });
+
+  const enchSelect = document.getElementById('o-ench');
+  const bookEnchSelect = document.getElementById('book-ench');
+  function fillEnchSelectEl(selectEl){
+    selectEl.innerHTML = '';
+    Object.keys(ENCH).sort((a,b) => ENCH[a].name.localeCompare(ENCH[b].name,'en')).forEach(id => {
+      const e = ENCH[id];
+      const scope = e.universal ? 'tous objets' : e.items.map(i => ITEM_LABEL[i]).join(', ');
+      const opt = document.createElement('option');
+      opt.value = id;
+      opt.textContent = e.name + (e.curse ? ' (malédiction)' : '') + ' — ' + scope;
+      selectEl.appendChild(opt);
+    });
+  }
+  function fillEnchSelect(){
+    fillEnchSelectEl(enchSelect);
+    fillEnchSelectEl(bookEnchSelect);
+  }
+  fillEnchSelect();
+  document.getElementById('o-level').max = ENCH[enchSelect.value].max;
+  enchSelect.addEventListener('change', () => {
+    document.getElementById('o-level').max = ENCH[enchSelect.value].max;
+  });
+  document.getElementById('book-level').max = ENCH[bookEnchSelect.value].max;
+  bookEnchSelect.addEventListener('change', () => {
+    document.getElementById('book-level').max = ENCH[bookEnchSelect.value].max;
+  });
+
+  // ===================== OFFRE : LIVRE vs OBJET COMPLET =====================
+  const oKindSelect = document.getElementById('o-kind');
+  const oBookFields = document.getElementById('o-book-fields');
+  const oItemFields = document.getElementById('o-item-fields');
+  oKindSelect.addEventListener('change', () => {
+    const isItem = oKindSelect.value === 'item';
+    oBookFields.style.display = isItem ? 'none' : 'block';
+    oItemFields.style.display = isItem ? 'block' : 'none';
+  });
+
+  const oItemTypeSelect = document.getElementById('o-item-type');
+  ITEM_TYPES.forEach(t => {
+    const opt = document.createElement('option');
+    opt.value = t.id; opt.textContent = t.label;
+    oItemTypeSelect.appendChild(opt);
+  });
+
+  const oItemEnchSelect = document.getElementById('o-item-ench');
+  function refreshOItemEnchOptions(){
+    const typeId = oItemTypeSelect.value;
+    const options = allowedForType(typeId);
+    oItemEnchSelect.innerHTML = options.map(id =>
+      `<option value="${id}">${escapeHtml(ENCH[id].name)}${ENCH[id].curse ? ' (malédiction)' : ''} — max ${ENCH[id].max}</option>`
+    ).join('');
+    document.getElementById('o-item-ench-level').max = options.length ? ENCH[options[0]].max : 5;
+  }
+  oItemTypeSelect.addEventListener('change', () => { refreshOItemEnchOptions(); itemOfferDraft = []; renderItemOfferDraft(); });
+  oItemEnchSelect.addEventListener('change', () => {
+    document.getElementById('o-item-ench-level').max = ENCH[oItemEnchSelect.value].max;
+  });
+  refreshOItemEnchOptions();
+
+  let itemOfferDraft = []; // [{id, level}] pour l'offre "objet complet" en cours de création
+  function renderItemOfferDraft(){
+    const wrap = document.getElementById('o-item-draft-tags');
+    wrap.innerHTML = '';
+    if (itemOfferDraft.length === 0){
+      wrap.innerHTML = '<span class="card-sub">Aucun enchantement ajouté pour l\'instant.</span>';
+      return;
+    }
+    itemOfferDraft.forEach(e => {
+      const chip = document.createElement('span');
+      chip.className = 'ench-tag';
+      chip.innerHTML = `${escapeHtml(ENCH[e.id].name)} <span class="lvl">${roman(e.level)}</span> <button type="button" class="x" data-rm-draft="${e.id}" title="Retirer">✕</button>`;
+      wrap.appendChild(chip);
+    });
+    wrap.querySelectorAll('[data-rm-draft]').forEach(b => {
+      b.addEventListener('click', () => {
+        itemOfferDraft = itemOfferDraft.filter(e => e.id !== b.dataset.rmDraft);
+        renderItemOfferDraft();
+      });
+    });
+  }
+  renderItemOfferDraft();
+
+  document.getElementById('o-item-ench-add').addEventListener('click', () => {
+    const enchId = oItemEnchSelect.value;
+    if (!enchId) return;
+    const level = Math.max(1, Math.min(parseInt(document.getElementById('o-item-ench-level').value || '1', 10), ENCH[enchId].max));
+    const existing = itemOfferDraft.find(e => e.id === enchId);
+    if (existing) existing.level = level;
+    else itemOfferDraft.push({id: enchId, level});
+    renderItemOfferDraft();
+  });
+
+  let itemTypeFilter = '';
+  const itemsFilterSelect = document.getElementById('items-filter-type');
+  ITEM_TYPES.forEach(t => {
+    const opt = document.createElement('option');
+    opt.value = t.id; opt.textContent = t.label;
+    itemsFilterSelect.appendChild(opt);
+  });
+  itemsFilterSelect.addEventListener('change', () => {
+    itemTypeFilter = itemsFilterSelect.value;
+    renderItems();
+  });
+
+  const prefsGrid = document.getElementById('prefs-grid');
+  GROUPS.forEach(g => {
+    const wrap = document.createElement('div');
+    wrap.className = 'pref-item';
+    const lab = document.createElement('label');
+    lab.textContent = g.label;
+    const sel = document.createElement('select');
+    g.options.forEach(id => {
+      const opt = document.createElement('option');
+      opt.value = id; opt.textContent = ENCH[id].name;
+      if (id === prefs[g.id]) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener('change', () => { prefs[g.id] = sel.value; renderIdeal(); });
+    wrap.appendChild(lab); wrap.appendChild(sel);
+    prefsGrid.appendChild(wrap);
+  });
+
+  // ===================== TABS =====================
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+  });
+  document.getElementById('btn-goto-items').addEventListener('click', () => switchTab('items'));
+  function switchTab(tab){
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+    document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.id === 'view-' + tab));
+  }
+
+  // ===================== SUB-TABS (onglet "Enchantement idéal") =====================
+  document.querySelectorAll('#ideal-subtabs .subtab-btn').forEach(btn => {
+    btn.addEventListener('click', () => switchIdealSubtab(btn.dataset.subtab));
+  });
+  function switchIdealSubtab(subtab){
+    document.querySelectorAll('#ideal-subtabs .subtab-btn').forEach(b => b.classList.toggle('active', b.dataset.subtab === subtab));
+    document.querySelectorAll('#view-ideal .subview').forEach(v => v.classList.toggle('active', v.id === 'subview-' + subtab));
+  }
+
+  // ===================== IDEAL COMPUTATION =====================
+  function computeIdeal(typeId, overrides){
+    overrides = overrides || {};
+    const applicable = allowedForType(typeId).filter(id => !ENCH[id].curse);
+    let idealIds = [];
+
+    GROUPS.forEach(g => {
+      const opts = g.options.filter(id => applicable.includes(id));
+      if (opts.length === 0) return;
+      const override = overrides[g.id];
+      let chosen;
+      if (override && opts.includes(override)) chosen = override;
+      else if (opts.includes(prefs[g.id])) chosen = prefs[g.id];
+      else chosen = opts.includes(g.defaultPick) ? g.defaultPick : opts[0];
+      idealIds.push(chosen);
+    });
+
+    const ungrouped = applicable.filter(id => !GROUPED_IDS.has(id));
+    ungrouped.forEach(id => {
+      const conflicts = ENCH[id].excludes.some(x => idealIds.includes(x));
+      if (!conflicts) idealIds.push(id);
+    });
+
+    return idealIds.map(id => ({id, level: ENCH[id].max}));
+  }
+
+  // renvoie, pour un typeId donné, les groupes de préférence qui offrent un vrai choix (2+ options possibles)
+  function overridableGroupsForType(typeId){
+    const applicable = allowedForType(typeId).filter(id => !ENCH[id].curse);
+    return GROUPS
+      .map(g => ({...g, opts: g.options.filter(id => applicable.includes(id))}))
+      .filter(g => g.opts.length > 1);
+  }
+
+  // ===================== ITEM FORM =====================
+  function flashInvalid(el){
+    el.style.outline = '2px solid var(--red)';
+    setTimeout(() => { el.style.outline = ''; }, 900);
+  }
+
+  function submitItemForm(){
+    const nameInput = document.getElementById('i-name');
+    const name = nameInput.value.trim();
+    const type = typeSelect.value;
+    if (!name){ flashInvalid(nameInput); nameInput.focus(); return; }
+    items.push({id: itemIdCounter++, name, type, enchants: [], prefOverrides: {}});
+    nameInput.value = '';
+    nameInput.focus();
+    renderAll();
+  }
+  document.getElementById('item-add-btn').addEventListener('click', submitItemForm);
+  document.getElementById('i-name').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter'){ e.preventDefault(); submitItemForm(); }
+  });
+
+  function addEnchantToItem(itemId, enchId, level){
+    const item = items.find(i => i.id === itemId);
+    if (!item) return;
+    const existing = item.enchants.find(e => e.id === enchId);
+    if (existing) existing.level = level;
+    else item.enchants.push({id: enchId, level});
+    renderAll();
+  }
+  function removeEnchantFromItem(itemId, enchId){
+    const item = items.find(i => i.id === itemId);
+    if (!item) return;
+    item.enchants = item.enchants.filter(e => e.id !== enchId);
+    renderAll();
+  }
+  function deleteItem(itemId){
+    items = items.filter(i => i.id !== itemId);
+    offers.forEach(o => { if (o.forItemId === itemId) o.forItemId = ''; });
+    if (editingItemId === itemId){ editingItemId = null; editBackup = null; }
+    renderAll();
+  }
+
+  // ===================== EDIT MODE =====================
+  let editingItemId = null;
+  let editBackup = null;
+
+  function enterEditItem(itemId){
+    const item = items.find(i => i.id === itemId);
+    if (!item) return;
+    editingItemId = itemId;
+    editBackup = JSON.parse(JSON.stringify(item));
+    renderAll();
+  }
+  function saveEditItem(){
+    const item = items.find(i => i.id === editingItemId);
+    if (item && !item.name.trim()) item.name = 'Objet sans nom';
+    editingItemId = null;
+    editBackup = null;
+    renderAll();
+  }
+  function cancelEditItem(){
+    if (editBackup){
+      const idx = items.findIndex(i => i.id === editingItemId);
+      if (idx > -1) items[idx] = editBackup;
+    }
+    editingItemId = null;
+    editBackup = null;
+    renderAll();
+  }
+
+  // ===================== RENDER: ITEMS =====================
+  function renderItems(){
+    const list = document.getElementById('items-list');
+    const empty = document.getElementById('items-empty');
+    const emptyFiltered = document.getElementById('items-empty-filtered');
+    list.innerHTML = '';
+    const visibleItems = itemTypeFilter ? items.filter(i => i.type === itemTypeFilter) : items;
+    empty.style.display = items.length === 0 ? 'block' : 'none';
+    emptyFiltered.style.display = (items.length > 0 && visibleItems.length === 0) ? 'block' : 'none';
+
+    visibleItems.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'item-card';
+      const isEditing = item.id === editingItemId;
+
+      const currentIds = item.enchants.map(e => e.id);
+      const conflicts = [];
+      item.enchants.forEach(e => {
+        ENCH[e.id].excludes.forEach(x => {
+          if (currentIds.includes(x) && !conflicts.some(c => c.a === x && c.b === e.id)){
+            conflicts.push({a: e.id, b: x});
+          }
+        });
+      });
+
+      let html = '';
+      if (isEditing){
+        html += `<div class="card-head">
+          <div style="flex:1; min-width:160px;">
+            <input type="text" class="card-title-input" data-item-name="${item.id}" value="${escapeHtml(item.name)}" placeholder="Nom de l'objet">
+            <select class="card-type-select" data-item-type="${item.id}">
+              ${ITEM_TYPES.map(t => `<option value="${t.id}" ${t.id === item.type ? 'selected' : ''}>${t.label}</option>`).join('')}
+            </select>
+          </div>
+          <div style="display:flex; gap:6px;">
+            <button class="btn-small" data-save-item="${item.id}" style="color:var(--green); border-color:var(--green);">✔ Enregistrer</button>
+            <button class="btn-small" data-cancel-item="${item.id}">Annuler</button>
+          </div>
+        </div>`;
+      } else {
+        html += `<div class="card-head">
+          <div>
+            <div class="card-title">${escapeHtml(item.name)}</div>
+            <div class="card-sub">${ITEM_LABEL[item.type]}</div>
+          </div>
+          <div style="display:flex; gap:6px;">
+            <button class="btn-small" data-edit-item="${item.id}">✎ Modifier</button>
+            <button class="btn-small delete-row" data-del-item="${item.id}">Supprimer</button>
+          </div>
+        </div>`;
+      }
+
+      if (conflicts.length){
+        html += `<div class="warn-banner">⚠️ Incompatible : ${conflicts.map(c => ENCH[c.a].name + ' + ' + ENCH[c.b].name).join(' · ')}</div>`;
+      }
+
+      html += `<div class="ench-tags">`;
+      if (item.enchants.length === 0){
+        html += `<span class="card-sub">Aucun enchantement noté.</span>`;
+      }
+      item.enchants.forEach(e => {
+        const over = e.level > ENCH[e.id].max;
+        if (isEditing){
+          html += `<span class="ench-tag" style="${over ? 'border-color:var(--red);' : ''}">
+            ${escapeHtml(ENCH[e.id].name)}
+            <input type="number" class="lvl-input" min="1" max="${ENCH[e.id].max}" value="${e.level}"
+              data-edit-lvl="${item.id}|${e.id}" title="Modifier le niveau">
+            <button class="x" data-rm-ench="${item.id}|${e.id}" title="Retirer">✕</button>
+          </span>`;
+        } else {
+          html += `<span class="ench-tag" style="${over ? 'border-color:var(--red);' : ''}">
+            ${escapeHtml(ENCH[e.id].name)} <span class="lvl">${roman(e.level)}</span>
+          </span>`;
+        }
+      });
+      html += `</div>`;
+
+      if (isEditing){
+        const options = allowedForType(item.type);
+        html += `<div class="inline-add">
+          <div class="grow">
+            <select data-add-select="${item.id}">
+              ${options.map(id => `<option value="${id}">${escapeHtml(ENCH[id].name)}${ENCH[id].curse ? ' (malédiction)' : ''} — max ${ENCH[id].max}</option>`).join('')}
+            </select>
+          </div>
+          <div class="fixed">
+            <input type="number" min="1" value="1" data-add-level="${item.id}">
+          </div>
+          <button class="btn btn-ghost" data-add-btn="${item.id}">Ajouter</button>
+        </div>`;
+      }
+
+      card.innerHTML = html;
+      list.appendChild(card);
+    });
+
+    list.querySelectorAll('[data-del-item]').forEach(b => b.addEventListener('click', () => deleteItem(Number(b.dataset.delItem))));
+    list.querySelectorAll('[data-edit-item]').forEach(b => b.addEventListener('click', () => enterEditItem(Number(b.dataset.editItem))));
+    list.querySelectorAll('[data-save-item]').forEach(b => b.addEventListener('click', saveEditItem));
+    list.querySelectorAll('[data-cancel-item]').forEach(b => b.addEventListener('click', cancelEditItem));
+    list.querySelectorAll('[data-rm-ench]').forEach(b => b.addEventListener('click', () => {
+      const [itemId, enchId] = b.dataset.rmEnch.split('|');
+      removeEnchantFromItem(Number(itemId), enchId);
+    }));
+
+    list.querySelectorAll('[data-item-name]').forEach(input => {
+      const itemId = Number(input.dataset.itemName);
+      input.addEventListener('input', () => {
+        const item = items.find(i => i.id === itemId);
+        if (item) item.name = input.value;
+      });
+      input.addEventListener('keydown', (e) => { if (e.key === 'Enter') input.blur(); });
+    });
+
+    list.querySelectorAll('[data-item-type]').forEach(sel => {
+      const itemId = Number(sel.dataset.itemType);
+      sel.addEventListener('change', () => {
+        const item = items.find(i => i.id === itemId);
+        if (!item) return;
+        const allowed = allowedForType(sel.value);
+        const before = item.enchants.length;
+        item.enchants = item.enchants.filter(e => allowed.includes(e.id));
+        item.type = sel.value;
+        renderAll();
+        if (item.enchants.length < before) showSaveMsg('Certains enchantements incompatibles avec ce nouveau type ont été retirés.');
+      });
+    });
+
+    list.querySelectorAll('[data-edit-lvl]').forEach(input => {
+      input.addEventListener('change', () => {
+        const [itemId, enchId] = input.dataset.editLvl.split('|');
+        const item = items.find(i => i.id === Number(itemId));
+        if (!item) return;
+        const ench = item.enchants.find(e => e.id === enchId);
+        if (!ench) return;
+        const max = ENCH[enchId].max;
+        const level = Math.max(1, Math.min(parseInt(input.value || '1', 10), max));
+        ench.level = level;
+        renderAll();
+      });
+    });
+
+    list.querySelectorAll('[data-add-select]').forEach(sel => {
+      const itemId = Number(sel.dataset.addSelect);
+      const levelInput = list.querySelector(`[data-add-level="${itemId}"]`);
+      const syncMax = () => { levelInput.max = ENCH[sel.value].max; levelInput.value = ENCH[sel.value].max; };
+      syncMax();
+      sel.addEventListener('change', syncMax);
+    });
+    list.querySelectorAll('[data-add-btn]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const itemId = Number(btn.dataset.addBtn);
+        const sel = list.querySelector(`[data-add-select="${itemId}"]`);
+        const levelInput = list.querySelector(`[data-add-level="${itemId}"]`);
+        const level = Math.max(1, Math.min(parseInt(levelInput.value || '1', 10), ENCH[sel.value].max));
+        addEnchantToItem(itemId, sel.value, level);
+      });
+    });
+  }
+
+  // ===================== OFFERS =====================
+  function refreshTargetSelect(){
+    const sel = document.getElementById('o-target');
+    const prev = sel.value;
+    sel.innerHTML = '<option value="">— Non ciblé / livre libre —</option>';
+    items.forEach(it => {
+      const opt = document.createElement('option');
+      opt.value = it.id;
+      opt.textContent = it.name + ' (' + ITEM_LABEL[it.type] + ')';
+      sel.appendChild(opt);
+    });
+    if ([...sel.options].some(o => o.value === prev)) sel.value = prev;
+  }
+
+  function submitOfferForm(){
+    const villager = document.getElementById('o-villager').value.trim();
+    const note = document.getElementById('o-note').value.trim();
+
+    if (oKindSelect.value === 'item'){
+      if (itemOfferDraft.length === 0) return; // rien à ajouter
+      const itemType = oItemTypeSelect.value;
+      const priceRaw = document.getElementById('o-item-price').value;
+      const price = priceRaw === '' ? null : parseInt(priceRaw, 10);
+      offers.push({id: offerIdCounter++, kind: 'item', villager, itemType, enchants: itemOfferDraft.map(e => ({...e})), price, note});
+      document.getElementById('o-item-price').value = '';
+      itemOfferDraft = [];
+      renderItemOfferDraft();
+    } else {
+      const enchId = document.getElementById('o-ench').value;
+      const level = Math.max(1, Math.min(parseInt(document.getElementById('o-level').value || '1', 10), ENCH[enchId].max));
+      const priceRaw = document.getElementById('o-price').value;
+      const price = priceRaw === '' ? null : parseInt(priceRaw, 10);
+      const forItemId = document.getElementById('o-target').value ? Number(document.getElementById('o-target').value) : '';
+      offers.push({id: offerIdCounter++, kind: 'book', villager, enchId, level, price, forItemId, note});
+      document.getElementById('o-price').value = '';
+    }
+    document.getElementById('o-villager').value = '';
+    document.getElementById('o-note').value = '';
+    renderAll();
+  }
+  document.getElementById('offer-add-btn').addEventListener('click', submitOfferForm);
+  document.getElementById('offer-filter-villager').addEventListener('change', (e) => {
+    offerVillagerFilter = e.target.value;
+    renderOffers();
+  });
+
+  // ===================== LIVRES EN RÉSERVE =====================
+  function submitBookForm(){
+    const enchId = bookEnchSelect.value;
+    const level = Math.max(1, Math.min(parseInt(document.getElementById('book-level').value || '1', 10), ENCH[enchId].max));
+    books.push({id: bookIdCounter++, enchId, level});
+    renderAll();
+  }
+  document.getElementById('book-add-btn').addEventListener('click', submitBookForm);
+
+  function deleteBook(bookId){
+    books = books.filter(b => b.id !== bookId);
+    renderAll();
+  }
+
+  function renderBooks(){
+    const wrap = document.getElementById('book-reserve-list');
+    wrap.innerHTML = '';
+    if (books.length === 0){
+      wrap.innerHTML = '<span class="hint" style="margin:0;">Aucun livre en réserve pour le moment.</span>';
+      return;
+    }
+    books.slice().sort((a,b) => ENCH[a.enchId].name.localeCompare(ENCH[b.enchId].name,'en')).forEach(book => {
+      const chip = document.createElement('div');
+      chip.className = 'book-chip';
+      chip.innerHTML = `${escapeHtml(ENCH[book.enchId].name)} ${roman(book.level)} <button type="button" data-del-book="${book.id}" title="Retirer de la réserve">✕</button>`;
+      wrap.appendChild(chip);
+    });
+    wrap.querySelectorAll('[data-del-book]').forEach(b => b.addEventListener('click', () => deleteBook(Number(b.dataset.delBook))));
+  }
+
+  ['o-villager','o-level','o-price','o-item-price','o-note'].forEach(id => {
+    document.getElementById(id).addEventListener('keydown', (e) => {
+      if (e.key === 'Enter'){ e.preventDefault(); submitOfferForm(); }
+    });
+  });
+
+  function deleteOffer(offerId){
+    offers = offers.filter(o => o.id !== offerId);
+    renderAll();
+  }
+
+  // score d'une offre "objet complet" par rapport au build idéal (préférences globales) de son type d'objet
+  function scoreItemOffer(offer){
+    const ideal = computeIdeal(offer.itemType, {}); // préférences globales uniquement, pas d'objet précis à comparer
+    const matched = [];
+    const missing = [];
+    ideal.forEach(entry => {
+      const got = offer.enchants.find(e => e.id === entry.id);
+      if (got && got.level >= entry.level) matched.push(entry);
+      else missing.push(entry);
+    });
+    const bonus = offer.enchants.filter(e => !ideal.some(entry => entry.id === e.id));
+    return {matched, missing, bonus, total: ideal.length};
+  }
+
+  function offerBadges(offer){
+    const ench = ENCH[offer.enchId];
+    const badges = [];
+    if (!offer.forItemId){
+      const matches = items.filter(it => allowedForType(it.type).includes(offer.enchId) && !it.enchants.some(e => e.id === offer.enchId && e.level >= offer.level));
+      if (matches.length === 0){
+        badges.push({cls:'badge-owned', text: items.length ? 'Aucun objet compatible pour l\'instant' : 'Ajoute des objets pour comparer'});
+      } else {
+        badges.push({cls:'badge-new', text: 'Compatible : ' + matches.slice(0,3).map(m => m.name).join(', ') + (matches.length > 3 ? '…' : '')});
+      }
+      return badges;
+    }
+    const item = items.find(i => i.id === offer.forItemId);
+    if (!item){
+      badges.push({cls:'badge-owned', text: 'Objet visé introuvable'});
+      return badges;
+    }
+    const current = item.enchants.find(e => e.id === offer.enchId);
+    if (current && current.level >= offer.level){
+      badges.push({cls:'badge-owned', text: 'Déjà possédé (niveau ' + roman(current.level) + ')'});
+      return badges;
+    }
+    if (current && current.level < offer.level){
+      badges.push({cls:'badge-upgrade', text: 'Amélioration : ' + roman(current.level) + ' → ' + roman(offer.level)});
+    } else {
+      const conflictWith = item.enchants.filter(e => ench.excludes.includes(e.id));
+      if (conflictWith.length){
+        badges.push({cls:'badge-conflict', text: 'Conflit avec ' + conflictWith.map(c => ENCH[c.id].name + ' ' + roman(c.level)).join(', ')});
+        return badges;
+      }
+      badges.push({cls:'badge-new', text: 'Nouveau pour cet objet'});
+    }
+    const ideal = computeIdeal(item.type, item.prefOverrides).map(x => x.id);
+    if (ideal.includes(offer.enchId)){
+      badges.push({cls:'badge-ideal', text: 'Fait partie du build idéal'});
+    }
+    return badges;
+  }
+
+  let offerVillagerFilter = '';
+  let offerKindFilter = '';
+  let offerSortBy = 'villager';
+
+  document.getElementById('offer-filter-kind').addEventListener('change', (e) => {
+    offerKindFilter = e.target.value;
+    renderOffers();
+  });
+  document.getElementById('offer-sort-by').addEventListener('change', (e) => {
+    offerSortBy = e.target.value;
+    renderOffers();
+  });
+
+  function refreshVillagerFilterOptions(){
+    const select = document.getElementById('offer-filter-villager');
+    const names = [...new Set(offers.map(o => (o.villager || '').trim()).filter(Boolean))]
+      .sort((a, b) => a.localeCompare(b, 'fr', {numeric: true, sensitivity: 'base'}));
+    const previous = offerVillagerFilter;
+    select.innerHTML = '<option value="">— Tous les villageois —</option>' +
+      names.map(n => `<option value="${escapeHtml(n)}">${escapeHtml(n)}</option>`).join('');
+    // garde le filtre actif s'il existe encore, sinon repasse à "Tous"
+    offerVillagerFilter = names.includes(previous) ? previous : '';
+    select.value = offerVillagerFilter;
+  }
+
+  function renderOffers(){
+    refreshTargetSelect();
+    refreshVillagerFilterOptions();
+    const list = document.getElementById('offers-list');
+    const empty = document.getElementById('offers-empty');
+    const emptyFiltered = document.getElementById('offers-empty-filtered');
+    list.innerHTML = '';
+
+    const visibleOffers = offers
+      .filter(o => !offerVillagerFilter || (o.villager || '').trim() === offerVillagerFilter)
+      .filter(o => !offerKindFilter || (o.kind || 'book') === offerKindFilter);
+
+    empty.style.display = offers.length === 0 ? 'block' : 'none';
+    emptyFiltered.style.display = (offers.length > 0 && visibleOffers.length === 0) ? 'block' : 'none';
+
+    function offerSortKey(o){
+      if ((o.kind || 'book') === 'item'){
+        // pas d'enchant unique : on trie sur le premier enchant (alphabétique) présent sur l'objet
+        const names = (o.enchants || []).map(e => ENCH[e.id].name).sort((a, b) => a.localeCompare(b, 'en'));
+        return names[0] || ITEM_LABEL[o.itemType];
+      }
+      return ENCH[o.enchId].name;
+    }
+
+    visibleOffers.slice().sort((a, b) => {
+      if (offerSortBy === 'enchant'){
+        return offerSortKey(a).localeCompare(offerSortKey(b), 'en');
+      }
+      if (offerSortBy === 'price'){
+        const pa = (a.price === null || a.price === undefined) ? Infinity : a.price;
+        const pb = (b.price === null || b.price === undefined) ? Infinity : b.price;
+        if (pa !== pb) return pa - pb;
+        return (a.villager || '').localeCompare(b.villager || '', 'fr', {numeric: true, sensitivity: 'base'});
+      }
+      if (offerSortBy === 'note'){
+        const na = (a.note || '').trim();
+        const nb = (b.note || '').trim();
+        if (!na && !nb) return 0;
+        if (!na) return 1;
+        if (!nb) return -1;
+        return na.localeCompare(nb, 'fr', {numeric: true, sensitivity: 'base'});
+      }
+      // par défaut : villageois
+      const va = (a.villager || '').trim();
+      const vb = (b.villager || '').trim();
+      if (!va && !vb) return 0;
+      if (!va) return 1;  // les offres sans nom de villageois passent à la fin
+      if (!vb) return -1;
+      return va.localeCompare(vb, 'fr', {numeric: true, sensitivity: 'base'});
+    }).forEach(offer => {
+      const card = document.createElement('div');
+      card.className = 'offer-card';
+
+      if ((offer.kind || 'book') === 'item'){
+        const score = scoreItemOffer(offer);
+        const pct = score.total ? Math.round(score.matched.length / score.total * 100) : 0;
+        let html = `<div class="card-head">
+          <div>
+            <div class="card-title">${ITEM_LABEL[offer.itemType]}</div>
+            <div class="card-sub">
+              ${offer.villager ? escapeHtml(offer.villager) + ' · ' : ''}
+              ${offer.price !== null && offer.price !== undefined ? offer.price + ' émeraude(s)' : 'prix non noté'}
+            </div>
+          </div>
+          <div style="display:flex; gap:6px;">
+            <button class="btn-small edit-row" data-rename-offer="${offer.id}" title="Modifier le villageois / la note (métier...) de cette offre">✎</button>
+            <button class="btn-small delete-row" data-del-offer="${offer.id}">Supprimer</button>
+          </div>
+        </div>`;
+        if (offer.note){
+          html += `<div class="card-sub" style="margin-top:6px;">${escapeHtml(offer.note)}</div>`;
+        }
+        html += `<div class="ench-tags" style="margin-top:10px;">${offer.enchants.map(e => `<span class="ench-tag">${escapeHtml(ENCH[e.id].name)} <span class="lvl">${roman(e.level)}</span></span>`).join('')}</div>`;
+
+        const scoreCls = pct === 100 ? 'badge-ideal' : (pct >= 50 ? 'badge-upgrade' : 'badge-owned');
+        html += `<div class="badge-list">
+          <span class="badge ${scoreCls}">${score.matched.length}/${score.total} idéal (${pct}%)</span>
+        </div>`;
+        if (score.missing.length){
+          html += `<div class="card-sub" style="margin-top:6px;">Il manque : ${score.missing.map(m => escapeHtml(ENCH[m.id].name) + ' ' + roman(m.level)).join(', ')}</div>`;
+        }
+        if (score.bonus.length){
+          html += `<div class="card-sub" style="margin-top:4px;">Bonus hors build idéal : ${score.bonus.map(b => escapeHtml(ENCH[b.id].name) + ' ' + roman(b.level)).join(', ')}</div>`;
+        }
+        card.innerHTML = html;
+        list.appendChild(card);
+        return;
+      }
+
+      const target = offer.forItemId ? items.find(i => i.id === offer.forItemId) : null;
+      let html = `<div class="card-head">
+        <div>
+          <div class="card-title">${escapeHtml(ENCH[offer.enchId].name)} <span class="lvl" style="color:var(--gold); font-family:var(--font-mono);">${roman(offer.level)}</span></div>
+          <div class="card-sub">
+            ${offer.villager ? escapeHtml(offer.villager) + ' · ' : ''}
+            ${offer.price !== null && offer.price !== undefined ? offer.price + ' émeraude(s) · ' : ''}
+            ${target ? 'Pour : ' + escapeHtml(target.name) : 'Non ciblé'}
+          </div>
+        </div>
+        <div style="display:flex; gap:6px;">
+          <button class="btn-small edit-row" data-rename-offer="${offer.id}" title="Modifier le villageois / la note (métier...) de cette offre">✎</button>
+          <button class="btn-small delete-row" data-del-offer="${offer.id}">Supprimer</button>
+        </div>
+      </div>`;
+      if (offer.note){
+        html += `<div class="card-sub" style="margin-top:6px;">${escapeHtml(offer.note)}</div>`;
+      }
+      const badges = offerBadges(offer);
+      html += `<div class="badge-list">${badges.map(b => `<span class="badge ${b.cls}">${escapeHtml(b.text)}</span>`).join('')}</div>`;
+      card.innerHTML = html;
+      list.appendChild(card);
+    });
+
+    list.querySelectorAll('[data-del-offer]').forEach(b => b.addEventListener('click', () => deleteOffer(Number(b.dataset.delOffer))));
+    list.querySelectorAll('[data-rename-offer]').forEach(b => b.addEventListener('click', () => renameOfferVillager(Number(b.dataset.renameOffer))));
+  }
+
+  function renameOfferVillager(offerId){
+    const offer = offers.find(o => o.id === offerId);
+    if (!offer) return;
+    const newName = window.prompt('Nom du villageois pour cette offre :', offer.villager || '');
+    if (newName === null) return; // annulé
+    offer.villager = newName.trim();
+    const newNote = window.prompt('Note (métier, position, etc.) :', offer.note || '');
+    if (newNote !== null) offer.note = newNote.trim();
+    renderOffers();
+    showSaveMsg('Offre mise à jour.');
+  }
+
+  // ===================== RENDER: IDEAL =====================
+  function findBookFor(enchId, minLevel){
+    const candidates = books.filter(b => b.enchId === enchId && b.level >= minLevel);
+    if (candidates.length === 0) return null;
+    candidates.sort((a, b) => a.level - b.level);
+    return candidates[0];
+  }
+
+  function findBestOfferFor(enchId, minLevel){
+    const candidates = offers.filter(o => o.enchId === enchId && o.level >= minLevel);
+    if (candidates.length === 0) return null;
+    candidates.sort((a, b) => {
+      if (a.level !== b.level) return a.level - b.level;
+      const pa = (a.price === null || a.price === undefined) ? Infinity : a.price;
+      const pb = (b.price === null || b.price === undefined) ? Infinity : b.price;
+      return pa - pb;
+    });
+    return candidates[0];
+  }
+
+  function findAnyOfferFor(enchId){
+    const candidates = offers.filter(o => o.enchId === enchId);
+    if (candidates.length === 0) return null;
+    candidates.sort((a, b) => {
+      if (b.level !== a.level) return b.level - a.level; // le niveau le plus haut en premier
+      const pa = (a.price === null || a.price === undefined) ? Infinity : a.price;
+      const pb = (b.price === null || b.price === undefined) ? Infinity : b.price;
+      return pa - pb;
+    });
+    return candidates[0];
+  }
+
+  function computeNeededBooks(){
+    const neededMap = new Map();
+    items.forEach(item => {
+      const ideal = computeIdeal(item.type, item.prefOverrides);
+      const currentMap = Object.fromEntries(item.enchants.map(e => [e.id, e.level]));
+      ideal.forEach(entry => {
+        const have = currentMap[entry.id] || 0;
+        if (have >= entry.level) return;
+        const book = findBookFor(entry.id, entry.level);
+        if (book) return;
+        const offer = findAnyOfferFor(entry.id);
+        if (offer) return; // une offre existe (même à un niveau inférieur) : va voir "Actuellement chez des villageois" ou l'onglet Offres
+        const key = entry.id + '|' + entry.level;
+        if (!neededMap.has(key)) neededMap.set(key, {id: entry.id, level: entry.level, itemNames: [], bestHave: 0});
+        const rec = neededMap.get(key);
+        rec.itemNames.push(item.name);
+        rec.bestHave = Math.max(rec.bestHave, have);
+      });
+    });
+    return [...neededMap.values()].sort((a, b) =>
+      ENCH[a.id].name.localeCompare(ENCH[b.id].name, 'en') || a.level - b.level
+    );
+  }
+
+  function renderNeededBooks(){
+    const list = document.getElementById('needed-books-list');
+    const empty = document.getElementById('needed-books-empty');
+    list.innerHTML = '';
+    const needed = computeNeededBooks();
+    empty.style.display = needed.length === 0 ? 'block' : 'none';
+
+    needed.forEach(m => {
+      const card = document.createElement('div');
+      card.className = 'item-card';
+      let html = `<div class="card-head">
+        <div>
+          <div class="card-title">${escapeHtml(ENCH[m.id].name)} <span class="lvl" style="color:var(--gold); font-family:var(--font-mono);">${roman(m.level)}</span>${m.bestHave > 0 ? ` <span class="card-sub" style="display:inline; color:var(--gold);">(tu as déjà ${roman(m.bestHave)})</span>` : ''}</div>
+          <div class="card-sub">Pour : ${m.itemNames.map(escapeHtml).join(', ')}</div>
+        </div>
+      </div>`;
+      if (ENCH[m.id].tradable === false){
+        html += `<div class="card-sub" style="margin-top:6px; color:var(--red);">Pas chez les villageois — vient de : ${escapeHtml(ENCH[m.id].source)}.</div>`;
+      } else if (m.bestHave > 0){
+        html += `<div class="card-sub" style="margin-top:6px;">Combo enclume possible (2 livres ${roman(m.bestHave)} → ${roman(m.bestHave + 1)}) plutôt qu'un livre ${roman(m.level)} direct.</div>`;
+      } else {
+        html += `<div class="card-sub" style="margin-top:6px;">Aucune offre notée pour l'instant.</div>`;
+      }
+      card.innerHTML = html;
+      list.appendChild(card);
+    });
+  }
+
+  function computeMissingBooks(){
+    const missingMap = new Map();
+    items.forEach(item => {
+      const ideal = computeIdeal(item.type, item.prefOverrides);
+      const currentMap = Object.fromEntries(item.enchants.map(e => [e.id, e.level]));
+      ideal.forEach(entry => {
+        const have = currentMap[entry.id] || 0;
+        if (have >= entry.level) return; // déjà au niveau voulu sur cet objet : rien à acheter pour lui
+        const minUseful = have + 1;
+        const offer = findBestOfferFor(entry.id, minUseful);
+        if (!offer) return; // pas de villageois qui vende une amélioration -> pas dans la liste de course
+        const key = entry.id + '|' + entry.level;
+        if (!missingMap.has(key)) missingMap.set(key, {id: entry.id, idealLevel: entry.level, itemNames: [], bestHave: 0, offer});
+        const rec = missingMap.get(key);
+        rec.itemNames.push(item.name);
+        if (have >= rec.bestHave){
+          rec.bestHave = have;
+          rec.offer = offer; // offre la plus pertinente pour l'objet qui en a le plus besoin
+        }
+      });
+    });
+    return [...missingMap.values()].sort((a, b) =>
+      ENCH[a.id].name.localeCompare(ENCH[b.id].name, 'en') || a.idealLevel - b.idealLevel
+    );
+  }
+
+  function renderMissingBooks(){
+    const list = document.getElementById('missing-books-list');
+    const empty = document.getElementById('missing-books-empty');
+    list.innerHTML = '';
+    const missing = computeMissingBooks();
+    empty.style.display = missing.length === 0 ? 'block' : 'none';
+
+    missing.forEach(m => {
+      const offer = m.offer;
+      const isMax = offer.level >= m.idealLevel;
+      const card = document.createElement('div');
+      card.className = 'item-card';
+      let html = `<div class="card-head">
+        <div>
+          <div class="card-title">${escapeHtml(ENCH[m.id].name)} <span class="lvl" style="color:var(--gold); font-family:var(--font-mono);">${roman(offer.level)}</span>${!isMax ? ` <span class="card-sub" style="display:inline;">(build idéal : ${roman(m.idealLevel)})</span>` : ''}${m.bestHave > 0 ? ` <span class="card-sub" style="display:inline; color:var(--gold);">(tu as déjà ${roman(m.bestHave)})</span>` : ''}</div>
+          <div class="card-sub">Pour : ${m.itemNames.map(escapeHtml).join(', ')}</div>
+        </div>
+      </div>`;
+      html += `<div class="card-sub" style="margin-top:6px; color:var(--text);">Vu chez <span style="color:var(--text); font-weight:700;">${offer.villager ? escapeHtml(offer.villager) : 'un villageois (nom non noté)'}</span> — niveau ${roman(offer.level)}${offer.price !== null && offer.price !== undefined ? ', ' + offer.price + ' émeraude(s)' : ''}</div>`;
+      card.innerHTML = html;
+      list.appendChild(card);
+    });
+  }
+
+  function renderIdeal(){
+    renderNeededBooks();
+    renderMissingBooks();
+    const list = document.getElementById('ideal-list');
+    const empty = document.getElementById('ideal-empty');
+    list.innerHTML = '';
+    empty.style.display = items.length === 0 ? 'block' : 'none';
+
+    items.forEach(item => {
+      const ideal = computeIdeal(item.type, item.prefOverrides);
+      const currentMap = Object.fromEntries(item.enchants.map(e => [e.id, e.level]));
+      let done = 0;
+
+      let rows = '';
+      ideal.forEach(entry => {
+        const have = currentMap[entry.id] || 0;
+        const isDone = have >= entry.level;
+
+        if (isDone){
+          done++;
+          rows += `<li class="ideal-row done">
+            <span class="mark">✔</span>
+            <span>${escapeHtml(ENCH[entry.id].name)} ${roman(entry.level)}</span>
+          </li>`;
+          return;
+        }
+
+        const book = findBookFor(entry.id, entry.level);
+        if (book){
+          rows += `<li class="ideal-row has-book">
+            <span class="mark">●</span>
+            <span>${escapeHtml(ENCH[entry.id].name)} ${roman(entry.level)}${have ? ' (actuellement ' + roman(have) + ')' : ''} — livre en réserve (niveau ${roman(book.level)})</span>
+          </li>`;
+          return;
+        }
+
+        const offer = findBestOfferFor(entry.id, entry.level);
+        rows += `<li class="ideal-row todo">
+          <span class="mark">○</span>
+          <span>${escapeHtml(ENCH[entry.id].name)} ${roman(entry.level)}${have ? ' (actuellement ' + roman(have) + ')' : ''}</span>
+          ${offer ? `<div class="ideal-suggest">Vu chez <span class="villager-name">${offer.villager ? escapeHtml(offer.villager) : 'un villageois (nom non noté)'}</span> — niveau ${roman(offer.level)}${offer.price !== null && offer.price !== undefined ? ', ' + offer.price + ' émeraude(s)' : ''}</div>` : ''}
+        </li>`;
+      });
+
+      const idealIds = new Set(ideal.map(e => e.id));
+      const extras = item.enchants.filter(e => !idealIds.has(e.id));
+
+      const overridable = overridableGroupsForType(item.type);
+      let overrideHtml = '';
+      if (overridable.length){
+        overrideHtml = `<details class="pref-override">
+          <summary>Préférences spécifiques à cet objet${Object.keys(item.prefOverrides || {}).some(k => overridable.some(g => g.id === k)) ? ' (personnalisées)' : ''}</summary>
+          <div class="pref-override-grid">
+            ${overridable.map(g => `
+              <div class="pref-item">
+                <label>${escapeHtml(g.label)}</label>
+                <select class="pref-override-select" data-item="${item.id}" data-group="${g.id}">
+                  <option value="">— Suivre la préférence globale (${escapeHtml(ENCH[prefs[g.id]]?.name || prefs[g.id])}) —</option>
+                  ${g.opts.map(id => `<option value="${id}" ${item.prefOverrides && item.prefOverrides[g.id] === id ? 'selected' : ''}>${escapeHtml(ENCH[id].name)}</option>`).join('')}
+                </select>
+              </div>`).join('')}
+          </div>
+        </details>`;
+      }
+
+      const card = document.createElement('div');
+      card.className = 'item-card';
+      let html = `<div class="card-head">
+        <div>
+          <div class="card-title">${escapeHtml(item.name)}</div>
+          <div class="card-sub">${ITEM_LABEL[item.type]}</div>
+        </div>
+        <div class="completion-tag">${done}/${ideal.length} appliqués</div>
+      </div>
+      <div class="progress-wrap"><div class="progress-bar" style="width:${ideal.length ? (done/ideal.length*100) : 0}%;"></div></div>
+      ${overrideHtml}
+      <ul class="ideal-list">${rows || '<li class="card-sub">Aucun enchantement idéal disponible pour ce type d\'objet.</li>'}</ul>`;
+
+      if (extras.length){
+        html += `<div class="extra-list"><span class="et">Hors build idéal (choix différent) : </span>${extras.map(e => escapeHtml(ENCH[e.id].name) + ' ' + roman(e.level)).join(', ')}</div>`;
+      }
+
+      card.innerHTML = html;
+      card.querySelectorAll('.pref-override-select').forEach(sel => {
+        sel.addEventListener('change', () => {
+          const it = items.find(i => i.id === Number(sel.dataset.item));
+          if (!it) return;
+          if (!it.prefOverrides) it.prefOverrides = {};
+          if (sel.value) it.prefOverrides[sel.dataset.group] = sel.value;
+          else delete it.prefOverrides[sel.dataset.group];
+          renderAll();
+        });
+      });
+      list.appendChild(card);
+    });
+  }
+
+  // ===================== SAVE / LOAD =====================
+  function exportStateJSON(){
+    return JSON.stringify({items, offers, books, prefs}, null, 2);
+  }
+  function loadFromJSON(text){
+    const data = JSON.parse(text);
+    let section;
+    if (data && Array.isArray(data.items)) {
+      // format propre à cet outil
+      section = data;
+    } else if (data && data.enchantements && Array.isArray(data.enchantements.items)) {
+      // compatibilité avec un ancien fichier partagé "monde-minecraft.json"
+      section = data.enchantements;
+    } else {
+      throw new Error('format invalide');
+    }
+    items = section.items;
+    items.forEach(i => { if (!i.prefOverrides) i.prefOverrides = {}; });
+    offers = Array.isArray(section.offers) ? section.offers : [];
+    books = Array.isArray(section.books) ? section.books : [];
+    if (section.prefs) prefs = Object.assign(prefs, section.prefs);
+    itemIdCounter = items.reduce((m, i) => Math.max(m, i.id || 0), 0) + 1;
+    offerIdCounter = offers.reduce((m, o) => Math.max(m, o.id || 0), 0) + 1;
+    bookIdCounter = books.reduce((m, b) => Math.max(m, b.id || 0), 0) + 1;
+    document.querySelectorAll('#prefs-grid select').forEach((sel, idx) => {
+      sel.value = prefs[GROUPS[idx].id];
+    });
+    renderAll();
+    showSaveMsg('Configuration chargée.');
+  }
+  function showSaveMsg(msg){
+    const el = document.getElementById('save-msg');
+    el.textContent = msg;
+    setTimeout(() => { el.textContent = ''; }, 4000);
+  }
+
+  // ===================== SAUVEGARDE EN LIGNE (GITHUB) =====================
+  const GH_FILE_PATH = 'grimoire-config.json';
+  const ghFields = ['gh-owner', 'gh-repo', 'gh-branch', 'gh-token'];
+  const ghKeys = {'gh-owner': 'gh_owner', 'gh-repo': 'gh_repo', 'gh-branch': 'gh_branch', 'gh-token': 'gh_token'};
+
+  function loadGhSettings(){
+    ghFields.forEach(id => {
+      const saved = localStorage.getItem(ghKeys[id]);
+      if (saved) document.getElementById(id).value = saved;
+    });
+    if (!document.getElementById('gh-branch').value) document.getElementById('gh-branch').value = 'main';
+  }
+  function saveGhSettings(){
+    ghFields.forEach(id => {
+      localStorage.setItem(ghKeys[id], document.getElementById(id).value.trim());
+    });
+  }
+  ghFields.forEach(id => {
+    document.getElementById(id).addEventListener('change', saveGhSettings);
+  });
+  loadGhSettings();
+
+  async function saveToGitHub(){
+    const owner = document.getElementById('gh-owner').value.trim();
+    const repo = document.getElementById('gh-repo').value.trim();
+    const branch = document.getElementById('gh-branch').value.trim() || 'main';
+    const token = document.getElementById('gh-token').value.trim();
+    if (!owner || !repo || !token){
+      showSaveMsg('Renseigne utilisateur, dépôt et jeton GitHub.');
+      return;
+    }
+    saveGhSettings();
+    showSaveMsg('Envoi vers GitHub...');
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${GH_FILE_PATH}`;
+    try {
+      let sha = null;
+      const getRes = await fetch(`${apiUrl}?ref=${encodeURIComponent(branch)}`, {
+        headers: {'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json'}
+      });
+      if (getRes.ok){
+        const info = await getRes.json();
+        sha = info.sha;
+      } else if (getRes.status !== 404){
+        const err = await getRes.json().catch(() => ({}));
+        throw new Error(err.message || ('Erreur ' + getRes.status));
+      }
+
+      const content = exportStateJSON();
+      const body = {
+        message: 'Mise à jour grimoire-config.json depuis le Grimoire',
+        content: btoa(unescape(encodeURIComponent(content))),
+        branch
+      };
+      if (sha) body.sha = sha;
+
+      const putRes = await fetch(apiUrl, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      });
+      if (!putRes.ok){
+        const err = await putRes.json().catch(() => ({}));
+        throw new Error(err.message || ('Erreur ' + putRes.status));
+      }
+      showSaveMsg('Enregistré sur GitHub ✓');
+    } catch (err){
+      showSaveMsg('Échec : ' + err.message);
+    }
+  }
+  document.getElementById('btn-gh-save').addEventListener('click', saveToGitHub);
+
+  document.getElementById('btn-download').addEventListener('click', () => {
+    if (items.length === 0 && offers.length === 0 && books.length === 0){ showSaveMsg('Rien à sauvegarder pour le moment.'); return; }
+    const blob = new Blob([exportStateJSON()], {type: 'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'grimoire-config.json';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showSaveMsg('Fichier téléchargé (grimoire-config.json).');
+  });
+
+  document.getElementById('file-import').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try { loadFromJSON(ev.target.result); }
+      catch (err) { showSaveMsg('Fichier invalide.'); }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  });
+
+  // ===================== UTIL =====================
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function renderAll(){
+    renderItems();
+    renderOffers();
+    renderBooks();
+    renderIdeal();
+  }
+
+  renderAll();
+
+  // Chargement automatique depuis le dépôt (fonctionne quand le site est hébergé, ex. GitHub Pages).
+  // En local (double-clic sur le fichier), ça échoue silencieusement et l'app démarre vide comme avant.
+  fetch('grimoire-config.json', {cache: 'no-store'})
+    .then(r => r.ok ? r.text() : Promise.reject())
+    .then(text => loadFromJSON(text))
+    .catch(() => {});
+</script>
+<footer class="site-footer">établi personnel · outils Minecraft · Seed : 443175491261601422</footer>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carnet — Établi</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/carnet.css">
+</head>
+<body class="theme-carnet">
+
+<div id="site-nav" data-current="carnet"></div>
+<script src="assets/nav.js" defer></script>
+
+<header>
+  <h1>Carnet</h1>
+  <p>Note tout ce que tu veux faire dans ton monde — projets, idées, rappels.</p>
+</header>
+
+<main>
+  <section class="panel col-left">
+    <h2>Nouvelle entrée</h2>
+    <form id="note-form">
+      <label for="n-text">Note</label>
+      <textarea id="n-text" placeholder="Ex : Finir la ferme à zombies avant la prochaine lune..." required></textarea>
+
+      <label for="n-tag">Catégorie (optionnel)</label>
+      <input type="text" id="n-tag" placeholder="Ex : Base, Ferme, Exploration...">
+
+      <button type="submit" class="btn btn-primary">Ajouter au carnet</button>
+    </form>
+  </section>
+
+  <section class="panel col-right">
+    <h2>Le carnet</h2>
+    <div class="filters" id="filters">
+      <button type="button" class="active" data-filter="all">Toutes</button>
+      <button type="button" data-filter="todo">À faire</button>
+      <button type="button" data-filter="done">Terminées</button>
+    </div>
+    <div class="notes-list" id="notes-list"></div>
+    <div class="empty-note" id="empty-note">Le carnet est vide pour l'instant. Écris ta première note à gauche.</div>
+  </section>
+
+  <section class="panel plain save-section col-full">
+    <h3 style="margin-top:0;">Sauvegarde</h3>
+    <div class="actions-row">
+      <button class="btn btn-ghost" id="btn-download">Télécharger (.json)</button>
+      <label class="file-label" for="file-import">Importer un fichier</label>
+      <input type="file" id="file-import" accept="application/json" style="display:none;">
+    </div>
+    <div class="msg-line" id="save-msg"></div>
+
+    <details class="gh-sync">
+      <summary>Sauvegarde en ligne (GitHub)</summary>
+      <div class="row2">
+        <div>
+          <label for="gh-owner">Utilisateur / organisation</label>
+          <input type="text" id="gh-owner" placeholder="ton-pseudo">
+        </div>
+        <div>
+          <label for="gh-repo">Nom du dépôt</label>
+          <input type="text" id="gh-repo" placeholder="mon-etabli">
+        </div>
+      </div>
+      <div class="row2">
+        <div>
+          <label for="gh-branch">Branche</label>
+          <input type="text" id="gh-branch" placeholder="main">
+        </div>
+        <div>
+          <label for="gh-token">Jeton d'accès (PAT)</label>
+          <input type="password" id="gh-token" placeholder="ghp_...">
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" id="btn-gh-save" style="margin-top:12px;">Enregistrer en ligne</button>
+      <div class="hint">Le jeton reste uniquement sur cet appareil (stocké dans le navigateur), jamais envoyé ailleurs qu'à l'API GitHub. Ces réglages sont partagés avec les autres outils du même site.</div>
+    </details>
+  </section>
+</main>
+
+<footer class="site-footer">établi personnel · outils Minecraft · Seed : 443175491261601422</footer>
+
+<script>
+  let notes = [];
+  let idCounter = 1;
+  let currentFilter = 'all';
+
+  const form = document.getElementById('note-form');
+  const textInput = document.getElementById('n-text');
+  const tagInput = document.getElementById('n-tag');
+  const listEl = document.getElementById('notes-list');
+  const emptyNote = document.getElementById('empty-note');
+  const filtersEl = document.getElementById('filters');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const text = textInput.value.trim();
+    if (!text) return;
+    notes.unshift({
+      id: idCounter++,
+      text,
+      tag: tagInput.value.trim(),
+      done: false,
+      createdAt: new Date().toISOString()
+    });
+    textInput.value = '';
+    tagInput.value = '';
+    render();
+  });
+
+  filtersEl.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-filter]');
+    if (!btn) return;
+    currentFilter = btn.dataset.filter;
+    [...filtersEl.querySelectorAll('button')].forEach(b => b.classList.toggle('active', b === btn));
+    render();
+  });
+
+  function formatDate(iso){
+    try {
+      const d = new Date(iso);
+      return d.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    } catch (e) { return ''; }
+  }
+
+  function render(){
+    const filtered = notes.filter(n => {
+      if (currentFilter === 'todo') return !n.done;
+      if (currentFilter === 'done') return n.done;
+      return true;
+    });
+    if (currentFilter === 'all'){
+      filtered.sort((a, b) => (a.done === b.done) ? 0 : (a.done ? 1 : -1));
+    }
+
+    listEl.innerHTML = '';
+    emptyNote.style.display = notes.length === 0 ? 'block' : 'none';
+    emptyNote.textContent = notes.length === 0
+      ? 'Le carnet est vide pour l\'instant. Écris ta première note à gauche.'
+      : 'Aucune note ne correspond à ce filtre.';
+    if (filtered.length === 0 && notes.length > 0) emptyNote.style.display = 'block';
+
+    filtered.forEach(n => {
+      const card = document.createElement('div');
+      card.className = 'note-card' + (n.done ? ' done' : '');
+
+      const top = document.createElement('div');
+      top.className = 'note-top';
+
+      const check = document.createElement('input');
+      check.type = 'checkbox';
+      check.className = 'note-check';
+      check.checked = n.done;
+      check.title = 'Marquer comme terminée';
+      check.addEventListener('change', () => {
+        n.done = check.checked;
+        render();
+      });
+
+      const body = document.createElement('div');
+      body.className = 'note-body';
+
+      const textEl = document.createElement('div');
+      textEl.className = 'note-text';
+      textEl.textContent = n.text;
+
+      const meta = document.createElement('div');
+      meta.className = 'note-meta';
+      if (n.tag){
+        const tagEl = document.createElement('span');
+        tagEl.className = 'note-tag';
+        tagEl.textContent = n.tag;
+        meta.appendChild(tagEl);
+      }
+      const dateEl = document.createElement('span');
+      dateEl.className = 'note-date';
+      dateEl.textContent = formatDate(n.createdAt);
+      meta.appendChild(dateEl);
+
+      body.appendChild(textEl);
+      body.appendChild(meta);
+
+      const actions = document.createElement('div');
+      actions.className = 'note-actions';
+      const delBtn = document.createElement('button');
+      delBtn.className = 'icon-btn';
+      delBtn.textContent = '✕';
+      delBtn.title = 'Supprimer';
+      delBtn.addEventListener('click', () => {
+        notes = notes.filter(x => x.id !== n.id);
+        render();
+      });
+      actions.appendChild(delBtn);
+
+      top.appendChild(check);
+      top.appendChild(body);
+      top.appendChild(actions);
+      card.appendChild(top);
+      listEl.appendChild(card);
+    });
+  }
+
+  // ===================== SAVE / LOAD =====================
+  function exportNotesJSON(){
+    return JSON.stringify({ entries: notes }, null, 2);
+  }
+
+  function loadFromJSON(text){
+    const data = JSON.parse(text);
+    let entries;
+    if (Array.isArray(data)) {
+      // ancien format éventuel
+      entries = data;
+    } else if (data && Array.isArray(data.entries)) {
+      // format propre à cet outil
+      entries = data.entries;
+    } else if (data && data.notes && Array.isArray(data.notes.entries)) {
+      // compatibilité avec un ancien fichier partagé "monde-minecraft.json"
+      entries = data.notes.entries;
+    } else {
+      throw new Error('format invalide');
+    }
+    notes = entries;
+    idCounter = notes.reduce((m, n) => Math.max(m, n.id || 0), 0) + 1;
+    render();
+    showSaveMsg('Carnet chargé.');
+  }
+
+  function showSaveMsg(msg){
+    const el = document.getElementById('save-msg');
+    el.textContent = msg;
+    setTimeout(() => { el.textContent = ''; }, 4000);
+  }
+
+  // ===================== SAUVEGARDE EN LIGNE (GITHUB) =====================
+  const GH_FILE_PATH = 'carnet-config.json';
+  const ghFields = ['gh-owner', 'gh-repo', 'gh-branch', 'gh-token'];
+  const ghKeys = {'gh-owner': 'gh_owner', 'gh-repo': 'gh_repo', 'gh-branch': 'gh_branch', 'gh-token': 'gh_token'};
+
+  function loadGhSettings(){
+    ghFields.forEach(id => {
+      const saved = localStorage.getItem(ghKeys[id]);
+      if (saved) document.getElementById(id).value = saved;
+    });
+    if (!document.getElementById('gh-branch').value) document.getElementById('gh-branch').value = 'main';
+  }
+  function saveGhSettings(){
+    ghFields.forEach(id => {
+      localStorage.setItem(ghKeys[id], document.getElementById(id).value.trim());
+    });
+  }
+  ghFields.forEach(id => {
+    document.getElementById(id).addEventListener('change', saveGhSettings);
+  });
+  loadGhSettings();
+
+  async function saveToGitHub(){
+    const owner = document.getElementById('gh-owner').value.trim();
+    const repo = document.getElementById('gh-repo').value.trim();
+    const branch = document.getElementById('gh-branch').value.trim() || 'main';
+    const token = document.getElementById('gh-token').value.trim();
+    if (!owner || !repo || !token){
+      showSaveMsg('Renseigne utilisateur, dépôt et jeton GitHub.');
+      return;
+    }
+    saveGhSettings();
+    showSaveMsg('Envoi vers GitHub...');
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${GH_FILE_PATH}`;
+    try {
+      let sha = null;
+      const getRes = await fetch(`${apiUrl}?ref=${encodeURIComponent(branch)}`, {
+        headers: {'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json'}
+      });
+      if (getRes.ok){
+        const info = await getRes.json();
+        sha = info.sha;
+      } else if (getRes.status !== 404){
+        const err = await getRes.json().catch(() => ({}));
+        throw new Error(err.message || ('Erreur ' + getRes.status));
+      }
+
+      const content = exportNotesJSON();
+      const body = {
+        message: 'Mise à jour carnet-config.json depuis le carnet',
+        content: btoa(unescape(encodeURIComponent(content))),
+        branch
+      };
+      if (sha) body.sha = sha;
+
+      const putRes = await fetch(apiUrl, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      });
+      if (!putRes.ok){
+        const err = await putRes.json().catch(() => ({}));
+        throw new Error(err.message || ('Erreur ' + putRes.status));
+      }
+      showSaveMsg('Enregistré sur GitHub ✓');
+    } catch (err){
+      showSaveMsg('Échec : ' + err.message);
+    }
+  }
+  document.getElementById('btn-gh-save').addEventListener('click', saveToGitHub);
+
+  document.getElementById('btn-download').addEventListener('click', () => {
+    if (notes.length === 0){ showSaveMsg('Aucune note à sauvegarder.'); return; }
+    const blob = new Blob([exportNotesJSON()], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'carnet-config.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showSaveMsg('Fichier téléchargé (carnet-config.json).');
+  });
+
+  document.getElementById('file-import').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try { loadFromJSON(ev.target.result); }
+      catch (err) { showSaveMsg('Fichier invalide.'); }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  });
+
+  render();
+
+  // Chargement automatique depuis le dépôt (fonctionne quand le site est hébergé, ex. GitHub Pages).
+  fetch('carnet-config.json', {cache: 'no-store'})
+    .then(r => r.ok ? r.text() : Promise.reject())
+    .then(text => loadFromJSON(text))
+    .catch(() => {});
+</script>
+</body>
+</html>

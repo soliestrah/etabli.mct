@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Établi — Outils Minecraft</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .hero{
+    padding:56px 24px 30px;
+    text-align:center;
+  }
+  .hero h1{ font-size:2.6rem; margin:0 0 10px; }
+  .hero h1 span{ color:var(--accent); }
+  .hero p{
+    margin:0 auto;
+    max-width:560px;
+    line-height:1.6;
+  }
+  main{
+    max-width:980px;
+    margin:0 auto;
+    padding:20px 20px 70px;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:22px;
+  }
+  .tool-card{
+    display:flex;
+    flex-direction:column;
+    text-decoration:none;
+    color:var(--text);
+    position:relative;
+    overflow:hidden;
+    transition:transform 0.15s ease, border-color 0.15s ease;
+  }
+  .tool-card::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:3px;
+    background:var(--card-accent, var(--accent));
+  }
+  .tool-card:hover{
+    transform:translateY(-3px);
+    border-color:var(--card-accent, var(--accent));
+  }
+  .tool-card .card-title{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:1.25rem;
+    margin-bottom:8px;
+    color:var(--text);
+  }
+  .tool-card .card-desc{
+    color:var(--muted);
+    font-size:0.9rem;
+    line-height:1.55;
+    flex:1;
+    margin-bottom:0;
+  }
+  .tool-card .card-cta{
+    margin-top:18px;
+    font-family:var(--font-mono);
+    font-size:0.78rem;
+    font-weight:700;
+    color:var(--card-accent, var(--accent));
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+</style>
+</head>
+<body class="theme-etabli">
+
+<div id="site-nav" data-current="etabli"></div>
+
+<header class="hero">
+  <h1>L'<span>Établi</span></h1>
+  <p>Outils personnels pour organiser un monde Minecraft : cartographie du Nether, suivi des enchantements et carnet de notes.</p>
+</header>
+
+<main>
+  <div class="grid">
+
+    <a class="tool-card card" href="atlas.html" style="--card-accent:var(--blue);">
+      <div class="card-title">🗺️ Atlas</div>
+      <p class="card-desc">Ajoute tes points de destination, choisis ton hub, et récupère la direction précise et la distance à creuser — étape par étape, sans zigzag.</p>
+      <div class="card-cta">Ouvrir l'outil →</div>
+    </a>
+
+    <a class="tool-card card" href="grimoire.html" style="--card-accent:var(--purple);">
+      <div class="card-title">📖 Grimoire</div>
+      <p class="card-desc">Note ce que tu as déjà enchanté, suis les offres des villageois, et découvre ce qu'il te reste pour atteindre ton build idéal.</p>
+      <div class="card-cta">Ouvrir l'outil →</div>
+    </a>
+
+    <a class="tool-card card" href="carnet.html" style="--card-accent:var(--green);">
+      <div class="card-title">📓 Carnet</div>
+      <p class="card-desc">Note tout ce que tu veux faire dans ton monde — projets, idées, rappels — et coche au fur et à mesure.</p>
+      <div class="card-cta">Ouvrir l'outil →</div>
+    </a>
+
+  </div>
+</main>
+
+<footer class="site-footer">établi personnel · outils Minecraft · Seed : 443175491261601422</footer>
+
+<script src="assets/nav.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,839 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "faucheuse",
+      "type": "sword",
+      "enchants": [
+        {
+          "id": "mending",
+          "level": 1
+        },
+        {
+          "id": "knockback",
+          "level": 1
+        },
+        {
+          "id": "unbreaking",
+          "level": 3
+        },
+        {
+          "id": "smite",
+          "level": 3
+        },
+        {
+          "id": "sweeping",
+          "level": 1
+        },
+        {
+          "id": "looting",
+          "level": 3
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 2,
+      "name": "avarise",
+      "type": "pickaxe",
+      "enchants": [
+        {
+          "id": "fortune",
+          "level": 3
+        },
+        {
+          "id": "efficiency",
+          "level": 4
+        },
+        {
+          "id": "unbreaking",
+          "level": 3
+        },
+        {
+          "id": "mending",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 3,
+      "name": "souvenir",
+      "type": "pickaxe",
+      "enchants": [
+        {
+          "id": "silk_touch",
+          "level": 1
+        },
+        {
+          "id": "unbreaking",
+          "level": 2
+        },
+        {
+          "id": "mending",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {
+        "mining": "silk_touch"
+      }
+    },
+    {
+      "id": 4,
+      "name": "cimetière",
+      "type": "shovel",
+      "enchants": [
+        {
+          "id": "efficiency",
+          "level": 4
+        },
+        {
+          "id": "unbreaking",
+          "level": 3
+        },
+        {
+          "id": "mending",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 5,
+      "name": "récolte",
+      "type": "axe",
+      "enchants": [
+        {
+          "id": "fortune",
+          "level": 3
+        },
+        {
+          "id": "efficiency",
+          "level": 4
+        },
+        {
+          "id": "mending",
+          "level": 1
+        },
+        {
+          "id": "unbreaking",
+          "level": 3
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 6,
+      "name": "nike",
+      "type": "boots",
+      "enchants": [
+        {
+          "id": "mending",
+          "level": 1
+        },
+        {
+          "id": "feather_falling",
+          "level": 2
+        },
+        {
+          "id": "unbreaking",
+          "level": 3
+        },
+        {
+          "id": "blast_protection",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {
+        "protection_type": "blast_protection"
+      }
+    },
+    {
+      "id": 7,
+      "name": "jeans",
+      "type": "leggings",
+      "enchants": [
+        {
+          "id": "fire_protection",
+          "level": 2
+        },
+        {
+          "id": "mending",
+          "level": 1
+        },
+        {
+          "id": "unbreaking",
+          "level": 2
+        }
+      ],
+      "prefOverrides": {
+        "protection_type": "fire_protection"
+      }
+    },
+    {
+      "id": 8,
+      "name": "cachecoeur",
+      "type": "chestplate",
+      "enchants": [
+        {
+          "id": "protection",
+          "level": 4
+        },
+        {
+          "id": "thorns",
+          "level": 1
+        },
+        {
+          "id": "mending",
+          "level": 1
+        },
+        {
+          "id": "unbreaking",
+          "level": 3
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 9,
+      "name": "scaphandre",
+      "type": "helmet",
+      "enchants": [
+        {
+          "id": "respiration",
+          "level": 1
+        },
+        {
+          "id": "mending",
+          "level": 1
+        },
+        {
+          "id": "unbreaking",
+          "level": 3
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 10,
+      "name": "flèche",
+      "type": "bow",
+      "enchants": [
+        {
+          "id": "power",
+          "level": 2
+        },
+        {
+          "id": "unbreaking",
+          "level": 2
+        },
+        {
+          "id": "infinity",
+          "level": 1
+        },
+        {
+          "id": "punch",
+          "level": 2
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 11,
+      "name": "couronne",
+      "type": "helmet",
+      "enchants": [
+        {
+          "id": "mending",
+          "level": 1
+        },
+        {
+          "id": "unbreaking",
+          "level": 3
+        },
+        {
+          "id": "aqua_affinity",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 12,
+      "name": "hache",
+      "type": "axe",
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 2
+        },
+        {
+          "id": "silk_touch",
+          "level": 1
+        },
+        {
+          "id": "mending",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 13,
+      "name": "ailes",
+      "type": "elytra",
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 3
+        },
+        {
+          "id": "mending",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {}
+    }
+  ],
+  "offers": [
+    {
+      "id": 1,
+      "villager": "1er G",
+      "enchId": "looting",
+      "level": 3,
+      "price": 20,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 2,
+      "villager": "1er G",
+      "enchId": "fire_aspect",
+      "level": 2,
+      "price": 19,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 3,
+      "villager": "1er G",
+      "enchId": "respiration",
+      "level": 2,
+      "price": 32,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 4,
+      "villager": "2e G",
+      "enchId": "mending",
+      "level": 1,
+      "price": 18,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 5,
+      "villager": "2e G",
+      "enchId": "loyalty",
+      "level": 2,
+      "price": 30,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 6,
+      "villager": "3e G",
+      "enchId": "fortune",
+      "level": 2,
+      "price": 25,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 7,
+      "villager": "3e G",
+      "enchId": "power",
+      "level": 2,
+      "price": 9,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 8,
+      "villager": "3e G",
+      "enchId": "channeling",
+      "level": 1,
+      "price": 6,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 9,
+      "villager": "4e G",
+      "enchId": "silk_touch",
+      "level": 1,
+      "price": 9,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 10,
+      "villager": "1er D",
+      "enchId": "impaling",
+      "level": 1,
+      "price": 14,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 11,
+      "villager": "2e D",
+      "enchId": "fortune",
+      "level": 3,
+      "price": 15,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 12,
+      "villager": "2e D",
+      "enchId": "frost_walker",
+      "level": 2,
+      "price": 40,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 13,
+      "villager": "3e D",
+      "enchId": "feather_falling",
+      "level": 2,
+      "price": 21,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 14,
+      "villager": "4e D",
+      "enchId": "unbreaking",
+      "level": 3,
+      "price": 15,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 15,
+      "villager": "5e D",
+      "enchId": "protection",
+      "level": 4,
+      "price": 21,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 16,
+      "villager": "4e D",
+      "enchId": "unbreaking",
+      "level": 2,
+      "price": null,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 17,
+      "villager": "1er G",
+      "enchId": "silk_touch",
+      "level": 1,
+      "price": 16,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 18,
+      "villager": "5e G",
+      "enchId": "infinity",
+      "level": 1,
+      "price": 7,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 19,
+      "villager": "6e G",
+      "enchId": "respiration",
+      "level": 3,
+      "price": 26,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 20,
+      "villager": "4e G",
+      "enchId": "channeling",
+      "level": 1,
+      "price": 9,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 21,
+      "villager": "6e D",
+      "enchId": "smite",
+      "level": 3,
+      "price": 14,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 22,
+      "villager": "7e D",
+      "enchId": "power",
+      "level": 3,
+      "price": 28,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 25,
+      "kind": "item",
+      "villager": "1er D",
+      "itemType": "axe",
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 2
+        }
+      ],
+      "price": 27,
+      "note": "WEAPONSMITH"
+    },
+    {
+      "id": 26,
+      "kind": "item",
+      "villager": "1er D",
+      "itemType": "sword",
+      "enchants": [
+        {
+          "id": "sweeping",
+          "level": 1
+        },
+        {
+          "id": "knockback",
+          "level": 1
+        }
+      ],
+      "price": 15,
+      "note": "WEAPONSMITH"
+    },
+    {
+      "id": 27,
+      "kind": "item",
+      "villager": "1er G",
+      "itemType": "axe",
+      "enchants": [
+        {
+          "id": "efficiency",
+          "level": 2
+        }
+      ],
+      "price": 30,
+      "note": "TOOLSMITH"
+    },
+    {
+      "id": 28,
+      "kind": "item",
+      "villager": "1er G",
+      "itemType": "shovel",
+      "enchants": [
+        {
+          "id": "efficiency",
+          "level": 2
+        },
+        {
+          "id": "unbreaking",
+          "level": 1
+        }
+      ],
+      "price": 14,
+      "note": "TOOLSMITH"
+    },
+    {
+      "id": 29,
+      "kind": "item",
+      "villager": "1er G",
+      "itemType": "pickaxe",
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 2
+        }
+      ],
+      "price": 27,
+      "note": "TOOLSMITH"
+    },
+    {
+      "id": 30,
+      "kind": "item",
+      "villager": "1er G",
+      "itemType": "leggings",
+      "enchants": [
+        {
+          "id": "fire_protection",
+          "level": 2
+        },
+        {
+          "id": "unbreaking",
+          "level": 2
+        }
+      ],
+      "price": 31,
+      "note": "ARMURIER"
+    },
+    {
+      "id": 31,
+      "kind": "item",
+      "villager": "1er G",
+      "itemType": "boots",
+      "enchants": [
+        {
+          "id": "blast_protection",
+          "level": 1
+        }
+      ],
+      "price": 17,
+      "note": "ARMURIER"
+    },
+    {
+      "id": 32,
+      "kind": "item",
+      "villager": "1er G",
+      "itemType": "helmet",
+      "enchants": [
+        {
+          "id": "protection",
+          "level": 3
+        },
+        {
+          "id": "aqua_affinity",
+          "level": 1
+        }
+      ],
+      "price": 23,
+      "note": "ARMURIER"
+    },
+    {
+      "id": 34,
+      "kind": "item",
+      "villager": "1er D",
+      "itemType": "boots",
+      "enchants": [
+        {
+          "id": "feather_falling",
+          "level": 2
+        }
+      ],
+      "price": 19,
+      "note": "ARMURIER"
+    },
+    {
+      "id": 36,
+      "kind": "item",
+      "villager": "1er G",
+      "itemType": "bow",
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 1
+        }
+      ],
+      "price": 12,
+      "note": "FLETCHER"
+    },
+    {
+      "id": 37,
+      "kind": "item",
+      "villager": "1er D",
+      "itemType": "bow",
+      "enchants": [
+        {
+          "id": "punch",
+          "level": 1
+        }
+      ],
+      "price": 14,
+      "note": "FLETCHER"
+    },
+    {
+      "id": 38,
+      "kind": "item",
+      "villager": "2e D",
+      "itemType": "bow",
+      "enchants": [
+        {
+          "id": "power",
+          "level": 2
+        }
+      ],
+      "price": 15,
+      "note": "FLETCHER"
+    },
+    {
+      "id": 39,
+      "kind": "item",
+      "villager": "2e D",
+      "itemType": "crossbow",
+      "enchants": [
+        {
+          "id": "piercing",
+          "level": 1
+        }
+      ],
+      "price": 13,
+      "note": "FLETCHER"
+    },
+    {
+      "id": 40,
+      "kind": "item",
+      "villager": "2e G",
+      "itemType": "crossbow",
+      "enchants": [
+        {
+          "id": "piercing",
+          "level": 1
+        },
+        {
+          "id": "unbreaking",
+          "level": 1
+        }
+      ],
+      "price": 10,
+      "note": "FLETCHER"
+    },
+    {
+      "id": 41,
+      "kind": "item",
+      "villager": "2e G",
+      "itemType": "bow",
+      "enchants": [
+        {
+          "id": "punch",
+          "level": 1
+        }
+      ],
+      "price": 14,
+      "note": "FLETCHER"
+    },
+    {
+      "id": 43,
+      "kind": "item",
+      "villager": "1er G",
+      "itemType": "axe",
+      "enchants": [
+        {
+          "id": "efficiency",
+          "level": 2
+        },
+        {
+          "id": "unbreaking",
+          "level": 2
+        }
+      ],
+      "price": 26,
+      "note": "WEAPONSMITH"
+    },
+    {
+      "id": 44,
+      "kind": "book",
+      "villager": "5e G",
+      "enchId": "respiration",
+      "level": 1,
+      "price": 13,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 45,
+      "kind": "book",
+      "villager": "6e G",
+      "enchId": "punch",
+      "level": 2,
+      "price": 8,
+      "forItemId": "",
+      "note": "LIBRAIRE"
+    },
+    {
+      "id": 46,
+      "kind": "item",
+      "villager": "1er D",
+      "itemType": "leggings",
+      "enchants": [
+        {
+          "id": "protection",
+          "level": 2
+        }
+      ],
+      "price": 33,
+      "note": "ARMURIER"
+    },
+    {
+      "id": 47,
+      "kind": "item",
+      "villager": "1er G",
+      "itemType": "chestplate",
+      "enchants": [
+        {
+          "id": "protection",
+          "level": 2
+        },
+        {
+          "id": "thorns",
+          "level": 1
+        }
+      ],
+      "price": 31,
+      "note": "ARMURIER"
+    }
+  ],
+  "books": [
+    {
+      "id": 2,
+      "enchId": "piercing",
+      "level": 3
+    },
+    {
+      "id": 3,
+      "enchId": "breach",
+      "level": 2
+    },
+    {
+      "id": 4,
+      "enchId": "power",
+      "level": 3
+    },
+    {
+      "id": 6,
+      "enchId": "respiration",
+      "level": 1
+    },
+    {
+      "id": 7,
+      "enchId": "unbreaking",
+      "level": 2
+    },
+    {
+      "id": 8,
+      "enchId": "unbreaking",
+      "level": 2
+    }
+  ],
+  "prefs": {
+    "protection_type": "protection",
+    "boots_water": "depth_strider",
+    "sword_dmg": "smite",
+    "mining": "fortune",
+    "bow_ammo": "infinity",
+    "trident_move": "loyalty",
+    "crossbow_shot": "multishot"
+  }
+}

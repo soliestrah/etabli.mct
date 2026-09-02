@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas — Établi</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/atlas.css">
+</head>
+<body class="theme-atlas">
+
+<div id="site-nav" data-current="atlas"></div>
+<script src="assets/nav.js" defer></script>
+
+<header>
+  <h1>Atlas</h1>
+  <p>Plan des tunnels du Nether — points de destination, hub, et distances à creuser.</p>
+</header>
+
+<main>
+  <section class="panel col-left">
+    <h2>Points</h2>
+    <form id="point-form">
+      <label for="p-name">Nom du point</label>
+      <input type="text" id="p-name" placeholder="Ex : Village des alliés" required>
+
+      <label for="p-type">Type de coordonnées</label>
+      <select id="p-type">
+        <option value="overworld">Overworld (monde normal)</option>
+        <option value="nether">Nether</option>
+      </select>
+
+      <div class="row3">
+        <div>
+          <label for="p-x">X</label>
+          <input type="number" id="p-x" required>
+        </div>
+        <div>
+          <label for="p-z">Z</label>
+          <input type="number" id="p-z" required>
+        </div>
+        <div>
+          <label for="p-y">Y (optionnel)</label>
+          <input type="number" id="p-y">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Ajouter le point</button>
+    </form>
+
+    <ul class="points-list" id="points-list"></ul>
+    <div class="empty-note" id="empty-note">Aucun point pour l'instant. Ajoute ton premier point : il deviendra automatiquement le hub.</div>
+  </section>
+
+  <section class="panel col-right">
+    <h2>Plan des tunnels</h2>
+    <div class="map-wrap">
+      <svg id="map" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg"></svg>
+      <div class="map-zoom-controls">
+        <button type="button" id="map-zoom-in" title="Zoomer">+</button>
+        <button type="button" id="map-zoom-out" title="Dézoomer">−</button>
+        <button type="button" id="map-zoom-reset" title="Réinitialiser la vue">⤾</button>
+      </div>
+    </div>
+    <div class="hint" style="margin-top:8px;">Molette pour zoomer, glisser pour se déplacer sur la carte.</div>
+
+    <div class="order-toggle" id="order-toggle" style="display:none;">
+      <span>Ordre de creusement :</span>
+      <div class="seg">
+        <button type="button" id="order-x-first" class="active">X d'abord</button>
+        <button type="button" id="order-z-first">Z d'abord</button>
+      </div>
+    </div>
+    <div class="order-toggle" id="y-toggle" style="display:none;">
+      <span>Ajustement de hauteur :</span>
+      <div class="seg">
+        <button type="button" id="y-timing-before">Avant les tunnels</button>
+        <button type="button" id="y-timing-after" class="active">Après les tunnels</button>
+      </div>
+    </div>
+
+    <div class="routes-list" id="routes-list"></div>
+
+    <div class="actions-row" id="actions-row" style="display:none;">
+      <button id="btn-copy" class="btn btn-ghost">Copier le plan en texte</button>
+    </div>
+    <textarea id="export-area" readonly></textarea>
+    <div class="msg-line" id="copy-msg"></div>
+  </section>
+
+  <section class="panel plain save-section col-full">
+    <h3 style="margin-top:0;">Sauvegarde</h3>
+    <div class="actions-row">
+      <button class="btn btn-ghost" id="btn-download">Télécharger (.json)</button>
+      <label class="file-label" for="file-import">Importer un fichier</label>
+      <input type="file" id="file-import" accept="application/json" style="display:none;">
+    </div>
+    <div class="msg-line" id="save-msg"></div>
+
+    <details class="gh-sync">
+      <summary>Sauvegarde en ligne (GitHub)</summary>
+      <div class="row2">
+        <div>
+          <label for="gh-owner">Utilisateur / organisation</label>
+          <input type="text" id="gh-owner" placeholder="ton-pseudo">
+        </div>
+        <div>
+          <label for="gh-repo">Nom du dépôt</label>
+          <input type="text" id="gh-repo" placeholder="mon-etabli">
+        </div>
+      </div>
+      <div class="row2">
+        <div>
+          <label for="gh-branch">Branche</label>
+          <input type="text" id="gh-branch" placeholder="main">
+        </div>
+        <div>
+          <label for="gh-token">Jeton d'accès (PAT)</label>
+          <input type="password" id="gh-token" placeholder="ghp_...">
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" id="btn-gh-save" style="margin-top:12px;">Enregistrer en ligne</button>
+      <div class="hint">Le jeton reste uniquement sur cet appareil (stocké dans le navigateur), jamais envoyé ailleurs qu'à l'API GitHub. Ces réglages sont partagés avec les autres outils du même site.</div>
+    </details>
+  </section>
+</main>
+
+<script>
+  let points = [];
+  let idCounter = 1;
+  let digOrder = 'x-first'; // 'x-first' or 'z-first'
+  let yTiming = 'after'; // 'before' or 'after' the horizontal legs
+
+  const form = document.getElementById('point-form');
+  const listEl = document.getElementById('points-list');
+  const emptyNote = document.getElementById('empty-note');
+  const orderToggle = document.getElementById('order-toggle');
+  const yToggle = document.getElementById('y-toggle');
+  const routesList = document.getElementById('routes-list');
+  const svg = document.getElementById('map');
+  const actionsRow = document.getElementById('actions-row');
+  const exportArea = document.getElementById('export-area');
+  const copyMsg = document.getElementById('copy-msg');
+
+  document.getElementById('order-x-first').addEventListener('click', () => setOrder('x-first'));
+  document.getElementById('order-z-first').addEventListener('click', () => setOrder('z-first'));
+  document.getElementById('y-timing-before').addEventListener('click', () => setYTiming('before'));
+  document.getElementById('y-timing-after').addEventListener('click', () => setYTiming('after'));
+
+  function setOrder(order){
+    digOrder = order;
+    document.getElementById('order-x-first').classList.toggle('active', order === 'x-first');
+    document.getElementById('order-z-first').classList.toggle('active', order === 'z-first');
+    renderResults();
+  }
+
+  function setYTiming(timing){
+    yTiming = timing;
+    document.getElementById('y-timing-before').classList.toggle('active', timing === 'before');
+    document.getElementById('y-timing-after').classList.toggle('active', timing === 'after');
+    renderResults();
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('p-name').value.trim();
+    const coordType = document.getElementById('p-type').value;
+    const x = parseInt(document.getElementById('p-x').value, 10);
+    const z = parseInt(document.getElementById('p-z').value, 10);
+    const yRaw = document.getElementById('p-y').value;
+    const y = yRaw === '' ? null : parseInt(yRaw, 10);
+
+    if (!name || isNaN(x) || isNaN(z)) return;
+
+    const point = {
+      id: idCounter++,
+      name, coordType, x, z, y,
+      isHub: points.length === 0,
+      built: false
+    };
+    points.push(point);
+    form.reset();
+    document.getElementById('p-name').focus();
+    render();
+  });
+
+  function setHub(id){
+    points.forEach(p => p.isHub = (p.id === id));
+    render();
+  }
+
+  function renamePoint(id){
+    const p = points.find(pt => pt.id === id);
+    if (!p) return;
+    const newName = window.prompt('Nouveau nom pour ce point :', p.name || '');
+    if (newName === null) return; // annulé
+    const trimmed = newName.trim();
+    if (!trimmed) return;
+    p.name = trimmed;
+    render();
+    showSaveMsg('Point renommé.');
+  }
+
+  function toggleBuilt(id){
+    const p = points.find(pt => pt.id === id);
+    if (p) p.built = !p.built;
+    render();
+  }
+
+  function removePoint(id){
+    const wasHub = points.find(p => p.id === id)?.isHub;
+    points = points.filter(p => p.id !== id);
+    if (wasHub && points.length > 0) points[0].isHub = true;
+    render();
+  }
+
+  function toNether(p){
+    if (p.coordType === 'overworld'){
+      return { x: Math.floor(p.x / 8), z: Math.floor(p.z / 8) };
+    }
+    return { x: p.x, z: p.z };
+  }
+
+  function compassLabel(dx, dz){
+    const ns = dz > 0 ? 'Sud' : dz < 0 ? 'Nord' : '';
+    const ew = dx > 0 ? 'Est' : dx < 0 ? 'Ouest' : '';
+    if (!ns && !ew) return 'Sur place';
+    if (ns && ew) return ns + '-' + ew;
+    return ns || ew;
+  }
+
+  function render(){
+    // list
+    listEl.innerHTML = '';
+    emptyNote.style.display = points.length === 0 ? 'block' : 'none';
+
+    points.forEach(p => {
+      const li = document.createElement('li');
+      li.className = 'point-item' + (p.isHub ? ' is-hub' : '');
+      const coordLabel = p.coordType === 'overworld' ? 'Overworld' : 'Nether';
+      li.innerHTML = `
+        <div class="point-main">
+          <div class="point-name">${escapeHtml(p.name)} ${p.isHub ? '<span class="hub-badge">HUB</span>' : ''} ${p.built ? '<span class="built-badge">CREUSÉ</span>' : ''}</div>
+          <div class="point-coords">${coordLabel} · X ${p.x}, Z ${p.z}${p.y !== null ? ', Y ' + p.y : ''}</div>
+        </div>
+        <div class="point-actions">
+          <button class="icon-btn" data-rename="${p.id}" title="Renommer">✎</button>
+          ${!p.isHub ? `<button class="icon-btn" data-built="${p.id}">${p.built ? 'Rouvrir' : 'Creusé'}</button>` : ''}
+          ${!p.isHub ? `<button class="icon-btn" data-hub="${p.id}">Hub</button>` : ''}
+          <button class="icon-btn" data-del="${p.id}">Suppr.</button>
+        </div>
+      `;
+      listEl.appendChild(li);
+    });
+
+    listEl.querySelectorAll('[data-rename]').forEach(btn => {
+      btn.addEventListener('click', () => renamePoint(parseInt(btn.dataset.rename, 10)));
+    });
+    listEl.querySelectorAll('[data-hub]').forEach(btn => {
+      btn.addEventListener('click', () => setHub(parseInt(btn.dataset.hub, 10)));
+    });
+    listEl.querySelectorAll('[data-built]').forEach(btn => {
+      btn.addEventListener('click', () => toggleBuilt(parseInt(btn.dataset.built, 10)));
+    });
+    listEl.querySelectorAll('[data-del]').forEach(btn => {
+      btn.addEventListener('click', () => removePoint(parseInt(btn.dataset.del, 10)));
+    });
+
+    renderResults();
+  }
+
+  function buildLegs(hubNether, n){
+    // Returns an ordered list of straight segments (elbow path) from hub to n,
+    // each with a direction, a length, and the absolute coordinate reached.
+    const dx = n.x - hubNether.x;
+    const dz = n.z - hubNether.z;
+    const legs = [];
+
+    function xLeg(fromX, fromZ){
+      if (dx === 0) return fromX;
+      legs.push({
+        axis: 'x',
+        dir: dx > 0 ? 'Est' : 'Ouest',
+        length: Math.abs(dx),
+        toX: hubNether.x + dx,
+        toZ: fromZ
+      });
+      return hubNether.x + dx;
+    }
+    function zLeg(fromX, fromZ){
+      if (dz === 0) return fromZ;
+      legs.push({
+        axis: 'z',
+        dir: dz > 0 ? 'Sud' : 'Nord',
+        length: Math.abs(dz),
+        toX: fromX,
+        toZ: hubNether.z + dz
+      });
+      return hubNether.z + dz;
+    }
+
+    if (digOrder === 'x-first'){
+      xLeg(hubNether.x, hubNether.z);
+      zLeg(hubNether.x + dx, hubNether.z);
+    } else {
+      zLeg(hubNether.x, hubNether.z);
+      xLeg(hubNether.x, hubNether.z + dz);
+    }
+    return legs;
+  }
+
+  function findLeadingOverlap(hubNether, axis, dir, length){
+    // Looks at already-built points: if one of them digs the same first leg
+    // (same axis + direction from the hub), that stretch is already open.
+    let covered = 0;
+    points.filter(p => p.built && !p.isHub).forEach(bp => {
+      const n = toNether(bp);
+      const legs = buildLegs(hubNether, n);
+      if (legs.length === 0) return;
+      const firstLeg = legs[0];
+      if (firstLeg.axis === axis && firstLeg.dir === dir){
+        covered = Math.max(covered, firstLeg.length);
+      }
+    });
+    return Math.min(covered, length);
+  }
+
+  function renderResults(){
+    const hub = points.find(p => p.isHub);
+    const others = points.filter(p => !p.isHub);
+
+    if (!hub || others.length === 0){
+      orderToggle.style.display = 'none';
+      yToggle.style.display = 'none';
+      actionsRow.style.display = 'none';
+      routesList.innerHTML = '';
+      renderMap(null, []);
+      return;
+    }
+
+    orderToggle.style.display = 'flex';
+    const hubNether = toNether(hub);
+    const rows = others.map(p => {
+      const n = toNether(p);
+      const dx = n.x - hubNether.x;
+      const dz = n.z - hubNether.z;
+      const dist = Math.round(Math.hypot(dx, dz));
+      const dir = compassLabel(dx, dz);
+      const legs = buildLegs(hubNether, n);
+
+      // Mark how much of the first leg is already open thanks to a built tunnel.
+      let overlap = 0;
+      if (!p.built && legs.length > 0){
+        overlap = findLeadingOverlap(hubNether, legs[0].axis, legs[0].dir, legs[0].length);
+        legs[0].covered = overlap;
+        legs[0].remaining = legs[0].length - overlap;
+      }
+
+      const dy = (hub.y !== null && p.y !== null) ? (p.y - hub.y) : null;
+      const verticalLeg = (dy !== null && dy !== 0)
+        ? { axis: 'y', dir: dy > 0 ? 'Monter' : 'Descendre', length: Math.abs(dy) }
+        : null;
+
+      const horizontalRemaining = legs.reduce((sum, leg, i) => sum + (i === 0 ? (leg.remaining !== undefined ? leg.remaining : leg.length) : leg.length), 0);
+      const remainingBlocks = p.built ? 0 : horizontalRemaining + (verticalLeg ? verticalLeg.length : 0);
+      const straightBlocks = Math.abs(dx) + Math.abs(dz);
+      return { point: p, netherX: n.x, netherZ: n.z, dx, dz, dist, straightBlocks, remainingBlocks, dir, legs, verticalLeg, dy };
+    }).sort((a, b) => {
+      if (a.point.built !== b.point.built) return a.point.built ? 1 : -1;
+      return a.remainingBlocks - b.remainingBlocks;
+    });
+
+    yToggle.style.display = rows.some(r => r.verticalLeg) ? 'flex' : 'none';
+    actionsRow.style.display = 'flex';
+    routesList.innerHTML = '';
+
+    const remainingRows = rows.filter(r => !r.point.built);
+    if (rows.length > 0 && remainingRows.length === 0){
+      routesList.innerHTML = '<div class="empty-note">Tout est creusé</div>';
+    }
+    remainingRows.forEach(r => {
+      const card = document.createElement('div');
+      card.className = 'route-card';
+
+      let stepsHtml;
+      {
+        const horizontalSteps = [];
+        if (r.legs.length === 0){
+          horizontalSteps.push({ html: `Tu es déjà aligné sur X/Z avec ce point.`, isFirst: true });
+        } else {
+          r.legs.forEach((leg, i) => {
+            if (i === 0 && leg.covered){
+              horizontalSteps.push({ html: `<span class="leg-done">Tronçon déjà ouvert vers l'<strong>${leg.dir}</strong> sur ${leg.covered} blocs (tunnel existant)</span>`, done: true });
+              if (leg.remaining > 0){
+                horizontalSteps.push({ verb: true, dir: leg.dir, length: leg.remaining, target: `X ${leg.toX}` });
+              }
+              return;
+            }
+            horizontalSteps.push({ verb: true, dir: leg.dir, length: leg.length, target: leg.axis === 'x' ? `X ${leg.toX}` : `Z ${leg.toZ}` });
+          });
+        }
+
+        const verticalStep = r.verticalLeg
+          ? { verb: true, dir: r.verticalLeg.dir, length: r.verticalLeg.length, target: `Y ${hub.y + (r.verticalLeg.dir === 'Monter' ? r.verticalLeg.length : -r.verticalLeg.length)}`, vertical: true }
+          : null;
+
+        const orderedSteps = (yTiming === 'before' && verticalStep)
+          ? [verticalStep, ...horizontalSteps]
+          : (verticalStep ? [...horizontalSteps, verticalStep] : horizontalSteps);
+
+        let stepNum = 0;
+        stepsHtml = orderedSteps.map(step => {
+          if (step.done) return `<li>${step.html}</li>`;
+          if (!step.verb) return `<li>${step.html}</li>`;
+          const verb = stepNum === 0
+            ? (step.vertical ? step.dir : 'Creuse')
+            : (step.vertical ? 'Puis ' + step.dir.toLowerCase() : 'Tourne puis creuse');
+          stepNum++;
+          const action = step.vertical
+            ? `${verb} de ${step.length} blocs (jusqu'à ${step.target})`
+            : `${verb} vers l'<strong>${step.dir}</strong> sur ${step.length} blocs (jusqu'à ${step.target})`;
+          return `<li>${action}</li>`;
+        }).join('');
+      }
+
+      card.innerHTML = `
+        <div class="route-header">
+          <span class="route-name">${escapeHtml(r.point.name)}</span>
+          <span class="route-dist">${r.remainingBlocks} blocs restants · ${r.remainingBlocks * 8} Overworld</span>
+        </div>
+        <ol class="route-steps">${stepsHtml}</ol>
+        <div class="route-meta">
+          Arrivée Nether : X ${r.netherX}, Z ${r.netherZ}${r.dy === null ? '' : ' · ΔY ' + (r.dy > 0 ? '+' + r.dy + ' (monter)' : r.dy < 0 ? r.dy + ' (descendre)' : '0')}
+        </div>
+      `;
+      routesList.appendChild(card);
+    });
+
+    renderMap(hub, rows);
+    buildExport(hub, rows);
+  }
+
+  // ===================== ZOOM / PAN DE LA CARTE =====================
+  const MAP_BASE_SIZE = 600;
+  let mapZoom = 1;
+  let mapPanX = 0, mapPanY = 0;
+
+  function applyMapTransform(){
+    const size = MAP_BASE_SIZE / mapZoom;
+    const x = 300 - size / 2 + mapPanX;
+    const y = 300 - size / 2 + mapPanY;
+    svg.setAttribute('viewBox', `${x} ${y} ${size} ${size}`);
+  }
+
+  function clampPan(){
+    const size = MAP_BASE_SIZE / mapZoom;
+    const maxOffset = Math.max(0, (MAP_BASE_SIZE - size) / 2);
+    mapPanX = Math.max(-maxOffset, Math.min(maxOffset, mapPanX));
+    mapPanY = Math.max(-maxOffset, Math.min(maxOffset, mapPanY));
+  }
+
+  svg.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const factor = e.deltaY < 0 ? 1.2 : 1 / 1.2;
+    mapZoom = Math.min(10, Math.max(1, mapZoom * factor));
+    clampPan();
+    applyMapTransform();
+  }, { passive: false });
+
+  document.getElementById('map-zoom-in').addEventListener('click', () => {
+    mapZoom = Math.min(10, mapZoom * 1.4);
+    clampPan();
+    applyMapTransform();
+  });
+  document.getElementById('map-zoom-out').addEventListener('click', () => {
+    mapZoom = Math.max(1, mapZoom / 1.4);
+    clampPan();
+    applyMapTransform();
+  });
+  document.getElementById('map-zoom-reset').addEventListener('click', () => {
+    mapZoom = 1; mapPanX = 0; mapPanY = 0;
+    applyMapTransform();
+  });
+
+  // glisser à la souris
+  let mapDragging = false, dragStartX = 0, dragStartY = 0, panStartX = 0, panStartY = 0;
+  svg.addEventListener('mousedown', (e) => {
+    mapDragging = true;
+    dragStartX = e.clientX; dragStartY = e.clientY;
+    panStartX = mapPanX; panStartY = mapPanY;
+  });
+  window.addEventListener('mousemove', (e) => {
+    if (!mapDragging) return;
+    const rect = svg.getBoundingClientRect();
+    const unitsPerPx = (MAP_BASE_SIZE / mapZoom) / rect.width;
+    mapPanX = panStartX - (e.clientX - dragStartX) * unitsPerPx;
+    mapPanY = panStartY - (e.clientY - dragStartY) * unitsPerPx;
+    clampPan();
+    applyMapTransform();
+  });
+  window.addEventListener('mouseup', () => { mapDragging = false; });
+
+  // tactile : glisser à un doigt, pincer à deux doigts pour zoomer
+  let touchMode = null; // 'pan' | 'pinch'
+  let pinchStartDist = 0, pinchStartZoom = 1;
+  svg.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1){
+      touchMode = 'pan';
+      dragStartX = e.touches[0].clientX; dragStartY = e.touches[0].clientY;
+      panStartX = mapPanX; panStartY = mapPanY;
+    } else if (e.touches.length === 2){
+      touchMode = 'pinch';
+      const [t1, t2] = e.touches;
+      pinchStartDist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
+      pinchStartZoom = mapZoom;
+    }
+  }, { passive: true });
+  svg.addEventListener('touchmove', (e) => {
+    if (touchMode === 'pan' && e.touches.length === 1){
+      e.preventDefault();
+      const rect = svg.getBoundingClientRect();
+      const unitsPerPx = (MAP_BASE_SIZE / mapZoom) / rect.width;
+      mapPanX = panStartX - (e.touches[0].clientX - dragStartX) * unitsPerPx;
+      mapPanY = panStartY - (e.touches[0].clientY - dragStartY) * unitsPerPx;
+      clampPan();
+      applyMapTransform();
+    } else if (touchMode === 'pinch' && e.touches.length === 2){
+      e.preventDefault();
+      const [t1, t2] = e.touches;
+      const dist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
+      mapZoom = Math.min(10, Math.max(1, pinchStartZoom * (dist / pinchStartDist)));
+      clampPan();
+      applyMapTransform();
+    }
+  }, { passive: false });
+  svg.addEventListener('touchend', () => { touchMode = null; });
+
+  function renderMap(hub, rows){
+    svg.innerHTML = '';
+    const ns = 'http://www.w3.org/2000/svg';
+    const cx = 300, cy = 300;
+
+    // background hatch
+    const defs = document.createElementNS(ns, 'defs');
+    defs.innerHTML = `
+      <pattern id="hatch" width="26" height="26" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+        <line x1="0" y1="0" x2="0" y2="26" stroke="#3b342c" stroke-width="1" opacity="0.35"/>
+      </pattern>
+    `;
+    svg.appendChild(defs);
+
+    const bg = document.createElementNS(ns, 'rect');
+    bg.setAttribute('x', 0); bg.setAttribute('y', 0);
+    bg.setAttribute('width', 600); bg.setAttribute('height', 600);
+    bg.setAttribute('fill', 'url(#hatch)');
+    svg.appendChild(bg);
+
+    // compass labels
+    const compass = [
+      ['N', 300, 24], ['S', 300, 584], ['E', 578, 304], ['O', 22, 304]
+    ];
+    compass.forEach(([label, x, y]) => {
+      const t = document.createElementNS(ns, 'text');
+      t.setAttribute('x', x); t.setAttribute('y', y);
+      t.setAttribute('fill', '#a79d90');
+      t.setAttribute('font-size', '13');
+      t.setAttribute('font-family', 'ui-monospace, monospace');
+      t.setAttribute('text-anchor', 'middle');
+      t.textContent = label;
+      svg.appendChild(t);
+    });
+
+    if (!hub){
+      const t = document.createElementNS(ns, 'text');
+      t.setAttribute('x', 300); t.setAttribute('y', 300);
+      t.setAttribute('fill', '#a79d90');
+      t.setAttribute('text-anchor', 'middle');
+      t.setAttribute('font-size', '14');
+      t.textContent = 'Ajoute un hub et au moins un autre point';
+      svg.appendChild(t);
+      return;
+    }
+
+    const maxAbs = rows.reduce((m, r) => Math.max(m, Math.abs(r.dx), Math.abs(r.dz)), 1);
+    const scale = 220 / maxAbs;
+
+    // lines (elbow path matching the actual dig order) — tous les points restent visibles sur la carte
+    rows.forEach(r => {
+      const points_svg = [[cx, cy]];
+      let curX = 0, curZ = 0;
+      r.legs.forEach(leg => {
+        if (leg.axis === 'x') curX = (leg.toX - (hub ? toNether(hub).x : 0));
+        else curZ = (leg.toZ - (hub ? toNether(hub).z : 0));
+        points_svg.push([cx + curX * scale, cy + curZ * scale]);
+      });
+      const polyline = document.createElementNS(ns, 'polyline');
+      polyline.setAttribute('points', points_svg.map(pt => pt.join(',')).join(' '));
+      polyline.setAttribute('fill', 'none');
+      if (r.point.built){
+        polyline.setAttribute('stroke', '#8fbf65');
+        polyline.setAttribute('stroke-width', '2.5');
+        polyline.setAttribute('opacity', '0.65');
+      } else {
+        polyline.setAttribute('stroke', '#73b7d6');
+        polyline.setAttribute('stroke-width', '2.5');
+        polyline.setAttribute('stroke-dasharray', '6 5');
+        polyline.setAttribute('opacity', '0.85');
+      }
+      polyline.setAttribute('stroke-linejoin', 'round');
+      svg.appendChild(polyline);
+    });
+
+    // hub
+    const hubGlow = document.createElementNS(ns, 'circle');
+    hubGlow.setAttribute('cx', cx); hubGlow.setAttribute('cy', cy);
+    hubGlow.setAttribute('r', 26);
+    hubGlow.setAttribute('fill', '#b68acb');
+    hubGlow.setAttribute('opacity', '0.22');
+    svg.appendChild(hubGlow);
+
+    const hubDot = document.createElementNS(ns, 'ellipse');
+    hubDot.setAttribute('cx', cx); hubDot.setAttribute('cy', cy);
+    hubDot.setAttribute('rx', 8); hubDot.setAttribute('ry', 11);
+    hubDot.setAttribute('fill', '#b68acb');
+    hubDot.setAttribute('stroke', '#171512');
+    hubDot.setAttribute('stroke-width', '2');
+    svg.appendChild(hubDot);
+
+    const hubLabel = document.createElementNS(ns, 'text');
+    hubLabel.setAttribute('x', cx); hubLabel.setAttribute('y', cy + 34);
+    hubLabel.setAttribute('fill', '#f4efe7');
+    hubLabel.setAttribute('text-anchor', 'middle');
+    hubLabel.setAttribute('font-size', '12');
+    hubLabel.setAttribute('font-weight', '700');
+    hubLabel.textContent = hub.name + ' (hub)';
+    svg.appendChild(hubLabel);
+
+    // évite que les noms de points se chevauchent quand ils sont proches
+    const labelBoxes = [];
+    function placeLabelY(px, baseY, text, fontSize, dir){
+      const halfW = Math.max(14, text.length * fontSize * 0.3);
+      const halfH = fontSize * 0.65;
+      let y = baseY;
+      for (let attempts = 0; attempts < 12; attempts++){
+        const box = {x1: px - halfW, x2: px + halfW, y1: y - halfH, y2: y + halfH};
+        const collide = labelBoxes.some(b => box.x1 < b.x2 && box.x2 > b.x1 && box.y1 < b.y2 && box.y2 > b.y1);
+        if (!collide){ labelBoxes.push(box); return y; }
+        y += dir * (fontSize + 4);
+      }
+      labelBoxes.push({x1: px - halfW, x2: px + halfW, y1: y - halfH, y2: y + halfH});
+      return y;
+    }
+
+    // points
+    rows.forEach(r => {
+      const px = cx + r.dx * scale;
+      const py = cy + r.dz * scale;
+      const dir = py > cy ? 1 : -1;
+
+      const glow = document.createElementNS(ns, 'circle');
+      glow.setAttribute('cx', px); glow.setAttribute('cy', py);
+      glow.setAttribute('r', 16);
+      glow.setAttribute('fill', '#f4efe7');
+      glow.setAttribute('opacity', '0.2');
+      svg.appendChild(glow);
+
+      const dot = document.createElementNS(ns, 'circle');
+      dot.setAttribute('cx', px); dot.setAttribute('cy', py);
+      dot.setAttribute('r', 6);
+      dot.setAttribute('fill', r.point.built ? '#8fbf65' : '#f4efe7');
+      dot.setAttribute('stroke', '#171512');
+      dot.setAttribute('stroke-width', '1.5');
+      svg.appendChild(dot);
+
+      const nameLabelY = placeLabelY(px, py + dir * 20, r.point.name, 11.5, dir);
+
+      const label = document.createElementNS(ns, 'text');
+      label.setAttribute('x', px);
+      label.setAttribute('y', nameLabelY);
+      label.setAttribute('fill', r.point.built ? '#a79d90' : '#f4efe7');
+      label.setAttribute('text-anchor', 'middle');
+      label.setAttribute('font-size', '11.5');
+      label.setAttribute('font-weight', '600');
+      label.textContent = r.point.name;
+      svg.appendChild(label);
+
+      const distText = r.point.built ? 'creusé' : (r.remainingBlocks + ' blocs' + (r.dy ? (r.dy > 0 ? ' ↑' + r.dy : ' ↓' + Math.abs(r.dy)) : ''));
+      const distLabelY = placeLabelY(px, nameLabelY + dir * 14, distText, 10, dir);
+
+      const distLabel = document.createElementNS(ns, 'text');
+      distLabel.setAttribute('x', px);
+      distLabel.setAttribute('y', distLabelY);
+      distLabel.setAttribute('fill', '#a79d90');
+      distLabel.setAttribute('text-anchor', 'middle');
+      distLabel.setAttribute('font-size', '10');
+      distLabel.setAttribute('font-family', 'ui-monospace, monospace');
+      distLabel.textContent = distText;
+      svg.appendChild(distLabel);
+    });
+  }
+
+  function buildExport(hub, rows){
+    const orderLabel = digOrder === 'x-first' ? 'X puis Z' : 'Z puis X';
+    const yLabel = yTiming === 'before' ? 'hauteur ajustée avant les tunnels' : 'hauteur ajustée après les tunnels';
+    let text = `PLAN DES TUNNELS — HUB : ${hub.name} (Nether X ${toNether(hub).x}, Z ${toNether(hub).z})\n`;
+    text += `Ordre de creusement : ${orderLabel} · ${yLabel}\n`;
+    text += '—'.repeat(50) + '\n';
+    rows.forEach(r => {
+      if (r.point.built){
+        text += `\n${r.point.name} — DÉJÀ CREUSÉ (${r.straightBlocks} blocs)\n`;
+        text += `  Arrivée Nether : X ${r.netherX}, Z ${r.netherZ}\n`;
+        return;
+      }
+      text += `\n${r.point.name} (${r.remainingBlocks} blocs restants · ${r.remainingBlocks * 8} Overworld)\n`;
+
+      const horizontalLines = [];
+      if (r.legs.length === 0){
+        horizontalLines.push({ text: `Déjà aligné sur X/Z.`, action: false });
+      } else {
+        r.legs.forEach((leg, i) => {
+          if (i === 0 && leg.covered){
+            horizontalLines.push({ text: `Déjà ouvert vers ${leg.dir} sur ${leg.covered} blocs (tunnel existant)`, action: false });
+            if (leg.remaining > 0){
+              horizontalLines.push({ text: `vers ${leg.dir} sur ${leg.remaining} blocs (jusqu'à X ${leg.toX})`, action: true });
+            }
+            return;
+          }
+          horizontalLines.push({ text: `vers ${leg.dir} sur ${leg.length} blocs (jusqu'à ${leg.axis === 'x' ? 'X ' + leg.toX : 'Z ' + leg.toZ})`, action: true });
+        });
+      }
+
+      const verticalLine = r.verticalLeg
+        ? { text: `${r.verticalLeg.dir} de ${r.verticalLeg.length} blocs (jusqu'à Y ${hub.y + (r.verticalLeg.dir === 'Monter' ? r.verticalLeg.length : -r.verticalLeg.length)})`, action: true, vertical: true }
+        : null;
+
+      const orderedLines = (yTiming === 'before' && verticalLine)
+        ? [verticalLine, ...horizontalLines]
+        : (verticalLine ? [...horizontalLines, verticalLine] : horizontalLines);
+
+      let step = 1;
+      orderedLines.forEach(line => {
+        if (!line.action){
+          text += `  - ${line.text}\n`;
+        } else {
+          const verb = line.vertical ? '' : (step === 1 ? 'Creuse ' : 'Tourne puis creuse ');
+          text += `  ${step}. ${line.vertical ? line.text : verb + line.text}\n`;
+          step++;
+        }
+      });
+
+      text += `  Arrivée Nether : X ${r.netherX}, Z ${r.netherZ}\n`;
+    });
+    exportArea.value = text;
+  }
+
+  document.getElementById('btn-copy').addEventListener('click', () => {
+    exportArea.classList.add('visible');
+    exportArea.select();
+    try {
+      document.execCommand('copy');
+      copyMsg.textContent = 'Copié dans le presse-papiers.';
+    } catch (e) {
+      copyMsg.textContent = 'Sélectionne le texte ci-dessus et copie-le manuellement.';
+    }
+    setTimeout(() => { copyMsg.textContent = ''; }, 3000);
+  });
+
+  function exportPointsJSON(){
+    return JSON.stringify(points, null, 2);
+  }
+
+  function loadFromJSON(text){
+    const data = JSON.parse(text);
+    let loadedPoints;
+    if (Array.isArray(data)) {
+      // format propre à cet outil
+      loadedPoints = data;
+    } else if (data && data.tunnels && Array.isArray(data.tunnels.points)) {
+      // compatibilité avec un ancien fichier partagé "monde-minecraft.json"
+      loadedPoints = data.tunnels.points;
+    } else {
+      throw new Error('format invalide');
+    }
+    points = loadedPoints;
+    idCounter = points.reduce((m, p) => Math.max(m, p.id || 0), 0) + 1;
+    if (points.length > 0 && !points.some(p => p.isHub)) points[0].isHub = true;
+    render();
+    showSaveMsg('Configuration chargée.');
+  }
+
+  function showSaveMsg(msg){
+    const el = document.getElementById('save-msg');
+    el.textContent = msg;
+    setTimeout(() => { el.textContent = ''; }, 4000);
+  }
+
+  // ===================== SAUVEGARDE EN LIGNE (GITHUB) =====================
+  const GH_FILE_PATH = 'atlas-config.json';
+  const ghFields = ['gh-owner', 'gh-repo', 'gh-branch', 'gh-token'];
+  const ghKeys = {'gh-owner': 'gh_owner', 'gh-repo': 'gh_repo', 'gh-branch': 'gh_branch', 'gh-token': 'gh_token'};
+
+  function loadGhSettings(){
+    ghFields.forEach(id => {
+      const saved = localStorage.getItem(ghKeys[id]);
+      if (saved) document.getElementById(id).value = saved;
+    });
+    if (!document.getElementById('gh-branch').value) document.getElementById('gh-branch').value = 'main';
+  }
+  function saveGhSettings(){
+    ghFields.forEach(id => {
+      localStorage.setItem(ghKeys[id], document.getElementById(id).value.trim());
+    });
+  }
+  ghFields.forEach(id => {
+    document.getElementById(id).addEventListener('change', saveGhSettings);
+  });
+  loadGhSettings();
+
+  async function saveToGitHub(){
+    const owner = document.getElementById('gh-owner').value.trim();
+    const repo = document.getElementById('gh-repo').value.trim();
+    const branch = document.getElementById('gh-branch').value.trim() || 'main';
+    const token = document.getElementById('gh-token').value.trim();
+    if (!owner || !repo || !token){
+      showSaveMsg('Renseigne utilisateur, dépôt et jeton GitHub.');
+      return;
+    }
+    saveGhSettings();
+    showSaveMsg('Envoi vers GitHub...');
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${GH_FILE_PATH}`;
+    try {
+      let sha = null;
+      const getRes = await fetch(`${apiUrl}?ref=${encodeURIComponent(branch)}`, {
+        headers: {'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json'}
+      });
+      if (getRes.ok){
+        const info = await getRes.json();
+        sha = info.sha;
+      } else if (getRes.status !== 404){
+        const err = await getRes.json().catch(() => ({}));
+        throw new Error(err.message || ('Erreur ' + getRes.status));
+      }
+
+      const content = exportPointsJSON();
+      const body = {
+        message: 'Mise à jour atlas-config.json depuis l\'outil',
+        content: btoa(unescape(encodeURIComponent(content))),
+        branch
+      };
+      if (sha) body.sha = sha;
+
+      const putRes = await fetch(apiUrl, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      });
+      if (!putRes.ok){
+        const err = await putRes.json().catch(() => ({}));
+        throw new Error(err.message || ('Erreur ' + putRes.status));
+      }
+      showSaveMsg('Enregistré sur GitHub ✓');
+    } catch (err){
+      showSaveMsg('Échec : ' + err.message);
+    }
+  }
+  document.getElementById('btn-gh-save').addEventListener('click', saveToGitHub);
+
+  document.getElementById('btn-download').addEventListener('click', () => {
+    if (points.length === 0){ showSaveMsg('Aucun point à sauvegarder.'); return; }
+    const blob = new Blob([exportPointsJSON()], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'atlas-config.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showSaveMsg('Fichier téléchargé (atlas-config.json).');
+  });
+
+  document.getElementById('file-import').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try { loadFromJSON(ev.target.result); }
+      catch (err) { showSaveMsg('Fichier invalide.'); }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  });
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  render();
+
+  // Chargement automatique depuis le dépôt (fonctionne quand le site est hébergé, ex. GitHub Pages).
+  fetch('atlas-config.json', {cache: 'no-store'})
+    .then(r => r.ok ? r.text() : Promise.reject())
+    .then(text => loadFromJSON(text))
+    .catch(() => {});
+</script>
+<footer class="site-footer">établi personnel · outils Minecraft · Seed : 443175491261601422</footer>
+</body>
+</html>

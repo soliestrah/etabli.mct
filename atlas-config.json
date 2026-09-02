@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "name": "THE HUB",
+    "coordType": "nether",
+    "x": 16,
+    "z": -20,
+    "y": 81,
+    "isHub": true
+  },
+  {
+    "id": 2,
+    "name": "VILLAGE",
+    "coordType": "nether",
+    "x": 46,
+    "z": -8,
+    "y": 73,
+    "isHub": false,
+    "built": true
+  },
+  {
+    "id": 3,
+    "name": "NETHER FORTERESS",
+    "coordType": "nether",
+    "x": -242,
+    "z": 96,
+    "y": 67,
+    "isHub": false,
+    "built": true
+  },
+  {
+    "id": 4,
+    "name": "ZOMBIE XP",
+    "coordType": "overworld",
+    "x": -68,
+    "z": -79,
+    "y": 90,
+    "isHub": false,
+    "built": true
+  },
+  {
+    "id": 5,
+    "name": "END PORTAL",
+    "coordType": "overworld",
+    "x": 1399,
+    "z": 1561,
+    "y": null,
+    "isHub": false,
+    "built": true
+  },
+  {
+    "id": 13,
+    "name": "badlands",
+    "coordType": "overworld",
+    "x": -1920,
+    "z": -464,
+    "y": null,
+    "isHub": false,
+    "built": true
+  },
+  {
+    "id": 14,
+    "name": "mushroom",
+    "coordType": "overworld",
+    "x": 2480,
+    "z": 70,
+    "y": null,
+    "isHub": false,
+    "built": false
+  },
+  {
+    "id": 19,
+    "name": "mangrove",
+    "coordType": "overworld",
+    "x": -1467,
+    "z": 70,
+    "y": null,
+    "isHub": false,
+    "built": false
+  },
+  {
+    "id": 20,
+    "name": "dappled forest",
+    "coordType": "overworld",
+    "x": 2771,
+    "z": 87,
+    "y": null,
+    "isHub": false,
+    "built": false
+  },
+  {
+    "id": 21,
+    "name": "pine taiga",
+    "coordType": "overworld",
+    "x": 2359,
+    "z": 66,
+    "y": null,
+    "isHub": false,
+    "built": false
+  }
+]
