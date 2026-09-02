@@ -1,0 +1,193 @@
+/* =========================================================================
+   ATLAS — styles propres à cette page (carte du Nether, points, itinéraires)
+   Le reste (boutons, panneaux, formulaires, sauvegarde...) vient de site.css
+   ========================================================================= */
+
+header .ratio{
+  display:inline-block;
+  margin-top:10px;
+  font-family:var(--font-mono);
+  font-size:0.8rem;
+  background:var(--panel-hover);
+  border:1px solid var(--border);
+  padding:4px 10px;
+  border-radius:20px;
+  color:var(--text);
+}
+
+main{
+  max-width:1180px;
+  margin:0 auto;
+  padding:28px 20px 60px;
+  display:grid;
+  grid-template-columns:340px 1fr;
+  gap:22px;
+  align-items:start;
+}
+main .col-left{ grid-column:1; }
+main .col-right{ grid-column:2; }
+main .col-full{ grid-column:1 / -1; }
+@media (max-width: 860px){
+  main{ grid-template-columns:1fr; }
+  main .col-left, main .col-right, main .col-full{ grid-column:1; }
+}
+
+.row3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+
+/* --- Liste des points --- */
+.points-list{
+  list-style:none;
+  padding:0;
+  margin:18px 0 0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.point-item{
+  background:var(--panel-hover);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:10px 12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+}
+.point-item.is-hub{
+  border-color:var(--purple);
+  box-shadow:0 0 0 1px var(--purple) inset;
+}
+.point-main{ min-width:0; }
+.point-name{ font-weight:600; font-size:0.9rem; display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+.hub-badge{
+  font-size:0.62rem;
+  background:var(--purple);
+  color:#1e1530;
+  padding:1px 6px;
+  border-radius:10px;
+  font-weight:700;
+  letter-spacing:0.4px;
+}
+.built-badge{
+  font-size:0.62rem;
+  background:var(--green);
+  color:#0f1c0a;
+  padding:1px 6px;
+  border-radius:10px;
+  font-weight:700;
+  letter-spacing:0.4px;
+}
+.point-coords{ font-family:var(--font-mono); font-size:0.75rem; color:var(--muted); margin-top:2px; }
+.point-actions{ display:flex; gap:6px; flex-shrink:0; flex-wrap:wrap; }
+
+/* --- Carte SVG --- */
+#map{
+  width:100%;
+  height:auto;
+  background:var(--panel-hover);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  display:block;
+  cursor:grab;
+  touch-action:none;
+}
+#map:active{ cursor:grabbing; }
+.map-wrap{ position:relative; }
+.map-zoom-controls{
+  position:absolute;
+  top:10px;
+  right:10px;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.map-zoom-controls button{
+  width:30px;
+  height:30px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  color:var(--text);
+  font-size:1rem;
+  font-weight:700;
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+  line-height:1;
+  padding:0;
+}
+.map-zoom-controls button:hover{ border-color:var(--accent); color:var(--accent); }
+
+/* --- Ordre de creusement / hauteur --- */
+.order-toggle{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:16px;
+  font-size:0.8rem;
+  color:var(--muted);
+  flex-wrap:wrap;
+}
+.order-toggle .seg{
+  display:flex;
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  overflow:hidden;
+}
+.order-toggle .seg button{
+  background:var(--panel-hover);
+  color:var(--muted);
+  border:none;
+  padding:6px 12px;
+  font-size:0.78rem;
+  border-radius:0;
+}
+.order-toggle .seg button.active{
+  background:var(--accent);
+  color:var(--accent-ink);
+}
+
+/* --- Itinéraires calculés --- */
+.routes-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:14px;
+}
+.route-card{
+  background:var(--panel-hover);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:14px 16px;
+}
+.route-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.route-name{ font-weight:700; font-size:0.95rem; }
+.route-dist{ font-family:var(--font-mono); font-size:0.78rem; color:var(--muted); }
+.route-steps{
+  margin:10px 0 0;
+  padding-left:20px;
+  font-size:0.85rem;
+  line-height:1.6;
+}
+.route-steps li{ margin-bottom:2px; }
+.route-steps strong{ color:var(--accent); }
+.route-meta{
+  margin-top:10px;
+  padding-top:8px;
+  border-top:1px dashed var(--border);
+  font-family:var(--font-mono);
+  font-size:0.72rem;
+  color:var(--muted);
+}
+
+textarea#export-area{
+  font-family:var(--font-mono);
+  font-size:0.75rem;
+  height:100px;
+  display:none;
+}
+textarea#export-area.visible{ display:block; }

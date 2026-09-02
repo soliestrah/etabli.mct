@@ -1,0 +1,118 @@
+/* =========================================================================
+   CARNET — styles propres à cette page (notes façon parchemin, filtres)
+   Le reste (boutons, panneaux, formulaires, sauvegarde...) vient de site.css
+   ========================================================================= */
+
+main{
+  max-width:1180px;
+  margin:0 auto;
+  padding:28px 20px 60px;
+  display:grid;
+  grid-template-columns:340px 1fr;
+  gap:22px;
+  align-items:start;
+}
+main .col-left{ grid-column:1; }
+main .col-right{ grid-column:2; }
+main .col-full{ grid-column:1 / -1; }
+@media (max-width: 860px){
+  main{ grid-template-columns:1fr; }
+  main .col-left, main .col-right, main .col-full{ grid-column:1; }
+}
+
+textarea#n-text{
+  min-height:80px;
+  font-family:var(--font-display);
+}
+
+/* --- Filtres --- */
+.filters{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  margin-bottom:16px;
+}
+.filters button{
+  font-size:0.72rem;
+  padding:6px 10px;
+  background:transparent;
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  color:var(--text);
+  cursor:pointer;
+  font-weight:600;
+}
+.filters button:hover{ border-color:var(--accent); color:var(--accent); }
+.filters button.active{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:var(--accent-ink);
+}
+
+/* --- Notes façon parchemin --- */
+.notes-list{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.note-card{
+  background:#ece2cf;
+  color:#453620;
+  border-radius:var(--radius-sm);
+  padding:16px 18px;
+  position:relative;
+  box-shadow:var(--shadow-sm);
+  border:1px solid #cfae6c;
+}
+.note-card.done{ opacity:0.6; }
+.note-top{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+}
+.note-check{
+  flex-shrink:0;
+  width:20px;
+  height:20px;
+  margin-top:2px;
+  accent-color:var(--green);
+  cursor:pointer;
+}
+.note-body{ flex:1; min-width:0; }
+.note-text{
+  font-family:var(--font-display);
+  font-size:1rem;
+  line-height:1.55;
+  white-space:pre-wrap;
+  word-break:break-word;
+}
+.note-card.done .note-text{ text-decoration:line-through; text-decoration-color:#6f5f42; }
+.note-meta{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
+.note-tag{
+  font-family:var(--font-mono);
+  font-size:0.68rem;
+  background:rgba(60,44,20,0.12);
+  color:#6f5f42;
+  padding:2px 8px;
+  border-radius:20px;
+  font-weight:700;
+  letter-spacing:0.3px;
+}
+.note-date{
+  font-family:var(--font-mono);
+  font-size:0.66rem;
+  color:#6f5f42;
+}
+.note-actions{ display:flex; gap:6px; flex-shrink:0; }
+.note-actions .icon-btn{
+  background:transparent;
+  border:1px solid #cfae6c;
+  color:#6f5f42;
+}
+.note-actions .icon-btn:hover{ color:var(--red); border-color:var(--red); }
