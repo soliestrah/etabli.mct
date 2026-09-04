@@ -1,6 +1,34 @@
 {
   "entries": [
     {
+      "id": 14,
+      "text": "pouvoir ajouter les quantités dans l’inventaire à la création",
+      "tag": "SITE",
+      "done": false,
+      "createdAt": "2026-09-04T07:36:42.101Z"
+    },
+    {
+      "id": 13,
+      "text": "trier les notes par categories",
+      "tag": "SITE",
+      "done": false,
+      "createdAt": "2026-09-04T07:36:26.225Z"
+    },
+    {
+      "id": 12,
+      "text": "faire une mineshaft au niveau de l’ironie vein",
+      "tag": "BUILD",
+      "done": false,
+      "createdAt": "2026-09-04T07:36:15.754Z"
+    },
+    {
+      "id": 11,
+      "text": "visiter le deepdark",
+      "tag": "AVENTURE",
+      "done": false,
+      "createdAt": "2026-09-04T07:36:02.235Z"
+    },
+    {
       "id": 10,
       "text": "avoir l'information des livres en réserve dans le build",
       "tag": "SITE-enchant",
