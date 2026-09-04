@@ -73,6 +73,53 @@
     align-items:center;
     gap:6px;
   }
+  .card-stats{
+    margin-top:16px;
+    padding-top:14px;
+    border-top:1px solid var(--border);
+  }
+  .card-stat-num{
+    font-family:var(--font-mono);
+    font-size:1.15rem;
+    font-weight:700;
+    color:var(--text);
+  }
+  .card-stat-label{
+    font-family:var(--font-mono);
+    font-size:0.68rem;
+    color:var(--muted);
+  }
+  .card-progress-track{
+    margin-top:8px;
+    height:5px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .card-progress-fill{
+    height:100%;
+    background:var(--card-accent, var(--accent));
+    transition:width 0.4s ease;
+  }
+  .card-last{
+    margin-top:10px;
+    font-size:0.76rem;
+    color:var(--muted);
+    font-style:italic;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  .card-last strong{ color:var(--text); font-style:normal; font-weight:600; }
+  .card-empty{
+    margin-top:16px;
+    padding-top:14px;
+    border-top:1px solid var(--border);
+    font-size:0.76rem;
+    color:var(--muted);
+    font-family:var(--font-mono);
+  }
 </style>
 </head>
 <body class="theme-etabli">
@@ -90,30 +137,35 @@
     <a class="tool-card card" href="atlas.html" style="--card-accent:var(--blue);">
       <div class="card-title">🗺️ Atlas</div>
       <p class="card-desc">Ajoute tes points de destination, choisis ton hub, et récupère la direction précise et la distance à creuser — étape par étape, sans zigzag.</p>
+      <div id="stats-atlas"></div>
       <div class="card-cta">Ouvrir l'outil →</div>
     </a>
 
     <a class="tool-card card" href="grimoire.html" style="--card-accent:var(--purple);">
       <div class="card-title">📖 Grimoire</div>
       <p class="card-desc">Note ce que tu as déjà enchanté, suis les offres des villageois, et découvre ce qu'il te reste pour atteindre ton build idéal.</p>
+      <div id="stats-grimoire"></div>
       <div class="card-cta">Ouvrir l'outil →</div>
     </a>
 
     <a class="tool-card card" href="carnet.html" style="--card-accent:var(--green);">
       <div class="card-title">📓 Carnet</div>
       <p class="card-desc">Note tout ce que tu veux faire dans ton monde — projets, idées, rappels — et coche au fur et à mesure.</p>
+      <div id="stats-carnet"></div>
       <div class="card-cta">Ouvrir l'outil →</div>
     </a>
 
     <a class="tool-card card" href="inventaire.html" style="--card-accent:var(--red);">
       <div class="card-title">📦 Inventaire</div>
       <p class="card-desc">L'état des lieux de ton stock, ressource par ressource et par emplacement — hors du jeu.</p>
+      <div id="stats-inventaire"></div>
       <div class="card-cta">Ouvrir l'outil →</div>
     </a>
 
     <a class="tool-card card" href="projets.html" style="--card-accent:var(--gold);">
       <div class="card-title">🧱 Projets</div>
       <p class="card-desc">Ce que tu veux construire, et ce qu'il te manque pour ça — calculé en direct depuis ton inventaire.</p>
+      <div id="stats-projets"></div>
       <div class="card-cta">Ouvrir l'outil →</div>
     </a>
 
@@ -123,5 +175,117 @@
 <footer class="site-footer">l'établi · seed : 443175491261601422</footer>
 
 <script src="assets/nav.js" defer></script>
+<script>
+(function(){
+
+  function renderStats(elId, num, label, pct, lastLabel){
+    const el = document.getElementById(elId);
+    if (!el) return;
+    let html = `<div class="card-stats">
+      <span class="card-stat-num">${num}</span> <span class="card-stat-label">${label}</span>`;
+    if (pct !== null){
+      html += `<div class="card-progress-track"><div class="card-progress-fill" style="width:${pct}%;"></div></div>`;
+    }
+    if (lastLabel){
+      html += `<div class="card-last">dernier : <strong>${lastLabel}</strong></div>`;
+    }
+    html += `</div>`;
+    el.innerHTML = html;
+  }
+
+  function renderEmpty(elId, text){
+    const el = document.getElementById(elId);
+    if (!el) return;
+    el.innerHTML = `<div class="card-empty">${text}</div>`;
+  }
+
+  // --- Atlas ---
+  fetch('atlas-config.json', {cache:'no-store'})
+    .then(r => r.ok ? r.json() : [])
+    .then(points => {
+      if (!Array.isArray(points) || points.length === 0){
+        renderEmpty('stats-atlas', 'aucun point pour le moment');
+        return;
+      }
+      const built = points.filter(p => p.built || p.isHub).length;
+      const pct = Math.round((built / points.length) * 100);
+      const last = points[points.length - 1];
+      renderStats('stats-atlas', points.length, points.length > 1 ? 'points' : 'point', pct, last ? last.name : null);
+    })
+    .catch(() => renderEmpty('stats-atlas', 'données indisponibles'));
+
+  // --- Grimoire ---
+  fetch('grimoire-config.json', {cache:'no-store'})
+    .then(r => r.ok ? r.json() : {})
+    .then(data => {
+      const items = Array.isArray(data.items) ? data.items : [];
+      if (items.length === 0){
+        renderEmpty('stats-grimoire', 'aucun objet pour le moment');
+        return;
+      }
+      const enchanted = items.filter(i => Array.isArray(i.enchants) && i.enchants.length > 0).length;
+      const pct = Math.round((enchanted / items.length) * 100);
+      const last = items[items.length - 1];
+      renderStats('stats-grimoire', items.length, items.length > 1 ? 'objets' : 'objet', pct, last ? last.name : null);
+    })
+    .catch(() => renderEmpty('stats-grimoire', 'données indisponibles'));
+
+  // --- Carnet ---
+  fetch('carnet-config.json', {cache:'no-store'})
+    .then(r => r.ok ? r.json() : {})
+    .then(data => {
+      const entries = Array.isArray(data.entries) ? data.entries : [];
+      if (entries.length === 0){
+        renderEmpty('stats-carnet', 'aucune note pour le moment');
+        return;
+      }
+      const active = entries.filter(e => !e.done).length;
+      const done = entries.length - active;
+      const pct = Math.round((done / entries.length) * 100);
+      renderStats('stats-carnet', active, active > 1 ? 'notes actives' : 'note active', pct, entries[0] ? entries[0].text : null);
+    })
+    .catch(() => renderEmpty('stats-carnet', 'données indisponibles'));
+
+  // --- Inventaire ---
+  fetch('inventaire-config.json', {cache:'no-store'})
+    .then(r => r.ok ? r.json() : {})
+    .then(data => {
+      const resources = Array.isArray(data.resources) ? data.resources : [];
+      if (resources.length === 0){
+        renderEmpty('stats-inventaire', 'aucune ressource pour le moment');
+        return;
+      }
+      const withTarget = resources.filter(r => r.targetQuantity);
+      let pct = null;
+      if (withTarget.length > 0){
+        const reached = withTarget.filter(r => {
+          const total = Array.isArray(r.stacks) ? r.stacks.reduce((s, st) => s + (st.quantity || 0), 0) : 0;
+          return total >= r.targetQuantity;
+        }).length;
+        pct = Math.round((reached / withTarget.length) * 100);
+      }
+      const sorted = [...resources].sort((a, b) => new Date(b.updatedAt || 0) - new Date(a.updatedAt || 0));
+      renderStats('stats-inventaire', resources.length, resources.length > 1 ? 'ressources' : 'ressource', pct, sorted[0] ? sorted[0].name : null);
+    })
+    .catch(() => renderEmpty('stats-inventaire', 'données indisponibles'));
+
+  // --- Projets ---
+  fetch('projets-config.json', {cache:'no-store'})
+    .then(r => r.ok ? r.json() : {})
+    .then(data => {
+      const projects = Array.isArray(data.projects) ? data.projects : [];
+      if (projects.length === 0){
+        renderEmpty('stats-projets', 'aucun projet pour le moment');
+        return;
+      }
+      const done = projects.filter(p => p.status === 'done').length;
+      const pct = Math.round((done / projects.length) * 100);
+      const sorted = [...projects].sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
+      renderStats('stats-projets', projects.length, projects.length > 1 ? 'projets' : 'projet', pct, sorted[0] ? sorted[0].name : null);
+    })
+    .catch(() => renderEmpty('stats-projets', 'données indisponibles'));
+
+})();
+</script>
 </body>
 </html>
