@@ -1,0 +1,180 @@
+/* =========================================================================
+   INVENTAIRE — styles propres à cette page (ressources, stacks par
+   emplacement, objectifs de quantité)
+   Le reste (boutons, panneaux, formulaires, sauvegarde...) vient de site.css
+   ========================================================================= */
+
+main{
+  max-width:1180px;
+  margin:0 auto;
+  padding:28px 20px 60px;
+  display:grid;
+  grid-template-columns:340px 1fr;
+  gap:22px;
+  align-items:start;
+}
+main .col-left{ grid-column:1; }
+main .col-right{ grid-column:2; }
+main .col-full{ grid-column:1 / -1; }
+@media (max-width: 860px){
+  main{ grid-template-columns:1fr; }
+  main .col-left, main .col-right, main .col-full{ grid-column:1; }
+}
+
+.row3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+
+.checkbox-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:12px;
+}
+.checkbox-row input[type="checkbox"]{
+  width:16px; height:16px;
+  accent-color:var(--accent);
+  cursor:pointer;
+}
+.checkbox-row label{
+  margin:0;
+  cursor:pointer;
+  color:var(--text);
+  font-weight:600;
+  font-size:0.82rem;
+}
+
+/* --- Bandeau résumé --- */
+.summary-row{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));
+  gap:12px;
+  margin-bottom:20px;
+}
+.summary-stat{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:14px 16px;
+}
+.summary-stat .n{
+  font-family:var(--font-mono);
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--accent);
+  line-height:1;
+}
+.summary-stat .l{
+  font-size:0.72rem;
+  color:var(--muted);
+  margin-top:6px;
+}
+
+/* --- Filtres --- */
+.filters-row{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:16px;
+  align-items:center;
+}
+.filters-row input[type="text"], .filters-row select{
+  width:auto;
+  flex:1 1 180px;
+}
+.filters-row select{ flex:0 1 170px; }
+
+/* --- Liste des ressources --- */
+.res-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.res-card{
+  background:var(--panel-hover);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:14px 16px;
+}
+.res-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.res-title-wrap{ display:flex; align-items:center; gap:10px; min-width:0; }
+.res-icon{ font-size:1.4rem; flex-shrink:0; }
+.res-name{ font-weight:700; font-size:1rem; }
+.res-cat{
+  font-family:var(--font-mono);
+  font-size:0.68rem;
+  color:var(--muted);
+  margin-top:2px;
+}
+.res-total{
+  font-family:var(--font-mono);
+  font-weight:700;
+  font-size:1.1rem;
+  color:var(--text);
+  text-align:right;
+  flex-shrink:0;
+}
+.res-total .unit{ font-size:0.68rem; color:var(--muted); font-weight:400; }
+.res-actions{ display:flex; gap:6px; flex-shrink:0; }
+
+.res-notes{
+  font-size:0.8rem;
+  color:var(--muted);
+  margin-top:8px;
+  font-style:italic;
+}
+
+.res-progress{ margin-top:10px; }
+.res-progress-label{
+  display:flex;
+  justify-content:space-between;
+  font-size:0.7rem;
+  color:var(--muted);
+  font-family:var(--font-mono);
+  margin-bottom:4px;
+}
+.res-progress-label.under .val{ color:var(--red); }
+.res-progress-label.reached .val{ color:var(--green); }
+
+.badge-renewable{
+  font-size:0.62rem;
+  background:color-mix(in srgb, var(--green) 18%, transparent);
+  color:var(--green);
+  border:1px solid var(--green);
+  padding:1px 7px;
+  border-radius:10px;
+  font-weight:700;
+  letter-spacing:0.3px;
+}
+
+/* --- Emplacements (stacks) --- */
+.stacks-list{
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1px dashed var(--border);
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.stack-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:0.82rem;
+}
+.stack-loc{ flex:1; min-width:0; color:var(--text); }
+.stack-qty{ font-family:var(--font-mono); color:var(--muted); flex-shrink:0; }
+.stack-row .icon-btn{ padding:2px 6px; flex-shrink:0; }
+
+.stack-add{
+  display:flex;
+  gap:6px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
+.stack-add input[type="text"]{ flex:1 1 140px; }
+.stack-add input[type="number"]{ width:90px; }
