@@ -39,6 +39,7 @@
       <button type="button" class="active" data-filter="all">Toutes</button>
       <button type="button" data-filter="todo">À faire</button>
       <button type="button" data-filter="done">Terminées</button>
+      <button type="button" id="btn-sort-cat">Trier par catégorie</button>
     </div>
     <div class="notes-list" id="notes-list"></div>
     <div class="empty-note" id="empty-note">Le carnet est vide pour l'instant. Écris ta première note à gauche.</div>
@@ -87,6 +88,7 @@
   let notes = [];
   let idCounter = 1;
   let currentFilter = 'all';
+  let sortByCategory = false;
 
   const form = document.getElementById('note-form');
   const textInput = document.getElementById('n-text');
@@ -115,7 +117,13 @@
     const btn = e.target.closest('button[data-filter]');
     if (!btn) return;
     currentFilter = btn.dataset.filter;
-    [...filtersEl.querySelectorAll('button')].forEach(b => b.classList.toggle('active', b === btn));
+    [...filtersEl.querySelectorAll('button[data-filter]')].forEach(b => b.classList.toggle('active', b === btn));
+    render();
+  });
+
+  document.getElementById('btn-sort-cat').addEventListener('click', () => {
+    sortByCategory = !sortByCategory;
+    document.getElementById('btn-sort-cat').classList.toggle('active', sortByCategory);
     render();
   });
 
@@ -132,7 +140,17 @@
       if (currentFilter === 'done') return n.done;
       return true;
     });
-    if (currentFilter === 'all'){
+
+    if (sortByCategory){
+      filtered.sort((a, b) => {
+        const ta = (a.tag || '').toLowerCase();
+        const tb = (b.tag || '').toLowerCase();
+        if (!ta && tb) return 1;
+        if (ta && !tb) return -1;
+        if (ta === tb) return 0;
+        return ta.localeCompare(tb);
+      });
+    } else if (currentFilter === 'all'){
       filtered.sort((a, b) => (a.done === b.done) ? 0 : (a.done ? 1 : -1));
     }
 
@@ -143,7 +161,16 @@
       : 'Aucune note ne correspond à ce filtre.';
     if (filtered.length === 0 && notes.length > 0) emptyNote.style.display = 'block';
 
+    let lastTag = null;
     filtered.forEach(n => {
+      if (sortByCategory && n.tag !== lastTag){
+        lastTag = n.tag;
+        const header = document.createElement('div');
+        header.className = 'group-header';
+        header.textContent = n.tag ? n.tag : 'Sans catégorie';
+        listEl.appendChild(header);
+      }
+
       const card = document.createElement('div');
       card.className = 'note-card' + (n.done ? ' done' : '');
 
