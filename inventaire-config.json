@@ -1,16 +1,3 @@
 {
-  "resources": [
-    {
-      "id": 1,
-      "name": "fer",
-      "icon": "",
-      "category": "minerais",
-      "unit": "stack",
-      "targetQuantity": 12,
-      "renewable": false,
-      "notes": "",
-      "stacks": [],
-      "updatedAt": "2026-09-04T05:23:20.280Z"
-    }
-  ]
+  "resources": []
 }
