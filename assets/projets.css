@@ -1,0 +1,167 @@
+/* =========================================================================
+   PROJETS — styles propres à cette page (projets, besoins en ressources,
+   comparaison en direct avec l'Inventaire)
+   Le reste (boutons, panneaux, formulaires, sauvegarde...) vient de site.css
+   ========================================================================= */
+
+main{
+  max-width:1180px;
+  margin:0 auto;
+  padding:28px 20px 60px;
+  display:grid;
+  grid-template-columns:340px 1fr;
+  gap:22px;
+  align-items:start;
+}
+main .col-left{ grid-column:1; }
+main .col-right{ grid-column:2; }
+main .col-full{ grid-column:1 / -1; }
+@media (max-width: 860px){
+  main{ grid-template-columns:1fr; }
+  main .col-left, main .col-right, main .col-full{ grid-column:1; }
+}
+
+.inv-status-line{
+  font-size:0.72rem;
+  color:var(--muted);
+  margin:-4px 0 14px;
+  font-family:var(--font-mono);
+}
+.inv-status-line.ok{ color:var(--green); }
+.inv-status-line.stale{ color:var(--gold); }
+
+/* --- Filtres --- */
+.filters-row{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:16px;
+}
+.filters-row button{
+  font-size:0.72rem;
+  padding:6px 10px;
+  background:transparent;
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  color:var(--text);
+  font-weight:600;
+}
+.filters-row button:hover{ border-color:var(--accent); color:var(--accent); }
+.filters-row button.active{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:var(--accent-ink);
+}
+
+/* --- Bandeau "à chercher" global --- */
+.shopping-card{
+  background:var(--panel);
+  border:1px solid var(--red);
+  border-radius:var(--radius);
+  padding:16px;
+  margin-bottom:20px;
+}
+.shopping-card h3{ margin:0 0 10px; color:var(--red); }
+.shopping-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.shopping-chip{
+  font-family:var(--font-mono);
+  font-size:0.76rem;
+  background:color-mix(in srgb, var(--red) 14%, transparent);
+  border:1px solid var(--red);
+  color:var(--text);
+  padding:4px 10px;
+  border-radius:20px;
+}
+.shopping-chip strong{ color:var(--red); }
+
+/* --- Liste des projets --- */
+.proj-list{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.proj-card{
+  background:var(--panel-hover);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:16px 18px;
+}
+.proj-card.status-done{ opacity:0.65; }
+.proj-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.proj-title-wrap{ min-width:0; }
+.proj-name{ font-weight:700; font-size:1.05rem; }
+.proj-name.done-strike{ text-decoration:line-through; text-decoration-color:var(--border); }
+.proj-notes{
+  color:var(--muted);
+  font-size:0.83rem;
+  margin-top:4px;
+  white-space:pre-wrap;
+}
+.proj-actions{ display:flex; gap:6px; flex-shrink:0; }
+
+.status-select{
+  width:auto;
+  font-size:0.72rem;
+  padding:4px 8px;
+  font-weight:700;
+  font-family:var(--font-mono);
+  text-transform:uppercase;
+}
+.status-select.todo{ color:var(--muted); }
+.status-select.inprogress{ color:var(--blue); border-color:var(--blue); }
+.status-select.done{ color:var(--green); border-color:var(--green); }
+
+.proj-progress{ margin-top:12px; }
+.proj-progress-label{
+  display:flex;
+  justify-content:space-between;
+  font-size:0.7rem;
+  color:var(--muted);
+  font-family:var(--font-mono);
+  margin-bottom:4px;
+}
+
+/* --- Besoins d'un projet --- */
+.needs-list{
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1px dashed var(--border);
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.need-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:0.83rem;
+  flex-wrap:wrap;
+}
+.need-row .name{ flex:1; min-width:120px; color:var(--text); }
+.need-row .qty{
+  font-family:var(--font-mono);
+  color:var(--muted);
+  flex-shrink:0;
+}
+.need-row .qty .have-ok{ color:var(--green); }
+.need-row .qty .have-under{ color:var(--red); }
+.need-row .icon-btn{ padding:2px 6px; flex-shrink:0; }
+
+.need-add{
+  display:flex;
+  gap:6px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
+.need-add input[type="text"]{ flex:1 1 160px; }
+.need-add input[type="number"]{ width:90px; }
