@@ -1,0 +1,18 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "ferme à fer",
+      "notes": "",
+      "status": "todo",
+      "needs": [
+        {
+          "id": 1,
+          "resourceName": "fer",
+          "quantity": 500
+        }
+      ],
+      "createdAt": "2026-09-04T05:24:03.083Z"
+    }
+  ]
+}
