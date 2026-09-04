@@ -20,15 +20,30 @@
     line-height:1.6;
   }
   main{
-    max-width:980px;
+    max-width:1080px;
     margin:0 auto;
     padding:20px 20px 70px;
   }
-  .grid{
+
+  /* ---- Grille bento : la taille suit l'activité de chaque outil ---- */
+  .bento-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-    gap:22px;
+    grid-template-columns:repeat(4, 1fr);
+    grid-auto-rows:150px;
+    grid-auto-flow:dense;
+    gap:18px;
   }
+  @media (max-width:760px){
+    .bento-grid{ grid-template-columns:repeat(2, 1fr); grid-auto-rows:150px; }
+    .tool-card.size-lg{ grid-column:span 2 !important; grid-row:span 2 !important; }
+    .tool-card.size-md{ grid-column:span 2 !important; grid-row:span 1 !important; }
+    .tool-card.size-sm{ grid-column:span 1 !important; grid-row:span 1 !important; }
+  }
+  @media (max-width:480px){
+    .bento-grid{ grid-template-columns:1fr; }
+    .tool-card{ grid-column:span 1 !important; grid-row:auto !important; min-height:150px; }
+  }
+
   .tool-card{
     display:flex;
     flex-direction:column;
@@ -49,46 +64,64 @@
     transform:translateY(-3px);
     border-color:var(--card-accent, var(--accent));
   }
-  .tool-card .card-title{
+
+  /* Tailles bento */
+  .tool-card.size-lg{ grid-column:span 2; grid-row:span 2; padding:26px; }
+  .tool-card.size-md{ grid-column:span 2; grid-row:span 1; padding:18px 22px; }
+  .tool-card.size-sm{ grid-column:span 1; grid-row:span 1; padding:16px; }
+
+  .card-icon{ font-size:1.6rem; line-height:1; margin-bottom:6px; }
+  .tool-card.size-lg .card-icon{ font-size:2.4rem; }
+
+  .card-title{
     font-family:var(--font-display);
     font-weight:700;
-    font-size:1.25rem;
-    margin-bottom:8px;
     color:var(--text);
   }
-  .tool-card .card-desc{
+  .tool-card.size-lg .card-title{ font-size:1.5rem; margin-bottom:8px; }
+  .tool-card.size-md .card-title{ font-size:1.15rem; margin-bottom:4px; }
+  .tool-card.size-sm .card-title{ font-size:0.95rem; margin-bottom:2px; }
+
+  .card-desc{
     color:var(--muted);
-    font-size:0.9rem;
-    line-height:1.55;
+    font-size:0.88rem;
+    line-height:1.5;
     flex:1;
-    margin-bottom:0;
+    margin:0 0 4px;
   }
-  .tool-card .card-cta{
-    margin-top:18px;
+  .tool-card.size-md .card-desc, .tool-card.size-sm .card-desc{ display:none; }
+
+  .card-cta{
+    margin-top:auto;
+    padding-top:12px;
     font-family:var(--font-mono);
-    font-size:0.78rem;
+    font-size:0.74rem;
     font-weight:700;
     color:var(--card-accent, var(--accent));
     display:flex;
     align-items:center;
     gap:6px;
   }
-  .card-stats{
-    margin-top:16px;
-    padding-top:14px;
-    border-top:1px solid var(--border);
-  }
+  .tool-card.size-sm .card-cta{ display:none; }
+
+  .card-stats{ margin-top:auto; padding-top:10px; }
+  .tool-card.size-lg .card-stats{ border-top:1px solid var(--border); margin-top:14px; padding-top:14px; }
+
   .card-stat-num{
     font-family:var(--font-mono);
-    font-size:1.15rem;
     font-weight:700;
     color:var(--text);
   }
+  .tool-card.size-lg .card-stat-num{ font-size:1.6rem; }
+  .tool-card.size-md .card-stat-num{ font-size:1.2rem; }
+  .tool-card.size-sm .card-stat-num{ font-size:1.05rem; }
+
   .card-stat-label{
     font-family:var(--font-mono);
-    font-size:0.68rem;
+    font-size:0.66rem;
     color:var(--muted);
   }
+
   .card-progress-track{
     margin-top:8px;
     height:5px;
@@ -97,11 +130,14 @@
     border-radius:4px;
     overflow:hidden;
   }
+  .tool-card.size-sm .card-progress-track{ height:4px; margin-top:6px; }
+
   .card-progress-fill{
     height:100%;
     background:var(--card-accent, var(--accent));
     transition:width 0.4s ease;
   }
+
   .card-last{
     margin-top:10px;
     font-size:0.76rem;
@@ -112,14 +148,18 @@
     white-space:nowrap;
   }
   .card-last strong{ color:var(--text); font-style:normal; font-weight:600; }
+  .tool-card.size-md .card-last, .tool-card.size-sm .card-last{ display:none; }
+
   .card-empty{
-    margin-top:16px;
-    padding-top:14px;
-    border-top:1px solid var(--border);
-    font-size:0.76rem;
+    margin-top:auto;
+    padding-top:10px;
+    font-size:0.74rem;
     color:var(--muted);
     font-family:var(--font-mono);
   }
+
+  /* Skeleton pendant le chargement (avant qu'on connaisse les tailles) */
+  .tool-card.is-loading{ opacity:0.55; }
 </style>
 </head>
 <body class="theme-etabli">
@@ -132,38 +172,43 @@
 </header>
 
 <main>
-  <div class="grid">
+  <div class="bento-grid" id="bento-grid">
 
-    <a class="tool-card card" href="atlas.html" style="--card-accent:var(--blue);">
-      <div class="card-title">🗺️ Atlas</div>
+    <a class="tool-card card is-loading" data-tool="atlas" href="atlas.html" style="--card-accent:var(--blue);">
+      <div class="card-icon">🗺️</div>
+      <div class="card-title">Atlas</div>
       <p class="card-desc">Ajoute tes points de destination, choisis ton hub, et récupère la direction précise et la distance à creuser — étape par étape, sans zigzag.</p>
       <div id="stats-atlas"></div>
       <div class="card-cta">Ouvrir l'outil →</div>
     </a>
 
-    <a class="tool-card card" href="grimoire.html" style="--card-accent:var(--purple);">
-      <div class="card-title">📖 Grimoire</div>
+    <a class="tool-card card is-loading" data-tool="grimoire" href="grimoire.html" style="--card-accent:var(--purple);">
+      <div class="card-icon">📖</div>
+      <div class="card-title">Grimoire</div>
       <p class="card-desc">Note ce que tu as déjà enchanté, suis les offres des villageois, et découvre ce qu'il te reste pour atteindre ton build idéal.</p>
       <div id="stats-grimoire"></div>
       <div class="card-cta">Ouvrir l'outil →</div>
     </a>
 
-    <a class="tool-card card" href="carnet.html" style="--card-accent:var(--green);">
-      <div class="card-title">📓 Carnet</div>
+    <a class="tool-card card is-loading" data-tool="carnet" href="carnet.html" style="--card-accent:var(--green);">
+      <div class="card-icon">📓</div>
+      <div class="card-title">Carnet</div>
       <p class="card-desc">Note tout ce que tu veux faire dans ton monde — projets, idées, rappels — et coche au fur et à mesure.</p>
       <div id="stats-carnet"></div>
       <div class="card-cta">Ouvrir l'outil →</div>
     </a>
 
-    <a class="tool-card card" href="inventaire.html" style="--card-accent:var(--red);">
-      <div class="card-title">📦 Inventaire</div>
+    <a class="tool-card card is-loading" data-tool="inventaire" href="inventaire.html" style="--card-accent:var(--red);">
+      <div class="card-icon">📦</div>
+      <div class="card-title">Inventaire</div>
       <p class="card-desc">L'état des lieux de ton stock, ressource par ressource et par emplacement — hors du jeu.</p>
       <div id="stats-inventaire"></div>
       <div class="card-cta">Ouvrir l'outil →</div>
     </a>
 
-    <a class="tool-card card" href="projets.html" style="--card-accent:var(--gold);">
-      <div class="card-title">🧱 Projets</div>
+    <a class="tool-card card is-loading" data-tool="projets" href="projets.html" style="--card-accent:var(--gold);">
+      <div class="card-icon">🧱</div>
+      <div class="card-title">Projets</div>
       <p class="card-desc">Ce que tu veux construire, et ce qu'il te manque pour ça — calculé en direct depuis ton inventaire.</p>
       <div id="stats-projets"></div>
       <div class="card-cta">Ouvrir l'outil →</div>
@@ -199,91 +244,122 @@
     el.innerHTML = `<div class="card-empty">${text}</div>`;
   }
 
-  // --- Atlas ---
-  fetch('atlas-config.json', {cache:'no-store'})
-    .then(r => r.ok ? r.json() : [])
-    .then(points => {
-      if (!Array.isArray(points) || points.length === 0){
-        renderEmpty('stats-atlas', 'aucun point pour le moment');
-        return;
-      }
-      const built = points.filter(p => p.built || p.isHub).length;
-      const pct = Math.round((built / points.length) * 100);
-      const last = points[points.length - 1];
-      renderStats('stats-atlas', points.length, points.length > 1 ? 'points' : 'point', pct, last ? last.name : null);
-    })
-    .catch(() => renderEmpty('stats-atlas', 'données indisponibles'));
+  function loadAtlas(){
+    return fetch('atlas-config.json', {cache:'no-store'})
+      .then(r => r.ok ? r.json() : [])
+      .then(points => {
+        if (!Array.isArray(points) || points.length === 0){
+          renderEmpty('stats-atlas', 'aucun point pour le moment');
+          return { count: 0 };
+        }
+        const built = points.filter(p => p.built || p.isHub).length;
+        const pct = Math.round((built / points.length) * 100);
+        const last = points[points.length - 1];
+        renderStats('stats-atlas', points.length, points.length > 1 ? 'points' : 'point', pct, last ? last.name : null);
+        return { count: points.length };
+      })
+      .catch(() => { renderEmpty('stats-atlas', 'données indisponibles'); return { count: 0 }; });
+  }
 
-  // --- Grimoire ---
-  fetch('grimoire-config.json', {cache:'no-store'})
-    .then(r => r.ok ? r.json() : {})
-    .then(data => {
-      const items = Array.isArray(data.items) ? data.items : [];
-      if (items.length === 0){
-        renderEmpty('stats-grimoire', 'aucun objet pour le moment');
-        return;
-      }
-      const enchanted = items.filter(i => Array.isArray(i.enchants) && i.enchants.length > 0).length;
-      const pct = Math.round((enchanted / items.length) * 100);
-      const last = items[items.length - 1];
-      renderStats('stats-grimoire', items.length, items.length > 1 ? 'objets' : 'objet', pct, last ? last.name : null);
-    })
-    .catch(() => renderEmpty('stats-grimoire', 'données indisponibles'));
+  function loadGrimoire(){
+    return fetch('grimoire-config.json', {cache:'no-store'})
+      .then(r => r.ok ? r.json() : {})
+      .then(data => {
+        const items = Array.isArray(data.items) ? data.items : [];
+        if (items.length === 0){
+          renderEmpty('stats-grimoire', 'aucun objet pour le moment');
+          return { count: 0 };
+        }
+        const enchanted = items.filter(i => Array.isArray(i.enchants) && i.enchants.length > 0).length;
+        const pct = Math.round((enchanted / items.length) * 100);
+        const last = items[items.length - 1];
+        renderStats('stats-grimoire', items.length, items.length > 1 ? 'objets' : 'objet', pct, last ? last.name : null);
+        return { count: items.length };
+      })
+      .catch(() => { renderEmpty('stats-grimoire', 'données indisponibles'); return { count: 0 }; });
+  }
 
-  // --- Carnet ---
-  fetch('carnet-config.json', {cache:'no-store'})
-    .then(r => r.ok ? r.json() : {})
-    .then(data => {
-      const entries = Array.isArray(data.entries) ? data.entries : [];
-      if (entries.length === 0){
-        renderEmpty('stats-carnet', 'aucune note pour le moment');
-        return;
-      }
-      const active = entries.filter(e => !e.done).length;
-      const done = entries.length - active;
-      const pct = Math.round((done / entries.length) * 100);
-      renderStats('stats-carnet', active, active > 1 ? 'notes actives' : 'note active', pct, entries[0] ? entries[0].text : null);
-    })
-    .catch(() => renderEmpty('stats-carnet', 'données indisponibles'));
+  function loadCarnet(){
+    return fetch('carnet-config.json', {cache:'no-store'})
+      .then(r => r.ok ? r.json() : {})
+      .then(data => {
+        const entries = Array.isArray(data.entries) ? data.entries : [];
+        if (entries.length === 0){
+          renderEmpty('stats-carnet', 'aucune note pour le moment');
+          return { count: 0 };
+        }
+        const active = entries.filter(e => !e.done).length;
+        const done = entries.length - active;
+        const pct = Math.round((done / entries.length) * 100);
+        renderStats('stats-carnet', active, active > 1 ? 'notes actives' : 'note active', pct, entries[0] ? entries[0].text : null);
+        return { count: entries.length };
+      })
+      .catch(() => { renderEmpty('stats-carnet', 'données indisponibles'); return { count: 0 }; });
+  }
 
-  // --- Inventaire ---
-  fetch('inventaire-config.json', {cache:'no-store'})
-    .then(r => r.ok ? r.json() : {})
-    .then(data => {
-      const resources = Array.isArray(data.resources) ? data.resources : [];
-      if (resources.length === 0){
-        renderEmpty('stats-inventaire', 'aucune ressource pour le moment');
-        return;
-      }
-      const withTarget = resources.filter(r => r.targetQuantity);
-      let pct = null;
-      if (withTarget.length > 0){
-        const reached = withTarget.filter(r => {
-          const total = Array.isArray(r.stacks) ? r.stacks.reduce((s, st) => s + (st.quantity || 0), 0) : 0;
-          return total >= r.targetQuantity;
-        }).length;
-        pct = Math.round((reached / withTarget.length) * 100);
-      }
-      const sorted = [...resources].sort((a, b) => new Date(b.updatedAt || 0) - new Date(a.updatedAt || 0));
-      renderStats('stats-inventaire', resources.length, resources.length > 1 ? 'ressources' : 'ressource', pct, sorted[0] ? sorted[0].name : null);
-    })
-    .catch(() => renderEmpty('stats-inventaire', 'données indisponibles'));
+  function loadInventaire(){
+    return fetch('inventaire-config.json', {cache:'no-store'})
+      .then(r => r.ok ? r.json() : {})
+      .then(data => {
+        const resources = Array.isArray(data.resources) ? data.resources : [];
+        if (resources.length === 0){
+          renderEmpty('stats-inventaire', 'aucune ressource pour le moment');
+          return { count: 0 };
+        }
+        const withTarget = resources.filter(r => r.targetQuantity);
+        let pct = null;
+        if (withTarget.length > 0){
+          const reached = withTarget.filter(r => {
+            const total = Array.isArray(r.stacks) ? r.stacks.reduce((s, st) => s + (st.quantity || 0), 0) : 0;
+            return total >= r.targetQuantity;
+          }).length;
+          pct = Math.round((reached / withTarget.length) * 100);
+        }
+        const sorted = [...resources].sort((a, b) => new Date(b.updatedAt || 0) - new Date(a.updatedAt || 0));
+        renderStats('stats-inventaire', resources.length, resources.length > 1 ? 'ressources' : 'ressource', pct, sorted[0] ? sorted[0].name : null);
+        return { count: resources.length };
+      })
+      .catch(() => { renderEmpty('stats-inventaire', 'données indisponibles'); return { count: 0 }; });
+  }
 
-  // --- Projets ---
-  fetch('projets-config.json', {cache:'no-store'})
-    .then(r => r.ok ? r.json() : {})
-    .then(data => {
-      const projects = Array.isArray(data.projects) ? data.projects : [];
-      if (projects.length === 0){
-        renderEmpty('stats-projets', 'aucun projet pour le moment');
-        return;
-      }
-      const done = projects.filter(p => p.status === 'done').length;
-      const pct = Math.round((done / projects.length) * 100);
-      const sorted = [...projects].sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
-      renderStats('stats-projets', projects.length, projects.length > 1 ? 'projets' : 'projet', pct, sorted[0] ? sorted[0].name : null);
-    })
-    .catch(() => renderEmpty('stats-projets', 'données indisponibles'));
+  function loadProjets(){
+    return fetch('projets-config.json', {cache:'no-store'})
+      .then(r => r.ok ? r.json() : {})
+      .then(data => {
+        const projects = Array.isArray(data.projects) ? data.projects : [];
+        if (projects.length === 0){
+          renderEmpty('stats-projets', 'aucun projet pour le moment');
+          return { count: 0 };
+        }
+        const done = projects.filter(p => p.status === 'done').length;
+        const pct = Math.round((done / projects.length) * 100);
+        const sorted = [...projects].sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
+        renderStats('stats-projets', projects.length, projects.length > 1 ? 'projets' : 'projet', pct, sorted[0] ? sorted[0].name : null);
+        return { count: projects.length };
+      })
+      .catch(() => { renderEmpty('stats-projets', 'données indisponibles'); return { count: 0 }; });
+  }
+
+  Promise.all([
+    loadAtlas(), loadGrimoire(), loadCarnet(), loadInventaire(), loadProjets()
+  ]).then(results => {
+    const tools = ['atlas', 'grimoire', 'carnet', 'inventaire', 'projets'];
+    const ranked = tools
+      .map((id, i) => ({ id, count: results[i].count }))
+      .sort((a, b) => b.count - a.count);
+
+    // Taille selon le rang d'activité : 1er = grand, 2e/3e = moyen, reste = petit
+    ranked.forEach((entry, rank) => {
+      const card = document.querySelector(`.tool-card[data-tool="${entry.id}"]`);
+      if (!card) return;
+      card.classList.remove('is-loading');
+      let size = 'size-sm';
+      if (rank === 0) size = 'size-lg';
+      else if (rank === 1 || rank === 2) size = 'size-md';
+      card.classList.add(size);
+      card.style.order = rank;
+    });
+  });
 
 })();
 </script>
