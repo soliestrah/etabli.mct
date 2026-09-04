@@ -40,15 +40,20 @@
   --text: #f4efe7;
   --muted: #a79d90;
 
-  /* --- Palette d'accents disponibles (une page = une couleur dominante) --- */
-  --green: #8fbf65;
-  --gold: #d4a85b;
-  --purple: #b68acb;
-  --blue: #73b7d6;
-  --red: #d87568;
+  /* --- Palette d'accents disponibles (une page = une couleur dominante) ---
+     Toutes désaturées/adoucies pour rester cohérentes entre elles.       */
+  --green: #8fbf65;   /* émeraude */
+  --gold: #d4a85b;    /* or / miel */
+  --purple: #b68acb;  /* améthyste */
+  --blue: #73b7d6;    /* diamant */
+  --red: #d87568;     /* redstone */
+  --iron: #c4beaf;    /* fer / quartz — neutre, pour l'accueil */
+  --copper: #c98c5f;  /* cuivre oxydé */
+  --lapis: #6b83b0;   /* lapis-lazuli */
+  --netherite: #8f889a; /* netherite — gris-violet sombre */
 
   /* --- Accent actif de la page (surchargé par .theme-xxx plus bas) --- */
-  --accent: var(--gold);
+  --accent: var(--iron);
   --accent-ink: #241c0e; /* texte sombre lisible sur un fond --accent */
 
   /* --- Typo --- */
@@ -74,12 +79,13 @@
 }
 
 /* ---- Thèmes d'accent par page ---- */
-body.theme-etabli{ --accent: var(--gold); }
+body.theme-etabli{ --accent: var(--iron); }
 body.theme-atlas{ --accent: var(--blue); }
 body.theme-grimoire{ --accent: var(--purple); }
 body.theme-carnet{ --accent: var(--green); }
 body.theme-inventaire{ --accent: var(--red); }
 body.theme-projets{ --accent: var(--gold); }
+/* Encore disponibles pour de prochaines pages : --copper, --lapis, --netherite */
 
 /* ========================================================================
    RESET / BASE
