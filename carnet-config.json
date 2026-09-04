@@ -1,6 +1,13 @@
 {
   "entries": [
     {
+      "id": 15,
+      "text": "définir d’autres couleurs",
+      "tag": "SITE",
+      "done": false,
+      "createdAt": "2026-09-04T08:48:20.441Z"
+    },
+    {
       "id": 14,
       "text": "pouvoir ajouter les quantités dans l’inventaire à la création",
       "tag": "SITE",
