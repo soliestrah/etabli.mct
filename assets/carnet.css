@@ -55,6 +55,19 @@ textarea#n-text{
   flex-direction:column;
   gap:14px;
 }
+
+/* --- En-tête de groupe (tri par catégorie) --- */
+.group-header{
+  font-family:var(--font-mono);
+  font-size:0.72rem;
+  font-weight:700;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  color:var(--text);
+  opacity:0.7;
+  margin:6px 0 -4px;
+}
+
 .note-card{
   background:#ece2cf;
   color:#453620;
