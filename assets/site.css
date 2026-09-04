@@ -80,10 +80,10 @@
 
 /* ---- Thèmes d'accent par page ---- */
 body.theme-etabli{ --accent: var(--iron); }
-body.theme-atlas{ --accent: var(--blue); }
+body.theme-atlas{ --accent: var(--copper); }
 body.theme-grimoire{ --accent: var(--purple); }
 body.theme-carnet{ --accent: var(--green); }
-body.theme-inventaire{ --accent: var(--red); }
+body.theme-inventaire{ --accent: var(--netherite); }
 body.theme-projets{ --accent: var(--gold); }
 /* Encore disponibles pour de prochaines pages : --copper, --lapis, --netherite */
 
