@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>inventaire</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/inventaire.css">
+</head>
+<body class="theme-inventaire">
+
+<div id="site-nav" data-current="inventaire"></div>
+<script src="assets/nav.js" defer></script>
+
+<header>
+  <h1>inventaire</h1>
+  <p>l'état des lieux de ton monde, hors du jeu</p>
+</header>
+
+<main>
+  <section class="panel col-left">
+    <h2>Nouvelle ressource</h2>
+    <form id="res-form">
+      <label for="r-name">Nom</label>
+      <input type="text" id="r-name" placeholder="Ex : Fer" required>
+
+      <label for="r-icon">Icône (emoji, optionnel)</label>
+      <input type="text" id="r-icon" placeholder="Ex : ⛏️" maxlength="4">
+
+      <label for="r-cat">Catégorie</label>
+      <input type="text" id="r-cat" list="cat-list" placeholder="Ex : Minerais">
+      <datalist id="cat-list"></datalist>
+
+      <div class="row2">
+        <div>
+          <label for="r-unit">Unité</label>
+          <select id="r-unit">
+            <option value="item">Items</option>
+            <option value="stack">Stacks (x64)</option>
+          </select>
+        </div>
+        <div>
+          <label for="r-target">Objectif (optionnel)</label>
+          <input type="number" id="r-target" min="0" placeholder="Ex : 640">
+        </div>
+      </div>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="r-renewable">
+        <label for="r-renewable">Ressource renouvelable (ferme, culture...)</label>
+      </div>
+
+      <label for="r-notes">Notes (optionnel)</label>
+      <textarea id="r-notes" placeholder="Ex : à utiliser pour l'agrandissement de la base"></textarea>
+
+      <button type="submit" class="btn btn-primary">Ajouter la ressource</button>
+    </form>
+  </section>
+
+  <section class="panel col-right">
+    <h2>Le stock</h2>
+
+    <div class="summary-row">
+      <div class="summary-stat">
+        <div class="n" id="stat-count">0</div>
+        <div class="l">ressources suivies</div>
+      </div>
+      <div class="summary-stat">
+        <div class="n" id="stat-total">0</div>
+        <div class="l">items au total</div>
+      </div>
+      <div class="summary-stat">
+        <div class="n" id="stat-under">0</div>
+        <div class="l">sous l'objectif</div>
+      </div>
+    </div>
+
+    <div class="filters-row">
+      <input type="text" id="search-input" placeholder="Rechercher une ressource...">
+      <select id="filter-cat">
+        <option value="">Toutes les catégories</option>
+      </select>
+      <select id="sort-by">
+        <option value="name">Trier : nom (A-Z)</option>
+        <option value="qty-desc">Trier : quantité (plus au moins)</option>
+        <option value="qty-asc">Trier : quantité (moins au plus)</option>
+        <option value="cat">Trier : catégorie</option>
+      </select>
+    </div>
+
+    <div class="res-list" id="res-list"></div>
+    <div class="empty-note" id="empty-note">Aucune ressource pour l'instant. Ajoute la première à gauche.</div>
+    <div class="empty-note" id="empty-note-filtered" style="display:none;">Aucune ressource ne correspond à ce filtre.</div>
+  </section>
+
+  <section class="panel plain save-section col-full">
+    <h3 style="margin-top:0;">Sauvegarde</h3>
+    <div class="actions-row">
+      <button class="btn btn-ghost" id="btn-download">Télécharger (.json)</button>
+      <label class="file-label" for="file-import">Importer un fichier</label>
+      <input type="file" id="file-import" accept="application/json" style="display:none;">
+    </div>
+    <div class="msg-line" id="save-msg"></div>
+
+    <details class="gh-sync">
+      <summary>Sauvegarde en ligne (GitHub)</summary>
+      <div class="row2">
+        <div>
+          <label for="gh-owner">Utilisateur / organisation</label>
+          <input type="text" id="gh-owner" placeholder="ton-pseudo">
+        </div>
+        <div>
+          <label for="gh-repo">Nom du dépôt</label>
+          <input type="text" id="gh-repo" placeholder="mon-etabli">
+        </div>
+      </div>
+      <div class="row2">
+        <div>
+          <label for="gh-branch">Branche</label>
+          <input type="text" id="gh-branch" placeholder="main">
+        </div>
+        <div>
+          <label for="gh-token">Jeton d'accès (PAT)</label>
+          <input type="password" id="gh-token" placeholder="ghp_...">
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" id="btn-gh-save" style="margin-top:12px;">Enregistrer en ligne</button>
+      <div class="hint">Le jeton reste uniquement sur cet appareil (stocké dans le navigateur), jamais envoyé ailleurs qu'à l'API GitHub. Ces réglages sont partagés avec les autres outils du même site.</div>
+    </details>
+  </section>
+</main>
+
+<footer class="site-footer">l'établi</footer>
+
+<script>
+  const DEFAULT_CATEGORIES = ["Minerais","Blocs","Nourriture","Redstone","Outils","Armure","Potions","Décoration","Mobs","Autre"];
+
+  let resources = [];
+  let resIdCounter = 1;
+  let stackIdCounter = 1;
+  let searchQuery = '';
+  let filterCat = '';
+  let sortBy = 'name';
+
+  const form = document.getElementById('res-form');
+  const listEl = document.getElementById('res-list');
+  const emptyNote = document.getElementById('empty-note');
+  const emptyNoteFiltered = document.getElementById('empty-note-filtered');
+  const catList = document.getElementById('cat-list');
+  const filterCatSelect = document.getElementById('filter-cat');
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function totalQty(res){
+    return res.stacks.reduce((sum, s) => sum + s.quantity, 0);
+  }
+
+  function displayQty(n, unit){
+    if (unit === 'stack') return (n / 64).toFixed(1).replace(/\.0$/, '') + ' stacks';
+    return n.toLocaleString('fr-FR') + ' items';
+  }
+
+  // ===================== FORMULAIRE D'AJOUT =====================
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('r-name').value.trim();
+    if (!name) return;
+    resources.push({
+      id: resIdCounter++,
+      name,
+      icon: document.getElementById('r-icon').value.trim(),
+      category: document.getElementById('r-cat').value.trim() || 'Autre',
+      unit: document.getElementById('r-unit').value,
+      targetQuantity: document.getElementById('r-target').value ? parseInt(document.getElementById('r-target').value, 10) : null,
+      renewable: document.getElementById('r-renewable').checked,
+      notes: document.getElementById('r-notes').value.trim(),
+      stacks: [],
+      updatedAt: new Date().toISOString()
+    });
+    form.reset();
+    document.getElementById('r-unit').value = 'item';
+    renderAll();
+  });
+
+  // ===================== FILTRES / TRI =====================
+  document.getElementById('search-input').addEventListener('input', (e) => {
+    searchQuery = e.target.value.toLowerCase();
+    renderList();
+  });
+  filterCatSelect.addEventListener('change', (e) => {
+    filterCat = e.target.value;
+    renderList();
+  });
+  document.getElementById('sort-by').addEventListener('change', (e) => {
+    sortBy = e.target.value;
+    renderList();
+  });
+
+  function refreshCategoryOptions(){
+    const used = [...new Set(resources.map(r => r.category).filter(Boolean))];
+    const all = [...new Set([...DEFAULT_CATEGORIES, ...used])].sort((a, b) => a.localeCompare(b, 'fr'));
+
+    catList.innerHTML = all.map(c => `<option value="${escapeHtml(c)}"></option>`).join('');
+
+    const prevFilter = filterCatSelect.value;
+    filterCatSelect.innerHTML = '<option value="">Toutes les catégories</option>' +
+      all.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
+    if (all.includes(prevFilter)) filterCatSelect.value = prevFilter;
+  }
+
+  function refreshLocationDatalist(){
+    let dl = document.getElementById('loc-list');
+    if (!dl){
+      dl = document.createElement('datalist');
+      dl.id = 'loc-list';
+      document.body.appendChild(dl);
+    }
+    const locs = [...new Set(resources.flatMap(r => r.stacks.map(s => s.location)).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'fr'));
+    dl.innerHTML = locs.map(l => `<option value="${escapeHtml(l)}"></option>`).join('');
+  }
+
+  // ===================== RENDU =====================
+  function renderSummary(){
+    const total = resources.reduce((sum, r) => sum + totalQty(r), 0);
+    const under = resources.filter(r => r.targetQuantity && totalQty(r) < r.targetQuantity).length;
+    document.getElementById('stat-count').textContent = resources.length;
+    document.getElementById('stat-total').textContent = total.toLocaleString('fr-FR');
+    document.getElementById('stat-under').textContent = under;
+  }
+
+  function renderList(){
+    let filtered = resources.filter(r => {
+      if (filterCat && r.category !== filterCat) return false;
+      if (searchQuery && !r.name.toLowerCase().includes(searchQuery)) return false;
+      return true;
+    });
+
+    filtered = filtered.slice().sort((a, b) => {
+      if (sortBy === 'qty-desc') return totalQty(b) - totalQty(a);
+      if (sortBy === 'qty-asc') return totalQty(a) - totalQty(b);
+      if (sortBy === 'cat') return a.category.localeCompare(b.category, 'fr') || a.name.localeCompare(b.name, 'fr');
+      return a.name.localeCompare(b.name, 'fr');
+    });
+
+    listEl.innerHTML = '';
+    emptyNote.style.display = resources.length === 0 ? 'block' : 'none';
+    emptyNoteFiltered.style.display = (resources.length > 0 && filtered.length === 0) ? 'block' : 'none';
+
+    filtered.forEach(res => {
+      const total = totalQty(res);
+      const card = document.createElement('div');
+      card.className = 'res-card';
+
+      let progressHtml = '';
+      if (res.targetQuantity){
+        const pct = Math.min(100, Math.round(total / res.targetQuantity * 100));
+        const under = total < res.targetQuantity;
+        progressHtml = `
+          <div class="res-progress">
+            <div class="res-progress-label ${under ? 'under' : 'reached'}">
+              <span>Objectif : ${res.targetQuantity.toLocaleString('fr-FR')}</span>
+              <span class="val">${pct}%</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width:${pct}%; background:${under ? 'var(--red)' : 'var(--green)'};"></div></div>
+          </div>
+        `;
+      }
+
+      const stacksHtml = res.stacks.map(s => `
+        <div class="stack-row">
+          <span class="stack-loc">${escapeHtml(s.location)}</span>
+          <span class="stack-qty">${s.quantity.toLocaleString('fr-FR')}</span>
+          <button class="icon-btn" data-del-stack="${res.id}:${s.id}" title="Retirer cet emplacement">✕</button>
+        </div>
+      `).join('');
+
+      card.innerHTML = `
+        <div class="res-head">
+          <div class="res-title-wrap">
+            ${res.icon ? `<span class="res-icon">${escapeHtml(res.icon)}</span>` : ''}
+            <div>
+              <div class="res-name">${escapeHtml(res.name)} ${res.renewable ? '<span class="badge-renewable">renouvelable</span>' : ''}</div>
+              <div class="res-cat">${escapeHtml(res.category)}</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div class="res-total">${total.toLocaleString('fr-FR')}<br><span class="unit">${res.unit === 'stack' ? (total/64).toFixed(1).replace(/\.0$/,'') + ' stacks' : 'items'}</span></div>
+            <div class="res-actions">
+              <button class="btn-small" data-edit="${res.id}">✎</button>
+              <button class="btn-small" data-del="${res.id}">Suppr.</button>
+            </div>
+          </div>
+        </div>
+        ${res.notes ? `<div class="res-notes">${escapeHtml(res.notes)}</div>` : ''}
+        ${progressHtml}
+        <div class="stacks-list">
+          ${stacksHtml || '<div class="res-notes" style="font-style:normal;">Aucun emplacement renseigné.</div>'}
+        </div>
+        <div class="stack-add">
+          <input type="text" placeholder="Emplacement (ex : Coffre principal)" list="loc-list" data-loc-input="${res.id}">
+          <input type="number" placeholder="Qté" min="1" data-qty-input="${res.id}">
+          <button type="button" class="btn-small" data-add-stack="${res.id}">+ Ajouter</button>
+        </div>
+      `;
+      listEl.appendChild(card);
+    });
+
+    // écouteurs
+    listEl.querySelectorAll('[data-del]').forEach(b => {
+      b.addEventListener('click', () => {
+        resources = resources.filter(r => r.id !== Number(b.dataset.del));
+        renderAll();
+      });
+    });
+    listEl.querySelectorAll('[data-edit]').forEach(b => {
+      b.addEventListener('click', () => editResource(Number(b.dataset.edit)));
+    });
+    listEl.querySelectorAll('[data-add-stack]').forEach(b => {
+      b.addEventListener('click', () => {
+        const resId = Number(b.dataset.addStack);
+        const locInput = listEl.querySelector(`[data-loc-input="${resId}"]`);
+        const qtyInput = listEl.querySelector(`[data-qty-input="${resId}"]`);
+        const location = locInput.value.trim();
+        const quantity = parseInt(qtyInput.value, 10);
+        if (!location || !quantity || quantity <= 0) return;
+        const res = resources.find(r => r.id === resId);
+        const existing = res.stacks.find(s => s.location === location);
+        if (existing) existing.quantity += quantity;
+        else res.stacks.push({ id: stackIdCounter++, location, quantity });
+        res.updatedAt = new Date().toISOString();
+        renderAll();
+      });
+    });
+    listEl.querySelectorAll('[data-del-stack]').forEach(b => {
+      b.addEventListener('click', () => {
+        const [resId, stackId] = b.dataset.delStack.split(':').map(Number);
+        const res = resources.find(r => r.id === resId);
+        res.stacks = res.stacks.filter(s => s.id !== stackId);
+        res.updatedAt = new Date().toISOString();
+        renderAll();
+      });
+    });
+  }
+
+  function editResource(id){
+    const res = resources.find(r => r.id === id);
+    if (!res) return;
+    const newName = window.prompt('Nom de la ressource :', res.name);
+    if (newName === null) return;
+    const newCat = window.prompt('Catégorie :', res.category);
+    if (newCat === null) return;
+    const newTarget = window.prompt('Objectif (nombre, laisse vide pour aucun) :', res.targetQuantity || '');
+    if (newTarget === null) return;
+    const newNotes = window.prompt('Notes :', res.notes || '');
+    if (newNotes === null) return;
+    res.name = newName.trim() || res.name;
+    res.category = newCat.trim() || res.category;
+    res.targetQuantity = newTarget.trim() ? parseInt(newTarget.trim(), 10) : null;
+    res.notes = newNotes.trim();
+    res.updatedAt = new Date().toISOString();
+    renderAll();
+  }
+
+  function renderAll(){
+    refreshCategoryOptions();
+    refreshLocationDatalist();
+    renderSummary();
+    renderList();
+  }
+
+  // ===================== SAVE / LOAD =====================
+  function exportResourcesJSON(){
+    return JSON.stringify({ resources }, null, 2);
+  }
+
+  function loadFromJSON(text){
+    const data = JSON.parse(text);
+    let loaded;
+    if (Array.isArray(data)) loaded = data;
+    else if (data && Array.isArray(data.resources)) loaded = data.resources;
+    else throw new Error('format invalide');
+    resources = loaded.map(r => ({
+      id: r.id, name: r.name, icon: r.icon || '', category: r.category || 'Autre',
+      unit: r.unit || 'item', targetQuantity: r.targetQuantity || null,
+      renewable: !!r.renewable, notes: r.notes || '',
+      stacks: Array.isArray(r.stacks) ? r.stacks : [],
+      updatedAt: r.updatedAt || new Date().toISOString()
+    }));
+    resIdCounter = resources.reduce((m, r) => Math.max(m, r.id || 0), 0) + 1;
+    stackIdCounter = resources.reduce((m, r) => Math.max(m, ...r.stacks.map(s => s.id || 0), 0), 0) + 1;
+    renderAll();
+    showSaveMsg('Inventaire chargé.');
+  }
+
+  function showSaveMsg(msg){
+    const el = document.getElementById('save-msg');
+    el.textContent = msg;
+    setTimeout(() => { el.textContent = ''; }, 4000);
+  }
+
+  // ===================== SAUVEGARDE EN LIGNE (GITHUB) =====================
+  const GH_FILE_PATH = 'inventaire-config.json';
+  const ghFields = ['gh-owner', 'gh-repo', 'gh-branch', 'gh-token'];
+  const ghKeys = {'gh-owner': 'gh_owner', 'gh-repo': 'gh_repo', 'gh-branch': 'gh_branch', 'gh-token': 'gh_token'};
+
+  function loadGhSettings(){
+    ghFields.forEach(id => {
+      const saved = localStorage.getItem(ghKeys[id]);
+      if (saved) document.getElementById(id).value = saved;
+    });
+    if (!document.getElementById('gh-branch').value) document.getElementById('gh-branch').value = 'main';
+  }
+  function saveGhSettings(){
+    ghFields.forEach(id => {
+      localStorage.setItem(ghKeys[id], document.getElementById(id).value.trim());
+    });
+  }
+  ghFields.forEach(id => {
+    document.getElementById(id).addEventListener('change', saveGhSettings);
+  });
+  loadGhSettings();
+
+  async function saveToGitHub(){
+    const owner = document.getElementById('gh-owner').value.trim();
+    const repo = document.getElementById('gh-repo').value.trim();
+    const branch = document.getElementById('gh-branch').value.trim() || 'main';
+    const token = document.getElementById('gh-token').value.trim();
+    if (!owner || !repo || !token){
+      showSaveMsg('Renseigne utilisateur, dépôt et jeton GitHub.');
+      return;
+    }
+    saveGhSettings();
+    showSaveMsg('Envoi vers GitHub...');
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${GH_FILE_PATH}`;
+    try {
+      let sha = null;
+      const getRes = await fetch(`${apiUrl}?ref=${encodeURIComponent(branch)}`, {
+        headers: {'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json'}
+      });
+      if (getRes.ok){
+        const info = await getRes.json();
+        sha = info.sha;
+      } else if (getRes.status !== 404){
+        const err = await getRes.json().catch(() => ({}));
+        throw new Error(err.message || ('Erreur ' + getRes.status));
+      }
+
+      const content = exportResourcesJSON();
+      const body = {
+        message: 'Mise à jour inventaire-config.json depuis l\'inventaire',
+        content: btoa(unescape(encodeURIComponent(content))),
+        branch
+      };
+      if (sha) body.sha = sha;
+
+      const putRes = await fetch(apiUrl, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      });
+      if (!putRes.ok){
+        const err = await putRes.json().catch(() => ({}));
+        throw new Error(err.message || ('Erreur ' + putRes.status));
+      }
+      showSaveMsg('Enregistré sur GitHub ✓');
+    } catch (err){
+      showSaveMsg('Échec : ' + err.message);
+    }
+  }
+  document.getElementById('btn-gh-save').addEventListener('click', saveToGitHub);
+
+  document.getElementById('btn-download').addEventListener('click', () => {
+    if (resources.length === 0){ showSaveMsg('Aucune ressource à sauvegarder.'); return; }
+    const blob = new Blob([exportResourcesJSON()], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'inventaire-config.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showSaveMsg('Fichier téléchargé (inventaire-config.json).');
+  });
+
+  document.getElementById('file-import').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try { loadFromJSON(ev.target.result); }
+      catch (err) { showSaveMsg('Fichier invalide.'); }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  });
+
+  renderAll();
+
+  // Chargement automatique depuis le dépôt (fonctionne quand le site est hébergé, ex. GitHub Pages).
+  fetch('inventaire-config.json', {cache: 'no-store'})
+    .then(r => r.ok ? r.text() : Promise.reject())
+    .then(text => loadFromJSON(text))
+    .catch(() => {});
+</script>
+</body>
+</html>
