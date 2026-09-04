@@ -54,15 +54,15 @@ main .col-full{ grid-column:1 / -1; }
   gap:8px;
 }
 .point-item.is-hub{
-  border-color:var(--purple);
-  box-shadow:0 0 0 1px var(--purple) inset;
+  border-color:var(--accent);
+  box-shadow:0 0 0 1px var(--accent) inset;
 }
 .point-main{ min-width:0; }
 .point-name{ font-weight:600; font-size:0.9rem; display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
 .hub-badge{
   font-size:0.62rem;
-  background:var(--purple);
-  color:#1e1530;
+  background:var(--accent);
+  color:var(--accent-ink);
   padding:1px 6px;
   border-radius:10px;
   font-weight:700;
