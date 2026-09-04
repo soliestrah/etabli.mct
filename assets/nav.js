@@ -11,6 +11,7 @@
     { id: 'grimoire',    label: 'Grimoire',   icon: '📖', href: 'grimoire.html' },
     { id: 'carnet',      label: 'Carnet',     icon: '📓', href: 'carnet.html' },
     { id: 'inventaire',  label: 'Inventaire', icon: '📦', href: 'inventaire.html' },
+    { id: 'projets',     label: 'Projets',    icon: '🧱', href: 'projets.html' },
   ];
 
   function renderNav(){
