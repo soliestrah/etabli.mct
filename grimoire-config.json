@@ -798,63 +798,128 @@
   "books": [
     {
       "id": 2,
-      "enchId": "piercing",
-      "level": 3
+      "enchants": [
+        {
+          "id": "piercing",
+          "level": 3
+        }
+      ]
     },
     {
       "id": 3,
-      "enchId": "breach",
-      "level": 2
+      "enchants": [
+        {
+          "id": "breach",
+          "level": 2
+        }
+      ]
     },
     {
       "id": 4,
-      "enchId": "power",
-      "level": 3
+      "enchants": [
+        {
+          "id": "power",
+          "level": 3
+        }
+      ]
     },
     {
       "id": 6,
-      "enchId": "respiration",
-      "level": 1
+      "enchants": [
+        {
+          "id": "respiration",
+          "level": 1
+        }
+      ]
     },
     {
       "id": 7,
-      "enchId": "unbreaking",
-      "level": 2
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 2
+        }
+      ]
     },
     {
       "id": 8,
-      "enchId": "unbreaking",
-      "level": 2
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 2
+        }
+      ]
     },
     {
       "id": 9,
-      "enchId": "projectile_protection",
-      "level": 3
+      "enchants": [
+        {
+          "id": "projectile_protection",
+          "level": 3
+        }
+      ]
     },
     {
       "id": 10,
-      "enchId": "efficiency",
-      "level": 2
+      "enchants": [
+        {
+          "id": "efficiency",
+          "level": 2
+        }
+      ]
     },
     {
       "id": 11,
-      "enchId": "efficiency",
-      "level": 3
+      "enchants": [
+        {
+          "id": "efficiency",
+          "level": 3
+        }
+      ]
     },
     {
       "id": 12,
-      "enchId": "power",
-      "level": 2
+      "enchants": [
+        {
+          "id": "power",
+          "level": 2
+        }
+      ]
     },
     {
       "id": 13,
-      "enchId": "efficiency",
-      "level": 2
+      "enchants": [
+        {
+          "id": "efficiency",
+          "level": 2
+        }
+      ]
     },
     {
       "id": 14,
-      "enchId": "sharpness",
-      "level": 2
+      "enchants": [
+        {
+          "id": "sharpness",
+          "level": 2
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "enchants": [
+        {
+          "id": "density",
+          "level": 2
+        },
+        {
+          "id": "fire_protection",
+          "level": 1
+        },
+        {
+          "id": "protection",
+          "level": 2
+        }
+      ]
     }
   ],
   "prefs": {
