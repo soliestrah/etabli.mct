@@ -813,6 +813,16 @@
       "price": 35,
       "forItemId": "",
       "note": "LIBRAIRE"
+    },
+    {
+      "id": 50,
+      "kind": "book",
+      "villager": "5e D",
+      "enchId": "mending",
+      "level": 1,
+      "price": 18,
+      "forItemId": "",
+      "note": "LIBRAIRE"
     }
   ],
   "books": [
