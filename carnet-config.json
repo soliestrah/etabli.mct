@@ -1,6 +1,20 @@
 {
   "entries": [
     {
+      "id": 17,
+      "text": "dashboard skin sur le côté",
+      "tag": "SITE",
+      "done": false,
+      "createdAt": "2026-09-05T04:38:20.148Z"
+    },
+    {
+      "id": 16,
+      "text": "uniformité de taille des boites / pages",
+      "tag": "SITE",
+      "done": false,
+      "createdAt": "2026-09-05T04:38:06.155Z"
+    },
+    {
       "id": 15,
       "text": "définir d’autres couleurs",
       "tag": "SITE",
