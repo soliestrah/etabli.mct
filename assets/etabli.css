@@ -1,0 +1,262 @@
+/* =========================================================================
+   ÉTABLI — styles propres au dashboard (hero joueur, widgets en direct,
+   grille d'équipement au hover, cartes de navigation vers les outils)
+   Le reste (boutons, panneaux, formulaires, sauvegarde...) vient de site.css
+   ========================================================================= */
+
+main{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 20px 70px;
+}
+
+/* --- Hero joueur --- */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+  padding:40px 24px 30px;
+  text-align:left;
+  flex-wrap:wrap;
+}
+.hero-skin{
+  width:110px;
+  height:auto;
+  image-rendering:pixelated;
+  flex-shrink:0;
+  filter:drop-shadow(0 6px 14px rgba(0,0,0,0.4));
+}
+.hero-text h1{ font-size:2.1rem; margin:0 0 4px; }
+.hero-text h1 span{ color:var(--accent); }
+.hero-text p{ margin:0; max-width:420px; }
+.hero-server-status{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:10px;
+  font-family:var(--font-mono);
+  font-size:0.72rem;
+  color:var(--muted);
+}
+.hero-server-status .dot{
+  width:8px; height:8px;
+  border-radius:50%;
+  background:var(--muted);
+  display:inline-block;
+}
+
+/* --- Grille de widgets --- */
+.widgets-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:18px;
+  margin:10px 0 28px;
+}
+.widget{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px 20px;
+  display:flex;
+  flex-direction:column;
+}
+.widget-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:12px;
+}
+.widget-head h3{
+  margin:0;
+  font-size:1rem;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.widget-head a{
+  font-family:var(--font-mono);
+  font-size:0.7rem;
+  color:var(--muted);
+  text-decoration:none;
+  white-space:nowrap;
+}
+.widget-head a:hover{ color:var(--accent); }
+
+.widget-stat-row{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-bottom:4px;
+}
+.widget-stat{ }
+.widget-stat .n{
+  font-family:var(--font-mono);
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--accent);
+  line-height:1;
+}
+.widget-stat .l{ font-size:0.68rem; color:var(--muted); margin-top:4px; }
+
+.widget-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  flex:1;
+}
+.widget-list li{
+  font-size:0.85rem;
+  padding:7px 10px;
+  background:var(--panel-hover);
+  border-radius:var(--radius-sm);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+}
+.widget-list li .tag{
+  font-family:var(--font-mono);
+  font-size:0.65rem;
+  color:var(--muted);
+  flex-shrink:0;
+}
+.widget-empty{
+  color:var(--muted);
+  font-size:0.82rem;
+  font-style:italic;
+  padding:10px 0;
+}
+.widget-offline{
+  color:var(--muted);
+  font-size:0.78rem;
+  padding:10px 0;
+}
+
+.widget-progress-row{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.widget-progress-item .top{
+  display:flex;
+  justify-content:space-between;
+  font-size:0.8rem;
+  margin-bottom:4px;
+}
+.widget-progress-item .top .pct{ font-family:var(--font-mono); color:var(--muted); }
+
+/* --- Grille d'équipement (Grimoire) --- */
+.gear-section{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  margin-bottom:28px;
+}
+.gear-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(64px, 1fr));
+  gap:10px;
+  margin-top:14px;
+}
+.gear-slot{
+  position:relative;
+  background:var(--panel-hover);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  aspect-ratio:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.6rem;
+  cursor:pointer;
+  transition:border-color 0.15s ease, transform 0.15s ease;
+}
+.gear-slot:hover, .gear-slot.active{
+  border-color:var(--accent);
+  transform:translateY(-2px);
+}
+.gear-slot.empty{ opacity:0.3; cursor:default; }
+.gear-slot.empty:hover{ transform:none; border-color:var(--border); }
+.gear-slot .count{
+  position:absolute;
+  bottom:2px; right:4px;
+  font-family:var(--font-mono);
+  font-size:0.6rem;
+  color:var(--muted);
+}
+
+.gear-detail{
+  margin-top:16px;
+  padding-top:14px;
+  border-top:1px dashed var(--border);
+  display:none;
+}
+.gear-detail.show{ display:block; }
+.gear-detail-item{ margin-bottom:12px; }
+.gear-detail-item:last-child{ margin-bottom:0; }
+.gear-detail-name{ font-weight:700; font-size:0.9rem; }
+.gear-detail-enchants{
+  font-family:var(--font-mono);
+  font-size:0.76rem;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+/* --- Grille des outils (navigation) --- */
+.tools-section h2{ margin-bottom:14px; }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:16px;
+}
+.tool-card{
+  display:flex;
+  flex-direction:column;
+  text-decoration:none;
+  color:var(--text);
+  position:relative;
+  overflow:hidden;
+  transition:transform 0.15s ease, border-color 0.15s ease;
+  padding:16px 18px;
+}
+.tool-card::before{
+  content:"";
+  position:absolute;
+  top:0; left:0; right:0;
+  height:3px;
+  background:var(--card-accent, var(--accent));
+}
+.tool-card:hover{
+  transform:translateY(-3px);
+  border-color:var(--card-accent, var(--accent));
+}
+.tool-card .card-title{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.05rem;
+  margin-bottom:4px;
+  color:var(--text);
+}
+.tool-card .card-desc{
+  color:var(--muted);
+  font-size:0.82rem;
+  line-height:1.5;
+  flex:1;
+  margin-bottom:0;
+}
+.tool-card .card-cta{
+  margin-top:12px;
+  font-family:var(--font-mono);
+  font-size:0.72rem;
+  font-weight:700;
+  color:var(--card-accent, var(--accent));
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
