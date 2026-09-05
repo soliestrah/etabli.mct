@@ -79,16 +79,6 @@
     "built": false
   },
   {
-    "id": 20,
-    "name": "dappled forest",
-    "coordType": "overworld",
-    "x": 2771,
-    "z": 87,
-    "y": null,
-    "isHub": false,
-    "built": false
-  },
-  {
     "id": 21,
     "name": "pine taiga",
     "coordType": "overworld",
