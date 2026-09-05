@@ -223,17 +223,16 @@
     <div class="subview" id="subview-reserve">
       <div class="panel plain">
         <h2>Livres en réserve</h2>
-        <div class="row2">
-          <div>
-            <label for="book-ench">Enchantement</label>
+        <label>Enchantements sur ce livre</label>
+        <div class="inline-add">
+          <div class="grow">
             <select id="book-ench"></select>
           </div>
-          <div>
-            <label for="book-level">Niveau</label>
-            <input type="number" id="book-level" min="1" value="1">
-          </div>
+          <input type="number" id="book-level" min="1" value="1" style="width:64px;">
+          <button type="button" class="btn-small" id="book-ench-add">+ Ajouter</button>
         </div>
-        <button type="button" id="book-add-btn" class="btn btn-primary">Ajouter à la réserve</button>
+        <div class="ench-tags" id="book-draft-tags"></div>
+        <button type="button" id="book-add-btn" class="btn btn-primary" style="margin-top:12px;">Ajouter à la réserve</button>
         <div class="book-reserve-list" id="book-reserve-list"></div>
       </div>
     </div>
@@ -402,6 +401,39 @@
   document.getElementById('book-level').max = ENCH[bookEnchSelect.value].max;
   bookEnchSelect.addEventListener('change', () => {
     document.getElementById('book-level').max = ENCH[bookEnchSelect.value].max;
+  });
+
+  // ===================== BROUILLON MULTI-ENCHANTEMENTS (livre en cours d'ajout) =====================
+  let bookDraft = []; // [{id, level}] — le livre qu'on est en train de composer avant de l'ajouter à la réserve
+  function renderBookDraft(){
+    const wrap = document.getElementById('book-draft-tags');
+    wrap.innerHTML = '';
+    if (bookDraft.length === 0){
+      wrap.innerHTML = '<span class="card-sub">Aucun enchantement ajouté pour l\'instant.</span>';
+      return;
+    }
+    bookDraft.forEach(e => {
+      const chip = document.createElement('span');
+      chip.className = 'ench-tag';
+      chip.innerHTML = `${escapeHtml(ENCH[e.id].name)} <span class="lvl">${roman(e.level)}</span> <button type="button" class="x" data-rm-book-draft="${e.id}" title="Retirer">✕</button>`;
+      wrap.appendChild(chip);
+    });
+    wrap.querySelectorAll('[data-rm-book-draft]').forEach(b => {
+      b.addEventListener('click', () => {
+        bookDraft = bookDraft.filter(e => e.id !== b.dataset.rmBookDraft);
+        renderBookDraft();
+      });
+    });
+  }
+  renderBookDraft();
+  document.getElementById('book-ench-add').addEventListener('click', () => {
+    const enchId = bookEnchSelect.value;
+    if (!enchId) return;
+    const level = Math.max(1, Math.min(parseInt(document.getElementById('book-level').value || '1', 10), ENCH[enchId].max));
+    const existing = bookDraft.find(e => e.id === enchId);
+    if (existing) existing.level = level;
+    else bookDraft.push({id: enchId, level});
+    renderBookDraft();
   });
 
   // ===================== OFFRE : LIVRE vs OBJET COMPLET =====================
@@ -830,9 +862,10 @@
 
   // ===================== LIVRES EN RÉSERVE =====================
   function submitBookForm(){
-    const enchId = bookEnchSelect.value;
-    const level = Math.max(1, Math.min(parseInt(document.getElementById('book-level').value || '1', 10), ENCH[enchId].max));
-    books.push({id: bookIdCounter++, enchId, level});
+    if (bookDraft.length === 0) return; // rien à ajouter
+    books.push({id: bookIdCounter++, enchants: bookDraft.map(e => ({...e}))});
+    bookDraft = [];
+    renderBookDraft();
     renderAll();
   }
   document.getElementById('book-add-btn').addEventListener('click', submitBookForm);
@@ -849,12 +882,17 @@
       wrap.innerHTML = '<span class="hint" style="margin:0;">Aucun livre en réserve pour le moment.</span>';
       return;
     }
-    books.slice().sort((a,b) => ENCH[a.enchId].name.localeCompare(ENCH[b.enchId].name,'en')).forEach(book => {
-      const chip = document.createElement('div');
-      chip.className = 'book-chip';
-      chip.innerHTML = `${escapeHtml(ENCH[book.enchId].name)} ${roman(book.level)} <button type="button" data-del-book="${book.id}" title="Retirer de la réserve">✕</button>`;
-      wrap.appendChild(chip);
-    });
+    books.slice()
+      .sort((a, b) => ENCH[a.enchants[0].id].name.localeCompare(ENCH[b.enchants[0].id].name, 'en'))
+      .forEach(book => {
+        const chip = document.createElement('div');
+        chip.className = 'book-chip';
+        const enchLabel = book.enchants
+          .map(e => `${escapeHtml(ENCH[e.id].name)} ${roman(e.level)}`)
+          .join(' + ');
+        chip.innerHTML = `${enchLabel} <button type="button" data-del-book="${book.id}" title="Retirer de la réserve">✕</button>`;
+        wrap.appendChild(chip);
+      });
     wrap.querySelectorAll('[data-del-book]').forEach(b => b.addEventListener('click', () => deleteBook(Number(b.dataset.delBook))));
   }
 
@@ -1078,10 +1116,14 @@
 
   // ===================== RENDER: IDEAL =====================
   function findBookFor(enchId, minLevel){
-    const candidates = books.filter(b => b.enchId === enchId && b.level >= minLevel);
+    const candidates = [];
+    books.forEach(b => {
+      const match = b.enchants.find(e => e.id === enchId && e.level >= minLevel);
+      if (match) candidates.push({book: b, level: match.level});
+    });
     if (candidates.length === 0) return null;
     candidates.sort((a, b) => a.level - b.level);
-    return candidates[0];
+    return candidates[0].book;
   }
 
   function findBestOfferFor(enchId, minLevel){
@@ -1239,9 +1281,10 @@
 
         const book = findBookFor(entry.id, entry.level);
         if (book){
+          const bookLevel = book.enchants.find(e => e.id === entry.id).level;
           rows += `<li class="ideal-row has-book">
             <span class="mark">●</span>
-            <span>${escapeHtml(ENCH[entry.id].name)} ${roman(entry.level)}${have ? ' (actuellement ' + roman(have) + ')' : ''} — livre en réserve (niveau ${roman(book.level)})</span>
+            <span>${escapeHtml(ENCH[entry.id].name)} ${roman(entry.level)}${have ? ' (actuellement ' + roman(have) + ')' : ''} — livre en réserve (niveau ${roman(bookLevel)})</span>
           </li>`;
           return;
         }
@@ -1327,6 +1370,15 @@
     items.forEach(i => { if (!i.prefOverrides) i.prefOverrides = {}; });
     offers = Array.isArray(section.offers) ? section.offers : [];
     books = Array.isArray(section.books) ? section.books : [];
+    // migration : les anciens livres avaient un seul enchant (enchId/level) au
+    // lieu d'un tableau enchants — on convertit au vol pour ne rien perdre.
+    books.forEach(b => {
+      if (!Array.isArray(b.enchants)){
+        b.enchants = b.enchId ? [{id: b.enchId, level: b.level}] : [];
+        delete b.enchId;
+        delete b.level;
+      }
+    });
     if (section.prefs) prefs = Object.assign(prefs, section.prefs);
     itemIdCounter = items.reduce((m, i) => Math.max(m, i.id || 0), 0) + 1;
     offerIdCounter = offers.reduce((m, o) => Math.max(m, o.id || 0), 0) + 1;
