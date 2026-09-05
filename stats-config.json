@@ -1,0 +1,33 @@
+{
+  "generatedAt": null,
+  "players": [
+    {
+      "uuid": "34163e8c-f3c9-3a7a-9abe-8dd50e56bf3a",
+      "name": "N3SK3",
+      "playTimeHours": 113.4,
+      "deaths": 21,
+      "mobKills": 3266,
+      "blocksMined": 75095,
+      "distanceTotalKm": 499.66,
+      "jumps": 38071,
+      "villagerTrades": 3473,
+      "advancementsDone": 1131,
+      "advancementsTotal": 1137,
+      "lastPosition": null
+    },
+    {
+      "uuid": "e593b84e-1eb5-3fe8-8f90-b0a891382963",
+      "name": "e593b84e",
+      "playTimeHours": 31.3,
+      "deaths": 26,
+      "mobKills": 241,
+      "blocksMined": 12488,
+      "distanceTotalKm": 190.31,
+      "jumps": 12373,
+      "villagerTrades": 191,
+      "advancementsDone": 665,
+      "advancementsTotal": 669,
+      "lastPosition": null
+    }
+  ]
+}
