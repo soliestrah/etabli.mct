@@ -823,6 +823,16 @@
       "price": 18,
       "forItemId": "",
       "note": "LIBRAIRE"
+    },
+    {
+      "id": 52,
+      "kind": "book",
+      "villager": "3e D",
+      "enchId": "fire_protection",
+      "level": 2,
+      "price": 15,
+      "forItemId": "",
+      "note": "LIBRAIRE"
     }
   ],
   "books": [
