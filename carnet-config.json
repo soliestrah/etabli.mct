@@ -18,21 +18,21 @@
       "id": 13,
       "text": "trier les notes par categories",
       "tag": "SITE",
-      "done": false,
+      "done": true,
       "createdAt": "2026-09-04T07:36:26.225Z"
     },
     {
       "id": 12,
       "text": "faire une mineshaft au niveau de l’ironie vein",
       "tag": "BUILD",
-      "done": false,
+      "done": true,
       "createdAt": "2026-09-04T07:36:15.754Z"
     },
     {
       "id": 11,
       "text": "visiter le deepdark",
       "tag": "AVENTURE",
-      "done": false,
+      "done": true,
       "createdAt": "2026-09-04T07:36:02.235Z"
     },
     {
@@ -60,7 +60,7 @@
       "id": 7,
       "text": "Changer les couleurs. plus clair ?",
       "tag": "SITE",
-      "done": false,
+      "done": true,
       "createdAt": "2026-08-30T08:44:12.473Z"
     },
     {
