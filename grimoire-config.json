@@ -920,6 +920,46 @@
           "level": 2
         }
       ]
+    },
+    {
+      "id": 16,
+      "enchants": [
+        {
+          "id": "knockback",
+          "level": 1
+        },
+        {
+          "id": "projectile_protection",
+          "level": 3
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "enchants": [
+        {
+          "id": "power",
+          "level": 3
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "enchants": [
+        {
+          "id": "soul_speed",
+          "level": 2
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "enchants": [
+        {
+          "id": "protection",
+          "level": 4
+        }
+      ]
     }
   ],
   "prefs": {
