@@ -1,3 +1,8598 @@
 {
-  "resources": []
+  "resources": [
+    {
+      "id": 1,
+      "name": "Acacia boat",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 1,
+          "location": "Coffre (364, 71, 55)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Acacia fence",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 2,
+          "location": "Coffre (697, 63, -2265)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Acacia leaves",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 3,
+          "location": "Coffre (-1935, 79, -443)",
+          "quantity": 10
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "name": "Acacia log",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 4,
+          "location": "Coffre (697, 63, -2265)",
+          "quantity": 9
+        },
+        {
+          "id": 5,
+          "location": "Coffre (225, 68, 46)",
+          "quantity": 52
+        },
+        {
+          "id": 6,
+          "location": "Coffre (-1935, 79, -443)",
+          "quantity": 22
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "name": "Acacia planks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 7,
+          "location": "Coffre (697, 63, -2265)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "name": "Acacia sapling",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 8,
+          "location": "Coffre (64, 89, -52)",
+          "quantity": 6
+        },
+        {
+          "id": 9,
+          "location": "Coffre (225, 68, 46)",
+          "quantity": 2
+        },
+        {
+          "id": 10,
+          "location": "Coffre (-1935, 79, -443)",
+          "quantity": 5
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 7,
+      "name": "Ancient debris",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 11,
+          "location": "Coffre (62, 94, -50)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 8,
+      "name": "Andesite",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 12,
+          "location": "Coffre (697, 63, -2265)",
+          "quantity": 1
+        },
+        {
+          "id": 13,
+          "location": "Coffre (63, 89, -51)",
+          "quantity": 3
+        },
+        {
+          "id": 14,
+          "location": "Coffre (226, 68, 43)",
+          "quantity": 1
+        },
+        {
+          "id": 15,
+          "location": "Coffre (255, 66, 41)",
+          "quantity": 8
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 9,
+      "name": "Apple",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 16,
+          "location": "Coffre (64, 90, -44)",
+          "quantity": 3
+        },
+        {
+          "id": 17,
+          "location": "Coffre (3112, 63, -904)",
+          "quantity": 4
+        },
+        {
+          "id": 18,
+          "location": "Coffre (-1935, 79, -443)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 10,
+      "name": "Arrow",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 19,
+          "location": "Coffre (696, 63, -2266)",
+          "quantity": 4
+        },
+        {
+          "id": 20,
+          "location": "Coffre (224, 68, 42)",
+          "quantity": 5
+        },
+        {
+          "id": 21,
+          "location": "Coffre (226, 66, 47)",
+          "quantity": 1
+        },
+        {
+          "id": 22,
+          "location": "Coffre (226, 68, 49)",
+          "quantity": 4
+        },
+        {
+          "id": 23,
+          "location": "Coffre (69, 53, -915)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 11,
+      "name": "Baked potato",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 24,
+          "location": "Coffre (64, 90, -44)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 12,
+      "name": "Bamboo",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 25,
+          "location": "Coffre (63, 92, -56)",
+          "quantity": 12
+        },
+        {
+          "id": 26,
+          "location": "Coffre (64, 90, -44)",
+          "quantity": 3
+        },
+        {
+          "id": 27,
+          "location": "Coffre (64, 90, -45)",
+          "quantity": 3
+        },
+        {
+          "id": 28,
+          "location": "Coffre (225, 68, 46)",
+          "quantity": 9
+        },
+        {
+          "id": 29,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 7
+        },
+        {
+          "id": 30,
+          "location": "Coffre (277, 64, 42)",
+          "quantity": 285
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 13,
+      "name": "Bamboo block",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 31,
+          "location": "Coffre (225, 68, 46)",
+          "quantity": 82
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 14,
+      "name": "Bamboo button",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 32,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 15,
+      "name": "Bamboo fence",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 33,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 16,
+      "name": "Bamboo mosaic",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 34,
+          "location": "Coffre (225, 66, 46)",
+          "quantity": 5
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 17,
+      "name": "Bamboo mosaic stairs",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 35,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 18,
+      "name": "Bamboo planks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 36,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 10
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 19,
+      "name": "Bamboo sign",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 37,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 17
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 20,
+      "name": "Bamboo slab",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 38,
+          "location": "Coffre (97, 95, -42)",
+          "quantity": 1
+        },
+        {
+          "id": 39,
+          "location": "Coffre (225, 66, 46)",
+          "quantity": 7
+        },
+        {
+          "id": 40,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 64
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 21,
+      "name": "Bamboo stairs",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 41,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 22,
+      "name": "Bamboo trapdoor",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 42,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 11
+        },
+        {
+          "id": 43,
+          "location": "Baril (-76, 92, -76)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 23,
+      "name": "Beef",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 44,
+          "location": "Coffre (64, 90, -45)",
+          "quantity": 5
+        },
+        {
+          "id": 45,
+          "location": "Coffre (243, 66, 41)",
+          "quantity": 6
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 24,
+      "name": "Beetroot seeds",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 46,
+          "location": "Coffre (226, 68, 47)",
+          "quantity": 24
+        },
+        {
+          "id": 47,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 12
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 25,
+      "name": "Bell",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 48,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 26,
+      "name": "Birch door",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 49,
+          "location": "Coffre (64, 89, -51)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 27,
+      "name": "Birch leaves",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 50,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 28,
+      "name": "Birch log",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 51,
+          "location": "Coffre (64, 89, -51)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 29,
+      "name": "Birch planks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 52,
+          "location": "Coffre (225, 66, 46)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 30,
+      "name": "Birch sapling",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 53,
+          "location": "Coffre (64, 89, -51)",
+          "quantity": 9
+        },
+        {
+          "id": 54,
+          "location": "Coffre (226, 68, 46)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 31,
+      "name": "Birch stairs",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 55,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 32,
+      "name": "Black dye",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 56,
+          "location": "Coffre (213, 66, 35)",
+          "quantity": 1
+        },
+        {
+          "id": 57,
+          "location": "Coffre (237, 66, 41)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 33,
+      "name": "Black wool",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 58,
+          "location": "Coffre (697, 63, -2264)",
+          "quantity": 3
+        },
+        {
+          "id": 59,
+          "location": "Coffre (237, 66, 41)",
+          "quantity": 11
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 34,
+      "name": "Blackstone",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 60,
+          "location": "Coffre (225, 68, 43)",
+          "quantity": 13
+        },
+        {
+          "id": 61,
+          "location": "Coffre (225, 68, 48)",
+          "quantity": 10
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 35,
+      "name": "Blaze powder",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 62,
+          "location": "Coffre (269, 67, 34)",
+          "quantity": 1
+        },
+        {
+          "id": 63,
+          "location": "Alambic (372, 70, 58)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 36,
+      "name": "Blue dye",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 64,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 37,
+      "name": "Bone",
+      "icon": "",
+      "category": "Mobs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 65,
+          "location": "Coffre (63, 89, -45)",
+          "quantity": 1
+        },
+        {
+          "id": 66,
+          "location": "Coffre (226, 66, 47)",
+          "quantity": 44
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 38,
+      "name": "Bone block",
+      "icon": "",
+      "category": "Mobs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 67,
+          "location": "Coffre (224, 68, 41)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 39,
+      "name": "Bone meal",
+      "icon": "",
+      "category": "Mobs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 68,
+          "location": "Coffre (63, 89, -45)",
+          "quantity": 1
+        },
+        {
+          "id": 69,
+          "location": "Coffre (219, 66, 35)",
+          "quantity": 5
+        },
+        {
+          "id": 70,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 11
+        },
+        {
+          "id": 71,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 63
+        },
+        {
+          "id": 72,
+          "location": "Hopper (369, 70, 67)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 40,
+      "name": "Book",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 73,
+          "location": "Coffre (261, 66, 35)",
+          "quantity": 81
+        },
+        {
+          "id": 74,
+          "location": "Baril (-76, 92, -76)",
+          "quantity": 9
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 41,
+      "name": "Bookshelf",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 75,
+          "location": "Coffre (261, 66, 35)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 42,
+      "name": "Bow",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 76,
+          "location": "Coffre (226, 66, 47)",
+          "quantity": 3
+        },
+        {
+          "id": 77,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 3
+        },
+        {
+          "id": 78,
+          "location": "Coffre (269, 67, 34)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 43,
+      "name": "Bowl",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 79,
+          "location": "Coffre (226, 68, 47)",
+          "quantity": 5
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 44,
+      "name": "Bread",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 80,
+          "location": "Coffre (64, 90, -44)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 45,
+      "name": "Brewing stand",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 81,
+          "location": "Coffre (231, 66, 35)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 46,
+      "name": "Brick",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 82,
+          "location": "Coffre (225, 66, 44)",
+          "quantity": 231
+        },
+        {
+          "id": 83,
+          "location": "Coffre (226, 66, 44)",
+          "quantity": 228
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 47,
+      "name": "Bricks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 84,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 48,
+      "name": "Brown bed",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 85,
+          "location": "Coffre (231, 66, 35)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 49,
+      "name": "Brown glazed terracotta",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 86,
+          "location": "Coffre (226, 66, 43)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 50,
+      "name": "Brown mushroom",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 87,
+          "location": "Coffre (226, 68, 47)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 51,
+      "name": "Brown mushroom block",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 88,
+          "location": "Coffre (226, 68, 47)",
+          "quantity": 36
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 52,
+      "name": "Brown terracotta",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 89,
+          "location": "Coffre (225, 66, 43)",
+          "quantity": 54
+        },
+        {
+          "id": 90,
+          "location": "Coffre (226, 66, 43)",
+          "quantity": 5
+        },
+        {
+          "id": 91,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 7
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 53,
+      "name": "Brown wool",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 92,
+          "location": "Coffre (237, 66, 41)",
+          "quantity": 1
+        },
+        {
+          "id": 93,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 54,
+      "name": "Bucket",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 94,
+          "location": "Coffre (86, 93, -21)",
+          "quantity": 2
+        },
+        {
+          "id": 95,
+          "location": "Coffre (232, 66, 49)",
+          "quantity": 4
+        },
+        {
+          "id": 96,
+          "location": "Coffre (-74, 92, -76)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 55,
+      "name": "Bundle",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 97,
+          "location": "Coffre (269, 67, 34)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 56,
+      "name": "Buried treasure map",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 98,
+          "location": "Coffre (62, 89, -50)",
+          "quantity": 2
+        },
+        {
+          "id": 99,
+          "location": "Coffre (226, 66, 42)",
+          "quantity": 1
+        },
+        {
+          "id": 100,
+          "location": "Coffre (225, 66, 49)",
+          "quantity": 2
+        },
+        {
+          "id": 101,
+          "location": "Coffre (226, 66, 49)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 57,
+      "name": "Cactus",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 102,
+          "location": "Coffre (64, 89, -45)",
+          "quantity": 10
+        },
+        {
+          "id": 103,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 14
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 58,
+      "name": "Campfire",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 104,
+          "location": "Coffre (219, 66, 35)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 59,
+      "name": "Carrot",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 105,
+          "location": "Coffre (64, 90, -44)",
+          "quantity": 3
+        },
+        {
+          "id": 106,
+          "location": "Coffre (207, 66, 41)",
+          "quantity": 33
+        },
+        {
+          "id": 107,
+          "location": "Coffre (261, 66, 41)",
+          "quantity": 4
+        },
+        {
+          "id": 108,
+          "location": "Coffre (-65, 90, -75)",
+          "quantity": 47
+        },
+        {
+          "id": 109,
+          "location": "Coffre (-68, 88, -75)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 60,
+      "name": "Cherry fence",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 110,
+          "location": "Baril (65, 95, -45)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 61,
+      "name": "Cherry sapling",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 111,
+          "location": "Coffre (64, 89, -52)",
+          "quantity": 7
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 62,
+      "name": "Chest",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 112,
+          "location": "Coffre (697, 63, -2264)",
+          "quantity": 2
+        },
+        {
+          "id": 113,
+          "location": "Coffre (226, 66, 42)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 63,
+      "name": "Chicken",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 114,
+          "location": "Coffre (243, 66, 41)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 64,
+      "name": "Chiseled stone bricks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 115,
+          "location": "Coffre (697, 63, -2265)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 65,
+      "name": "Chiseled tuff",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 116,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 66,
+      "name": "Chorus fruit",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 117,
+          "location": "Coffre (225, 68, 47)",
+          "quantity": 10
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 67,
+      "name": "Clay ball",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 118,
+          "location": "Coffre (255, 66, 41)",
+          "quantity": 5
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 68,
+      "name": "Closed eyeblossom",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 119,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 22
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 69,
+      "name": "Coal",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 120,
+          "location": "Coffre (225, 66, 45)",
+          "quantity": 1
+        },
+        {
+          "id": 121,
+          "location": "Coffre (226, 66, 45)",
+          "quantity": 4
+        },
+        {
+          "id": 122,
+          "location": "Coffre (255, 66, 35)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 70,
+      "name": "Coarse dirt",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 123,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 5
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 71,
+      "name": "Coast armor trim smithing template",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 124,
+          "location": "Coffre (226, 66, 42)",
+          "quantity": 5
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 72,
+      "name": "Cobbled deepslate",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 125,
+          "location": "Coffre (63, 89, -51)",
+          "quantity": 3
+        },
+        {
+          "id": 126,
+          "location": "Coffre (63, 89, -52)",
+          "quantity": 3
+        },
+        {
+          "id": 127,
+          "location": "Coffre (225, 68, 43)",
+          "quantity": 66
+        },
+        {
+          "id": 128,
+          "location": "Coffre (226, 68, 43)",
+          "quantity": 69
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 73,
+      "name": "Cobbled deepslate stairs",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 129,
+          "location": "Coffre (63, 90, -51)",
+          "quantity": 40
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 74,
+      "name": "Cobblestone",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 130,
+          "location": "Coffre (697, 63, -2265)",
+          "quantity": 100
+        },
+        {
+          "id": 131,
+          "location": "Coffre (63, 89, -51)",
+          "quantity": 3
+        },
+        {
+          "id": 132,
+          "location": "Coffre (225, 68, 43)",
+          "quantity": 70
+        },
+        {
+          "id": 133,
+          "location": "Coffre (226, 68, 50)",
+          "quantity": 1
+        },
+        {
+          "id": 134,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 68
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 75,
+      "name": "Cobblestone slab",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 135,
+          "location": "Coffre (63, 90, -51)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 76,
+      "name": "Cobblestone stairs",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 136,
+          "location": "Coffre (697, 63, -2265)",
+          "quantity": 21
+        },
+        {
+          "id": 137,
+          "location": "Coffre (63, 90, -51)",
+          "quantity": 8
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 77,
+      "name": "Cocoa beans",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 138,
+          "location": "Coffre (64, 90, -45)",
+          "quantity": 19
+        },
+        {
+          "id": 139,
+          "location": "Coffre (225, 68, 47)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 78,
+      "name": "Compass",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 140,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 79,
+      "name": "Composter",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 141,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 6
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 80,
+      "name": "Cooked chicken",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 142,
+          "location": "Coffre (64, 90, -45)",
+          "quantity": 6
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 81,
+      "name": "Cooked porkchop",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 143,
+          "location": "Coffre (64, 90, -45)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 82,
+      "name": "Copper bars",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 144,
+          "location": "Coffre (225, 68, 45)",
+          "quantity": 97
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 83,
+      "name": "Copper block",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 145,
+          "location": "Coffre (225, 68, 45)",
+          "quantity": 57
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 84,
+      "name": "Copper boots",
+      "icon": "",
+      "category": "Armure",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 146,
+          "location": "Coffre (366, 69, 62)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 85,
+      "name": "Copper chestplate",
+      "icon": "",
+      "category": "Armure",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 147,
+          "location": "Coffre (366, 69, 62)",
+          "quantity": 1
+        },
+        {
+          "id": 148,
+          "location": "Coffre (-65, 90, -75)",
+          "quantity": 1
+        },
+        {
+          "id": 149,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 86,
+      "name": "Copper door",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 150,
+          "location": "Coffre (225, 68, 45)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 87,
+      "name": "Copper helmet",
+      "icon": "",
+      "category": "Armure",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 151,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 88,
+      "name": "Copper hoe",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 152,
+          "location": "Coffre (231, 66, 35)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 89,
+      "name": "Copper horse armor",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 153,
+          "location": "Coffre (366, 69, 62)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 90,
+      "name": "Copper ingot",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 154,
+          "location": "Coffre (696, 63, -2265)",
+          "quantity": 4
+        },
+        {
+          "id": 155,
+          "location": "Coffre (62, 94, -50)",
+          "quantity": 3
+        },
+        {
+          "id": 156,
+          "location": "Baril (65, 95, -45)",
+          "quantity": 29
+        },
+        {
+          "id": 157,
+          "location": "Coffre (225, 68, 45)",
+          "quantity": 258
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 91,
+      "name": "Copper leggings",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 158,
+          "location": "Coffre (366, 69, 62)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 92,
+      "name": "Copper nautilus armor",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 159,
+          "location": "Coffre (366, 69, 62)",
+          "quantity": 2
+        },
+        {
+          "id": 160,
+          "location": "Coffre (3112, 63, -904)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 93,
+      "name": "Copper nugget",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 161,
+          "location": "Coffre (226, 66, 45)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 94,
+      "name": "Copper pickaxe",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 162,
+          "location": "Coffre (364, 71, 55)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 95,
+      "name": "Copper spear",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 163,
+          "location": "Coffre (364, 69, 61)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 96,
+      "name": "Cornflower",
+      "icon": "",
+      "category": "Décoration",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 164,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 97,
+      "name": "Cracked stone bricks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 165,
+          "location": "Coffre (697, 63, -2265)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 98,
+      "name": "Crimson fungus",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 166,
+          "location": "Coffre (226, 68, 47)",
+          "quantity": 8
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 99,
+      "name": "Crimson roots",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 167,
+          "location": "Coffre (225, 68, 48)",
+          "quantity": 17
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 100,
+      "name": "Crossbow",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 168,
+          "location": "Coffre (224, 68, 41)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 101,
+      "name": "Crying obsidian",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 169,
+          "location": "Coffre (226, 66, 45)",
+          "quantity": 7
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 102,
+      "name": "Cut copper",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 170,
+          "location": "Coffre (225, 68, 45)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 103,
+      "name": "Cut copper slab",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 171,
+          "location": "Coffre (225, 68, 45)",
+          "quantity": 148
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 104,
+      "name": "Cut copper stairs",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 172,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 105,
+      "name": "Dandelion",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 173,
+          "location": "Coffre (56, 101, -290)",
+          "quantity": 1
+        },
+        {
+          "id": 174,
+          "location": "Coffre (64, 89, -45)",
+          "quantity": 1
+        },
+        {
+          "id": 175,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 106,
+      "name": "Dark oak door",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 176,
+          "location": "Coffre (64, 89, -51)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 107,
+      "name": "Dark oak fence",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 177,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 6
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 108,
+      "name": "Dark oak log",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 178,
+          "location": "Coffre (225, 68, 46)",
+          "quantity": 83
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 109,
+      "name": "Dark oak planks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 179,
+          "location": "Coffre (3112, 63, -904)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 110,
+      "name": "Dark oak sapling",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 180,
+          "location": "Coffre (226, 68, 46)",
+          "quantity": 15
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 111,
+      "name": "Dark oak trapdoor",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 181,
+          "location": "Coffre (3103, 63, -855)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 112,
+      "name": "Deepslate",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 182,
+          "location": "Coffre (226, 68, 43)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 113,
+      "name": "Deepslate brick wall",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 183,
+          "location": "Coffre (63, 90, -51)",
+          "quantity": 19
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 114,
+      "name": "Deepslate tile wall",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 184,
+          "location": "Coffre (63, 90, -51)",
+          "quantity": 64
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 115,
+      "name": "Diamond",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 185,
+          "location": "Coffre (62, 94, -50)",
+          "quantity": 37
+        },
+        {
+          "id": 186,
+          "location": "Coffre (226, 66, 45)",
+          "quantity": 6
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 116,
+      "name": "Diamond axe",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 187,
+          "location": "Baril (65, 95, -45)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 117,
+      "name": "Diamond chestplate",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 188,
+          "location": "Coffre (225, 68, 50)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 118,
+      "name": "Diamond horse armor",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 189,
+          "location": "Coffre (226, 66, 42)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 119,
+      "name": "Diamond leggings",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 190,
+          "location": "Coffre (225, 68, 50)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 120,
+      "name": "Diamond pickaxe",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 191,
+          "location": "Coffre (364, 71, 55)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 121,
+      "name": "Diamond shovel",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 192,
+          "location": "Baril (65, 95, -45)",
+          "quantity": 1
+        },
+        {
+          "id": 193,
+          "location": "Coffre (224, 68, 41)",
+          "quantity": 1
+        },
+        {
+          "id": 194,
+          "location": "Coffre (269, 67, 34)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 122,
+      "name": "Diamond sword",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 195,
+          "location": "Coffre (225, 68, 50)",
+          "quantity": 1
+        },
+        {
+          "id": 196,
+          "location": "Coffre (364, 69, 61)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 123,
+      "name": "Diorite",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 197,
+          "location": "Coffre (697, 63, -2264)",
+          "quantity": 3
+        },
+        {
+          "id": 198,
+          "location": "Coffre (63, 89, -51)",
+          "quantity": 3
+        },
+        {
+          "id": 199,
+          "location": "Coffre (226, 68, 43)",
+          "quantity": 1
+        },
+        {
+          "id": 200,
+          "location": "Coffre (255, 66, 41)",
+          "quantity": 11
+        },
+        {
+          "id": 201,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 9
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 124,
+      "name": "Dirt",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 202,
+          "location": "Coffre (697, 63, -2264)",
+          "quantity": 64
+        },
+        {
+          "id": 203,
+          "location": "Coffre (63, 89, -51)",
+          "quantity": 4
+        },
+        {
+          "id": 204,
+          "location": "Coffre (63, 89, -52)",
+          "quantity": 3
+        },
+        {
+          "id": 205,
+          "location": "Coffre (96, 95, -64)",
+          "quantity": 128
+        },
+        {
+          "id": 206,
+          "location": "Coffre (226, 68, 43)",
+          "quantity": 203
+        },
+        {
+          "id": 207,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 74
+        },
+        {
+          "id": 208,
+          "location": "Baril (257, 66, 47)",
+          "quantity": 280
+        },
+        {
+          "id": 209,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 125,
+      "name": "Dispenser",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 210,
+          "location": "Coffre (226, 66, 47)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 126,
+      "name": "Dragon breath",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 211,
+          "location": "Coffre (225, 68, 48)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 127,
+      "name": "Dried kelp",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 212,
+          "location": "Coffre (243, 66, 41)",
+          "quantity": 8
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 128,
+      "name": "Dripstone block",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 213,
+          "location": "Coffre (225, 68, 43)",
+          "quantity": 17
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 129,
+      "name": "Dropper",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 214,
+          "location": "Coffre (226, 66, 49)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 130,
+      "name": "Egg",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 215,
+          "location": "Coffre (225, 68, 51)",
+          "quantity": 1
+        },
+        {
+          "id": 216,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 1
+        },
+        {
+          "id": 217,
+          "location": "Coffre (1397, 63, 1561)",
+          "quantity": 5
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 131,
+      "name": "Emerald",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 218,
+          "location": "Coffre (62, 94, -50)",
+          "quantity": 3
+        },
+        {
+          "id": 219,
+          "location": "Coffre (226, 66, 45)",
+          "quantity": 13
+        },
+        {
+          "id": 220,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 192
+        },
+        {
+          "id": 221,
+          "location": "Coffre (269, 67, 34)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 132,
+      "name": "Enchanted book",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 222,
+          "location": "Coffre (226, 66, 42)",
+          "quantity": 1
+        },
+        {
+          "id": 223,
+          "location": "Coffre (261, 66, 35)",
+          "quantity": 2
+        },
+        {
+          "id": 224,
+          "location": "Coffre (272, 66, 36)",
+          "quantity": 1
+        },
+        {
+          "id": 225,
+          "location": "Baril (-76, 92, -76)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 133,
+      "name": "End stone",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 226,
+          "location": "Coffre (226, 68, 43)",
+          "quantity": 33
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 134,
+      "name": "End stone bricks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 227,
+          "location": "Coffre (225, 68, 48)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 135,
+      "name": "Ender eye",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 228,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 4
+        },
+        {
+          "id": 229,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 136,
+      "name": "Ender pearl",
+      "icon": "",
+      "category": "Mobs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 230,
+          "location": "Coffre (696, 63, -2266)",
+          "quantity": 1
+        },
+        {
+          "id": 231,
+          "location": "Coffre (226, 66, 47)",
+          "quantity": 29
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 137,
+      "name": "Exposed cut copper slab",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 232,
+          "location": "Coffre (225, 68, 45)",
+          "quantity": 2
+        },
+        {
+          "id": 233,
+          "location": "Hopper (225, 67, 51)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 138,
+      "name": "Feather",
+      "icon": "",
+      "category": "Mobs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 234,
+          "location": "Coffre (243, 66, 35)",
+          "quantity": 27
+        },
+        {
+          "id": 235,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 7
+        },
+        {
+          "id": 236,
+          "location": "Coffre (-532, 66, -302)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 139,
+      "name": "Fern",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 237,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 1
+        },
+        {
+          "id": 238,
+          "location": "Coffre (3112, 64, -872)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 140,
+      "name": "Fire charge",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 239,
+          "location": "Coffre (63, 89, -45)",
+          "quantity": 1
+        },
+        {
+          "id": 240,
+          "location": "Coffre (226, 66, 47)",
+          "quantity": 2
+        },
+        {
+          "id": 241,
+          "location": "Coffre (-592, 51, -1838)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 141,
+      "name": "Fishing rod",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 242,
+          "location": "Coffre (364, 71, 55)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 142,
+      "name": "Flint",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 243,
+          "location": "Coffre (696, 63, -2266)",
+          "quantity": 5
+        },
+        {
+          "id": 244,
+          "location": "Hopper (225, 67, 51)",
+          "quantity": 1
+        },
+        {
+          "id": 245,
+          "location": "Coffre (243, 66, 35)",
+          "quantity": 29
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 143,
+      "name": "Flint and steel",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 246,
+          "location": "Coffre (62, 94, -50)",
+          "quantity": 1
+        },
+        {
+          "id": 247,
+          "location": "Coffre (63, 89, -44)",
+          "quantity": 1
+        },
+        {
+          "id": 248,
+          "location": "Coffre (226, 66, 47)",
+          "quantity": 1
+        },
+        {
+          "id": 249,
+          "location": "Coffre (-592, 51, -1838)",
+          "quantity": 1
+        },
+        {
+          "id": 250,
+          "location": "Coffre (-522, 85, 53)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 144,
+      "name": "Furnace",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 251,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 145,
+      "name": "Gilded blackstone",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 252,
+          "location": "Coffre (62, 94, -50)",
+          "quantity": 2
+        },
+        {
+          "id": 253,
+          "location": "Hopper (225, 67, 51)",
+          "quantity": 5
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 146,
+      "name": "Glass",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 254,
+          "location": "Coffre (226, 66, 44)",
+          "quantity": 228
+        },
+        {
+          "id": 255,
+          "location": "Coffre (232, 65, 50)",
+          "quantity": 599
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 147,
+      "name": "Glass bottle",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 256,
+          "location": "Coffre (62, 94, -50)",
+          "quantity": 3
+        },
+        {
+          "id": 257,
+          "location": "Baril (257, 66, 47)",
+          "quantity": 15
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 148,
+      "name": "Glass pane",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 258,
+          "location": "Coffre (249, 66, 35)",
+          "quantity": 209
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 149,
+      "name": "Glistering melon slice",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 259,
+          "location": "Coffre (225, 68, 47)",
+          "quantity": 5
+        },
+        {
+          "id": 260,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 150,
+      "name": "Globe banner pattern",
+      "icon": "",
+      "category": "Décoration",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 261,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 151,
+      "name": "Glow berries",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 262,
+          "location": "Coffre (64, 89, -45)",
+          "quantity": 3
+        },
+        {
+          "id": 263,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 152,
+      "name": "Glowstone",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 264,
+          "location": "Coffre (225, 68, 43)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 153,
+      "name": "Glowstone dust",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 265,
+          "location": "Coffre (225, 68, 48)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 154,
+      "name": "Gold block",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 266,
+          "location": "Coffre (62, 94, -50)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 155,
+      "name": "Gold ingot",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 267,
+          "location": "Coffre (226, 66, 45)",
+          "quantity": 36
+        },
+        {
+          "id": 268,
+          "location": "Coffre (269, 67, 34)",
+          "quantity": 22
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 156,
+      "name": "Gold nugget",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 269,
+          "location": "Coffre (62, 94, -50)",
+          "quantity": 3
+        },
+        {
+          "id": 270,
+          "location": "Coffre (224, 68, 41)",
+          "quantity": 5
+        },
+        {
+          "id": 271,
+          "location": "Coffre (226, 66, 45)",
+          "quantity": 25
+        },
+        {
+          "id": 272,
+          "location": "Coffre (249, 66, 41)",
+          "quantity": 6
+        },
+        {
+          "id": 273,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 157,
+      "name": "Golden apple",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 274,
+          "location": "Coffre (62, 94, -50)",
+          "quantity": 3
+        },
+        {
+          "id": 275,
+          "location": "Coffre (224, 68, 41)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 158,
+      "name": "Golden axe",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 276,
+          "location": "Coffre (365, 69, 61)",
+          "quantity": 1
+        },
+        {
+          "id": 277,
+          "location": "Coffre (-592, 51, -1838)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 159,
+      "name": "Golden boots",
+      "icon": "",
+      "category": "Armure",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 278,
+          "location": "Coffre (366, 69, 62)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 160,
+      "name": "Golden chestplate",
+      "icon": "",
+      "category": "Armure",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 279,
+          "location": "Coffre (366, 69, 62)",
+          "quantity": 1
+        },
+        {
+          "id": 280,
+          "location": "Coffre (-68, 88, -75)",
+          "quantity": 1
+        },
+        {
+          "id": 281,
+          "location": "Coffre (-532, 66, -302)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 161,
+      "name": "Golden helmet",
+      "icon": "",
+      "category": "Armure",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 282,
+          "location": "Coffre (224, 68, 41)",
+          "quantity": 1
+        },
+        {
+          "id": 283,
+          "location": "Coffre (366, 69, 62)",
+          "quantity": 1
+        },
+        {
+          "id": 284,
+          "location": "Coffre (-68, 88, -75)",
+          "quantity": 1
+        },
+        {
+          "id": 285,
+          "location": "Coffre (1411, 65, -1742)",
+          "quantity": 1
+        },
+        {
+          "id": 286,
+          "location": "Coffre (3103, 63, -863)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 162,
+      "name": "Golden hoe",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 287,
+          "location": "Coffre (364, 71, 55)",
+          "quantity": 1
+        },
+        {
+          "id": 288,
+          "location": "Coffre (1411, 65, -1742)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 163,
+      "name": "Golden horse armor",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 289,
+          "location": "Coffre (62, 94, -50)",
+          "quantity": 1
+        },
+        {
+          "id": 290,
+          "location": "Coffre (-532, 66, -302)",
+          "quantity": 1
+        },
+        {
+          "id": 291,
+          "location": "Coffre (902, 50, -1336)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 164,
+      "name": "Golden leggings",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 292,
+          "location": "Coffre (366, 69, 62)",
+          "quantity": 1
+        },
+        {
+          "id": 293,
+          "location": "Coffre (-65, 90, -75)",
+          "quantity": 1
+        },
+        {
+          "id": 294,
+          "location": "Coffre (-68, 88, -75)",
+          "quantity": 1
+        },
+        {
+          "id": 295,
+          "location": "Coffre (1411, 65, -1742)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 165,
+      "name": "Golden nautilus armor",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 296,
+          "location": "Coffre (366, 69, 62)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 166,
+      "name": "Golden pickaxe",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 297,
+          "location": "Coffre (364, 71, 55)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 167,
+      "name": "Golden shovel",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 298,
+          "location": "Coffre (-522, 85, 53)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 168,
+      "name": "Golden spear",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 299,
+          "location": "Coffre (-65, 90, -75)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 169,
+      "name": "Golden sword",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 300,
+          "location": "Coffre (364, 69, 61)",
+          "quantity": 1
+        },
+        {
+          "id": 301,
+          "location": "Coffre (3103, 63, -863)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 170,
+      "name": "Granite",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 302,
+          "location": "Coffre (63, 89, -52)",
+          "quantity": 3
+        },
+        {
+          "id": 303,
+          "location": "Coffre (226, 68, 43)",
+          "quantity": 1
+        },
+        {
+          "id": 304,
+          "location": "Coffre (255, 66, 41)",
+          "quantity": 10
+        },
+        {
+          "id": 305,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 171,
+      "name": "Granite stairs",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 306,
+          "location": "Coffre (63, 90, -52)",
+          "quantity": 5
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 172,
+      "name": "Grass block",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 307,
+          "location": "Coffre (69, 53, -915)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 173,
+      "name": "Gravel",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 308,
+          "location": "Coffre (697, 63, -2264)",
+          "quantity": 20
+        },
+        {
+          "id": 309,
+          "location": "Coffre (63, 89, -51)",
+          "quantity": 128
+        },
+        {
+          "id": 310,
+          "location": "Coffre (64, 90, -52)",
+          "quantity": 2
+        },
+        {
+          "id": 311,
+          "location": "Coffre (225, 68, 43)",
+          "quantity": 192
+        },
+        {
+          "id": 312,
+          "location": "Coffre (226, 68, 43)",
+          "quantity": 192
+        },
+        {
+          "id": 313,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 39
+        },
+        {
+          "id": 314,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 174,
+      "name": "Gray dye",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 315,
+          "location": "Coffre (213, 66, 35)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 175,
+      "name": "Gray wool",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 316,
+          "location": "Coffre (237, 66, 41)",
+          "quantity": 6
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 176,
+      "name": "Grindstone",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 317,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 5
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 177,
+      "name": "Gunpowder",
+      "icon": "",
+      "category": "Mobs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 318,
+          "location": "Coffre (63, 89, -45)",
+          "quantity": 1
+        },
+        {
+          "id": 319,
+          "location": "Coffre (179, 10, -35)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 178,
+      "name": "Heart of the sea",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 320,
+          "location": "Coffre (226, 66, 45)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 179,
+      "name": "Honeycomb",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 321,
+          "location": "Coffre (219, 66, 35)",
+          "quantity": 103
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 180,
+      "name": "Hopper",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 322,
+          "location": "Coffre (226, 66, 50)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 181,
+      "name": "Ink sac",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 323,
+          "location": "Coffre (226, 68, 47)",
+          "quantity": 5
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 182,
+      "name": "Iron axe",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 324,
+          "location": "Coffre (365, 69, 61)",
+          "quantity": 11
+        },
+        {
+          "id": 325,
+          "location": "Coffre (365, 69, 62)",
+          "quantity": 9
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 183,
+      "name": "Iron bars",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 326,
+          "location": "Coffre (226, 68, 45)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 184,
+      "name": "Iron chain",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 327,
+          "location": "Coffre (224, 68, 41)",
+          "quantity": 17
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 185,
+      "name": "Iron door",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 328,
+          "location": "Coffre (697, 63, -2265)",
+          "quantity": 9
+        },
+        {
+          "id": 329,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 186,
+      "name": "Iron helmet",
+      "icon": "",
+      "category": "Armure",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 330,
+          "location": "Coffre (366, 69, 62)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 187,
+      "name": "Iron hoe",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 331,
+          "location": "Coffre (696, 63, -2265)",
+          "quantity": 1
+        },
+        {
+          "id": 332,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 1
+        },
+        {
+          "id": 333,
+          "location": "Coffre (-65, 90, -75)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 188,
+      "name": "Iron horse armor",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 334,
+          "location": "Coffre (366, 69, 62)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 189,
+      "name": "Iron ingot",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 335,
+          "location": "Coffre (696, 63, -2266)",
+          "quantity": 45
+        },
+        {
+          "id": 336,
+          "location": "Coffre (224, 68, 41)",
+          "quantity": 1
+        },
+        {
+          "id": 337,
+          "location": "Coffre (226, 66, 45)",
+          "quantity": 41
+        },
+        {
+          "id": 338,
+          "location": "Coffre (255, 66, 35)",
+          "quantity": 3
+        },
+        {
+          "id": 339,
+          "location": "Coffre (-74, 92, -76)",
+          "quantity": 10
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 190,
+      "name": "Iron nautilus armor",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 340,
+          "location": "Coffre (366, 69, 62)",
+          "quantity": 2
+        },
+        {
+          "id": 341,
+          "location": "Coffre (50, 62, -1525)",
+          "quantity": 1
+        },
+        {
+          "id": 342,
+          "location": "Coffre (51, 62, -1514)",
+          "quantity": 1
+        },
+        {
+          "id": 343,
+          "location": "Coffre (902, 50, -1336)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 191,
+      "name": "Iron nugget",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 344,
+          "location": "Coffre (226, 66, 45)",
+          "quantity": 39
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 192,
+      "name": "Iron pickaxe",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 345,
+          "location": "Coffre (364, 71, 55)",
+          "quantity": 10
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 193,
+      "name": "Iron shovel",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 346,
+          "location": "Coffre (364, 69, 61)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 194,
+      "name": "Iron spear",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 347,
+          "location": "Baril (65, 95, -45)",
+          "quantity": 2
+        },
+        {
+          "id": 348,
+          "location": "Coffre (-68, 88, -75)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 195,
+      "name": "Iron sword",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 349,
+          "location": "Coffre (180, 10, -35)",
+          "quantity": 1
+        },
+        {
+          "id": 350,
+          "location": "Coffre (224, 68, 41)",
+          "quantity": 2
+        },
+        {
+          "id": 351,
+          "location": "Coffre (364, 69, 61)",
+          "quantity": 3
+        },
+        {
+          "id": 352,
+          "location": "Coffre (-65, 90, -75)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 196,
+      "name": "Item frame",
+      "icon": "",
+      "category": "Décoration",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 353,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 13
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 197,
+      "name": "Jungle leaves",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 354,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 51
+        },
+        {
+          "id": 355,
+          "location": "Coffre (-592, 51, -1838)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 198,
+      "name": "Jungle log",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 356,
+          "location": "Coffre (225, 68, 46)",
+          "quantity": 44
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 199,
+      "name": "Jungle sapling",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 357,
+          "location": "Coffre (225, 68, 46)",
+          "quantity": 6
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 200,
+      "name": "Jungle stairs",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 358,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 201,
+      "name": "Kelp",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 359,
+          "location": "Hopper (232, 68, 50)",
+          "quantity": 35
+        },
+        {
+          "id": 360,
+          "location": "Coffre (3103, 63, -855)",
+          "quantity": 38
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 202,
+      "name": "Lantern",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 361,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 203,
+      "name": "Lapis block",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 362,
+          "location": "Coffre (-74, 92, -76)",
+          "quantity": 6
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 204,
+      "name": "Lapis lazuli",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 363,
+          "location": "Coffre (71, 93, -22)",
+          "quantity": 34
+        },
+        {
+          "id": 364,
+          "location": "Coffre (226, 66, 45)",
+          "quantity": 16
+        },
+        {
+          "id": 365,
+          "location": "Coffre (-74, 92, -76)",
+          "quantity": 199
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 205,
+      "name": "Large fern",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 366,
+          "location": "Coffre (3112, 63, -897)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 206,
+      "name": "Lava bucket",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 367,
+          "location": "Coffre (232, 66, 49)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 207,
+      "name": "Lead",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 368,
+          "location": "Baril (65, 95, -45)",
+          "quantity": 2
+        },
+        {
+          "id": 369,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 2
+        },
+        {
+          "id": 370,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 208,
+      "name": "Leather",
+      "icon": "",
+      "category": "Mobs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 371,
+          "location": "Coffre (696, 63, -2266)",
+          "quantity": 3
+        },
+        {
+          "id": 372,
+          "location": "Coffre (261, 66, 35)",
+          "quantity": 7
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 209,
+      "name": "Leather boots",
+      "icon": "",
+      "category": "Armure",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 373,
+          "location": "Coffre (366, 69, 62)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 210,
+      "name": "Leather chestplate",
+      "icon": "",
+      "category": "Armure",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 374,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 1
+        },
+        {
+          "id": 375,
+          "location": "Coffre (68, 53, -906)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 211,
+      "name": "Leather helmet",
+      "icon": "",
+      "category": "Armure",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 376,
+          "location": "Coffre (63, 92, -57)",
+          "quantity": 1
+        },
+        {
+          "id": 377,
+          "location": "Coffre (-65, 90, -75)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 212,
+      "name": "Leather leggings",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 378,
+          "location": "Coffre (366, 69, 62)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 213,
+      "name": "Lectern",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 379,
+          "location": "Coffre (261, 66, 35)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 214,
+      "name": "Light blue dye",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 380,
+          "location": "Coffre (237, 66, 41)",
+          "quantity": 2
+        },
+        {
+          "id": 381,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 215,
+      "name": "Light gray bed",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 382,
+          "location": "Coffre (231, 66, 35)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 216,
+      "name": "Light gray dye",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 383,
+          "location": "Coffre (237, 66, 41)",
+          "quantity": 1
+        },
+        {
+          "id": 384,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 217,
+      "name": "Light gray glazed terracotta",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 385,
+          "location": "Coffre (226, 66, 43)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 218,
+      "name": "Light gray terracotta",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 386,
+          "location": "Coffre (225, 66, 43)",
+          "quantity": 192
+        },
+        {
+          "id": 387,
+          "location": "Coffre (226, 66, 43)",
+          "quantity": 106
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 219,
+      "name": "Light gray wool",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 388,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 220,
+      "name": "Lily pad",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 389,
+          "location": "Coffre (64, 90, -52)",
+          "quantity": 22
+        },
+        {
+          "id": 390,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 221,
+      "name": "Lodestone",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 391,
+          "location": "Coffre (63, 90, -51)",
+          "quantity": 1
+        },
+        {
+          "id": 392,
+          "location": "Coffre (226, 68, 44)",
+          "quantity": 1
+        },
+        {
+          "id": 393,
+          "location": "Coffre (226, 66, 42)",
+          "quantity": 1
+        },
+        {
+          "id": 394,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 2
+        },
+        {
+          "id": 395,
+          "location": "Coffre (-592, 51, -1838)",
+          "quantity": 1
+        },
+        {
+          "id": 396,
+          "location": "Coffre (-532, 66, -302)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 222,
+      "name": "Magenta dye",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 397,
+          "location": "Coffre (64, 89, -44)",
+          "quantity": 12
+        },
+        {
+          "id": 398,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 223,
+      "name": "Magenta stained glass",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 399,
+          "location": "Coffre (225, 68, 48)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 224,
+      "name": "Magma block",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 400,
+          "location": "Coffre (64, 90, -51)",
+          "quantity": 1
+        },
+        {
+          "id": 401,
+          "location": "Coffre (225, 66, 47)",
+          "quantity": 21
+        },
+        {
+          "id": 402,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 225,
+      "name": "Magma cream",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 403,
+          "location": "Coffre (226, 66, 47)",
+          "quantity": 17
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 226,
+      "name": "Mangrove leaves",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 404,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 96
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 227,
+      "name": "Mangrove log",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 405,
+          "location": "Coffre (226, 68, 46)",
+          "quantity": 25
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 228,
+      "name": "Mangrove planks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 406,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 229,
+      "name": "Mangrove propagule",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 407,
+          "location": "Coffre (226, 68, 46)",
+          "quantity": 7
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 230,
+      "name": "Mangrove roots",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 408,
+          "location": "Coffre (226, 68, 46)",
+          "quantity": 181
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 231,
+      "name": "Mangrove trapdoor",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 409,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 63
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 232,
+      "name": "Melon",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 410,
+          "location": "Coffre (261, 66, 41)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 233,
+      "name": "Melon seeds",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 411,
+          "location": "Coffre (64, 90, -45)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 234,
+      "name": "Melon slice",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 412,
+          "location": "Coffre (64, 90, -45)",
+          "quantity": 4
+        },
+        {
+          "id": 413,
+          "location": "Coffre (261, 66, 41)",
+          "quantity": 8
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 235,
+      "name": "Minecart",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 414,
+          "location": "Coffre (231, 66, 35)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 236,
+      "name": "Moss block",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 415,
+          "location": "Coffre (64, 90, -51)",
+          "quantity": 5
+        },
+        {
+          "id": 416,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 57
+        },
+        {
+          "id": 417,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 64
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 237,
+      "name": "Moss carpet",
+      "icon": "",
+      "category": "Décoration",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 418,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 54
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 238,
+      "name": "Mossy cobblestone",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 419,
+          "location": "Coffre (63, 89, -52)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 239,
+      "name": "Mossy cobblestone stairs",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 420,
+          "location": "Coffre (225, 68, 44)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 240,
+      "name": "Mud",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 421,
+          "location": "Coffre (63, 90, -51)",
+          "quantity": 1
+        },
+        {
+          "id": 422,
+          "location": "Coffre (225, 68, 43)",
+          "quantity": 192
+        },
+        {
+          "id": 423,
+          "location": "Coffre (226, 68, 43)",
+          "quantity": 135
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 241,
+      "name": "Mud bricks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 424,
+          "location": "Coffre (226, 68, 43)",
+          "quantity": 12
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 242,
+      "name": "Muddy mangrove roots",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 425,
+          "location": "Coffre (225, 68, 43)",
+          "quantity": 38
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 243,
+      "name": "Mushroom stem",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 426,
+          "location": "Coffre (226, 68, 47)",
+          "quantity": 9
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 244,
+      "name": "Music disc cat",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 427,
+          "location": "Coffre (62, 94, -50)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 245,
+      "name": "Mutton",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 428,
+          "location": "Coffre (696, 63, -2266)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 246,
+      "name": "Name tag",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 429,
+          "location": "Coffre (62, 94, -50)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 247,
+      "name": "Nether brick",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 430,
+          "location": "Coffre (225, 68, 44)",
+          "quantity": 130
+        },
+        {
+          "id": 431,
+          "location": "Hopper (370, 70, 67)",
+          "quantity": 12
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 248,
+      "name": "Nether brick fence",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 432,
+          "location": "Coffre (225, 68, 44)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 249,
+      "name": "Nether brick stairs",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 433,
+          "location": "Coffre (225, 68, 44)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 250,
+      "name": "Nether bricks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 434,
+          "location": "Coffre (225, 68, 44)",
+          "quantity": 69
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 251,
+      "name": "Nether wart",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 435,
+          "location": "Coffre (225, 68, 48)",
+          "quantity": 25
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 252,
+      "name": "Nether wart block",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 436,
+          "location": "Coffre (226, 68, 48)",
+          "quantity": 44
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 253,
+      "name": "Netherrack",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 437,
+          "location": "Coffre (225, 68, 44)",
+          "quantity": 5
+        },
+        {
+          "id": 438,
+          "location": "Coffre (226, 68, 44)",
+          "quantity": 9
+        },
+        {
+          "id": 439,
+          "location": "Coffre (225, 68, 48)",
+          "quantity": 1
+        },
+        {
+          "id": 440,
+          "location": "Four (370, 71, 67)",
+          "quantity": 52
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 254,
+      "name": "Oak boat",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 441,
+          "location": "Coffre (362, 71, 61)",
+          "quantity": 1
+        },
+        {
+          "id": 442,
+          "location": "Coffre (364, 71, 55)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 255,
+      "name": "Oak door",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 443,
+          "location": "Coffre (697, 63, -2265)",
+          "quantity": 1
+        },
+        {
+          "id": 444,
+          "location": "Coffre (64, 89, -51)",
+          "quantity": 2
+        },
+        {
+          "id": 445,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 256,
+      "name": "Oak fence",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 446,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 11
+        },
+        {
+          "id": 447,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 4
+        },
+        {
+          "id": 448,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 257,
+      "name": "Oak leaves",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 449,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 48
+        },
+        {
+          "id": 450,
+          "location": "Coffre (-1935, 79, -443)",
+          "quantity": 6
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 258,
+      "name": "Oak log",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 451,
+          "location": "Coffre (97, 95, -42)",
+          "quantity": 64
+        },
+        {
+          "id": 452,
+          "location": "Coffre (225, 68, 46)",
+          "quantity": 85
+        },
+        {
+          "id": 453,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 5
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 259,
+      "name": "Oak planks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 454,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 6
+        },
+        {
+          "id": 455,
+          "location": "Coffre (3112, 63, -904)",
+          "quantity": 11
+        },
+        {
+          "id": 456,
+          "location": "Coffre (-1935, 79, -443)",
+          "quantity": 24
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 260,
+      "name": "Oak pressure plate",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 457,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 261,
+      "name": "Oak sapling",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 458,
+          "location": "Coffre (56, 101, -290)",
+          "quantity": 1
+        },
+        {
+          "id": 459,
+          "location": "Coffre (64, 89, -51)",
+          "quantity": 62
+        },
+        {
+          "id": 460,
+          "location": "Coffre (225, 68, 46)",
+          "quantity": 40
+        },
+        {
+          "id": 461,
+          "location": "Coffre (3103, 63, -855)",
+          "quantity": 7
+        },
+        {
+          "id": 462,
+          "location": "Coffre (3112, 63, -904)",
+          "quantity": 5
+        },
+        {
+          "id": 463,
+          "location": "Coffre (-1935, 79, -443)",
+          "quantity": 2
+        },
+        {
+          "id": 464,
+          "location": "Coffre (-180, 69, -1026)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 262,
+      "name": "Oak shelf",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 465,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 263,
+      "name": "Oak slab",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 466,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 14
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 264,
+      "name": "Oak stairs",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 467,
+          "location": "Coffre (92, 93, -71)",
+          "quantity": 2
+        },
+        {
+          "id": 468,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 6
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 265,
+      "name": "Observer",
+      "icon": "",
+      "category": "Redstone",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 469,
+          "location": "Coffre (226, 66, 49)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 266,
+      "name": "Obsidian",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 470,
+          "location": "Coffre (226, 66, 45)",
+          "quantity": 38
+        },
+        {
+          "id": 471,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 9
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 267,
+      "name": "Orange dye",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 472,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 268,
+      "name": "Orange glazed terracotta",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 473,
+          "location": "Coffre (226, 66, 43)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 269,
+      "name": "Orange terracotta",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 474,
+          "location": "Coffre (225, 66, 43)",
+          "quantity": 9
+        },
+        {
+          "id": 475,
+          "location": "Coffre (226, 66, 43)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 270,
+      "name": "Oxeye daisy",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 476,
+          "location": "Coffre (-592, 51, -1838)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 271,
+      "name": "Packed ice",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 477,
+          "location": "Coffre (226, 68, 44)",
+          "quantity": 70
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 272,
+      "name": "Pale hanging moss",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 478,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 12
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 273,
+      "name": "Pale moss block",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 479,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 64
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 274,
+      "name": "Pale moss carpet",
+      "icon": "",
+      "category": "Décoration",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 480,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 14
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 275,
+      "name": "Pale oak door",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 481,
+          "location": "Coffre (225, 66, 46)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 276,
+      "name": "Pale oak leaves",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 482,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 16
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 277,
+      "name": "Pale oak log",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 483,
+          "location": "Coffre (226, 68, 46)",
+          "quantity": 213
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 278,
+      "name": "Pale oak planks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 484,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 18
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 279,
+      "name": "Pale oak sapling",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 485,
+          "location": "Coffre (226, 68, 46)",
+          "quantity": 13
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 280,
+      "name": "Pale oak slab",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 486,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 281,
+      "name": "Pale oak stairs",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 487,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 282,
+      "name": "Pale oak trapdoor",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 488,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 283,
+      "name": "Paper",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 489,
+          "location": "Coffre (249, 66, 35)",
+          "quantity": 24
+        },
+        {
+          "id": 490,
+          "location": "Coffre (261, 66, 35)",
+          "quantity": 355
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 284,
+      "name": "Phantom membrane",
+      "icon": "",
+      "category": "Mobs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 491,
+          "location": "Coffre (226, 66, 47)",
+          "quantity": 6
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 285,
+      "name": "Pink dye",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 492,
+          "location": "Coffre (64, 89, -44)",
+          "quantity": 7
+        },
+        {
+          "id": 493,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 286,
+      "name": "Pointed dripstone",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 494,
+          "location": "Coffre (225, 68, 44)",
+          "quantity": 10
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 287,
+      "name": "Poisonous potato",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 495,
+          "location": "Coffre (837, 56, -2392)",
+          "quantity": 6
+        },
+        {
+          "id": 496,
+          "location": "Coffre (226, 68, 47)",
+          "quantity": 12
+        },
+        {
+          "id": 497,
+          "location": "Coffre (261, 66, 41)",
+          "quantity": 5
+        },
+        {
+          "id": 498,
+          "location": "Coffre (605, 54, -1601)",
+          "quantity": 7
+        },
+        {
+          "id": 499,
+          "location": "Coffre (51, 62, -1514)",
+          "quantity": 9
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 288,
+      "name": "Polished blackstone bricks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 500,
+          "location": "Coffre (225, 68, 43)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 289,
+      "name": "Polished deepslate",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 501,
+          "location": "Coffre (225, 68, 44)",
+          "quantity": 78
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 290,
+      "name": "Polished deepslate wall",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 502,
+          "location": "Coffre (63, 90, -51)",
+          "quantity": 57
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 291,
+      "name": "Polished tuff",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 503,
+          "location": "Coffre (224, 68, 41)",
+          "quantity": 30
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 292,
+      "name": "Porkchop",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 504,
+          "location": "Coffre (243, 66, 41)",
+          "quantity": 52
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 293,
+      "name": "Potato",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 505,
+          "location": "Coffre (64, 90, -45)",
+          "quantity": 3
+        },
+        {
+          "id": 506,
+          "location": "Coffre (224, 66, 41)",
+          "quantity": 1
+        },
+        {
+          "id": 507,
+          "location": "Coffre (261, 66, 41)",
+          "quantity": 18
+        },
+        {
+          "id": 508,
+          "location": "Coffre (68, 53, -906)",
+          "quantity": 7
+        },
+        {
+          "id": 509,
+          "location": "Coffre (-65, 90, -75)",
+          "quantity": 21
+        },
+        {
+          "id": 510,
+          "location": "Coffre (-68, 88, -75)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 294,
+      "name": "Potion",
+      "icon": "",
+      "category": "Potions",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 511,
+          "location": "Coffre (225, 68, 47)",
+          "quantity": 3
+        },
+        {
+          "id": 512,
+          "location": "Coffre (225, 68, 48)",
+          "quantity": 2
+        },
+        {
+          "id": 513,
+          "location": "Baril (257, 66, 47)",
+          "quantity": 6
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 295,
+      "name": "Powered rail",
+      "icon": "",
+      "category": "Redstone",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 514,
+          "location": "Coffre (231, 66, 35)",
+          "quantity": 5
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 296,
+      "name": "Pumpkin",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 515,
+          "location": "Coffre (64, 90, -45)",
+          "quantity": 1
+        },
+        {
+          "id": 516,
+          "location": "Coffre (261, 66, 41)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 297,
+      "name": "Pumpkin pie",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 517,
+          "location": "Coffre (64, 90, -45)",
+          "quantity": 1
+        },
+        {
+          "id": 518,
+          "location": "Coffre (226, 68, 47)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 298,
+      "name": "Pumpkin seeds",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 519,
+          "location": "Coffre (64, 90, -45)",
+          "quantity": 1
+        },
+        {
+          "id": 520,
+          "location": "Coffre (226, 68, 47)",
+          "quantity": 31
+        },
+        {
+          "id": 521,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 6
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 299,
+      "name": "Purple dye",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 522,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 300,
+      "name": "Purpur block",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 523,
+          "location": "Coffre (226, 68, 44)",
+          "quantity": 27
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 301,
+      "name": "Purpur pillar",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 524,
+          "location": "Coffre (225, 68, 44)",
+          "quantity": 21
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 302,
+      "name": "Purpur slab",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 525,
+          "location": "Coffre (226, 68, 44)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 303,
+      "name": "Purpur stairs",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 526,
+          "location": "Coffre (225, 68, 48)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 304,
+      "name": "Quartz",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 527,
+          "location": "Coffre (62, 94, -50)",
+          "quantity": 32
+        },
+        {
+          "id": 528,
+          "location": "Coffre (225, 66, 45)",
+          "quantity": 56
+        },
+        {
+          "id": 529,
+          "location": "Coffre (226, 66, 45)",
+          "quantity": 128
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 305,
+      "name": "Rabbit",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 530,
+          "location": "Coffre (243, 66, 41)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 306,
+      "name": "Rabbit foot",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 531,
+          "location": "Coffre (225, 68, 47)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 307,
+      "name": "Rabbit hide",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 532,
+          "location": "Coffre (226, 68, 47)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 308,
+      "name": "Rail",
+      "icon": "",
+      "category": "Redstone",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 533,
+          "location": "Coffre (231, 66, 35)",
+          "quantity": 53
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 309,
+      "name": "Raw copper",
+      "icon": "",
+      "category": "Minerais",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 534,
+          "location": "Coffre (696, 63, -2265)",
+          "quantity": 5
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 310,
+      "name": "Red dye",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 535,
+          "location": "Coffre (64, 89, -44)",
+          "quantity": 22
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 311,
+      "name": "Red glazed terracotta",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 536,
+          "location": "Coffre (226, 66, 43)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 312,
+      "name": "Red mushroom",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 537,
+          "location": "Coffre (226, 68, 47)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 313,
+      "name": "Red mushroom block",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 538,
+          "location": "Coffre (226, 68, 47)",
+          "quantity": 45
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 314,
+      "name": "Red sand",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 539,
+          "location": "Coffre (225, 68, 43)",
+          "quantity": 7
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 315,
+      "name": "Red sandstone",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 540,
+          "location": "Coffre (226, 68, 43)",
+          "quantity": 16
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 316,
+      "name": "Red terracotta",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 541,
+          "location": "Coffre (225, 66, 43)",
+          "quantity": 40
+        },
+        {
+          "id": 542,
+          "location": "Coffre (226, 66, 43)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 317,
+      "name": "Redstone",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 543,
+          "location": "Coffre (696, 63, -2266)",
+          "quantity": 5
+        },
+        {
+          "id": 544,
+          "location": "Coffre (226, 66, 50)",
+          "quantity": 18
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 318,
+      "name": "Rib armor trim smithing template",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 545,
+          "location": "Coffre (226, 66, 42)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 319,
+      "name": "Rooted dirt",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 546,
+          "location": "Coffre (64, 90, -51)",
+          "quantity": 142
+        },
+        {
+          "id": 547,
+          "location": "Coffre (64, 90, -52)",
+          "quantity": 12
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 320,
+      "name": "Rotten flesh",
+      "icon": "",
+      "category": "Mobs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 548,
+          "location": "Coffre (63, 89, -44)",
+          "quantity": 3
+        },
+        {
+          "id": 549,
+          "location": "Coffre (63, 89, -45)",
+          "quantity": 3
+        },
+        {
+          "id": 550,
+          "location": "Coffre (226, 66, 47)",
+          "quantity": 17
+        },
+        {
+          "id": 551,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 8
+        },
+        {
+          "id": 552,
+          "location": "Coffre (249, 66, 41)",
+          "quantity": 1
+        },
+        {
+          "id": 553,
+          "location": "Coffre (-68, 88, -75)",
+          "quantity": 3
+        },
+        {
+          "id": 554,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 321,
+      "name": "Saddle",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 555,
+          "location": "Coffre (366, 69, 62)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 322,
+      "name": "Sand",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 556,
+          "location": "Coffre (697, 63, -2265)",
+          "quantity": 7
+        },
+        {
+          "id": 557,
+          "location": "Coffre (179, 10, -35)",
+          "quantity": 1
+        },
+        {
+          "id": 558,
+          "location": "Coffre (225, 68, 43)",
+          "quantity": 192
+        },
+        {
+          "id": 559,
+          "location": "Coffre (226, 68, 43)",
+          "quantity": 192
+        },
+        {
+          "id": 560,
+          "location": "Four (232, 67, 50)",
+          "quantity": 28
+        },
+        {
+          "id": 561,
+          "location": "Four (232, 67, 51)",
+          "quantity": 48
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 323,
+      "name": "Sandstone",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 562,
+          "location": "Coffre (225, 68, 43)",
+          "quantity": 64
+        },
+        {
+          "id": 563,
+          "location": "Coffre (226, 68, 43)",
+          "quantity": 7
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 324,
+      "name": "Scaffolding",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 564,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 10
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 325,
+      "name": "Shears",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 565,
+          "location": "Coffre (696, 63, -2265)",
+          "quantity": 1
+        },
+        {
+          "id": 566,
+          "location": "Coffre (213, 66, 35)",
+          "quantity": 3
+        },
+        {
+          "id": 567,
+          "location": "Coffre (219, 66, 35)",
+          "quantity": 3
+        },
+        {
+          "id": 568,
+          "location": "Coffre (269, 67, 34)",
+          "quantity": 1
+        },
+        {
+          "id": 569,
+          "location": "Coffre (-65, 90, -75)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 326,
+      "name": "Shield",
+      "icon": "",
+      "category": "Armure",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 570,
+          "location": "Baril (65, 95, -45)",
+          "quantity": 1
+        },
+        {
+          "id": 571,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 327,
+      "name": "Shroomlight",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 572,
+          "location": "Coffre (226, 68, 48)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 328,
+      "name": "Shulker shell",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 573,
+          "location": "Coffre (225, 68, 50)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 329,
+      "name": "Smooth sandstone",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 574,
+          "location": "Coffre (-1935, 80, -443)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 330,
+      "name": "Smooth stone",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 575,
+          "location": "Coffre (226, 68, 43)",
+          "quantity": 25
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 331,
+      "name": "Smooth stone slab",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 576,
+          "location": "Coffre (697, 63, -2264)",
+          "quantity": 5
+        },
+        {
+          "id": 577,
+          "location": "Coffre (226, 68, 44)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 332,
+      "name": "Snow",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 578,
+          "location": "Coffre (63, 90, -52)",
+          "quantity": 61
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 333,
+      "name": "Snow block",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 579,
+          "location": "Coffre (63, 90, -52)",
+          "quantity": 56
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 334,
+      "name": "Snowball",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 580,
+          "location": "Coffre (63, 90, -52)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 335,
+      "name": "Soul sand",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 581,
+          "location": "Coffre (226, 68, 43)",
+          "quantity": 2
+        },
+        {
+          "id": 582,
+          "location": "Coffre (225, 68, 48)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 336,
+      "name": "Spectral arrow",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 583,
+          "location": "Coffre (226, 68, 49)",
+          "quantity": 23
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 337,
+      "name": "Spider eye",
+      "icon": "",
+      "category": "Mobs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 584,
+          "location": "Coffre (63, 89, -45)",
+          "quantity": 6
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 338,
+      "name": "Spire armor trim smithing template",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 585,
+          "location": "Coffre (225, 66, 48)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 339,
+      "name": "Spruce door",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 586,
+          "location": "Baril (65, 95, -45)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 340,
+      "name": "Spruce leaves",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 587,
+          "location": "Coffre (-532, 66, -302)",
+          "quantity": 6
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 341,
+      "name": "Spruce log",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 588,
+          "location": "Coffre (225, 68, 46)",
+          "quantity": 19
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 342,
+      "name": "Spruce planks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 589,
+          "location": "Coffre (3103, 63, -855)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 343,
+      "name": "Spruce sapling",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 590,
+          "location": "Coffre (64, 89, -52)",
+          "quantity": 1
+        },
+        {
+          "id": 591,
+          "location": "Coffre (225, 68, 46)",
+          "quantity": 13
+        },
+        {
+          "id": 592,
+          "location": "Coffre (3111, 64, -912)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 344,
+      "name": "Stick",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 593,
+          "location": "Coffre (696, 63, -2265)",
+          "quantity": 11
+        },
+        {
+          "id": 594,
+          "location": "Coffre (62, 94, -50)",
+          "quantity": 43
+        },
+        {
+          "id": 595,
+          "location": "Coffre (97, 95, -42)",
+          "quantity": 1
+        },
+        {
+          "id": 596,
+          "location": "Coffre (180, 10, -35)",
+          "quantity": 41
+        },
+        {
+          "id": 597,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 7
+        },
+        {
+          "id": 598,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 5
+        },
+        {
+          "id": 599,
+          "location": "Coffre (243, 66, 35)",
+          "quantity": 292
+        },
+        {
+          "id": 600,
+          "location": "Coffre (-65, 90, -75)",
+          "quantity": 7
+        },
+        {
+          "id": 601,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 1
+        },
+        {
+          "id": 602,
+          "location": "Coffre (-532, 66, -302)",
+          "quantity": 23
+        },
+        {
+          "id": 603,
+          "location": "Coffre (-1935, 79, -443)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 345,
+      "name": "Stone",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 604,
+          "location": "Coffre (697, 63, -2264)",
+          "quantity": 2
+        },
+        {
+          "id": 605,
+          "location": "Coffre (225, 68, 43)",
+          "quantity": 104
+        },
+        {
+          "id": 606,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 42
+        },
+        {
+          "id": 607,
+          "location": "Coffre (255, 66, 41)",
+          "quantity": 11
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 346,
+      "name": "Stone axe",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 608,
+          "location": "Coffre (63, 90, -45)",
+          "quantity": 4
+        },
+        {
+          "id": 609,
+          "location": "Coffre (365, 69, 62)",
+          "quantity": 14
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 347,
+      "name": "Stone brick slab",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 610,
+          "location": "Coffre (225, 68, 44)",
+          "quantity": 115
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 348,
+      "name": "Stone brick stairs",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 611,
+          "location": "Coffre (226, 68, 44)",
+          "quantity": 5
+        },
+        {
+          "id": 612,
+          "location": "Hopper (225, 67, 51)",
+          "quantity": 11
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 349,
+      "name": "Stone brick wall",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 613,
+          "location": "Coffre (697, 63, -2265)",
+          "quantity": 3
+        },
+        {
+          "id": 614,
+          "location": "Hopper (225, 67, 51)",
+          "quantity": 52
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 350,
+      "name": "Stone button",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 615,
+          "location": "Coffre (697, 63, -2264)",
+          "quantity": 4
+        },
+        {
+          "id": 616,
+          "location": "Coffre (226, 66, 46)",
+          "quantity": 3
+        },
+        {
+          "id": 617,
+          "location": "Coffre (268, 67, 34)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 351,
+      "name": "Stone hoe",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 618,
+          "location": "Coffre (63, 90, -45)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 352,
+      "name": "Stone pickaxe",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 619,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 353,
+      "name": "Stone pressure plate",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 620,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 354,
+      "name": "Stone shovel",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 621,
+          "location": "Coffre (696, 63, -2266)",
+          "quantity": 3
+        },
+        {
+          "id": 622,
+          "location": "Coffre (696, 63, -2265)",
+          "quantity": 3
+        },
+        {
+          "id": 623,
+          "location": "Coffre (63, 90, -45)",
+          "quantity": 2
+        },
+        {
+          "id": 624,
+          "location": "Baril (65, 95, -45)",
+          "quantity": 1
+        },
+        {
+          "id": 625,
+          "location": "Coffre (180, 10, -35)",
+          "quantity": 1
+        },
+        {
+          "id": 626,
+          "location": "Coffre (364, 69, 61)",
+          "quantity": 11
+        },
+        {
+          "id": 627,
+          "location": "Coffre (364, 69, 62)",
+          "quantity": 27
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 355,
+      "name": "Stone slab",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 628,
+          "location": "Coffre (224, 68, 41)",
+          "quantity": 2
+        },
+        {
+          "id": 629,
+          "location": "Coffre (225, 68, 44)",
+          "quantity": 64
+        },
+        {
+          "id": 630,
+          "location": "Coffre (226, 68, 44)",
+          "quantity": 4
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 356,
+      "name": "Stone stairs",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 631,
+          "location": "Coffre (225, 68, 44)",
+          "quantity": 26
+        },
+        {
+          "id": 632,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 44
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 357,
+      "name": "Stone sword",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 633,
+          "location": "Baril (65, 95, -45)",
+          "quantity": 1
+        },
+        {
+          "id": 634,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 358,
+      "name": "String",
+      "icon": "",
+      "category": "Mobs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 635,
+          "location": "Coffre (63, 89, -44)",
+          "quantity": 3
+        },
+        {
+          "id": 636,
+          "location": "Coffre (243, 66, 35)",
+          "quantity": 13
+        },
+        {
+          "id": 637,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 359,
+      "name": "Sugar cane",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 638,
+          "location": "Coffre (63, 92, -56)",
+          "quantity": 5
+        },
+        {
+          "id": 639,
+          "location": "Coffre (64, 90, -44)",
+          "quantity": 3
+        },
+        {
+          "id": 640,
+          "location": "Coffre (261, 66, 35)",
+          "quantity": 8
+        },
+        {
+          "id": 641,
+          "location": "Coffre (277, 64, 34)",
+          "quantity": 17
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 360,
+      "name": "Sulfur",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 642,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 8
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 361,
+      "name": "Suspicious stew",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 643,
+          "location": "Coffre (225, 68, 47)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 362,
+      "name": "Sweet berries",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 644,
+          "location": "Coffre (64, 90, -44)",
+          "quantity": 3
+        },
+        {
+          "id": 645,
+          "location": "Coffre (226, 68, 47)",
+          "quantity": 41
+        },
+        {
+          "id": 646,
+          "location": "Coffre (243, 66, 41)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 363,
+      "name": "Terracotta",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 647,
+          "location": "Coffre (225, 66, 43)",
+          "quantity": 384
+        },
+        {
+          "id": 648,
+          "location": "Coffre (226, 66, 43)",
+          "quantity": 333
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 364,
+      "name": "Tipped arrow",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 649,
+          "location": "Coffre (63, 89, -45)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 365,
+      "name": "Tnt",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 650,
+          "location": "Coffre (226, 68, 49)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 366,
+      "name": "Tropical fish",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 651,
+          "location": "Coffre (225, 66, 49)",
+          "quantity": 5
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 367,
+      "name": "Tuff",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 652,
+          "location": "Coffre (63, 89, -52)",
+          "quantity": 2
+        },
+        {
+          "id": 653,
+          "location": "Coffre (225, 68, 43)",
+          "quantity": 16
+        },
+        {
+          "id": 654,
+          "location": "Coffre (226, 68, 43)",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 368,
+      "name": "Tuff brick slab",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 655,
+          "location": "Coffre (225, 68, 44)",
+          "quantity": 1
+        },
+        {
+          "id": 656,
+          "location": "Coffre (226, 68, 44)",
+          "quantity": 52
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 369,
+      "name": "Tuff brick stairs",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 657,
+          "location": "Coffre (226, 68, 44)",
+          "quantity": 35
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 370,
+      "name": "Tuff bricks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 658,
+          "location": "Coffre (224, 68, 41)",
+          "quantity": 27
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 371,
+      "name": "Warped fungus",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 659,
+          "location": "Coffre (226, 68, 47)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 372,
+      "name": "Warped wart block",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 660,
+          "location": "Coffre (226, 68, 48)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 373,
+      "name": "Water bucket",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 661,
+          "location": "Dispenser (84, -20, 534)",
+          "quantity": 1
+        },
+        {
+          "id": 662,
+          "location": "Dispenser (82, -33, 572)",
+          "quantity": 1
+        },
+        {
+          "id": 663,
+          "location": "Dispenser (3065, -27, -1439)",
+          "quantity": 1
+        },
+        {
+          "id": 664,
+          "location": "Dispenser (-207, -19, -1635)",
+          "quantity": 1
+        },
+        {
+          "id": 665,
+          "location": "Coffre (696, 63, -2266)",
+          "quantity": 1
+        },
+        {
+          "id": 666,
+          "location": "Dispenser (835, -19, -2511)",
+          "quantity": 1
+        },
+        {
+          "id": 667,
+          "location": "Coffre (86, 93, -21)",
+          "quantity": 1
+        },
+        {
+          "id": 668,
+          "location": "Dispenser (1071, -19, 1193)",
+          "quantity": 1
+        },
+        {
+          "id": 669,
+          "location": "Dispenser (567, -8, 751)",
+          "quantity": 1
+        },
+        {
+          "id": 670,
+          "location": "Dispenser (1097, -11, -541)",
+          "quantity": 1
+        },
+        {
+          "id": 671,
+          "location": "Dispenser (1111, -27, -577)",
+          "quantity": 1
+        },
+        {
+          "id": 672,
+          "location": "Dispenser (1353, -13, -863)",
+          "quantity": 1
+        },
+        {
+          "id": 673,
+          "location": "Dispenser (3425, -47, -1080)",
+          "quantity": 1
+        },
+        {
+          "id": 674,
+          "location": "Dispenser (1303, -20, -1305)",
+          "quantity": 1
+        },
+        {
+          "id": 675,
+          "location": "Dispenser (3, -5, 1059)",
+          "quantity": 1
+        },
+        {
+          "id": 676,
+          "location": "Dispenser (131, -17, 271)",
+          "quantity": 1
+        },
+        {
+          "id": 677,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 1
+        },
+        {
+          "id": 678,
+          "location": "Dispenser (249, -15, -975)",
+          "quantity": 1
+        },
+        {
+          "id": 679,
+          "location": "Dispenser (101, 19, -1460)",
+          "quantity": 1
+        },
+        {
+          "id": 680,
+          "location": "Dispenser (-335, -11, -329)",
+          "quantity": 1
+        },
+        {
+          "id": 681,
+          "location": "Dispenser (1919, -10, -471)",
+          "quantity": 1
+        },
+        {
+          "id": 682,
+          "location": "Dispenser (1981, 4, -441)",
+          "quantity": 1
+        },
+        {
+          "id": 683,
+          "location": "Dispenser (159, 23, -3221)",
+          "quantity": 1
+        },
+        {
+          "id": 684,
+          "location": "Dispenser (183, -8, -3281)",
+          "quantity": 1
+        },
+        {
+          "id": 685,
+          "location": "Dispenser (1725, -46, -979)",
+          "quantity": 1
+        },
+        {
+          "id": 686,
+          "location": "Dispenser (553, -23, 1233)",
+          "quantity": 1
+        },
+        {
+          "id": 687,
+          "location": "Dispenser (809, -16, -3663)",
+          "quantity": 1
+        },
+        {
+          "id": 688,
+          "location": "Dispenser (841, -39, -3737)",
+          "quantity": 1
+        },
+        {
+          "id": 689,
+          "location": "Dispenser (1072, -21, 1677)",
+          "quantity": 1
+        },
+        {
+          "id": 690,
+          "location": "Dispenser (1137, -11, 1703)",
+          "quantity": 1
+        },
+        {
+          "id": 691,
+          "location": "Dispenser (-1812, 19, -443)",
+          "quantity": 1
+        },
+        {
+          "id": 692,
+          "location": "Dispenser (-1805, -22, -448)",
+          "quantity": 1
+        },
+        {
+          "id": 693,
+          "location": "Dispenser (-1641, -22, -337)",
+          "quantity": 1
+        },
+        {
+          "id": 694,
+          "location": "Dispenser (-967, -18, 65)",
+          "quantity": 1
+        },
+        {
+          "id": 695,
+          "location": "Dispenser (712, -14, -1375)",
+          "quantity": 1
+        },
+        {
+          "id": 696,
+          "location": "Dispenser (733, -2, -1331)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 374,
+      "name": "Weeping vines",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 697,
+          "location": "Coffre (225, 68, 48)",
+          "quantity": 9
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 375,
+      "name": "Wheat",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 698,
+          "location": "Coffre (64, 90, -44)",
+          "quantity": 1
+        },
+        {
+          "id": 699,
+          "location": "Coffre (64, 90, -45)",
+          "quantity": 3
+        },
+        {
+          "id": 700,
+          "location": "Coffre (92, 93, -71)",
+          "quantity": 59
+        },
+        {
+          "id": 701,
+          "location": "Coffre (96, 95, -64)",
+          "quantity": 11
+        },
+        {
+          "id": 702,
+          "location": "Coffre (213, 66, 41)",
+          "quantity": 20
+        },
+        {
+          "id": 703,
+          "location": "Coffre (261, 66, 41)",
+          "quantity": 6
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 376,
+      "name": "Wheat seeds",
+      "icon": "",
+      "category": "Nourriture",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 704,
+          "location": "Coffre (696, 63, -2265)",
+          "quantity": 2
+        },
+        {
+          "id": 705,
+          "location": "Coffre (64, 90, -44)",
+          "quantity": 3
+        },
+        {
+          "id": 706,
+          "location": "Coffre (64, 90, -45)",
+          "quantity": 3
+        },
+        {
+          "id": 707,
+          "location": "Coffre (96, 95, -64)",
+          "quantity": 70
+        },
+        {
+          "id": 708,
+          "location": "Coffre (97, 95, -42)",
+          "quantity": 9
+        },
+        {
+          "id": 709,
+          "location": "Coffre (219, 66, 41)",
+          "quantity": 66
+        },
+        {
+          "id": 710,
+          "location": "Coffre (362, 71, 61)",
+          "quantity": 39
+        },
+        {
+          "id": 711,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 1
+        },
+        {
+          "id": 712,
+          "location": "Coffre (902, 50, -1336)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 377,
+      "name": "White bed",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 713,
+          "location": "Coffre (231, 66, 35)",
+          "quantity": 5
+        },
+        {
+          "id": 714,
+          "location": "Coffre (225, 66, 51)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 378,
+      "name": "White dye",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 715,
+          "location": "Coffre (237, 66, 41)",
+          "quantity": 8
+        },
+        {
+          "id": 716,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 2
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 379,
+      "name": "White glazed terracotta",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 717,
+          "location": "Coffre (226, 66, 43)",
+          "quantity": 7
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 380,
+      "name": "White terracotta",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 718,
+          "location": "Coffre (225, 66, 43)",
+          "quantity": 122
+        },
+        {
+          "id": 719,
+          "location": "Coffre (226, 66, 43)",
+          "quantity": 25
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 381,
+      "name": "White wool",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 720,
+          "location": "Coffre (237, 66, 41)",
+          "quantity": 11
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 382,
+      "name": "Wooden pickaxe",
+      "icon": "",
+      "category": "Outils",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 721,
+          "location": "Coffre (-647, 64, -140)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    },
+    {
+      "id": 383,
+      "name": "Yellow dye",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 722,
+          "location": "Coffre (64, 89, -45)",
+          "quantity": 8
+        },
+        {
+          "id": 723,
+          "location": "Coffre (226, 66, 48)",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": "2026-09-05T00:00:00.000Z"
+    }
+  ]
 }
