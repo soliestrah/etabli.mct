@@ -19,7 +19,7 @@
         },
         {
           "id": "smite",
-          "level": 4
+          "level": 3
         },
         {
           "id": "sweeping",
@@ -67,7 +67,7 @@
         },
         {
           "id": "unbreaking",
-          "level": 2
+          "level": 3
         },
         {
           "id": "mending",
@@ -958,15 +958,6 @@
         {
           "id": "protection",
           "level": 4
-        }
-      ]
-    },
-    {
-      "id": 20,
-      "enchants": [
-        {
-          "id": "fire_aspect",
-          "level": 2
         }
       ]
     }
