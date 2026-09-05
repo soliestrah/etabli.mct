@@ -19,7 +19,7 @@
         },
         {
           "id": "smite",
-          "level": 3
+          "level": 4
         },
         {
           "id": "sweeping",
@@ -958,6 +958,15 @@
         {
           "id": "protection",
           "level": 4
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "enchants": [
+        {
+          "id": "fire_aspect",
+          "level": 2
         }
       ]
     }
