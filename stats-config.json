@@ -13,6 +13,276 @@
       "villagerTrades": 3803,
       "advancementsDone": 1141,
       "advancementsTotal": 1147,
+      "missingAdvancements": [
+        {
+          "id": "minecraft:story/cure_zombie_villager",
+          "name": "Soigner un villageois zombie"
+        },
+        {
+          "id": "minecraft:nether/return_to_sender",
+          "name": "Return to sender"
+        },
+        {
+          "id": "minecraft:nether/fast_travel",
+          "name": "Fast travel"
+        },
+        {
+          "id": "minecraft:nether/distract_piglin",
+          "name": "Distract piglin"
+        },
+        {
+          "id": "minecraft:nether/ride_strider",
+          "name": "Chevaucher un strider"
+        },
+        {
+          "id": "minecraft:nether/uneasy_alliance",
+          "name": "Uneasy alliance"
+        },
+        {
+          "id": "minecraft:nether/use_lodestone",
+          "name": "Use lodestone"
+        },
+        {
+          "id": "minecraft:nether/netherite_armor",
+          "name": "Armure complète en netherite"
+        },
+        {
+          "id": "minecraft:nether/get_wither_skull",
+          "name": "Get wither skull"
+        },
+        {
+          "id": "minecraft:nether/charge_respawn_anchor",
+          "name": "Charge respawn anchor"
+        },
+        {
+          "id": "minecraft:nether/explore_nether",
+          "name": "Explore nether"
+        },
+        {
+          "id": "minecraft:nether/summon_wither",
+          "name": "Invoquer le Wither"
+        },
+        {
+          "id": "minecraft:nether/create_beacon",
+          "name": "Create beacon"
+        },
+        {
+          "id": "minecraft:nether/all_potions",
+          "name": "All potions"
+        },
+        {
+          "id": "minecraft:nether/create_full_beacon",
+          "name": "Construire une balise à pleine puissance"
+        },
+        {
+          "id": "minecraft:nether/all_effects",
+          "name": "Cumuler tous les effets de potion"
+        },
+        {
+          "id": "minecraft:end/kill_dragon",
+          "name": "Tuer le Dragon de l'Ender"
+        },
+        {
+          "id": "minecraft:end/dragon_egg",
+          "name": "Dragon egg"
+        },
+        {
+          "id": "minecraft:end/respawn_dragon",
+          "name": "Respawn dragon"
+        },
+        {
+          "id": "minecraft:end/levitate",
+          "name": "Léviter 50 blocs grâce à un Shulker"
+        },
+        {
+          "id": "minecraft:adventure/honey_block_slide",
+          "name": "Honey block slide"
+        },
+        {
+          "id": "minecraft:adventure/ol_betsy",
+          "name": "Ol betsy"
+        },
+        {
+          "id": "minecraft:adventure/hero_of_the_village",
+          "name": "Défendre un village d'un raid"
+        },
+        {
+          "id": "minecraft:adventure/throw_trident",
+          "name": "Throw trident"
+        },
+        {
+          "id": "minecraft:adventure/kill_all_mobs",
+          "name": "Tuer un exemplaire de chaque monstre"
+        },
+        {
+          "id": "minecraft:adventure/totem_of_undying",
+          "name": "Survivre grâce à une Totem d'Immortalité"
+        },
+        {
+          "id": "minecraft:adventure/summon_iron_golem",
+          "name": "Summon iron golem"
+        },
+        {
+          "id": "minecraft:adventure/two_birds_one_arrow",
+          "name": "Two birds one arrow"
+        },
+        {
+          "id": "minecraft:adventure/whos_the_pillager_now",
+          "name": "Whos the pillager now"
+        },
+        {
+          "id": "minecraft:adventure/arbalistic",
+          "name": "Tuer 5 mobs d'un seul carreau d'arbalète"
+        },
+        {
+          "id": "minecraft:adventure/adventuring_time",
+          "name": "Visiter tous les biomes"
+        },
+        {
+          "id": "minecraft:adventure/very_very_frightening",
+          "name": "Very very frightening"
+        },
+        {
+          "id": "minecraft:adventure/sniper_duel",
+          "name": "Sniper duel"
+        },
+        {
+          "id": "minecraft:adventure/bullseye",
+          "name": "Bullseye"
+        },
+        {
+          "id": "minecraft:adventure/trade_at_world_height",
+          "name": "Trade at world height"
+        },
+        {
+          "id": "minecraft:adventure/spyglass_at_parrot",
+          "name": "Spyglass at parrot"
+        },
+        {
+          "id": "minecraft:adventure/spyglass_at_ghast",
+          "name": "Spyglass at ghast"
+        },
+        {
+          "id": "minecraft:adventure/fall_from_world_height",
+          "name": "Fall from world height"
+        },
+        {
+          "id": "minecraft:adventure/read_power_of_chiseled_bookshelf",
+          "name": "Read power of chiseled bookshelf"
+        },
+        {
+          "id": "minecraft:adventure/salvage_sherd",
+          "name": "Salvage sherd"
+        },
+        {
+          "id": "minecraft:adventure/craft_decorated_pot_using_only_sherds",
+          "name": "Craft decorated pot using only sherds"
+        },
+        {
+          "id": "minecraft:adventure/play_jukebox_in_meadows",
+          "name": "Play jukebox in meadows"
+        },
+        {
+          "id": "minecraft:adventure/walk_on_powder_snow_with_leather_boots",
+          "name": "Walk on powder snow with leather boots"
+        },
+        {
+          "id": "minecraft:adventure/trim_with_all_exclusive_armor_patterns",
+          "name": "Trim with all exclusive armor patterns"
+        },
+        {
+          "id": "minecraft:adventure/under_lock_and_key",
+          "name": "Under lock and key"
+        },
+        {
+          "id": "minecraft:adventure/who_needs_rockets",
+          "name": "Who needs rockets"
+        },
+        {
+          "id": "minecraft:adventure/blowback",
+          "name": "Blowback"
+        },
+        {
+          "id": "minecraft:adventure/crafters_crafting_crafters",
+          "name": "Crafters crafting crafters"
+        },
+        {
+          "id": "minecraft:husbandry/safely_harvest_honey",
+          "name": "Safely harvest honey"
+        },
+        {
+          "id": "minecraft:husbandry/fishy_business",
+          "name": "Fishy business"
+        },
+        {
+          "id": "minecraft:husbandry/silk_touch_nest",
+          "name": "Silk touch nest"
+        },
+        {
+          "id": "minecraft:husbandry/breed_all_animals",
+          "name": "Faire se reproduire tous les animaux"
+        },
+        {
+          "id": "minecraft:husbandry/complete_catalogue",
+          "name": "Complete catalogue"
+        },
+        {
+          "id": "minecraft:husbandry/tactical_fishing",
+          "name": "Tactical fishing"
+        },
+        {
+          "id": "minecraft:husbandry/balanced_diet",
+          "name": "Manger tous les aliments du jeu"
+        },
+        {
+          "id": "minecraft:husbandry/netherite_hoe",
+          "name": "Netherite hoe"
+        },
+        {
+          "id": "minecraft:husbandry/obtain_sniffer_egg",
+          "name": "Obtenir un œuf de renifleur"
+        },
+        {
+          "id": "minecraft:husbandry/plant_any_sniffer_seed",
+          "name": "Plant any sniffer seed"
+        },
+        {
+          "id": "minecraft:husbandry/feed_snifflet",
+          "name": "Feed snifflet"
+        },
+        {
+          "id": "minecraft:husbandry/whole_pack",
+          "name": "Whole pack"
+        },
+        {
+          "id": "minecraft:husbandry/allay_allay",
+          "name": "Allay allay"
+        },
+        {
+          "id": "minecraft:husbandry/leash_all_frog_variants",
+          "name": "Leash all frog variants"
+        },
+        {
+          "id": "minecraft:husbandry/froglights",
+          "name": "Froglights"
+        },
+        {
+          "id": "minecraft:husbandry/kill_axolotl_target",
+          "name": "Kill axolotl target"
+        },
+        {
+          "id": "minecraft:husbandry/repair_wolf_armor",
+          "name": "Repair wolf armor"
+        },
+        {
+          "id": "minecraft:husbandry/wax_off",
+          "name": "Wax off"
+        },
+        {
+          "id": "minecraft:husbandry/wax_on",
+          "name": "Wax on"
+        }
+      ],
       "lastPosition": null
     },
     {
@@ -27,6 +297,300 @@
       "villagerTrades": 191,
       "advancementsDone": 665,
       "advancementsTotal": 669,
+      "missingAdvancements": [
+        {
+          "id": "minecraft:story/deflect_arrow",
+          "name": "Deflect arrow"
+        },
+        {
+          "id": "minecraft:story/enchant_item",
+          "name": "Enchanter un objet"
+        },
+        {
+          "id": "minecraft:story/cure_zombie_villager",
+          "name": "Soigner un villageois zombie"
+        },
+        {
+          "id": "minecraft:nether/fast_travel",
+          "name": "Fast travel"
+        },
+        {
+          "id": "minecraft:nether/obtain_crying_obsidian",
+          "name": "Obtain crying obsidian"
+        },
+        {
+          "id": "minecraft:nether/distract_piglin",
+          "name": "Distract piglin"
+        },
+        {
+          "id": "minecraft:nether/ride_strider",
+          "name": "Chevaucher un strider"
+        },
+        {
+          "id": "minecraft:nether/uneasy_alliance",
+          "name": "Uneasy alliance"
+        },
+        {
+          "id": "minecraft:nether/use_lodestone",
+          "name": "Use lodestone"
+        },
+        {
+          "id": "minecraft:nether/netherite_armor",
+          "name": "Armure complète en netherite"
+        },
+        {
+          "id": "minecraft:nether/get_wither_skull",
+          "name": "Get wither skull"
+        },
+        {
+          "id": "minecraft:nether/charge_respawn_anchor",
+          "name": "Charge respawn anchor"
+        },
+        {
+          "id": "minecraft:nether/summon_wither",
+          "name": "Invoquer le Wither"
+        },
+        {
+          "id": "minecraft:nether/brew_potion",
+          "name": "Brew potion"
+        },
+        {
+          "id": "minecraft:nether/create_beacon",
+          "name": "Create beacon"
+        },
+        {
+          "id": "minecraft:nether/all_potions",
+          "name": "All potions"
+        },
+        {
+          "id": "minecraft:nether/create_full_beacon",
+          "name": "Construire une balise à pleine puissance"
+        },
+        {
+          "id": "minecraft:nether/all_effects",
+          "name": "Cumuler tous les effets de potion"
+        },
+        {
+          "id": "minecraft:end/dragon_egg",
+          "name": "Dragon egg"
+        },
+        {
+          "id": "minecraft:end/enter_end_gateway",
+          "name": "Enter end gateway"
+        },
+        {
+          "id": "minecraft:end/respawn_dragon",
+          "name": "Respawn dragon"
+        },
+        {
+          "id": "minecraft:end/dragon_breath",
+          "name": "Dragon breath"
+        },
+        {
+          "id": "minecraft:end/find_end_city",
+          "name": "Trouver une cité de l'End"
+        },
+        {
+          "id": "minecraft:end/elytra",
+          "name": "Obtenir des élytres"
+        },
+        {
+          "id": "minecraft:end/levitate",
+          "name": "Léviter 50 blocs grâce à un Shulker"
+        },
+        {
+          "id": "minecraft:adventure/honey_block_slide",
+          "name": "Honey block slide"
+        },
+        {
+          "id": "minecraft:adventure/ol_betsy",
+          "name": "Ol betsy"
+        },
+        {
+          "id": "minecraft:adventure/hero_of_the_village",
+          "name": "Défendre un village d'un raid"
+        },
+        {
+          "id": "minecraft:adventure/throw_trident",
+          "name": "Throw trident"
+        },
+        {
+          "id": "minecraft:adventure/kill_all_mobs",
+          "name": "Tuer un exemplaire de chaque monstre"
+        },
+        {
+          "id": "minecraft:adventure/totem_of_undying",
+          "name": "Survivre grâce à une Totem d'Immortalité"
+        },
+        {
+          "id": "minecraft:adventure/summon_iron_golem",
+          "name": "Summon iron golem"
+        },
+        {
+          "id": "minecraft:adventure/two_birds_one_arrow",
+          "name": "Two birds one arrow"
+        },
+        {
+          "id": "minecraft:adventure/whos_the_pillager_now",
+          "name": "Whos the pillager now"
+        },
+        {
+          "id": "minecraft:adventure/arbalistic",
+          "name": "Tuer 5 mobs d'un seul carreau d'arbalète"
+        },
+        {
+          "id": "minecraft:adventure/adventuring_time",
+          "name": "Visiter tous les biomes"
+        },
+        {
+          "id": "minecraft:adventure/very_very_frightening",
+          "name": "Very very frightening"
+        },
+        {
+          "id": "minecraft:adventure/sniper_duel",
+          "name": "Sniper duel"
+        },
+        {
+          "id": "minecraft:adventure/bullseye",
+          "name": "Bullseye"
+        },
+        {
+          "id": "minecraft:adventure/trade_at_world_height",
+          "name": "Trade at world height"
+        },
+        {
+          "id": "minecraft:adventure/spyglass_at_parrot",
+          "name": "Spyglass at parrot"
+        },
+        {
+          "id": "minecraft:adventure/spyglass_at_ghast",
+          "name": "Spyglass at ghast"
+        },
+        {
+          "id": "minecraft:adventure/fall_from_world_height",
+          "name": "Fall from world height"
+        },
+        {
+          "id": "minecraft:adventure/read_power_of_chiseled_bookshelf",
+          "name": "Read power of chiseled bookshelf"
+        },
+        {
+          "id": "minecraft:adventure/salvage_sherd",
+          "name": "Salvage sherd"
+        },
+        {
+          "id": "minecraft:adventure/craft_decorated_pot_using_only_sherds",
+          "name": "Craft decorated pot using only sherds"
+        },
+        {
+          "id": "minecraft:adventure/play_jukebox_in_meadows",
+          "name": "Play jukebox in meadows"
+        },
+        {
+          "id": "minecraft:adventure/walk_on_powder_snow_with_leather_boots",
+          "name": "Walk on powder snow with leather boots"
+        },
+        {
+          "id": "minecraft:adventure/trim_with_any_armor_pattern",
+          "name": "Trim with any armor pattern"
+        },
+        {
+          "id": "minecraft:adventure/trim_with_all_exclusive_armor_patterns",
+          "name": "Trim with all exclusive armor patterns"
+        },
+        {
+          "id": "minecraft:adventure/avoid_vibration",
+          "name": "Avoid vibration"
+        },
+        {
+          "id": "minecraft:adventure/under_lock_and_key",
+          "name": "Under lock and key"
+        },
+        {
+          "id": "minecraft:adventure/who_needs_rockets",
+          "name": "Who needs rockets"
+        },
+        {
+          "id": "minecraft:adventure/blowback",
+          "name": "Blowback"
+        },
+        {
+          "id": "minecraft:adventure/crafters_crafting_crafters",
+          "name": "Crafters crafting crafters"
+        },
+        {
+          "id": "minecraft:husbandry/safely_harvest_honey",
+          "name": "Safely harvest honey"
+        },
+        {
+          "id": "minecraft:husbandry/silk_touch_nest",
+          "name": "Silk touch nest"
+        },
+        {
+          "id": "minecraft:husbandry/breed_all_animals",
+          "name": "Faire se reproduire tous les animaux"
+        },
+        {
+          "id": "minecraft:husbandry/complete_catalogue",
+          "name": "Complete catalogue"
+        },
+        {
+          "id": "minecraft:husbandry/tactical_fishing",
+          "name": "Tactical fishing"
+        },
+        {
+          "id": "minecraft:husbandry/balanced_diet",
+          "name": "Manger tous les aliments du jeu"
+        },
+        {
+          "id": "minecraft:husbandry/netherite_hoe",
+          "name": "Netherite hoe"
+        },
+        {
+          "id": "minecraft:husbandry/obtain_sniffer_egg",
+          "name": "Obtenir un œuf de renifleur"
+        },
+        {
+          "id": "minecraft:husbandry/plant_any_sniffer_seed",
+          "name": "Plant any sniffer seed"
+        },
+        {
+          "id": "minecraft:husbandry/feed_snifflet",
+          "name": "Feed snifflet"
+        },
+        {
+          "id": "minecraft:husbandry/whole_pack",
+          "name": "Whole pack"
+        },
+        {
+          "id": "minecraft:husbandry/allay_allay",
+          "name": "Allay allay"
+        },
+        {
+          "id": "minecraft:husbandry/leash_all_frog_variants",
+          "name": "Leash all frog variants"
+        },
+        {
+          "id": "minecraft:husbandry/froglights",
+          "name": "Froglights"
+        },
+        {
+          "id": "minecraft:husbandry/kill_axolotl_target",
+          "name": "Kill axolotl target"
+        },
+        {
+          "id": "minecraft:husbandry/repair_wolf_armor",
+          "name": "Repair wolf armor"
+        },
+        {
+          "id": "minecraft:husbandry/wax_off",
+          "name": "Wax off"
+        },
+        {
+          "id": "minecraft:husbandry/wax_on",
+          "name": "Wax on"
+        }
+      ],
       "lastPosition": null
     }
   ]
