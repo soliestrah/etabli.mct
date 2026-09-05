@@ -833,6 +833,16 @@
       "price": 15,
       "forItemId": "",
       "note": "LIBRAIRE"
+    },
+    {
+      "id": 53,
+      "kind": "book",
+      "villager": "7e G",
+      "enchId": "aqua_affinity",
+      "level": 1,
+      "price": 13,
+      "forItemId": "",
+      "note": "LIBRAIRE"
     }
   ],
   "books": [
