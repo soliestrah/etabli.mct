@@ -830,6 +830,21 @@
       "id": 9,
       "enchId": "projectile_protection",
       "level": 3
+    },
+    {
+      "id": 10,
+      "enchId": "efficiency",
+      "level": 2
+    },
+    {
+      "id": 11,
+      "enchId": "efficiency",
+      "level": 3
+    },
+    {
+      "id": 12,
+      "enchId": "power",
+      "level": 2
     }
   ],
   "prefs": {
