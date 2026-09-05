@@ -238,6 +238,10 @@
         {
           "id": "punch",
           "level": 2
+        },
+        {
+          "id": "flame",
+          "level": 1
         }
       ],
       "prefOverrides": {}
