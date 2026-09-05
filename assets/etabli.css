@@ -10,31 +10,44 @@ main{ padding-top:0; }
 
 /* --- Hero joueur --- */
 .hero{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:24px;
-  padding:40px 24px 30px;
-  text-align:left;
-  flex-wrap:wrap;
+  padding:36px 24px 10px;
 }
-.hero-skin{
-  width:110px;
+/* Carte profil façon "avatar de forum" : skin à gauche, pseudo + stats
+   à droite, tout tient sur une largeur raisonnable au lieu d'étaler le
+   skin en grand au centre de la page. */
+.profile-card{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  max-width:640px;
+  margin:0 auto;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:16px 20px;
+}
+.profile-skin{
+  width:64px;
   height:auto;
   image-rendering:pixelated;
   flex-shrink:0;
-  filter:drop-shadow(0 6px 14px rgba(0,0,0,0.4));
+  border-radius:var(--radius-sm);
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,0.35));
 }
-.hero-text h1{ font-size:2.1rem; margin:0 0 4px; }
-.hero-text h1 span{ color:var(--accent); }
-.hero-text p{ margin:0; max-width:420px; }
+.profile-body{ flex:1; min-width:0; }
+.profile-name{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.2rem;
+  color:var(--accent);
+}
 .hero-server-status{
   display:inline-flex;
   align-items:center;
   gap:6px;
-  margin-top:10px;
+  margin-top:4px;
   font-family:var(--font-mono);
-  font-size:0.72rem;
+  font-size:0.7rem;
   color:var(--muted);
 }
 .hero-server-status .dot{
@@ -42,6 +55,34 @@ main{ padding-top:0; }
   border-radius:50%;
   background:var(--muted);
   display:inline-block;
+}
+.profile-stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:12px;
+}
+.profile-stat{ text-align:left; }
+.profile-stat .n{
+  font-family:var(--font-mono);
+  font-weight:700;
+  font-size:1.05rem;
+  color:var(--text);
+  line-height:1;
+}
+.profile-stat .l{
+  font-size:0.64rem;
+  color:var(--muted);
+  margin-top:3px;
+}
+.profile-stat-empty{
+  font-size:0.76rem;
+  color:var(--muted);
+  font-style:italic;
+}
+@media (max-width:560px){
+  .profile-card{ flex-direction:column; align-items:center; text-align:center; }
+  .profile-stats{ justify-content:center; }
 }
 
 /* --- Grille de widgets --- */
