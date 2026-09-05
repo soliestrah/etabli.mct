@@ -210,6 +210,10 @@
         {
           "id": "unbreaking",
           "level": 3
+        },
+        {
+          "id": "aqua_affinity",
+          "level": 1
         }
       ],
       "prefOverrides": {}
