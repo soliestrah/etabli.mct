@@ -236,7 +236,7 @@
       card.innerHTML = `
         <div class="proj-head">
           <div class="proj-title-wrap">
-            <div class="proj-name${proj.status === 'done' ? ' done-strike' : ''}">${escapeHtml(proj.name)}</div>
+            <div class="proj-name${proj.status === 'done' ? ' done-strike' : ''}">${escapeHtml(proj.name)} ${proj.autoRule ? '<span class="badge-accent" style="font-size:0.6rem; vertical-align:middle;">Auto</span>' : ''}</div>
             ${proj.notes ? `<div class="proj-notes">${escapeHtml(proj.notes)}</div>` : ''}
           </div>
           <div class="proj-actions">
@@ -324,10 +324,13 @@
       id: p.id, name: p.name, notes: p.notes || '',
       status: p.status || 'todo',
       needs: Array.isArray(p.needs) ? p.needs : [],
-      createdAt: p.createdAt || new Date().toISOString()
+      createdAt: p.createdAt || new Date().toISOString(),
+      autoRule: p.autoRule || null
     }));
     projIdCounter = projects.reduce((m, p) => Math.max(m, p.id || 0), 0) + 1;
     needIdCounter = projects.reduce((m, p) => Math.max(m, ...p.needs.map(n => n.id || 0), 0), 0) + 1;
+    projectsReady = true;
+    maybeApplyAutoRules();
     renderAll();
     showSaveMsg('Projets chargés.');
   }
@@ -438,14 +441,123 @@
     e.target.value = '';
   });
 
+  // ===================== RÈGLES AUTOMATIQUES =====================
+  // Génère/ajuste certains projets tout seul, à partir des données du monde.
+  // Ces projets portent un champ `autoRule` (badge "Auto" dans la liste) et
+  // sont recalculés à chaque chargement de la page.
+  let containersData = [];
+  let statsData = [];
+  let projectsReady = false;
+  let containersReady = false;
+  let statsReady = false;
+  const AUTO_FOODIE_THRESHOLD = 64; // seuil (nb total d'items) sous lequel on relance un projet de réappro
+
+  function maybeApplyAutoRules(){
+    if (projectsReady && containersReady && statsReady) applyAutoRules();
+  }
+
+  function loadContainers(){
+    fetch('conteneurs-config.json', { cache: 'no-store' })
+      .then(r => r.ok ? r.json() : { containers: [] })
+      .then(data => { containersData = Array.isArray(data.containers) ? data.containers : []; })
+      .catch(() => { containersData = []; })
+      .finally(() => {
+        containersReady = true;
+        maybeApplyAutoRules();
+      });
+  }
+
+  function loadStats(){
+    fetch('stats-config.json', { cache: 'no-store' })
+      .then(r => r.ok ? r.json() : { players: [] })
+      .then(data => { statsData = Array.isArray(data.players) ? data.players : []; })
+      .catch(() => { statsData = []; })
+      .finally(() => {
+        statsReady = true;
+        maybeApplyAutoRules();
+      });
+  }
+
+  function applyAutoRules(){
+    applyFoodieRule();
+    applyAdvancementsRule();
+    renderAll();
+  }
+
+  function applyFoodieRule(){
+    // Règle "foodie" : shulker box nommée "foodie" (renommée à l'enclume avant
+    // d'être posée) — si son stock total tombe sous le seuil, on (ré)ouvre un
+    // projet de réappro ; s'il remonte au-dessus, on le marque terminé.
+    const foodie = containersData.find(c =>
+      (c.name || '').toLowerCase() === 'foodie' && c.type && c.type.includes('shulker')
+    );
+    const existingIdx = projects.findIndex(p => p.autoRule === 'foodie-food');
+
+    if (foodie){
+      const total = foodie.total || 0;
+      if (total < AUTO_FOODIE_THRESHOLD){
+        if (existingIdx === -1){
+          projects.push({
+            id: projIdCounter++,
+            name: 'Réapprovisionner la shulker "foodie"',
+            notes: `Stock actuel détecté : ${total} items (seuil : ${AUTO_FOODIE_THRESHOLD}). Projet généré automatiquement depuis l'inventaire.`,
+            status: 'todo',
+            needs: [],
+            createdAt: new Date().toISOString(),
+            autoRule: 'foodie-food'
+          });
+        } else if (projects[existingIdx].status === 'done'){
+          projects[existingIdx].status = 'todo'; // le stock est retombé bas, on rouvre
+          projects[existingIdx].notes = `Stock actuel détecté : ${total} items (seuil : ${AUTO_FOODIE_THRESHOLD}). Rouvert automatiquement.`;
+        }
+      } else if (existingIdx !== -1 && projects[existingIdx].status !== 'done'){
+        projects[existingIdx].status = 'done';
+      }
+    }
+  }
+
+  function applyAdvancementsRule(){
+    // Un projet "Avancements à débloquer" par joueur ayant des avancements
+    // manquants dans stats-config.json. Se ferme tout seul si la liste se vide.
+    statsData.forEach(player => {
+      const missing = Array.isArray(player.missingAdvancements) ? player.missingAdvancements : [];
+      const rule = `advancements-${player.uuid || player.name}`;
+      const existingIdx = projects.findIndex(p => p.autoRule === rule);
+
+      if (missing.length > 0){
+        const notes = `Il reste ${missing.length} avancement(s) à débloquer pour ${player.name} :\n` +
+          missing.slice(0, 25).map(a => `- ${a.name}`).join('\n') +
+          (missing.length > 25 ? `\n… et ${missing.length - 25} autre(s).` : '');
+        if (existingIdx === -1){
+          projects.push({
+            id: projIdCounter++,
+            name: `Avancements à débloquer — ${player.name}`,
+            notes,
+            status: 'todo',
+            needs: [],
+            createdAt: new Date().toISOString(),
+            autoRule: rule
+          });
+        } else {
+          projects[existingIdx].notes = notes;
+          if (projects[existingIdx].status === 'done') projects[existingIdx].status = 'todo';
+        }
+      } else if (existingIdx !== -1 && projects[existingIdx].status !== 'done'){
+        projects[existingIdx].status = 'done';
+      }
+    });
+  }
+
   renderAll();
   loadInventoryStock();
+  loadContainers();
+  loadStats();
 
   // Chargement automatique depuis le dépôt (fonctionne quand le site est hébergé, ex. GitHub Pages).
   fetch('projets-config.json', {cache: 'no-store'})
     .then(r => r.ok ? r.text() : Promise.reject())
     .then(text => loadFromJSON(text))
-    .catch(() => {});
+    .catch(() => { projectsReady = true; maybeApplyAutoRules(); });
 </script>
 </body>
 </html>

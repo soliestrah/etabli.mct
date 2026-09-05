@@ -66,6 +66,14 @@
       <div class="widget-stat-row" id="inventaire-stats"></div>
     </div>
 
+    <div class="widget" id="widget-conteneurs">
+      <div class="widget-head">
+        <h3>🧳 Shulkers & Enderchests</h3>
+        <a href="inventaire.html">Voir l'inventaire →</a>
+      </div>
+      <ul class="widget-list" id="conteneurs-list"></ul>
+    </div>
+
   </div>
 
   <section class="gear-section">
@@ -258,6 +266,32 @@
     })
     .catch(() => {
       document.getElementById('inventaire-stats').innerHTML = '<div class="widget-offline">Inventaire non trouvé.</div>';
+    });
+
+  // ===================== WIDGET : SHULKERS & ENDERCHESTS =====================
+  fetch('conteneurs-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const containers = Array.isArray(data.containers) ? data.containers : [];
+      const list = document.getElementById('conteneurs-list');
+      if (containers.length === 0){
+        list.innerHTML = '<li class="widget-empty" style="background:none; padding:10px 0;">Aucune shulker box ou enderchest suivie pour l\'instant.</li>';
+        return;
+      }
+      // les conteneurs nommés d'abord (déjà trié côté script), on en montre 6 max ici
+      list.innerHTML = containers.slice(0, 6).map(c => {
+        const label = c.name ? `« ${c.name} »` : `${c.x}, ${c.y}, ${c.z}`;
+        const kind = c.type.includes('shulker') ? 'Shulker' : 'Enderchest';
+        return `
+          <li>
+            <span>${escapeHtml(kind)} ${escapeHtml(label)}</span>
+            <span class="tag">${c.total.toLocaleString('fr-FR')} items${c.dimension ? ' · ' + escapeHtml(c.dimension) : ''}</span>
+          </li>
+        `;
+      }).join('');
+    })
+    .catch(() => {
+      document.getElementById('conteneurs-list').innerHTML = '<li class="widget-offline" style="background:none; padding:10px 0;">conteneurs-config.json non trouvé.</li>';
     });
 
   // ===================== GRILLE D'ÉQUIPEMENT (Grimoire) =====================
