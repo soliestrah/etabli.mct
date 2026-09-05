@@ -15,13 +15,17 @@
 <script src="assets/nav.js" defer></script>
 
 <header class="hero">
-  <img class="hero-skin" id="hero-skin" alt="Skin de N3SK3" width="110" height="200">
-  <div class="hero-text">
-    <h1>l'<span>établi</span> de N3SK3</h1>
-    <p>Le tableau de bord de ton monde — un résumé de tout ce qui bouge, en un coup d'œil.</p>
-    <div class="hero-server-status">
-      <span class="dot"></span>
-      <span>Serveur Aternos — connexion à venir</span>
+  <div class="profile-card">
+    <img class="profile-skin" id="hero-skin" alt="Skin de N3SK3" width="64" height="64">
+    <div class="profile-body">
+      <div class="profile-name">N3SK3</div>
+      <div class="hero-server-status">
+        <span class="dot"></span>
+        <span>Serveur Aternos — connexion à venir</span>
+      </div>
+      <div class="profile-stats" id="profile-stats">
+        <div class="profile-stat-empty">Stats du monde pas encore chargées — dépose <code>stats-config.json</code> à la racine du site.</div>
+      </div>
     </div>
   </div>
 </header>
@@ -117,7 +121,32 @@
 
 <script>
   const USERNAME = 'N3SK3';
-  document.getElementById('hero-skin').src = `https://mc-heads.net/player/${encodeURIComponent(USERNAME)}/200`;
+  document.getElementById('hero-skin').src = `https://mc-heads.net/avatar/${encodeURIComponent(USERNAME)}/128`;
+
+  // ===================== CARTE PROFIL : STATS DU MONDE =====================
+  fetch('stats-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const players = Array.isArray(data.players) ? data.players : [];
+      const p = players.find(pl => (pl.name || '').toLowerCase() === USERNAME.toLowerCase()) || players[0];
+      const wrap = document.getElementById('profile-stats');
+      if (!p){
+        wrap.innerHTML = '<div class="profile-stat-empty">Aucune donnée de joueur dans stats-config.json.</div>';
+        return;
+      }
+      const stat = (n, l) => `<div class="profile-stat"><div class="n">${n}</div><div class="l">${l}</div></div>`;
+      wrap.innerHTML = [
+        p.playTimeHours != null ? stat(Math.round(p.playTimeHours) + 'h', 'jouées') : '',
+        p.distanceTotalKm != null ? stat(p.distanceTotalKm.toLocaleString('fr-FR', {maximumFractionDigits:1}) + ' km', 'parcourus') : '',
+        p.mobKills != null ? stat(p.mobKills.toLocaleString('fr-FR'), 'mobs tués') : '',
+        p.deaths != null ? stat(p.deaths.toLocaleString('fr-FR'), 'morts') : '',
+        p.blocksMined != null ? stat(p.blocksMined.toLocaleString('fr-FR'), 'blocs minés') : '',
+        (p.advancementsDone != null && p.advancementsTotal) ? stat(Math.round(p.advancementsDone / p.advancementsTotal * 100) + '%', 'progrès') : '',
+      ].join('');
+    })
+    .catch(() => {
+      document.getElementById('profile-stats').innerHTML = '<div class="profile-stat-empty">Stats du monde pas encore chargées — dépose <code>stats-config.json</code> à la racine du site.</div>';
+    });
 
   function escapeHtml(str){
     const div = document.createElement('div');
