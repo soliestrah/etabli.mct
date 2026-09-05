@@ -196,6 +196,22 @@ main.layout-2col .col-full{ grid-column:1 / -1; }
   margin-left:6px;
 }
 #nav-quick-save:hover{ filter:brightness(1.08); }
+#nav-quick-save-wrap{ display:flex; align-items:center; gap:8px; }
+#nav-save-status{
+  font-family:var(--font-mono);
+  font-size:0.74rem;
+  color:var(--green);
+  opacity:0;
+  max-width:0;
+  overflow:hidden;
+  white-space:nowrap;
+  transition:opacity 0.2s ease;
+}
+#nav-save-status.visible{ opacity:1; max-width:280px; }
+#nav-save-status.error{ color:var(--red); }
+@media (max-width:700px){
+  #nav-save-status.visible{ max-width:160px; white-space:normal; }
+}
 
 /* ========================================================================
    EN-TÊTE DE PAGE (titre + sous-titre, sous la nav)
