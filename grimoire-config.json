@@ -843,6 +843,16 @@
       "price": 13,
       "forItemId": "",
       "note": "LIBRAIRE"
+    },
+    {
+      "id": 54,
+      "kind": "book",
+      "villager": "8e D",
+      "enchId": "flame",
+      "level": 1,
+      "price": 18,
+      "forItemId": "",
+      "note": "LIBRAIRE"
     }
   ],
   "books": [
