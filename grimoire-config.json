@@ -803,6 +803,16 @@
       "price": 19,
       "forItemId": "",
       "note": "LIBRAIRE"
+    },
+    {
+      "id": 49,
+      "kind": "book",
+      "villager": "5e G",
+      "enchId": "protection",
+      "level": 4,
+      "price": 35,
+      "forItemId": "",
+      "note": "LIBRAIRE"
     }
   ],
   "books": [
