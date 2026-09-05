@@ -19,7 +19,7 @@
   <p>l'état des lieux de ton monde, hors du jeu</p>
 </header>
 
-<main>
+<main class="layout-2col">
   <section class="panel col-left">
     <h2>Nouvelle ressource</h2>
     <form id="res-form">
@@ -78,15 +78,9 @@
     </div>
 
     <div class="filters-row">
-      <input type="text" id="search-input" placeholder="Rechercher une ressource ou un emplacement...">
+      <input type="text" id="search-input" placeholder="Rechercher une ressource...">
       <select id="filter-cat">
         <option value="">Toutes les catégories</option>
-      </select>
-      <select id="filter-dim">
-        <option value="">Toutes les dimensions</option>
-        <option value="Overworld">Overworld</option>
-        <option value="Nether">Nether</option>
-        <option value="End">End</option>
       </select>
       <select id="sort-by">
         <option value="name">Trier : nom (A-Z)</option>
@@ -148,19 +142,7 @@
   let stackIdCounter = 1;
   let searchQuery = '';
   let filterCat = '';
-  let filterDim = '';
   let sortBy = 'name';
-
-  function getDimension(location){
-    if (!location) return 'Overworld';
-    if (location.includes('[Nether]')) return 'Nether';
-    if (location.includes('[End]')) return 'End';
-    return 'Overworld';
-  }
-
-  function stripDim(location){
-    return (location || '').replace(/\s*\[(Nether|End)\]\s*$/, '');
-  }
 
   const form = document.getElementById('res-form');
   const listEl = document.getElementById('res-list');
@@ -215,10 +197,6 @@
     filterCat = e.target.value;
     renderList();
   });
-  document.getElementById('filter-dim').addEventListener('change', (e) => {
-    filterDim = e.target.value;
-    renderList();
-  });
   document.getElementById('sort-by').addEventListener('change', (e) => {
     sortBy = e.target.value;
     renderList();
@@ -243,7 +221,7 @@
       dl.id = 'loc-list';
       document.body.appendChild(dl);
     }
-    const locs = [...new Set(resources.flatMap(r => r.stacks.map(s => stripDim(s.location))).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'fr'));
+    const locs = [...new Set(resources.flatMap(r => r.stacks.map(s => s.location)).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'fr'));
     dl.innerHTML = locs.map(l => `<option value="${escapeHtml(l)}"></option>`).join('');
   }
 
@@ -259,12 +237,7 @@
   function renderList(){
     let filtered = resources.filter(r => {
       if (filterCat && r.category !== filterCat) return false;
-      if (filterDim && !r.stacks.some(s => getDimension(s.location) === filterDim)) return false;
-      if (searchQuery){
-        const nameMatch = r.name.toLowerCase().includes(searchQuery);
-        const locMatch = r.stacks.some(s => s.location.toLowerCase().includes(searchQuery));
-        if (!nameMatch && !locMatch) return false;
-      }
+      if (searchQuery && !r.name.toLowerCase().includes(searchQuery)) return false;
       return true;
     });
 
@@ -280,27 +253,14 @@
     emptyNoteFiltered.style.display = (resources.length > 0 && filtered.length === 0) ? 'block' : 'none';
 
     filtered.forEach(res => {
-      // emplacements a afficher pour cette ressource : tous, ou seulement ceux
-      // de la dimension selectionnee / correspondant a la recherche texte
-      const displayedStacks = res.stacks.filter(s => {
-        if (filterDim && getDimension(s.location) !== filterDim) return false;
-        if (searchQuery && !res.name.toLowerCase().includes(searchQuery) &&
-            !s.location.toLowerCase().includes(searchQuery)) return false;
-        return true;
-      });
-      const isFiltered = !!(filterDim || searchQuery);
-      const total = isFiltered
-        ? displayedStacks.reduce((sum, s) => sum + s.quantity, 0)
-        : totalQty(res);
-
+      const total = totalQty(res);
       const card = document.createElement('div');
       card.className = 'res-card';
 
       let progressHtml = '';
       if (res.targetQuantity){
-        const fullTotal = totalQty(res);
-        const pct = Math.min(100, Math.round(fullTotal / res.targetQuantity * 100));
-        const under = fullTotal < res.targetQuantity;
+        const pct = Math.min(100, Math.round(total / res.targetQuantity * 100));
+        const under = total < res.targetQuantity;
         progressHtml = `
           <div class="res-progress">
             <div class="res-progress-label ${under ? 'under' : 'reached'}">
@@ -312,10 +272,9 @@
         `;
       }
 
-      const stacksHtml = displayedStacks.map(s => `
+      const stacksHtml = res.stacks.map(s => `
         <div class="stack-row">
-          <span class="stack-dim dim-${getDimension(s.location).toLowerCase()}">${getDimension(s.location)}</span>
-          <span class="stack-loc">${escapeHtml(stripDim(s.location))}</span>
+          <span class="stack-loc">${escapeHtml(s.location)}</span>
           <span class="stack-qty">${s.quantity.toLocaleString('fr-FR')}</span>
           <button class="icon-btn" data-del-stack="${res.id}:${s.id}" title="Retirer cet emplacement">✕</button>
         </div>
@@ -331,7 +290,7 @@
             </div>
           </div>
           <div style="display:flex; align-items:center; gap:10px;">
-            <div class="res-total">${total.toLocaleString('fr-FR')}<br><span class="unit">${isFiltered ? 'affiché' : (res.unit === 'stack' ? (total/64).toFixed(1).replace(/\.0$/,'') + ' stacks' : 'items')}</span></div>
+            <div class="res-total">${total.toLocaleString('fr-FR')}<br><span class="unit">${res.unit === 'stack' ? (total/64).toFixed(1).replace(/\.0$/,'') + ' stacks' : 'items'}</span></div>
             <div class="res-actions">
               <button class="btn-small" data-edit="${res.id}">✎</button>
               <button class="btn-small" data-del="${res.id}">Suppr.</button>
