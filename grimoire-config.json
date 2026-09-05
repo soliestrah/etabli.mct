@@ -793,6 +793,16 @@
       ],
       "price": 31,
       "note": "ARMURIER"
+    },
+    {
+      "id": 48,
+      "kind": "book",
+      "villager": "6e G",
+      "enchId": "infinity",
+      "level": 1,
+      "price": 19,
+      "forItemId": "",
+      "note": "LIBRAIRE"
     }
   ],
   "books": [
