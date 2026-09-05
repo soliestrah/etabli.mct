@@ -31,16 +31,67 @@
     });
 
     // Bouton de sauvegarde rapide : visible directement dans la nav, sur
-    // toute page qui a un bouton "Télécharger (.json)" cache tout en bas
-    // (évite d'avoir a deplier la section Sauvegarde a chaque fois).
+    // toute page qui a la section Sauvegarde (evite d'avoir a deplier la
+    // section tout en bas a chaque fois).
+    // - S'il y a une config GitHub deja enregistree (owner/repo/token dans
+    //   localStorage), il declenche la VRAIE sauvegarde en ligne.
+    // - Sinon, il retombe sur le telechargement local du fichier .json.
+    // Dans les deux cas, le resultat s'affiche directement a cote du bouton,
+    // pas seulement tout en bas de la page (ou on ne le voit pas).
     const downloadBtn = document.getElementById('btn-download');
-    if (downloadBtn){
+    const ghSaveBtn = document.getElementById('btn-gh-save');
+    const pageMsg = document.getElementById('save-msg');
+
+    if (downloadBtn || ghSaveBtn){
+      const wrap = document.createElement('span');
+      wrap.id = 'nav-quick-save-wrap';
+
       const quickSave = document.createElement('button');
       quickSave.type = 'button';
       quickSave.id = 'nav-quick-save';
       quickSave.innerHTML = '<span>💾</span><span>Enregistrer</span>';
-      quickSave.addEventListener('click', () => downloadBtn.click());
-      nav.appendChild(quickSave);
+
+      const status = document.createElement('span');
+      status.id = 'nav-save-status';
+
+      function ghConfigured(){
+        const owner = localStorage.getItem('gh_owner');
+        const repo = localStorage.getItem('gh_repo');
+        const token = localStorage.getItem('gh_token');
+        return !!(owner && repo && token);
+      }
+
+      function showStatus(text, isError){
+        status.textContent = text;
+        status.classList.toggle('error', !!isError);
+        status.classList.add('visible');
+        clearTimeout(showStatus._t);
+        showStatus._t = setTimeout(() => { status.classList.remove('visible'); }, 4000);
+      }
+
+      // Si la page a un message de sauvegarde (#save-msg), on le surveille
+      // pour remonter automatiquement son contenu jusqu'ici.
+      if (pageMsg){
+        const observer = new MutationObserver(() => {
+          const text = pageMsg.textContent.trim();
+          if (text) showStatus(text, /échec|erreur/i.test(text));
+        });
+        observer.observe(pageMsg, { childList: true, characterData: true, subtree: true });
+      }
+
+      quickSave.addEventListener('click', () => {
+        if (ghSaveBtn && ghConfigured()){
+          ghSaveBtn.click();
+        } else if (ghSaveBtn){
+          showStatus('Configure ta sauvegarde GitHub en bas de page (une fois).', true);
+        } else if (downloadBtn){
+          downloadBtn.click();
+        }
+      });
+
+      wrap.appendChild(quickSave);
+      wrap.appendChild(status);
+      nav.appendChild(wrap);
     }
 
     container.replaceWith(nav);
