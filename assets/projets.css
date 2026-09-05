@@ -4,22 +4,7 @@
    Le reste (boutons, panneaux, formulaires, sauvegarde...) vient de site.css
    ========================================================================= */
 
-main{
-  max-width:1180px;
-  margin:0 auto;
-  padding:28px 20px 60px;
-  display:grid;
-  grid-template-columns:340px 1fr;
-  gap:22px;
-  align-items:start;
-}
-main .col-left{ grid-column:1; }
-main .col-right{ grid-column:2; }
-main .col-full{ grid-column:1 / -1; }
-@media (max-width: 860px){
-  main{ grid-template-columns:1fr; }
-  main .col-left, main .col-right, main .col-full{ grid-column:1; }
-}
+/* la mise en page (main.layout-2col) vient de site.css */
 
 .inv-status-line{
   font-size:0.72rem;

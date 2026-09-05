@@ -4,11 +4,9 @@
    Le reste (boutons, panneaux, formulaires, sauvegarde...) vient de site.css
    ========================================================================= */
 
-main{
-  max-width:1100px;
-  margin:0 auto;
-  padding:0 20px 70px;
-}
+/* largeur de page unifiée (vient de site.css) ; ici on retire juste le
+   padding du haut car le hero au-dessus a déjà son propre espacement */
+main{ padding-top:0; }
 
 /* --- Hero joueur --- */
 .hero{

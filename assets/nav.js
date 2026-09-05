@@ -30,6 +30,19 @@
       nav.appendChild(a);
     });
 
+    // Bouton de sauvegarde rapide : visible directement dans la nav, sur
+    // toute page qui a un bouton "Télécharger (.json)" cache tout en bas
+    // (évite d'avoir a deplier la section Sauvegarde a chaque fois).
+    const downloadBtn = document.getElementById('btn-download');
+    if (downloadBtn){
+      const quickSave = document.createElement('button');
+      quickSave.type = 'button';
+      quickSave.id = 'nav-quick-save';
+      quickSave.innerHTML = '<span>💾</span><span>Enregistrer</span>';
+      quickSave.addEventListener('click', () => downloadBtn.click());
+      nav.appendChild(quickSave);
+    }
+
     container.replaceWith(nav);
   }
 

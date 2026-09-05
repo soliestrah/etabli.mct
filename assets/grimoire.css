@@ -28,7 +28,7 @@
 .subtab-btn:hover{ color:var(--text); }
 .subtab-btn.active{ color:var(--accent); border-bottom-color:var(--accent); }
 
-main{ padding:0 20px 60px; }
+/* la largeur de page (main{}) vient de site.css */
 .view{ display:none; }
 .view.active{ display:block; }
 .subview{ display:none; }

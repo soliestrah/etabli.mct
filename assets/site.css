@@ -126,6 +126,33 @@ p{ margin:0 0 var(--sp-3); color:var(--muted); }
 code, .mono{ font-family:var(--font-mono); }
 
 /* ========================================================================
+   MISE EN PAGE COMMUNE
+   ======================================================================== */
+
+/* --- Largeur de page unifiée sur TOUTES les pages --- */
+main{
+  max-width:1180px;
+  margin:0 auto;
+  padding:28px 20px 60px;
+}
+
+/* --- Mise en page à 2 colonnes (formulaire à gauche, contenu à droite),
+   utilisée par Atlas / Carnet / Inventaire / Projets --- */
+main.layout-2col{
+  display:grid;
+  grid-template-columns:340px 1fr;
+  gap:22px;
+  align-items:start;
+}
+main.layout-2col .col-left{ grid-column:1; }
+main.layout-2col .col-right{ grid-column:2; }
+main.layout-2col .col-full{ grid-column:1 / -1; }
+@media (max-width: 860px){
+  main.layout-2col{ grid-template-columns:1fr; }
+  main.layout-2col .col-left, main.layout-2col .col-right, main.layout-2col .col-full{ grid-column:1; }
+}
+
+/* ========================================================================
    NAVIGATION (générée par nav.js dans #site-nav)
    ======================================================================== */
 #site-nav{
@@ -153,6 +180,22 @@ code, .mono{ font-family:var(--font-mono); }
 }
 #site-nav a:hover{ color:var(--accent); background:var(--panel); }
 #site-nav a.current{ color:var(--text); font-weight:700; }
+#nav-quick-save{
+  color:var(--accent-ink);
+  background:var(--accent);
+  border:none;
+  font-family:var(--font-mono);
+  font-size:0.8rem;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 10px;
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+  margin-left:6px;
+}
+#nav-quick-save:hover{ filter:brightness(1.08); }
 
 /* ========================================================================
    EN-TÊTE DE PAGE (titre + sous-titre, sous la nav)
