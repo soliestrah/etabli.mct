@@ -1,262 +1,307 @@
-/* =========================================================================
-   ÉTABLI — styles propres au dashboard (hero joueur, widgets en direct,
-   grille d'équipement au hover, cartes de navigation vers les outils)
-   Le reste (boutons, panneaux, formulaires, sauvegarde...) vient de site.css
-   ========================================================================= */
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>l'établi</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/etabli.css">
+</head>
+<body class="theme-etabli">
 
-main{
-  max-width:1100px;
-  margin:0 auto;
-  padding:0 20px 70px;
-}
+<div id="site-nav" data-current="etabli"></div>
+<script src="assets/nav.js" defer></script>
 
-/* --- Hero joueur --- */
-.hero{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:24px;
-  padding:40px 24px 30px;
-  text-align:left;
-  flex-wrap:wrap;
-}
-.hero-skin{
-  width:110px;
-  height:auto;
-  image-rendering:pixelated;
-  flex-shrink:0;
-  filter:drop-shadow(0 6px 14px rgba(0,0,0,0.4));
-}
-.hero-text h1{ font-size:2.1rem; margin:0 0 4px; }
-.hero-text h1 span{ color:var(--accent); }
-.hero-text p{ margin:0; max-width:420px; }
-.hero-server-status{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  margin-top:10px;
-  font-family:var(--font-mono);
-  font-size:0.72rem;
-  color:var(--muted);
-}
-.hero-server-status .dot{
-  width:8px; height:8px;
-  border-radius:50%;
-  background:var(--muted);
-  display:inline-block;
-}
+<header class="hero">
+  <img class="hero-skin" id="hero-skin" alt="Skin de N3SK3" width="110" height="200">
+  <div class="hero-text">
+    <h1>l'<span>établi</span> de N3SK3</h1>
+    <p>Le tableau de bord de ton monde — un résumé de tout ce qui bouge, en un coup d'œil.</p>
+    <div class="hero-server-status">
+      <span class="dot"></span>
+      <span>Serveur Aternos — connexion à venir</span>
+    </div>
+  </div>
+</header>
 
-/* --- Grille de widgets --- */
-.widgets-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-  gap:18px;
-  margin:10px 0 28px;
-}
-.widget{
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:18px 20px;
-  display:flex;
-  flex-direction:column;
-}
-.widget-head{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  margin-bottom:12px;
-}
-.widget-head h3{
-  margin:0;
-  font-size:1rem;
-  display:flex;
-  align-items:center;
-  gap:8px;
-}
-.widget-head a{
-  font-family:var(--font-mono);
-  font-size:0.7rem;
-  color:var(--muted);
-  text-decoration:none;
-  white-space:nowrap;
-}
-.widget-head a:hover{ color:var(--accent); }
+<main>
 
-.widget-stat-row{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-  margin-bottom:4px;
-}
-.widget-stat{ }
-.widget-stat .n{
-  font-family:var(--font-mono);
-  font-size:1.5rem;
-  font-weight:700;
-  color:var(--accent);
-  line-height:1;
-}
-.widget-stat .l{ font-size:0.68rem; color:var(--muted); margin-top:4px; }
+  <div class="widgets-grid">
 
-.widget-list{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  flex:1;
-}
-.widget-list li{
-  font-size:0.85rem;
-  padding:7px 10px;
-  background:var(--panel-hover);
-  border-radius:var(--radius-sm);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:8px;
-}
-.widget-list li .tag{
-  font-family:var(--font-mono);
-  font-size:0.65rem;
-  color:var(--muted);
-  flex-shrink:0;
-}
-.widget-empty{
-  color:var(--muted);
-  font-size:0.82rem;
-  font-style:italic;
-  padding:10px 0;
-}
-.widget-offline{
-  color:var(--muted);
-  font-size:0.78rem;
-  padding:10px 0;
-}
+    <div class="widget" id="widget-carnet">
+      <div class="widget-head">
+        <h3>📓 Carnet</h3>
+        <a href="carnet.html">Ouvrir →</a>
+      </div>
+      <ul class="widget-list" id="carnet-list"></ul>
+    </div>
 
-.widget-progress-row{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-.widget-progress-item .top{
-  display:flex;
-  justify-content:space-between;
-  font-size:0.8rem;
-  margin-bottom:4px;
-}
-.widget-progress-item .top .pct{ font-family:var(--font-mono); color:var(--muted); }
+    <div class="widget" id="widget-atlas">
+      <div class="widget-head">
+        <h3>🗺️ Atlas</h3>
+        <a href="atlas.html">Ouvrir →</a>
+      </div>
+      <ul class="widget-list" id="atlas-list"></ul>
+    </div>
 
-/* --- Grille d'équipement (Grimoire) --- */
-.gear-section{
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:20px;
-  margin-bottom:28px;
-}
-.gear-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(64px, 1fr));
-  gap:10px;
-  margin-top:14px;
-}
-.gear-slot{
-  position:relative;
-  background:var(--panel-hover);
-  border:1px solid var(--border);
-  border-radius:var(--radius-sm);
-  aspect-ratio:1;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.6rem;
-  cursor:pointer;
-  transition:border-color 0.15s ease, transform 0.15s ease;
-}
-.gear-slot:hover, .gear-slot.active{
-  border-color:var(--accent);
-  transform:translateY(-2px);
-}
-.gear-slot.empty{ opacity:0.3; cursor:default; }
-.gear-slot.empty:hover{ transform:none; border-color:var(--border); }
-.gear-slot .count{
-  position:absolute;
-  bottom:2px; right:4px;
-  font-family:var(--font-mono);
-  font-size:0.6rem;
-  color:var(--muted);
-}
+    <div class="widget" id="widget-projets">
+      <div class="widget-head">
+        <h3>🧱 Projets en cours</h3>
+        <a href="projets.html">Ouvrir →</a>
+      </div>
+      <div class="widget-progress-row" id="projets-list"></div>
+    </div>
 
-.gear-detail{
-  margin-top:16px;
-  padding-top:14px;
-  border-top:1px dashed var(--border);
-  display:none;
-}
-.gear-detail.show{ display:block; }
-.gear-detail-item{ margin-bottom:12px; }
-.gear-detail-item:last-child{ margin-bottom:0; }
-.gear-detail-name{ font-weight:700; font-size:0.9rem; }
-.gear-detail-enchants{
-  font-family:var(--font-mono);
-  font-size:0.76rem;
-  color:var(--muted);
-  margin-top:4px;
-}
+    <div class="widget" id="widget-inventaire">
+      <div class="widget-head">
+        <h3>📦 Inventaire</h3>
+        <a href="inventaire.html">Ouvrir →</a>
+      </div>
+      <div class="widget-stat-row" id="inventaire-stats"></div>
+    </div>
 
-/* --- Grille des outils (navigation) --- */
-.tools-section h2{ margin-bottom:14px; }
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-  gap:16px;
-}
-.tool-card{
-  display:flex;
-  flex-direction:column;
-  text-decoration:none;
-  color:var(--text);
-  position:relative;
-  overflow:hidden;
-  transition:transform 0.15s ease, border-color 0.15s ease;
-  padding:16px 18px;
-}
-.tool-card::before{
-  content:"";
-  position:absolute;
-  top:0; left:0; right:0;
-  height:3px;
-  background:var(--card-accent, var(--accent));
-}
-.tool-card:hover{
-  transform:translateY(-3px);
-  border-color:var(--card-accent, var(--accent));
-}
-.tool-card .card-title{
-  font-family:var(--font-display);
-  font-weight:700;
-  font-size:1.05rem;
-  margin-bottom:4px;
-  color:var(--text);
-}
-.tool-card .card-desc{
-  color:var(--muted);
-  font-size:0.82rem;
-  line-height:1.5;
-  flex:1;
-  margin-bottom:0;
-}
-.tool-card .card-cta{
-  margin-top:12px;
-  font-family:var(--font-mono);
-  font-size:0.72rem;
-  font-weight:700;
-  color:var(--card-accent, var(--accent));
-  display:flex;
-  align-items:center;
-  gap:6px;
-}
+  </div>
+
+  <section class="gear-section">
+    <div class="widget-head">
+      <h3>📖 Ton stuff</h3>
+      <a href="grimoire.html">Ouvrir le Grimoire →</a>
+    </div>
+    <p style="margin:0; font-size:0.82rem;">Survole (ou touche) une pièce d'équipement pour voir ses enchantements.</p>
+    <div class="gear-grid" id="gear-grid"></div>
+    <div class="gear-detail" id="gear-detail"></div>
+  </section>
+
+  <section class="tools-section">
+    <h2>Tous les outils</h2>
+    <div class="grid">
+
+      <a class="tool-card card" href="atlas.html" style="--card-accent:var(--blue);">
+        <div class="card-title">🗺️ Atlas</div>
+        <p class="card-desc">Points de destination, hub, direction et distance à creuser.</p>
+        <div class="card-cta">Ouvrir l'outil →</div>
+      </a>
+
+      <a class="tool-card card" href="grimoire.html" style="--card-accent:var(--purple);">
+        <div class="card-title">📖 Grimoire</div>
+        <p class="card-desc">Enchantements, offres des villageois, build idéal.</p>
+        <div class="card-cta">Ouvrir l'outil →</div>
+      </a>
+
+      <a class="tool-card card" href="carnet.html" style="--card-accent:var(--green);">
+        <div class="card-title">📓 Carnet</div>
+        <p class="card-desc">Projets, idées, rappels, à cocher au fur et à mesure.</p>
+        <div class="card-cta">Ouvrir l'outil →</div>
+      </a>
+
+      <a class="tool-card card" href="inventaire.html" style="--card-accent:var(--red);">
+        <div class="card-title">📦 Inventaire</div>
+        <p class="card-desc">L'état des lieux de ton stock, hors du jeu.</p>
+        <div class="card-cta">Ouvrir l'outil →</div>
+      </a>
+
+      <a class="tool-card card" href="projets.html" style="--card-accent:var(--gold);">
+        <div class="card-title">🧱 Projets</div>
+        <p class="card-desc">Ce qu'il te manque, calculé depuis ton inventaire.</p>
+        <div class="card-cta">Ouvrir l'outil →</div>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">l'établi · seed : 443175491261601422</footer>
+
+<script>
+  const USERNAME = 'N3SK3';
+  document.getElementById('hero-skin').src = `https://mc-heads.net/player/${encodeURIComponent(USERNAME)}/200`;
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  // ===================== WIDGET : CARNET =====================
+  fetch('carnet-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const entries = Array.isArray(data.entries) ? data.entries : [];
+      const todo = entries.filter(e => !e.done).slice(0, 5);
+      const list = document.getElementById('carnet-list');
+      if (todo.length === 0){
+        list.innerHTML = '<li class="widget-empty" style="background:none; padding:10px 0;">Rien en attente — tout est fait 🎉</li>';
+        return;
+      }
+      list.innerHTML = todo.map(e => `
+        <li>
+          <span>${escapeHtml(e.text.split('\n')[0])}</span>
+          ${e.tag ? `<span class="tag">${escapeHtml(e.tag)}</span>` : ''}
+        </li>
+      `).join('');
+    })
+    .catch(() => {
+      document.getElementById('carnet-list').innerHTML = '<li class="widget-offline" style="background:none; padding:10px 0;">Carnet non trouvé.</li>';
+    });
+
+  // ===================== WIDGET : ATLAS =====================
+  fetch('atlas-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const points = Array.isArray(data) ? data : [];
+      const todo = points.filter(p => !p.isHub && !p.built).slice(0, 5);
+      const list = document.getElementById('atlas-list');
+      if (points.length === 0){
+        list.innerHTML = '<li class="widget-empty" style="background:none; padding:10px 0;">Aucun point pour l\'instant.</li>';
+        return;
+      }
+      if (todo.length === 0){
+        list.innerHTML = '<li class="widget-empty" style="background:none; padding:10px 0;">Tous les tunnels sont creusés 🎉</li>';
+        return;
+      }
+      list.innerHTML = todo.map(p => `
+        <li>
+          <span>${escapeHtml(p.name)}</span>
+          <span class="tag">${p.coordType === 'nether' ? 'Nether' : 'Overworld'}</span>
+        </li>
+      `).join('');
+    })
+    .catch(() => {
+      document.getElementById('atlas-list').innerHTML = '<li class="widget-offline" style="background:none; padding:10px 0;">Atlas non trouvé.</li>';
+    });
+
+  // ===================== WIDGET : PROJETS (+ Inventaire pour le calcul) =====================
+  Promise.all([
+    fetch('projets-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : { projects: [] }).catch(() => ({ projects: [] })),
+    fetch('inventaire-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : { resources: [] }).catch(() => ({ resources: [] })),
+  ]).then(([projData, invData]) => {
+    const stock = {};
+    (invData.resources || []).forEach(r => {
+      stock[r.name.toLowerCase()] = (r.stacks || []).reduce((s, st) => s + st.quantity, 0);
+    });
+    const projects = Array.isArray(projData.projects) ? projData.projects : [];
+    const inProgress = projects.filter(p => p.status === 'inprogress');
+    const wrap = document.getElementById('projets-list');
+
+    if (projects.length === 0){
+      wrap.innerHTML = '<div class="widget-empty">Aucun projet pour l\'instant.</div>';
+      return;
+    }
+    if (inProgress.length === 0){
+      wrap.innerHTML = `<div class="widget-empty">Aucun projet en cours (${projects.filter(p=>p.status==='todo').length} à faire).</div>`;
+      return;
+    }
+    wrap.innerHTML = inProgress.slice(0, 4).map(p => {
+      let pct = 100;
+      if (p.needs && p.needs.length){
+        let needed = 0, have = 0;
+        p.needs.forEach(n => {
+          needed += n.quantity;
+          have += Math.min(stock[n.resourceName.toLowerCase()] || 0, n.quantity);
+        });
+        pct = needed ? Math.round(have / needed * 100) : 100;
+      }
+      return `
+        <div class="widget-progress-item">
+          <div class="top"><span>${escapeHtml(p.name)}</span><span class="pct">${pct}%</span></div>
+          <div class="progress-track"><div class="progress-fill" style="width:${pct}%;"></div></div>
+        </div>
+      `;
+    }).join('');
+  });
+
+  // ===================== WIDGET : INVENTAIRE =====================
+  fetch('inventaire-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const resources = Array.isArray(data.resources) ? data.resources : [];
+      const totalQty = res => (res.stacks || []).reduce((s, st) => s + st.quantity, 0);
+      const totalItems = resources.reduce((s, r) => s + totalQty(r), 0);
+      const under = resources.filter(r => r.targetQuantity && totalQty(r) < r.targetQuantity).length;
+      document.getElementById('inventaire-stats').innerHTML = `
+        <div class="widget-stat"><div class="n">${resources.length}</div><div class="l">ressources</div></div>
+        <div class="widget-stat"><div class="n">${totalItems.toLocaleString('fr-FR')}</div><div class="l">items au total</div></div>
+        <div class="widget-stat"><div class="n">${under}</div><div class="l">sous l'objectif</div></div>
+      `;
+    })
+    .catch(() => {
+      document.getElementById('inventaire-stats').innerHTML = '<div class="widget-offline">Inventaire non trouvé.</div>';
+    });
+
+  // ===================== GRILLE D'ÉQUIPEMENT (Grimoire) =====================
+  const ENCH_NAMES = {
+    protection:'Protection', fire_protection:'Feu', blast_protection:'Explosions', projectile_protection:'Projectiles',
+    feather_falling:'Chute amortie', respiration:'Respiration', aqua_affinity:'Affinité aquatique', thorns:'Épines',
+    depth_strider:'Agilité aquatique', frost_walker:'Semelles givrantes', curse_binding:'Malédiction du lien',
+    soul_speed:'Vitesse des âmes', swift_sneak:'Furtivité rapide',
+    sharpness:'Tranchant', smite:'Châtiment', bane:'Fléau arthropodes', knockback:'Recul', fire_aspect:'Aura de feu',
+    looting:'Butin', sweeping:'Fauchage',
+    efficiency:'Efficacité', silk_touch:'Toucher de soie', fortune:'Fortune',
+    power:'Puissance', punch:'Frappe', flame:'Flamme', infinity:'Infinité',
+    luck_of_sea:'Chance marine', lure:'Appât',
+    loyalty:'Fidélité', impaling:'Empalement', riptide:'Fulgurance', channeling:'Canalisation',
+    multishot:'Tir multiple', quick_charge:'Charge rapide', piercing:'Perforation',
+    density:'Densité', breach:'Brèche', wind_burst:'Rafale',
+    unbreaking:'Solidité', mending:'Raccommodage', curse_vanishing:'Malédiction de disparition',
+  };
+  const SLOTS = [
+    { type: 'helmet', icon: '🪖' }, { type: 'chestplate', icon: '🥋' },
+    { type: 'leggings', icon: '👖' }, { type: 'boots', icon: '🥾' }, { type: 'elytra', icon: '🪽' },
+    { type: 'sword', icon: '⚔️' }, { type: 'axe', icon: '🪓' }, { type: 'pickaxe', icon: '⛏️' },
+    { type: 'shovel', icon: '🥄' }, { type: 'hoe', icon: '🌾' }, { type: 'bow', icon: '🏹' },
+    { type: 'crossbow', icon: '🎯' }, { type: 'trident', icon: '🔱' }, { type: 'mace', icon: '🔨' },
+    { type: 'shears', icon: '✂️' }, { type: 'fishing_rod', icon: '🎣' },
+  ];
+
+  fetch('grimoire-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const items = Array.isArray(data.items) ? data.items : [];
+      const grid = document.getElementById('gear-grid');
+      const detail = document.getElementById('gear-detail');
+
+      grid.innerHTML = SLOTS.map(slot => {
+        const matching = items.filter(it => it.type === slot.type);
+        const empty = matching.length === 0;
+        return `
+          <div class="gear-slot ${empty ? 'empty' : ''}" data-slot="${slot.type}" title="${slot.type}">
+            ${slot.icon}
+            ${matching.length > 1 ? `<span class="count">×${matching.length}</span>` : ''}
+          </div>
+        `;
+      }).join('');
+
+      grid.querySelectorAll('.gear-slot:not(.empty)').forEach(el => {
+        el.addEventListener('click', () => {
+          const alreadyActive = el.classList.contains('active');
+          grid.querySelectorAll('.gear-slot').forEach(s => s.classList.remove('active'));
+          if (alreadyActive){
+            detail.classList.remove('show');
+            return;
+          }
+          el.classList.add('active');
+          const type = el.dataset.slot;
+          const matching = items.filter(it => it.type === type);
+          detail.innerHTML = matching.map(it => `
+            <div class="gear-detail-item">
+              <div class="gear-detail-name">${escapeHtml(it.name)}</div>
+              <div class="gear-detail-enchants">${
+                (it.enchants || []).map(e => `${ENCH_NAMES[e.id] || e.id} ${e.level}`).join(' · ') || 'Aucun enchantement'
+              }</div>
+            </div>
+          `).join('');
+          detail.classList.add('show');
+        });
+        // hover desktop : affiche aussi au survol, sans bloquer le clic
+        el.addEventListener('mouseenter', () => el.click());
+      });
+    })
+    .catch(() => {
+      document.getElementById('gear-grid').innerHTML = '<div class="widget-offline">Grimoire non trouvé.</div>';
+    });
+</script>
+</body>
+</html>
