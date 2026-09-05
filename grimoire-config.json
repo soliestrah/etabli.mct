@@ -845,6 +845,16 @@
       "id": 12,
       "enchId": "power",
       "level": 2
+    },
+    {
+      "id": 13,
+      "enchId": "efficiency",
+      "level": 2
+    },
+    {
+      "id": 14,
+      "enchId": "sharpness",
+      "level": 2
     }
   ],
   "prefs": {
