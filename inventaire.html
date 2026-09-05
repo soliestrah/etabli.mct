@@ -158,6 +158,10 @@
     return 'Overworld';
   }
 
+  function stripDim(location){
+    return (location || '').replace(/\s*\[(Nether|End)\]\s*$/, '');
+  }
+
   const form = document.getElementById('res-form');
   const listEl = document.getElementById('res-list');
   const emptyNote = document.getElementById('empty-note');
@@ -239,7 +243,7 @@
       dl.id = 'loc-list';
       document.body.appendChild(dl);
     }
-    const locs = [...new Set(resources.flatMap(r => r.stacks.map(s => s.location)).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'fr'));
+    const locs = [...new Set(resources.flatMap(r => r.stacks.map(s => stripDim(s.location))).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'fr'));
     dl.innerHTML = locs.map(l => `<option value="${escapeHtml(l)}"></option>`).join('');
   }
 
@@ -311,7 +315,7 @@
       const stacksHtml = displayedStacks.map(s => `
         <div class="stack-row">
           <span class="stack-dim dim-${getDimension(s.location).toLowerCase()}">${getDimension(s.location)}</span>
-          <span class="stack-loc">${escapeHtml(s.location.replace(/\s*\[(Nether|End)\]\s*$/, ''))}</span>
+          <span class="stack-loc">${escapeHtml(stripDim(s.location))}</span>
           <span class="stack-qty">${s.quantity.toLocaleString('fr-FR')}</span>
           <button class="icon-btn" data-del-stack="${res.id}:${s.id}" title="Retirer cet emplacement">✕</button>
         </div>
