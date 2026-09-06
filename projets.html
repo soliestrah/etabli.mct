@@ -233,6 +233,30 @@
         `;
       }).join('');
 
+      const hasChecklist = Array.isArray(proj.checklist) && proj.checklist.length > 0;
+      let checklistHtml = '';
+      if (hasChecklist){
+        const done = proj.checklist.filter(c => c.done).length;
+        const total = proj.checklist.length;
+        const checklistPct = Math.round(done / total * 100);
+        const rows = proj.checklist
+          .slice()
+          .sort((a, b) => (a.done === b.done) ? 0 : (a.done ? 1 : -1))
+          .map(c => `
+            <label class="checklist-row${c.done ? ' done' : ''}">
+              <input type="checkbox" data-checklist="${proj.id}:${escapeHtml(c.id)}" ${c.done ? 'checked' : ''}>
+              <span>${escapeHtml(c.name)}</span>
+            </label>
+          `).join('');
+        checklistHtml = `
+          <div class="proj-progress">
+            <div class="proj-progress-label"><span>Avancements débloqués</span><span>${done}/${total} · ${checklistPct}%</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:${checklistPct}%; background:${checklistPct >= 100 ? 'var(--green)' : 'var(--accent)'};"></div></div>
+          </div>
+          <div class="checklist-list">${rows}</div>
+        `;
+      }
+
       card.innerHTML = `
         <div class="proj-head">
           <div class="proj-title-wrap">
@@ -248,22 +272,38 @@
             <button class="btn-small" data-del="${proj.id}">Suppr.</button>
           </div>
         </div>
-        ${proj.needs.length ? `
+        ${checklistHtml}
+        ${!hasChecklist && proj.needs.length ? `
           <div class="proj-progress">
             <div class="proj-progress-label"><span>Ressources réunies</span><span>${pct}%</span></div>
             <div class="progress-track"><div class="progress-fill" style="width:${pct}%; background:${pct >= 100 ? 'var(--green)' : 'var(--accent)'};"></div></div>
           </div>
         ` : ''}
-        <div class="needs-list">
-          ${needsHtml || '<div class="proj-notes">Aucun besoin renseigné pour l\'instant.</div>'}
-        </div>
-        <div class="need-add">
-          <input type="text" placeholder="Ressource (ex : Fer)" list="res-name-list" data-name-input="${proj.id}">
-          <input type="number" placeholder="Qté" min="1" data-qty-input="${proj.id}">
-          <button type="button" class="btn-small" data-add-need="${proj.id}">+ Ajouter</button>
-        </div>
+        ${!hasChecklist ? `
+          <div class="needs-list">
+            ${needsHtml || '<div class="proj-notes">Aucun besoin renseigné pour l\'instant.</div>'}
+          </div>
+          <div class="need-add">
+            <input type="text" placeholder="Ressource (ex : Fer)" list="res-name-list" data-name-input="${proj.id}">
+            <input type="number" placeholder="Qté" min="1" data-qty-input="${proj.id}">
+            <button type="button" class="btn-small" data-add-need="${proj.id}">+ Ajouter</button>
+          </div>
+        ` : ''}
       `;
       listEl.appendChild(card);
+    });
+
+    listEl.querySelectorAll('[data-checklist]').forEach(cb => {
+      cb.addEventListener('change', () => {
+        const [projId, advId] = cb.dataset.checklist.split(':');
+        const proj = projects.find(p => p.id === Number(projId));
+        const item = proj.checklist.find(c => c.id === advId);
+        if (item) item.done = cb.checked;
+        // si tout est coché, le statut du projet passe a "Termine"
+        const allDone = proj.checklist.length > 0 && proj.checklist.every(c => c.done);
+        proj.status = allDone ? 'done' : (proj.status === 'done' ? 'todo' : proj.status);
+        renderAll();
+      });
     });
 
     listEl.querySelectorAll('[data-del]').forEach(b => {
@@ -324,6 +364,7 @@
       id: p.id, name: p.name, notes: p.notes || '',
       status: p.status || 'todo',
       needs: Array.isArray(p.needs) ? p.needs : [],
+      checklist: Array.isArray(p.checklist) ? p.checklist : [],
       createdAt: p.createdAt || new Date().toISOString(),
       autoRule: p.autoRule || null
     }));
@@ -518,33 +559,46 @@
 
   function applyAdvancementsRule(){
     // Un projet "Avancements à débloquer" par joueur ayant des avancements
-    // manquants dans stats-config.json. Se ferme tout seul si la liste se vide.
+    // manquants dans stats-config.json, avec une VRAIE case à cocher par
+    // avancement (persistée), au lieu d'un simple pavé de texte.
     statsData.forEach(player => {
       const missing = Array.isArray(player.missingAdvancements) ? player.missingAdvancements : [];
+      const missingIds = new Set(missing.map(a => a.id));
       const rule = `advancements-${player.uuid || player.name}`;
-      const existingIdx = projects.findIndex(p => p.autoRule === rule);
+      let proj = projects.find(p => p.autoRule === rule);
 
-      if (missing.length > 0){
-        const notes = `Il reste ${missing.length} avancement(s) à débloquer pour ${player.name} :\n` +
-          missing.slice(0, 25).map(a => `- ${a.name}`).join('\n') +
-          (missing.length > 25 ? `\n… et ${missing.length - 25} autre(s).` : '');
-        if (existingIdx === -1){
-          projects.push({
-            id: projIdCounter++,
-            name: `Avancements à débloquer — ${player.name}`,
-            notes,
-            status: 'todo',
-            needs: [],
-            createdAt: new Date().toISOString(),
-            autoRule: rule
-          });
-        } else {
-          projects[existingIdx].notes = notes;
-          if (projects[existingIdx].status === 'done') projects[existingIdx].status = 'todo';
-        }
-      } else if (existingIdx !== -1 && projects[existingIdx].status !== 'done'){
-        projects[existingIdx].status = 'done';
+      if (missing.length === 0 && !proj) return; // rien à débloquer, rien à afficher
+
+      if (!proj){
+        proj = {
+          id: projIdCounter++,
+          name: `Avancements à débloquer — ${player.name}`,
+          notes: '',
+          status: 'todo',
+          needs: [],
+          checklist: [],
+          createdAt: new Date().toISOString(),
+          autoRule: rule
+        };
+        projects.push(proj);
       }
+      if (!Array.isArray(proj.checklist)) proj.checklist = [];
+
+      // ajoute les avancements manquants pas encore suivis dans la checklist
+      missing.forEach(a => {
+        if (!proj.checklist.some(c => c.id === a.id)){
+          proj.checklist.push({ id: a.id, name: a.name, done: false });
+        }
+      });
+      // ce qui n'est plus manquant en vrai (débloqué en jeu) se coche tout seul
+      proj.checklist.forEach(c => {
+        if (!missingIds.has(c.id)) c.done = true;
+      });
+
+      // le projet se ferme tout seul quand tout est coché
+      const allDone = proj.checklist.length > 0 && proj.checklist.every(c => c.done);
+      if (allDone) proj.status = 'done';
+      else if (proj.status === 'done') proj.status = 'todo';
     });
   }
 
