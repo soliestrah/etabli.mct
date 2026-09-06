@@ -281,10 +281,11 @@
       // les conteneurs nommés d'abord (déjà trié côté script), on en montre 6 max ici
       list.innerHTML = containers.slice(0, 6).map(c => {
         const label = c.name ? `« ${c.name} »` : `${c.x}, ${c.y}, ${c.z}`;
+        const zonePart = c.zone ? ` (${c.zone})` : '';
         const kind = c.type.includes('shulker') ? 'Shulker' : 'Enderchest';
         return `
           <li>
-            <span>${escapeHtml(kind)} ${escapeHtml(label)}</span>
+            <span>${escapeHtml(kind)} ${escapeHtml(label)}${escapeHtml(zonePart)}</span>
             <span class="tag">${c.total.toLocaleString('fr-FR')} items${c.dimension ? ' · ' + escapeHtml(c.dimension) : ''}</span>
           </li>
         `;
