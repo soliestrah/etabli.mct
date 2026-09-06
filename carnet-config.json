@@ -1,6 +1,13 @@
 {
   "entries": [
     {
+      "id": 19,
+      "text": "faire en sorte que la carte en zoomant donne plus de détail et qu'on voit pas plus en gros un truc tout écrasé. ex : si on ajoute un truc à 10000 blocs la carte se rattatine",
+      "tag": "SITE",
+      "done": false,
+      "createdAt": "2026-09-06T06:18:01.238Z"
+    },
+    {
       "id": 18,
       "text": "trouver un villageois knockback",
       "tag": "VILLAGEOIS",
