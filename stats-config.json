@@ -4,15 +4,15 @@
     {
       "uuid": "5fb31919-bf78-467a-8879-3ea80378a992",
       "name": "N3SK3",
-      "playTimeHours": 121.5,
+      "playTimeHours": 123.9,
       "deaths": 21,
-      "mobKills": 3784,
-      "blocksMined": 81360,
-      "distanceTotalKm": 524.94,
-      "jumps": 40590,
-      "villagerTrades": 3805,
-      "advancementsDone": 1142,
-      "advancementsTotal": 1148,
+      "mobKills": 3996,
+      "blocksMined": 81847,
+      "distanceTotalKm": 533.34,
+      "jumps": 41392,
+      "villagerTrades": 3965,
+      "advancementsDone": 1150,
+      "advancementsTotal": 1156,
       "missingAdvancements": [
         {
           "id": "minecraft:story/cure_zombie_villager",
