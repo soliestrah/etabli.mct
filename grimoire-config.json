@@ -209,74 +209,6 @@
       "prefOverrides": {}
     },
     {
-      "id": 59,
-      "name": "ailes",
-      "type": "elytra",
-      "enchants": [
-        {
-          "id": "mending",
-          "level": 1
-        },
-        {
-          "id": "unbreaking",
-          "level": 3
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 60,
-      "name": "flèche",
-      "type": "bow",
-      "enchants": [
-        {
-          "id": "power",
-          "level": 2
-        },
-        {
-          "id": "unbreaking",
-          "level": 2
-        },
-        {
-          "id": "flame",
-          "level": 1
-        },
-        {
-          "id": "infinity",
-          "level": 1
-        },
-        {
-          "id": "punch",
-          "level": 2
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 61,
-      "name": "couronne",
-      "type": "helmet",
-      "enchants": [
-        {
-          "id": "mending",
-          "level": 1
-        },
-        {
-          "id": "protection",
-          "level": 3
-        },
-        {
-          "id": "aqua_affinity",
-          "level": 1
-        },
-        {
-          "id": "respiration",
-          "level": 1
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
       "id": 23,
       "name": "Diamond leggings (rangé)",
       "type": "leggings",
@@ -321,30 +253,6 @@
       "prefOverrides": {}
     },
     {
-      "id": 15,
-      "name": "Iron sword (rangé)",
-      "type": "sword",
-      "enchants": [
-        {
-          "id": "looting",
-          "level": 2
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 16,
-      "name": "Iron sword (rangé)",
-      "type": "sword",
-      "enchants": [
-        {
-          "id": "looting",
-          "level": 3
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
       "id": 17,
       "name": "Crossbow (rangé)",
       "type": "crossbow",
@@ -357,13 +265,57 @@
       "prefOverrides": {}
     },
     {
-      "id": 18,
-      "name": "Leather chestplate (rangé)",
+      "id": 32,
+      "name": "Golden sword (rangé)",
+      "type": "sword",
+      "enchants": [
+        {
+          "id": "mending",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 68,
+      "name": "cachecoeur",
       "type": "chestplate",
       "enchants": [
         {
-          "id": "protection",
+          "id": "mending",
           "level": 1
+        },
+        {
+          "id": "thorns",
+          "level": 1
+        },
+        {
+          "id": "unbreaking",
+          "level": 3
+        },
+        {
+          "id": "protection",
+          "level": 4
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 69,
+      "name": "jeans",
+      "type": "leggings",
+      "enchants": [
+        {
+          "id": "fire_protection",
+          "level": 2
+        },
+        {
+          "id": "mending",
+          "level": 1
+        },
+        {
+          "id": "unbreaking",
+          "level": 2
         }
       ],
       "prefOverrides": {}
@@ -593,33 +545,17 @@
       "prefOverrides": {}
     },
     {
-      "id": 54,
-      "name": "faucheuse",
+      "id": 70,
+      "name": "Diamond sword (N3SK3)",
       "type": "sword",
       "enchants": [
         {
-          "id": "mending",
-          "level": 1
-        },
-        {
           "id": "knockback",
-          "level": 1
-        },
-        {
-          "id": "smite",
-          "level": 4
-        },
-        {
-          "id": "unbreaking",
-          "level": 3
-        },
-        {
-          "id": "looting",
-          "level": 3
+          "level": 2
         },
         {
           "id": "sweeping",
-          "level": 1
+          "level": 2
         }
       ],
       "prefOverrides": {}
@@ -709,12 +645,68 @@
       "prefOverrides": {}
     },
     {
-      "id": 33,
-      "name": "Golden axe (rangé)",
-      "type": "axe",
+      "id": 59,
+      "name": "ailes",
+      "type": "elytra",
       "enchants": [
         {
-          "id": "smite",
+          "id": "mending",
+          "level": 1
+        },
+        {
+          "id": "unbreaking",
+          "level": 3
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 60,
+      "name": "flèche",
+      "type": "bow",
+      "enchants": [
+        {
+          "id": "power",
+          "level": 2
+        },
+        {
+          "id": "unbreaking",
+          "level": 2
+        },
+        {
+          "id": "flame",
+          "level": 1
+        },
+        {
+          "id": "infinity",
+          "level": 1
+        },
+        {
+          "id": "punch",
+          "level": 2
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 61,
+      "name": "couronne",
+      "type": "helmet",
+      "enchants": [
+        {
+          "id": "mending",
+          "level": 1
+        },
+        {
+          "id": "protection",
+          "level": 3
+        },
+        {
+          "id": "aqua_affinity",
+          "level": 1
+        },
+        {
+          "id": "respiration",
           "level": 1
         }
       ],
@@ -740,34 +732,6 @@
         {
           "id": "fortune",
           "level": 3
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 29,
-      "name": "Iron sword (rangé)",
-      "type": "sword",
-      "enchants": [
-        {
-          "id": "knockback",
-          "level": 2
-        },
-        {
-          "id": "unbreaking",
-          "level": 3
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 32,
-      "name": "Golden sword (rangé)",
-      "type": "sword",
-      "enchants": [
-        {
-          "id": "mending",
-          "level": 1
         }
       ],
       "prefOverrides": {}
@@ -1527,6 +1491,680 @@
       "forItemId": "",
       "note": "LIBRAIRE",
       "id": 55
+    },
+    {
+      "kind": "item",
+      "villager": "2G",
+      "itemType": "bow",
+      "enchants": [
+        {
+          "id": "punch",
+          "level": 1
+        }
+      ],
+      "price": 14,
+      "note": "FLETCHER",
+      "id": 56
+    },
+    {
+      "kind": "item",
+      "villager": "2G",
+      "itemType": "crossbow",
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 1
+        },
+        {
+          "id": "piercing",
+          "level": 1
+        }
+      ],
+      "price": 10,
+      "note": "FLETCHER",
+      "id": 57
+    },
+    {
+      "kind": "item",
+      "villager": "1G",
+      "itemType": "bow",
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 1
+        }
+      ],
+      "price": 12,
+      "note": "FLETCHER",
+      "id": 58
+    },
+    {
+      "kind": "item",
+      "villager": "1D",
+      "itemType": "sword",
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 2
+        }
+      ],
+      "price": 14,
+      "note": "WEAPONSMITH",
+      "id": 59
+    },
+    {
+      "kind": "item",
+      "villager": "1D",
+      "itemType": "axe",
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 2
+        }
+      ],
+      "price": 27,
+      "note": "WEAPONSMITH",
+      "id": 60
+    },
+    {
+      "kind": "item",
+      "villager": "1D",
+      "itemType": "sword",
+      "enchants": [
+        {
+          "id": "knockback",
+          "level": 1
+        },
+        {
+          "id": "sweeping",
+          "level": 1
+        }
+      ],
+      "price": 15,
+      "note": "WEAPONSMITH",
+      "id": 61
+    },
+    {
+      "kind": "item",
+      "villager": "2D",
+      "itemType": "bow",
+      "enchants": [
+        {
+          "id": "power",
+          "level": 2
+        },
+        {
+          "id": "unbreaking",
+          "level": 2
+        }
+      ],
+      "price": 15,
+      "note": "FLETCHER",
+      "id": 62
+    },
+    {
+      "kind": "item",
+      "villager": "2D",
+      "itemType": "crossbow",
+      "enchants": [
+        {
+          "id": "piercing",
+          "level": 1
+        }
+      ],
+      "price": 13,
+      "note": "FLETCHER",
+      "id": 63
+    },
+    {
+      "kind": "item",
+      "villager": "1G",
+      "itemType": "axe",
+      "enchants": [
+        {
+          "id": "efficiency",
+          "level": 2
+        },
+        {
+          "id": "unbreaking",
+          "level": 2
+        }
+      ],
+      "price": 26,
+      "note": "WEAPONSMITH",
+      "id": 64
+    },
+    {
+      "kind": "item",
+      "villager": "1G",
+      "itemType": "sword",
+      "enchants": [
+        {
+          "id": "smite",
+          "level": 2
+        }
+      ],
+      "price": 24,
+      "note": "WEAPONSMITH",
+      "id": 65
+    },
+    {
+      "kind": "item",
+      "villager": "1G",
+      "itemType": "shovel",
+      "enchants": [
+        {
+          "id": "efficiency",
+          "level": 2
+        }
+      ],
+      "price": 15,
+      "note": "TOOLSMITH",
+      "id": 66
+    },
+    {
+      "kind": "item",
+      "villager": "1G",
+      "itemType": "axe",
+      "enchants": [
+        {
+          "id": "efficiency",
+          "level": 2
+        }
+      ],
+      "price": 30,
+      "note": "TOOLSMITH",
+      "id": 67
+    },
+    {
+      "kind": "item",
+      "villager": "1G",
+      "itemType": "shovel",
+      "enchants": [
+        {
+          "id": "efficiency",
+          "level": 2
+        },
+        {
+          "id": "unbreaking",
+          "level": 1
+        }
+      ],
+      "price": 14,
+      "note": "TOOLSMITH",
+      "id": 68
+    },
+    {
+      "kind": "item",
+      "villager": "1G",
+      "itemType": "pickaxe",
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 2
+        }
+      ],
+      "price": 27,
+      "note": "TOOLSMITH",
+      "id": 69
+    },
+    {
+      "kind": "item",
+      "villager": "1D",
+      "itemType": "bow",
+      "enchants": [
+        {
+          "id": "punch",
+          "level": 1
+        }
+      ],
+      "price": 14,
+      "note": "FLETCHER",
+      "id": 70
+    },
+    {
+      "kind": "item",
+      "villager": "1D",
+      "itemType": "pickaxe",
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 3
+        }
+      ],
+      "price": 21,
+      "note": "TOOLSMITH",
+      "id": 71
+    },
+    {
+      "kind": "item",
+      "villager": "1D",
+      "itemType": "shovel",
+      "enchants": [
+        {
+          "id": "efficiency",
+          "level": 1
+        }
+      ],
+      "price": 12,
+      "note": "TOOLSMITH",
+      "id": 72
+    },
+    {
+      "kind": "book",
+      "villager": "2D",
+      "enchId": "fortune",
+      "level": 3,
+      "price": 15,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 73
+    },
+    {
+      "kind": "book",
+      "villager": "2D",
+      "enchId": "frost_walker",
+      "level": 2,
+      "price": 40,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 74
+    },
+    {
+      "kind": "book",
+      "villager": "2G",
+      "enchId": "mending",
+      "level": 1,
+      "price": 18,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 75
+    },
+    {
+      "kind": "book",
+      "villager": "2G",
+      "enchId": "loyalty",
+      "level": 2,
+      "price": 30,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 76
+    },
+    {
+      "kind": "item",
+      "villager": "1G",
+      "itemType": "leggings",
+      "enchants": [
+        {
+          "id": "fire_protection",
+          "level": 2
+        },
+        {
+          "id": "unbreaking",
+          "level": 2
+        }
+      ],
+      "price": 31,
+      "note": "ARMURIER",
+      "id": 77
+    },
+    {
+      "kind": "item",
+      "villager": "1G",
+      "itemType": "boots",
+      "enchants": [
+        {
+          "id": "blast_protection",
+          "level": 1
+        }
+      ],
+      "price": 17,
+      "note": "ARMURIER",
+      "id": 78
+    },
+    {
+      "kind": "item",
+      "villager": "1G",
+      "itemType": "helmet",
+      "enchants": [
+        {
+          "id": "protection",
+          "level": 3
+        },
+        {
+          "id": "aqua_affinity",
+          "level": 1
+        }
+      ],
+      "price": 23,
+      "note": "ARMURIER",
+      "id": 79
+    },
+    {
+      "kind": "item",
+      "villager": "1G",
+      "itemType": "chestplate",
+      "enchants": [
+        {
+          "id": "thorns",
+          "level": 1
+        },
+        {
+          "id": "protection",
+          "level": 2
+        }
+      ],
+      "price": 31,
+      "note": "ARMURIER",
+      "id": 80
+    },
+    {
+      "kind": "book",
+      "villager": "3G",
+      "enchId": "fortune",
+      "level": 2,
+      "price": 25,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 81
+    },
+    {
+      "kind": "book",
+      "villager": "3G",
+      "enchId": "power",
+      "level": 2,
+      "price": 9,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 82
+    },
+    {
+      "kind": "book",
+      "villager": "3G",
+      "enchId": "channeling",
+      "level": 1,
+      "price": 6,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 83
+    },
+    {
+      "kind": "book",
+      "villager": "4G",
+      "enchId": "silk_touch",
+      "level": 1,
+      "price": 9,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 84
+    },
+    {
+      "kind": "book",
+      "villager": "4G",
+      "enchId": "channeling",
+      "level": 1,
+      "price": 9,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 85
+    },
+    {
+      "kind": "book",
+      "villager": "3D",
+      "enchId": "feather_falling",
+      "level": 2,
+      "price": 21,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 86
+    },
+    {
+      "kind": "book",
+      "villager": "3D",
+      "enchId": "fire_protection",
+      "level": 2,
+      "price": 15,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 87
+    },
+    {
+      "kind": "book",
+      "villager": "3D",
+      "enchId": "fire_protection",
+      "level": 4,
+      "price": 18,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 88
+    },
+    {
+      "kind": "book",
+      "villager": "4D",
+      "enchId": "unbreaking",
+      "level": 3,
+      "price": 15,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 89
+    },
+    {
+      "kind": "book",
+      "villager": "4D",
+      "enchId": "unbreaking",
+      "level": 2,
+      "price": 21,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 90
+    },
+    {
+      "kind": "book",
+      "villager": "5D",
+      "enchId": "protection",
+      "level": 4,
+      "price": 21,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 91
+    },
+    {
+      "kind": "book",
+      "villager": "5D",
+      "enchId": "mending",
+      "level": 1,
+      "price": 18,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 92
+    },
+    {
+      "kind": "item",
+      "villager": "1D",
+      "itemType": "boots",
+      "enchants": [
+        {
+          "id": "feather_falling",
+          "level": 2
+        }
+      ],
+      "price": 19,
+      "note": "ARMURIER",
+      "id": 93
+    },
+    {
+      "kind": "item",
+      "villager": "1D",
+      "itemType": "leggings",
+      "enchants": [
+        {
+          "id": "protection",
+          "level": 2
+        }
+      ],
+      "price": 33,
+      "note": "ARMURIER",
+      "id": 94
+    },
+    {
+      "kind": "book",
+      "villager": "5G",
+      "enchId": "infinity",
+      "level": 1,
+      "price": 7,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 95
+    },
+    {
+      "kind": "book",
+      "villager": "5G",
+      "enchId": "respiration",
+      "level": 1,
+      "price": 13,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 96
+    },
+    {
+      "kind": "book",
+      "villager": "5G",
+      "enchId": "protection",
+      "level": 4,
+      "price": 35,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 97
+    },
+    {
+      "kind": "book",
+      "villager": "6G",
+      "enchId": "respiration",
+      "level": 3,
+      "price": 26,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 98
+    },
+    {
+      "kind": "book",
+      "villager": "6G",
+      "enchId": "punch",
+      "level": 2,
+      "price": 8,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 99
+    },
+    {
+      "kind": "book",
+      "villager": "6G",
+      "enchId": "infinity",
+      "level": 1,
+      "price": 19,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 100
+    },
+    {
+      "kind": "book",
+      "villager": "6D",
+      "enchId": "smite",
+      "level": 3,
+      "price": 14,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 101
+    },
+    {
+      "kind": "book",
+      "villager": "7D",
+      "enchId": "power",
+      "level": 3,
+      "price": 28,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 102
+    },
+    {
+      "kind": "book",
+      "villager": "7G",
+      "enchId": "aqua_affinity",
+      "level": 1,
+      "price": 13,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 103
+    },
+    {
+      "kind": "book",
+      "villager": "8D",
+      "enchId": "flame",
+      "level": 1,
+      "price": 18,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 104
+    },
+    {
+      "kind": "book",
+      "villager": "8D",
+      "enchId": "fire_protection",
+      "level": 1,
+      "price": 10,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 105
+    },
+    {
+      "kind": "book",
+      "villager": "1G",
+      "enchId": "looting",
+      "level": 3,
+      "price": 20,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 106
+    },
+    {
+      "kind": "book",
+      "villager": "1G",
+      "enchId": "fire_aspect",
+      "level": 2,
+      "price": 19,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 107
+    },
+    {
+      "kind": "book",
+      "villager": "1G",
+      "enchId": "respiration",
+      "level": 2,
+      "price": 32,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 108
+    },
+    {
+      "kind": "book",
+      "villager": "1G",
+      "enchId": "silk_touch",
+      "level": 1,
+      "price": 19,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 109
+    },
+    {
+      "kind": "book",
+      "villager": "1D",
+      "enchId": "impaling",
+      "level": 1,
+      "price": 14,
+      "forItemId": "",
+      "note": "LIBRAIRE",
+      "id": 110
     }
   ],
   "books": [
@@ -1543,49 +2181,13 @@
       "id": 2,
       "enchants": [
         {
-          "id": "respiration",
-          "level": 3
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "enchants": [
-        {
-          "id": "projectile_protection",
-          "level": 3
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "enchants": [
-        {
-          "id": "protection",
-          "level": 4
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "enchants": [
-        {
-          "id": "aqua_affinity",
-          "level": 1
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "enchants": [
-        {
           "id": "power",
           "level": 3
         }
       ]
     },
     {
-      "id": 7,
+      "id": 3,
       "enchants": [
         {
           "id": "protection",
@@ -1602,7 +2204,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": 4,
       "enchants": [
         {
           "id": "efficiency",
@@ -1611,7 +2213,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": 5,
       "enchants": [
         {
           "id": "fire_aspect",
@@ -1620,7 +2222,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": 6,
       "enchants": [
         {
           "id": "efficiency",
@@ -1629,7 +2231,7 @@
       ]
     },
     {
-      "id": 11,
+      "id": 7,
       "enchants": [
         {
           "id": "sharpness",
@@ -1638,7 +2240,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": 8,
       "enchants": [
         {
           "id": "power",
@@ -1647,7 +2249,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": 9,
       "enchants": [
         {
           "id": "efficiency",
@@ -1656,7 +2258,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": 10,
       "enchants": [
         {
           "id": "projectile_protection",
@@ -1669,11 +2271,47 @@
       ]
     },
     {
-      "id": 15,
+      "id": 11,
       "enchants": [
         {
           "id": "smite",
           "level": 4
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "enchants": [
+        {
+          "id": "respiration",
+          "level": 3
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "enchants": [
+        {
+          "id": "protection",
+          "level": 4
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "enchants": [
+        {
+          "id": "aqua_affinity",
+          "level": 1
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "enchants": [
+        {
+          "id": "projectile_protection",
+          "level": 3
         }
       ]
     },
