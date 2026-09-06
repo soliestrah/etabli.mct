@@ -265,18 +265,6 @@
       "prefOverrides": {}
     },
     {
-      "id": 32,
-      "name": "Golden sword (rangé)",
-      "type": "sword",
-      "enchants": [
-        {
-          "id": "mending",
-          "level": 1
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
       "id": 68,
       "name": "cachecoeur",
       "type": "chestplate",
@@ -545,13 +533,25 @@
       "prefOverrides": {}
     },
     {
-      "id": 70,
-      "name": "Diamond sword (N3SK3)",
+      "id": 71,
+      "name": "faucheuse",
       "type": "sword",
       "enchants": [
         {
+          "id": "sharpness",
+          "level": 2
+        },
+        {
+          "id": "mending",
+          "level": 1
+        },
+        {
           "id": "knockback",
           "level": 2
+        },
+        {
+          "id": "looting",
+          "level": 3
         },
         {
           "id": "sweeping",
@@ -561,13 +561,17 @@
       "prefOverrides": {}
     },
     {
-      "id": 55,
+      "id": 72,
       "name": "souvenir",
       "type": "pickaxe",
       "enchants": [
         {
           "id": "mending",
           "level": 1
+        },
+        {
+          "id": "efficiency",
+          "level": 3
         },
         {
           "id": "silk_touch",
@@ -605,26 +609,6 @@
       "prefOverrides": {}
     },
     {
-      "id": 57,
-      "name": "hache",
-      "type": "axe",
-      "enchants": [
-        {
-          "id": "mending",
-          "level": 1
-        },
-        {
-          "id": "silk_touch",
-          "level": 1
-        },
-        {
-          "id": "unbreaking",
-          "level": 3
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
       "id": 58,
       "name": "cimetière",
       "type": "shovel",
@@ -645,12 +629,16 @@
       "prefOverrides": {}
     },
     {
-      "id": 59,
-      "name": "ailes",
-      "type": "elytra",
+      "id": 57,
+      "name": "hache",
+      "type": "axe",
       "enchants": [
         {
           "id": "mending",
+          "level": 1
+        },
+        {
+          "id": "silk_touch",
           "level": 1
         },
         {
@@ -689,6 +677,22 @@
       "prefOverrides": {}
     },
     {
+      "id": 59,
+      "name": "ailes",
+      "type": "elytra",
+      "enchants": [
+        {
+          "id": "mending",
+          "level": 1
+        },
+        {
+          "id": "unbreaking",
+          "level": 3
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
       "id": 61,
       "name": "couronne",
       "type": "helmet",
@@ -707,6 +711,78 @@
         },
         {
           "id": "respiration",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 73,
+      "name": "Bow (N3SK3)",
+      "type": "bow",
+      "enchants": [
+        {
+          "id": "power",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 74,
+      "name": "Diamond sword (N3SK3)",
+      "type": "sword",
+      "enchants": [
+        {
+          "id": "knockback",
+          "level": 1
+        },
+        {
+          "id": "sweeping",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 75,
+      "name": "Diamond sword (N3SK3)",
+      "type": "sword",
+      "enchants": [
+        {
+          "id": "knockback",
+          "level": 1
+        },
+        {
+          "id": "sweeping",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 76,
+      "name": "Golden chestplate (N3SK3)",
+      "type": "chestplate",
+      "enchants": [
+        {
+          "id": "projectile_protection",
+          "level": 4
+        },
+        {
+          "id": "unbreaking",
+          "level": 3
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 77,
+      "name": "Golden helmet (N3SK3)",
+      "type": "helmet",
+      "enchants": [
+        {
+          "id": "aqua_affinity",
           "level": 1
         }
       ],
@@ -2165,6 +2241,24 @@
       "forItemId": "",
       "note": "LIBRAIRE",
       "id": 110
+    },
+    {
+      "kind": "item",
+      "villager": "1D",
+      "itemType": "pickaxe",
+      "enchants": [
+        {
+          "id": "efficiency",
+          "level": 2
+        },
+        {
+          "id": "unbreaking",
+          "level": 2
+        }
+      ],
+      "price": 28,
+      "note": "TOOLSMITH",
+      "id": 111
     }
   ],
   "books": [
@@ -2181,13 +2275,31 @@
       "id": 2,
       "enchants": [
         {
-          "id": "power",
-          "level": 3
+          "id": "efficiency",
+          "level": 2
         }
       ]
     },
     {
       "id": 3,
+      "enchants": [
+        {
+          "id": "power",
+          "level": 2
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "enchants": [
+        {
+          "id": "fire_aspect",
+          "level": 2
+        }
+      ]
+    },
+    {
+      "id": 5,
       "enchants": [
         {
           "id": "protection",
@@ -2199,24 +2311,6 @@
         },
         {
           "id": "density",
-          "level": 2
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "enchants": [
-        {
-          "id": "efficiency",
-          "level": 2
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "enchants": [
-        {
-          "id": "fire_aspect",
           "level": 2
         }
       ]
@@ -2234,31 +2328,13 @@
       "id": 7,
       "enchants": [
         {
-          "id": "sharpness",
-          "level": 2
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "enchants": [
-        {
           "id": "power",
-          "level": 2
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "enchants": [
-        {
-          "id": "efficiency",
           "level": 3
         }
       ]
     },
     {
-      "id": 10,
+      "id": 8,
       "enchants": [
         {
           "id": "projectile_protection",
@@ -2271,16 +2347,7 @@
       ]
     },
     {
-      "id": 11,
-      "enchants": [
-        {
-          "id": "smite",
-          "level": 4
-        }
-      ]
-    },
-    {
-      "id": 12,
+      "id": 9,
       "enchants": [
         {
           "id": "respiration",
@@ -2289,7 +2356,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": 10,
       "enchants": [
         {
           "id": "protection",
@@ -2298,7 +2365,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": 11,
       "enchants": [
         {
           "id": "aqua_affinity",
@@ -2307,7 +2374,7 @@
       ]
     },
     {
-      "id": 15,
+      "id": 12,
       "enchants": [
         {
           "id": "projectile_protection",
@@ -2316,7 +2383,7 @@
       ]
     },
     {
-      "id": 16,
+      "id": 13,
       "enchants": [
         {
           "id": "multishot",
@@ -2325,7 +2392,7 @@
       ]
     },
     {
-      "id": 17,
+      "id": 14,
       "enchants": [
         {
           "id": "breach",
@@ -2334,6 +2401,24 @@
         {
           "id": "piercing",
           "level": 3
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 3
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "enchants": [
+        {
+          "id": "smite",
+          "level": 4
         }
       ]
     }
