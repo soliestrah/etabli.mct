@@ -584,7 +584,17 @@
     }
 
     const maxAbs = rows.reduce((m, r) => Math.max(m, Math.abs(r.dx), Math.abs(r.dz)), 1);
-    const scale = 220 / maxAbs;
+
+    // Compression non lineaire (racine carree) : sans ça, un point tres
+    // loin (ex: 10000 blocs) ecrase tous les points proches au centre de
+    // la carte. Avec la racine carree, l'ordre des distances est preserve
+    // (plus loin = toujours plus loin a l'ecran) mais les points proches
+    // gardent un vrai espacement relatif au lieu d'etre tous colles.
+    function compress(v){
+      return Math.sign(v) * Math.sqrt(Math.abs(v));
+    }
+    const maxCompressed = compress(maxAbs) || 1;
+    const scale = 220 / maxCompressed;
 
     // lines (elbow path matching the actual dig order) — tous les points restent visibles sur la carte
     rows.forEach(r => {
@@ -593,7 +603,7 @@
       r.legs.forEach(leg => {
         if (leg.axis === 'x') curX = (leg.toX - (hub ? toNether(hub).x : 0));
         else curZ = (leg.toZ - (hub ? toNether(hub).z : 0));
-        points_svg.push([cx + curX * scale, cy + curZ * scale]);
+        points_svg.push([cx + compress(curX) * scale, cy + compress(curZ) * scale]);
       });
       const polyline = document.createElementNS(ns, 'polyline');
       polyline.setAttribute('points', points_svg.map(pt => pt.join(',')).join(' '));
@@ -655,8 +665,8 @@
 
     // points
     rows.forEach(r => {
-      const px = cx + r.dx * scale;
-      const py = cy + r.dz * scale;
+      const px = cx + compress(r.dx) * scale;
+      const py = cy + compress(r.dz) * scale;
       const dir = py > cy ? 1 : -1;
 
       const glow = document.createElementNS(ns, 'circle');

@@ -13,8 +13,8 @@
       "prefOverrides": {}
     },
     {
-      "id": 2,
-      "name": "Golden sword (rangé)",
+      "id": 46,
+      "name": "Iron sword (rangé)",
       "type": "sword",
       "enchants": [
         {
@@ -113,8 +113,8 @@
       "prefOverrides": {}
     },
     {
-      "id": 10,
-      "name": "Leather chestplate (rangé)",
+      "id": 14,
+      "name": "Golden chestplate (rangé)",
       "type": "chestplate",
       "enchants": [
         {
@@ -137,19 +137,7 @@
       "prefOverrides": {}
     },
     {
-      "id": 12,
-      "name": "Leather chestplate (rangé)",
-      "type": "chestplate",
-      "enchants": [
-        {
-          "id": "mending",
-          "level": 1
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 13,
+      "id": 14,
       "name": "Golden chestplate (rangé)",
       "type": "chestplate",
       "enchants": [
@@ -168,6 +156,98 @@
         {
           "id": "mending",
           "level": 1
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 14,
+      "name": "Golden chestplate (rangé)",
+      "type": "chestplate",
+      "enchants": [
+        {
+          "id": "mending",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 21,
+      "name": "Bow (rangé)",
+      "type": "bow",
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 22,
+      "name": "Bow (rangé)",
+      "type": "bow",
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 2
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 21,
+      "name": "Bow (rangé)",
+      "type": "bow",
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 23,
+      "name": "Diamond leggings (rangé)",
+      "type": "leggings",
+      "enchants": [
+        {
+          "id": "projectile_protection",
+          "level": 4
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 24,
+      "name": "Diamond sword (rangé)",
+      "type": "sword",
+      "enchants": [
+        {
+          "id": "knockback",
+          "level": 2
+        },
+        {
+          "id": "smite",
+          "level": 5
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 25,
+      "name": "Diamond chestplate (rangé)",
+      "type": "chestplate",
+      "enchants": [
+        {
+          "id": "fire_protection",
+          "level": 4
+        },
+        {
+          "id": "unbreaking",
+          "level": 3
         }
       ],
       "prefOverrides": {}
@@ -233,112 +313,20 @@
       "prefOverrides": {}
     },
     {
-      "id": 20,
-      "name": "Bow (rangé)",
-      "type": "bow",
-      "enchants": [
-        {
-          "id": "unbreaking",
-          "level": 1
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 21,
-      "name": "Bow (rangé)",
-      "type": "bow",
-      "enchants": [
-        {
-          "id": "unbreaking",
-          "level": 1
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 22,
-      "name": "Bow (rangé)",
-      "type": "bow",
-      "enchants": [
-        {
-          "id": "unbreaking",
-          "level": 2
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 23,
-      "name": "Diamond leggings (rangé)",
-      "type": "leggings",
-      "enchants": [
-        {
-          "id": "projectile_protection",
-          "level": 4
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 24,
-      "name": "Diamond sword (rangé)",
-      "type": "sword",
-      "enchants": [
-        {
-          "id": "knockback",
-          "level": 2
-        },
-        {
-          "id": "smite",
-          "level": 5
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 25,
-      "name": "Diamond chestplate (rangé)",
-      "type": "chestplate",
-      "enchants": [
-        {
-          "id": "fire_protection",
-          "level": 4
-        },
-        {
-          "id": "unbreaking",
-          "level": 3
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 26,
-      "name": "Copper boots (rangé)",
-      "type": "boots",
-      "enchants": [
-        {
-          "id": "feather_falling",
-          "level": 1
-        },
-        {
-          "id": "protection",
-          "level": 1
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 27,
+      "id": 53,
       "name": "Bow (rangé)",
       "type": "bow",
       "enchants": [
         {
           "id": "power",
-          "level": 1
+          "level": 2
         },
         {
           "id": "unbreaking",
+          "level": 2
+        },
+        {
+          "id": "punch",
           "level": 1
         }
       ],
@@ -377,7 +365,7 @@
       "prefOverrides": {}
     },
     {
-      "id": 30,
+      "id": 46,
       "name": "Iron sword (rangé)",
       "type": "sword",
       "enchants": [
@@ -389,7 +377,7 @@
       "prefOverrides": {}
     },
     {
-      "id": 31,
+      "id": 46,
       "name": "Iron sword (rangé)",
       "type": "sword",
       "enchants": [
@@ -561,7 +549,7 @@
       "prefOverrides": {}
     },
     {
-      "id": 45,
+      "id": 46,
       "name": "Iron sword (rangé)",
       "type": "sword",
       "enchants": [

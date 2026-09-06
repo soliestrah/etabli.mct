@@ -4,15 +4,15 @@
     {
       "uuid": "5fb31919-bf78-467a-8879-3ea80378a992",
       "name": "5fb31919",
-      "playTimeHours": 120.1,
+      "playTimeHours": 121.5,
       "deaths": 21,
-      "mobKills": 3642,
-      "blocksMined": 80964,
-      "distanceTotalKm": 521.28,
-      "jumps": 40233,
-      "villagerTrades": 3803,
-      "advancementsDone": 1141,
-      "advancementsTotal": 1147,
+      "mobKills": 3784,
+      "blocksMined": 81360,
+      "distanceTotalKm": 524.94,
+      "jumps": 40590,
+      "villagerTrades": 3805,
+      "advancementsDone": 1142,
+      "advancementsTotal": 1148,
       "missingAdvancements": [
         {
           "id": "minecraft:story/cure_zombie_villager",
