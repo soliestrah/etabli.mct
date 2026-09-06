@@ -142,6 +142,36 @@
 .need-row .qty .have-under{ color:var(--red); }
 .need-row .icon-btn{ padding:2px 6px; flex-shrink:0; }
 
+/* --- Checklist (avancements, ou toute liste à cocher item par item) --- */
+.checklist-list{
+  margin-top:10px;
+  padding-top:10px;
+  border-top:1px dashed var(--border);
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  max-height:280px;
+  overflow-y:auto;
+}
+.checklist-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:0.83rem;
+  padding:5px 6px;
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+}
+.checklist-row:hover{ background:var(--panel); }
+.checklist-row input[type="checkbox"]{
+  width:16px; height:16px;
+  accent-color:var(--green);
+  cursor:pointer;
+  flex-shrink:0;
+}
+.checklist-row.done{ color:var(--muted); }
+.checklist-row.done span{ text-decoration:line-through; text-decoration-color:var(--border); }
+
 .need-add{
   display:flex;
   gap:6px;
