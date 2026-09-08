@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>projets</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/projets.css">
+</head>
+<body class="theme-projets">
+
+<div id="site-nav" data-current="projets"></div>
+<script src="assets/nav.js" defer></script>
+
+<header>
+  <h1>projets</h1>
+  <p>ce que tu veux construire, et ce qu'il te manque pour ça</p>
+</header>
+
+<main class="layout-2col">
+  <section class="panel col-left">
+    <h2>Nouveau projet</h2>
+    <form id="proj-form">
+      <label for="p-name">Nom du projet</label>
+      <input type="text" id="p-name" placeholder="Ex : Ferme à villageois" required>
+
+      <label for="p-notes">Notes (optionnel)</label>
+      <textarea id="p-notes" placeholder="Ex : près du village, niveau -1"></textarea>
+
+      <button type="submit" class="btn btn-primary">Créer le projet</button>
+    </form>
+  </section>
+
+  <section class="panel col-right">
+    <h2>Tes projets</h2>
+    <div class="inv-status-line" id="inv-status">Chargement de l'inventaire...</div>
+
+    <div class="shopping-card" id="shopping-card" style="display:none;">
+      <h3>À rassembler (projets en cours / à faire)</h3>
+      <div class="shopping-list" id="shopping-list"></div>
+    </div>
+
+    <div class="filters-row" id="filters">
+      <button type="button" class="active" data-filter="all">Tous</button>
+      <button type="button" data-filter="todo">À faire</button>
+      <button type="button" data-filter="inprogress">En cours</button>
+      <button type="button" data-filter="done">Terminés</button>
+    </div>
+
+    <div class="proj-list" id="proj-list"></div>
+    <div class="empty-note" id="empty-note">Aucun projet pour l'instant. Crée le premier à gauche.</div>
+    <div class="empty-note" id="empty-note-filtered" style="display:none;">Aucun projet pour ce filtre.</div>
+  </section>
+
+  <section class="panel plain save-section col-full">
+    <h3 style="margin-top:0;">Sauvegarde</h3>
+    <div class="actions-row">
+      <button class="btn btn-ghost" id="btn-download">Télécharger (.json)</button>
+      <label class="file-label" for="file-import">Importer un fichier</label>
+      <input type="file" id="file-import" accept="application/json" style="display:none;">
+    </div>
+    <div class="msg-line" id="save-msg"></div>
+
+    <details class="gh-sync">
+      <summary>Sauvegarde en ligne (GitHub)</summary>
+      <div class="row2">
+        <div>
+          <label for="gh-owner">Utilisateur / organisation</label>
+          <input type="text" id="gh-owner" placeholder="ton-pseudo">
+        </div>
+        <div>
+          <label for="gh-repo">Nom du dépôt</label>
+          <input type="text" id="gh-repo" placeholder="mon-etabli">
+        </div>
+      </div>
+      <div class="row2">
+        <div>
+          <label for="gh-branch">Branche</label>
+          <input type="text" id="gh-branch" placeholder="main">
+        </div>
+        <div>
+          <label for="gh-token">Jeton d'accès (PAT)</label>
+          <input type="password" id="gh-token" placeholder="ghp_...">
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" id="btn-gh-save" style="margin-top:12px;">Enregistrer en ligne</button>
+      <div class="hint">Le jeton reste uniquement sur cet appareil (stocké dans le navigateur), jamais envoyé ailleurs qu'à l'API GitHub. Ces réglages sont partagés avec les autres outils du même site.</div>
+    </details>
+  </section>
+</main>
+
+<footer class="site-footer">l'établi</footer>
+
+<datalist id="res-name-list"></datalist>
+
+<script>
+  let projects = [];
+  let projIdCounter = 1;
+  let needIdCounter = 1;
+  let currentFilter = 'all';
+
+  // stock issu de l'Inventaire, chargé en lecture seule pour comparer les besoins
+  let inventoryStock = {}; // { "nom en minuscule": quantitéTotale }
+  let inventoryLoaded = false;
+
+  const form = document.getElementById('proj-form');
+  const listEl = document.getElementById('proj-list');
+  const emptyNote = document.getElementById('empty-note');
+  const emptyNoteFiltered = document.getElementById('empty-note-filtered');
+  const filtersEl = document.getElementById('filters');
+  const resNameList = document.getElementById('res-name-list');
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  const STATUS_LABELS = { todo: 'À faire', inprogress: 'En cours', done: 'Terminé' };
+
+  // ===================== INVENTAIRE (lecture seule, en direct) =====================
+  function loadInventoryStock(){
+    fetch('inventaire-config.json', { cache: 'no-store' })
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(data => {
+        const resources = Array.isArray(data.resources) ? data.resources : [];
+        inventoryStock = {};
+        resources.forEach(r => {
+          const total = (r.stacks || []).reduce((s, st) => s + st.quantity, 0);
+          inventoryStock[r.name.toLowerCase()] = total;
+        });
+        resNameList.innerHTML = resources.map(r => `<option value="${escapeHtml(r.name)}"></option>`).join('');
+        inventoryLoaded = true;
+        document.getElementById('inv-status').textContent = resources.length
+          ? `Connecté à l'inventaire · ${resources.length} ressources suivies`
+          : `Connecté à l'inventaire (vide pour l'instant)`;
+        document.getElementById('inv-status').className = 'inv-status-line ok';
+        renderAll();
+      })
+      .catch(() => {
+        inventoryLoaded = false;
+        document.getElementById('inv-status').textContent = "Inventaire introuvable — dépose inventaire-config.json à côté de ce fichier pour comparer automatiquement.";
+        document.getElementById('inv-status').className = 'inv-status-line stale';
+        renderAll();
+      });
+  }
+
+  function haveQty(resourceName){
+    return inventoryStock[(resourceName || '').toLowerCase()] || 0;
+  }
+
+  // ===================== FORMULAIRE =====================
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('p-name').value.trim();
+    if (!name) return;
+    projects.push({
+      id: projIdCounter++,
+      name,
+      notes: document.getElementById('p-notes').value.trim(),
+      status: 'todo',
+      needs: [],
+      createdAt: new Date().toISOString()
+    });
+    form.reset();
+    renderAll();
+  });
+
+  filtersEl.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-filter]');
+    if (!btn) return;
+    currentFilter = btn.dataset.filter;
+    [...filtersEl.querySelectorAll('button')].forEach(b => b.classList.toggle('active', b === btn));
+    renderList();
+  });
+
+  // ===================== RENDU =====================
+  function projectProgress(proj){
+    if (proj.needs.length === 0) return { pct: 0, missing: [] };
+    let totalNeeded = 0, totalHave = 0;
+    const missing = [];
+    proj.needs.forEach(n => {
+      const have = Math.min(haveQty(n.resourceName), n.quantity);
+      totalNeeded += n.quantity;
+      totalHave += have;
+      const short = n.quantity - haveQty(n.resourceName);
+      if (short > 0) missing.push({ name: n.resourceName, missing: short });
+    });
+    return { pct: totalNeeded ? Math.round(totalHave / totalNeeded * 100) : 100, missing };
+  }
+
+  function renderShoppingList(){
+    const card = document.getElementById('shopping-card');
+    const shoppingList = document.getElementById('shopping-list');
+    const agg = {};
+    projects.filter(p => p.status !== 'done').forEach(p => {
+      p.needs.forEach(n => {
+        const short = n.quantity - haveQty(n.resourceName);
+        if (short > 0) agg[n.resourceName] = (agg[n.resourceName] || 0) + short;
+      });
+    });
+    const entries = Object.entries(agg);
+    card.style.display = entries.length ? 'block' : 'none';
+    shoppingList.innerHTML = entries
+      .sort((a, b) => b[1] - a[1])
+      .map(([name, qty]) => `<span class="shopping-chip">${escapeHtml(name)} <strong>×${qty.toLocaleString('fr-FR')}</strong></span>`)
+      .join('');
+  }
+
+  function renderList(){
+    const filtered = projects.filter(p => currentFilter === 'all' || p.status === currentFilter);
+
+    listEl.innerHTML = '';
+    emptyNote.style.display = projects.length === 0 ? 'block' : 'none';
+    emptyNoteFiltered.style.display = (projects.length > 0 && filtered.length === 0) ? 'block' : 'none';
+
+    filtered.forEach(proj => {
+      const { pct, missing } = projectProgress(proj);
+      const card = document.createElement('div');
+      card.className = 'proj-card status-' + proj.status;
+
+      const needsHtml = proj.needs.map(n => {
+        const have = haveQty(n.resourceName);
+        const ok = have >= n.quantity;
+        return `
+          <div class="need-row">
+            <span class="name">${escapeHtml(n.resourceName)}</span>
+            <span class="qty">${have.toLocaleString('fr-FR')}/${n.quantity.toLocaleString('fr-FR')} <span class="${ok ? 'have-ok' : 'have-under'}">${ok ? '✓' : '−' + (n.quantity - have).toLocaleString('fr-FR')}</span></span>
+            <button class="icon-btn" data-del-need="${proj.id}:${n.id}" title="Retirer ce besoin">✕</button>
+          </div>
+        `;
+      }).join('');
+
+      const hasChecklist = Array.isArray(proj.checklist) && proj.checklist.length > 0;
+      let checklistHtml = '';
+      if (hasChecklist){
+        const done = proj.checklist.filter(c => c.done).length;
+        const total = proj.checklist.length;
+        const checklistPct = Math.round(done / total * 100);
+        const rows = proj.checklist
+          .slice()
+          .sort((a, b) => (a.done === b.done) ? 0 : (a.done ? 1 : -1))
+          .map(c => `
+            <label class="checklist-row${c.done ? ' done' : ''}">
+              <input type="checkbox" data-checklist="${proj.id}:${escapeHtml(c.id)}" ${c.done ? 'checked' : ''}>
+              <span>${escapeHtml(c.name)}</span>
+            </label>
+          `).join('');
+        checklistHtml = `
+          <div class="proj-progress">
+            <div class="proj-progress-label"><span>Avancements débloqués</span><span>${done}/${total} · ${checklistPct}%</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:${checklistPct}%; background:${checklistPct >= 100 ? 'var(--green)' : 'var(--accent)'};"></div></div>
+          </div>
+          <div class="checklist-list">${rows}</div>
+        `;
+      }
+
+      card.innerHTML = `
+        <div class="proj-head">
+          <div class="proj-title-wrap">
+            <div class="proj-name${proj.status === 'done' ? ' done-strike' : ''}">${escapeHtml(proj.name)} ${proj.autoRule ? '<span class="badge-accent" style="font-size:0.6rem; vertical-align:middle;">Auto</span>' : ''}</div>
+            ${proj.notes ? `<div class="proj-notes">${escapeHtml(proj.notes)}</div>` : ''}
+          </div>
+          <div class="proj-actions">
+            <select class="status-select ${proj.status}" data-status="${proj.id}">
+              <option value="todo" ${proj.status === 'todo' ? 'selected' : ''}>À faire</option>
+              <option value="inprogress" ${proj.status === 'inprogress' ? 'selected' : ''}>En cours</option>
+              <option value="done" ${proj.status === 'done' ? 'selected' : ''}>Terminé</option>
+            </select>
+            <button class="btn-small" data-del="${proj.id}">Suppr.</button>
+          </div>
+        </div>
+        ${checklistHtml}
+        ${!hasChecklist && proj.needs.length ? `
+          <div class="proj-progress">
+            <div class="proj-progress-label"><span>Ressources réunies</span><span>${pct}%</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:${pct}%; background:${pct >= 100 ? 'var(--green)' : 'var(--accent)'};"></div></div>
+          </div>
+        ` : ''}
+        ${!hasChecklist ? `
+          <div class="needs-list">
+            ${needsHtml || '<div class="proj-notes">Aucun besoin renseigné pour l\'instant.</div>'}
+          </div>
+          <div class="need-add">
+            <input type="text" placeholder="Ressource (ex : Fer)" list="res-name-list" data-name-input="${proj.id}">
+            <input type="number" placeholder="Qté" min="1" data-qty-input="${proj.id}">
+            <button type="button" class="btn-small" data-add-need="${proj.id}">+ Ajouter</button>
+          </div>
+        ` : ''}
+      `;
+      listEl.appendChild(card);
+    });
+
+    listEl.querySelectorAll('[data-checklist]').forEach(cb => {
+      cb.addEventListener('change', () => {
+        const [projId, advId] = cb.dataset.checklist.split(':');
+        const proj = projects.find(p => p.id === Number(projId));
+        const item = proj.checklist.find(c => c.id === advId);
+        if (item) item.done = cb.checked;
+        // si tout est coché, le statut du projet passe a "Termine"
+        const allDone = proj.checklist.length > 0 && proj.checklist.every(c => c.done);
+        proj.status = allDone ? 'done' : (proj.status === 'done' ? 'todo' : proj.status);
+        renderAll();
+      });
+    });
+
+    listEl.querySelectorAll('[data-del]').forEach(b => {
+      b.addEventListener('click', () => {
+        projects = projects.filter(p => p.id !== Number(b.dataset.del));
+        renderAll();
+      });
+    });
+    listEl.querySelectorAll('[data-status]').forEach(sel => {
+      sel.addEventListener('change', () => {
+        const proj = projects.find(p => p.id === Number(sel.dataset.status));
+        proj.status = sel.value;
+        renderAll();
+      });
+    });
+    listEl.querySelectorAll('[data-add-need]').forEach(b => {
+      b.addEventListener('click', () => {
+        const projId = Number(b.dataset.addNeed);
+        const nameInput = listEl.querySelector(`[data-name-input="${projId}"]`);
+        const qtyInput = listEl.querySelector(`[data-qty-input="${projId}"]`);
+        const name = nameInput.value.trim();
+        const qty = parseInt(qtyInput.value, 10);
+        if (!name || !qty || qty <= 0) return;
+        const proj = projects.find(p => p.id === projId);
+        const existing = proj.needs.find(n => n.resourceName.toLowerCase() === name.toLowerCase());
+        if (existing) existing.quantity += qty;
+        else proj.needs.push({ id: needIdCounter++, resourceName: name, quantity: qty });
+        renderAll();
+      });
+    });
+    listEl.querySelectorAll('[data-del-need]').forEach(b => {
+      b.addEventListener('click', () => {
+        const [projId, needId] = b.dataset.delNeed.split(':').map(Number);
+        const proj = projects.find(p => p.id === projId);
+        proj.needs = proj.needs.filter(n => n.id !== needId);
+        renderAll();
+      });
+    });
+  }
+
+  function renderAll(){
+    renderShoppingList();
+    renderList();
+  }
+
+  // ===================== SAVE / LOAD =====================
+  function exportProjectsJSON(){
+    return JSON.stringify({ projects }, null, 2);
+  }
+
+  function loadFromJSON(text){
+    const data = JSON.parse(text);
+    let loaded;
+    if (Array.isArray(data)) loaded = data;
+    else if (data && Array.isArray(data.projects)) loaded = data.projects;
+    else throw new Error('format invalide');
+    projects = loaded.map(p => ({
+      id: p.id, name: p.name, notes: p.notes || '',
+      status: p.status || 'todo',
+      needs: Array.isArray(p.needs) ? p.needs : [],
+      checklist: Array.isArray(p.checklist) ? p.checklist : [],
+      createdAt: p.createdAt || new Date().toISOString(),
+      autoRule: p.autoRule || null
+    }));
+    projIdCounter = projects.reduce((m, p) => Math.max(m, p.id || 0), 0) + 1;
+    needIdCounter = projects.reduce((m, p) => Math.max(m, ...p.needs.map(n => n.id || 0), 0), 0) + 1;
+    projectsReady = true;
+    maybeApplyAutoRules();
+    renderAll();
+    showSaveMsg('Projets chargés.');
+  }
+
+  function showSaveMsg(msg){
+    const el = document.getElementById('save-msg');
+    el.textContent = msg;
+    setTimeout(() => { el.textContent = ''; }, 4000);
+  }
+
+  // ===================== SAUVEGARDE EN LIGNE (GITHUB) =====================
+  const GH_FILE_PATH = 'projets-config.json';
+  const ghFields = ['gh-owner', 'gh-repo', 'gh-branch', 'gh-token'];
+  const ghKeys = {'gh-owner': 'gh_owner', 'gh-repo': 'gh_repo', 'gh-branch': 'gh_branch', 'gh-token': 'gh_token'};
+
+  function loadGhSettings(){
+    ghFields.forEach(id => {
+      const saved = localStorage.getItem(ghKeys[id]);
+      if (saved) document.getElementById(id).value = saved;
+    });
+    if (!document.getElementById('gh-branch').value) document.getElementById('gh-branch').value = 'main';
+  }
+  function saveGhSettings(){
+    ghFields.forEach(id => {
+      localStorage.setItem(ghKeys[id], document.getElementById(id).value.trim());
+    });
+  }
+  ghFields.forEach(id => {
+    document.getElementById(id).addEventListener('change', saveGhSettings);
+  });
+  loadGhSettings();
+
+  async function saveToGitHub(){
+    const owner = document.getElementById('gh-owner').value.trim();
+    const repo = document.getElementById('gh-repo').value.trim();
+    const branch = document.getElementById('gh-branch').value.trim() || 'main';
+    const token = document.getElementById('gh-token').value.trim();
+    if (!owner || !repo || !token){
+      showSaveMsg('Renseigne utilisateur, dépôt et jeton GitHub.');
+      return;
+    }
+    saveGhSettings();
+    showSaveMsg('Envoi vers GitHub...');
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${GH_FILE_PATH}`;
+    try {
+      let sha = null;
+      const getRes = await fetch(`${apiUrl}?ref=${encodeURIComponent(branch)}`, {
+        headers: {'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json'}
+      });
+      if (getRes.ok){
+        const info = await getRes.json();
+        sha = info.sha;
+      } else if (getRes.status !== 404){
+        const err = await getRes.json().catch(() => ({}));
+        throw new Error(err.message || ('Erreur ' + getRes.status));
+      }
+
+      const content = exportProjectsJSON();
+      const body = {
+        message: 'Mise à jour projets-config.json depuis les projets',
+        content: btoa(unescape(encodeURIComponent(content))),
+        branch
+      };
+      if (sha) body.sha = sha;
+
+      const putRes = await fetch(apiUrl, {
+        method: 'PUT',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      });
+      if (!putRes.ok){
+        const err = await putRes.json().catch(() => ({}));
+        throw new Error(err.message || ('Erreur ' + putRes.status));
+      }
+      showSaveMsg('Enregistré sur GitHub ✓');
+    } catch (err){
+      showSaveMsg('Échec : ' + err.message);
+    }
+  }
+  document.getElementById('btn-gh-save').addEventListener('click', saveToGitHub);
+
+  document.getElementById('btn-download').addEventListener('click', () => {
+    if (projects.length === 0){ showSaveMsg('Aucun projet à sauvegarder.'); return; }
+    const blob = new Blob([exportProjectsJSON()], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'projets-config.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showSaveMsg('Fichier téléchargé (projets-config.json).');
+  });
+
+  document.getElementById('file-import').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try { loadFromJSON(ev.target.result); }
+      catch (err) { showSaveMsg('Fichier invalide.'); }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  });
+
+  // ===================== RÈGLES AUTOMATIQUES =====================
+  // Génère/ajuste certains projets tout seul, à partir des données du monde.
+  // Ces projets portent un champ `autoRule` (badge "Auto" dans la liste) et
+  // sont recalculés à chaque chargement de la page.
+  let containersData = [];
+  let statsData = [];
+  let projectsReady = false;
+  let containersReady = false;
+  let statsReady = false;
+  const AUTO_FOODIE_THRESHOLD = 64; // seuil (nb total d'items) sous lequel on relance un projet de réappro
+
+  function maybeApplyAutoRules(){
+    if (projectsReady && containersReady && statsReady) applyAutoRules();
+  }
+
+  function loadContainers(){
+    fetch('conteneurs-config.json', { cache: 'no-store' })
+      .then(r => r.ok ? r.json() : { containers: [] })
+      .then(data => { containersData = Array.isArray(data.containers) ? data.containers : []; })
+      .catch(() => { containersData = []; })
+      .finally(() => {
+        containersReady = true;
+        maybeApplyAutoRules();
+      });
+  }
+
+  function loadStats(){
+    fetch('stats-config.json', { cache: 'no-store' })
+      .then(r => r.ok ? r.json() : { players: [] })
+      .then(data => { statsData = Array.isArray(data.players) ? data.players : []; })
+      .catch(() => { statsData = []; })
+      .finally(() => {
+        statsReady = true;
+        maybeApplyAutoRules();
+      });
+  }
+
+  function applyAutoRules(){
+    applyFoodieRule();
+    applyAdvancementsRule();
+    renderAll();
+  }
+
+  function applyFoodieRule(){
+    // Règle "foodie" : shulker box nommée "foodie" (renommée à l'enclume avant
+    // d'être posée) — si son stock total tombe sous le seuil, on (ré)ouvre un
+    // projet de réappro ; s'il remonte au-dessus, on le marque terminé.
+    const foodie = containersData.find(c =>
+      (c.name || '').toLowerCase() === 'foodie' && c.type && c.type.includes('shulker')
+    );
+    const existingIdx = projects.findIndex(p => p.autoRule === 'foodie-food');
+
+    if (foodie){
+      const total = foodie.total || 0;
+      if (total < AUTO_FOODIE_THRESHOLD){
+        if (existingIdx === -1){
+          projects.push({
+            id: projIdCounter++,
+            name: 'Réapprovisionner la shulker "foodie"',
+            notes: `Stock actuel détecté : ${total} items (seuil : ${AUTO_FOODIE_THRESHOLD}). Projet généré automatiquement depuis l'inventaire.`,
+            status: 'todo',
+            needs: [],
+            createdAt: new Date().toISOString(),
+            autoRule: 'foodie-food'
+          });
+        } else if (projects[existingIdx].status === 'done'){
+          projects[existingIdx].status = 'todo'; // le stock est retombé bas, on rouvre
+          projects[existingIdx].notes = `Stock actuel détecté : ${total} items (seuil : ${AUTO_FOODIE_THRESHOLD}). Rouvert automatiquement.`;
+        }
+      } else if (existingIdx !== -1 && projects[existingIdx].status !== 'done'){
+        projects[existingIdx].status = 'done';
+      }
+    }
+  }
+
+  function applyAdvancementsRule(){
+    // Un projet "Avancements à débloquer" par joueur ayant des avancements
+    // manquants dans stats-config.json, avec une VRAIE case à cocher par
+    // avancement (persistée), au lieu d'un simple pavé de texte.
+    statsData.forEach(player => {
+      const missing = Array.isArray(player.missingAdvancements) ? player.missingAdvancements : [];
+      const missingIds = new Set(missing.map(a => a.id));
+      const rule = `advancements-${player.uuid || player.name}`;
+      let proj = projects.find(p => p.autoRule === rule);
+
+      if (missing.length === 0 && !proj) return; // rien à débloquer, rien à afficher
+
+      if (!proj){
+        proj = {
+          id: projIdCounter++,
+          name: `Avancements à débloquer — ${player.name}`,
+          notes: '',
+          status: 'todo',
+          needs: [],
+          checklist: [],
+          createdAt: new Date().toISOString(),
+          autoRule: rule
+        };
+        projects.push(proj);
+      }
+      if (!Array.isArray(proj.checklist)) proj.checklist = [];
+
+      // ajoute les avancements manquants pas encore suivis dans la checklist
+      missing.forEach(a => {
+        if (!proj.checklist.some(c => c.id === a.id)){
+          proj.checklist.push({ id: a.id, name: a.name, done: false });
+        }
+      });
+      // ce qui n'est plus manquant en vrai (débloqué en jeu) se coche tout seul
+      proj.checklist.forEach(c => {
+        if (!missingIds.has(c.id)) c.done = true;
+      });
+
+      // le projet se ferme tout seul quand tout est coché
+      const allDone = proj.checklist.length > 0 && proj.checklist.every(c => c.done);
+      if (allDone) proj.status = 'done';
+      else if (proj.status === 'done') proj.status = 'todo';
+    });
+  }
+
+  renderAll();
+  loadInventoryStock();
+  loadContainers();
+  loadStats();
+
+  // Chargement automatique depuis le dépôt (fonctionne quand le site est hébergé, ex. GitHub Pages).
+  fetch('projets-config.json', {cache: 'no-store'})
+    .then(r => r.ok ? r.text() : Promise.reject())
+    .then(text => loadFromJSON(text))
+    .catch(() => { projectsReady = true; maybeApplyAutoRules(); });
+</script>
+</body>
+</html>

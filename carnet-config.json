@@ -1,0 +1,151 @@
+{
+  "entries": [
+    {
+      "id": 21,
+      "text": "renommer les villageois simplement",
+      "tag": "VILLAGEOIS",
+      "done": false,
+      "createdAt": "2026-09-06T12:38:02.632Z"
+    },
+    {
+      "id": 20,
+      "text": "dire que 5fb31919 c'est à remplancer par N3SK3 et l'autre par whiskysec",
+      "tag": "SITE",
+      "done": true,
+      "createdAt": "2026-09-06T06:34:04.404Z"
+    },
+    {
+      "id": 19,
+      "text": "faire en sorte que la carte en zoomant donne plus de détail et qu'on voit pas plus en gros un truc tout écrasé. ex : si on ajoute un truc à 10000 blocs la carte se rattatine",
+      "tag": "SITE",
+      "done": false,
+      "createdAt": "2026-09-06T06:18:01.238Z"
+    },
+    {
+      "id": 18,
+      "text": "trouver un villageois knockback",
+      "tag": "VILLAGEOIS",
+      "done": false,
+      "createdAt": "2026-09-05T16:47:53.566Z"
+    },
+    {
+      "id": 17,
+      "text": "dashboard skin sur le côté",
+      "tag": "SITE",
+      "done": true,
+      "createdAt": "2026-09-05T04:38:20.148Z"
+    },
+    {
+      "id": 16,
+      "text": "uniformité de taille des boites / pages",
+      "tag": "SITE",
+      "done": true,
+      "createdAt": "2026-09-05T04:38:06.155Z"
+    },
+    {
+      "id": 15,
+      "text": "définir d’autres couleurs",
+      "tag": "SITE",
+      "done": true,
+      "createdAt": "2026-09-04T08:48:20.441Z"
+    },
+    {
+      "id": 14,
+      "text": "pouvoir ajouter les quantités dans l’inventaire à la création",
+      "tag": "SITE",
+      "done": true,
+      "createdAt": "2026-09-04T07:36:42.101Z"
+    },
+    {
+      "id": 13,
+      "text": "trier les notes par categories",
+      "tag": "SITE",
+      "done": true,
+      "createdAt": "2026-09-04T07:36:26.225Z"
+    },
+    {
+      "id": 12,
+      "text": "faire une mineshaft au niveau de l’ironie vein",
+      "tag": "BUILD",
+      "done": true,
+      "createdAt": "2026-09-04T07:36:15.754Z"
+    },
+    {
+      "id": 11,
+      "text": "visiter le deepdark",
+      "tag": "AVENTURE",
+      "done": true,
+      "createdAt": "2026-09-04T07:36:02.235Z"
+    },
+    {
+      "id": 10,
+      "text": "avoir l'information des livres en réserve dans le build",
+      "tag": "SITE-enchant",
+      "done": true,
+      "createdAt": "2026-08-30T10:21:11.625Z"
+    },
+    {
+      "id": 9,
+      "text": "faire les nouveaux tunnels",
+      "tag": "NETHER",
+      "done": false,
+      "createdAt": "2026-08-30T10:20:53.935Z"
+    },
+    {
+      "id": 8,
+      "text": "pouvoir filtrer par le type d'offre des villageois\npouvoir modifier les note qui sont dans les offres",
+      "tag": "SITE-enchantement",
+      "done": true,
+      "createdAt": "2026-08-30T08:45:02.605Z"
+    },
+    {
+      "id": 7,
+      "text": "Changer les couleurs. plus clair ?",
+      "tag": "SITE",
+      "done": true,
+      "createdAt": "2026-08-30T08:44:12.473Z"
+    },
+    {
+      "id": 6,
+      "text": "pouvoir modifier les noms des bases dans le nether\npouvoir zoomer sur la carte du nether",
+      "tag": "SITE-NETHER",
+      "done": true,
+      "createdAt": "2026-08-30T08:43:55.501Z"
+    },
+    {
+      "id": 5,
+      "text": "Nettoyer le village",
+      "tag": "BASE",
+      "done": false,
+      "createdAt": "2026-08-16T17:09:24.745Z"
+    },
+    {
+      "id": 4,
+      "text": "Avoir une zone de rangement",
+      "tag": "BASE",
+      "done": true,
+      "createdAt": "2026-08-16T17:09:15.011Z"
+    },
+    {
+      "id": 3,
+      "text": "Visiter le village V",
+      "tag": "VILLAGE",
+      "done": true,
+      "createdAt": "2026-08-16T17:09:03.095Z"
+    },
+    {
+      "id": 2,
+      "text": "Finir le tunnel jusqu'à la Forteresse",
+      "tag": "NETHER",
+      "done": true,
+      "createdAt": "2026-08-16T17:08:53.912Z"
+    },
+    {
+      "id": 1,
+      "text": "Avoir des abeilles",
+      "tag": "FERME",
+      "done": true,
+      "createdAt": "2026-08-16T17:08:30.247Z"
+    }
+  ]
+}
