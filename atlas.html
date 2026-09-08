@@ -19,7 +19,51 @@
   <p>l'autoroute du kiff</p>
 </header>
 
-<main class="layout-2col">
+<div class="tabs">
+  <button class="tab-btn active" data-tab="home">Accueil</button>
+  <button class="tab-btn" data-tab="overworld">Overworld</button>
+  <button class="tab-btn" data-tab="nether">Nether</button>
+  <button class="tab-btn" data-tab="end">End</button>
+</div>
+
+<main>
+
+  <!-- ============ VIEW: ACCUEIL ============ -->
+  <section class="view active" id="view-home">
+    <div class="atlas-home-grid">
+      <button type="button" class="atlas-dim-card" id="dim-overworld" data-goto="overworld">
+        <span class="dim-icon">🌍</span>
+        <h3>Overworld</h3>
+        <p>Bases, ressources notables, points d'intérêt.</p>
+        <span class="dim-count">Bientôt disponible</span>
+      </button>
+      <button type="button" class="atlas-dim-card" id="dim-nether" data-goto="nether">
+        <span class="dim-icon">🔥</span>
+        <h3>Nether</h3>
+        <p>Calculateur de tunnels : hub, itinéraires, ordre de creusement.</p>
+        <span class="dim-count" id="dim-nether-count">chargement…</span>
+      </button>
+      <button type="button" class="atlas-dim-card" id="dim-end" data-goto="end">
+        <span class="dim-icon">🌌</span>
+        <h3>End</h3>
+        <p>Cités de l'End, îles explorées, butin.</p>
+        <span class="dim-count">Bientôt disponible</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ VIEW: OVERWORLD ============ -->
+  <section class="view" id="view-overworld">
+    <div class="dim-placeholder">
+      <span class="ti">🌍</span>
+      <h3>Carte de l'Overworld — à venir</h3>
+      <p>Prochaine étape : placer les points d'intérêt sur une carte, et y relier les coffres retrouvés dans l'inventaire.</p>
+    </div>
+  </section>
+
+  <!-- ============ VIEW: NETHER ============ -->
+  <section class="view" id="view-nether">
+  <div class="nether-grid">
   <section class="panel col-left">
     <h2>Points</h2>
     <form id="point-form">
@@ -125,9 +169,33 @@
       <div class="hint">Le jeton reste uniquement sur cet appareil (stocké dans le navigateur), jamais envoyé ailleurs qu'à l'API GitHub. Ces réglages sont partagés avec les autres outils du même site.</div>
     </details>
   </section>
+  </div><!-- /.nether-grid -->
+  </section><!-- /view-nether -->
+
+  <!-- ============ VIEW: END ============ -->
+  <section class="view" id="view-end">
+    <div class="dim-placeholder">
+      <span class="ti">🌌</span>
+      <h3>Carte de l'End — à venir</h3>
+      <p>Prochaine étape : cités explorées, butin récupéré, îles restantes.</p>
+    </div>
+  </section>
+
 </main>
 
 <script>
+  // ===================== ONGLETS (Accueil / Overworld / Nether / End) =====================
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+  });
+  document.querySelectorAll('[data-goto]').forEach(btn => {
+    btn.addEventListener('click', () => switchTab(btn.dataset.goto));
+  });
+  function switchTab(tab){
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+    document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.id === 'view-' + tab));
+  }
+
   let points = [];
   let idCounter = 1;
   let digOrder = 'x-first'; // 'x-first' or 'z-first'
@@ -232,6 +300,14 @@
   }
 
   function render(){
+    // carte "Nether" de l'accueil de l'Atlas
+    const homeCount = document.getElementById('dim-nether-count');
+    if (homeCount){
+      homeCount.textContent = points.length === 0
+        ? 'Aucun point'
+        : `${points.length} point${points.length > 1 ? 's' : ''}`;
+    }
+
     // list
     listEl.innerHTML = '';
     emptyNote.style.display = points.length === 0 ? 'block' : 'none';
