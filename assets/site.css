@@ -472,6 +472,16 @@ textarea{ resize:vertical; min-height:70px; }
   min-height:1em;
 }
 .row2{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+
+/* Petit texte explicatif sous un champ/bloc -- utilisé un peu partout
+   (atlas, carnet, grimoire, inventaire, projets) mais n'avait jamais
+   été stylé : il tombait dans le texte normal au lieu d'être discret. */
+.hint{
+  font-size:0.74rem;
+  color:var(--muted);
+  margin-top:6px;
+  line-height:1.5;
+}
 .gh-sync{
   margin-top:16px;
   padding-top:14px;

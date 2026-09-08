@@ -229,7 +229,49 @@ header .ratio{
   color:var(--muted);
 }
 
-textarea#export-area{
+/* --- Onglet Overworld : carte-image + punaises --- */
+.ow-map-wrap{
+  position:relative;
+  width:100%;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--panel-hover);
+}
+.ow-map-empty{
+  min-height:280px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  color:var(--muted);
+  font-size:0.85rem;
+}
+#ow-map-img{ width:100%; height:auto; display:block; cursor:crosshair; }
+.ow-map-pins{ position:absolute; inset:0; pointer-events:none; }
+.ow-pin{
+  position:absolute;
+  width:12px; height:12px;
+  border-radius:50%;
+  background:var(--copper);
+  border:2px solid var(--accent-ink);
+  box-shadow:0 0 0 2px var(--text);
+  transform:translate(-50%, -50%);
+}
+.ow-pin-ref{
+  background:var(--purple);
+  width:14px; height:14px;
+}
+.ow-ref-row{
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:12px;
+  margin-bottom:12px;
+}
+.ow-ref-place{ margin-top:10px; width:100%; }
+.ow-ref-place.active{ border-color:var(--accent); color:var(--accent); }
+.ow-ref-status{ display:block; margin-top:6px; font-size:0.72rem; color:var(--green); font-family:var(--font-mono); }
   font-family:var(--font-mono);
   font-size:0.75rem;
   height:100px;
