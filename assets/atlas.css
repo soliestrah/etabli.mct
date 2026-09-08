@@ -15,7 +15,67 @@ header .ratio{
   color:var(--text);
 }
 
-/* la mise en page (main.layout-2col) vient de site.css */
+/* =========================================================================
+   ACCUEIL DE L'ATLAS — une carte par dimension
+   ========================================================================= */
+.atlas-home-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:18px;
+}
+.atlas-dim-card{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:6px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  cursor:pointer;
+  text-align:left;
+  transition:border-color 0.15s ease, transform 0.15s ease;
+}
+.atlas-dim-card:hover{ border-color:var(--dim-accent, var(--accent)); transform:translateY(-2px); }
+.atlas-dim-card .dim-icon{ font-size:1.7rem; }
+.atlas-dim-card h3{ color:var(--dim-accent, var(--accent)); }
+.atlas-dim-card p{ font-size:0.82rem; margin:0; }
+.atlas-dim-card .dim-count{
+  margin-top:auto;
+  padding-top:10px;
+  font-family:var(--font-mono);
+  font-size:0.74rem;
+  color:var(--muted);
+}
+#dim-overworld{ --dim-accent: var(--green); }
+#dim-nether{ --dim-accent: var(--red); }
+#dim-end{ --dim-accent: var(--purple); }
+
+/* --- Onglets Overworld / End : rien à afficher pour l'instant --- */
+.dim-placeholder{
+  text-align:center;
+  padding:40px 20px;
+  border:1px dashed var(--border);
+  border-radius:var(--radius);
+}
+.dim-placeholder .ti{ font-size:2rem; display:block; margin-bottom:10px; }
+.dim-placeholder p{ max-width:420px; margin:6px auto 0; font-size:0.85rem; }
+
+/* --- Onglet Nether : grille 2 colonnes (formulaire + carte), scopée à
+   cet onglet (site.css ne définit ce grid que pour main.layout-2col). --- */
+.nether-grid{
+  display:grid;
+  grid-template-columns:340px 1fr;
+  gap:22px;
+  align-items:start;
+}
+.nether-grid .col-left{ grid-column:1; }
+.nether-grid .col-right{ grid-column:2; }
+.nether-grid .col-full{ grid-column:1 / -1; }
+@media (max-width:860px){
+  .nether-grid{ grid-template-columns:1fr; }
+  .nether-grid .col-left, .nether-grid .col-right, .nether-grid .col-full{ grid-column:1; }
+}
 
 .row3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
 

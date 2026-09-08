@@ -378,6 +378,13 @@ textarea{ resize:vertical; min-height:70px; }
 .tab-btn:hover{ color:var(--text); }
 .tab-btn.active{ color:var(--accent); border-bottom-color:var(--accent); }
 
+/* Contenu associé aux onglets ci-dessus : une section par onglet, on
+   affiche seulement celle qui a .active. Utilisé par Grimoire, Atlas... */
+.view{ display:none; }
+.view.active{ display:block; }
+.subview{ display:none; }
+.subview.active{ display:block; }
+
 /* --- Toasts --- */
 .toast-wrap{
   position:fixed;
