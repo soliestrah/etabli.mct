@@ -1,0 +1,413 @@
+/* =========================================================================
+   ÉTABLI — panneau de quêtes
+   La page d'accueil devient un panneau de bois où sont punaisées les
+   fiches des différents outils, comme sur un tableau de quêtes de taverne.
+   Le reste (boutons, formulaires...) vient toujours de site.css — ici on
+   ne touche à aucune variable de couleur, seulement à la disposition.
+   ========================================================================= */
+
+ main{ padding-top:0; }
+
+/* ---- Fond du panneau : bois sombre avec un léger grain ---- */
+body.theme-etabli{
+  background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.08) 0 1px, transparent 1px 90px),
+    radial-gradient(ellipse at 20% -10%, rgba(196,190,175,0.06), transparent 55%),
+    var(--bg);
+}
+
+/* =========================================================================
+   HERO — écriteau de quête
+   ========================================================================= */
+.hero{
+  padding:40px 20px 28px;
+  display:flex;
+  justify-content:center;
+}
+.hero-board{
+  width:100%;
+  max-width:620px;
+  position:relative;
+}
+
+/* petit clou en haut du panneau, comme les notes plus bas */
+.hero-board::before{
+  content:"";
+  position:absolute;
+  top:-7px; left:50%;
+  transform:translateX(-50%);
+  width:11px; height:11px;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #e8ddc4, var(--iron) 60%, #6b6455 100%);
+  box-shadow:0 2px 4px rgba(0,0,0,0.5);
+  z-index:2;
+}
+
+.profile-parchment{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px 24px;
+  position:relative;
+}
+
+.profile-frame{
+  position:relative;
+  flex-shrink:0;
+  width:76px; height:76px;
+  border-radius:50%;
+  border:2px solid var(--border);
+  background:var(--bg-soft);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:visible;
+}
+/* lueur de torche : le seul mouvement en fond de page, discret et unique */
+.frame-glow{
+  position:absolute;
+  inset:-14px;
+  border-radius:50%;
+  background:radial-gradient(circle, color-mix(in srgb, var(--accent) 35%, transparent), transparent 70%);
+  animation:torch-flicker 5s ease-in-out infinite;
+  z-index:-1;
+}
+@keyframes torch-flicker{
+  0%, 100%{ opacity:0.55; transform:scale(1); }
+  35%{ opacity:0.8; transform:scale(1.06); }
+  60%{ opacity:0.5; transform:scale(0.98); }
+}
+@media (prefers-reduced-motion: reduce){
+  .frame-glow{ animation:none; opacity:0.65; }
+}
+.profile-skin{
+  width:56px; height:auto;
+  image-rendering:pixelated;
+  border-radius:50%;
+  position:relative;
+}
+
+.profile-body{ flex:1; min-width:0; }
+.profile-name{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.6rem;
+  color:var(--text);
+  line-height:1.1;
+}
+.hero-server-status{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:6px;
+  font-family:var(--font-mono);
+  font-size:0.72rem;
+  color:var(--muted);
+}
+.hero-server-status .dot{
+  width:8px; height:8px;
+  border-radius:50%;
+  background:var(--muted);
+  display:inline-block;
+}
+
+.profile-stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:16px;
+}
+.profile-stat{
+  display:flex;
+  align-items:baseline;
+  gap:5px;
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:5px 12px 5px 10px;
+}
+.profile-stat .n{
+  font-family:var(--font-mono);
+  font-weight:700;
+  font-size:0.85rem;
+  color:var(--accent);
+}
+.profile-stat .l{
+  font-size:0.72rem;
+  color:var(--muted);
+}
+.profile-stat-empty{
+  font-size:0.78rem;
+  color:var(--muted);
+  font-style:italic;
+  margin-top:14px;
+}
+@media (max-width:560px){
+  .profile-parchment{ flex-direction:column; text-align:center; }
+  .profile-stats{ justify-content:center; }
+}
+
+/* =========================================================================
+   SECTION TITRES — sobres, sans étiquette décorative au-dessus
+   ========================================================================= */
+.board-intro{
+  max-width:1180px;
+  margin:8px auto 4px;
+  padding:0 20px;
+}
+.board-intro h2{
+  font-size:1.3rem;
+  color:var(--text);
+}
+.board-intro p{
+  font-size:0.86rem;
+  max-width:520px;
+}
+
+/* =========================================================================
+   PANNEAU DE NOTES — les widgets, punaisés et légèrement inclinés
+   ========================================================================= */
+.widgets-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(270px, 1fr));
+  gap:26px 22px;
+  margin:18px 0 30px;
+  padding:0 4px;
+}
+
+.widget{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:4px 4px var(--radius) var(--radius);
+  padding:20px 20px 18px;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  box-shadow:0 6px 16px rgba(0,0,0,0.28);
+  transition:transform 0.15s ease;
+}
+/* alternance d'inclinaisons, très légère, pour l'effet "punaisé" */
+.widgets-grid .widget:nth-child(4n+1){ transform:rotate(-0.6deg); }
+.widgets-grid .widget:nth-child(4n+2){ transform:rotate(0.5deg); }
+.widgets-grid .widget:nth-child(4n+3){ transform:rotate(-0.4deg); }
+.widgets-grid .widget:nth-child(4n+4){ transform:rotate(0.7deg); }
+.widget:hover{ transform:rotate(0deg) translateY(-2px); }
+
+.widget::before{
+  content:"";
+  position:absolute;
+  top:-6px; left:50%;
+  transform:translateX(-50%);
+  width:10px; height:10px;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #f0e6cf, var(--card-pin, var(--iron)) 60%, #5c5648 100%);
+  box-shadow:0 2px 3px rgba(0,0,0,0.5);
+}
+#widget-carnet{ --card-pin: var(--green); }
+#widget-atlas{ --card-pin: var(--copper); }
+#widget-projets{ --card-pin: var(--gold); }
+#widget-inventaire{ --card-pin: var(--netherite); }
+#widget-conteneurs{ --card-pin: var(--red); }
+
+.widget-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:12px;
+  padding-bottom:10px;
+  border-bottom:1px dashed var(--border);
+}
+.widget-head h3{
+  margin:0;
+  font-size:0.98rem;
+  display:flex;
+  align-items:center;
+  gap:7px;
+}
+.widget-head a{
+  font-family:var(--font-mono);
+  font-size:0.68rem;
+  color:var(--muted);
+  text-decoration:none;
+  white-space:nowrap;
+  border-bottom:1px solid transparent;
+}
+.widget-head a:hover{ color:var(--accent); border-bottom-color:var(--accent); }
+
+.widget-stat-row{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:4px; }
+.widget-stat .n{ font-family:var(--font-mono); font-size:1.5rem; font-weight:700; color:var(--accent); line-height:1; }
+.widget-stat .l{ font-size:0.68rem; color:var(--muted); margin-top:4px; }
+
+/* liste façon fil de forum : icône implicite via puce carrée + meta en mono */
+.widget-list{
+  list-style:none;
+  margin:0; padding:0;
+  display:flex; flex-direction:column;
+  flex:1;
+}
+.widget-list li{
+  font-size:0.84rem;
+  padding:8px 2px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+.widget-list li:last-child{ border-bottom:none; }
+.widget-list li span:first-child{
+  padding-left:12px;
+  position:relative;
+}
+.widget-list li span:first-child::before{
+  content:"";
+  position:absolute;
+  left:0; top:50%;
+  transform:translateY(-50%);
+  width:5px; height:5px;
+  background:var(--card-pin, var(--accent));
+  border-radius:1px;
+}
+.widget-list li .tag{
+  font-family:var(--font-mono);
+  font-size:0.64rem;
+  color:var(--muted);
+  flex-shrink:0;
+}
+.widget-empty, .widget-offline{
+  color:var(--muted);
+  font-size:0.82rem;
+  font-style:italic;
+  padding:10px 2px;
+}
+
+.widget-progress-row{ display:flex; flex-direction:column; gap:12px; }
+.widget-progress-item .top{ display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:4px; }
+.widget-progress-item .top .pct{ font-family:var(--font-mono); color:var(--muted); }
+
+/* =========================================================================
+   GRIMOIRE D'ÉQUIPEMENT — socles enchantés
+   ========================================================================= */
+.gear-section{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:22px 22px 20px;
+  margin-bottom:30px;
+}
+.gear-section .widget-head{ border-bottom:1px dashed var(--border); }
+.gear-section > p{ margin-top:2px; font-size:0.82rem; }
+
+.gear-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(60px, 1fr));
+  gap:10px;
+  margin-top:16px;
+}
+.gear-slot{
+  position:relative;
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  border-radius:8px;
+  aspect-ratio:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.5rem;
+  cursor:pointer;
+  transition:border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+.gear-slot:hover, .gear-slot.active{
+  border-color:var(--purple);
+  box-shadow:0 0 0 1px var(--purple), 0 0 16px -2px color-mix(in srgb, var(--purple) 70%, transparent);
+  transform:translateY(-2px);
+}
+.gear-slot.empty{ opacity:0.28; cursor:default; }
+.gear-slot.empty:hover{ transform:none; border-color:var(--border); box-shadow:none; }
+.gear-slot .count{
+  position:absolute;
+  bottom:2px; right:4px;
+  font-family:var(--font-mono);
+  font-size:0.6rem;
+  color:var(--muted);
+}
+
+.gear-detail{
+  margin-top:16px;
+  padding-top:14px;
+  border-top:1px dashed var(--border);
+  display:none;
+}
+.gear-detail.show{ display:block; }
+.gear-detail-item{ margin-bottom:12px; }
+.gear-detail-item:last-child{ margin-bottom:0; }
+.gear-detail-name{ font-weight:700; font-size:0.9rem; color:var(--purple); }
+.gear-detail-enchants{ font-family:var(--font-mono); font-size:0.76rem; color:var(--muted); margin-top:4px; }
+
+/* =========================================================================
+   INDEX DES OUTILS — liste façon sous-forums, pas des cartes identiques
+   ========================================================================= */
+.tools-section h2{ margin-bottom:4px; }
+.tools-section > p{ font-size:0.85rem; max-width:520px; margin-bottom:16px; }
+
+.tool-index{
+  display:flex;
+  flex-direction:column;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+.tool-row{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  padding:16px 18px;
+  text-decoration:none;
+  color:var(--text);
+  background:var(--panel);
+  border-left:3px solid transparent;
+  border-bottom:1px solid var(--border);
+  transition:border-left-color 0.15s ease, background 0.15s ease, padding-left 0.15s ease;
+}
+.tool-index .tool-row:last-child{ border-bottom:none; }
+.tool-row:hover{
+  border-left-color:var(--row-accent, var(--accent));
+  background:var(--panel-hover);
+  padding-left:22px;
+}
+.tool-row-icon{
+  font-size:1.35rem;
+  width:38px; height:38px;
+  flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:8px;
+  background:var(--bg-soft);
+}
+.tool-row-body{ flex:1; min-width:0; }
+.tool-row-title{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1rem;
+  color:var(--text);
+}
+.tool-row-desc{
+  color:var(--muted);
+  font-size:0.8rem;
+  margin-top:2px;
+}
+.tool-row-meta{
+  font-family:var(--font-mono);
+  font-size:0.68rem;
+  color:var(--row-accent, var(--accent));
+  white-space:nowrap;
+  flex-shrink:0;
+}
+@media (max-width:560px){
+  .tool-row-desc{ display:none; }
+}
+
+footer.site-footer{ margin-top:6px; }

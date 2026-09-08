@@ -1,0 +1,489 @@
+/* =========================================================================
+   L'ÉTABLI — feuille de style commune
+   Un seul fichier pour toutes les pages. Les couleurs "neutres" (fond,
+   texte, bordures...) sont partagées partout pour la cohérence visuelle.
+   Chaque page choisit UNE couleur d'accent parmi celles définies plus bas,
+   via `<body class="theme-xxx">`, pour garder son propre univers.
+   ========================================================================= */
+
+/* ---- Polices (auto-hébergées, licence SIL OFL, voir /fonts/LICENSE-*.txt) ---- */
+@font-face{
+  font-family:'Fraunces';
+  src:url('fonts/Fraunces.ttf') format('truetype');
+  font-weight:300 900;
+  font-style:normal;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:'Quicksand';
+  src:url('fonts/Quicksand.ttf') format('truetype');
+  font-weight:200 1000;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:'JetBrains Mono';
+  src:url('fonts/JetBrainsMono.ttf') format('truetype');
+  font-weight:100 800;
+  font-style:normal;
+  font-display:swap;
+}
+
+:root{
+  /* --- Neutres partagés par toutes les pages --- */
+  --bg: #171512;
+  --bg-soft: #1e1b17;
+  --panel: #24201b;
+  --panel-hover: #2c2721;
+  --border: #3b342c;
+  --text: #f4efe7;
+  --muted: #a79d90;
+
+  /* --- Palette d'accents disponibles (une page = une couleur dominante) ---
+     Toutes désaturées/adoucies pour rester cohérentes entre elles.       */
+  --green: #8fbf65;   /* émeraude */
+  --gold: #d4a85b;    /* or / miel */
+  --purple: #b68acb;  /* améthyste */
+  --blue: #73b7d6;    /* diamant */
+  --red: #d87568;     /* redstone */
+  --iron: #c4beaf;    /* fer / quartz — neutre, pour l'accueil */
+  --copper: #c98c5f;  /* cuivre oxydé */
+  --lapis: #6b83b0;   /* lapis-lazuli */
+  --netherite: #8f889a; /* netherite — gris-violet sombre */
+
+  /* --- Accent actif de la page (surchargé par .theme-xxx plus bas) --- */
+  --accent: var(--iron);
+  --accent-ink: #241c0e; /* texte sombre lisible sur un fond --accent */
+
+  /* --- Typo --- */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Quicksand', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Consolas, monospace;
+
+  /* --- Échelle d'espacement --- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.25);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+/* ---- Thèmes d'accent par page ---- */
+body.theme-etabli{ --accent: var(--iron); }
+body.theme-atlas{ --accent: var(--copper); }
+body.theme-grimoire{ --accent: var(--purple); }
+body.theme-carnet{ --accent: var(--green); }
+body.theme-inventaire{ --accent: var(--netherite); }
+body.theme-projets{ --accent: var(--gold); }
+/* Encore disponibles pour de prochaines pages : --copper, --lapis, --netherite */
+
+/* ========================================================================
+   RESET / BASE
+   ======================================================================== */
+*{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html{ background:var(--bg); }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-weight:400;
+  line-height:1.5;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+::selection{ background:var(--accent); color:var(--accent-ink); }
+a{ color:inherit; }
+button, input, select, textarea{ font-family:inherit; color:inherit; }
+button{ cursor:pointer; }
+input:focus, select:focus, textarea:focus, button:focus{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+}
+/* Les liens gardaient le contour de focus par defaut du navigateur meme
+   apres un clic (pas juste au clavier), ce qui donnait un gros rectangle
+   disgracieux. :focus-visible ne s'affiche que pour la navigation clavier. */
+a:focus{ outline:none; }
+a:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+  border-radius:var(--radius-sm);
+}
+
+h1, h2, h3, h4{
+  font-family:var(--font-display);
+  font-weight:600;
+  margin:0 0 var(--sp-2);
+  letter-spacing:0.1px;
+}
+h1{ font-size:2rem; }
+h2{ font-size:1.4rem; }
+h3{ font-size:1.1rem; }
+h4{ font-size:0.95rem; }
+p{ margin:0 0 var(--sp-3); color:var(--muted); }
+
+code, .mono{ font-family:var(--font-mono); }
+
+/* ========================================================================
+   MISE EN PAGE COMMUNE
+   ======================================================================== */
+
+/* --- Largeur de page unifiée sur TOUTES les pages --- */
+main{
+  max-width:1180px;
+  margin:0 auto;
+  padding:28px 20px 60px;
+}
+
+/* --- Mise en page à 2 colonnes (formulaire à gauche, contenu à droite),
+   utilisée par Atlas / Carnet / Inventaire / Projets --- */
+main.layout-2col{
+  display:grid;
+  grid-template-columns:340px 1fr;
+  gap:22px;
+  align-items:start;
+}
+main.layout-2col .col-left{ grid-column:1; }
+main.layout-2col .col-right{ grid-column:2; }
+main.layout-2col .col-full{ grid-column:1 / -1; }
+@media (max-width: 860px){
+  main.layout-2col{ grid-template-columns:1fr; }
+  main.layout-2col .col-left, main.layout-2col .col-right, main.layout-2col .col-full{ grid-column:1; }
+}
+
+/* ========================================================================
+   NAVIGATION (générée par nav.js dans #site-nav)
+   ======================================================================== */
+#site-nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  row-gap:6px;
+  gap:18px;
+  padding:12px 20px;
+  background:var(--bg-soft);
+  border-bottom:1px solid var(--border);
+  font-family:var(--font-mono);
+  font-size:0.8rem;
+}
+#site-nav a{
+  color:var(--muted);
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 10px;
+  border-radius:var(--radius-sm);
+  transition:color 0.15s ease, background 0.15s ease;
+}
+#site-nav a:hover{ color:var(--accent); background:var(--panel); }
+#site-nav a.current{ color:var(--text); font-weight:700; }
+#nav-quick-save{
+  color:var(--accent-ink);
+  background:var(--accent);
+  border:none;
+  font-family:var(--font-mono);
+  font-size:0.8rem;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 10px;
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+  margin-left:6px;
+}
+#nav-quick-save:hover{ filter:brightness(1.08); }
+#nav-quick-save-wrap{ display:flex; align-items:center; gap:8px; }
+#nav-save-status{
+  font-family:var(--font-mono);
+  font-size:0.74rem;
+  color:var(--green);
+  opacity:0;
+  max-width:0;
+  overflow:hidden;
+  white-space:nowrap;
+  transition:opacity 0.2s ease;
+}
+#nav-save-status.visible{ opacity:1; max-width:280px; }
+#nav-save-status.error{ color:var(--red); }
+@media (max-width:700px){
+  #nav-save-status.visible{ max-width:160px; white-space:normal; }
+}
+
+/* ========================================================================
+   EN-TÊTE DE PAGE (titre + sous-titre, sous la nav)
+   ======================================================================== */
+header{
+  padding:36px 24px 18px;
+  text-align:center;
+  border-bottom:1px solid var(--border);
+}
+header h1{
+  font-size:2.3rem;
+  margin:0 0 6px;
+  letter-spacing:0.5px;
+  color:var(--accent);
+}
+header p{
+  margin:0 auto;
+  color:var(--muted);
+  font-size:0.95rem;
+  max-width:600px;
+}
+
+/* ========================================================================
+   COMPOSANTS COMMUNS
+   ======================================================================== */
+
+/* --- Cartes / panneaux --- */
+.panel, .card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:var(--sp-5);
+}
+.panel:hover, .card:hover{ border-color:var(--border); }
+.panel h2, .card h2{
+  font-size:1.15rem;
+  margin:0 0 14px;
+  font-weight:700;
+}
+
+/* --- Boutons --- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:var(--sp-2);
+  border:none;
+  border-radius:var(--radius-sm);
+  padding:9px 16px;
+  font-size:0.85rem;
+  font-weight:700;
+  font-family:var(--font-body);
+  transition:filter 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.btn-primary{
+  background:var(--accent);
+  color:var(--accent-ink);
+}
+.btn-primary:hover{ filter:brightness(1.08); }
+.btn-ghost{
+  background:var(--panel-hover);
+  border:1px solid var(--border);
+  color:var(--text);
+}
+.btn-ghost:hover{ border-color:var(--accent); color:var(--accent); }
+.btn-danger{
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--muted);
+}
+.btn-danger:hover{ border-color:var(--red); color:var(--red); }
+.btn-small{
+  padding:5px 10px;
+  font-size:0.76rem;
+  border-radius:var(--radius-sm);
+  background:var(--panel-hover);
+  border:1px solid var(--border);
+  color:var(--muted);
+}
+.btn-small:hover{ color:var(--text); border-color:var(--accent); }
+
+/* --- Champs de formulaire --- */
+label{
+  display:block;
+  font-size:0.76rem;
+  color:var(--muted);
+  margin:var(--sp-3) 0 var(--sp-1);
+  font-weight:600;
+}
+label:first-child{ margin-top:0; }
+input[type="text"], input[type="number"], input[type="password"],
+input[type="date"], select, textarea{
+  width:100%;
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  color:var(--text);
+  padding:9px 12px;
+  border-radius:var(--radius-sm);
+  font-size:0.87rem;
+}
+textarea{ resize:vertical; min-height:70px; }
+
+/* --- Badges --- */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:3px 9px;
+  border-radius:20px;
+  font-size:0.7rem;
+  font-weight:700;
+  font-family:var(--font-mono);
+  border:1px solid var(--border);
+  color:var(--muted);
+}
+.badge-accent{ color:var(--accent); border-color:var(--accent); background:color-mix(in srgb, var(--accent) 15%, transparent); }
+.badge-green{ color:var(--green); border-color:var(--green); background:color-mix(in srgb, var(--green) 15%, transparent); }
+.badge-red{ color:var(--red); border-color:var(--red); background:color-mix(in srgb, var(--red) 15%, transparent); }
+
+/* --- Barres de progression --- */
+.progress-track{
+  height:8px;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:6px;
+  overflow:hidden;
+}
+.progress-fill{
+  height:100%;
+  background:var(--accent);
+  transition:width 0.3s ease;
+}
+
+/* --- Onglets (style "soulignement épuré", uniforme partout) --- */
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:22px;
+  flex-wrap:wrap;
+  border-bottom:1px solid var(--border);
+  margin-bottom:var(--sp-5);
+}
+.tab-btn{
+  background:none;
+  border:none;
+  border-radius:0;
+  color:var(--muted);
+  padding:10px 2px;
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:0.88rem;
+  border-bottom:2px solid transparent;
+  margin-bottom:-1px;
+}
+.tab-btn:hover{ color:var(--text); }
+.tab-btn.active{ color:var(--accent); border-bottom-color:var(--accent); }
+
+/* --- Toasts --- */
+.toast-wrap{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  z-index:60;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+@media (max-width:900px){ .toast-wrap{ left:16px; right:16px; bottom:16px; } }
+.toast{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-left:3px solid var(--green);
+  color:var(--text);
+  padding:11px 16px;
+  border-radius:var(--radius-sm);
+  font-size:0.83rem;
+  box-shadow:var(--shadow-md);
+  animation:toast-in 0.2s ease;
+}
+.toast.error{ border-left-color:var(--red); }
+@keyframes toast-in{
+  from{ opacity:0; transform:translateY(8px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+/* ========================================================================
+   ACTIONS GROUPÉES / BOUTONS ICÔNE (listes d'éléments)
+   ======================================================================== */
+.actions-row{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:16px;
+}
+.icon-btn{
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--muted);
+  padding:5px 8px;
+  font-size:0.72rem;
+  border-radius:var(--radius-sm);
+}
+.icon-btn:hover{ color:var(--text); border-color:var(--accent); }
+.icon-btn.danger:hover{ color:var(--red); border-color:var(--red); }
+
+/* --- État vide (liste sans contenu) --- */
+.empty-note{
+  color:var(--muted);
+  font-size:0.85rem;
+  text-align:center;
+  padding:20px 10px;
+  border:1px dashed var(--border);
+  border-radius:var(--radius);
+  margin-top:14px;
+}
+
+/* ========================================================================
+   BLOC "SAUVEGARDE" (télécharger / importer / sync GitHub) — commun aux 3 outils
+   ======================================================================== */
+.save-section h3{
+  font-family:var(--font-display);
+  font-size:0.95rem;
+  margin:0 0 10px;
+  color:var(--accent);
+}
+.file-label{
+  background:var(--panel-hover);
+  border:1px solid var(--border);
+  color:var(--text);
+  padding:8px 12px;
+  font-size:0.8rem;
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+  display:inline-block;
+  font-weight:600;
+}
+.file-label:hover{ border-color:var(--accent); color:var(--accent); }
+.msg-line{
+  font-size:0.75rem;
+  color:var(--green);
+  margin-top:6px;
+  min-height:1em;
+}
+.row2{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.gh-sync{
+  margin-top:16px;
+  padding-top:14px;
+  border-top:1px solid var(--border);
+}
+.gh-sync summary{
+  cursor:pointer;
+  font-weight:600;
+  font-size:0.85rem;
+  color:var(--muted);
+}
+.gh-sync summary:hover{ color:var(--text); }
+.gh-sync .row2{ margin-top:12px; }
+
+/* --- Footer --- */
+footer.site-footer{
+  text-align:center;
+  padding:24px 20px 10px;
+  color:var(--muted);
+  font-size:0.74rem;
+  font-family:var(--font-mono);
+}
