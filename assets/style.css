@@ -110,7 +110,13 @@ a{ color:inherit; text-decoration:none; }
 .tile-body li span:first-child{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .tile-body .mono{ font-family:var(--font-mono); font-size:0.68rem; }
 .tile-big-num{ font-family:var(--font-mono); font-weight:700; font-size:1.8rem; color:var(--tile-accent, var(--accent)); }
+.tile-big-num .unit{ font-size:0.9rem; color:var(--muted); font-weight:400; }
 .tile-editable-hint{ margin-top:auto; padding-top:6px; font-size:0.6rem; color:var(--muted); opacity:0.6; font-style:italic; }
+.tile-empty, .tile-offline{ font-style:italic; opacity:0.7; }
+.tile-offline{ color:var(--red); }
+.tile-body li .pct{ font-family:var(--font-mono); }
+.tile-progress-track{ height:5px; border-radius:3px; background:var(--bg-soft); overflow:hidden; margin-top:2px; }
+.tile-progress-fill{ height:100%; background:var(--tile-accent, var(--accent)); }
 
 .t1{ grid-column:1/4; grid-row:span 2; transform:rotate(-0.6deg); --tile-accent:var(--red); }
 .t2{ grid-column:4/6; grid-row:span 1; transform:rotate(0.5deg); --tile-accent:var(--gold); }
