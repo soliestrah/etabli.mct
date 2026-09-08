@@ -595,7 +595,7 @@
     const name = nameInput.value.trim();
     const type = typeSelect.value;
     if (!name){ flashInvalid(nameInput); nameInput.focus(); return; }
-    items.push({id: itemIdCounter++, name, type, enchants: [], prefOverrides: {}});
+    items.push({id: itemIdCounter++, name, type, enchants: [], prefOverrides: {}, durability: null});
     nameInput.value = '';
     nameInput.focus();
     renderAll();
@@ -710,6 +710,19 @@
         html += `<div class="warn-banner">⚠️ Incompatible : ${conflicts.map(c => ENCH[c.a].name + ' + ' + ENCH[c.b].name).join(' · ')}</div>`;
       }
 
+      if (isEditing){
+        html += `<div class="durability-row">
+          <label for="dur-${item.id}" style="margin:0;">Durabilité restante (%) — laisse vide si non suivie</label>
+          <input type="number" id="dur-${item.id}" min="0" max="100" placeholder="—" value="${item.durability != null ? item.durability : ''}" data-item-durability="${item.id}">
+        </div>`;
+      } else if (item.durability != null){
+        const tier = item.durability < 20 ? 'red' : (item.durability < 50 ? 'gold' : 'green');
+        html += `<div class="durability-row">
+          <div class="progress-track"><div class="progress-fill" style="width:${item.durability}%; background:var(--${tier});"></div></div>
+          <span class="durability-pct" style="color:var(--${tier});">${item.durability}%${tier === 'red' ? ' — à réparer' : ''}</span>
+        </div>`;
+      }
+
       html += `<div class="ench-tags">`;
       if (item.enchants.length === 0){
         html += `<span class="card-sub">Aucun enchantement noté.</span>`;
@@ -766,6 +779,17 @@
         if (item) item.name = input.value;
       });
       input.addEventListener('keydown', (e) => { if (e.key === 'Enter') input.blur(); });
+    });
+
+    list.querySelectorAll('[data-item-durability]').forEach(input => {
+      const itemId = Number(input.dataset.itemDurability);
+      input.addEventListener('change', () => {
+        const item = items.find(i => i.id === itemId);
+        if (!item) return;
+        if (input.value.trim() === ''){ item.durability = null; return; }
+        const v = Math.max(0, Math.min(100, parseInt(input.value, 10)));
+        item.durability = isNaN(v) ? null : v;
+      });
     });
 
     list.querySelectorAll('[data-item-type]').forEach(sel => {
