@@ -1,395 +1,154 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>l'établi</title>
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="assets/site.css">
-<link rel="stylesheet" href="assets/etabli.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Quicksand:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-etabli">
 
 <div id="site-nav" data-current="etabli"></div>
-<script src="assets/nav.js" defer></script>
+<script>
+(function(){
+  const PAGES = [
+    { id: 'etabli', label: "Établi", icon: '🪵', href: 'etabli.html' },
+    { id: 'atlas', label: 'Atlas', icon: '🗺️', href: 'atlas.html' },
+    { id: 'grimoire', label: 'Grimoire', icon: '📖', href: 'grimoire.html' },
+    { id: 'carnet', label: 'Carnet', icon: '📓', href: 'carnet.html' },
+    { id: 'inventaire', label: 'Inventaire', icon: '📦', href: 'inventaire.html' },
+    { id: 'projets', label: 'Projets', icon: '🧱', href: 'projets.html' },
+  ];
+  const container = document.getElementById('site-nav');
+  const current = container.dataset.current || '';
+  const nav = document.createElement('nav');
+  nav.id = 'site-nav';
+  PAGES.forEach(page => {
+    const a = document.createElement('a');
+    a.href = page.href;
+    if (page.id === current) a.classList.add('current');
+    a.innerHTML = `<span>${page.icon}</span><span>${page.label}</span>`;
+    nav.appendChild(a);
+  });
+  container.replaceWith(nav);
+})();
+</script>
 
-<header class="hero">
-  <div class="hero-board">
-    <div class="profile-parchment">
-      <div class="profile-frame">
-        <span class="frame-glow" aria-hidden="true"></span>
-        <img class="profile-skin" id="hero-skin" alt="Skin de N3SK3" width="56" height="56">
+<div class="layout">
+
+  <!-- ==================== COLONNE JOUEUR ==================== -->
+  <div class="col-player">
+    <div class="player-card">
+      <div class="player-skin-wrap">
+        <img class="player-skin" id="player-skin" alt="Skin de N3SK3">
       </div>
-      <div class="profile-body">
-        <div class="profile-name">N3SK3</div>
-        <div class="hero-server-status">
-          <span class="dot"></span>
-          <span>Serveur Aternos — connexion à venir</span>
-        </div>
-        <div class="profile-stats" id="profile-stats">
-          <div class="profile-stat-empty">Stats du monde pas encore chargées — dépose <code>stats-config.json</code> à la racine du site.</div>
-        </div>
+      <div class="player-name">N3SK3</div>
+      <div class="player-stats">
+        <div class="player-stat"><span class="l">Jouées</span><span class="n">125h58</span></div>
+        <div class="player-stat"><span class="l">Parcourus</span><span class="n">521 km</span></div>
+        <div class="player-stat"><span class="l">Mobs tués</span><span class="n">4 270</span></div>
+        <div class="player-stat"><span class="l">Morts</span><span class="n">22</span></div>
+        <div class="player-stat"><span class="l">Blocs minés</span><span class="n">82 925</span></div>
+        <div class="player-stat"><span class="l">Avancements</span><span class="n">42/48</span></div>
       </div>
     </div>
   </div>
-</header>
 
-<main>
+  <!-- ==================== COLONNE CENTRALE : TUILES ==================== -->
+  <div class="tiles">
 
-  <div class="board-intro">
-    <h2>Le panneau</h2>
-    <p>Ce qui bouge sur le serveur en ce moment, résumé en un coup d'œil.</p>
+    <!-- Pas de stat de jeu pour un "% d'avancement de construction" : à toi de mettre à jour ces 3 lignes -->
+    <div class="tile t1">
+      <div class="tile-head"><span class="ti">🧱</span><h3>Projets en cours</h3></div>
+      <div class="tile-body">
+        <ul>
+          <li><span>Réapprovisionner « foodie »</span><span>—</span></li>
+          <li><span>Ferme à totem</span><span>—</span></li>
+          <li><span>Extension de la base</span><span>—</span></li>
+        </ul>
+      </div>
+      <div class="tile-editable-hint">à jour manuellement — aucune stat de jeu ne suit un % de construction</div>
+    </div>
+
+    <div class="tile t2">
+      <div class="tile-head"><span class="ti">💎</span><h3>Ressources</h3></div>
+      <div class="tile-body"><div class="tile-big-num">69 <span style="font-size:0.9rem; color:var(--muted);">diamants</span></div></div>
+    </div>
+
+    <div class="tile t3">
+      <div class="tile-head"><span class="ti">📖</span><h3>Offres</h3></div>
+      <div class="tile-body"><div class="tile-big-num">4 135 <span style="font-size:0.9rem; color:var(--muted);">échanges</span></div></div>
+    </div>
+
+    <div class="tile t4">
+      <div class="tile-head"><span class="ti">🧳</span><h3>Shulker « foodie »</h3></div>
+      <div class="tile-body"><div class="tile-big-num">194 <span style="font-size:0.9rem; color:var(--muted);">items</span></div></div>
+    </div>
+
+    <!-- Notes perso : idem, pas de stat de jeu pour ça — remplis à ta sauce -->
+    <div class="tile t5">
+      <div class="tile-head"><span class="ti">📓</span><h3>Carnet</h3></div>
+      <div class="tile-body">
+        <ul>
+          <li><span>Refaire la ferme à blaze</span></li>
+          <li><span>Trouver un village de neige</span></li>
+          <li><span>Dupliquer les totems</span></li>
+        </ul>
+      </div>
+      <div class="tile-editable-hint">notes perso — à éditer à la main</div>
+    </div>
+
+    <div class="tile t6">
+      <div class="tile-head"><span class="ti">🎖️</span><h3>Avancements manquants</h3></div>
+      <div class="tile-body">
+        <ul>
+          <li><span>Parcourir tous les biomes</span></li>
+          <li><span>Vaincre tous les mobs hostiles</span></li>
+          <li><span>Explorer tout le Nether</span></li>
+          <li><span>Manger tous les aliments</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tile t7">
+      <div class="tile-head"><span class="ti">🗺️</span><h3>Atlas — à creuser</h3></div>
+      <div class="tile-body">
+        <ul>
+          <li><span>Position actuelle</span><span class="mono">268 / 66 / 39</span></li>
+          <li><span>Dernière mort</span><span class="mono">374 / 41 / 102</span></li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 
-  <div class="widgets-grid">
-
-    <div class="widget" id="widget-carnet">
-      <div class="widget-head">
-        <h3>📓 Carnet</h3>
-        <a href="carnet.html">Ouvrir</a>
+  <!-- ==================== COLONNE CHAT / LOGS ==================== -->
+  <div class="col-chat">
+    <div class="chat-panel">
+      <div class="chat-head"><span class="dot"></span>Chat du serveur</div>
+      <div class="chat-body" id="chat-body">
+        <div class="chat-line join"><span class="t">18:02</span><span class="u">N3SK3</span> a rejoint la partie</div>
+        <div class="chat-line"><span class="t">18:03</span><span class="u">N3SK3</span> : quelqu'un a du fer en trop ?</div>
+        <div class="chat-line join"><span class="t">18:05</span><span class="u">WhiskySec</span> a rejoint la partie</div>
+        <div class="chat-line"><span class="t">18:05</span><span class="u">WhiskySec</span> : yo</div>
+        <div class="chat-line achieve"><span class="t">18:11</span>N3SK3 a obtenu l'avancement [Chevaucher un strider]</div>
+        <div class="chat-line death"><span class="t">18:22</span>WhiskySec est mort, écrasé par un bloc qui tombe</div>
+        <div class="chat-line"><span class="t">18:23</span><span class="u">WhiskySec</span> : NOOOON mes items</div>
+        <div class="chat-line"><span class="t">18:24</span><span class="u">N3SK3</span> : mdrrr j'arrive</div>
+        <div class="chat-line leave"><span class="t">19:40</span><span class="u">WhiskySec</span> a quitté la partie</div>
       </div>
-      <ul class="widget-list" id="carnet-list"></ul>
+      <div class="chat-foot">à brancher sur les logs du serveur</div>
     </div>
-
-    <div class="widget" id="widget-atlas">
-      <div class="widget-head">
-        <h3>🗺️ Atlas</h3>
-        <a href="atlas.html">Ouvrir</a>
-      </div>
-      <ul class="widget-list" id="atlas-list"></ul>
-    </div>
-
-    <div class="widget" id="widget-projets">
-      <div class="widget-head">
-        <h3>🧱 Projets en cours</h3>
-        <a href="projets.html">Ouvrir</a>
-      </div>
-      <div class="widget-progress-row" id="projets-list"></div>
-    </div>
-
-    <div class="widget" id="widget-inventaire">
-      <div class="widget-head">
-        <h3>📦 Inventaire</h3>
-        <a href="inventaire.html">Ouvrir</a>
-      </div>
-      <div class="widget-stat-row" id="inventaire-stats"></div>
-    </div>
-
-    <div class="widget" id="widget-conteneurs">
-      <div class="widget-head">
-        <h3>🧳 Shulkers & Enderchests</h3>
-        <a href="inventaire.html">Voir l'inventaire</a>
-      </div>
-      <ul class="widget-list" id="conteneurs-list"></ul>
-    </div>
-
   </div>
 
-  <section class="gear-section">
-    <div class="widget-head">
-      <h3>📖 Ton stuff</h3>
-      <a href="grimoire.html">Ouvrir le Grimoire</a>
-    </div>
-    <p>Survole (ou touche) une pièce d'équipement pour voir ses enchantements.</p>
-    <div class="gear-grid" id="gear-grid"></div>
-    <div class="gear-detail" id="gear-detail"></div>
-  </section>
-
-  <section class="tools-section">
-    <h2>Tous les outils</h2>
-    <p>Chaque outil garde ses propres notes ; ils partagent juste le même établi.</p>
-    <div class="tool-index">
-
-      <a class="tool-row" href="atlas.html" style="--row-accent:var(--blue);">
-        <span class="tool-row-icon">🗺️</span>
-        <span class="tool-row-body">
-          <span class="tool-row-title">Atlas</span>
-          <span class="tool-row-desc">Points de destination, hub, direction et distance à creuser.</span>
-        </span>
-        <span class="tool-row-meta">Ouvrir</span>
-      </a>
-
-      <a class="tool-row" href="grimoire.html" style="--row-accent:var(--purple);">
-        <span class="tool-row-icon">📖</span>
-        <span class="tool-row-body">
-          <span class="tool-row-title">Grimoire</span>
-          <span class="tool-row-desc">Enchantements, offres des villageois, build idéal.</span>
-        </span>
-        <span class="tool-row-meta">Ouvrir</span>
-      </a>
-
-      <a class="tool-row" href="carnet.html" style="--row-accent:var(--green);">
-        <span class="tool-row-icon">📓</span>
-        <span class="tool-row-body">
-          <span class="tool-row-title">Carnet</span>
-          <span class="tool-row-desc">Projets, idées, rappels, à cocher au fur et à mesure.</span>
-        </span>
-        <span class="tool-row-meta">Ouvrir</span>
-      </a>
-
-      <a class="tool-row" href="inventaire.html" style="--row-accent:var(--red);">
-        <span class="tool-row-icon">📦</span>
-        <span class="tool-row-body">
-          <span class="tool-row-title">Inventaire</span>
-          <span class="tool-row-desc">L'état des lieux de ton stock, hors du jeu.</span>
-        </span>
-        <span class="tool-row-meta">Ouvrir</span>
-      </a>
-
-      <a class="tool-row" href="projets.html" style="--row-accent:var(--gold);">
-        <span class="tool-row-icon">🧱</span>
-        <span class="tool-row-body">
-          <span class="tool-row-title">Projets</span>
-          <span class="tool-row-desc">Ce qu'il te manque, calculé depuis ton inventaire.</span>
-        </span>
-        <span class="tool-row-meta">Ouvrir</span>
-      </a>
-
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">l'établi · seed : 443175491261601422</footer>
+</div>
 
 <script>
   const USERNAME = 'N3SK3';
-  document.getElementById('hero-skin').src = `https://mc-heads.net/avatar/${encodeURIComponent(USERNAME)}/128`;
-
-  // ===================== CARTE PROFIL : STATS DU MONDE =====================
-  fetch('stats-config.json', { cache: 'no-store' })
-    .then(r => r.ok ? r.json() : Promise.reject())
-    .then(data => {
-      const players = Array.isArray(data.players) ? data.players : [];
-      const p = players.find(pl => (pl.name || '').toLowerCase() === USERNAME.toLowerCase()) || players[0];
-      const wrap = document.getElementById('profile-stats');
-      if (!p){
-        wrap.innerHTML = '<div class="profile-stat-empty">Aucune donnée de joueur dans stats-config.json.</div>';
-        return;
-      }
-      const stat = (n, l) => `<div class="profile-stat"><span class="n">${n}</span><span class="l">${l}</span></div>`;
-      wrap.innerHTML = [
-        p.playTimeHours != null ? stat(Math.round(p.playTimeHours) + 'h', 'jouées') : '',
-        p.distanceTotalKm != null ? stat(p.distanceTotalKm.toLocaleString('fr-FR', {maximumFractionDigits:1}) + ' km', 'parcourus') : '',
-        p.mobKills != null ? stat(p.mobKills.toLocaleString('fr-FR'), 'mobs tués') : '',
-        p.deaths != null ? stat(p.deaths.toLocaleString('fr-FR'), 'morts') : '',
-        p.blocksMined != null ? stat(p.blocksMined.toLocaleString('fr-FR'), 'blocs minés') : '',
-        (p.advancementsDone != null && p.advancementsTotal) ? stat(Math.round(p.advancementsDone / p.advancementsTotal * 100) + '%', 'progrès') : '',
-      ].join('');
-    })
-    .catch(() => {
-      document.getElementById('profile-stats').innerHTML = '<div class="profile-stat-empty">Stats du monde pas encore chargées — dépose <code>stats-config.json</code> à la racine du site.</div>';
-    });
-
-  function escapeHtml(str){
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
-  }
-
-  // ===================== WIDGET : CARNET =====================
-  fetch('carnet-config.json', { cache: 'no-store' })
-    .then(r => r.ok ? r.json() : Promise.reject())
-    .then(data => {
-      const entries = Array.isArray(data.entries) ? data.entries : [];
-      const todo = entries.filter(e => !e.done).slice(0, 5);
-      const list = document.getElementById('carnet-list');
-      if (todo.length === 0){
-        list.innerHTML = '<li class="widget-empty">Rien en attente — tout est fait 🎉</li>';
-        return;
-      }
-      list.innerHTML = todo.map(e => `
-        <li>
-          <span>${escapeHtml(e.text.split('\n')[0])}</span>
-          ${e.tag ? `<span class="tag">${escapeHtml(e.tag)}</span>` : ''}
-        </li>
-      `).join('');
-    })
-    .catch(() => {
-      document.getElementById('carnet-list').innerHTML = '<li class="widget-offline">Carnet non trouvé.</li>';
-    });
-
-  // ===================== WIDGET : ATLAS =====================
-  fetch('atlas-config.json', { cache: 'no-store' })
-    .then(r => r.ok ? r.json() : Promise.reject())
-    .then(data => {
-      const points = Array.isArray(data) ? data : [];
-      const todo = points.filter(p => !p.isHub && !p.built).slice(0, 5);
-      const list = document.getElementById('atlas-list');
-      if (points.length === 0){
-        list.innerHTML = '<li class="widget-empty">Aucun point pour l\'instant.</li>';
-        return;
-      }
-      if (todo.length === 0){
-        list.innerHTML = '<li class="widget-empty">Tous les tunnels sont creusés 🎉</li>';
-        return;
-      }
-      list.innerHTML = todo.map(p => `
-        <li>
-          <span>${escapeHtml(p.name)}</span>
-          <span class="tag">${p.coordType === 'nether' ? 'Nether' : 'Overworld'}</span>
-        </li>
-      `).join('');
-    })
-    .catch(() => {
-      document.getElementById('atlas-list').innerHTML = '<li class="widget-offline">Atlas non trouvé.</li>';
-    });
-
-  // ===================== WIDGET : PROJETS (+ Inventaire pour le calcul) =====================
-  Promise.all([
-    fetch('projets-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : { projects: [] }).catch(() => ({ projects: [] })),
-    fetch('inventaire-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : { resources: [] }).catch(() => ({ resources: [] })),
-  ]).then(([projData, invData]) => {
-    const stock = {};
-    (invData.resources || []).forEach(r => {
-      stock[r.name.toLowerCase()] = (r.stacks || []).reduce((s, st) => s + st.quantity, 0);
-    });
-    const projects = Array.isArray(projData.projects) ? projData.projects : [];
-    const inProgress = projects.filter(p => p.status === 'inprogress');
-    const wrap = document.getElementById('projets-list');
-
-    if (projects.length === 0){
-      wrap.innerHTML = '<div class="widget-empty">Aucun projet pour l\'instant.</div>';
-      return;
-    }
-    if (inProgress.length === 0){
-      wrap.innerHTML = `<div class="widget-empty">Aucun projet en cours (${projects.filter(p=>p.status==='todo').length} à faire).</div>`;
-      return;
-    }
-    wrap.innerHTML = inProgress.slice(0, 4).map(p => {
-      let pct = 100;
-      if (p.needs && p.needs.length){
-        let needed = 0, have = 0;
-        p.needs.forEach(n => {
-          needed += n.quantity;
-          have += Math.min(stock[n.resourceName.toLowerCase()] || 0, n.quantity);
-        });
-        pct = needed ? Math.round(have / needed * 100) : 100;
-      }
-      return `
-        <div class="widget-progress-item">
-          <div class="top"><span>${escapeHtml(p.name)}</span><span class="pct">${pct}%</span></div>
-          <div class="progress-track"><div class="progress-fill" style="width:${pct}%;"></div></div>
-        </div>
-      `;
-    }).join('');
-  });
-
-  // ===================== WIDGET : INVENTAIRE =====================
-  fetch('inventaire-config.json', { cache: 'no-store' })
-    .then(r => r.ok ? r.json() : Promise.reject())
-    .then(data => {
-      const resources = Array.isArray(data.resources) ? data.resources : [];
-      const totalQty = res => (res.stacks || []).reduce((s, st) => s + st.quantity, 0);
-      const totalItems = resources.reduce((s, r) => s + totalQty(r), 0);
-      const under = resources.filter(r => r.targetQuantity && totalQty(r) < r.targetQuantity).length;
-      document.getElementById('inventaire-stats').innerHTML = `
-        <div class="widget-stat"><div class="n">${resources.length}</div><div class="l">ressources</div></div>
-        <div class="widget-stat"><div class="n">${totalItems.toLocaleString('fr-FR')}</div><div class="l">items au total</div></div>
-        <div class="widget-stat"><div class="n">${under}</div><div class="l">sous l'objectif</div></div>
-      `;
-    })
-    .catch(() => {
-      document.getElementById('inventaire-stats').innerHTML = '<div class="widget-offline">Inventaire non trouvé.</div>';
-    });
-
-  // ===================== WIDGET : SHULKERS & ENDERCHESTS =====================
-  fetch('conteneurs-config.json', { cache: 'no-store' })
-    .then(r => r.ok ? r.json() : Promise.reject())
-    .then(data => {
-      const containers = Array.isArray(data.containers) ? data.containers : [];
-      const list = document.getElementById('conteneurs-list');
-      if (containers.length === 0){
-        list.innerHTML = '<li class="widget-empty">Aucune shulker box ou enderchest suivie pour l\'instant.</li>';
-        return;
-      }
-      list.innerHTML = containers.slice(0, 6).map(c => {
-        const label = c.name ? `« ${c.name} »` : `${c.x}, ${c.y}, ${c.z}`;
-        const zonePart = c.zone ? ` (${c.zone})` : '';
-        const kind = c.type.includes('shulker') ? 'Shulker' : 'Enderchest';
-        return `
-          <li>
-            <span>${escapeHtml(kind)} ${escapeHtml(label)}${escapeHtml(zonePart)}</span>
-            <span class="tag">${c.total.toLocaleString('fr-FR')} items${c.dimension ? ' · ' + escapeHtml(c.dimension) : ''}</span>
-          </li>
-        `;
-      }).join('');
-    })
-    .catch(() => {
-      document.getElementById('conteneurs-list').innerHTML = '<li class="widget-offline">conteneurs-config.json non trouvé.</li>';
-    });
-
-  // ===================== GRILLE D'ÉQUIPEMENT (Grimoire) =====================
-  const ENCH_NAMES = {
-    protection:'Protection', fire_protection:'Feu', blast_protection:'Explosions', projectile_protection:'Projectiles',
-    feather_falling:'Chute amortie', respiration:'Respiration', aqua_affinity:'Affinité aquatique', thorns:'Épines',
-    depth_strider:'Agilité aquatique', frost_walker:'Semelles givrantes', curse_binding:'Malédiction du lien',
-    soul_speed:'Vitesse des âmes', swift_sneak:'Furtivité rapide',
-    sharpness:'Tranchant', smite:'Châtiment', bane:'Fléau arthropodes', knockback:'Recul', fire_aspect:'Aura de feu',
-    looting:'Butin', sweeping:'Fauchage',
-    efficiency:'Efficacité', silk_touch:'Toucher de soie', fortune:'Fortune',
-    power:'Puissance', punch:'Frappe', flame:'Flamme', infinity:'Infinité',
-    luck_of_sea:'Chance marine', lure:'Appât',
-    loyalty:'Fidélité', impaling:'Empalement', riptide:'Fulgurance', channeling:'Canalisation',
-    multishot:'Tir multiple', quick_charge:'Charge rapide', piercing:'Perforation',
-    density:'Densité', breach:'Brèche', wind_burst:'Rafale',
-    unbreaking:'Solidité', mending:'Raccommodage', curse_vanishing:'Malédiction de disparition',
-  };
-  const SLOTS = [
-    { type: 'helmet', icon: '🪖' }, { type: 'chestplate', icon: '🥋' },
-    { type: 'leggings', icon: '👖' }, { type: 'boots', icon: '🥾' }, { type: 'elytra', icon: '🪽' },
-    { type: 'sword', icon: '⚔️' }, { type: 'axe', icon: '🪓' }, { type: 'pickaxe', icon: '⛏️' },
-    { type: 'shovel', icon: '🥄' }, { type: 'hoe', icon: '🌾' }, { type: 'bow', icon: '🏹' },
-    { type: 'crossbow', icon: '🎯' }, { type: 'trident', icon: '🔱' }, { type: 'mace', icon: '🔨' },
-    { type: 'shears', icon: '✂️' }, { type: 'fishing_rod', icon: '🎣' },
-  ];
-
-  fetch('grimoire-config.json', { cache: 'no-store' })
-    .then(r => r.ok ? r.json() : Promise.reject())
-    .then(data => {
-      const items = Array.isArray(data.items) ? data.items : [];
-      const grid = document.getElementById('gear-grid');
-      const detail = document.getElementById('gear-detail');
-
-      grid.innerHTML = SLOTS.map(slot => {
-        const matching = items.filter(it => it.type === slot.type);
-        const empty = matching.length === 0;
-        return `
-          <div class="gear-slot ${empty ? 'empty' : ''}" data-slot="${slot.type}" title="${slot.type}">
-            ${slot.icon}
-            ${matching.length > 1 ? `<span class="count">×${matching.length}</span>` : ''}
-          </div>
-        `;
-      }).join('');
-
-      grid.querySelectorAll('.gear-slot:not(.empty)').forEach(el => {
-        el.addEventListener('click', () => {
-          const alreadyActive = el.classList.contains('active');
-          grid.querySelectorAll('.gear-slot').forEach(s => s.classList.remove('active'));
-          if (alreadyActive){
-            detail.classList.remove('show');
-            return;
-          }
-          el.classList.add('active');
-          const type = el.dataset.slot;
-          const matching = items.filter(it => it.type === type);
-          detail.innerHTML = matching.map(it => `
-            <div class="gear-detail-item">
-              <div class="gear-detail-name">${escapeHtml(it.name)}</div>
-              <div class="gear-detail-enchants">${
-                (it.enchants || []).map(e => `${ENCH_NAMES[e.id] || e.id} ${e.level}`).join(' · ') || 'Aucun enchantement'
-              }</div>
-            </div>
-          `).join('');
-          detail.classList.add('show');
-        });
-        el.addEventListener('mouseenter', () => el.click());
-      });
-    })
-    .catch(() => {
-      document.getElementById('gear-grid').innerHTML = '<div class="widget-offline">Grimoire non trouvé.</div>';
-    });
+  // rendu "body" = skin entier (corps complet), pas juste la tête
+  document.getElementById('player-skin').src = `https://mc-heads.net/body/${encodeURIComponent(USERNAME)}/170`;
 </script>
 </body>
 </html>
