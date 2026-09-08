@@ -54,11 +54,89 @@
 
   <!-- ============ VIEW: OVERWORLD ============ -->
   <section class="view" id="view-overworld">
-    <div class="dim-placeholder">
-      <span class="ti">🌍</span>
-      <h3>Carte de l'Overworld — à venir</h3>
-      <p>Prochaine étape : placer les points d'intérêt sur une carte, et y relier les coffres retrouvés dans l'inventaire.</p>
-    </div>
+  <div class="nether-grid">
+    <section class="panel col-left">
+      <h2>Carte</h2>
+
+      <div id="ow-no-image" class="empty-note">
+        Aucune image de carte importée. Importe une capture de ta carte (Xaero's Map, capture d'écran...) pour commencer.
+        <div class="actions-row" style="margin-top:12px;">
+          <label class="file-label" for="ow-image-input">Importer une image</label>
+        </div>
+      </div>
+      <input type="file" id="ow-image-input" accept="image/*" style="display:none;">
+
+      <div id="ow-calibration" style="display:none;">
+        <h3>Étalonnage</h3>
+        <p class="hint">Donne les coordonnées réelles de 2 endroits que tu reconnais sur la carte (ex : ton spawn, ta base), puis clique sur la carte au bon endroit pour chacun. Ça permet de replacer n'importe quel point ensuite juste avec ses coordonnées X/Z.</p>
+
+        <div class="ow-ref-row" data-ref="1">
+          <div class="row3">
+            <div><label for="ow-ref1-name">Nom</label><input type="text" id="ow-ref1-name" placeholder="Spawn"></div>
+            <div><label for="ow-ref1-x">X</label><input type="number" id="ow-ref1-x"></div>
+            <div><label for="ow-ref1-z">Z</label><input type="number" id="ow-ref1-z"></div>
+          </div>
+          <button type="button" class="btn btn-ghost ow-ref-place" data-ref="1">📍 Cliquer sur la carte pour ce point</button>
+          <span class="ow-ref-status" id="ow-ref1-status"></span>
+        </div>
+
+        <div class="ow-ref-row" data-ref="2">
+          <div class="row3">
+            <div><label for="ow-ref2-name">Nom</label><input type="text" id="ow-ref2-name" placeholder="Base"></div>
+            <div><label for="ow-ref2-x">X</label><input type="number" id="ow-ref2-x"></div>
+            <div><label for="ow-ref2-z">Z</label><input type="number" id="ow-ref2-z"></div>
+          </div>
+          <button type="button" class="btn btn-ghost ow-ref-place" data-ref="2">📍 Cliquer sur la carte pour ce point</button>
+          <span class="ow-ref-status" id="ow-ref2-status"></span>
+        </div>
+
+        <div class="msg-line" id="ow-calib-msg"></div>
+      </div>
+
+      <div id="ow-points-panel" style="display:none;">
+        <h3>Ajouter un point</h3>
+        <form id="ow-point-form">
+          <label for="ow-p-name">Nom</label>
+          <input type="text" id="ow-p-name" placeholder=" " required>
+          <div class="row3">
+            <div><label for="ow-p-x">X</label><input type="number" id="ow-p-x" required></div>
+            <div><label for="ow-p-z">Z</label><input type="number" id="ow-p-z" required></div>
+            <div><label for="ow-p-y">Y (optionnel)</label><input type="number" id="ow-p-y"></div>
+          </div>
+          <button type="submit" class="btn btn-primary">Placer le point</button>
+        </form>
+
+        <ul class="points-list" id="ow-points-list"></ul>
+        <div class="empty-note" id="ow-points-empty">Aucun point pour l'instant.</div>
+      </div>
+
+      <div class="actions-row" id="ow-reset-row" style="display:none;">
+        <button type="button" class="btn btn-ghost" id="ow-btn-reimage">Changer d'image</button>
+        <button type="button" class="btn btn-ghost" id="ow-btn-recalibrate">Ré-étalonner</button>
+      </div>
+    </section>
+
+    <section class="panel col-right">
+      <h2>Plan</h2>
+      <div class="ow-map-wrap" id="ow-map-wrap">
+        <div class="ow-map-empty" id="ow-map-empty">La carte s'affichera ici une fois l'image importée.</div>
+        <img id="ow-map-img" alt="Carte Overworld" style="display:none;">
+        <div class="ow-map-pins" id="ow-map-pins"></div>
+      </div>
+      <div class="hint" id="ow-map-hint" style="display:none;">Clique sur la carte pour placer le point de repère demandé.</div>
+    </section>
+
+    <section class="panel plain save-section col-full">
+      <h3 style="margin-top:0;">Sauvegarde</h3>
+      <div class="actions-row">
+        <button class="btn btn-ghost" id="ow-btn-download">Télécharger (.json)</button>
+        <label class="file-label" for="ow-file-import">Importer un fichier</label>
+        <input type="file" id="ow-file-import" accept="application/json" style="display:none;">
+      </div>
+      <div class="msg-line" id="ow-save-msg"></div>
+      <div class="hint">L'image de la carte est incluse dans ce fichier de sauvegarde -- il peut être un peu lourd, c'est normal.</div>
+    </section>
+  </div>
   </section>
 
   <!-- ============ VIEW: NETHER ============ -->
@@ -988,6 +1066,269 @@
     div.textContent = str;
     return div.innerHTML;
   }
+
+  // ===================== OVERWORLD : carte-image + étalonnage + points =====================
+  let ow = { image: null, ref: [null, null], points: [] };
+  let owIdCounter = 1;
+  let owArmedRef = null; // 1 ou 2 pendant qu'on attend un clic sur la carte
+
+  const owEl = {
+    noImage: document.getElementById('ow-no-image'),
+    imageInput: document.getElementById('ow-image-input'),
+    calibration: document.getElementById('ow-calibration'),
+    calibMsg: document.getElementById('ow-calib-msg'),
+    pointsPanel: document.getElementById('ow-points-panel'),
+    pointForm: document.getElementById('ow-point-form'),
+    pointsList: document.getElementById('ow-points-list'),
+    pointsEmpty: document.getElementById('ow-points-empty'),
+    resetRow: document.getElementById('ow-reset-row'),
+    mapWrap: document.getElementById('ow-map-wrap'),
+    mapEmpty: document.getElementById('ow-map-empty'),
+    mapImg: document.getElementById('ow-map-img'),
+    mapPins: document.getElementById('ow-map-pins'),
+    mapHint: document.getElementById('ow-map-hint'),
+    saveMsg: document.getElementById('ow-save-msg'),
+  };
+
+  function owShowSaveMsg(msg){
+    owEl.saveMsg.textContent = msg;
+    setTimeout(() => { owEl.saveMsg.textContent = ''; }, 4000);
+  }
+
+  function owHasTransform(){
+    return ow.ref[0] && ow.ref[1];
+  }
+  function owTransform(){
+    const [r1, r2] = ow.ref;
+    if (!r1 || !r2) return null;
+    const dxReal = r2.x - r1.x, dzReal = r2.z - r1.z;
+    if (dxReal === 0 || dzReal === 0) return null; // pas de division par zéro
+    const scaleX = (r2.px - r1.px) / dxReal;
+    const scaleZ = (r2.py - r1.py) / dzReal;
+    return {
+      scaleX, scaleZ,
+      offX: r1.px - r1.x * scaleX,
+      offZ: r1.py - r1.z * scaleZ,
+    };
+  }
+  function owRealToPct(x, z){
+    const t = owTransform();
+    if (!t) return null;
+    return { px: t.offX + x * t.scaleX, py: t.offZ + z * t.scaleZ };
+  }
+
+  function owRefreshStage(){
+    if (!ow.image){
+      owEl.noImage.style.display = 'block';
+      owEl.calibration.style.display = 'none';
+      owEl.pointsPanel.style.display = 'none';
+      owEl.resetRow.style.display = 'none';
+      owEl.mapEmpty.style.display = 'flex';
+      owEl.mapImg.style.display = 'none';
+      return;
+    }
+    owEl.noImage.style.display = 'none';
+    owEl.mapEmpty.style.display = 'none';
+    owEl.mapImg.style.display = 'block';
+    owEl.mapImg.src = ow.image;
+    owEl.resetRow.style.display = 'flex';
+
+    if (owHasTransform()){
+      owEl.calibration.style.display = 'none';
+      owEl.pointsPanel.style.display = 'block';
+    } else {
+      owEl.calibration.style.display = 'block';
+      owEl.pointsPanel.style.display = 'none';
+    }
+  }
+
+  function owUpdateRefStatus(idx){
+    const r = ow.ref[idx - 1];
+    const statusEl = document.getElementById(`ow-ref${idx}-status`);
+    const btn = document.querySelector(`.ow-ref-place[data-ref="${idx}"]`);
+    if (r){
+      statusEl.textContent = '✓ placé sur la carte';
+      btn.textContent = '📍 Re-cliquer sur la carte pour ce point';
+    } else {
+      statusEl.textContent = '';
+      btn.textContent = '📍 Cliquer sur la carte pour ce point';
+    }
+  }
+
+  document.querySelectorAll('.ow-ref-place').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = Number(btn.dataset.ref);
+      const xInput = document.getElementById(`ow-ref${idx}-x`);
+      const zInput = document.getElementById(`ow-ref${idx}-z`);
+      if (xInput.value === '' || zInput.value === ''){
+        owEl.calibMsg.textContent = 'Renseigne d\'abord les coordonnées X et Z de ce point.';
+        return;
+      }
+      owEl.calibMsg.textContent = '';
+      owArmedRef = idx;
+      owEl.mapHint.style.display = 'block';
+      document.querySelectorAll('.ow-ref-place').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  owEl.mapImg.addEventListener('click', (e) => {
+    if (!owArmedRef) return;
+    const rect = owEl.mapImg.getBoundingClientRect();
+    const pxPct = ((e.clientX - rect.left) / rect.width) * 100;
+    const pyPct = ((e.clientY - rect.top) / rect.height) * 100;
+    const idx = owArmedRef;
+    const name = document.getElementById(`ow-ref${idx}-name`).value.trim() || `Repère ${idx}`;
+    const x = Number(document.getElementById(`ow-ref${idx}-x`).value);
+    const z = Number(document.getElementById(`ow-ref${idx}-z`).value);
+    ow.ref[idx - 1] = { name, x, z, px: pxPct, py: pyPct };
+    owUpdateRefStatus(idx);
+    owArmedRef = null;
+    owEl.mapHint.style.display = 'none';
+    document.querySelectorAll('.ow-ref-place').forEach(b => b.classList.remove('active'));
+    owRenderPins();
+    if (owHasTransform()){
+      // recalcule la position écran de tous les points existants avec le nouvel étalonnage
+      ow.points.forEach(p => {
+        const pos = owRealToPct(p.x, p.z);
+        if (pos){ p.px = pos.px; p.py = pos.py; }
+      });
+      owRefreshStage();
+      owRenderPins();
+      owRenderPointsList();
+    }
+  });
+
+  owEl.pointForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('ow-p-name').value.trim();
+    const x = Number(document.getElementById('ow-p-x').value);
+    const z = Number(document.getElementById('ow-p-z').value);
+    const yRaw = document.getElementById('ow-p-y').value;
+    const y = yRaw === '' ? null : Number(yRaw);
+    const pos = owRealToPct(x, z);
+    if (!pos) return;
+    ow.points.push({ id: owIdCounter++, name, x, z, y, px: pos.px, py: pos.py });
+    owEl.pointForm.reset();
+    owRenderPins();
+    owRenderPointsList();
+  });
+
+  function owRenderPins(){
+    owEl.mapPins.innerHTML = '';
+    ow.ref.forEach((r, i) => {
+      if (!r) return;
+      const pin = document.createElement('div');
+      pin.className = 'ow-pin ow-pin-ref';
+      pin.style.left = r.px + '%';
+      pin.style.top = r.py + '%';
+      pin.title = `${r.name} (repère ${i + 1})`;
+      owEl.mapPins.appendChild(pin);
+    });
+    ow.points.forEach(p => {
+      const pin = document.createElement('div');
+      pin.className = 'ow-pin';
+      pin.style.left = p.px + '%';
+      pin.style.top = p.py + '%';
+      pin.title = `${p.name} (X ${p.x}, Z ${p.z})`;
+      owEl.mapPins.appendChild(pin);
+    });
+  }
+
+  function owRenderPointsList(){
+    owEl.pointsList.innerHTML = '';
+    owEl.pointsEmpty.style.display = ow.points.length === 0 ? 'block' : 'none';
+    ow.points.forEach(p => {
+      const li = document.createElement('li');
+      li.className = 'point-item';
+      li.innerHTML = `
+        <div class="point-main">
+          <div class="point-name">${escapeHtml(p.name)}</div>
+          <div class="point-coords">Overworld · X ${p.x}, Z ${p.z}${p.y !== null && p.y !== undefined ? ', Y ' + p.y : ''}</div>
+        </div>
+        <div class="point-actions">
+          <button type="button" class="btn btn-ghost btn-small" data-del="${p.id}">Suppr.</button>
+        </div>
+      `;
+      owEl.pointsList.appendChild(li);
+    });
+    owEl.pointsList.querySelectorAll('[data-del]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        ow.points = ow.points.filter(p => p.id !== Number(btn.dataset.del));
+        owRenderPins();
+        owRenderPointsList();
+      });
+    });
+  }
+
+  owEl.imageInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      ow.image = ev.target.result;
+      ow.ref = [null, null];
+      ow.points = [];
+      owUpdateRefStatus(1);
+      owUpdateRefStatus(2);
+      owRefreshStage();
+      owRenderPins();
+      owRenderPointsList();
+    };
+    reader.readAsDataURL(file);
+    e.target.value = '';
+  });
+
+  document.getElementById('ow-btn-reimage').addEventListener('click', () => {
+    if (!confirm('Remplacer la carte actuelle ? L\'étalonnage et les points seront à refaire.')) return;
+    ow.image = null; ow.ref = [null, null]; ow.points = [];
+    owRefreshStage(); owRenderPins(); owRenderPointsList();
+  });
+  document.getElementById('ow-btn-recalibrate').addEventListener('click', () => {
+    ow.ref = [null, null];
+    owUpdateRefStatus(1); owUpdateRefStatus(2);
+    owRefreshStage();
+  });
+
+  document.getElementById('ow-btn-download').addEventListener('click', () => {
+    if (!ow.image){ owShowSaveMsg('Importe d\'abord une carte.'); return; }
+    const blob = new Blob([JSON.stringify(ow, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'atlas-overworld-config.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    owShowSaveMsg('Fichier téléchargé (atlas-overworld-config.json).');
+  });
+
+  function owLoadFromJSON(text){
+    const data = JSON.parse(text);
+    if (!data || typeof data !== 'object' || !data.image) throw new Error('format invalide');
+    ow = { image: data.image, ref: data.ref || [null, null], points: data.points || [] };
+    owIdCounter = ow.points.reduce((m, p) => Math.max(m, p.id || 0), 0) + 1;
+    owUpdateRefStatus(1); owUpdateRefStatus(2);
+    owRefreshStage(); owRenderPins(); owRenderPointsList();
+  }
+  document.getElementById('ow-file-import').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      try { owLoadFromJSON(ev.target.result); owShowSaveMsg('Configuration chargée.'); }
+      catch (err) { owShowSaveMsg('Fichier invalide.'); }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  });
+
+  owRefreshStage();
+  fetch('atlas-overworld-config.json', {cache: 'no-store'})
+    .then(r => r.ok ? r.text() : Promise.reject())
+    .then(text => owLoadFromJSON(text))
+    .catch(() => {});
 
   render();
 
