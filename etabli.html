@@ -4,106 +4,133 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>l'établi</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Quicksand:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/etabli.css">
 </head>
 <body class="theme-etabli">
 
 <div id="site-nav" data-current="etabli"></div>
-<script>
-(function(){
-  const PAGES = [
-    { id: 'etabli', label: "Établi", icon: '🪵', href: 'etabli.html' },
-    { id: 'atlas', label: 'Atlas', icon: '🗺️', href: 'atlas.html' },
-    { id: 'grimoire', label: 'Grimoire', icon: '📖', href: 'grimoire.html' },
-    { id: 'carnet', label: 'Carnet', icon: '📓', href: 'carnet.html' },
-    { id: 'inventaire', label: 'Inventaire', icon: '📦', href: 'inventaire.html' },
-    { id: 'projets', label: 'Projets', icon: '🧱', href: 'projets.html' },
-  ];
-  const container = document.getElementById('site-nav');
-  const current = container.dataset.current || '';
-  const nav = document.createElement('nav');
-  nav.id = 'site-nav';
-  PAGES.forEach(page => {
-    const a = document.createElement('a');
-    a.href = page.href;
-    if (page.id === current) a.classList.add('current');
-    a.innerHTML = `<span>${page.icon}</span><span>${page.label}</span>`;
-    nav.appendChild(a);
-  });
-  container.replaceWith(nav);
-})();
-</script>
+<script src="assets/nav.js" defer></script>
 
-<div class="layout">
+<main>
 
-  <!-- ==================== COLONNE JOUEUR ==================== -->
-  <div class="col-player">
-    <div class="player-card">
-      <div class="player-skin-wrap">
-        <img class="player-skin" id="player-skin" alt="Skin de N3SK3">
-      </div>
-      <div class="player-name">N3SK3</div>
-      <div class="player-stats" id="player-stats">
-        <div class="tile-empty">chargement…</div>
+  <!-- ==================== HERO : fiche joueur ==================== -->
+  <div class="hero">
+    <div class="hero-board">
+      <div class="profile-parchment">
+        <div class="profile-frame">
+          <div class="frame-glow"></div>
+          <img class="profile-skin" id="player-skin" alt="Skin de N3SK3">
+        </div>
+        <div class="profile-body">
+          <div class="profile-name">N3SK3</div>
+          <div class="hero-server-status"><span class="dot"></span>Établi personnel — suivi solo</div>
+          <div class="profile-stats" id="player-stats">
+            <div class="profile-stat-empty">chargement…</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- ==================== COLONNE CENTRALE : TUILES ==================== -->
-  <div class="tiles">
+  <div class="board-intro">
+    <h2>Vue d'ensemble</h2>
+    <p>Ce qu'il se passe en ce moment : projets en cours, ressources, avancements manquants, et ce qu'il reste à explorer.</p>
+  </div>
 
-    <div class="tile t1">
-      <div class="tile-head"><span class="ti">🧱</span><h3>Projets en cours</h3></div>
-      <div class="tile-body" id="tile-projets"><div class="tile-empty">chargement…</div></div>
+  <!-- ==================== PANNEAU DE WIDGETS ==================== -->
+  <div class="widgets-grid">
+
+    <div class="widget" id="widget-projets">
+      <div class="widget-head"><h3>🧱 Projets en cours</h3><a href="projets.html">voir tout →</a></div>
+      <div class="widget-body" id="tile-projets"><div class="widget-empty">chargement…</div></div>
     </div>
 
-    <div class="tile t2">
-      <div class="tile-head"><span class="ti">📦</span><h3>Ressources</h3></div>
-      <div class="tile-body" id="tile-ressources"><div class="tile-empty">chargement…</div></div>
+    <div class="widget" id="widget-carnet">
+      <div class="widget-head"><h3>📓 Carnet</h3><a href="carnet.html">voir tout →</a></div>
+      <div class="widget-body" id="tile-carnet"><div class="widget-empty">chargement…</div></div>
     </div>
 
-    <div class="tile t3">
-      <div class="tile-head"><span class="ti">📖</span><h3>Offres</h3></div>
-      <div class="tile-body" id="tile-offres"><div class="tile-empty">chargement…</div></div>
+    <div class="widget" id="widget-atlas">
+      <div class="widget-head"><h3>🗺️ Atlas — à creuser</h3><a href="atlas.html">voir tout →</a></div>
+      <div class="widget-body" id="tile-atlas"><div class="widget-empty">chargement…</div></div>
     </div>
 
-    <div class="tile t4">
-      <div class="tile-head"><span class="ti">🧳</span><h3 id="tile-shulker-title">Shulker</h3></div>
-      <div class="tile-body" id="tile-shulker"><div class="tile-empty">chargement…</div></div>
+    <div class="widget" id="widget-inventaire">
+      <div class="widget-head"><h3>📦 Ressources</h3><a href="inventaire.html">voir tout →</a></div>
+      <div class="widget-body" id="tile-ressources"><div class="widget-empty">chargement…</div></div>
     </div>
 
-    <div class="tile t5">
-      <div class="tile-head"><span class="ti">📓</span><h3>Carnet</h3></div>
-      <div class="tile-body" id="tile-carnet"><div class="tile-empty">chargement…</div></div>
+    <div class="widget" id="widget-conteneurs">
+      <div class="widget-head"><h3 id="tile-shulker-title">🧳 Shulker</h3></div>
+      <div class="widget-body" id="tile-shulker"><div class="widget-empty">chargement…</div></div>
     </div>
 
-    <div class="tile t6">
-      <div class="tile-head"><span class="ti">🎖️</span><h3>Avancements manquants</h3></div>
-      <div class="tile-body" id="tile-avancements"><div class="tile-empty">chargement…</div></div>
+    <div class="widget" id="widget-grimoire" style="--card-pin:var(--purple)">
+      <div class="widget-head"><h3>📖 Offres</h3><a href="grimoire.html">voir tout →</a></div>
+      <div class="widget-body" id="tile-offres"><div class="widget-empty">chargement…</div></div>
     </div>
 
-    <div class="tile t7">
-      <div class="tile-head"><span class="ti">🗺️</span><h3>Atlas — à creuser</h3></div>
-      <div class="tile-body" id="tile-atlas"><div class="tile-empty">chargement…</div></div>
+    <div class="widget" id="widget-avancements" style="--card-pin:var(--blue)">
+      <div class="widget-head"><h3>🎖️ Avancements manquants</h3></div>
+      <div class="widget-body" id="tile-avancements"><div class="widget-empty">chargement…</div></div>
     </div>
 
   </div>
 
-  <!-- ==================== COLONNE CHAT / LOGS ==================== -->
-  <div class="col-chat">
-    <div class="chat-panel">
-      <div class="chat-head"><span class="dot" style="background:var(--red); animation:none; opacity:0.6;"></span>Chat du serveur</div>
-      <div class="chat-body" id="chat-body">
-        <div class="chat-line"><span class="t">—</span>Aucune source de logs branchée pour l'instant.</div>
-        <div class="chat-line"><span class="t">—</span>Ce panneau attend un export de logs serveur (ou une connexion en direct) à brancher ici.</div>
-      </div>
-      <div class="chat-foot">à brancher sur les logs du serveur</div>
+  <!-- ==================== INDEX DES OUTILS ==================== -->
+  <section class="tools-section">
+    <h2>Les outils</h2>
+    <p>Chaque outil garde ses propres données. Clique pour ouvrir.</p>
+    <div class="tool-index">
+      <a class="tool-row" href="atlas.html" style="--row-accent:var(--copper)">
+        <span class="tool-row-icon">🗺️</span>
+        <span class="tool-row-body">
+          <span class="tool-row-title">Atlas</span>
+          <span class="tool-row-desc">Points d'intérêt, overworld et tunnels du nether</span>
+        </span>
+        <span class="tool-row-meta">ouvrir →</span>
+      </a>
+      <a class="tool-row" href="grimoire.html" style="--row-accent:var(--purple)">
+        <span class="tool-row-icon">📖</span>
+        <span class="tool-row-body">
+          <span class="tool-row-title">Grimoire</span>
+          <span class="tool-row-desc">Offres et échanges</span>
+        </span>
+        <span class="tool-row-meta">ouvrir →</span>
+      </a>
+      <a class="tool-row" href="carnet.html" style="--row-accent:var(--green)">
+        <span class="tool-row-icon">📓</span>
+        <span class="tool-row-body">
+          <span class="tool-row-title">Carnet</span>
+          <span class="tool-row-desc">Notes et choses à faire</span>
+        </span>
+        <span class="tool-row-meta">ouvrir →</span>
+      </a>
+      <a class="tool-row" href="inventaire.html" style="--row-accent:var(--netherite)">
+        <span class="tool-row-icon">📦</span>
+        <span class="tool-row-body">
+          <span class="tool-row-title">Inventaire</span>
+          <span class="tool-row-desc">Ressources et emplacements de stockage</span>
+        </span>
+        <span class="tool-row-meta">ouvrir →</span>
+      </a>
+      <a class="tool-row" href="projets.html" style="--row-accent:var(--gold)">
+        <span class="tool-row-icon">🧱</span>
+        <span class="tool-row-body">
+          <span class="tool-row-title">Projets</span>
+          <span class="tool-row-desc">Constructions en cours et matériaux nécessaires</span>
+        </span>
+        <span class="tool-row-meta">ouvrir →</span>
+      </a>
     </div>
-  </div>
+  </section>
 
-</div>
+</main>
+
+<footer class="site-footer">l'établi — outil de suivi Minecraft</footer>
 
 <script>
   const USERNAME = 'N3SK3';
@@ -115,7 +142,7 @@
     return div.innerHTML;
   }
 
-  // ===================== COLONNE JOUEUR : stats-config.json =====================
+  // ===================== FICHE JOUEUR : stats-config.json =====================
   fetch('stats-config.json', { cache: 'no-store' })
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(data => {
@@ -123,24 +150,24 @@
       const p = players.find(pl => (pl.name || '').toLowerCase() === USERNAME.toLowerCase()) || players[0];
       const wrap = document.getElementById('player-stats');
       if (!p){
-        wrap.innerHTML = '<div class="tile-empty">Aucune donnée de joueur dans stats-config.json.</div>';
+        wrap.innerHTML = '<div class="profile-stat-empty">Aucune donnée de joueur dans stats-config.json.</div>';
         return;
       }
-      const row = (n, l) => `<div class="player-stat"><span class="l">${l}</span><span class="n">${n}</span></div>`;
+      const stat = (n, l) => `<div class="profile-stat"><span class="n">${n}</span><span class="l">${l}</span></div>`;
       wrap.innerHTML = [
-        p.playTimeHours != null ? row(Math.round(p.playTimeHours) + 'h', 'Jouées') : '',
-        p.distanceTotalKm != null ? row(p.distanceTotalKm.toLocaleString('fr-FR', {maximumFractionDigits:0}) + ' km', 'Parcourus') : '',
-        p.mobKills != null ? row(p.mobKills.toLocaleString('fr-FR'), 'Mobs tués') : '',
-        p.deaths != null ? row(p.deaths.toLocaleString('fr-FR'), 'Morts') : '',
-        p.blocksMined != null ? row(p.blocksMined.toLocaleString('fr-FR'), 'Blocs minés') : '',
-        (p.advancementsDone != null && p.advancementsTotal) ? row(`${p.advancementsDone}/${p.advancementsTotal}`, 'Avancements') : '',
+        p.playTimeHours != null ? stat(Math.round(p.playTimeHours) + 'h', 'jouées') : '',
+        p.distanceTotalKm != null ? stat(p.distanceTotalKm.toLocaleString('fr-FR', {maximumFractionDigits:0}) + ' km', 'parcourus') : '',
+        p.mobKills != null ? stat(p.mobKills.toLocaleString('fr-FR'), 'mobs tués') : '',
+        p.deaths != null ? stat(p.deaths.toLocaleString('fr-FR'), 'morts') : '',
+        p.blocksMined != null ? stat(p.blocksMined.toLocaleString('fr-FR'), 'blocs minés') : '',
+        (p.advancementsDone != null && p.advancementsTotal) ? stat(`${p.advancementsDone}/${p.advancementsTotal}`, 'avancements') : '',
       ].join('');
     })
     .catch(() => {
-      document.getElementById('player-stats').innerHTML = '<div class="tile-offline">stats-config.json non trouvé.</div>';
+      document.getElementById('player-stats').innerHTML = '<div class="profile-stat-empty">stats-config.json non trouvé.</div>';
     });
 
-  // ===================== t6 : AVANCEMENTS MANQUANTS (stats-config.json) =====================
+  // ===================== AVANCEMENTS MANQUANTS (stats-config.json) =====================
   fetch('stats-config.json', { cache: 'no-store' })
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(data => {
@@ -149,16 +176,16 @@
       const list = document.getElementById('tile-avancements');
       const missing = (p && Array.isArray(p.missingAdvancements)) ? p.missingAdvancements : [];
       if (missing.length === 0){
-        list.innerHTML = '<div class="tile-empty">Tous les avancements sont débloqués 🎉</div>';
+        list.innerHTML = '<div class="widget-empty">Tous les avancements sont débloqués 🎉</div>';
         return;
       }
-      list.innerHTML = '<ul>' + missing.slice(0, 5).map(a => `<li><span>${escapeHtml(a.name || a.id)}</span></li>`).join('') + '</ul>';
+      list.innerHTML = '<ul class="widget-list">' + missing.slice(0, 5).map(a => `<li><span>${escapeHtml(a.name || a.id)}</span></li>`).join('') + '</ul>';
     })
     .catch(() => {
-      document.getElementById('tile-avancements').innerHTML = '<div class="tile-offline">stats-config.json non trouvé.</div>';
+      document.getElementById('tile-avancements').innerHTML = '<div class="widget-offline">stats-config.json non trouvé.</div>';
     });
 
-  // ===================== t7 : ATLAS — À CREUSER (atlas-config.json) =====================
+  // ===================== ATLAS — À CREUSER (atlas-config.json) =====================
   fetch('atlas-config.json', { cache: 'no-store' })
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(data => {
@@ -166,22 +193,22 @@
       const todo = points.filter(p => !p.isHub && !p.built).slice(0, 4);
       const list = document.getElementById('tile-atlas');
       if (points.length === 0){
-        list.innerHTML = '<div class="tile-empty">Aucun point pour l\'instant.</div>';
+        list.innerHTML = '<div class="widget-empty">Aucun point pour l\'instant.</div>';
         return;
       }
       if (todo.length === 0){
-        list.innerHTML = '<div class="tile-empty">Tous les tunnels sont creusés 🎉</div>';
+        list.innerHTML = '<div class="widget-empty">Tous les tunnels sont creusés 🎉</div>';
         return;
       }
-      list.innerHTML = '<ul>' + todo.map(p => `
-        <li><span>${escapeHtml(p.name)}</span><span class="mono">${p.coordType === 'nether' ? 'Nether' : 'Overworld'}</span></li>
+      list.innerHTML = '<ul class="widget-list">' + todo.map(p => `
+        <li><span>${escapeHtml(p.name)}</span><span class="tag">${p.coordType === 'nether' ? 'Nether' : 'Overworld'}</span></li>
       `).join('') + '</ul>';
     })
     .catch(() => {
-      document.getElementById('tile-atlas').innerHTML = '<div class="tile-offline">atlas-config.json non trouvé.</div>';
+      document.getElementById('tile-atlas').innerHTML = '<div class="widget-offline">atlas-config.json non trouvé.</div>';
     });
 
-  // ===================== t1 : PROJETS EN COURS (projets-config.json + inventaire-config.json) =====================
+  // ===================== PROJETS EN COURS (projets-config.json + inventaire-config.json) =====================
   Promise.all([
     fetch('projets-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : { projects: [] }).catch(() => ({ projects: [] })),
     fetch('inventaire-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : { resources: [] }).catch(() => ({ resources: [] })),
@@ -195,14 +222,14 @@
     const wrap = document.getElementById('tile-projets');
 
     if (projects.length === 0){
-      wrap.innerHTML = '<div class="tile-empty">Aucun projet pour l\'instant.</div>';
+      wrap.innerHTML = '<div class="widget-empty">Aucun projet pour l\'instant.</div>';
       return;
     }
     if (inProgress.length === 0){
-      wrap.innerHTML = `<div class="tile-empty">Aucun projet en cours (${projects.filter(p=>p.status==='todo').length} à faire).</div>`;
+      wrap.innerHTML = `<div class="widget-empty">Aucun projet en cours (${projects.filter(p=>p.status==='todo').length} à faire).</div>`;
       return;
     }
-    wrap.innerHTML = '<ul>' + inProgress.slice(0, 3).map(p => {
+    wrap.innerHTML = '<ul class="widget-list">' + inProgress.slice(0, 3).map(p => {
       let pct = 100;
       if (p.needs && p.needs.length){
         let needed = 0, have = 0;
@@ -212,13 +239,13 @@
         });
         pct = needed ? Math.round(have / needed * 100) : 100;
       }
-      return `<li><span>${escapeHtml(p.name)}</span><span class="pct">${pct}%</span></li>`;
+      return `<li><span>${escapeHtml(p.name)}</span><span class="tag">${pct}%</span></li>`;
     }).join('') + '</ul>';
   }).catch(() => {
-    document.getElementById('tile-projets').innerHTML = '<div class="tile-offline">projets-config.json non trouvé.</div>';
+    document.getElementById('tile-projets').innerHTML = '<div class="widget-offline">projets-config.json non trouvé.</div>';
   });
 
-  // ===================== t2 : RESSOURCES (inventaire-config.json) =====================
+  // ===================== RESSOURCES (inventaire-config.json) =====================
   fetch('inventaire-config.json', { cache: 'no-store' })
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(data => {
@@ -226,26 +253,28 @@
       const totalQty = res => (res.stacks || []).reduce((s, st) => s + st.quantity, 0);
       const totalItems = resources.reduce((s, r) => s + totalQty(r), 0);
       document.getElementById('tile-ressources').innerHTML =
-        `<div class="tile-big-num">${totalItems.toLocaleString('fr-FR')} <span class="unit">items</span></div>
-         <div style="margin-top:4px; font-size:0.72rem;">${resources.length} ressources suivies</div>`;
+        `<div class="widget-stat-row">
+           <div class="widget-stat"><div class="n">${totalItems.toLocaleString('fr-FR')}</div><div class="l">items</div></div>
+           <div class="widget-stat"><div class="n">${resources.length}</div><div class="l">ressources suivies</div></div>
+         </div>`;
     })
     .catch(() => {
-      document.getElementById('tile-ressources').innerHTML = '<div class="tile-offline">inventaire-config.json non trouvé.</div>';
+      document.getElementById('tile-ressources').innerHTML = '<div class="widget-offline">inventaire-config.json non trouvé.</div>';
     });
 
-  // ===================== t3 : OFFRES (grimoire-config.json → offers[]) =====================
+  // ===================== OFFRES (grimoire-config.json → offers[]) =====================
   fetch('grimoire-config.json', { cache: 'no-store' })
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(data => {
       const offers = Array.isArray(data.offers) ? data.offers : [];
       document.getElementById('tile-offres').innerHTML =
-        `<div class="tile-big-num">${offers.length} <span class="unit">offres</span></div>`;
+        `<div class="widget-stat-row"><div class="widget-stat"><div class="n">${offers.length}</div><div class="l">offres</div></div></div>`;
     })
     .catch(() => {
-      document.getElementById('tile-offres').innerHTML = '<div class="tile-offline">grimoire-config.json non trouvé.</div>';
+      document.getElementById('tile-offres').innerHTML = '<div class="widget-offline">grimoire-config.json non trouvé.</div>';
     });
 
-  // ===================== t4 : SHULKER « foodie » (conteneurs-config.json) =====================
+  // ===================== SHULKER « foodie » (conteneurs-config.json) =====================
   fetch('conteneurs-config.json', { cache: 'no-store' })
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(data => {
@@ -254,18 +283,18 @@
       const title = document.getElementById('tile-shulker-title');
       const body = document.getElementById('tile-shulker');
       if (!foodie){
-        title.textContent = 'Shulker';
-        body.innerHTML = '<div class="tile-empty">Aucune shulker « foodie » trouvée.</div>';
+        title.textContent = '🧳 Shulker';
+        body.innerHTML = '<div class="widget-empty">Aucune shulker « foodie » trouvée.</div>';
         return;
       }
-      title.textContent = `Shulker « ${foodie.name} »`;
-      body.innerHTML = `<div class="tile-big-num">${(foodie.total || 0).toLocaleString('fr-FR')} <span class="unit">items</span></div>`;
+      title.textContent = `🧳 Shulker « ${foodie.name} »`;
+      body.innerHTML = `<div class="widget-stat-row"><div class="widget-stat"><div class="n">${(foodie.total || 0).toLocaleString('fr-FR')}</div><div class="l">items</div></div></div>`;
     })
     .catch(() => {
-      document.getElementById('tile-shulker').innerHTML = '<div class="tile-offline">conteneurs-config.json non trouvé.</div>';
+      document.getElementById('tile-shulker').innerHTML = '<div class="widget-offline">conteneurs-config.json non trouvé.</div>';
     });
 
-  // ===================== t5 : CARNET (carnet-config.json) =====================
+  // ===================== CARNET (carnet-config.json) =====================
   fetch('carnet-config.json', { cache: 'no-store' })
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(data => {
@@ -273,15 +302,15 @@
       const todo = entries.filter(e => !e.done).slice(0, 4);
       const list = document.getElementById('tile-carnet');
       if (todo.length === 0){
-        list.innerHTML = '<div class="tile-empty">Rien en attente — tout est fait 🎉</div>';
+        list.innerHTML = '<div class="widget-empty">Rien en attente — tout est fait 🎉</div>';
         return;
       }
-      list.innerHTML = '<ul>' + todo.map(e => `
-        <li><span>${escapeHtml(e.text.split('\n')[0])}</span>${e.tag ? `<span class="mono">${escapeHtml(e.tag)}</span>` : ''}</li>
+      list.innerHTML = '<ul class="widget-list">' + todo.map(e => `
+        <li><span>${escapeHtml(e.text.split('\n')[0])}</span>${e.tag ? `<span class="tag">${escapeHtml(e.tag)}</span>` : ''}</li>
       `).join('') + '</ul>';
     })
     .catch(() => {
-      document.getElementById('tile-carnet').innerHTML = '<div class="tile-offline">carnet-config.json non trouvé.</div>';
+      document.getElementById('tile-carnet').innerHTML = '<div class="widget-offline">carnet-config.json non trouvé.</div>';
     });
 </script>
 </body>

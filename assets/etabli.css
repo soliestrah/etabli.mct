@@ -238,6 +238,8 @@ body.theme-etabli{
 }
 .widget-head a:hover{ color:var(--accent); border-bottom-color:var(--accent); }
 
+.widget-body{ display:flex; flex-direction:column; flex:1; }
+
 .widget-stat-row{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:4px; }
 .widget-stat .n{ font-family:var(--font-mono); font-size:1.5rem; font-weight:700; color:var(--accent); line-height:1; }
 .widget-stat .l{ font-size:0.68rem; color:var(--muted); margin-top:4px; }
