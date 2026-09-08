@@ -6,7 +6,7 @@
 <title>l'établi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Quicksand:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body class="theme-etabli">
 
@@ -45,13 +45,8 @@
         <img class="player-skin" id="player-skin" alt="Skin de N3SK3">
       </div>
       <div class="player-name">N3SK3</div>
-      <div class="player-stats">
-        <div class="player-stat"><span class="l">Jouées</span><span class="n">125h58</span></div>
-        <div class="player-stat"><span class="l">Parcourus</span><span class="n">521 km</span></div>
-        <div class="player-stat"><span class="l">Mobs tués</span><span class="n">4 270</span></div>
-        <div class="player-stat"><span class="l">Morts</span><span class="n">22</span></div>
-        <div class="player-stat"><span class="l">Blocs minés</span><span class="n">82 925</span></div>
-        <div class="player-stat"><span class="l">Avancements</span><span class="n">42/48</span></div>
+      <div class="player-stats" id="player-stats">
+        <div class="tile-empty">chargement…</div>
       </div>
     </div>
   </div>
@@ -59,67 +54,39 @@
   <!-- ==================== COLONNE CENTRALE : TUILES ==================== -->
   <div class="tiles">
 
-    <!-- Pas de stat de jeu pour un "% d'avancement de construction" : à toi de mettre à jour ces 3 lignes -->
     <div class="tile t1">
       <div class="tile-head"><span class="ti">🧱</span><h3>Projets en cours</h3></div>
-      <div class="tile-body">
-        <ul>
-          <li><span>Réapprovisionner « foodie »</span><span>—</span></li>
-          <li><span>Ferme à totem</span><span>—</span></li>
-          <li><span>Extension de la base</span><span>—</span></li>
-        </ul>
-      </div>
-      <div class="tile-editable-hint">à jour manuellement — aucune stat de jeu ne suit un % de construction</div>
+      <div class="tile-body" id="tile-projets"><div class="tile-empty">chargement…</div></div>
     </div>
 
     <div class="tile t2">
-      <div class="tile-head"><span class="ti">💎</span><h3>Ressources</h3></div>
-      <div class="tile-body"><div class="tile-big-num">69 <span style="font-size:0.9rem; color:var(--muted);">diamants</span></div></div>
+      <div class="tile-head"><span class="ti">📦</span><h3>Ressources</h3></div>
+      <div class="tile-body" id="tile-ressources"><div class="tile-empty">chargement…</div></div>
     </div>
 
     <div class="tile t3">
       <div class="tile-head"><span class="ti">📖</span><h3>Offres</h3></div>
-      <div class="tile-body"><div class="tile-big-num">4 135 <span style="font-size:0.9rem; color:var(--muted);">échanges</span></div></div>
+      <div class="tile-body" id="tile-offres"><div class="tile-empty">chargement…</div></div>
     </div>
 
     <div class="tile t4">
-      <div class="tile-head"><span class="ti">🧳</span><h3>Shulker « foodie »</h3></div>
-      <div class="tile-body"><div class="tile-big-num">194 <span style="font-size:0.9rem; color:var(--muted);">items</span></div></div>
+      <div class="tile-head"><span class="ti">🧳</span><h3 id="tile-shulker-title">Shulker</h3></div>
+      <div class="tile-body" id="tile-shulker"><div class="tile-empty">chargement…</div></div>
     </div>
 
-    <!-- Notes perso : idem, pas de stat de jeu pour ça — remplis à ta sauce -->
     <div class="tile t5">
       <div class="tile-head"><span class="ti">📓</span><h3>Carnet</h3></div>
-      <div class="tile-body">
-        <ul>
-          <li><span>Refaire la ferme à blaze</span></li>
-          <li><span>Trouver un village de neige</span></li>
-          <li><span>Dupliquer les totems</span></li>
-        </ul>
-      </div>
-      <div class="tile-editable-hint">notes perso — à éditer à la main</div>
+      <div class="tile-body" id="tile-carnet"><div class="tile-empty">chargement…</div></div>
     </div>
 
     <div class="tile t6">
       <div class="tile-head"><span class="ti">🎖️</span><h3>Avancements manquants</h3></div>
-      <div class="tile-body">
-        <ul>
-          <li><span>Parcourir tous les biomes</span></li>
-          <li><span>Vaincre tous les mobs hostiles</span></li>
-          <li><span>Explorer tout le Nether</span></li>
-          <li><span>Manger tous les aliments</span></li>
-        </ul>
-      </div>
+      <div class="tile-body" id="tile-avancements"><div class="tile-empty">chargement…</div></div>
     </div>
 
     <div class="tile t7">
       <div class="tile-head"><span class="ti">🗺️</span><h3>Atlas — à creuser</h3></div>
-      <div class="tile-body">
-        <ul>
-          <li><span>Position actuelle</span><span class="mono">268 / 66 / 39</span></li>
-          <li><span>Dernière mort</span><span class="mono">374 / 41 / 102</span></li>
-        </ul>
-      </div>
+      <div class="tile-body" id="tile-atlas"><div class="tile-empty">chargement…</div></div>
     </div>
 
   </div>
@@ -127,17 +94,10 @@
   <!-- ==================== COLONNE CHAT / LOGS ==================== -->
   <div class="col-chat">
     <div class="chat-panel">
-      <div class="chat-head"><span class="dot"></span>Chat du serveur</div>
+      <div class="chat-head"><span class="dot" style="background:var(--red); animation:none; opacity:0.6;"></span>Chat du serveur</div>
       <div class="chat-body" id="chat-body">
-        <div class="chat-line join"><span class="t">18:02</span><span class="u">N3SK3</span> a rejoint la partie</div>
-        <div class="chat-line"><span class="t">18:03</span><span class="u">N3SK3</span> : quelqu'un a du fer en trop ?</div>
-        <div class="chat-line join"><span class="t">18:05</span><span class="u">WhiskySec</span> a rejoint la partie</div>
-        <div class="chat-line"><span class="t">18:05</span><span class="u">WhiskySec</span> : yo</div>
-        <div class="chat-line achieve"><span class="t">18:11</span>N3SK3 a obtenu l'avancement [Chevaucher un strider]</div>
-        <div class="chat-line death"><span class="t">18:22</span>WhiskySec est mort, écrasé par un bloc qui tombe</div>
-        <div class="chat-line"><span class="t">18:23</span><span class="u">WhiskySec</span> : NOOOON mes items</div>
-        <div class="chat-line"><span class="t">18:24</span><span class="u">N3SK3</span> : mdrrr j'arrive</div>
-        <div class="chat-line leave"><span class="t">19:40</span><span class="u">WhiskySec</span> a quitté la partie</div>
+        <div class="chat-line"><span class="t">—</span>Aucune source de logs branchée pour l'instant.</div>
+        <div class="chat-line"><span class="t">—</span>Ce panneau attend un export de logs serveur (ou une connexion en direct) à brancher ici.</div>
       </div>
       <div class="chat-foot">à brancher sur les logs du serveur</div>
     </div>
@@ -147,8 +107,182 @@
 
 <script>
   const USERNAME = 'N3SK3';
-  // rendu "body" = skin entier (corps complet), pas juste la tête
   document.getElementById('player-skin').src = `https://mc-heads.net/body/${encodeURIComponent(USERNAME)}/170`;
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  // ===================== COLONNE JOUEUR : stats-config.json =====================
+  fetch('stats-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const players = Array.isArray(data.players) ? data.players : [];
+      const p = players.find(pl => (pl.name || '').toLowerCase() === USERNAME.toLowerCase()) || players[0];
+      const wrap = document.getElementById('player-stats');
+      if (!p){
+        wrap.innerHTML = '<div class="tile-empty">Aucune donnée de joueur dans stats-config.json.</div>';
+        return;
+      }
+      const row = (n, l) => `<div class="player-stat"><span class="l">${l}</span><span class="n">${n}</span></div>`;
+      wrap.innerHTML = [
+        p.playTimeHours != null ? row(Math.round(p.playTimeHours) + 'h', 'Jouées') : '',
+        p.distanceTotalKm != null ? row(p.distanceTotalKm.toLocaleString('fr-FR', {maximumFractionDigits:0}) + ' km', 'Parcourus') : '',
+        p.mobKills != null ? row(p.mobKills.toLocaleString('fr-FR'), 'Mobs tués') : '',
+        p.deaths != null ? row(p.deaths.toLocaleString('fr-FR'), 'Morts') : '',
+        p.blocksMined != null ? row(p.blocksMined.toLocaleString('fr-FR'), 'Blocs minés') : '',
+        (p.advancementsDone != null && p.advancementsTotal) ? row(`${p.advancementsDone}/${p.advancementsTotal}`, 'Avancements') : '',
+      ].join('');
+    })
+    .catch(() => {
+      document.getElementById('player-stats').innerHTML = '<div class="tile-offline">stats-config.json non trouvé.</div>';
+    });
+
+  // ===================== t6 : AVANCEMENTS MANQUANTS (stats-config.json) =====================
+  fetch('stats-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const players = Array.isArray(data.players) ? data.players : [];
+      const p = players.find(pl => (pl.name || '').toLowerCase() === USERNAME.toLowerCase()) || players[0];
+      const list = document.getElementById('tile-avancements');
+      const missing = (p && Array.isArray(p.missingAdvancements)) ? p.missingAdvancements : [];
+      if (missing.length === 0){
+        list.innerHTML = '<div class="tile-empty">Tous les avancements sont débloqués 🎉</div>';
+        return;
+      }
+      list.innerHTML = '<ul>' + missing.slice(0, 5).map(a => `<li><span>${escapeHtml(a.name || a.id)}</span></li>`).join('') + '</ul>';
+    })
+    .catch(() => {
+      document.getElementById('tile-avancements').innerHTML = '<div class="tile-offline">stats-config.json non trouvé.</div>';
+    });
+
+  // ===================== t7 : ATLAS — À CREUSER (atlas-config.json) =====================
+  fetch('atlas-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const points = Array.isArray(data) ? data : [];
+      const todo = points.filter(p => !p.isHub && !p.built).slice(0, 4);
+      const list = document.getElementById('tile-atlas');
+      if (points.length === 0){
+        list.innerHTML = '<div class="tile-empty">Aucun point pour l\'instant.</div>';
+        return;
+      }
+      if (todo.length === 0){
+        list.innerHTML = '<div class="tile-empty">Tous les tunnels sont creusés 🎉</div>';
+        return;
+      }
+      list.innerHTML = '<ul>' + todo.map(p => `
+        <li><span>${escapeHtml(p.name)}</span><span class="mono">${p.coordType === 'nether' ? 'Nether' : 'Overworld'}</span></li>
+      `).join('') + '</ul>';
+    })
+    .catch(() => {
+      document.getElementById('tile-atlas').innerHTML = '<div class="tile-offline">atlas-config.json non trouvé.</div>';
+    });
+
+  // ===================== t1 : PROJETS EN COURS (projets-config.json + inventaire-config.json) =====================
+  Promise.all([
+    fetch('projets-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : { projects: [] }).catch(() => ({ projects: [] })),
+    fetch('inventaire-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : { resources: [] }).catch(() => ({ resources: [] })),
+  ]).then(([projData, invData]) => {
+    const stock = {};
+    (invData.resources || []).forEach(r => {
+      stock[r.name.toLowerCase()] = (r.stacks || []).reduce((s, st) => s + st.quantity, 0);
+    });
+    const projects = Array.isArray(projData.projects) ? projData.projects : [];
+    const inProgress = projects.filter(p => p.status === 'inprogress');
+    const wrap = document.getElementById('tile-projets');
+
+    if (projects.length === 0){
+      wrap.innerHTML = '<div class="tile-empty">Aucun projet pour l\'instant.</div>';
+      return;
+    }
+    if (inProgress.length === 0){
+      wrap.innerHTML = `<div class="tile-empty">Aucun projet en cours (${projects.filter(p=>p.status==='todo').length} à faire).</div>`;
+      return;
+    }
+    wrap.innerHTML = '<ul>' + inProgress.slice(0, 3).map(p => {
+      let pct = 100;
+      if (p.needs && p.needs.length){
+        let needed = 0, have = 0;
+        p.needs.forEach(n => {
+          needed += n.quantity;
+          have += Math.min(stock[n.resourceName.toLowerCase()] || 0, n.quantity);
+        });
+        pct = needed ? Math.round(have / needed * 100) : 100;
+      }
+      return `<li><span>${escapeHtml(p.name)}</span><span class="pct">${pct}%</span></li>`;
+    }).join('') + '</ul>';
+  }).catch(() => {
+    document.getElementById('tile-projets').innerHTML = '<div class="tile-offline">projets-config.json non trouvé.</div>';
+  });
+
+  // ===================== t2 : RESSOURCES (inventaire-config.json) =====================
+  fetch('inventaire-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const resources = Array.isArray(data.resources) ? data.resources : [];
+      const totalQty = res => (res.stacks || []).reduce((s, st) => s + st.quantity, 0);
+      const totalItems = resources.reduce((s, r) => s + totalQty(r), 0);
+      document.getElementById('tile-ressources').innerHTML =
+        `<div class="tile-big-num">${totalItems.toLocaleString('fr-FR')} <span class="unit">items</span></div>
+         <div style="margin-top:4px; font-size:0.72rem;">${resources.length} ressources suivies</div>`;
+    })
+    .catch(() => {
+      document.getElementById('tile-ressources').innerHTML = '<div class="tile-offline">inventaire-config.json non trouvé.</div>';
+    });
+
+  // ===================== t3 : OFFRES (grimoire-config.json → offers[]) =====================
+  fetch('grimoire-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const offers = Array.isArray(data.offers) ? data.offers : [];
+      document.getElementById('tile-offres').innerHTML =
+        `<div class="tile-big-num">${offers.length} <span class="unit">offres</span></div>`;
+    })
+    .catch(() => {
+      document.getElementById('tile-offres').innerHTML = '<div class="tile-offline">grimoire-config.json non trouvé.</div>';
+    });
+
+  // ===================== t4 : SHULKER « foodie » (conteneurs-config.json) =====================
+  fetch('conteneurs-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const containers = Array.isArray(data.containers) ? data.containers : [];
+      const foodie = containers.find(c => (c.name || '').toLowerCase() === 'foodie' && (c.type || '').includes('shulker'));
+      const title = document.getElementById('tile-shulker-title');
+      const body = document.getElementById('tile-shulker');
+      if (!foodie){
+        title.textContent = 'Shulker';
+        body.innerHTML = '<div class="tile-empty">Aucune shulker « foodie » trouvée.</div>';
+        return;
+      }
+      title.textContent = `Shulker « ${foodie.name} »`;
+      body.innerHTML = `<div class="tile-big-num">${(foodie.total || 0).toLocaleString('fr-FR')} <span class="unit">items</span></div>`;
+    })
+    .catch(() => {
+      document.getElementById('tile-shulker').innerHTML = '<div class="tile-offline">conteneurs-config.json non trouvé.</div>';
+    });
+
+  // ===================== t5 : CARNET (carnet-config.json) =====================
+  fetch('carnet-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const entries = Array.isArray(data.entries) ? data.entries : [];
+      const todo = entries.filter(e => !e.done).slice(0, 4);
+      const list = document.getElementById('tile-carnet');
+      if (todo.length === 0){
+        list.innerHTML = '<div class="tile-empty">Rien en attente — tout est fait 🎉</div>';
+        return;
+      }
+      list.innerHTML = '<ul>' + todo.map(e => `
+        <li><span>${escapeHtml(e.text.split('\n')[0])}</span>${e.tag ? `<span class="mono">${escapeHtml(e.tag)}</span>` : ''}</li>
+      `).join('') + '</ul>';
+    })
+    .catch(() => {
+      document.getElementById('tile-carnet').innerHTML = '<div class="tile-offline">carnet-config.json non trouvé.</div>';
+    });
 </script>
 </body>
 </html>
