@@ -106,15 +106,16 @@ body{
 a{ color:inherit; }
 button, input, select, textarea{ font-family:inherit; color:inherit; }
 button{ cursor:pointer; }
-input:focus, select:focus, textarea:focus, button:focus{
+input:focus, select:focus, textarea:focus{
   outline:2px solid var(--accent);
   outline-offset:2px;
 }
-/* Les liens gardaient le contour de focus par defaut du navigateur meme
-   apres un clic (pas juste au clavier), ce qui donnait un gros rectangle
-   disgracieux. :focus-visible ne s'affiche que pour la navigation clavier. */
-a:focus{ outline:none; }
-a:focus-visible{
+/* Les liens ET les boutons gardaient le contour de focus par defaut du
+   navigateur meme apres un clic/tap (pas juste au clavier), ce qui
+   donnait un gros rectangle disgracieux -- ex: cliquer sur un onglet.
+   :focus-visible ne s'affiche que pour la navigation clavier. */
+a:focus, button:focus{ outline:none; }
+a:focus-visible, button:focus-visible{
   outline:2px solid var(--accent);
   outline-offset:2px;
   border-radius:var(--radius-sm);
@@ -384,6 +385,31 @@ textarea{ resize:vertical; min-height:70px; }
 .view.active{ display:block; }
 .subview{ display:none; }
 .subview.active{ display:block; }
+
+/* Sous-onglets, à l'intérieur d'un onglet (ex: Grimoire, Atlas > Nether) */
+.subtabs{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+  border-bottom:1px solid var(--border);
+}
+.subtab-btn{
+  cursor:pointer;
+  background:none;
+  border:none;
+  border-radius:0;
+  color:var(--muted);
+  padding:8px 2px;
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:0.82rem;
+  border-bottom:2px solid transparent;
+  margin-bottom:-1px;
+}
+.subtab-btn:hover{ color:var(--text); }
+.subtab-btn.active{ color:var(--accent); border-bottom-color:var(--accent); }
 
 /* --- Toasts --- */
 .toast-wrap{
