@@ -229,8 +229,11 @@ header .ratio{
   color:var(--muted);
 }
 
-/* --- Onglet Overworld : carte-image + punaises --- */
-.ow-map-wrap{
+/* --- Carte-image générique (Overworld / Nether / End) : import d'une
+   capture, étalonnage à 2 repères, punaises. Réutilisée 3x dans la page,
+   chaque instance a ses propres ids (ow-*, nm-*, end-*) mais partage ces
+   classes. --- */
+.map-img-wrap{
   position:relative;
   width:100%;
   border:1px solid var(--border);
@@ -238,7 +241,7 @@ header .ratio{
   overflow:hidden;
   background:var(--panel-hover);
 }
-.ow-map-empty{
+.map-img-empty{
   min-height:280px;
   display:flex;
   align-items:center;
@@ -248,9 +251,9 @@ header .ratio{
   color:var(--muted);
   font-size:0.85rem;
 }
-#ow-map-img{ width:100%; height:auto; display:block; cursor:crosshair; }
-.ow-map-pins{ position:absolute; inset:0; pointer-events:none; }
-.ow-pin{
+.map-img{ width:100%; height:auto; display:block; cursor:crosshair; }
+.map-pins{ position:absolute; inset:0; pointer-events:none; }
+.map-pin{
   position:absolute;
   width:12px; height:12px;
   border-radius:50%;
@@ -259,19 +262,29 @@ header .ratio{
   box-shadow:0 0 0 2px var(--text);
   transform:translate(-50%, -50%);
 }
-.ow-pin-ref{
+.map-pin-ref{
   background:var(--purple);
   width:14px; height:14px;
 }
-.ow-ref-row{
+.ref-row{
   border:1px solid var(--border);
   border-radius:var(--radius);
   padding:12px;
   margin-bottom:12px;
 }
-.ow-ref-place{ margin-top:10px; width:100%; }
-.ow-ref-place.active{ border-color:var(--accent); color:var(--accent); }
-.ow-ref-status{ display:block; margin-top:6px; font-size:0.72rem; color:var(--green); font-family:var(--font-mono); }
+.ref-place-btn{ margin-top:10px; width:100%; }
+.ref-place-btn.active{ border-color:var(--accent); color:var(--accent); }
+.ref-status{ display:block; margin-top:6px; font-size:0.72rem; color:var(--green); font-family:var(--font-mono); }
+
+/* --- Sous-bloc "Carte" dans l'onglet Nether, en plus du calculateur de
+   tunnels (qui garde son propre système, coordonnées Nether obligent) --- */
+.nether-map-block{
+  margin-top:22px;
+  padding-top:20px;
+  border-top:1px solid var(--border);
+}
+
+textarea#export-area{
   font-family:var(--font-mono);
   font-size:0.75rem;
   height:100px;
