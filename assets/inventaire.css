@@ -5,8 +5,7 @@
    ========================================================================= */
 
 /* la mise en page (main.layout-2col) vient de site.css */
-
-.row3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+/* .row3 et la base de .filters-row viennent de site.css aussi */
 
 .checkbox-row{
   display:flex;
@@ -53,14 +52,7 @@
   margin-top:6px;
 }
 
-/* --- Filtres --- */
-.filters-row{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-bottom:16px;
-  align-items:center;
-}
+/* --- Filtres (la base .filters-row vient de site.css) --- */
 .filters-row input[type="text"], .filters-row select{
   width:auto;
   flex:1 1 180px;
@@ -73,22 +65,11 @@
   flex-direction:column;
   gap:12px;
 }
-.res-card{
-  background:var(--panel-hover);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:14px 16px;
-}
-.res-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:10px;
-  flex-wrap:wrap;
-}
+/* .res-card vient de site.css (partagé avec .route-card) */
+/* .res-head vient de site.css (partagé avec .card-head/.proj-head) */
 .res-title-wrap{ display:flex; align-items:center; gap:10px; min-width:0; }
 .res-icon{ font-size:1.4rem; flex-shrink:0; }
-.res-name{ font-weight:700; font-size:1rem; }
+/* .res-name vient de site.css (partagé avec .card-title) */
 .res-cat{
   font-family:var(--font-mono);
   font-size:0.68rem;
@@ -104,7 +85,7 @@
   flex-shrink:0;
 }
 .res-total .unit{ font-size:0.68rem; color:var(--muted); font-weight:400; }
-.res-actions{ display:flex; gap:6px; flex-shrink:0; }
+/* .res-actions vient de site.css (partagé avec .note-actions/.proj-actions) */
 
 .res-notes{
   font-size:0.8rem;
@@ -114,14 +95,7 @@
 }
 
 .res-progress{ margin-top:10px; }
-.res-progress-label{
-  display:flex;
-  justify-content:space-between;
-  font-size:0.7rem;
-  color:var(--muted);
-  font-family:var(--font-mono);
-  margin-bottom:4px;
-}
+/* .res-progress-label vient de site.css (partagé avec .proj-progress-label) */
 .res-progress-label.under .val{ color:var(--red); }
 .res-progress-label.reached .val{ color:var(--green); }
 
@@ -137,14 +111,7 @@
 }
 
 /* --- Emplacements (stacks) --- */
-.stacks-list{
-  margin-top:12px;
-  padding-top:10px;
-  border-top:1px dashed var(--border);
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
+/* .stacks-list vient de site.css (partagé avec .needs-list) */
 .stack-row{
   display:flex;
   align-items:center;
@@ -152,14 +119,8 @@
   font-size:0.82rem;
 }
 .stack-loc{ flex:1; min-width:0; color:var(--text); }
-.stack-qty{ font-family:var(--font-mono); color:var(--muted); flex-shrink:0; }
-.stack-row .icon-btn{ padding:2px 6px; flex-shrink:0; }
+/* .stack-qty et .stack-row .icon-btn viennent de site.css (partagés avec .need-row) */
 
-.stack-add{
-  display:flex;
-  gap:6px;
-  margin-top:10px;
-  flex-wrap:wrap;
-}
+/* .stack-add vient de site.css (partagé avec .need-add) */
 .stack-add input[type="text"]{ flex:1 1 140px; }
 .stack-add input[type="number"]{ width:90px; }
