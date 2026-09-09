@@ -15,28 +15,8 @@
 .inv-status-line.ok{ color:var(--green); }
 .inv-status-line.stale{ color:var(--gold); }
 
-/* --- Filtres --- */
-.filters-row{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-bottom:16px;
-}
-.filters-row button{
-  font-size:0.72rem;
-  padding:6px 10px;
-  background:transparent;
-  border:1px solid var(--border);
-  border-radius:var(--radius-sm);
-  color:var(--text);
-  font-weight:600;
-}
-.filters-row button:hover{ border-color:var(--accent); color:var(--accent); }
-.filters-row button.active{
-  background:var(--accent);
-  border-color:var(--accent);
-  color:var(--accent-ink);
-}
+/* --- Filtres (la base .filters-row et les boutons .filters-row button
+   viennent de site.css, partagés avec .filters button de Carnet) --- */
 
 /* --- Bandeau "à chercher" global --- */
 .shopping-card{
@@ -76,13 +56,7 @@
   padding:16px 18px;
 }
 .proj-card.status-done{ opacity:0.65; }
-.proj-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:10px;
-  flex-wrap:wrap;
-}
+/* .proj-head vient de site.css (partagé avec .card-head/.res-head) */
 .proj-title-wrap{ min-width:0; }
 .proj-name{ font-weight:700; font-size:1.05rem; }
 .proj-name.done-strike{ text-decoration:line-through; text-decoration-color:var(--border); }
@@ -92,7 +66,7 @@
   margin-top:4px;
   white-space:pre-wrap;
 }
-.proj-actions{ display:flex; gap:6px; flex-shrink:0; }
+/* .proj-actions vient de site.css (partagé avec .note-actions/.res-actions) */
 
 .status-select{
   width:auto;
@@ -107,24 +81,10 @@
 .status-select.done{ color:var(--green); border-color:var(--green); }
 
 .proj-progress{ margin-top:12px; }
-.proj-progress-label{
-  display:flex;
-  justify-content:space-between;
-  font-size:0.7rem;
-  color:var(--muted);
-  font-family:var(--font-mono);
-  margin-bottom:4px;
-}
+/* .proj-progress-label vient de site.css (partagé avec .res-progress-label) */
 
 /* --- Besoins d'un projet --- */
-.needs-list{
-  margin-top:12px;
-  padding-top:10px;
-  border-top:1px dashed var(--border);
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
+/* .needs-list vient de site.css (partagé avec .stacks-list) */
 .need-row{
   display:flex;
   align-items:center;
@@ -133,14 +93,10 @@
   flex-wrap:wrap;
 }
 .need-row .name{ flex:1; min-width:120px; color:var(--text); }
-.need-row .qty{
-  font-family:var(--font-mono);
-  color:var(--muted);
-  flex-shrink:0;
-}
+/* .need-row .qty vient de site.css (partagé avec .stack-qty) */
 .need-row .qty .have-ok{ color:var(--green); }
 .need-row .qty .have-under{ color:var(--red); }
-.need-row .icon-btn{ padding:2px 6px; flex-shrink:0; }
+/* .need-row .icon-btn vient de site.css (partagé avec .stack-row .icon-btn) */
 
 /* --- Checklist (avancements, ou toute liste à cocher item par item) --- */
 .checklist-list{
@@ -172,11 +128,6 @@
 .checklist-row.done{ color:var(--muted); }
 .checklist-row.done span{ text-decoration:line-through; text-decoration-color:var(--border); }
 
-.need-add{
-  display:flex;
-  gap:6px;
-  margin-top:10px;
-  flex-wrap:wrap;
-}
+/* .need-add vient de site.css (partagé avec .stack-add) */
 .need-add input[type="text"]{ flex:1 1 160px; }
 .need-add input[type="number"]{ width:90px; }
