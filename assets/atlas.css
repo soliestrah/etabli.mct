@@ -77,8 +77,6 @@ header .ratio{
   .nether-grid .col-left, .nether-grid .col-right, .nether-grid .col-full{ grid-column:1; }
 }
 
-.row3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
-
 /* --- Liste des points --- */
 .points-list{
   list-style:none;
@@ -197,12 +195,7 @@ header .ratio{
   gap:12px;
   margin-top:14px;
 }
-.route-card{
-  background:var(--panel-hover);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:14px 16px;
-}
+/* .route-card vient de site.css (partagé avec .res-card) */
 .route-header{
   display:flex;
   justify-content:space-between;
