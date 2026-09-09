@@ -17,22 +17,7 @@ textarea#n-text{
   flex-wrap:wrap;
   margin-bottom:16px;
 }
-.filters button{
-  font-size:0.72rem;
-  padding:6px 10px;
-  background:transparent;
-  border:1px solid var(--border);
-  border-radius:var(--radius-sm);
-  color:var(--text);
-  cursor:pointer;
-  font-weight:600;
-}
-.filters button:hover{ border-color:var(--accent); color:var(--accent); }
-.filters button.active{
-  background:var(--accent);
-  border-color:var(--accent);
-  color:var(--accent-ink);
-}
+/* les boutons .filters button viennent de site.css (partagés avec .filters-row button de Projets) */
 
 /* --- Notes façon parchemin --- */
 .notes-list{
@@ -107,7 +92,7 @@ textarea#n-text{
   font-size:0.66rem;
   color:#6f5f42;
 }
-.note-actions{ display:flex; gap:6px; flex-shrink:0; }
+/* .note-actions vient de site.css (partagé avec .res-actions/.proj-actions) */
 .note-actions .icon-btn{
   background:transparent;
   border:1px solid #cfae6c;
