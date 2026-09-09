@@ -35,7 +35,7 @@
         <span class="dim-icon">🌍</span>
         <h3>Overworld</h3>
         <p>Bases, ressources notables, points d'intérêt.</p>
-        <span class="dim-count">Bientôt disponible</span>
+        <span class="dim-count" id="dim-overworld-count">chargement…</span>
       </button>
       <button type="button" class="atlas-dim-card" id="dim-nether" data-goto="nether">
         <span class="dim-icon">🔥</span>
@@ -47,7 +47,7 @@
         <span class="dim-icon">🌌</span>
         <h3>End</h3>
         <p>Cités de l'End, îles explorées, butin.</p>
-        <span class="dim-count">Bientôt disponible</span>
+        <span class="dim-count" id="dim-end-count">chargement…</span>
       </button>
     </div>
   </section>
@@ -59,7 +59,7 @@
       <h2>Carte</h2>
 
       <div id="ow-no-image" class="empty-note">
-        Aucune image de carte importée. Importe une capture de ta carte (Xaero's Map, capture d'écran...) pour commencer.
+        Aucune image de carte importée. Importe une capture (Xaero's Map, Chunkbase, capture d'écran...) pour commencer.
         <div class="actions-row" style="margin-top:12px;">
           <label class="file-label" for="ow-image-input">Importer une image</label>
         </div>
@@ -68,26 +68,26 @@
 
       <div id="ow-calibration" style="display:none;">
         <h3>Étalonnage</h3>
-        <p class="hint">Donne les coordonnées réelles de 2 endroits que tu reconnais sur la carte (ex : ton spawn, ta base), puis clique sur la carte au bon endroit pour chacun. Ça permet de replacer n'importe quel point ensuite juste avec ses coordonnées X/Z.</p>
+        <p class="hint">Donne les coordonnées réelles de 2 endroits que tu reconnais sur la carte, puis clique sur la carte au bon endroit pour chacun. Ça permet de replacer n'importe quel point ensuite juste avec ses coordonnées X/Z.</p>
 
-        <div class="ow-ref-row" data-ref="1">
+        <div class="ref-row" data-ref="1">
           <div class="row3">
             <div><label for="ow-ref1-name">Nom</label><input type="text" id="ow-ref1-name" placeholder="Spawn"></div>
             <div><label for="ow-ref1-x">X</label><input type="number" id="ow-ref1-x"></div>
             <div><label for="ow-ref1-z">Z</label><input type="number" id="ow-ref1-z"></div>
           </div>
-          <button type="button" class="btn btn-ghost ow-ref-place" data-ref="1">📍 Cliquer sur la carte pour ce point</button>
-          <span class="ow-ref-status" id="ow-ref1-status"></span>
+          <button type="button" class="btn btn-ghost ref-place-btn" data-ns="ow" data-ref="1">📍 Cliquer sur la carte pour ce point</button>
+          <span class="ref-status" id="ow-ref1-status"></span>
         </div>
 
-        <div class="ow-ref-row" data-ref="2">
+        <div class="ref-row" data-ref="2">
           <div class="row3">
             <div><label for="ow-ref2-name">Nom</label><input type="text" id="ow-ref2-name" placeholder="Base"></div>
             <div><label for="ow-ref2-x">X</label><input type="number" id="ow-ref2-x"></div>
             <div><label for="ow-ref2-z">Z</label><input type="number" id="ow-ref2-z"></div>
           </div>
-          <button type="button" class="btn btn-ghost ow-ref-place" data-ref="2">📍 Cliquer sur la carte pour ce point</button>
-          <span class="ow-ref-status" id="ow-ref2-status"></span>
+          <button type="button" class="btn btn-ghost ref-place-btn" data-ns="ow" data-ref="2">📍 Cliquer sur la carte pour ce point</button>
+          <span class="ref-status" id="ow-ref2-status"></span>
         </div>
 
         <div class="msg-line" id="ow-calib-msg"></div>
@@ -118,16 +118,16 @@
 
     <section class="panel col-right">
       <h2>Plan</h2>
-      <div class="ow-map-wrap" id="ow-map-wrap">
-        <div class="ow-map-empty" id="ow-map-empty">La carte s'affichera ici une fois l'image importée.</div>
-        <img id="ow-map-img" alt="Carte Overworld" style="display:none;">
-        <div class="ow-map-pins" id="ow-map-pins"></div>
+      <div class="map-img-wrap" id="ow-map-wrap">
+        <div class="map-img-empty" id="ow-map-empty">La carte s'affichera ici une fois l'image importée.</div>
+        <img id="ow-map-img" class="map-img" alt="Carte Overworld" style="display:none;">
+        <div class="map-pins" id="ow-map-pins"></div>
       </div>
       <div class="hint" id="ow-map-hint" style="display:none;">Clique sur la carte pour placer le point de repère demandé.</div>
     </section>
 
     <section class="panel plain save-section col-full">
-      <h3 style="margin-top:0;">Sauvegarde</h3>
+      <h3 style="margin-top:0;">Sauvegarde de la carte</h3>
       <div class="actions-row">
         <button class="btn btn-ghost" id="ow-btn-download">Télécharger (.json)</button>
         <label class="file-label" for="ow-file-import">Importer un fichier</label>
@@ -141,6 +141,13 @@
 
   <!-- ============ VIEW: NETHER ============ -->
   <section class="view" id="view-nether">
+
+  <div class="subtabs">
+    <button class="subtab-btn active" data-subtab="tunnels">Tunnels</button>
+    <button class="subtab-btn" data-subtab="map">Carte</button>
+  </div>
+
+  <div class="subview active" id="subview-nether-tunnels">
   <div class="nether-grid">
   <section class="panel col-left">
     <h2>Points</h2>
@@ -248,15 +255,181 @@
     </details>
   </section>
   </div><!-- /.nether-grid -->
+  </div><!-- /subview-nether-tunnels -->
+
+  <div class="subview" id="subview-nether-map">
+  <div class="nether-grid">
+    <section class="panel col-left">
+      <h2>Carte</h2>
+
+      <div id="nm-no-image" class="empty-note">
+        Aucune image de carte importée. Importe une capture (Xaero's Map, Chunkbase, capture d'écran...) pour commencer.
+        <div class="actions-row" style="margin-top:12px;">
+          <label class="file-label" for="nm-image-input">Importer une image</label>
+        </div>
+      </div>
+      <input type="file" id="nm-image-input" accept="image/*" style="display:none;">
+
+      <div id="nm-calibration" style="display:none;">
+        <h3>Étalonnage</h3>
+        <p class="hint">Donne les coordonnées réelles de 2 endroits que tu reconnais sur la carte, puis clique sur la carte au bon endroit pour chacun. Ça permet de replacer n'importe quel point ensuite juste avec ses coordonnées X/Z.</p>
+
+        <div class="ref-row" data-ref="1">
+          <div class="row3">
+            <div><label for="nm-ref1-name">Nom</label><input type="text" id="nm-ref1-name" placeholder="Hub"></div>
+            <div><label for="nm-ref1-x">X</label><input type="number" id="nm-ref1-x"></div>
+            <div><label for="nm-ref1-z">Z</label><input type="number" id="nm-ref1-z"></div>
+          </div>
+          <button type="button" class="btn btn-ghost ref-place-btn" data-ns="nm" data-ref="1">📍 Cliquer sur la carte pour ce point</button>
+          <span class="ref-status" id="nm-ref1-status"></span>
+        </div>
+
+        <div class="ref-row" data-ref="2">
+          <div class="row3">
+            <div><label for="nm-ref2-name">Nom</label><input type="text" id="nm-ref2-name" placeholder="Bastion"></div>
+            <div><label for="nm-ref2-x">X</label><input type="number" id="nm-ref2-x"></div>
+            <div><label for="nm-ref2-z">Z</label><input type="number" id="nm-ref2-z"></div>
+          </div>
+          <button type="button" class="btn btn-ghost ref-place-btn" data-ns="nm" data-ref="2">📍 Cliquer sur la carte pour ce point</button>
+          <span class="ref-status" id="nm-ref2-status"></span>
+        </div>
+
+        <div class="msg-line" id="nm-calib-msg"></div>
+      </div>
+
+      <div id="nm-points-panel" style="display:none;">
+        <h3>Ajouter un point</h3>
+        <form id="nm-point-form">
+          <label for="nm-p-name">Nom</label>
+          <input type="text" id="nm-p-name" placeholder=" " required>
+          <div class="row3">
+            <div><label for="nm-p-x">X</label><input type="number" id="nm-p-x" required></div>
+            <div><label for="nm-p-z">Z</label><input type="number" id="nm-p-z" required></div>
+            <div><label for="nm-p-y">Y (optionnel)</label><input type="number" id="nm-p-y"></div>
+          </div>
+          <button type="submit" class="btn btn-primary">Placer le point</button>
+        </form>
+
+        <ul class="points-list" id="nm-points-list"></ul>
+        <div class="empty-note" id="nm-points-empty">Aucun point pour l'instant.</div>
+      </div>
+
+      <div class="actions-row" id="nm-reset-row" style="display:none;">
+        <button type="button" class="btn btn-ghost" id="nm-btn-reimage">Changer d'image</button>
+        <button type="button" class="btn btn-ghost" id="nm-btn-recalibrate">Ré-étalonner</button>
+      </div>
+    </section>
+
+    <section class="panel col-right">
+      <h2>Plan</h2>
+      <div class="map-img-wrap" id="nm-map-wrap">
+        <div class="map-img-empty" id="nm-map-empty">La carte s'affichera ici une fois l'image importée.</div>
+        <img id="nm-map-img" class="map-img" alt="Carte Nether" style="display:none;">
+        <div class="map-pins" id="nm-map-pins"></div>
+      </div>
+      <div class="hint" id="nm-map-hint" style="display:none;">Clique sur la carte pour placer le point de repère demandé.</div>
+    </section>
+
+    <section class="panel plain save-section col-full">
+      <h3 style="margin-top:0;">Sauvegarde de la carte</h3>
+      <div class="actions-row">
+        <button class="btn btn-ghost" id="nm-btn-download">Télécharger (.json)</button>
+        <label class="file-label" for="nm-file-import">Importer un fichier</label>
+        <input type="file" id="nm-file-import" accept="application/json" style="display:none;">
+      </div>
+      <div class="msg-line" id="nm-save-msg"></div>
+      <div class="hint">L'image de la carte est incluse dans ce fichier de sauvegarde -- il peut être un peu lourd, c'est normal.</div>
+    </section>
+  </div><!-- /.nether-grid -->
+  </div><!-- /subview-nether-map -->
+
   </section><!-- /view-nether -->
 
   <!-- ============ VIEW: END ============ -->
   <section class="view" id="view-end">
-    <div class="dim-placeholder">
-      <span class="ti">🌌</span>
-      <h3>Carte de l'End — à venir</h3>
-      <p>Prochaine étape : cités explorées, butin récupéré, îles restantes.</p>
-    </div>
+  <div class="nether-grid">
+    <section class="panel col-left">
+      <h2>Carte</h2>
+
+      <div id="end-no-image" class="empty-note">
+        Aucune image de carte importée. Importe une capture (Xaero's Map, Chunkbase, capture d'écran...) pour commencer.
+        <div class="actions-row" style="margin-top:12px;">
+          <label class="file-label" for="end-image-input">Importer une image</label>
+        </div>
+      </div>
+      <input type="file" id="end-image-input" accept="image/*" style="display:none;">
+
+      <div id="end-calibration" style="display:none;">
+        <h3>Étalonnage</h3>
+        <p class="hint">Donne les coordonnées réelles de 2 endroits que tu reconnais sur la carte, puis clique sur la carte au bon endroit pour chacun. Ça permet de replacer n'importe quel point ensuite juste avec ses coordonnées X/Z.</p>
+
+        <div class="ref-row" data-ref="1">
+          <div class="row3">
+            <div><label for="end-ref1-name">Nom</label><input type="text" id="end-ref1-name" placeholder="Île principale"></div>
+            <div><label for="end-ref1-x">X</label><input type="number" id="end-ref1-x"></div>
+            <div><label for="end-ref1-z">Z</label><input type="number" id="end-ref1-z"></div>
+          </div>
+          <button type="button" class="btn btn-ghost ref-place-btn" data-ns="end" data-ref="1">📍 Cliquer sur la carte pour ce point</button>
+          <span class="ref-status" id="end-ref1-status"></span>
+        </div>
+
+        <div class="ref-row" data-ref="2">
+          <div class="row3">
+            <div><label for="end-ref2-name">Nom</label><input type="text" id="end-ref2-name" placeholder="Cité"></div>
+            <div><label for="end-ref2-x">X</label><input type="number" id="end-ref2-x"></div>
+            <div><label for="end-ref2-z">Z</label><input type="number" id="end-ref2-z"></div>
+          </div>
+          <button type="button" class="btn btn-ghost ref-place-btn" data-ns="end" data-ref="2">📍 Cliquer sur la carte pour ce point</button>
+          <span class="ref-status" id="end-ref2-status"></span>
+        </div>
+
+        <div class="msg-line" id="end-calib-msg"></div>
+      </div>
+
+      <div id="end-points-panel" style="display:none;">
+        <h3>Ajouter un point</h3>
+        <form id="end-point-form">
+          <label for="end-p-name">Nom</label>
+          <input type="text" id="end-p-name" placeholder=" " required>
+          <div class="row3">
+            <div><label for="end-p-x">X</label><input type="number" id="end-p-x" required></div>
+            <div><label for="end-p-z">Z</label><input type="number" id="end-p-z" required></div>
+            <div><label for="end-p-y">Y (optionnel)</label><input type="number" id="end-p-y"></div>
+          </div>
+          <button type="submit" class="btn btn-primary">Placer le point</button>
+        </form>
+
+        <ul class="points-list" id="end-points-list"></ul>
+        <div class="empty-note" id="end-points-empty">Aucun point pour l'instant.</div>
+      </div>
+
+      <div class="actions-row" id="end-reset-row" style="display:none;">
+        <button type="button" class="btn btn-ghost" id="end-btn-reimage">Changer d'image</button>
+        <button type="button" class="btn btn-ghost" id="end-btn-recalibrate">Ré-étalonner</button>
+      </div>
+    </section>
+
+    <section class="panel col-right">
+      <h2>Plan</h2>
+      <div class="map-img-wrap" id="end-map-wrap">
+        <div class="map-img-empty" id="end-map-empty">La carte s'affichera ici une fois l'image importée.</div>
+        <img id="end-map-img" class="map-img" alt="Carte End" style="display:none;">
+        <div class="map-pins" id="end-map-pins"></div>
+      </div>
+      <div class="hint" id="end-map-hint" style="display:none;">Clique sur la carte pour placer le point de repère demandé.</div>
+    </section>
+
+    <section class="panel plain save-section col-full">
+      <h3 style="margin-top:0;">Sauvegarde de la carte</h3>
+      <div class="actions-row">
+        <button class="btn btn-ghost" id="end-btn-download">Télécharger (.json)</button>
+        <label class="file-label" for="end-file-import">Importer un fichier</label>
+        <input type="file" id="end-file-import" accept="application/json" style="display:none;">
+      </div>
+      <div class="msg-line" id="end-save-msg"></div>
+      <div class="hint">L'image de la carte est incluse dans ce fichier de sauvegarde -- il peut être un peu lourd, c'est normal.</div>
+    </section>
+  </div>
   </section>
 
 </main>
@@ -273,6 +446,15 @@
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
     document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.id === 'view-' + tab));
   }
+
+  // sous-onglets Nether : Tunnels / Carte
+  document.querySelectorAll('.subtab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sub = btn.dataset.subtab;
+      document.querySelectorAll('.subtab-btn').forEach(b => b.classList.toggle('active', b === btn));
+      document.querySelectorAll('.subview').forEach(v => v.classList.toggle('active', v.id === 'subview-nether-' + sub));
+    });
+  });
 
   let points = [];
   let idCounter = 1;
@@ -1067,268 +1249,282 @@
     return div.innerHTML;
   }
 
-  // ===================== OVERWORLD : carte-image + étalonnage + points =====================
-  let ow = { image: null, ref: [null, null], points: [] };
-  let owIdCounter = 1;
-  let owArmedRef = null; // 1 ou 2 pendant qu'on attend un clic sur la carte
-
-  const owEl = {
-    noImage: document.getElementById('ow-no-image'),
-    imageInput: document.getElementById('ow-image-input'),
-    calibration: document.getElementById('ow-calibration'),
-    calibMsg: document.getElementById('ow-calib-msg'),
-    pointsPanel: document.getElementById('ow-points-panel'),
-    pointForm: document.getElementById('ow-point-form'),
-    pointsList: document.getElementById('ow-points-list'),
-    pointsEmpty: document.getElementById('ow-points-empty'),
-    resetRow: document.getElementById('ow-reset-row'),
-    mapWrap: document.getElementById('ow-map-wrap'),
-    mapEmpty: document.getElementById('ow-map-empty'),
-    mapImg: document.getElementById('ow-map-img'),
-    mapPins: document.getElementById('ow-map-pins'),
-    mapHint: document.getElementById('ow-map-hint'),
-    saveMsg: document.getElementById('ow-save-msg'),
-  };
-
-  function owShowSaveMsg(msg){
-    owEl.saveMsg.textContent = msg;
-    setTimeout(() => { owEl.saveMsg.textContent = ''; }, 4000);
-  }
-
-  function owHasTransform(){
-    return ow.ref[0] && ow.ref[1];
-  }
-  function owTransform(){
-    const [r1, r2] = ow.ref;
-    if (!r1 || !r2) return null;
-    const dxReal = r2.x - r1.x, dzReal = r2.z - r1.z;
-    if (dxReal === 0 || dzReal === 0) return null; // pas de division par zéro
-    const scaleX = (r2.px - r1.px) / dxReal;
-    const scaleZ = (r2.py - r1.py) / dzReal;
-    return {
-      scaleX, scaleZ,
-      offX: r1.px - r1.x * scaleX,
-      offZ: r1.py - r1.z * scaleZ,
+  // ===================== CARTE-IMAGE GÉNÉRIQUE (Overworld / Nether / End) =====================
+  // Une seule brique réutilisée 3x (ns = 'ow', 'nm', 'end'), chaque instance a ses propres
+  // ids dans le DOM (ex: ow-map-img, nm-map-img...) et son propre fichier de sauvegarde.
+  function initMapTool(ns, fileName){
+    const el = {
+      noImage: document.getElementById(`${ns}-no-image`),
+      imageInput: document.getElementById(`${ns}-image-input`),
+      calibration: document.getElementById(`${ns}-calibration`),
+      calibMsg: document.getElementById(`${ns}-calib-msg`),
+      pointsPanel: document.getElementById(`${ns}-points-panel`),
+      pointForm: document.getElementById(`${ns}-point-form`),
+      pointsList: document.getElementById(`${ns}-points-list`),
+      pointsEmpty: document.getElementById(`${ns}-points-empty`),
+      resetRow: document.getElementById(`${ns}-reset-row`),
+      mapEmpty: document.getElementById(`${ns}-map-empty`),
+      mapImg: document.getElementById(`${ns}-map-img`),
+      mapPins: document.getElementById(`${ns}-map-pins`),
+      mapHint: document.getElementById(`${ns}-map-hint`),
+      saveMsg: document.getElementById(`${ns}-save-msg`),
     };
-  }
-  function owRealToPct(x, z){
-    const t = owTransform();
-    if (!t) return null;
-    return { px: t.offX + x * t.scaleX, py: t.offZ + z * t.scaleZ };
-  }
+    if (!el.mapImg) return; // ce bloc n'existe pas sur cette page, on ignore
 
-  function owRefreshStage(){
-    if (!ow.image){
-      owEl.noImage.style.display = 'block';
-      owEl.calibration.style.display = 'none';
-      owEl.pointsPanel.style.display = 'none';
-      owEl.resetRow.style.display = 'none';
-      owEl.mapEmpty.style.display = 'flex';
-      owEl.mapImg.style.display = 'none';
-      return;
+    let state = { image: null, ref: [null, null], points: [] };
+    let idCounter = 1;
+    let armedRef = null; // 1 ou 2 pendant qu'on attend un clic sur la carte
+
+    function showSaveMsg(msg){
+      el.saveMsg.textContent = msg;
+      setTimeout(() => { el.saveMsg.textContent = ''; }, 4000);
     }
-    owEl.noImage.style.display = 'none';
-    owEl.mapEmpty.style.display = 'none';
-    owEl.mapImg.style.display = 'block';
-    owEl.mapImg.src = ow.image;
-    owEl.resetRow.style.display = 'flex';
-
-    if (owHasTransform()){
-      owEl.calibration.style.display = 'none';
-      owEl.pointsPanel.style.display = 'block';
-    } else {
-      owEl.calibration.style.display = 'block';
-      owEl.pointsPanel.style.display = 'none';
+    function hasTransform(){ return !!(state.ref[0] && state.ref[1]); }
+    function transform(){
+      const [r1, r2] = state.ref;
+      if (!r1 || !r2) return null;
+      const dxReal = r2.x - r1.x, dzReal = r2.z - r1.z;
+      if (dxReal === 0 || dzReal === 0) return null;
+      const scaleX = (r2.px - r1.px) / dxReal;
+      const scaleZ = (r2.py - r1.py) / dzReal;
+      return { scaleX, scaleZ, offX: r1.px - r1.x * scaleX, offZ: r1.py - r1.z * scaleZ };
     }
-  }
-
-  function owUpdateRefStatus(idx){
-    const r = ow.ref[idx - 1];
-    const statusEl = document.getElementById(`ow-ref${idx}-status`);
-    const btn = document.querySelector(`.ow-ref-place[data-ref="${idx}"]`);
-    if (r){
-      statusEl.textContent = '✓ placé sur la carte';
-      btn.textContent = '📍 Re-cliquer sur la carte pour ce point';
-    } else {
-      statusEl.textContent = '';
-      btn.textContent = '📍 Cliquer sur la carte pour ce point';
+    function realToPct(x, z){
+      const t = transform();
+      if (!t) return null;
+      return { px: t.offX + x * t.scaleX, py: t.offZ + z * t.scaleZ };
     }
-  }
 
-  document.querySelectorAll('.ow-ref-place').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const idx = Number(btn.dataset.ref);
-      const xInput = document.getElementById(`ow-ref${idx}-x`);
-      const zInput = document.getElementById(`ow-ref${idx}-z`);
-      if (xInput.value === '' || zInput.value === ''){
-        owEl.calibMsg.textContent = 'Renseigne d\'abord les coordonnées X et Z de ce point.';
+    function refreshStage(){
+      if (!state.image){
+        el.noImage.style.display = 'block';
+        el.calibration.style.display = 'none';
+        el.pointsPanel.style.display = 'none';
+        el.resetRow.style.display = 'none';
+        el.mapEmpty.style.display = 'flex';
+        el.mapImg.style.display = 'none';
         return;
       }
-      owEl.calibMsg.textContent = '';
-      owArmedRef = idx;
-      owEl.mapHint.style.display = 'block';
-      document.querySelectorAll('.ow-ref-place').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
+      el.noImage.style.display = 'none';
+      el.mapEmpty.style.display = 'none';
+      el.mapImg.style.display = 'block';
+      el.mapImg.src = state.image;
+      el.resetRow.style.display = 'flex';
 
-  owEl.mapImg.addEventListener('click', (e) => {
-    if (!owArmedRef) return;
-    const rect = owEl.mapImg.getBoundingClientRect();
-    const pxPct = ((e.clientX - rect.left) / rect.width) * 100;
-    const pyPct = ((e.clientY - rect.top) / rect.height) * 100;
-    const idx = owArmedRef;
-    const name = document.getElementById(`ow-ref${idx}-name`).value.trim() || `Repère ${idx}`;
-    const x = Number(document.getElementById(`ow-ref${idx}-x`).value);
-    const z = Number(document.getElementById(`ow-ref${idx}-z`).value);
-    ow.ref[idx - 1] = { name, x, z, px: pxPct, py: pyPct };
-    owUpdateRefStatus(idx);
-    owArmedRef = null;
-    owEl.mapHint.style.display = 'none';
-    document.querySelectorAll('.ow-ref-place').forEach(b => b.classList.remove('active'));
-    owRenderPins();
-    if (owHasTransform()){
-      // recalcule la position écran de tous les points existants avec le nouvel étalonnage
-      ow.points.forEach(p => {
-        const pos = owRealToPct(p.x, p.z);
-        if (pos){ p.px = pos.px; p.py = pos.py; }
-      });
-      owRefreshStage();
-      owRenderPins();
-      owRenderPointsList();
+      if (hasTransform()){
+        el.calibration.style.display = 'none';
+        el.pointsPanel.style.display = 'block';
+      } else {
+        el.calibration.style.display = 'block';
+        el.pointsPanel.style.display = 'none';
+      }
     }
-  });
 
-  owEl.pointForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('ow-p-name').value.trim();
-    const x = Number(document.getElementById('ow-p-x').value);
-    const z = Number(document.getElementById('ow-p-z').value);
-    const yRaw = document.getElementById('ow-p-y').value;
-    const y = yRaw === '' ? null : Number(yRaw);
-    const pos = owRealToPct(x, z);
-    if (!pos) return;
-    ow.points.push({ id: owIdCounter++, name, x, z, y, px: pos.px, py: pos.py });
-    owEl.pointForm.reset();
-    owRenderPins();
-    owRenderPointsList();
-  });
+    function updateRefStatus(idx){
+      const r = state.ref[idx - 1];
+      const statusEl = document.getElementById(`${ns}-ref${idx}-status`);
+      const btn = document.querySelector(`.ref-place-btn[data-ns="${ns}"][data-ref="${idx}"]`);
+      if (r){
+        statusEl.textContent = '✓ placé sur la carte';
+        btn.textContent = '📍 Re-cliquer sur la carte pour ce point';
+      } else {
+        statusEl.textContent = '';
+        btn.textContent = '📍 Cliquer sur la carte pour ce point';
+      }
+    }
 
-  function owRenderPins(){
-    owEl.mapPins.innerHTML = '';
-    ow.ref.forEach((r, i) => {
-      if (!r) return;
-      const pin = document.createElement('div');
-      pin.className = 'ow-pin ow-pin-ref';
-      pin.style.left = r.px + '%';
-      pin.style.top = r.py + '%';
-      pin.title = `${r.name} (repère ${i + 1})`;
-      owEl.mapPins.appendChild(pin);
-    });
-    ow.points.forEach(p => {
-      const pin = document.createElement('div');
-      pin.className = 'ow-pin';
-      pin.style.left = p.px + '%';
-      pin.style.top = p.py + '%';
-      pin.title = `${p.name} (X ${p.x}, Z ${p.z})`;
-      owEl.mapPins.appendChild(pin);
-    });
-  }
-
-  function owRenderPointsList(){
-    owEl.pointsList.innerHTML = '';
-    owEl.pointsEmpty.style.display = ow.points.length === 0 ? 'block' : 'none';
-    ow.points.forEach(p => {
-      const li = document.createElement('li');
-      li.className = 'point-item';
-      li.innerHTML = `
-        <div class="point-main">
-          <div class="point-name">${escapeHtml(p.name)}</div>
-          <div class="point-coords">Overworld · X ${p.x}, Z ${p.z}${p.y !== null && p.y !== undefined ? ', Y ' + p.y : ''}</div>
-        </div>
-        <div class="point-actions">
-          <button type="button" class="btn btn-ghost btn-small" data-del="${p.id}">Suppr.</button>
-        </div>
-      `;
-      owEl.pointsList.appendChild(li);
-    });
-    owEl.pointsList.querySelectorAll('[data-del]').forEach(btn => {
+    document.querySelectorAll(`.ref-place-btn[data-ns="${ns}"]`).forEach(btn => {
       btn.addEventListener('click', () => {
-        ow.points = ow.points.filter(p => p.id !== Number(btn.dataset.del));
-        owRenderPins();
-        owRenderPointsList();
+        const idx = Number(btn.dataset.ref);
+        const xInput = document.getElementById(`${ns}-ref${idx}-x`);
+        const zInput = document.getElementById(`${ns}-ref${idx}-z`);
+        if (xInput.value === '' || zInput.value === ''){
+          el.calibMsg.textContent = 'Renseigne d\'abord les coordonnées X et Z de ce point.';
+          return;
+        }
+        el.calibMsg.textContent = '';
+        armedRef = idx;
+        el.mapHint.style.display = 'block';
+        document.querySelectorAll(`.ref-place-btn[data-ns="${ns}"]`).forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
       });
     });
+
+    el.mapImg.addEventListener('click', (e) => {
+      if (!armedRef) return;
+      const rect = el.mapImg.getBoundingClientRect();
+      const pxPct = ((e.clientX - rect.left) / rect.width) * 100;
+      const pyPct = ((e.clientY - rect.top) / rect.height) * 100;
+      const idx = armedRef;
+      const name = document.getElementById(`${ns}-ref${idx}-name`).value.trim() || `Repère ${idx}`;
+      const x = Number(document.getElementById(`${ns}-ref${idx}-x`).value);
+      const z = Number(document.getElementById(`${ns}-ref${idx}-z`).value);
+      state.ref[idx - 1] = { name, x, z, px: pxPct, py: pyPct };
+      updateRefStatus(idx);
+      armedRef = null;
+      el.mapHint.style.display = 'none';
+      document.querySelectorAll(`.ref-place-btn[data-ns="${ns}"]`).forEach(b => b.classList.remove('active'));
+      renderPins();
+      if (hasTransform()){
+        // recalcule la position écran de tous les points existants (leurs vraies
+        // coordonnées X/Z ne changent pas, seul l'étalonnage vient d'être refait)
+        state.points.forEach(p => {
+          const pos = realToPct(p.x, p.z);
+          if (pos){ p.px = pos.px; p.py = pos.py; }
+        });
+        refreshStage();
+        renderPins();
+        renderPointsList();
+      }
+    });
+
+    el.pointForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById(`${ns}-p-name`).value.trim();
+      const x = Number(document.getElementById(`${ns}-p-x`).value);
+      const z = Number(document.getElementById(`${ns}-p-z`).value);
+      const yRaw = document.getElementById(`${ns}-p-y`).value;
+      const y = yRaw === '' ? null : Number(yRaw);
+      const pos = realToPct(x, z);
+      if (!pos) return;
+      state.points.push({ id: idCounter++, name, x, z, y, px: pos.px, py: pos.py });
+      el.pointForm.reset();
+      renderPins();
+      renderPointsList();
+    });
+
+    function renderPins(){
+      el.mapPins.innerHTML = '';
+      state.ref.forEach((r, i) => {
+        if (!r) return;
+        const pin = document.createElement('div');
+        pin.className = 'map-pin map-pin-ref';
+        pin.style.left = r.px + '%';
+        pin.style.top = r.py + '%';
+        pin.title = `${r.name} (repère ${i + 1})`;
+        el.mapPins.appendChild(pin);
+      });
+      state.points.forEach(p => {
+        const pin = document.createElement('div');
+        pin.className = 'map-pin';
+        pin.style.left = p.px + '%';
+        pin.style.top = p.py + '%';
+        pin.title = `${p.name} (X ${p.x}, Z ${p.z})`;
+        el.mapPins.appendChild(pin);
+      });
+    }
+
+    function renderPointsList(){
+      el.pointsList.innerHTML = '';
+      el.pointsEmpty.style.display = state.points.length === 0 ? 'block' : 'none';
+
+      const homeCount = document.getElementById(`dim-${ns === 'ow' ? 'overworld' : ns}-count`);
+      if (homeCount){
+        homeCount.textContent = state.points.length === 0
+          ? 'Aucun point'
+          : `${state.points.length} point${state.points.length > 1 ? 's' : ''}`;
+      }
+
+      state.points.forEach(p => {
+        const li = document.createElement('li');
+        li.className = 'point-item';
+        li.innerHTML = `
+          <div class="point-main">
+            <div class="point-name">${escapeHtml(p.name)}</div>
+            <div class="point-coords">X ${p.x}, Z ${p.z}${p.y !== null && p.y !== undefined ? ', Y ' + p.y : ''}</div>
+          </div>
+          <div class="point-actions">
+            <button type="button" class="btn btn-ghost btn-small" data-del="${p.id}">Suppr.</button>
+          </div>
+        `;
+        el.pointsList.appendChild(li);
+      });
+      el.pointsList.querySelectorAll('[data-del]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          state.points = state.points.filter(p => p.id !== Number(btn.dataset.del));
+          renderPins();
+          renderPointsList();
+        });
+      });
+    }
+
+    el.imageInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        state.image = ev.target.result;
+        // on garde les points (leurs vraies coordonnées restent valables), seul
+        // l'étalonnage doit être refait pour les replacer sur la nouvelle image
+        state.ref = [null, null];
+        updateRefStatus(1);
+        updateRefStatus(2);
+        refreshStage();
+        renderPins();
+        renderPointsList();
+      };
+      reader.readAsDataURL(file);
+      e.target.value = '';
+    });
+
+    document.getElementById(`${ns}-btn-reimage`).addEventListener('click', () => {
+      if (state.points.length > 0){
+        if (!confirm('Remplacer la carte actuelle ? Tes points sont gardés (ils ont leurs vraies coordonnées), mais il faudra ré-étalonner pour les repositionner sur la nouvelle image.')) return;
+      }
+      state.image = null; state.ref = [null, null];
+      refreshStage(); renderPins(); renderPointsList();
+    });
+    document.getElementById(`${ns}-btn-recalibrate`).addEventListener('click', () => {
+      state.ref = [null, null];
+      updateRefStatus(1); updateRefStatus(2);
+      refreshStage();
+    });
+
+    document.getElementById(`${ns}-btn-download`).addEventListener('click', () => {
+      if (!state.image){ showSaveMsg('Importe d\'abord une carte.'); return; }
+      const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showSaveMsg(`Fichier téléchargé (${fileName}).`);
+    });
+
+    function loadFromJSON(text){
+      const data = JSON.parse(text);
+      if (!data || typeof data !== 'object' || !data.image) throw new Error('format invalide');
+      state = { image: data.image, ref: data.ref || [null, null], points: data.points || [] };
+      idCounter = state.points.reduce((m, p) => Math.max(m, p.id || 0), 0) + 1;
+      updateRefStatus(1); updateRefStatus(2);
+      refreshStage(); renderPins(); renderPointsList();
+    }
+    document.getElementById(`${ns}-file-import`).addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        try { loadFromJSON(ev.target.result); showSaveMsg('Configuration chargée.'); }
+        catch (err) { showSaveMsg('Fichier invalide.'); }
+      };
+      reader.readAsText(file);
+      e.target.value = '';
+    });
+
+    refreshStage();
+    renderPointsList();
+    fetch(fileName, {cache: 'no-store'})
+      .then(r => r.ok ? r.text() : Promise.reject())
+      .then(text => loadFromJSON(text))
+      .catch(() => {});
   }
 
-  owEl.imageInput.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      ow.image = ev.target.result;
-      ow.ref = [null, null];
-      ow.points = [];
-      owUpdateRefStatus(1);
-      owUpdateRefStatus(2);
-      owRefreshStage();
-      owRenderPins();
-      owRenderPointsList();
-    };
-    reader.readAsDataURL(file);
-    e.target.value = '';
-  });
-
-  document.getElementById('ow-btn-reimage').addEventListener('click', () => {
-    if (!confirm('Remplacer la carte actuelle ? L\'étalonnage et les points seront à refaire.')) return;
-    ow.image = null; ow.ref = [null, null]; ow.points = [];
-    owRefreshStage(); owRenderPins(); owRenderPointsList();
-  });
-  document.getElementById('ow-btn-recalibrate').addEventListener('click', () => {
-    ow.ref = [null, null];
-    owUpdateRefStatus(1); owUpdateRefStatus(2);
-    owRefreshStage();
-  });
-
-  document.getElementById('ow-btn-download').addEventListener('click', () => {
-    if (!ow.image){ owShowSaveMsg('Importe d\'abord une carte.'); return; }
-    const blob = new Blob([JSON.stringify(ow, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'atlas-overworld-config.json';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-    owShowSaveMsg('Fichier téléchargé (atlas-overworld-config.json).');
-  });
-
-  function owLoadFromJSON(text){
-    const data = JSON.parse(text);
-    if (!data || typeof data !== 'object' || !data.image) throw new Error('format invalide');
-    ow = { image: data.image, ref: data.ref || [null, null], points: data.points || [] };
-    owIdCounter = ow.points.reduce((m, p) => Math.max(m, p.id || 0), 0) + 1;
-    owUpdateRefStatus(1); owUpdateRefStatus(2);
-    owRefreshStage(); owRenderPins(); owRenderPointsList();
-  }
-  document.getElementById('ow-file-import').addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      try { owLoadFromJSON(ev.target.result); owShowSaveMsg('Configuration chargée.'); }
-      catch (err) { owShowSaveMsg('Fichier invalide.'); }
-    };
-    reader.readAsText(file);
-    e.target.value = '';
-  });
-
-  owRefreshStage();
-  fetch('atlas-overworld-config.json', {cache: 'no-store'})
-    .then(r => r.ok ? r.text() : Promise.reject())
-    .then(text => owLoadFromJSON(text))
-    .catch(() => {});
+  initMapTool('ow', 'atlas-overworld-config.json');
+  initMapTool('nm', 'atlas-nether-map-config.json');
+  initMapTool('end', 'atlas-end-config.json');
 
   render();
 
