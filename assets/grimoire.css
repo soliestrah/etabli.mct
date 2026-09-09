@@ -4,36 +4,7 @@
    Le reste (boutons, panneaux, formulaires, sauvegarde...) vient de site.css
    ========================================================================= */
 
-.subtabs{
-  display:flex;
-  justify-content:center;
-  gap:16px;
-  flex-wrap:wrap;
-  margin-bottom:18px;
-  border-bottom:1px solid var(--border);
-}
-.subtab-btn{
-  cursor:pointer;
-  background:none;
-  border:none;
-  border-radius:0;
-  color:var(--muted);
-  padding:8px 2px;
-  font-family:var(--font-body);
-  font-weight:600;
-  font-size:0.82rem;
-  border-bottom:2px solid transparent;
-  margin-bottom:-1px;
-}
-.subtab-btn:hover{ color:var(--text); }
-.subtab-btn.active{ color:var(--accent); border-bottom-color:var(--accent); }
-
-/* la largeur de page (main{}) vient de site.css */
-.view{ display:none; }
-.view.active{ display:block; }
-.subview{ display:none; }
-.subview.active{ display:block; }
-
+/* .subtabs/.subtab-btn et .view/.subview viennent de site.css */
 .grid2{
   display:grid;
   grid-template-columns:340px 1fr;
@@ -211,24 +182,6 @@
   border:1px solid var(--border);
 }
 .progress-bar{ height:100%; background:var(--accent); }
-
-.durability-row{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-top:12px;
-  padding-top:10px;
-  border-top:1px dashed var(--border);
-}
-.durability-row .progress-track{ flex:1; }
-.durability-row label{ margin:0; flex:1; }
-.durability-row input[type="number"]{ width:80px; }
-.durability-pct{
-  font-family:var(--font-mono);
-  font-size:0.76rem;
-  font-weight:700;
-  white-space:nowrap;
-}
 
 .delete-row{ flex-shrink:0; }
 .completion-tag{ font-family:var(--font-mono); font-size:0.72rem; color:var(--muted); }
