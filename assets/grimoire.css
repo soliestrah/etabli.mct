@@ -39,14 +39,8 @@
   border-radius:9px;
   padding:14px 16px;
 }
-.card-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:10px;
-  flex-wrap:wrap;
-}
-.card-title{ font-weight:700; font-size:1rem; }
+/* .card-head vient de site.css (partagé avec .res-head/.proj-head) */
+/* .card-title vient de site.css (partagé avec .res-name) */
 .card-sub{ font-family:var(--font-mono); font-size:0.72rem; color:var(--muted); margin-top:2px; }
 .warn-banner{
   margin-top:10px;
