@@ -498,6 +498,17 @@ textarea{ resize:vertical; min-height:70px; }
   min-height:1em;
 }
 .row2{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.row3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+
+/* Ligne de filtres (recherche/tri) au-dessus d'une liste -- utilisée par
+   inventaire et projets, chacune y ajoutant ses propres réglages. */
+.filters-row{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-bottom:16px;
+}
 
 /* Petit texte explicatif sous un champ/bloc -- utilisé un peu partout
    (atlas, carnet, grimoire, inventaire, projets) mais n'avait jamais
@@ -521,6 +532,73 @@ textarea{ resize:vertical; min-height:70px; }
 }
 .gh-sync summary:hover{ color:var(--text); }
 .gh-sync .row2{ margin-top:12px; }
+
+/* =========================================================================
+   CARTES DE DONNÉES — pattern répété par Grimoire (objets), Inventaire
+   (ressources), Projets (fiches) et Carnet (filtres) : en-tête de carte,
+   titre, actions, barre de progression, ligne d'ajout, boutons de filtre.
+   Chaque page garde ses propres noms de classe dans son HTML (.res-head,
+   .proj-head...) -- seule la déclaration commune vit ici, une seule fois,
+   pour éviter que 4 fichiers ne se copient la même règle.
+   ========================================================================= */
+.route-card, .res-card{
+  background:var(--panel-hover);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:14px 16px;
+}
+.card-head, .res-head, .proj-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.card-title, .res-name{ font-weight:700; font-size:1rem; }
+.note-actions, .res-actions, .proj-actions{ display:flex; gap:6px; flex-shrink:0; }
+
+.res-progress-label, .proj-progress-label{
+  display:flex;
+  justify-content:space-between;
+  font-size:0.7rem;
+  color:var(--muted);
+  font-family:var(--font-mono);
+  margin-bottom:4px;
+}
+
+.stacks-list, .needs-list{
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1px dashed var(--border);
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.stack-add, .need-add{
+  display:flex;
+  gap:6px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
+.stack-qty, .need-row .qty{ font-family:var(--font-mono); color:var(--muted); flex-shrink:0; }
+.stack-row .icon-btn, .need-row .icon-btn{ padding:2px 6px; flex-shrink:0; }
+
+/* Boutons de filtre (pastille cliquable, style "chip") -- Carnet et Projets */
+.filters button, .filters-row button{
+  font-size:0.72rem;
+  padding:6px 10px;
+  background:transparent;
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  color:var(--text);
+  font-weight:600;
+}
+.filters button:hover, .filters-row button:hover{ border-color:var(--accent); color:var(--accent); }
+.filters button.active, .filters-row button.active{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:var(--accent-ink);
+}
 
 /* --- Footer --- */
 footer.site-footer{
