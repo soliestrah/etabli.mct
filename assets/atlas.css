@@ -283,7 +283,10 @@ header .ratio{
   background:var(--copper);
   border:2px solid var(--accent-ink);
   box-shadow:0 0 0 2px var(--text);
-  transform:translate(-50%, -50%);
+  /* la punaise garde une taille fixe à l'écran quel que soit le zoom de la
+     carte -- sinon elle grossit à la même vitesse que l'écart entre les
+     punaises et le zoom ne sert à rien pour les séparer visuellement */
+  transform:translate(-50%, -50%) scale(calc(1 / var(--map-zoom, 1)));
 }
 .map-pin-ref{
   background:var(--purple);
