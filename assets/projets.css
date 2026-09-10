@@ -15,6 +15,34 @@
 .inv-status-line.ok{ color:var(--green); }
 .inv-status-line.stale{ color:var(--gold); }
 
+/* --- Emplacement du projet (lien avec l'Atlas) --- */
+.proj-location{ margin-top:8px; }
+.location-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:var(--panel-hover);
+  border:1px solid var(--border);
+  border-radius:var(--radius-sm);
+  padding:5px 10px;
+  font-size:0.76rem;
+  color:var(--text);
+}
+.location-badge .icon-btn{ padding:1px 5px; }
+.loc-point-select{
+  width:100%;
+  font-size:0.78rem;
+  margin-bottom:6px;
+}
+.location-manual{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+}
+.location-manual input[type="text"]{ flex:1 1 160px; }
+.location-manual select{ flex:0 1 120px; }
+.location-manual input[type="number"]{ flex:0 1 70px; }
+
 /* --- Filtres (la base .filters-row et les boutons .filters-row button
    viennent de site.css, partagés avec .filters button de Carnet) --- */
 
