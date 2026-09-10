@@ -135,6 +135,7 @@
         <span><span class="dot ref"></span>Repère d'étalonnage</span>
         <span><span class="dot point"></span>Point ajouté</span>
         <span><span class="dot chest"></span>Conteneur (auto, depuis l'inventaire)</span>
+        <span><span class="dot project"></span>Projet (auto, depuis Projets)</span>
       </div>
     </section>
 
@@ -351,6 +352,7 @@
         <span><span class="dot ref"></span>Repère d'étalonnage</span>
         <span><span class="dot point"></span>Point ajouté</span>
         <span><span class="dot chest"></span>Conteneur (auto, depuis l'inventaire)</span>
+        <span><span class="dot project"></span>Projet (auto, depuis Projets)</span>
       </div>
     </section>
 
@@ -452,6 +454,7 @@
         <span><span class="dot ref"></span>Repère d'étalonnage</span>
         <span><span class="dot point"></span>Point ajouté</span>
         <span><span class="dot chest"></span>Conteneur (auto, depuis l'inventaire)</span>
+        <span><span class="dot project"></span>Projet (auto, depuis Projets)</span>
       </div>
     </section>
 
@@ -1321,6 +1324,7 @@
 
     function applyZoom(){
       el.zoomInner.style.transform = `translate(${panX}px, ${panY}px) scale(${zoom})`;
+      el.zoomInner.style.setProperty('--map-zoom', zoom);
     }
     function clampPan(){
       const w = el.mapWrap.clientWidth, h = el.mapWrap.clientHeight;
@@ -1396,7 +1400,11 @@
       parts.push(`${c.total || 0} items`);
       return parts.join(' — ');
     }
-    // se redessine automatiquement dès que conteneurs-config.json a fini de charger
+    function projectsForDimension(){
+      if (!dimensionLabel || !Array.isArray(window.__allProjects)) return [];
+      return window.__allProjects.filter(p => p.location && p.location.dimension === dimensionLabel);
+    }
+    // se redessine automatiquement dès que conteneurs-config.json ou projets-config.json ont fini de charger
     window.__containerRenderCallbacks.push(() => renderPins());
 
     function refreshStage(){
@@ -1530,6 +1538,16 @@
           pin.title = chestLabel(c);
           el.mapPins.appendChild(pin);
         });
+        projectsForDimension().forEach(p => {
+          const pos = realToPct(p.location.x, p.location.z);
+          if (!pos) return;
+          const pin = document.createElement('div');
+          pin.className = 'map-pin map-pin-project';
+          pin.style.left = pos.px + '%';
+          pin.style.top = pos.py + '%';
+          pin.title = `🧱 ${p.name}${p.location.label ? ' — ' + p.location.label : ''} (${STATUS_LABELS[p.status] || p.status})`;
+          el.mapPins.appendChild(pin);
+        });
       }
     }
 
@@ -1658,12 +1676,24 @@
     brown_shulker_box: 'Shulker box', green_shulker_box: 'Shulker box', red_shulker_box: 'Shulker box',
     black_shulker_box: 'Shulker box',
   };
+  const STATUS_LABELS = { todo: 'À faire', inprogress: 'En cours', done: 'Terminé' };
+
   window.__allContainers = [];
   window.__containerRenderCallbacks = [];
   fetch('conteneurs-config.json', { cache: 'no-store' })
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(data => {
       window.__allContainers = Array.isArray(data.containers) ? data.containers : [];
+      window.__containerRenderCallbacks.forEach(cb => cb());
+    })
+    .catch(() => {});
+
+  // ===================== PROJETS (avec un emplacement défini) =====================
+  window.__allProjects = [];
+  fetch('projets-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      window.__allProjects = (Array.isArray(data.projects) ? data.projects : []).filter(p => p.location);
       window.__containerRenderCallbacks.forEach(cb => cb());
     })
     .catch(() => {});
