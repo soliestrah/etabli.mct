@@ -297,6 +297,10 @@ header .ratio{
   width:9px; height:9px;
   border-width:1px;
 }
+.map-pin-project{
+  background:var(--blue);
+  width:11px; height:11px;
+}
 .map-legend{
   display:flex;
   gap:14px;
@@ -314,6 +318,7 @@ header .ratio{
 .map-legend .dot.ref{ background:var(--purple); }
 .map-legend .dot.point{ background:var(--copper); }
 .map-legend .dot.chest{ background:var(--gold); }
+.map-legend .dot.project{ background:var(--blue); }
 .ref-row{
   border:1px solid var(--border);
   border-radius:var(--radius);
