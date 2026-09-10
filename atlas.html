@@ -120,10 +120,22 @@
       <h2>Plan</h2>
       <div class="map-img-wrap" id="ow-map-wrap">
         <div class="map-img-empty" id="ow-map-empty">La carte s'affichera ici une fois l'image importée.</div>
-        <img id="ow-map-img" class="map-img" alt="Carte Overworld" style="display:none;">
-        <div class="map-pins" id="ow-map-pins"></div>
+        <div class="map-zoom-inner" id="ow-zoom-inner">
+          <img id="ow-map-img" class="map-img" alt="Carte Overworld" style="display:none;">
+          <div class="map-pins" id="ow-map-pins"></div>
+        </div>
+        <div class="map-zoom-controls" id="ow-zoom-controls" style="display:none;">
+          <button type="button" class="zoom-btn" id="ow-zoom-in" title="Zoomer">+</button>
+          <button type="button" class="zoom-btn" id="ow-zoom-out" title="Dézoomer">−</button>
+          <button type="button" class="zoom-btn" id="ow-zoom-reset" title="Réinitialiser le zoom">⟲</button>
+        </div>
       </div>
       <div class="hint" id="ow-map-hint" style="display:none;">Clique sur la carte pour placer le point de repère demandé.</div>
+      <div class="map-legend">
+        <span><span class="dot ref"></span>Repère d'étalonnage</span>
+        <span><span class="dot point"></span>Point ajouté</span>
+        <span><span class="dot chest"></span>Conteneur (auto, depuis l'inventaire)</span>
+      </div>
     </section>
 
     <section class="panel plain save-section col-full">
@@ -324,10 +336,22 @@
       <h2>Plan</h2>
       <div class="map-img-wrap" id="nm-map-wrap">
         <div class="map-img-empty" id="nm-map-empty">La carte s'affichera ici une fois l'image importée.</div>
-        <img id="nm-map-img" class="map-img" alt="Carte Nether" style="display:none;">
-        <div class="map-pins" id="nm-map-pins"></div>
+        <div class="map-zoom-inner" id="nm-zoom-inner">
+          <img id="nm-map-img" class="map-img" alt="Carte Nether" style="display:none;">
+          <div class="map-pins" id="nm-map-pins"></div>
+        </div>
+        <div class="map-zoom-controls" id="nm-zoom-controls" style="display:none;">
+          <button type="button" class="zoom-btn" id="nm-zoom-in" title="Zoomer">+</button>
+          <button type="button" class="zoom-btn" id="nm-zoom-out" title="Dézoomer">−</button>
+          <button type="button" class="zoom-btn" id="nm-zoom-reset" title="Réinitialiser le zoom">⟲</button>
+        </div>
       </div>
       <div class="hint" id="nm-map-hint" style="display:none;">Clique sur la carte pour placer le point de repère demandé.</div>
+      <div class="map-legend">
+        <span><span class="dot ref"></span>Repère d'étalonnage</span>
+        <span><span class="dot point"></span>Point ajouté</span>
+        <span><span class="dot chest"></span>Conteneur (auto, depuis l'inventaire)</span>
+      </div>
     </section>
 
     <section class="panel plain save-section col-full">
@@ -413,10 +437,22 @@
       <h2>Plan</h2>
       <div class="map-img-wrap" id="end-map-wrap">
         <div class="map-img-empty" id="end-map-empty">La carte s'affichera ici une fois l'image importée.</div>
-        <img id="end-map-img" class="map-img" alt="Carte End" style="display:none;">
-        <div class="map-pins" id="end-map-pins"></div>
+        <div class="map-zoom-inner" id="end-zoom-inner">
+          <img id="end-map-img" class="map-img" alt="Carte End" style="display:none;">
+          <div class="map-pins" id="end-map-pins"></div>
+        </div>
+        <div class="map-zoom-controls" id="end-zoom-controls" style="display:none;">
+          <button type="button" class="zoom-btn" id="end-zoom-in" title="Zoomer">+</button>
+          <button type="button" class="zoom-btn" id="end-zoom-out" title="Dézoomer">−</button>
+          <button type="button" class="zoom-btn" id="end-zoom-reset" title="Réinitialiser le zoom">⟲</button>
+        </div>
       </div>
       <div class="hint" id="end-map-hint" style="display:none;">Clique sur la carte pour placer le point de repère demandé.</div>
+      <div class="map-legend">
+        <span><span class="dot ref"></span>Repère d'étalonnage</span>
+        <span><span class="dot point"></span>Point ajouté</span>
+        <span><span class="dot chest"></span>Conteneur (auto, depuis l'inventaire)</span>
+      </div>
     </section>
 
     <section class="panel plain save-section col-full">
@@ -1252,7 +1288,7 @@
   // ===================== CARTE-IMAGE GÉNÉRIQUE (Overworld / Nether / End) =====================
   // Une seule brique réutilisée 3x (ns = 'ow', 'nm', 'end'), chaque instance a ses propres
   // ids dans le DOM (ex: ow-map-img, nm-map-img...) et son propre fichier de sauvegarde.
-  function initMapTool(ns, fileName){
+  function initMapTool(ns, fileName, dimensionLabel){
     const el = {
       noImage: document.getElementById(`${ns}-no-image`),
       imageInput: document.getElementById(`${ns}-image-input`),
@@ -1264,6 +1300,9 @@
       pointsEmpty: document.getElementById(`${ns}-points-empty`),
       resetRow: document.getElementById(`${ns}-reset-row`),
       mapEmpty: document.getElementById(`${ns}-map-empty`),
+      mapWrap: document.getElementById(`${ns}-map-wrap`),
+      zoomInner: document.getElementById(`${ns}-zoom-inner`),
+      zoomControls: document.getElementById(`${ns}-zoom-controls`),
       mapImg: document.getElementById(`${ns}-map-img`),
       mapPins: document.getElementById(`${ns}-map-pins`),
       mapHint: document.getElementById(`${ns}-map-hint`),
@@ -1274,6 +1313,56 @@
     let state = { image: null, ref: [null, null], points: [] };
     let idCounter = 1;
     let armedRef = null; // 1 ou 2 pendant qu'on attend un clic sur la carte
+
+    // ---- zoom / déplacement de la carte ----
+    let zoom = 1, panX = 0, panY = 0;
+    let dragging = false, dragStartX = 0, dragStartY = 0, dragMoved = false;
+    const ZOOM_MIN = 1, ZOOM_MAX = 4, ZOOM_STEP = 0.5;
+
+    function applyZoom(){
+      el.zoomInner.style.transform = `translate(${panX}px, ${panY}px) scale(${zoom})`;
+    }
+    function clampPan(){
+      const w = el.mapWrap.clientWidth, h = el.mapWrap.clientHeight;
+      const maxX = (w * (zoom - 1)) / 2;
+      const maxY = (h * (zoom - 1)) / 2;
+      panX = Math.max(-maxX, Math.min(maxX, panX));
+      panY = Math.max(-maxY, Math.min(maxY, panY));
+    }
+    function setZoom(z){
+      zoom = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, z));
+      if (zoom === 1){ panX = 0; panY = 0; }
+      clampPan();
+      applyZoom();
+    }
+    function resetZoom(){ zoom = 1; panX = 0; panY = 0; applyZoom(); }
+
+    document.getElementById(`${ns}-zoom-in`).addEventListener('click', () => setZoom(zoom + ZOOM_STEP));
+    document.getElementById(`${ns}-zoom-out`).addEventListener('click', () => setZoom(zoom - ZOOM_STEP));
+    document.getElementById(`${ns}-zoom-reset`).addEventListener('click', resetZoom);
+
+    el.mapWrap.addEventListener('wheel', (e) => {
+      if (!state.image) return;
+      e.preventDefault();
+      setZoom(zoom + (e.deltaY < 0 ? ZOOM_STEP : -ZOOM_STEP));
+    }, { passive: false });
+
+    el.mapWrap.addEventListener('pointerdown', (e) => {
+      if (!state.image) return;
+      dragging = true; dragMoved = false;
+      dragStartX = e.clientX - panX; dragStartY = e.clientY - panY;
+      el.mapWrap.setPointerCapture(e.pointerId);
+    });
+    el.mapWrap.addEventListener('pointermove', (e) => {
+      if (!dragging) return;
+      const nx = e.clientX - dragStartX, ny = e.clientY - dragStartY;
+      if (Math.abs(nx - panX) > 3 || Math.abs(ny - panY) > 3) dragMoved = true;
+      panX = nx; panY = ny;
+      clampPan();
+      applyZoom();
+    });
+    el.mapWrap.addEventListener('pointerup', () => { dragging = false; });
+    el.mapWrap.addEventListener('pointercancel', () => { dragging = false; });
 
     function showSaveMsg(msg){
       el.saveMsg.textContent = msg;
@@ -1295,6 +1384,21 @@
       return { px: t.offX + x * t.scaleX, py: t.offZ + z * t.scaleZ };
     }
 
+    function containersForDimension(){
+      if (!dimensionLabel || !Array.isArray(window.__allContainers)) return [];
+      return window.__allContainers.filter(c => c.dimension === dimensionLabel);
+    }
+    function chestLabel(c){
+      const typeFr = CONTAINER_TYPE_FR[c.type] || c.type;
+      const parts = [];
+      parts.push(c.name ? `${typeFr} « ${c.name} »` : typeFr);
+      if (c.zone) parts.push(c.zone);
+      parts.push(`${c.total || 0} items`);
+      return parts.join(' — ');
+    }
+    // se redessine automatiquement dès que conteneurs-config.json a fini de charger
+    window.__containerRenderCallbacks.push(() => renderPins());
+
     function refreshStage(){
       if (!state.image){
         el.noImage.style.display = 'block';
@@ -1303,6 +1407,7 @@
         el.resetRow.style.display = 'none';
         el.mapEmpty.style.display = 'flex';
         el.mapImg.style.display = 'none';
+        el.zoomControls.style.display = 'none';
         return;
       }
       el.noImage.style.display = 'none';
@@ -1310,6 +1415,7 @@
       el.mapImg.style.display = 'block';
       el.mapImg.src = state.image;
       el.resetRow.style.display = 'flex';
+      el.zoomControls.style.display = 'flex';
 
       if (hasTransform()){
         el.calibration.style.display = 'none';
@@ -1352,6 +1458,7 @@
 
     el.mapImg.addEventListener('click', (e) => {
       if (!armedRef) return;
+      if (dragMoved){ dragMoved = false; return; }
       const rect = el.mapImg.getBoundingClientRect();
       const pxPct = ((e.clientX - rect.left) / rect.width) * 100;
       const pyPct = ((e.clientY - rect.top) / rect.height) * 100;
@@ -1412,6 +1519,18 @@
         pin.title = `${p.name} (X ${p.x}, Z ${p.z})`;
         el.mapPins.appendChild(pin);
       });
+      if (hasTransform()){
+        containersForDimension().forEach(c => {
+          const pos = realToPct(c.x, c.z);
+          if (!pos) return;
+          const pin = document.createElement('div');
+          pin.className = 'map-pin map-pin-chest';
+          pin.style.left = pos.px + '%';
+          pin.style.top = pos.py + '%';
+          pin.title = chestLabel(c);
+          el.mapPins.appendChild(pin);
+        });
+      }
     }
 
     function renderPointsList(){
@@ -1457,6 +1576,7 @@
         // on garde les points (leurs vraies coordonnées restent valables), seul
         // l'étalonnage doit être refait pour les replacer sur la nouvelle image
         state.ref = [null, null];
+        resetZoom();
         updateRefStatus(1);
         updateRefStatus(2);
         refreshStage();
@@ -1499,6 +1619,7 @@
       if (!data || typeof data !== 'object' || !data.image) throw new Error('format invalide');
       state = { image: data.image, ref: data.ref || [null, null], points: data.points || [] };
       idCounter = state.points.reduce((m, p) => Math.max(m, p.id || 0), 0) + 1;
+      resetZoom();
       updateRefStatus(1); updateRefStatus(2);
       refreshStage(); renderPins(); renderPointsList();
     }
@@ -1522,9 +1643,34 @@
       .catch(() => {});
   }
 
-  initMapTool('ow', 'atlas-overworld-config.json');
-  initMapTool('nm', 'atlas-nether-map-config.json');
-  initMapTool('end', 'atlas-end-config.json');
+  // ===================== CONTENEURS (coffres, barils, fours...) =====================
+  // Chargé une seule fois, partagé par les 3 cartes (Overworld/Nether/End) qui piochent
+  // dedans chacune selon leur dimension pour épingler automatiquement les conteneurs.
+  const CONTAINER_TYPE_FR = {
+    chest: 'Coffre', trapped_chest: 'Coffre piégé', barrel: 'Baril',
+    dispenser: 'Dispenser', dropper: 'Dropper', hopper: 'Hopper',
+    furnace: 'Four', blast_furnace: 'Four à lave', smoker: 'Fumoir',
+    brewing_stand: 'Alambic', ender_chest: 'Enderchest', shulker_box: 'Shulker box',
+    white_shulker_box: 'Shulker box', orange_shulker_box: 'Shulker box', magenta_shulker_box: 'Shulker box',
+    light_blue_shulker_box: 'Shulker box', yellow_shulker_box: 'Shulker box', lime_shulker_box: 'Shulker box',
+    pink_shulker_box: 'Shulker box', gray_shulker_box: 'Shulker box', light_gray_shulker_box: 'Shulker box',
+    cyan_shulker_box: 'Shulker box', purple_shulker_box: 'Shulker box', blue_shulker_box: 'Shulker box',
+    brown_shulker_box: 'Shulker box', green_shulker_box: 'Shulker box', red_shulker_box: 'Shulker box',
+    black_shulker_box: 'Shulker box',
+  };
+  window.__allContainers = [];
+  window.__containerRenderCallbacks = [];
+  fetch('conteneurs-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      window.__allContainers = Array.isArray(data.containers) ? data.containers : [];
+      window.__containerRenderCallbacks.forEach(cb => cb());
+    })
+    .catch(() => {});
+
+  initMapTool('ow', 'atlas-overworld-config.json', 'Overworld');
+  initMapTool('nm', 'atlas-nether-map-config.json', 'Nether');
+  initMapTool('end', 'atlas-end-config.json', 'End');
 
   render();
 
