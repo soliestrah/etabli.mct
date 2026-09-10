@@ -105,6 +105,36 @@
   let inventoryStock = {}; // { "nom en minuscule": quantitéTotale }
   let inventoryLoaded = false;
 
+  // points Atlas connus (les 3 cartes-image + les points du calculateur de
+  // tunnels Nether), chargés en lecture seule pour permettre de choisir un
+  // emplacement existant plutôt que de retaper des coordonnées à la main
+  let atlasPoints = []; // { dimension, name, x, z }
+
+  function loadAtlasPoints(){
+    const collectFromMap = (data, dimension) =>
+      (data && Array.isArray(data.points)) ? data.points.map(p => ({ dimension, name: p.name, x: p.x, z: p.z })) : [];
+    const collectFromTunnels = (data) =>
+      Array.isArray(data) ? data.map(p => ({
+        dimension: p.coordType === 'nether' ? 'Nether' : 'Overworld',
+        name: p.name, x: p.x, z: p.z,
+      })) : [];
+
+    Promise.all([
+      fetch('atlas-overworld-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch('atlas-nether-map-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch('atlas-end-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch('atlas-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null),
+    ]).then(([ow, nm, end, tunnels]) => {
+      atlasPoints = [
+        ...collectFromMap(ow, 'Overworld'),
+        ...collectFromMap(nm, 'Nether'),
+        ...collectFromMap(end, 'End'),
+        ...collectFromTunnels(tunnels),
+      ];
+      renderAll();
+    });
+  }
+
   const form = document.getElementById('proj-form');
   const listEl = document.getElementById('proj-list');
   const emptyNote = document.getElementById('empty-note');
@@ -162,6 +192,7 @@
       notes: document.getElementById('p-notes').value.trim(),
       status: 'todo',
       needs: [],
+      location: null,
       createdAt: new Date().toISOString()
     });
     form.reset();
@@ -257,6 +288,36 @@
         `;
       }
 
+      const pointOptionsHtml = atlasPoints.map((p, i) =>
+        `<option value="${i}">${p.dimension} — ${escapeHtml(p.name)} (X${p.x}, Z${p.z})</option>`
+      ).join('');
+      const locationHtml = `
+        <div class="proj-location">
+          ${proj.location ? `
+            <div class="location-badge">
+              📍 ${proj.location.label ? escapeHtml(proj.location.label) + ' — ' : ''}${proj.location.dimension} · X ${proj.location.x}, Z ${proj.location.z}
+              <button type="button" class="icon-btn" data-del-location="${proj.id}" title="Retirer l'emplacement">✕</button>
+            </div>
+          ` : `
+            <select class="loc-point-select" data-loc-point="${proj.id}">
+              <option value="">📍 Choisir un point existant sur l'Atlas…</option>
+              ${pointOptionsHtml}
+            </select>
+            <div class="location-manual">
+              <input type="text" placeholder="Nom du lieu (optionnel)" data-loc-name="${proj.id}">
+              <select data-loc-dim="${proj.id}">
+                <option value="Overworld">Overworld</option>
+                <option value="Nether">Nether</option>
+                <option value="End">End</option>
+              </select>
+              <input type="number" placeholder="X" data-loc-x="${proj.id}">
+              <input type="number" placeholder="Z" data-loc-z="${proj.id}">
+              <button type="button" class="btn-small" data-set-location="${proj.id}">Définir</button>
+            </div>
+          `}
+        </div>
+      `;
+
       card.innerHTML = `
         <div class="proj-head">
           <div class="proj-title-wrap">
@@ -272,6 +333,7 @@
             <button class="btn-small" data-del="${proj.id}">Suppr.</button>
           </div>
         </div>
+        ${locationHtml}
         ${checklistHtml}
         ${!hasChecklist && proj.needs.length ? `
           <div class="proj-progress">
@@ -342,6 +404,36 @@
         renderAll();
       });
     });
+    listEl.querySelectorAll('[data-loc-point]').forEach(sel => {
+      sel.addEventListener('change', () => {
+        if (sel.value === '') return;
+        const proj = projects.find(p => p.id === Number(sel.dataset.locPoint));
+        const point = atlasPoints[Number(sel.value)];
+        if (!proj || !point) return;
+        proj.location = { label: point.name, dimension: point.dimension, x: point.x, z: point.z };
+        renderAll();
+      });
+    });
+    listEl.querySelectorAll('[data-set-location]').forEach(b => {
+      b.addEventListener('click', () => {
+        const projId = Number(b.dataset.setLocation);
+        const proj = projects.find(p => p.id === projId);
+        const name = listEl.querySelector(`[data-loc-name="${projId}"]`).value.trim();
+        const dim = listEl.querySelector(`[data-loc-dim="${projId}"]`).value;
+        const x = Number(listEl.querySelector(`[data-loc-x="${projId}"]`).value);
+        const z = Number(listEl.querySelector(`[data-loc-z="${projId}"]`).value);
+        if (!proj || Number.isNaN(x) || Number.isNaN(z)) return;
+        proj.location = { label: name, dimension: dim, x, z };
+        renderAll();
+      });
+    });
+    listEl.querySelectorAll('[data-del-location]').forEach(b => {
+      b.addEventListener('click', () => {
+        const proj = projects.find(p => p.id === Number(b.dataset.delLocation));
+        if (proj) proj.location = null;
+        renderAll();
+      });
+    });
   }
 
   function renderAll(){
@@ -365,6 +457,7 @@
       status: p.status || 'todo',
       needs: Array.isArray(p.needs) ? p.needs : [],
       checklist: Array.isArray(p.checklist) ? p.checklist : [],
+      location: p.location || null,
       createdAt: p.createdAt || new Date().toISOString(),
       autoRule: p.autoRule || null
     }));
@@ -606,6 +699,7 @@
   loadInventoryStock();
   loadContainers();
   loadStats();
+  loadAtlasPoints();
 
   // Chargement automatique depuis le dépôt (fonctionne quand le site est hébergé, ex. GitHub Pages).
   fetch('projets-config.json', {cache: 'no-store'})
