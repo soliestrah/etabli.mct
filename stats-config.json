@@ -283,7 +283,8 @@
           "name": "Wax on"
         }
       ],
-      "lastPosition": null
+      "lastPosition": null,
+      "equipment": {}
     },
     {
       "uuid": "e593b84e-1eb5-3fe8-8f90-b0a891382963",
@@ -591,7 +592,8 @@
           "name": "Wax on"
         }
       ],
-      "lastPosition": null
+      "lastPosition": null,
+      "equipment": {}
     }
   ]
 }

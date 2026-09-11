@@ -1,0 +1,2593 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2026-09-11T16:59:32+00:00",
+    "label": null,
+    "resources": [
+      {
+        "id": "minecraft:arrow",
+        "name": "Arrow",
+        "category": "Autre",
+        "total": 2109
+      },
+      {
+        "id": "minecraft:bone",
+        "name": "Bone",
+        "category": "Mobs",
+        "total": 2102
+      },
+      {
+        "id": "minecraft:cobbled_deepslate",
+        "name": "Cobbled deepslate",
+        "category": "Blocs",
+        "total": 1150
+      },
+      {
+        "id": "minecraft:dirt",
+        "name": "Dirt",
+        "category": "Blocs",
+        "total": 962
+      },
+      {
+        "id": "minecraft:torch",
+        "name": "Torch",
+        "category": "Autre",
+        "total": 822
+      },
+      {
+        "id": "minecraft:glass",
+        "name": "Glass",
+        "category": "Blocs",
+        "total": 776
+      },
+      {
+        "id": "minecraft:terracotta",
+        "name": "Terracotta",
+        "category": "Blocs",
+        "total": 717
+      },
+      {
+        "id": "minecraft:gravel",
+        "name": "Gravel",
+        "category": "Blocs",
+        "total": 582
+      },
+      {
+        "id": "minecraft:copper_ingot",
+        "name": "Copper ingot",
+        "category": "Minerais",
+        "total": 528
+      },
+      {
+        "id": "minecraft:glass_pane",
+        "name": "Glass pane",
+        "category": "Blocs",
+        "total": 515
+      },
+      {
+        "id": "minecraft:brick",
+        "name": "Brick",
+        "category": "Blocs",
+        "total": 459
+      },
+      {
+        "id": "minecraft:lapis_lazuli",
+        "name": "Lapis lazuli",
+        "category": "Minerais",
+        "total": 339
+      },
+      {
+        "id": "minecraft:mud",
+        "name": "Mud",
+        "category": "Autre",
+        "total": 328
+      },
+      {
+        "id": "minecraft:deepslate_brick_stairs",
+        "name": "Deepslate brick stairs",
+        "category": "Blocs",
+        "total": 311
+      },
+      {
+        "id": "minecraft:light_gray_terracotta",
+        "name": "Light gray terracotta",
+        "category": "Blocs",
+        "total": 298
+      },
+      {
+        "id": "minecraft:wheat_seeds",
+        "name": "Wheat seeds",
+        "category": "Nourriture",
+        "total": 291
+      },
+      {
+        "id": "minecraft:deepslate",
+        "name": "Deepslate",
+        "category": "Blocs",
+        "total": 291
+      },
+      {
+        "id": "minecraft:copper_nugget",
+        "name": "Copper nugget",
+        "category": "Minerais",
+        "total": 254
+      },
+      {
+        "id": "minecraft:tuff_brick_slab",
+        "name": "Tuff brick slab",
+        "category": "Blocs",
+        "total": 232
+      },
+      {
+        "id": "minecraft:cobblestone",
+        "name": "Cobblestone",
+        "category": "Blocs",
+        "total": 219
+      },
+      {
+        "id": "minecraft:quartz",
+        "name": "Quartz",
+        "category": "Minerais",
+        "total": 216
+      },
+      {
+        "id": "minecraft:oak_log",
+        "name": "Oak log",
+        "category": "Blocs",
+        "total": 215
+      },
+      {
+        "id": "minecraft:tuff_brick_stairs",
+        "name": "Tuff brick stairs",
+        "category": "Blocs",
+        "total": 211
+      },
+      {
+        "id": "minecraft:iron_ingot",
+        "name": "Iron ingot",
+        "category": "Minerais",
+        "total": 209
+      },
+      {
+        "id": "minecraft:sand",
+        "name": "Sand",
+        "category": "Blocs",
+        "total": 206
+      },
+      {
+        "id": "minecraft:nether_brick",
+        "name": "Nether brick",
+        "category": "Blocs",
+        "total": 194
+      },
+      {
+        "id": "minecraft:white_terracotta",
+        "name": "White terracotta",
+        "category": "Blocs",
+        "total": 194
+      },
+      {
+        "id": "minecraft:mangrove_roots",
+        "name": "Mangrove roots",
+        "category": "Autre",
+        "total": 181
+      },
+      {
+        "id": "minecraft:nether_bricks",
+        "name": "Nether bricks",
+        "category": "Blocs",
+        "total": 177
+      },
+      {
+        "id": "minecraft:pale_oak_log",
+        "name": "Pale oak log",
+        "category": "Blocs",
+        "total": 169
+      },
+      {
+        "id": "minecraft:tuff",
+        "name": "Tuff",
+        "category": "Autre",
+        "total": 167
+      },
+      {
+        "id": "minecraft:wheat",
+        "name": "Wheat",
+        "category": "Nourriture",
+        "total": 158
+      },
+      {
+        "id": "minecraft:rooted_dirt",
+        "name": "Rooted dirt",
+        "category": "Blocs",
+        "total": 154
+      },
+      {
+        "id": "minecraft:stick",
+        "name": "Stick",
+        "category": "Autre",
+        "total": 150
+      },
+      {
+        "id": "minecraft:cut_copper_slab",
+        "name": "Cut copper slab",
+        "category": "Autre",
+        "total": 148
+      },
+      {
+        "id": "minecraft:tuff_bricks",
+        "name": "Tuff bricks",
+        "category": "Blocs",
+        "total": 144
+      },
+      {
+        "id": "minecraft:tuff_brick_wall",
+        "name": "Tuff brick wall",
+        "category": "Blocs",
+        "total": 139
+      },
+      {
+        "id": "minecraft:oak_stairs",
+        "name": "Oak stairs",
+        "category": "Autre",
+        "total": 133
+      },
+      {
+        "id": "minecraft:baked_potato",
+        "name": "Baked potato",
+        "category": "Nourriture",
+        "total": 127
+      },
+      {
+        "id": "minecraft:oak_sapling",
+        "name": "Oak sapling",
+        "category": "Autre",
+        "total": 126
+      },
+      {
+        "id": "minecraft:moss_block",
+        "name": "Moss block",
+        "category": "Autre",
+        "total": 126
+      },
+      {
+        "id": "minecraft:carrot",
+        "name": "Carrot",
+        "category": "Nourriture",
+        "total": 126
+      },
+      {
+        "id": "minecraft:bamboo_block",
+        "name": "Bamboo block",
+        "category": "Autre",
+        "total": 125
+      },
+      {
+        "id": "minecraft:honeycomb",
+        "name": "Honeycomb",
+        "category": "Autre",
+        "total": 115
+      },
+      {
+        "id": "minecraft:emerald",
+        "name": "Emerald",
+        "category": "Minerais",
+        "total": 113
+      },
+      {
+        "id": "minecraft:bamboo_slab",
+        "name": "Bamboo slab",
+        "category": "Autre",
+        "total": 112
+      },
+      {
+        "id": "minecraft:cobblestone_stairs",
+        "name": "Cobblestone stairs",
+        "category": "Blocs",
+        "total": 107
+      },
+      {
+        "id": "minecraft:cobbled_deepslate_stairs",
+        "name": "Cobbled deepslate stairs",
+        "category": "Blocs",
+        "total": 104
+      },
+      {
+        "id": "minecraft:stone_brick_slab",
+        "name": "Stone brick slab",
+        "category": "Blocs",
+        "total": 104
+      },
+      {
+        "id": "minecraft:deepslate_tile_stairs",
+        "name": "Deepslate tile stairs",
+        "category": "Blocs",
+        "total": 103
+      },
+      {
+        "id": "minecraft:bamboo",
+        "name": "Bamboo",
+        "category": "Autre",
+        "total": 98
+      },
+      {
+        "id": "minecraft:mangrove_leaves",
+        "name": "Mangrove leaves",
+        "category": "Autre",
+        "total": 96
+      },
+      {
+        "id": "minecraft:gold_ingot",
+        "name": "Gold ingot",
+        "category": "Minerais",
+        "total": 90
+      },
+      {
+        "id": "minecraft:stone_stairs",
+        "name": "Stone stairs",
+        "category": "Blocs",
+        "total": 88
+      },
+      {
+        "id": "minecraft:acacia_log",
+        "name": "Acacia log",
+        "category": "Blocs",
+        "total": 83
+      },
+      {
+        "id": "minecraft:dark_oak_log",
+        "name": "Dark oak log",
+        "category": "Blocs",
+        "total": 83
+      },
+      {
+        "id": "minecraft:book",
+        "name": "Book",
+        "category": "Autre",
+        "total": 83
+      },
+      {
+        "id": "minecraft:polished_deepslate",
+        "name": "Polished deepslate",
+        "category": "Blocs",
+        "total": 78
+      },
+      {
+        "id": "minecraft:calcite",
+        "name": "Calcite",
+        "category": "Autre",
+        "total": 74
+      },
+      {
+        "id": "minecraft:rotten_flesh",
+        "name": "Rotten flesh",
+        "category": "Mobs",
+        "total": 73
+      },
+      {
+        "id": "minecraft:copper_bars",
+        "name": "Copper bars",
+        "category": "Autre",
+        "total": 73
+      },
+      {
+        "id": "minecraft:sandstone",
+        "name": "Sandstone",
+        "category": "Blocs",
+        "total": 71
+      },
+      {
+        "id": "minecraft:packed_ice",
+        "name": "Packed ice",
+        "category": "Autre",
+        "total": 70
+      },
+      {
+        "id": "minecraft:deepslate_bricks",
+        "name": "Deepslate bricks",
+        "category": "Blocs",
+        "total": 70
+      },
+      {
+        "id": "minecraft:bone_meal",
+        "name": "Bone meal",
+        "category": "Mobs",
+        "total": 69
+      },
+      {
+        "id": "minecraft:stone_slab",
+        "name": "Stone slab",
+        "category": "Blocs",
+        "total": 69
+      },
+      {
+        "id": "minecraft:ladder",
+        "name": "Ladder",
+        "category": "Autre",
+        "total": 69
+      },
+      {
+        "id": "minecraft:potato",
+        "name": "Potato",
+        "category": "Nourriture",
+        "total": 66
+      },
+      {
+        "id": "minecraft:brown_terracotta",
+        "name": "Brown terracotta",
+        "category": "Blocs",
+        "total": 66
+      },
+      {
+        "id": "minecraft:mossy_cobblestone",
+        "name": "Mossy cobblestone",
+        "category": "Blocs",
+        "total": 64
+      },
+      {
+        "id": "minecraft:deepslate_tile_wall",
+        "name": "Deepslate tile wall",
+        "category": "Blocs",
+        "total": 64
+      },
+      {
+        "id": "minecraft:pale_moss_block",
+        "name": "Pale moss block",
+        "category": "Autre",
+        "total": 64
+      },
+      {
+        "id": "minecraft:amethyst_shard",
+        "name": "Amethyst shard",
+        "category": "Minerais",
+        "total": 63
+      },
+      {
+        "id": "minecraft:mangrove_trapdoor",
+        "name": "Mangrove trapdoor",
+        "category": "Autre",
+        "total": 63
+      },
+      {
+        "id": "minecraft:scaffolding",
+        "name": "Scaffolding",
+        "category": "Autre",
+        "total": 62
+      },
+      {
+        "id": "minecraft:snow",
+        "name": "Snow",
+        "category": "Autre",
+        "total": 61
+      },
+      {
+        "id": "minecraft:sweet_berries",
+        "name": "Sweet berries",
+        "category": "Nourriture",
+        "total": 61
+      },
+      {
+        "id": "minecraft:oak_leaves",
+        "name": "Oak leaves",
+        "category": "Autre",
+        "total": 60
+      },
+      {
+        "id": "minecraft:nether_wart_block",
+        "name": "Nether wart block",
+        "category": "Autre",
+        "total": 59
+      },
+      {
+        "id": "minecraft:polished_deepslate_wall",
+        "name": "Polished deepslate wall",
+        "category": "Blocs",
+        "total": 57
+      },
+      {
+        "id": "minecraft:copper_block",
+        "name": "Copper block",
+        "category": "Autre",
+        "total": 57
+      },
+      {
+        "id": "minecraft:snow_block",
+        "name": "Snow block",
+        "category": "Autre",
+        "total": 56
+      },
+      {
+        "id": "minecraft:beetroot_seeds",
+        "name": "Beetroot seeds",
+        "category": "Autre",
+        "total": 56
+      },
+      {
+        "id": "minecraft:amethyst_block",
+        "name": "Amethyst block",
+        "category": "Minerais",
+        "total": 55
+      },
+      {
+        "id": "minecraft:stone_brick_wall",
+        "name": "Stone brick wall",
+        "category": "Blocs",
+        "total": 55
+      },
+      {
+        "id": "minecraft:moss_carpet",
+        "name": "Moss carpet",
+        "category": "Décoration",
+        "total": 54
+      },
+      {
+        "id": "minecraft:cooked_beef",
+        "name": "Cooked beef",
+        "category": "Nourriture",
+        "total": 54
+      },
+      {
+        "id": "minecraft:rail",
+        "name": "Rail",
+        "category": "Redstone",
+        "total": 53
+      },
+      {
+        "id": "minecraft:netherrack",
+        "name": "Netherrack",
+        "category": "Blocs",
+        "total": 53
+      },
+      {
+        "id": "minecraft:jungle_leaves",
+        "name": "Jungle leaves",
+        "category": "Autre",
+        "total": 52
+      },
+      {
+        "id": "minecraft:golden_carrot",
+        "name": "Golden carrot",
+        "category": "Nourriture",
+        "total": 50
+      },
+      {
+        "id": "minecraft:stone_brick_stairs",
+        "name": "Stone brick stairs",
+        "category": "Blocs",
+        "total": 49
+      },
+      {
+        "id": "minecraft:stone_shovel",
+        "name": "Stone shovel",
+        "category": "Blocs",
+        "total": 48
+      },
+      {
+        "id": "minecraft:string",
+        "name": "String",
+        "category": "Mobs",
+        "total": 47
+      },
+      {
+        "id": "minecraft:andesite",
+        "name": "Andesite",
+        "category": "Blocs",
+        "total": 46
+      },
+      {
+        "id": "minecraft:red_mushroom_block",
+        "name": "Red mushroom block",
+        "category": "Autre",
+        "total": 45
+      },
+      {
+        "id": "minecraft:poplar_log",
+        "name": "Poplar log",
+        "category": "Blocs",
+        "total": 44
+      },
+      {
+        "id": "minecraft:jungle_log",
+        "name": "Jungle log",
+        "category": "Blocs",
+        "total": 44
+      },
+      {
+        "id": "minecraft:andesite_stairs",
+        "name": "Andesite stairs",
+        "category": "Blocs",
+        "total": 44
+      },
+      {
+        "id": "minecraft:red_terracotta",
+        "name": "Red terracotta",
+        "category": "Blocs",
+        "total": 43
+      },
+      {
+        "id": "minecraft:obsidian",
+        "name": "Obsidian",
+        "category": "Blocs",
+        "total": 43
+      },
+      {
+        "id": "minecraft:deepslate_tiles",
+        "name": "Deepslate tiles",
+        "category": "Blocs",
+        "total": 43
+      },
+      {
+        "id": "minecraft:pumpkin_seeds",
+        "name": "Pumpkin seeds",
+        "category": "Autre",
+        "total": 42
+      },
+      {
+        "id": "minecraft:sculk",
+        "name": "Sculk",
+        "category": "Autre",
+        "total": 42
+      },
+      {
+        "id": "minecraft:water_bucket",
+        "name": "Water bucket",
+        "category": "Autre",
+        "total": 41
+      },
+      {
+        "id": "minecraft:diamond",
+        "name": "Diamond",
+        "category": "Minerais",
+        "total": 41
+      },
+      {
+        "id": "minecraft:oak_planks",
+        "name": "Oak planks",
+        "category": "Blocs",
+        "total": 39
+      },
+      {
+        "id": "minecraft:deepslate_brick_wall",
+        "name": "Deepslate brick wall",
+        "category": "Blocs",
+        "total": 39
+      },
+      {
+        "id": "minecraft:poisonous_potato",
+        "name": "Poisonous potato",
+        "category": "Nourriture",
+        "total": 39
+      },
+      {
+        "id": "minecraft:kelp",
+        "name": "Kelp",
+        "category": "Nourriture",
+        "total": 38
+      },
+      {
+        "id": "minecraft:muddy_mangrove_roots",
+        "name": "Muddy mangrove roots",
+        "category": "Autre",
+        "total": 38
+      },
+      {
+        "id": "minecraft:ender_pearl",
+        "name": "Ender pearl",
+        "category": "Mobs",
+        "total": 38
+      },
+      {
+        "id": "minecraft:lily_pad",
+        "name": "Lily pad",
+        "category": "Autre",
+        "total": 37
+      },
+      {
+        "id": "minecraft:smooth_stone",
+        "name": "Smooth stone",
+        "category": "Blocs",
+        "total": 36
+      },
+      {
+        "id": "minecraft:brown_mushroom_block",
+        "name": "Brown mushroom block",
+        "category": "Autre",
+        "total": 36
+      },
+      {
+        "id": "minecraft:lantern",
+        "name": "Lantern",
+        "category": "Autre",
+        "total": 36
+      },
+      {
+        "id": "minecraft:end_stone",
+        "name": "End stone",
+        "category": "Blocs",
+        "total": 33
+      },
+      {
+        "id": "minecraft:flint",
+        "name": "Flint",
+        "category": "Autre",
+        "total": 32
+      },
+      {
+        "id": "minecraft:spider_eye",
+        "name": "Spider eye",
+        "category": "Mobs",
+        "total": 30
+      },
+      {
+        "id": "minecraft:magma_block",
+        "name": "Magma block",
+        "category": "Autre",
+        "total": 30
+      },
+      {
+        "id": "minecraft:poplar_sapling",
+        "name": "Poplar sapling",
+        "category": "Autre",
+        "total": 30
+      },
+      {
+        "id": "minecraft:polished_tuff",
+        "name": "Polished tuff",
+        "category": "Autre",
+        "total": 30
+      },
+      {
+        "id": "minecraft:spectral_arrow",
+        "name": "Spectral arrow",
+        "category": "Autre",
+        "total": 30
+      },
+      {
+        "id": "minecraft:leather",
+        "name": "Leather",
+        "category": "Mobs",
+        "total": 30
+      },
+      {
+        "id": "minecraft:redstone",
+        "name": "Redstone",
+        "category": "Blocs",
+        "total": 29
+      },
+      {
+        "id": "minecraft:gold_nugget",
+        "name": "Gold nugget",
+        "category": "Minerais",
+        "total": 25
+      },
+      {
+        "id": "minecraft:diorite",
+        "name": "Diorite",
+        "category": "Blocs",
+        "total": 25
+      },
+      {
+        "id": "minecraft:cooked_chicken",
+        "name": "Cooked chicken",
+        "category": "Nourriture",
+        "total": 25
+      },
+      {
+        "id": "minecraft:oak_fence",
+        "name": "Oak fence",
+        "category": "Autre",
+        "total": 25
+      },
+      {
+        "id": "minecraft:mangrove_log",
+        "name": "Mangrove log",
+        "category": "Blocs",
+        "total": 25
+      },
+      {
+        "id": "minecraft:coal",
+        "name": "Coal",
+        "category": "Minerais",
+        "total": 25
+      },
+      {
+        "id": "minecraft:nether_wart",
+        "name": "Nether wart",
+        "category": "Autre",
+        "total": 25
+      },
+      {
+        "id": "minecraft:cactus",
+        "name": "Cactus",
+        "category": "Autre",
+        "total": 24
+      },
+      {
+        "id": "minecraft:firework_rocket",
+        "name": "Firework rocket",
+        "category": "Autre",
+        "total": 24
+      },
+      {
+        "id": "minecraft:egg",
+        "name": "Egg",
+        "category": "Nourriture",
+        "total": 23
+      },
+      {
+        "id": "minecraft:blackstone",
+        "name": "Blackstone",
+        "category": "Blocs",
+        "total": 23
+      },
+      {
+        "id": "minecraft:red_dye",
+        "name": "Red dye",
+        "category": "Autre",
+        "total": 22
+      },
+      {
+        "id": "minecraft:cocoa_beans",
+        "name": "Cocoa beans",
+        "category": "Autre",
+        "total": 22
+      },
+      {
+        "id": "minecraft:sculk_vein",
+        "name": "Sculk vein",
+        "category": "Autre",
+        "total": 22
+      },
+      {
+        "id": "minecraft:closed_eyeblossom",
+        "name": "Closed eyeblossom",
+        "category": "Autre",
+        "total": 22
+      },
+      {
+        "id": "minecraft:feather",
+        "name": "Feather",
+        "category": "Mobs",
+        "total": 21
+      },
+      {
+        "id": "minecraft:bow",
+        "name": "Bow",
+        "category": "Outils",
+        "total": 21
+      },
+      {
+        "id": "minecraft:glass_bottle",
+        "name": "Glass bottle",
+        "category": "Blocs",
+        "total": 20
+      },
+      {
+        "id": "minecraft:name_tag",
+        "name": "Name tag",
+        "category": "Autre",
+        "total": 20
+      },
+      {
+        "id": "minecraft:oak_slab",
+        "name": "Oak slab",
+        "category": "Autre",
+        "total": 20
+      },
+      {
+        "id": "minecraft:spruce_log",
+        "name": "Spruce log",
+        "category": "Blocs",
+        "total": 19
+      },
+      {
+        "id": "minecraft:granite",
+        "name": "Granite",
+        "category": "Blocs",
+        "total": 18
+      },
+      {
+        "id": "minecraft:stone_axe",
+        "name": "Stone axe",
+        "category": "Blocs",
+        "total": 18
+      },
+      {
+        "id": "minecraft:white_wool",
+        "name": "White wool",
+        "category": "Blocs",
+        "total": 18
+      },
+      {
+        "id": "minecraft:pale_oak_leaves",
+        "name": "Pale oak leaves",
+        "category": "Autre",
+        "total": 18
+      },
+      {
+        "id": "minecraft:leaf_litter",
+        "name": "Leaf litter",
+        "category": "Autre",
+        "total": 18
+      },
+      {
+        "id": "minecraft:dripstone_block",
+        "name": "Dripstone block",
+        "category": "Blocs",
+        "total": 17
+      },
+      {
+        "id": "minecraft:iron_chain",
+        "name": "Iron chain",
+        "category": "Autre",
+        "total": 17
+      },
+      {
+        "id": "minecraft:bamboo_sign",
+        "name": "Bamboo sign",
+        "category": "Autre",
+        "total": 17
+      },
+      {
+        "id": "minecraft:magma_cream",
+        "name": "Magma cream",
+        "category": "Autre",
+        "total": 17
+      },
+      {
+        "id": "minecraft:crimson_roots",
+        "name": "Crimson roots",
+        "category": "Autre",
+        "total": 17
+      },
+      {
+        "id": "minecraft:spruce_sapling",
+        "name": "Spruce sapling",
+        "category": "Autre",
+        "total": 16
+      },
+      {
+        "id": "minecraft:magenta_dye",
+        "name": "Magenta dye",
+        "category": "Autre",
+        "total": 16
+      },
+      {
+        "id": "minecraft:red_sandstone",
+        "name": "Red sandstone",
+        "category": "Blocs",
+        "total": 16
+      },
+      {
+        "id": "minecraft:enchanted_book",
+        "name": "Enchanted book",
+        "category": "Autre",
+        "total": 16
+      },
+      {
+        "id": "minecraft:pale_oak_sapling",
+        "name": "Pale oak sapling",
+        "category": "Autre",
+        "total": 16
+      },
+      {
+        "id": "minecraft:potion",
+        "name": "Potion",
+        "category": "Potions",
+        "total": 16
+      },
+      {
+        "id": "minecraft:smooth_basalt",
+        "name": "Smooth basalt",
+        "category": "Blocs",
+        "total": 16
+      },
+      {
+        "id": "minecraft:sugar_cane",
+        "name": "Sugar cane",
+        "category": "Autre",
+        "total": 15
+      },
+      {
+        "id": "minecraft:iron_bars",
+        "name": "Iron bars",
+        "category": "Autre",
+        "total": 15
+      },
+      {
+        "id": "minecraft:dark_oak_sapling",
+        "name": "Dark oak sapling",
+        "category": "Autre",
+        "total": 15
+      },
+      {
+        "id": "minecraft:phantom_membrane",
+        "name": "Phantom membrane",
+        "category": "Mobs",
+        "total": 15
+      },
+      {
+        "id": "minecraft:gray_wool",
+        "name": "Gray wool",
+        "category": "Blocs",
+        "total": 15
+      },
+      {
+        "id": "minecraft:gunpowder",
+        "name": "Gunpowder",
+        "category": "Mobs",
+        "total": 14
+      },
+      {
+        "id": "minecraft:yellow_poplar_leaves",
+        "name": "Yellow poplar leaves",
+        "category": "Autre",
+        "total": 14
+      },
+      {
+        "id": "minecraft:pale_oak_slab",
+        "name": "Pale oak slab",
+        "category": "Autre",
+        "total": 14
+      },
+      {
+        "id": "minecraft:red_mushroom",
+        "name": "Red mushroom",
+        "category": "Autre",
+        "total": 14
+      },
+      {
+        "id": "minecraft:pale_moss_carpet",
+        "name": "Pale moss carpet",
+        "category": "Décoration",
+        "total": 14
+      },
+      {
+        "id": "minecraft:acacia_sapling",
+        "name": "Acacia sapling",
+        "category": "Autre",
+        "total": 13
+      },
+      {
+        "id": "minecraft:white_bed",
+        "name": "White bed",
+        "category": "Autre",
+        "total": 13
+      },
+      {
+        "id": "minecraft:item_frame",
+        "name": "Item frame",
+        "category": "Décoration",
+        "total": 13
+      },
+      {
+        "id": "minecraft:birch_sapling",
+        "name": "Birch sapling",
+        "category": "Autre",
+        "total": 12
+      },
+      {
+        "id": "minecraft:melon_slice",
+        "name": "Melon slice",
+        "category": "Nourriture",
+        "total": 12
+      },
+      {
+        "id": "minecraft:mud_bricks",
+        "name": "Mud bricks",
+        "category": "Blocs",
+        "total": 12
+      },
+      {
+        "id": "minecraft:orange_terracotta",
+        "name": "Orange terracotta",
+        "category": "Blocs",
+        "total": 12
+      },
+      {
+        "id": "minecraft:orange_poplar_leaves",
+        "name": "Orange poplar leaves",
+        "category": "Autre",
+        "total": 12
+      },
+      {
+        "id": "minecraft:bamboo_trapdoor",
+        "name": "Bamboo trapdoor",
+        "category": "Autre",
+        "total": 12
+      },
+      {
+        "id": "minecraft:pale_hanging_moss",
+        "name": "Pale hanging moss",
+        "category": "Autre",
+        "total": 12
+      },
+      {
+        "id": "minecraft:cooked_cod",
+        "name": "Cooked cod",
+        "category": "Nourriture",
+        "total": 12
+      },
+      {
+        "id": "minecraft:apple",
+        "name": "Apple",
+        "category": "Nourriture",
+        "total": 10
+      },
+      {
+        "id": "minecraft:acacia_leaves",
+        "name": "Acacia leaves",
+        "category": "Autre",
+        "total": 10
+      },
+      {
+        "id": "minecraft:stone",
+        "name": "Stone",
+        "category": "Blocs",
+        "total": 10
+      },
+      {
+        "id": "minecraft:pointed_dripstone",
+        "name": "Pointed dripstone",
+        "category": "Blocs",
+        "total": 10
+      },
+      {
+        "id": "minecraft:yellow_stained_glass_pane",
+        "name": "Yellow stained glass pane",
+        "category": "Blocs",
+        "total": 10
+      },
+      {
+        "id": "minecraft:iron_door",
+        "name": "Iron door",
+        "category": "Autre",
+        "total": 10
+      },
+      {
+        "id": "minecraft:chorus_fruit",
+        "name": "Chorus fruit",
+        "category": "Autre",
+        "total": 10
+      },
+      {
+        "id": "minecraft:white_dye",
+        "name": "White dye",
+        "category": "Autre",
+        "total": 10
+      },
+      {
+        "id": "minecraft:shelf_mushroom",
+        "name": "Shelf mushroom",
+        "category": "Autre",
+        "total": 10
+      },
+      {
+        "id": "minecraft:pink_dye",
+        "name": "Pink dye",
+        "category": "Autre",
+        "total": 9
+      },
+      {
+        "id": "minecraft:yellow_dye",
+        "name": "Yellow dye",
+        "category": "Autre",
+        "total": 9
+      },
+      {
+        "id": "minecraft:beef",
+        "name": "Beef",
+        "category": "Nourriture",
+        "total": 9
+      },
+      {
+        "id": "minecraft:lead",
+        "name": "Lead",
+        "category": "Autre",
+        "total": 9
+      },
+      {
+        "id": "minecraft:grass_block",
+        "name": "Grass block",
+        "category": "Autre",
+        "total": 9
+      },
+      {
+        "id": "minecraft:shears",
+        "name": "Shears",
+        "category": "Outils",
+        "total": 9
+      },
+      {
+        "id": "minecraft:copper_ore",
+        "name": "Copper ore",
+        "category": "Minerais",
+        "total": 9
+      },
+      {
+        "id": "minecraft:mushroom_stem",
+        "name": "Mushroom stem",
+        "category": "Autre",
+        "total": 9
+      },
+      {
+        "id": "minecraft:black_wool",
+        "name": "Black wool",
+        "category": "Blocs",
+        "total": 9
+      },
+      {
+        "id": "minecraft:weeping_vines",
+        "name": "Weeping vines",
+        "category": "Autre",
+        "total": 9
+      },
+      {
+        "id": "minecraft:sculk_sensor",
+        "name": "Sculk sensor",
+        "category": "Autre",
+        "total": 9
+      },
+      {
+        "id": "minecraft:clay_ball",
+        "name": "Clay ball",
+        "category": "Autre",
+        "total": 9
+      },
+      {
+        "id": "minecraft:cooked_salmon",
+        "name": "Cooked salmon",
+        "category": "Nourriture",
+        "total": 9
+      },
+      {
+        "id": "minecraft:lodestone",
+        "name": "Lodestone",
+        "category": "Blocs",
+        "total": 8
+      },
+      {
+        "id": "minecraft:golden_apple",
+        "name": "Golden apple",
+        "category": "Nourriture",
+        "total": 8
+      },
+      {
+        "id": "minecraft:oak_door",
+        "name": "Oak door",
+        "category": "Autre",
+        "total": 8
+      },
+      {
+        "id": "minecraft:hopper",
+        "name": "Hopper",
+        "category": "Autre",
+        "total": 8
+      },
+      {
+        "id": "minecraft:red_poplar_leaves",
+        "name": "Red poplar leaves",
+        "category": "Autre",
+        "total": 8
+      },
+      {
+        "id": "minecraft:brown_mushroom",
+        "name": "Brown mushroom",
+        "category": "Autre",
+        "total": 8
+      },
+      {
+        "id": "minecraft:crimson_fungus",
+        "name": "Crimson fungus",
+        "category": "Autre",
+        "total": 8
+      },
+      {
+        "id": "minecraft:sulfur",
+        "name": "Sulfur",
+        "category": "Autre",
+        "total": 8
+      },
+      {
+        "id": "minecraft:ender_eye",
+        "name": "Ender eye",
+        "category": "Autre",
+        "total": 8
+      },
+      {
+        "id": "minecraft:flint_and_steel",
+        "name": "Flint and steel",
+        "category": "Outils",
+        "total": 7
+      },
+      {
+        "id": "minecraft:gilded_blackstone",
+        "name": "Gilded blackstone",
+        "category": "Blocs",
+        "total": 7
+      },
+      {
+        "id": "minecraft:cherry_sapling",
+        "name": "Cherry sapling",
+        "category": "Autre",
+        "total": 7
+      },
+      {
+        "id": "minecraft:red_sand",
+        "name": "Red sand",
+        "category": "Blocs",
+        "total": 7
+      },
+      {
+        "id": "minecraft:white_glazed_terracotta",
+        "name": "White glazed terracotta",
+        "category": "Blocs",
+        "total": 7
+      },
+      {
+        "id": "minecraft:mangrove_propagule",
+        "name": "Mangrove propagule",
+        "category": "Autre",
+        "total": 7
+      },
+      {
+        "id": "minecraft:glistering_melon_slice",
+        "name": "Glistering melon slice",
+        "category": "Nourriture",
+        "total": 7
+      },
+      {
+        "id": "minecraft:crying_obsidian",
+        "name": "Crying obsidian",
+        "category": "Blocs",
+        "total": 7
+      },
+      {
+        "id": "minecraft:bowl",
+        "name": "Bowl",
+        "category": "Outils",
+        "total": 7
+      },
+      {
+        "id": "minecraft:stone_button",
+        "name": "Stone button",
+        "category": "Blocs",
+        "total": 7
+      },
+      {
+        "id": "minecraft:purpur_pillar",
+        "name": "Purpur pillar",
+        "category": "Autre",
+        "total": 7
+      },
+      {
+        "id": "minecraft:dried_kelp",
+        "name": "Dried kelp",
+        "category": "Nourriture",
+        "total": 7
+      },
+      {
+        "id": "minecraft:tinted_glass",
+        "name": "Tinted glass",
+        "category": "Blocs",
+        "total": 7
+      },
+      {
+        "id": "minecraft:buried_treasure_map",
+        "name": "Buried treasure map",
+        "category": "Autre",
+        "total": 6
+      },
+      {
+        "id": "minecraft:cooked_porkchop",
+        "name": "Cooked porkchop",
+        "category": "Nourriture",
+        "total": 6
+      },
+      {
+        "id": "minecraft:spruce_leaves",
+        "name": "Spruce leaves",
+        "category": "Autre",
+        "total": 6
+      },
+      {
+        "id": "minecraft:glowstone",
+        "name": "Glowstone",
+        "category": "Blocs",
+        "total": 6
+      },
+      {
+        "id": "minecraft:smooth_stone_slab",
+        "name": "Smooth stone slab",
+        "category": "Blocs",
+        "total": 6
+      },
+      {
+        "id": "minecraft:jungle_sapling",
+        "name": "Jungle sapling",
+        "category": "Autre",
+        "total": 6
+      },
+      {
+        "id": "minecraft:pale_oak_sign",
+        "name": "Pale oak sign",
+        "category": "Autre",
+        "total": 6
+      },
+      {
+        "id": "minecraft:dark_oak_fence",
+        "name": "Dark oak fence",
+        "category": "Autre",
+        "total": 6
+      },
+      {
+        "id": "minecraft:diamond_sword",
+        "name": "Diamond sword",
+        "category": "Minerais",
+        "total": 6
+      },
+      {
+        "id": "minecraft:iron_nugget",
+        "name": "Iron nugget",
+        "category": "Minerais",
+        "total": 6
+      },
+      {
+        "id": "minecraft:dried_kelp_block",
+        "name": "Dried kelp block",
+        "category": "Nourriture",
+        "total": 6
+      },
+      {
+        "id": "minecraft:composter",
+        "name": "Composter",
+        "category": "Autre",
+        "total": 6
+      },
+      {
+        "id": "minecraft:lapis_block",
+        "name": "Lapis block",
+        "category": "Autre",
+        "total": 6
+      },
+      {
+        "id": "minecraft:deepslate_tile_slab",
+        "name": "Deepslate tile slab",
+        "category": "Blocs",
+        "total": 6
+      },
+      {
+        "id": "minecraft:hay_block",
+        "name": "Hay block",
+        "category": "Autre",
+        "total": 6
+      },
+      {
+        "id": "minecraft:cobblestone_slab",
+        "name": "Cobblestone slab",
+        "category": "Blocs",
+        "total": 5
+      },
+      {
+        "id": "minecraft:granite_stairs",
+        "name": "Granite stairs",
+        "category": "Blocs",
+        "total": 5
+      },
+      {
+        "id": "minecraft:pumpkin",
+        "name": "Pumpkin",
+        "category": "Autre",
+        "total": 5
+      },
+      {
+        "id": "minecraft:pumpkin_pie",
+        "name": "Pumpkin pie",
+        "category": "Nourriture",
+        "total": 5
+      },
+      {
+        "id": "minecraft:shield",
+        "name": "Shield",
+        "category": "Armure",
+        "total": 5
+      },
+      {
+        "id": "minecraft:bucket",
+        "name": "Bucket",
+        "category": "Autre",
+        "total": 5
+      },
+      {
+        "id": "minecraft:iron_sword",
+        "name": "Iron sword",
+        "category": "Outils",
+        "total": 5
+      },
+      {
+        "id": "minecraft:iron_nautilus_armor",
+        "name": "Iron nautilus armor",
+        "category": "Autre",
+        "total": 5
+      },
+      {
+        "id": "minecraft:powered_rail",
+        "name": "Powered rail",
+        "category": "Redstone",
+        "total": 5
+      },
+      {
+        "id": "minecraft:coarse_dirt",
+        "name": "Coarse dirt",
+        "category": "Blocs",
+        "total": 5
+      },
+      {
+        "id": "minecraft:mossy_cobblestone_stairs",
+        "name": "Mossy cobblestone stairs",
+        "category": "Blocs",
+        "total": 5
+      },
+      {
+        "id": "minecraft:coast_armor_trim_smithing_template",
+        "name": "Coast armor trim smithing template",
+        "category": "Autre",
+        "total": 5
+      },
+      {
+        "id": "minecraft:bamboo_mosaic",
+        "name": "Bamboo mosaic",
+        "category": "Autre",
+        "total": 5
+      },
+      {
+        "id": "minecraft:ink_sac",
+        "name": "Ink sac",
+        "category": "Autre",
+        "total": 5
+      },
+      {
+        "id": "minecraft:pale_oak_trapdoor",
+        "name": "Pale oak trapdoor",
+        "category": "Autre",
+        "total": 5
+      },
+      {
+        "id": "minecraft:tropical_fish",
+        "name": "Tropical fish",
+        "category": "Autre",
+        "total": 5
+      },
+      {
+        "id": "minecraft:grindstone",
+        "name": "Grindstone",
+        "category": "Blocs",
+        "total": 5
+      },
+      {
+        "id": "minecraft:raw_copper",
+        "name": "Raw copper",
+        "category": "Minerais",
+        "total": 5
+      },
+      {
+        "id": "minecraft:golden_helmet",
+        "name": "Golden helmet",
+        "category": "Armure",
+        "total": 4
+      },
+      {
+        "id": "minecraft:fire_charge",
+        "name": "Fire charge",
+        "category": "Autre",
+        "total": 4
+      },
+      {
+        "id": "minecraft:dandelion",
+        "name": "Dandelion",
+        "category": "Autre",
+        "total": 4
+      },
+      {
+        "id": "minecraft:glow_berries",
+        "name": "Glow berries",
+        "category": "Nourriture",
+        "total": 4
+      },
+      {
+        "id": "minecraft:diamond_shovel",
+        "name": "Diamond shovel",
+        "category": "Minerais",
+        "total": 4
+      },
+      {
+        "id": "minecraft:golden_chestplate",
+        "name": "Golden chestplate",
+        "category": "Armure",
+        "total": 4
+      },
+      {
+        "id": "minecraft:gray_dye",
+        "name": "Gray dye",
+        "category": "Autre",
+        "total": 4
+      },
+      {
+        "id": "minecraft:nether_brick_fence",
+        "name": "Nether brick fence",
+        "category": "Blocs",
+        "total": 4
+      },
+      {
+        "id": "minecraft:exposed_cut_copper_slab",
+        "name": "Exposed cut copper slab",
+        "category": "Autre",
+        "total": 4
+      },
+      {
+        "id": "minecraft:bamboo_mosaic_stairs",
+        "name": "Bamboo mosaic stairs",
+        "category": "Autre",
+        "total": 4
+      },
+      {
+        "id": "minecraft:pale_oak_stairs",
+        "name": "Pale oak stairs",
+        "category": "Autre",
+        "total": 4
+      },
+      {
+        "id": "minecraft:light_blue_dye",
+        "name": "Light blue dye",
+        "category": "Autre",
+        "total": 4
+      },
+      {
+        "id": "minecraft:glowstone_dust",
+        "name": "Glowstone dust",
+        "category": "Blocs",
+        "total": 4
+      },
+      {
+        "id": "minecraft:purpur_stairs",
+        "name": "Purpur stairs",
+        "category": "Autre",
+        "total": 4
+      },
+      {
+        "id": "minecraft:bone_block",
+        "name": "Bone block",
+        "category": "Mobs",
+        "total": 4
+      },
+      {
+        "id": "minecraft:bookshelf",
+        "name": "Bookshelf",
+        "category": "Autre",
+        "total": 4
+      },
+      {
+        "id": "minecraft:diamond_pickaxe",
+        "name": "Diamond pickaxe",
+        "category": "Minerais",
+        "total": 4
+      },
+      {
+        "id": "minecraft:acacia_planks",
+        "name": "Acacia planks",
+        "category": "Blocs",
+        "total": 4
+      },
+      {
+        "id": "minecraft:golden_horse_armor",
+        "name": "Golden horse armor",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:birch_log",
+        "name": "Birch log",
+        "category": "Blocs",
+        "total": 3
+      },
+      {
+        "id": "minecraft:stone_sword",
+        "name": "Stone sword",
+        "category": "Blocs",
+        "total": 3
+      },
+      {
+        "id": "minecraft:iron_spear",
+        "name": "Iron spear",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:diamond_axe",
+        "name": "Diamond axe",
+        "category": "Minerais",
+        "total": 3
+      },
+      {
+        "id": "minecraft:golden_leggings",
+        "name": "Golden leggings",
+        "category": "Nourriture",
+        "total": 3
+      },
+      {
+        "id": "minecraft:leather_chestplate",
+        "name": "Leather chestplate",
+        "category": "Armure",
+        "total": 3
+      },
+      {
+        "id": "minecraft:black_dye",
+        "name": "Black dye",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:polished_blackstone_bricks",
+        "name": "Polished blackstone bricks",
+        "category": "Blocs",
+        "total": 3
+      },
+      {
+        "id": "minecraft:soul_sand",
+        "name": "Soul sand",
+        "category": "Blocs",
+        "total": 3
+      },
+      {
+        "id": "minecraft:cut_copper",
+        "name": "Cut copper",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:diamond_horse_armor",
+        "name": "Diamond horse armor",
+        "category": "Minerais",
+        "total": 3
+      },
+      {
+        "id": "minecraft:oak_boat",
+        "name": "Oak boat",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:iron_hoe",
+        "name": "Iron hoe",
+        "category": "Outils",
+        "total": 3
+      },
+      {
+        "id": "minecraft:furnace",
+        "name": "Furnace",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:light_gray_glazed_terracotta",
+        "name": "Light gray glazed terracotta",
+        "category": "Blocs",
+        "total": 3
+      },
+      {
+        "id": "minecraft:white_stained_glass_pane",
+        "name": "White stained glass pane",
+        "category": "Blocs",
+        "total": 3
+      },
+      {
+        "id": "minecraft:suspicious_stew",
+        "name": "Suspicious stew",
+        "category": "Nourriture",
+        "total": 3
+      },
+      {
+        "id": "minecraft:glow_ink_sac",
+        "name": "Glow ink sac",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:birch_stairs",
+        "name": "Birch stairs",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:bamboo_stairs",
+        "name": "Bamboo stairs",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:light_gray_dye",
+        "name": "Light gray dye",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:purpur_block",
+        "name": "Purpur block",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:sculk_catalyst",
+        "name": "Sculk catalyst",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:blue_dye",
+        "name": "Blue dye",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:dropper",
+        "name": "Dropper",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:rabbit",
+        "name": "Rabbit",
+        "category": "Nourriture",
+        "total": 3
+      },
+      {
+        "id": "minecraft:melon",
+        "name": "Melon",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:pale_oak_planks",
+        "name": "Pale oak planks",
+        "category": "Blocs",
+        "total": 3
+      },
+      {
+        "id": "minecraft:pale_oak_fence",
+        "name": "Pale oak fence",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:saddle",
+        "name": "Saddle",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:chest",
+        "name": "Chest",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:chiseled_tuff_bricks",
+        "name": "Chiseled tuff bricks",
+        "category": "Blocs",
+        "total": 3
+      },
+      {
+        "id": "minecraft:bundle",
+        "name": "Bundle",
+        "category": "Autre",
+        "total": 3
+      },
+      {
+        "id": "minecraft:dark_oak_trapdoor",
+        "name": "Dark oak trapdoor",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:spruce_planks",
+        "name": "Spruce planks",
+        "category": "Blocs",
+        "total": 2
+      },
+      {
+        "id": "minecraft:fern",
+        "name": "Fern",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:oxeye_daisy",
+        "name": "Oxeye daisy",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:music_disc_cat",
+        "name": "Music disc cat",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:leather_helmet",
+        "name": "Leather helmet",
+        "category": "Armure",
+        "total": 2
+      },
+      {
+        "id": "minecraft:bread",
+        "name": "Bread",
+        "category": "Nourriture",
+        "total": 2
+      },
+      {
+        "id": "minecraft:brown_wool",
+        "name": "Brown wool",
+        "category": "Blocs",
+        "total": 2
+      },
+      {
+        "id": "minecraft:copper_chestplate",
+        "name": "Copper chestplate",
+        "category": "Armure",
+        "total": 2
+      },
+      {
+        "id": "minecraft:cobblestone_wall",
+        "name": "Cobblestone wall",
+        "category": "Blocs",
+        "total": 2
+      },
+      {
+        "id": "minecraft:cut_copper_stairs",
+        "name": "Cut copper stairs",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:big_dripleaf",
+        "name": "Big dripleaf",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:red_glazed_terracotta",
+        "name": "Red glazed terracotta",
+        "category": "Blocs",
+        "total": 2
+      },
+      {
+        "id": "minecraft:brown_glazed_terracotta",
+        "name": "Brown glazed terracotta",
+        "category": "Blocs",
+        "total": 2
+      },
+      {
+        "id": "minecraft:pale_oak_door",
+        "name": "Pale oak door",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:oak_trapdoor",
+        "name": "Oak trapdoor",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:warped_fungus",
+        "name": "Warped fungus",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:rabbit_hide",
+        "name": "Rabbit hide",
+        "category": "Nourriture",
+        "total": 2
+      },
+      {
+        "id": "minecraft:bamboo_fence",
+        "name": "Bamboo fence",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:bamboo_button",
+        "name": "Bamboo button",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:dispenser",
+        "name": "Dispenser",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:dragon_breath",
+        "name": "Dragon breath",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:shroomlight",
+        "name": "Shroomlight",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:diamond_leggings",
+        "name": "Diamond leggings",
+        "category": "Minerais",
+        "total": 2
+      },
+      {
+        "id": "minecraft:diamond_chestplate",
+        "name": "Diamond chestplate",
+        "category": "Minerais",
+        "total": 2
+      },
+      {
+        "id": "minecraft:firefly_bush",
+        "name": "Firefly bush",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:sculk_shrieker",
+        "name": "Sculk shrieker",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:orange_dye",
+        "name": "Orange dye",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:birch_leaves",
+        "name": "Birch leaves",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:purple_dye",
+        "name": "Purple dye",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:observer",
+        "name": "Observer",
+        "category": "Redstone",
+        "total": 2
+      },
+      {
+        "id": "minecraft:bricks",
+        "name": "Bricks",
+        "category": "Blocs",
+        "total": 2
+      },
+      {
+        "id": "minecraft:lava_bucket",
+        "name": "Lava bucket",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:chicken",
+        "name": "Chicken",
+        "category": "Nourriture",
+        "total": 2
+      },
+      {
+        "id": "minecraft:paper",
+        "name": "Paper",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:bell",
+        "name": "Bell",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:blaze_powder",
+        "name": "Blaze powder",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:crafting_table",
+        "name": "Crafting table",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:oxidized_copper_bars",
+        "name": "Oxidized copper bars",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:leather_leggings",
+        "name": "Leather leggings",
+        "category": "Nourriture",
+        "total": 2
+      },
+      {
+        "id": "minecraft:leather_boots",
+        "name": "Leather boots",
+        "category": "Armure",
+        "total": 2
+      },
+      {
+        "id": "minecraft:mutton",
+        "name": "Mutton",
+        "category": "Nourriture",
+        "total": 2
+      },
+      {
+        "id": "minecraft:cracked_stone_bricks",
+        "name": "Cracked stone bricks",
+        "category": "Blocs",
+        "total": 2
+      },
+      {
+        "id": "minecraft:acacia_fence",
+        "name": "Acacia fence",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:cauldron",
+        "name": "Cauldron",
+        "category": "Autre",
+        "total": 2
+      },
+      {
+        "id": "minecraft:iron_boots",
+        "name": "Iron boots",
+        "category": "Armure",
+        "total": 2
+      },
+      {
+        "id": "minecraft:diamond_helmet",
+        "name": "Diamond helmet",
+        "category": "Minerais",
+        "total": 2
+      },
+      {
+        "id": "minecraft:golden_shovel",
+        "name": "Golden shovel",
+        "category": "Outils",
+        "total": 1
+      },
+      {
+        "id": "minecraft:golden_sword",
+        "name": "Golden sword",
+        "category": "Outils",
+        "total": 1
+      },
+      {
+        "id": "minecraft:dark_oak_planks",
+        "name": "Dark oak planks",
+        "category": "Blocs",
+        "total": 1
+      },
+      {
+        "id": "minecraft:copper_nautilus_armor",
+        "name": "Copper nautilus armor",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:large_fern",
+        "name": "Large fern",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:smooth_sandstone",
+        "name": "Smooth sandstone",
+        "category": "Blocs",
+        "total": 1
+      },
+      {
+        "id": "minecraft:golden_axe",
+        "name": "Golden axe",
+        "category": "Outils",
+        "total": 1
+      },
+      {
+        "id": "minecraft:ancient_debris",
+        "name": "Ancient debris",
+        "category": "Minerais",
+        "total": 1
+      },
+      {
+        "id": "minecraft:gold_block",
+        "name": "Gold block",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:snowball",
+        "name": "Snowball",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:tipped_arrow",
+        "name": "Tipped arrow",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:stone_hoe",
+        "name": "Stone hoe",
+        "category": "Blocs",
+        "total": 1
+      },
+      {
+        "id": "minecraft:birch_door",
+        "name": "Birch door",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:dark_oak_door",
+        "name": "Dark oak door",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:melon_seeds",
+        "name": "Melon seeds",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:cherry_fence",
+        "name": "Cherry fence",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:spruce_door",
+        "name": "Spruce door",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:golden_hoe",
+        "name": "Golden hoe",
+        "category": "Outils",
+        "total": 1
+      },
+      {
+        "id": "minecraft:light_gray_wool",
+        "name": "Light gray wool",
+        "category": "Blocs",
+        "total": 1
+      },
+      {
+        "id": "minecraft:stone_pickaxe",
+        "name": "Stone pickaxe",
+        "category": "Blocs",
+        "total": 1
+      },
+      {
+        "id": "minecraft:wooden_pickaxe",
+        "name": "Wooden pickaxe",
+        "category": "Outils",
+        "total": 1
+      },
+      {
+        "id": "minecraft:diamond_hoe",
+        "name": "Diamond hoe",
+        "category": "Minerais",
+        "total": 1
+      },
+      {
+        "id": "minecraft:campfire",
+        "name": "Campfire",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:brown_bed",
+        "name": "Brown bed",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:brewing_stand",
+        "name": "Brewing stand",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:minecart",
+        "name": "Minecart",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:copper_hoe",
+        "name": "Copper hoe",
+        "category": "Outils",
+        "total": 1
+      },
+      {
+        "id": "minecraft:light_gray_bed",
+        "name": "Light gray bed",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:nether_brick_stairs",
+        "name": "Nether brick stairs",
+        "category": "Blocs",
+        "total": 1
+      },
+      {
+        "id": "minecraft:chiseled_tuff",
+        "name": "Chiseled tuff",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:acacia_boat",
+        "name": "Acacia boat",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:spruce_boat",
+        "name": "Spruce boat",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:rib_armor_trim_smithing_template",
+        "name": "Rib armor trim smithing template",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:spyglass",
+        "name": "Spyglass",
+        "category": "Blocs",
+        "total": 1
+      },
+      {
+        "id": "minecraft:orange_glazed_terracotta",
+        "name": "Orange glazed terracotta",
+        "category": "Blocs",
+        "total": 1
+      },
+      {
+        "id": "minecraft:rabbit_foot",
+        "name": "Rabbit foot",
+        "category": "Nourriture",
+        "total": 1
+      },
+      {
+        "id": "minecraft:stripped_oak_wood",
+        "name": "Stripped oak wood",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:heart_of_the_sea",
+        "name": "Heart of the sea",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:oak_pressure_plate",
+        "name": "Oak pressure plate",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:jungle_stairs",
+        "name": "Jungle stairs",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:oak_shelf",
+        "name": "Oak shelf",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:end_stone_bricks",
+        "name": "End stone bricks",
+        "category": "Blocs",
+        "total": 1
+      },
+      {
+        "id": "minecraft:warped_wart_block",
+        "name": "Warped wart block",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:shulker_shell",
+        "name": "Shulker shell",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:tnt",
+        "name": "Tnt",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:spire_armor_trim_smithing_template",
+        "name": "Spire armor trim smithing template",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:cornflower",
+        "name": "Cornflower",
+        "category": "Décoration",
+        "total": 1
+      },
+      {
+        "id": "minecraft:crossbow",
+        "name": "Crossbow",
+        "category": "Outils",
+        "total": 1
+      },
+      {
+        "id": "minecraft:compass",
+        "name": "Compass",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:fishing_rod",
+        "name": "Fishing rod",
+        "category": "Outils",
+        "total": 1
+      },
+      {
+        "id": "minecraft:porkchop",
+        "name": "Porkchop",
+        "category": "Nourriture",
+        "total": 1
+      },
+      {
+        "id": "minecraft:globe_banner_pattern",
+        "name": "Globe banner pattern",
+        "category": "Décoration",
+        "total": 1
+      },
+      {
+        "id": "minecraft:magenta_bed",
+        "name": "Magenta bed",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:lever",
+        "name": "Lever",
+        "category": "Redstone",
+        "total": 1
+      },
+      {
+        "id": "minecraft:poplar_planks",
+        "name": "Poplar planks",
+        "category": "Blocs",
+        "total": 1
+      },
+      {
+        "id": "minecraft:redstone_block",
+        "name": "Redstone block",
+        "category": "Blocs",
+        "total": 1
+      },
+      {
+        "id": "minecraft:chiseled_stone_bricks",
+        "name": "Chiseled stone bricks",
+        "category": "Blocs",
+        "total": 1
+      },
+      {
+        "id": "minecraft:golden_spear",
+        "name": "Golden spear",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:crimson_stem",
+        "name": "Crimson stem",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:iron_horse_armor",
+        "name": "Iron horse armor",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:iron_helmet",
+        "name": "Iron helmet",
+        "category": "Armure",
+        "total": 1
+      },
+      {
+        "id": "minecraft:iron_chestplate",
+        "name": "Iron chestplate",
+        "category": "Armure",
+        "total": 1
+      },
+      {
+        "id": "minecraft:gray_shulker_box",
+        "name": "Gray shulker box",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:elytra",
+        "name": "Elytra",
+        "category": "Armure",
+        "total": 1
+      },
+      {
+        "id": "minecraft:ender_chest",
+        "name": "Ender chest",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:yellow_shulker_box",
+        "name": "Yellow shulker box",
+        "category": "Autre",
+        "total": 1
+      },
+      {
+        "id": "minecraft:blue_bed",
+        "name": "Blue bed",
+        "category": "Autre",
+        "total": 1
+      }
+    ],
+    "players": [
+      {
+        "player": "N3SK3",
+        "playTimeHours": 126.0,
+        "deaths": 22,
+        "mobKills": 4243,
+        "blocksMined": 82925,
+        "advancementsDone": 1152,
+        "advancementsTotal": 1158,
+        "equipment": {}
+      },
+      {
+        "player": "WhiskySec",
+        "playTimeHours": 31.3,
+        "deaths": 26,
+        "mobKills": 241,
+        "blocksMined": 12488,
+        "advancementsDone": 665,
+        "advancementsTotal": 669,
+        "equipment": {}
+      }
+    ]
+  }
+]
