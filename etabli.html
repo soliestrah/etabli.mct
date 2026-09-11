@@ -68,12 +68,7 @@
     </div>
 
     <div class="tile t8">
-      <div class="tile-head"><span class="ti">✅</span><h3>Choses à faire</h3></div>
-      <div class="tile-body" id="tile-todo"><div class="tile-empty">chargement…</div></div>
-    </div>
-
-    <div class="tile t9">
-      <div class="tile-head"><span class="ti">🛠️</span><h3>Durabilité</h3></div>
+      <div class="tile-head"><span class="ti">⚒️</span><h3>Durabilité</h3></div>
       <div class="tile-body" id="tile-durabilite"><div class="tile-empty">chargement…</div></div>
     </div>
 
@@ -268,78 +263,35 @@
         <li><span>${escapeHtml(e.text.split('\n')[0])}</span>${e.tag ? `<span class="mono">${escapeHtml(e.tag)}</span>` : ''}</li>
       `).join('') + '</ul>';
     })
-  // ===================== t8 : CHOSES À FAIRE (inventaire + stats + projets) =====================
-  Promise.all([
-    fetch('inventaire-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : { resources: [] }).catch(() => ({ resources: [] })),
-    fetch('stats-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : { players: [] }).catch(() => ({ players: [] })),
-    fetch('projets-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : { projects: [] }).catch(() => ({ projects: [] })),
-  ]).then(([invData, statsData, projData]) => {
-    const wrap = document.getElementById('tile-todo');
-    const parts = [];
+    .catch(() => {
+      document.getElementById('tile-carnet').innerHTML = '<div class="tile-offline">carnet-config.json non trouvé.</div>';
+    });
 
-    // Ressources sous l'objectif (nourriture, minerais, redstone... — tout ce qui a
-    // un "Objectif" renseigné dans l'Inventaire, quelle que soit sa catégorie)
-    const resources = Array.isArray(invData.resources) ? invData.resources : [];
-    const underTarget = resources
-      .filter(r => r.targetQuantity)
-      .map(r => {
-        const total = (r.stacks || []).reduce((s, st) => s + st.quantity, 0);
-        return { name: r.name, total, target: r.targetQuantity, pct: Math.round(total / r.targetQuantity * 100) };
-      })
-      .filter(r => r.total < r.target)
-      .sort((a, b) => a.pct - b.pct);
-
-    if (underTarget.length){
-      parts.push(`<div class="tile-todo-group">
-        <span class="tile-todo-label">À farmer</span>
-        <ul>${underTarget.slice(0, 3).map(r => `<li><span>${escapeHtml(r.name)}</span><span class="mono">${r.total}/${r.target}</span></li>`).join('')}</ul>
-      </div>`);
-    }
-
-    // Avancements manquants
-    const players = Array.isArray(statsData.players) ? statsData.players : [];
-    const p = players.find(pl => (pl.name || '').toLowerCase() === USERNAME.toLowerCase()) || players[0];
-    const missing = (p && Array.isArray(p.missingAdvancements)) ? p.missingAdvancements : [];
-    if (missing.length){
-      parts.push(`<div class="tile-todo-group">
-        <span class="tile-todo-label">Avancements</span>
-        <ul>${missing.slice(0, 2).map(a => `<li><span>${escapeHtml(a.name || a.id)}</span></li>`).join('')}</ul>
-      </div>`);
-    }
-
-    // Projets en cours
-    const projects = Array.isArray(projData.projects) ? projData.projects : [];
-    const inProgress = projects.filter(pr => pr.status === 'inprogress');
-    if (inProgress.length){
-      parts.push(`<div class="tile-todo-group">
-        <span class="tile-todo-label">Projets en cours</span>
-        <ul>${inProgress.slice(0, 2).map(pr => `<li><span>${escapeHtml(pr.name)}</span></li>`).join('')}</ul>
-      </div>`);
-    }
-
-    wrap.innerHTML = parts.length ? parts.join('') : '<div class="tile-empty">Rien à faire pour l\'instant 🎉</div>';
-  }).catch(() => {
-    document.getElementById('tile-todo').innerHTML = '<div class="tile-offline">Impossible de charger les données.</div>';
-  });
-
-  // ===================== t9 : DURABILITÉ (grimoire-config.json → items[].durability) =====================
-  fetch('grimoire-config.json', { cache: 'no-store' })
+  // ===================== t8 : DURABILITÉ (durabilite-config.json) =====================
+  fetch('durabilite-config.json', { cache: 'no-store' })
     .then(r => r.ok ? r.json() : Promise.reject())
     .then(data => {
-      const items = Array.isArray(data.items) ? data.items : [];
-      const tracked = items.filter(i => i.durability != null).sort((a, b) => a.durability - b.durability);
-      const list = document.getElementById('tile-durabilite');
-      if (tracked.length === 0){
-        list.innerHTML = '<div class="tile-empty">Aucun objet suivi — renseigne la durabilité d\'un objet dans le Grimoire.</div>';
+      const items = (Array.isArray(data.items) ? data.items : []).slice(0, 4);
+      const body = document.getElementById('tile-durabilite');
+      if (items.length === 0){
+        body.innerHTML = '<div class="tile-empty">Rien à réparer pour l\'instant 🎉</div>';
         return;
       }
-      list.innerHTML = '<ul>' + tracked.slice(0, 6).map(i => {
-        const tier = i.durability < 20 ? 'red' : (i.durability < 50 ? 'gold' : 'green');
-        return `<li class="durability-line"><span class="dur-name">${escapeHtml(i.name)}</span><span class="dur-pct" style="color:var(--${tier});">${i.durability}%</span></li>`;
-      }).join('') + '</ul>';
+      body.innerHTML = items.map(it => {
+        const color = it.percent < 20 ? 'var(--red)' : it.percent < 50 ? 'var(--gold)' : 'var(--tile-accent)';
+        return `
+          <div class="dur-row">
+            <div class="dur-top">
+              <span>${escapeHtml(it.name)} <span class="mono" style="opacity:0.7;">— ${escapeHtml(it.location)}</span></span>
+              <span class="pct" style="color:${color};">${it.percent}%</span>
+            </div>
+            <div class="tile-progress-track"><div class="tile-progress-fill" style="width:${it.percent}%; background:${color};"></div></div>
+          </div>
+        `;
+      }).join('');
     })
     .catch(() => {
-      document.getElementById('tile-durabilite').innerHTML = '<div class="tile-offline">grimoire-config.json non trouvé.</div>';
+      document.getElementById('tile-durabilite').innerHTML = '<div class="tile-offline">durabilite-config.json non trouvé.</div>';
     });
 </script>
 </body>
