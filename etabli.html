@@ -72,6 +72,24 @@
       <div class="tile-body" id="tile-durabilite"><div class="tile-empty">chargement…</div></div>
     </div>
 
+    <div class="tile t9">
+      <div class="tile-head"><span class="ti">📋</span><h3>À faire</h3></div>
+      <div class="tile-body todo-widget">
+        <div class="todo-col">
+          <div class="todo-col-head">🍖 Nourriture basse</div>
+          <ul id="todo-food"><li class="tile-empty">chargement…</li></ul>
+        </div>
+        <div class="todo-col">
+          <div class="todo-col-head">🎖️ Avancements</div>
+          <ul id="todo-adv"><li class="tile-empty">chargement…</li></ul>
+        </div>
+        <div class="todo-col">
+          <div class="todo-col-head">🧱 Projets en cours</div>
+          <ul id="todo-projects"><li class="tile-empty">chargement…</li></ul>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- ==================== COLONNE CHAT / LOGS ==================== -->
@@ -292,6 +310,59 @@
     })
     .catch(() => {
       document.getElementById('tile-durabilite').innerHTML = '<div class="tile-offline">durabilite-config.json non trouvé.</div>';
+    });
+
+  // ===================== t9 : À FAIRE (nourriture basse + avancements + projets en cours) =====================
+  function renderTodoList(elId, items, emptyMsg, moreCount){
+    const el = document.getElementById(elId);
+    if (items.length === 0){
+      el.innerHTML = `<li class="tile-empty">${emptyMsg}</li>`;
+      return;
+    }
+    el.innerHTML = items.map(t => `<li>${escapeHtml(t)}</li>`).join('')
+      + (moreCount > 0 ? `<li class="more">+ ${moreCount} autre${moreCount > 1 ? 's' : ''}…</li>` : '');
+  }
+
+  fetch('inventaire-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const resources = Array.isArray(data.resources) ? data.resources : [];
+      const low = resources.filter(r => {
+        if (r.category !== 'Nourriture' || !r.targetQuantity) return false;
+        const total = (r.stacks || []).reduce((sum, s) => sum + s.quantity, 0);
+        return total < r.targetQuantity;
+      });
+      const labels = low.map(r => {
+        const total = (r.stacks || []).reduce((sum, s) => sum + s.quantity, 0);
+        return `${r.name} (${total}/${r.targetQuantity})`;
+      });
+      renderTodoList('todo-food', labels.slice(0, 4), 'Tout va bien 🎉', Math.max(0, labels.length - 4));
+    })
+    .catch(() => {
+      document.getElementById('todo-food').innerHTML = '<li class="tile-offline">inventaire-config.json non trouvé.</li>';
+    });
+
+  fetch('stats-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const players = Array.isArray(data.players) ? data.players : [];
+      const missing = [];
+      players.forEach(p => (p.missingAdvancements || []).forEach(a => missing.push(a.name)));
+      renderTodoList('todo-adv', missing.slice(0, 4), 'Tout débloqué 🎉', Math.max(0, missing.length - 4));
+    })
+    .catch(() => {
+      document.getElementById('todo-adv').innerHTML = '<li class="tile-offline">stats-config.json non trouvé.</li>';
+    });
+
+  fetch('projets-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const projects = Array.isArray(data.projects) ? data.projects : [];
+      const inProgress = projects.filter(p => p.status === 'inprogress').map(p => p.name);
+      renderTodoList('todo-projects', inProgress.slice(0, 4), 'Aucun projet en cours', Math.max(0, inProgress.length - 4));
+    })
+    .catch(() => {
+      document.getElementById('todo-projects').innerHTML = '<li class="tile-offline">projets-config.json non trouvé.</li>';
     });
 </script>
 </body>
