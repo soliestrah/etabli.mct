@@ -41,11 +41,11 @@
       "percent": 2
     },
     {
-      "name": "Golden chestplate",
-      "id": "minecraft:golden_chestplate",
-      "location": "Inventaire de « N3SK3 »",
-      "durability": 3,
-      "maxDurability": 112,
+      "name": "Bow",
+      "id": "minecraft:bow",
+      "location": "Coffre (315, -4, 38) [Overworld]",
+      "durability": 11,
+      "maxDurability": 384,
       "percent": 3
     },
     {
@@ -107,8 +107,16 @@
     {
       "name": "Bow",
       "id": "minecraft:bow",
-      "location": "Inventaire de « N3SK3 »",
+      "location": "Coffre — Base village (226, 66, 42) [Overworld]",
       "durability": 43,
+      "maxDurability": 384,
+      "percent": 11
+    },
+    {
+      "name": "Bow",
+      "id": "minecraft:bow",
+      "location": "Coffre (315, -4, 38) [Overworld]",
+      "durability": 44,
       "maxDurability": 384,
       "percent": 11
     },
@@ -123,7 +131,7 @@
     {
       "name": "Stone shovel",
       "id": "minecraft:stone_shovel",
-      "location": "Coffre (180, 10, -35) [Overworld]",
+      "location": "Coffre — Squelettons farm (180, 10, -35) [Overworld]",
       "durability": 18,
       "maxDurability": 131,
       "percent": 14
@@ -151,14 +159,6 @@
       "durability": 69,
       "maxDurability": 384,
       "percent": 18
-    },
-    {
-      "name": "Golden helmet",
-      "id": "minecraft:golden_helmet",
-      "location": "Inventaire de « N3SK3 »",
-      "durability": 15,
-      "maxDurability": 77,
-      "percent": 19
     },
     {
       "name": "Bow",
@@ -215,6 +215,14 @@
       "durability": 129,
       "maxDurability": 384,
       "percent": 34
+    },
+    {
+      "name": "Bow",
+      "id": "minecraft:bow",
+      "location": "Coffre (315, -4, 38) [Overworld]",
+      "durability": 133,
+      "maxDurability": 384,
+      "percent": 35
     },
     {
       "name": "Iron sword",
@@ -465,11 +473,11 @@
       "percent": 95
     },
     {
-      "name": "ailes",
-      "id": "minecraft:elytra",
+      "name": "faucheuse",
+      "id": "minecraft:diamond_sword",
       "location": "Inventaire de « N3SK3 »",
-      "durability": 416,
-      "maxDurability": 432,
+      "durability": 1497,
+      "maxDurability": 1561,
       "percent": 96
     },
     {
@@ -489,18 +497,18 @@
       "percent": 97
     },
     {
-      "name": "cimetière",
-      "id": "minecraft:diamond_shovel",
-      "location": "Inventaire de « N3SK3 »",
-      "durability": 1529,
-      "maxDurability": 1561,
-      "percent": 98
-    },
-    {
       "name": "hache",
       "id": "minecraft:diamond_axe",
       "location": "Inventaire de « N3SK3 »",
-      "durability": 1534,
+      "durability": 1512,
+      "maxDurability": 1561,
+      "percent": 97
+    },
+    {
+      "name": "cimetière",
+      "id": "minecraft:diamond_shovel",
+      "location": "Enderchest perso de « N3SK3 »",
+      "durability": 1529,
       "maxDurability": 1561,
       "percent": 98
     },
@@ -521,6 +529,14 @@
       "percent": 99
     },
     {
+      "name": "souvenir",
+      "id": "minecraft:diamond_pickaxe",
+      "location": "Inventaire de « N3SK3 »",
+      "durability": 1551,
+      "maxDurability": 1561,
+      "percent": 99
+    },
+    {
       "name": "Diamond pickaxe",
       "id": "minecraft:diamond_pickaxe",
       "location": "Inventaire de « WhiskySec »",
@@ -533,22 +549,6 @@
       "id": "minecraft:diamond_hoe",
       "location": "Coffre — Base village (207, 66, 35) [Overworld]",
       "durability": 1560,
-      "maxDurability": 1561,
-      "percent": 100
-    },
-    {
-      "name": "faucheuse",
-      "id": "minecraft:diamond_sword",
-      "location": "Inventaire de « N3SK3 »",
-      "durability": 1559,
-      "maxDurability": 1561,
-      "percent": 100
-    },
-    {
-      "name": "souvenir",
-      "id": "minecraft:diamond_pickaxe",
-      "location": "Inventaire de « N3SK3 »",
-      "durability": 1555,
       "maxDurability": 1561,
       "percent": 100
     },
