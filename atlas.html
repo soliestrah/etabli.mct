@@ -1397,7 +1397,16 @@
       clampPan();
       applyZoom();
     });
-    el.mapWrap.addEventListener('pointerup', () => { dragging = false; });
+    el.mapWrap.addEventListener('pointerup', (e) => {
+      dragging = false;
+      // Un clic (pas un glisser) pendant qu'on attend un repère d'étalonnage :
+      // on place le point ici. On ne peut plus utiliser l'événement "click" sur
+      // l'image directement -- setPointerCapture() ci-dessus le redirige vers
+      // mapWrap et il ne se déclenche donc plus jamais sur l'image.
+      if (armedRef && !dragMoved && state.image){
+        placeRef(e.clientX, e.clientY);
+      }
+    });
     el.mapWrap.addEventListener('pointercancel', () => { dragging = false; });
 
     function showSaveMsg(msg){
@@ -1496,12 +1505,11 @@
       });
     });
 
-    el.mapImg.addEventListener('click', (e) => {
-      if (!armedRef) return;
-      if (dragMoved){ dragMoved = false; return; }
+    function placeRef(clientX, clientY){
       const rect = el.mapImg.getBoundingClientRect();
-      const pxPct = ((e.clientX - rect.left) / rect.width) * 100;
-      const pyPct = ((e.clientY - rect.top) / rect.height) * 100;
+      const pxPct = ((clientX - rect.left) / rect.width) * 100;
+      const pyPct = ((clientY - rect.top) / rect.height) * 100;
+      if (pxPct < 0 || pxPct > 100 || pyPct < 0 || pyPct > 100) return; // clic en dehors de l'image
       const idx = armedRef;
       const name = document.getElementById(`${ns}-ref${idx}-name`).value.trim() || `Repère ${idx}`;
       const x = Number(document.getElementById(`${ns}-ref${idx}-x`).value);
@@ -1523,7 +1531,7 @@
         renderPins();
         renderPointsList();
       }
-    });
+    }
 
     el.pointForm.addEventListener('submit', (e) => {
       e.preventDefault();
