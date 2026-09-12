@@ -257,11 +257,6 @@
           "id": 21,
           "location": "Coffre — Maison #1 (64, 90, -44) [Overworld]",
           "quantity": 3
-        },
-        {
-          "id": 22,
-          "location": "Inventaire de « N3SK3 »",
-          "quantity": 2
         }
       ],
       "updatedAt": ""
@@ -277,34 +272,39 @@
       "notes": "",
       "stacks": [
         {
-          "id": 23,
+          "id": 22,
           "location": "Coffre (69, 53, -915) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 24,
+          "id": 23,
           "location": "Coffre — Base village (225, 66, 47) [Overworld]",
-          "quantity": 16
+          "quantity": 64
+        },
+        {
+          "id": 24,
+          "location": "Coffre — Base village (226, 66, 47) [Overworld]",
+          "quantity": 162
         },
         {
           "id": 25,
-          "location": "Coffre — Base village (226, 66, 47) [Overworld]",
-          "quantity": 128
-        },
-        {
-          "id": 26,
           "location": "Coffre — Base village (225, 68, 49) [Overworld]",
           "quantity": 33
         },
         {
-          "id": 27,
+          "id": 26,
           "location": "Coffre — Base village (226, 68, 49) [Overworld]",
           "quantity": 4
         },
         {
+          "id": 27,
+          "location": "Coffre — Base village (277, 64, 34) [Overworld]",
+          "quantity": 8
+        },
+        {
           "id": 28,
           "location": "Coffre (315, -4, 38) [Overworld]",
-          "quantity": 14
+          "quantity": 25
         },
         {
           "id": 29,
@@ -323,11 +323,6 @@
         },
         {
           "id": 32,
-          "location": "Inventaire de « N3SK3 »",
-          "quantity": 82
-        },
-        {
-          "id": 33,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 12
         }
@@ -345,17 +340,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 34,
+          "id": 33,
           "location": "Coffre — Maison #1 (64, 90, -44) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 35,
+          "id": 34,
           "location": "Inventaire de « N3SK3 »",
           "quantity": 120
         },
         {
-          "id": 36,
+          "id": 35,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 4
         }
@@ -373,29 +368,29 @@
       "notes": "",
       "stacks": [
         {
-          "id": 37,
+          "id": 36,
           "location": "Coffre — Maison #1 (63, 92, -56) [Overworld]",
-          "quantity": 16
+          "quantity": 20
         },
         {
-          "id": 38,
+          "id": 37,
           "location": "Coffre — Maison #1 (64, 90, -44) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 39,
+          "id": 38,
           "location": "Coffre — Maison #1 (64, 90, -45) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 40,
+          "id": 39,
           "location": "Coffre — Base village (225, 68, 46) [Overworld]",
           "quantity": 9
         },
         {
-          "id": 41,
+          "id": 40,
           "location": "Coffre — Base village (277, 64, 42) [Overworld]",
-          "quantity": 67
+          "quantity": 77
         }
       ],
       "updatedAt": ""
@@ -411,7 +406,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 42,
+          "id": 41,
           "location": "Coffre — Base village (225, 68, 46) [Overworld]",
           "quantity": 125
         }
@@ -429,7 +424,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 43,
+          "id": 42,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 2
         }
@@ -447,7 +442,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 44,
+          "id": 43,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 2
         }
@@ -465,7 +460,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 45,
+          "id": 44,
           "location": "Coffre — Base village (225, 66, 46) [Overworld]",
           "quantity": 5
         }
@@ -483,7 +478,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 46,
+          "id": 45,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 4
         }
@@ -501,7 +496,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 47,
+          "id": 46,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 17
         }
@@ -519,17 +514,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 48,
+          "id": 47,
           "location": "Coffre — Maison #1 (97, 95, -42) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 49,
+          "id": 48,
           "location": "Coffre — Base village (225, 66, 46) [Overworld]",
           "quantity": 47
         },
         {
-          "id": 50,
+          "id": 49,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 64
         }
@@ -547,7 +542,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 51,
+          "id": 50,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 3
         }
@@ -565,12 +560,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 52,
+          "id": 51,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 11
         },
         {
-          "id": 53,
+          "id": 52,
           "location": "Baril — Spawn zombie (-76, 92, -76) [Overworld]",
           "quantity": 1
         }
@@ -588,12 +583,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 54,
+          "id": 53,
           "location": "Coffre — Maison #1 (64, 90, -45) [Overworld]",
           "quantity": 5
         },
         {
-          "id": 55,
+          "id": 54,
           "location": "Coffre — Base village (243, 66, 41) [Overworld]",
           "quantity": 4
         }
@@ -611,27 +606,27 @@
       "notes": "",
       "stacks": [
         {
-          "id": 56,
+          "id": 55,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 12
         },
         {
-          "id": 57,
+          "id": 56,
           "location": "Coffre — Base village (226, 68, 47) [Overworld]",
           "quantity": 24
         },
         {
-          "id": 58,
+          "id": 57,
           "location": "Coffre (-939, 96, -654) [End]",
           "quantity": 10
         },
         {
-          "id": 59,
+          "id": 58,
           "location": "Coffre (-937, 96, -654) [End]",
           "quantity": 5
         },
         {
-          "id": 60,
+          "id": 59,
           "location": "Coffre (-931, 134, -556) [End]",
           "quantity": 5
         }
@@ -649,7 +644,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 61,
+          "id": 60,
           "location": "Coffre — Base village (268, 67, 34) [Overworld]",
           "quantity": 2
         }
@@ -667,7 +662,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 62,
+          "id": 61,
           "location": "Coffre — Base village (225, 68, 46) [Overworld]",
           "quantity": 2
         }
@@ -685,7 +680,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 63,
+          "id": 62,
           "location": "Coffre — Maison #1 (64, 89, -51) [Overworld]",
           "quantity": 1
         }
@@ -703,7 +698,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 64,
+          "id": 63,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 2
         }
@@ -721,7 +716,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 65,
+          "id": 64,
           "location": "Coffre — Maison #1 (64, 89, -51) [Overworld]",
           "quantity": 3
         }
@@ -739,12 +734,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 66,
+          "id": 65,
           "location": "Coffre — Maison #1 (64, 89, -51) [Overworld]",
           "quantity": 9
         },
         {
-          "id": 67,
+          "id": 66,
           "location": "Coffre — Base village (226, 68, 46) [Overworld]",
           "quantity": 3
         }
@@ -762,7 +757,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 68,
+          "id": 67,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 3
         }
@@ -780,12 +775,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 69,
+          "id": 68,
           "location": "Coffre — Base village (213, 66, 35) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 70,
+          "id": 69,
           "location": "Coffre — Base village (237, 66, 41) [Overworld]",
           "quantity": 2
         }
@@ -803,12 +798,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 71,
+          "id": 70,
           "location": "Coffre — Base village (237, 66, 41) [Overworld]",
           "quantity": 6
         },
         {
-          "id": 72,
+          "id": 71,
           "location": "Coffre (697, 63, -2264) [Overworld]",
           "quantity": 3
         }
@@ -826,12 +821,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 73,
+          "id": 72,
           "location": "Coffre — Base village (225, 68, 43) [Overworld]",
           "quantity": 13
         },
         {
-          "id": 74,
+          "id": 73,
           "location": "Coffre — Base village (225, 68, 48) [Overworld]",
           "quantity": 10
         }
@@ -849,12 +844,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 75,
+          "id": 74,
           "location": "Coffre — Base village (269, 67, 34) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 76,
+          "id": 75,
           "location": "Alambic — Maison #2 (372, 70, 58) [Overworld]",
           "quantity": 1
         }
@@ -872,7 +867,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 77,
+          "id": 76,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 1
         }
@@ -890,7 +885,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 78,
+          "id": 77,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 3
         }
@@ -908,39 +903,39 @@
       "notes": "",
       "stacks": [
         {
-          "id": 79,
+          "id": 78,
           "location": "Coffre — Maison #1 (63, 89, -45) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 80,
+          "id": 79,
           "location": "Coffre — Base village (225, 66, 47) [Overworld]",
-          "quantity": 55
+          "quantity": 64
+        },
+        {
+          "id": 80,
+          "location": "Coffre — Base village (226, 66, 47) [Overworld]",
+          "quantity": 320
         },
         {
           "id": 81,
-          "location": "Coffre — Base village (226, 66, 47) [Overworld]",
-          "quantity": 256
-        },
-        {
-          "id": 82,
           "location": "Coffre — Base village (225, 66, 51) [Overworld]",
           "quantity": 17
         },
         {
+          "id": 82,
+          "location": "Coffre — Base village (277, 64, 34) [Overworld]",
+          "quantity": 13
+        },
+        {
           "id": 83,
           "location": "Coffre (315, -4, 38) [Overworld]",
-          "quantity": 9
+          "quantity": 21
         },
         {
           "id": 84,
           "location": "Coffre (313, 1, 33) [Overworld]",
           "quantity": 1691
-        },
-        {
-          "id": 85,
-          "location": "Inventaire de « N3SK3 »",
-          "quantity": 73
         }
       ],
       "updatedAt": ""
@@ -956,7 +951,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 86,
+          "id": 85,
           "location": "Coffre — Base village (224, 66, 51) [Overworld]",
           "quantity": 4
         }
@@ -974,17 +969,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 87,
+          "id": 86,
           "location": "Coffre — Maison #1 (63, 89, -45) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 88,
+          "id": 87,
           "location": "Coffre — Base village (219, 66, 35) [Overworld]",
           "quantity": 5
         },
         {
-          "id": 89,
+          "id": 88,
           "location": "Coffre — Base village (268, 67, 34) [Overworld]",
           "quantity": 63
         }
@@ -1002,17 +997,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 90,
+          "id": 89,
           "location": "Coffre — Base village (261, 66, 35) [Overworld]",
           "quantity": 18
         },
         {
-          "id": 91,
+          "id": 90,
           "location": "Coffre (313, -2, 33) [Overworld]",
           "quantity": 56
         },
         {
-          "id": 92,
+          "id": 91,
           "location": "Baril — Spawn zombie (-76, 92, -76) [Overworld]",
           "quantity": 9
         }
@@ -1030,12 +1025,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 93,
+          "id": 92,
           "location": "Coffre — Base village (226, 66, 50) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 94,
+          "id": 93,
           "location": "Coffre — Base village (261, 66, 35) [Overworld]",
           "quantity": 1
         }
@@ -1053,24 +1048,29 @@
       "notes": "",
       "stacks": [
         {
-          "id": 95,
+          "id": 94,
           "location": "Coffre — Base village (226, 66, 42) [Overworld]",
-          "quantity": 7
+          "quantity": 8
         },
         {
-          "id": 96,
+          "id": 95,
           "location": "Coffre — Base village (225, 66, 47) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 97,
+          "id": 96,
           "location": "Coffre — Base village (226, 66, 47) [Overworld]",
           "quantity": 5
         },
         {
-          "id": 98,
+          "id": 97,
           "location": "Coffre — Base village (225, 66, 51) [Overworld]",
           "quantity": 1
+        },
+        {
+          "id": 98,
+          "location": "Coffre (315, -4, 38) [Overworld]",
+          "quantity": 3
         },
         {
           "id": 99,
@@ -1080,7 +1080,7 @@
         {
           "id": 100,
           "location": "Inventaire de « N3SK3 »",
-          "quantity": 2
+          "quantity": 1
         },
         {
           "id": 101,
@@ -1325,8 +1325,8 @@
         },
         {
           "id": 118,
-          "location": "Coffre — Base village (232, 66, 49) [Overworld]",
-          "quantity": 2
+          "location": "Coffre — Base village (232, 65, 50) [Overworld]",
+          "quantity": 1
         },
         {
           "id": 119,
@@ -1560,13 +1560,18 @@
       "stacks": [
         {
           "id": 139,
+          "location": "Coffre — Base village (226, 66, 50) [Overworld]",
+          "quantity": 1
+        },
+        {
+          "id": 140,
           "location": "Coffre (697, 63, -2264) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 140,
+          "id": 141,
           "location": "Inventaire de « N3SK3 »",
-          "quantity": 1
+          "quantity": 6
         }
       ],
       "updatedAt": ""
@@ -1582,7 +1587,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 141,
+          "id": 142,
           "location": "Coffre — Base village (243, 66, 41) [Overworld]",
           "quantity": 2
         }
@@ -1600,7 +1605,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 142,
+          "id": 143,
           "location": "Coffre (697, 63, -2265) [Overworld]",
           "quantity": 1
         }
@@ -1618,7 +1623,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 143,
+          "id": 144,
           "location": "Coffre — Base village (225, 68, 44) [Overworld]",
           "quantity": 1
         }
@@ -1636,7 +1641,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 144,
+          "id": 145,
           "location": "Coffre — Hub nether (8, 81, -17) [Nether]",
           "quantity": 3
         }
@@ -1654,7 +1659,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 145,
+          "id": 146,
           "location": "Coffre — Base village (225, 68, 47) [Overworld]",
           "quantity": 10
         }
@@ -1672,7 +1677,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 146,
+          "id": 147,
           "location": "Coffre — Base village (255, 66, 41) [Overworld]",
           "quantity": 9
         }
@@ -1690,7 +1695,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 147,
+          "id": 148,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 22
         }
@@ -1708,17 +1713,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 148,
+          "id": 149,
           "location": "Coffre — Base village (226, 66, 45) [Overworld]",
           "quantity": 15
         },
         {
-          "id": 149,
+          "id": 150,
           "location": "Coffre — Base village (255, 66, 35) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 150,
+          "id": 151,
           "location": "Coffre — Base village (249, 66, 41) [Overworld]",
           "quantity": 9
         }
@@ -1736,7 +1741,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 151,
+          "id": 152,
           "location": "Coffre — Base village (225, 68, 43) [Overworld]",
           "quantity": 5
         }
@@ -1754,7 +1759,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 152,
+          "id": 153,
           "location": "Coffre — Base village (226, 66, 42) [Overworld]",
           "quantity": 5
         }
@@ -1772,37 +1777,37 @@
       "notes": "",
       "stacks": [
         {
-          "id": 153,
+          "id": 154,
           "location": "Coffre — Maison #1 (63, 89, -51) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 154,
+          "id": 155,
           "location": "Coffre — Maison #1 (63, 89, -52) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 155,
+          "id": 156,
           "location": "Coffre — Base village (225, 68, 43) [Overworld]",
           "quantity": 141
         },
         {
-          "id": 156,
+          "id": 157,
           "location": "Coffre — Base village (226, 68, 43) [Overworld]",
           "quantity": 69
         },
         {
-          "id": 157,
+          "id": 158,
           "location": "Coffre — Base village (225, 68, 50) [Overworld]",
           "quantity": 462
         },
         {
-          "id": 158,
+          "id": 159,
           "location": "Coffre — Hub nether (8, 81, -17) [Nether]",
           "quantity": 384
         },
         {
-          "id": 159,
+          "id": 160,
           "location": "Coffre — Hub nether (7, 81, -17) [Nether]",
           "quantity": 88
         }
@@ -1820,12 +1825,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 160,
+          "id": 161,
           "location": "Coffre — Maison #1 (63, 90, -51) [Overworld]",
           "quantity": 40
         },
         {
-          "id": 161,
+          "id": 162,
           "location": "Coffre — Hub nether (8, 81, -17) [Nether]",
           "quantity": 64
         }
@@ -1843,27 +1848,27 @@
       "notes": "",
       "stacks": [
         {
-          "id": 162,
+          "id": 163,
           "location": "Coffre — Maison #1 (63, 89, -51) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 163,
+          "id": 164,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 68
         },
         {
-          "id": 164,
+          "id": 165,
           "location": "Coffre — Base village (225, 68, 43) [Overworld]",
           "quantity": 42
         },
         {
-          "id": 165,
+          "id": 166,
           "location": "Coffre (697, 63, -2265) [Overworld]",
           "quantity": 100
         },
         {
-          "id": 166,
+          "id": 167,
           "location": "Coffre — Hub nether (8, 81, -17) [Nether]",
           "quantity": 6
         }
@@ -1881,12 +1886,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 167,
+          "id": 168,
           "location": "Coffre — Maison #1 (63, 90, -51) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 168,
+          "id": 169,
           "location": "Coffre — Base village (225, 68, 44) [Overworld]",
           "quantity": 2
         }
@@ -1904,22 +1909,22 @@
       "notes": "",
       "stacks": [
         {
-          "id": 169,
+          "id": 170,
           "location": "Coffre — Maison #1 (63, 90, -51) [Overworld]",
           "quantity": 8
         },
         {
-          "id": 170,
+          "id": 171,
           "location": "Coffre — Base village (225, 68, 44) [Overworld]",
           "quantity": 64
         },
         {
-          "id": 171,
+          "id": 172,
           "location": "Coffre — Base village (226, 68, 44) [Overworld]",
           "quantity": 14
         },
         {
-          "id": 172,
+          "id": 173,
           "location": "Coffre (697, 63, -2265) [Overworld]",
           "quantity": 21
         }
@@ -1937,7 +1942,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 173,
+          "id": 174,
           "location": "Coffre — Base village (226, 68, 44) [Overworld]",
           "quantity": 2
         }
@@ -1955,12 +1960,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 174,
+          "id": 175,
           "location": "Coffre — Maison #1 (64, 90, -45) [Overworld]",
           "quantity": 19
         },
         {
-          "id": 175,
+          "id": 176,
           "location": "Coffre — Base village (225, 68, 47) [Overworld]",
           "quantity": 3
         }
@@ -1978,7 +1983,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 176,
+          "id": 177,
           "location": "Coffre — Base village (225, 66, 51) [Overworld]",
           "quantity": 1
         }
@@ -1996,7 +2001,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 177,
+          "id": 178,
           "location": "Coffre — Base village (268, 67, 34) [Overworld]",
           "quantity": 6
         }
@@ -2014,14 +2019,14 @@
       "notes": "",
       "stacks": [
         {
-          "id": 178,
+          "id": 179,
           "location": "Coffre — Hub nether (7, 81, -17) [Nether]",
           "quantity": 9
         },
         {
-          "id": 179,
+          "id": 180,
           "location": "Inventaire de « N3SK3 »",
-          "quantity": 45
+          "quantity": 37
         }
       ],
       "updatedAt": ""
@@ -2037,12 +2042,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 180,
+          "id": 181,
           "location": "Coffre — Maison #1 (64, 90, -45) [Overworld]",
           "quantity": 6
         },
         {
-          "id": 181,
+          "id": 182,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 19
         }
@@ -2060,7 +2065,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 182,
+          "id": 183,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 12
         }
@@ -2078,12 +2083,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 183,
+          "id": 184,
           "location": "Coffre — Maison #1 (64, 90, -45) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 184,
+          "id": 185,
           "location": "Inventaire de « N3SK3 »",
           "quantity": 5
         }
@@ -2101,12 +2106,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 185,
+          "id": 186,
           "location": "Coffre — Hub nether (7, 81, -17) [Nether]",
           "quantity": 7
         },
         {
-          "id": 186,
+          "id": 187,
           "location": "Inventaire de « N3SK3 »",
           "quantity": 2
         }
@@ -2124,7 +2129,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 187,
+          "id": 188,
           "location": "Coffre — Base village (225, 68, 45) [Overworld]",
           "quantity": 73
         }
@@ -2142,7 +2147,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 188,
+          "id": 189,
           "location": "Coffre — Base village (225, 68, 45) [Overworld]",
           "quantity": 57
         }
@@ -2160,12 +2165,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 189,
+          "id": 190,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 190,
+          "id": 191,
           "location": "Coffre — Spawn zombie (-65, 90, -75) [Overworld]",
           "quantity": 1
         }
@@ -2183,7 +2188,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 191,
+          "id": 192,
           "location": "Coffre — Base village (231, 66, 35) [Overworld]",
           "quantity": 1
         }
@@ -2201,32 +2206,32 @@
       "notes": "",
       "stacks": [
         {
-          "id": 192,
+          "id": 193,
           "location": "Coffre — Maison #1 (62, 94, -50) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 193,
+          "id": 194,
           "location": "Baril — Maison #1 (65, 95, -45) [Overworld]",
           "quantity": 29
         },
         {
-          "id": 194,
+          "id": 195,
           "location": "Coffre — Base village (225, 68, 45) [Overworld]",
           "quantity": 384
         },
         {
-          "id": 195,
+          "id": 196,
           "location": "Coffre — Base village (226, 66, 45) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 196,
+          "id": 197,
           "location": "Coffre — Base village (232, 65, 50) [Overworld]",
           "quantity": 107
         },
         {
-          "id": 197,
+          "id": 198,
           "location": "Coffre (696, 63, -2265) [Overworld]",
           "quantity": 4
         }
@@ -2244,7 +2249,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 198,
+          "id": 199,
           "location": "Coffre (3112, 63, -904) [Overworld]",
           "quantity": 1
         }
@@ -2262,12 +2267,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 199,
+          "id": 200,
           "location": "Coffre — Base village (226, 66, 45) [Overworld]",
           "quantity": 249
         },
         {
-          "id": 200,
+          "id": 201,
           "location": "Coffre — Base village (232, 65, 50) [Overworld]",
           "quantity": 5
         }
@@ -2285,7 +2290,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 201,
+          "id": 202,
           "location": "Coffre — Base village (226, 66, 45) [Overworld]",
           "quantity": 9
         }
@@ -2303,7 +2308,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 202,
+          "id": 203,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 1
         }
@@ -2321,7 +2326,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 203,
+          "id": 204,
           "location": "Coffre (697, 63, -2265) [Overworld]",
           "quantity": 2
         }
@@ -2339,12 +2344,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 204,
+          "id": 205,
           "location": "Coffre — Base village (272, 66, 36) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 205,
+          "id": 206,
           "location": "Inventaire de « N3SK3 »",
           "quantity": 1
         }
@@ -2362,7 +2367,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 206,
+          "id": 207,
           "location": "Coffre — Base village (226, 68, 47) [Overworld]",
           "quantity": 8
         }
@@ -2380,7 +2385,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 207,
+          "id": 208,
           "location": "Coffre — Base village (225, 68, 48) [Overworld]",
           "quantity": 17
         }
@@ -2398,7 +2403,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 208,
+          "id": 209,
           "location": "Coffre — Hub nether (7, 81, -24) [Nether]",
           "quantity": 1
         }
@@ -2416,7 +2421,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 209,
+          "id": 210,
           "location": "Coffre — Base village (224, 66, 51) [Overworld]",
           "quantity": 1
         }
@@ -2434,7 +2439,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 210,
+          "id": 211,
           "location": "Coffre — Base village (226, 66, 45) [Overworld]",
           "quantity": 7
         }
@@ -2452,7 +2457,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 211,
+          "id": 212,
           "location": "Coffre — Base village (225, 68, 45) [Overworld]",
           "quantity": 3
         }
@@ -2470,7 +2475,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 212,
+          "id": 213,
           "location": "Coffre — Base village (225, 68, 45) [Overworld]",
           "quantity": 148
         }
@@ -2488,7 +2493,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 213,
+          "id": 214,
           "location": "Coffre — Base village (225, 68, 45) [Overworld]",
           "quantity": 2
         }
@@ -2506,11 +2511,6 @@
       "notes": "",
       "stacks": [
         {
-          "id": 214,
-          "location": "Coffre (56, 101, -290) [Overworld]",
-          "quantity": 1
-        },
-        {
           "id": 215,
           "location": "Coffre — Maison #1 (64, 89, -45) [Overworld]",
           "quantity": 1
@@ -2519,6 +2519,11 @@
           "id": 216,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 2
+        },
+        {
+          "id": 217,
+          "location": "Inventaire de « N3SK3 »",
+          "quantity": 1
         }
       ],
       "updatedAt": ""
@@ -2534,7 +2539,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 217,
+          "id": 218,
           "location": "Coffre — Maison #1 (64, 89, -51) [Overworld]",
           "quantity": 1
         }
@@ -2552,7 +2557,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 218,
+          "id": 219,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 6
         }
@@ -2570,7 +2575,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 219,
+          "id": 220,
           "location": "Coffre — Base village (225, 68, 46) [Overworld]",
           "quantity": 83
         }
@@ -2588,8 +2593,13 @@
       "notes": "",
       "stacks": [
         {
-          "id": 220,
+          "id": 221,
           "location": "Coffre (3112, 63, -904) [Overworld]",
+          "quantity": 1
+        },
+        {
+          "id": 222,
+          "location": "Inventaire de « N3SK3 »",
           "quantity": 1
         }
       ],
@@ -2606,7 +2616,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 221,
+          "id": 223,
           "location": "Coffre — Base village (226, 68, 46) [Overworld]",
           "quantity": 15
         }
@@ -2615,6 +2625,24 @@
     },
     {
       "id": 117,
+      "name": "Dark oak slab",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 224,
+          "location": "Inventaire de « N3SK3 »",
+          "quantity": 3
+        }
+      ],
+      "updatedAt": ""
+    },
+    {
+      "id": 118,
       "name": "Dark oak trapdoor",
       "icon": "",
       "category": "Autre",
@@ -2624,7 +2652,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 222,
+          "id": 225,
           "location": "Coffre (3103, 63, -855) [Overworld]",
           "quantity": 2
         }
@@ -2632,7 +2660,7 @@
       "updatedAt": ""
     },
     {
-      "id": 118,
+      "id": 119,
       "name": "Deepslate",
       "icon": "",
       "category": "Blocs",
@@ -2642,22 +2670,22 @@
       "notes": "",
       "stacks": [
         {
-          "id": 223,
+          "id": 226,
           "location": "Coffre — Base village (225, 68, 43) [Overworld]",
           "quantity": 64
         },
         {
-          "id": 224,
+          "id": 227,
           "location": "Coffre — Base village (226, 68, 43) [Overworld]",
           "quantity": 71
         },
         {
-          "id": 225,
+          "id": 228,
           "location": "Coffre — Base village (225, 68, 50) [Overworld]",
           "quantity": 122
         },
         {
-          "id": 226,
+          "id": 229,
           "location": "Coffre — Base village (226, 68, 50) [Overworld]",
           "quantity": 34
         }
@@ -2665,7 +2693,7 @@
       "updatedAt": ""
     },
     {
-      "id": 119,
+      "id": 120,
       "name": "Deepslate brick stairs",
       "icon": "",
       "category": "Blocs",
@@ -2675,17 +2703,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 227,
+          "id": 230,
           "location": "Coffre — Base village (225, 68, 44) [Overworld]",
           "quantity": 134
         },
         {
-          "id": 228,
+          "id": 231,
           "location": "Coffre — Hub nether (8, 81, -17) [Nether]",
           "quantity": 128
         },
         {
-          "id": 229,
+          "id": 232,
           "location": "Coffre — Hub nether (17, 81, -17) [Nether]",
           "quantity": 49
         }
@@ -2693,7 +2721,7 @@
       "updatedAt": ""
     },
     {
-      "id": 120,
+      "id": 121,
       "name": "Deepslate brick wall",
       "icon": "",
       "category": "Blocs",
@@ -2703,17 +2731,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 230,
+          "id": 233,
           "location": "Coffre — Maison #1 (63, 90, -51) [Overworld]",
           "quantity": 19
         },
         {
-          "id": 231,
+          "id": 234,
           "location": "Coffre — Base village (225, 68, 44) [Overworld]",
           "quantity": 14
         },
         {
-          "id": 232,
+          "id": 235,
           "location": "Coffre — Base village (268, 67, 34) [Overworld]",
           "quantity": 6
         }
@@ -2721,7 +2749,7 @@
       "updatedAt": ""
     },
     {
-      "id": 121,
+      "id": 122,
       "name": "Deepslate bricks",
       "icon": "",
       "category": "Blocs",
@@ -2731,12 +2759,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 233,
+          "id": 236,
           "location": "Coffre (313, -2, 32) [Overworld]",
           "quantity": 28
         },
         {
-          "id": 234,
+          "id": 237,
           "location": "Coffre — Hub nether (17, 81, -17) [Nether]",
           "quantity": 42
         }
@@ -2744,7 +2772,7 @@
       "updatedAt": ""
     },
     {
-      "id": 122,
+      "id": 123,
       "name": "Deepslate tile slab",
       "icon": "",
       "category": "Blocs",
@@ -2754,7 +2782,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 235,
+          "id": 238,
           "location": "Coffre — Hub nether (8, 81, -17) [Nether]",
           "quantity": 6
         }
@@ -2762,7 +2790,7 @@
       "updatedAt": ""
     },
     {
-      "id": 123,
+      "id": 124,
       "name": "Deepslate tile stairs",
       "icon": "",
       "category": "Blocs",
@@ -2772,12 +2800,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 236,
+          "id": 239,
           "location": "Coffre — Hub nether (8, 81, -17) [Nether]",
           "quantity": 55
         },
         {
-          "id": 237,
+          "id": 240,
           "location": "Coffre — Hub nether (7, 81, -17) [Nether]",
           "quantity": 48
         }
@@ -2785,7 +2813,7 @@
       "updatedAt": ""
     },
     {
-      "id": 124,
+      "id": 125,
       "name": "Deepslate tile wall",
       "icon": "",
       "category": "Blocs",
@@ -2795,7 +2823,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 238,
+          "id": 241,
           "location": "Coffre — Maison #1 (63, 90, -51) [Overworld]",
           "quantity": 64
         }
@@ -2803,7 +2831,7 @@
       "updatedAt": ""
     },
     {
-      "id": 125,
+      "id": 126,
       "name": "Deepslate tiles",
       "icon": "",
       "category": "Blocs",
@@ -2813,7 +2841,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 239,
+          "id": 242,
           "location": "Coffre — Hub nether (17, 81, -17) [Nether]",
           "quantity": 43
         }
@@ -2821,7 +2849,7 @@
       "updatedAt": ""
     },
     {
-      "id": 126,
+      "id": 127,
       "name": "Diamond",
       "icon": "",
       "category": "Minerais",
@@ -2831,12 +2859,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 240,
+          "id": 243,
           "location": "Coffre — Maison #1 (62, 94, -50) [Overworld]",
           "quantity": 37
         },
         {
-          "id": 241,
+          "id": 244,
           "location": "Coffre — Base village (226, 66, 45) [Overworld]",
           "quantity": 4
         }
@@ -2844,7 +2872,7 @@
       "updatedAt": ""
     },
     {
-      "id": 127,
+      "id": 128,
       "name": "Diamond axe",
       "icon": "",
       "category": "Minerais",
@@ -2854,17 +2882,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 242,
+          "id": 245,
           "location": "Baril — Maison #1 (65, 95, -45) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 243,
+          "id": 246,
           "location": "Inventaire de « N3SK3 »",
           "quantity": 1
         },
         {
-          "id": 244,
+          "id": 247,
           "location": "Enderchest perso de « N3SK3 »",
           "quantity": 1
         }
@@ -2872,7 +2900,7 @@
       "updatedAt": ""
     },
     {
-      "id": 128,
+      "id": 129,
       "name": "Diamond chestplate",
       "icon": "",
       "category": "Minerais",
@@ -2882,20 +2910,25 @@
       "notes": "",
       "stacks": [
         {
-          "id": 245,
+          "id": 248,
           "location": "Coffre — Base village (225, 68, 50) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 246,
+          "id": 249,
           "location": "Coffre — Base village (232, 66, 49) [Overworld]",
+          "quantity": 1
+        },
+        {
+          "id": 250,
+          "location": "Inventaire de « N3SK3 »",
           "quantity": 1
         }
       ],
       "updatedAt": ""
     },
     {
-      "id": 129,
+      "id": 130,
       "name": "Diamond helmet",
       "icon": "",
       "category": "Minerais",
@@ -2905,12 +2938,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 247,
+          "id": 251,
           "location": "Inventaire de « N3SK3 »",
           "quantity": 1
         },
         {
-          "id": 248,
+          "id": 252,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 1
         }
@@ -2918,7 +2951,7 @@
       "updatedAt": ""
     },
     {
-      "id": 130,
+      "id": 131,
       "name": "Diamond hoe",
       "icon": "",
       "category": "Minerais",
@@ -2928,7 +2961,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 249,
+          "id": 253,
           "location": "Coffre — Base village (207, 66, 35) [Overworld]",
           "quantity": 1
         }
@@ -2936,7 +2969,7 @@
       "updatedAt": ""
     },
     {
-      "id": 131,
+      "id": 132,
       "name": "Diamond horse armor",
       "icon": "",
       "category": "Minerais",
@@ -2946,17 +2979,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 250,
+          "id": 254,
           "location": "Coffre — Base village (226, 66, 42) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 251,
+          "id": 255,
           "location": "Coffre — Base village (272, 66, 36) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 252,
+          "id": 256,
           "location": "Coffre (-929, 134, -554) [End]",
           "quantity": 1
         }
@@ -2964,7 +2997,7 @@
       "updatedAt": ""
     },
     {
-      "id": 132,
+      "id": 133,
       "name": "Diamond leggings",
       "icon": "",
       "category": "Minerais",
@@ -2974,12 +3007,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 253,
+          "id": 257,
           "location": "Coffre — Base village (225, 68, 50) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 254,
+          "id": 258,
           "location": "Coffre — Base village (232, 66, 49) [Overworld]",
           "quantity": 1
         }
@@ -2987,7 +3020,7 @@
       "updatedAt": ""
     },
     {
-      "id": 133,
+      "id": 134,
       "name": "Diamond pickaxe",
       "icon": "",
       "category": "Minerais",
@@ -2997,17 +3030,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 255,
+          "id": 259,
           "location": "Coffre — Base village (232, 67, 49) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 256,
+          "id": 260,
           "location": "Inventaire de « N3SK3 »",
           "quantity": 2
         },
         {
-          "id": 257,
+          "id": 261,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 1
         }
@@ -3015,7 +3048,7 @@
       "updatedAt": ""
     },
     {
-      "id": 134,
+      "id": 135,
       "name": "Diamond shovel",
       "icon": "",
       "category": "Minerais",
@@ -3025,25 +3058,25 @@
       "notes": "",
       "stacks": [
         {
-          "id": 258,
+          "id": 262,
           "location": "Baril — Maison #1 (65, 95, -45) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 259,
+          "id": 263,
           "location": "Coffre — Base village (232, 67, 49) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 260,
-          "location": "Inventaire de « N3SK3 »",
+          "id": 264,
+          "location": "Enderchest perso de « N3SK3 »",
           "quantity": 1
         }
       ],
       "updatedAt": ""
     },
     {
-      "id": 135,
+      "id": 136,
       "name": "Diamond sword",
       "icon": "",
       "category": "Minerais",
@@ -3053,22 +3086,27 @@
       "notes": "",
       "stacks": [
         {
-          "id": 261,
+          "id": 265,
           "location": "Coffre — Base village (225, 68, 50) [Overworld]",
+          "quantity": 2
+        },
+        {
+          "id": 266,
+          "location": "Coffre — Base village (226, 68, 50) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 262,
+          "id": 267,
           "location": "Coffre — Maison #2 (364, 69, 61) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 263,
+          "id": 268,
           "location": "Inventaire de « N3SK3 »",
-          "quantity": 3
+          "quantity": 1
         },
         {
-          "id": 264,
+          "id": 269,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 1
         }
@@ -3076,46 +3114,8 @@
       "updatedAt": ""
     },
     {
-      "id": 136,
-      "name": "Diorite",
-      "icon": "",
-      "category": "Blocs",
-      "unit": "item",
-      "targetQuantity": null,
-      "renewable": false,
-      "notes": "",
-      "stacks": [
-        {
-          "id": 265,
-          "location": "Coffre — Maison #1 (63, 89, -51) [Overworld]",
-          "quantity": 3
-        },
-        {
-          "id": 266,
-          "location": "Coffre (-647, 64, -140) [Overworld]",
-          "quantity": 9
-        },
-        {
-          "id": 267,
-          "location": "Coffre — Base village (226, 68, 43) [Overworld]",
-          "quantity": 1
-        },
-        {
-          "id": 268,
-          "location": "Coffre — Base village (255, 66, 41) [Overworld]",
-          "quantity": 9
-        },
-        {
-          "id": 269,
-          "location": "Coffre (697, 63, -2264) [Overworld]",
-          "quantity": 3
-        }
-      ],
-      "updatedAt": ""
-    },
-    {
       "id": 137,
-      "name": "Dirt",
+      "name": "Diorite",
       "icon": "",
       "category": "Blocs",
       "unit": "item",
@@ -3126,73 +3126,106 @@
         {
           "id": 270,
           "location": "Coffre — Maison #1 (63, 89, -51) [Overworld]",
-          "quantity": 4
-        },
-        {
-          "id": 271,
-          "location": "Coffre — Maison #1 (63, 89, -52) [Overworld]",
           "quantity": 3
         },
         {
+          "id": 271,
+          "location": "Coffre (-647, 64, -140) [Overworld]",
+          "quantity": 9
+        },
+        {
           "id": 272,
-          "location": "Coffre — Maison #1 (96, 95, -64) [Overworld]",
-          "quantity": 128
+          "location": "Coffre — Base village (226, 68, 43) [Overworld]",
+          "quantity": 1
         },
         {
           "id": 273,
-          "location": "Coffre (-647, 64, -140) [Overworld]",
-          "quantity": 1
+          "location": "Coffre — Base village (255, 66, 41) [Overworld]",
+          "quantity": 9
         },
         {
           "id": 274,
-          "location": "Coffre — Base village (225, 68, 43) [Overworld]",
-          "quantity": 128
-        },
-        {
-          "id": 275,
-          "location": "Coffre — Base village (226, 68, 43) [Overworld]",
-          "quantity": 209
-        },
-        {
-          "id": 276,
-          "location": "Coffre — Base village (225, 66, 43) [Overworld]",
-          "quantity": 1
-        },
-        {
-          "id": 277,
-          "location": "Coffre — Base village (225, 68, 50) [Overworld]",
-          "quantity": 64
-        },
-        {
-          "id": 278,
-          "location": "Coffre — Base village (225, 66, 51) [Overworld]",
-          "quantity": 74
-        },
-        {
-          "id": 279,
-          "location": "Baril — Base village (257, 66, 47) [Overworld]",
-          "quantity": 280
-        },
-        {
-          "id": 280,
           "location": "Coffre (697, 63, -2264) [Overworld]",
-          "quantity": 64
-        },
-        {
-          "id": 281,
-          "location": "Coffre — Hub nether (8, 81, -17) [Nether]",
-          "quantity": 1
-        },
-        {
-          "id": 282,
-          "location": "Inventaire de « N3SK3 »",
-          "quantity": 5
+          "quantity": 3
         }
       ],
       "updatedAt": ""
     },
     {
       "id": 138,
+      "name": "Dirt",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 275,
+          "location": "Coffre — Maison #1 (63, 89, -51) [Overworld]",
+          "quantity": 4
+        },
+        {
+          "id": 276,
+          "location": "Coffre — Maison #1 (63, 89, -52) [Overworld]",
+          "quantity": 3
+        },
+        {
+          "id": 277,
+          "location": "Coffre — Maison #1 (96, 95, -64) [Overworld]",
+          "quantity": 128
+        },
+        {
+          "id": 278,
+          "location": "Coffre (-647, 64, -140) [Overworld]",
+          "quantity": 1
+        },
+        {
+          "id": 279,
+          "location": "Coffre — Base village (225, 68, 43) [Overworld]",
+          "quantity": 128
+        },
+        {
+          "id": 280,
+          "location": "Coffre — Base village (226, 68, 43) [Overworld]",
+          "quantity": 209
+        },
+        {
+          "id": 281,
+          "location": "Coffre — Base village (225, 66, 43) [Overworld]",
+          "quantity": 6
+        },
+        {
+          "id": 282,
+          "location": "Coffre — Base village (225, 68, 50) [Overworld]",
+          "quantity": 64
+        },
+        {
+          "id": 283,
+          "location": "Coffre — Base village (225, 66, 51) [Overworld]",
+          "quantity": 74
+        },
+        {
+          "id": 284,
+          "location": "Baril — Base village (257, 66, 47) [Overworld]",
+          "quantity": 280
+        },
+        {
+          "id": 285,
+          "location": "Coffre (697, 63, -2264) [Overworld]",
+          "quantity": 64
+        },
+        {
+          "id": 286,
+          "location": "Coffre — Hub nether (8, 81, -17) [Nether]",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": ""
+    },
+    {
+      "id": 139,
       "name": "Dispenser",
       "icon": "",
       "category": "Autre",
@@ -3202,12 +3235,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 283,
+          "id": 287,
           "location": "Coffre — Base village (226, 66, 47) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 284,
+          "id": 288,
           "location": "Coffre (313, -2, 32) [Overworld]",
           "quantity": 1
         }
@@ -3215,7 +3248,7 @@
       "updatedAt": ""
     },
     {
-      "id": 139,
+      "id": 140,
       "name": "Dragon breath",
       "icon": "",
       "category": "Autre",
@@ -3225,7 +3258,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 285,
+          "id": 289,
           "location": "Coffre — Base village (225, 68, 48) [Overworld]",
           "quantity": 2
         }
@@ -3233,7 +3266,7 @@
       "updatedAt": ""
     },
     {
-      "id": 140,
+      "id": 141,
       "name": "Dried kelp",
       "icon": "",
       "category": "Nourriture",
@@ -3243,12 +3276,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 286,
+          "id": 290,
           "location": "Coffre — Base village (232, 65, 50) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 287,
+          "id": 291,
           "location": "Coffre — Base village (243, 66, 41) [Overworld]",
           "quantity": 6
         }
@@ -3256,7 +3289,7 @@
       "updatedAt": ""
     },
     {
-      "id": 141,
+      "id": 142,
       "name": "Dried kelp block",
       "icon": "",
       "category": "Nourriture",
@@ -3266,7 +3299,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 288,
+          "id": 292,
           "location": "Coffre — Base village (243, 66, 41) [Overworld]",
           "quantity": 6
         }
@@ -3274,7 +3307,7 @@
       "updatedAt": ""
     },
     {
-      "id": 142,
+      "id": 143,
       "name": "Dripstone block",
       "icon": "",
       "category": "Blocs",
@@ -3284,7 +3317,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 289,
+          "id": 293,
           "location": "Coffre — Base village (225, 68, 43) [Overworld]",
           "quantity": 17
         }
@@ -3292,7 +3325,7 @@
       "updatedAt": ""
     },
     {
-      "id": 143,
+      "id": 144,
       "name": "Dropper",
       "icon": "",
       "category": "Autre",
@@ -3302,12 +3335,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 290,
+          "id": 294,
           "location": "Coffre — Base village (226, 66, 49) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 291,
+          "id": 295,
           "location": "Coffre (313, -2, 32) [Overworld]",
           "quantity": 1
         }
@@ -3315,7 +3348,7 @@
       "updatedAt": ""
     },
     {
-      "id": 144,
+      "id": 145,
       "name": "Egg",
       "icon": "",
       "category": "Nourriture",
@@ -3325,42 +3358,24 @@
       "notes": "",
       "stacks": [
         {
-          "id": 292,
+          "id": 296,
           "location": "Coffre — Maison #1 (96, 95, -64) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 293,
+          "id": 297,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 294,
+          "id": 298,
           "location": "Coffre — Base village (225, 66, 51) [Overworld]",
           "quantity": 16
         },
         {
-          "id": 295,
+          "id": 299,
           "location": "Coffre — End portal (1397, 63, 1561) [Overworld]",
           "quantity": 5
-        }
-      ],
-      "updatedAt": ""
-    },
-    {
-      "id": 145,
-      "name": "Elytra",
-      "icon": "",
-      "category": "Armure",
-      "unit": "item",
-      "targetQuantity": null,
-      "renewable": false,
-      "notes": "",
-      "stacks": [
-        {
-          "id": 296,
-          "location": "Inventaire de « N3SK3 »",
-          "quantity": 1
         }
       ],
       "updatedAt": ""
@@ -3376,18 +3391,18 @@
       "notes": "",
       "stacks": [
         {
-          "id": 297,
+          "id": 300,
           "location": "Coffre — Maison #1 (62, 94, -50) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 298,
+          "id": 301,
           "location": "Coffre — Base village (226, 66, 45) [Overworld]",
           "quantity": 60
         },
         {
-          "id": 299,
-          "location": "Inventaire de « N3SK3 »",
+          "id": 302,
+          "location": "Coffre — Base village (268, 67, 34) [Overworld]",
           "quantity": 50
         }
       ],
@@ -3404,28 +3419,23 @@
       "notes": "",
       "stacks": [
         {
-          "id": 300,
+          "id": 303,
           "location": "Coffre — Base village (226, 66, 42) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 301,
+          "id": 304,
           "location": "Coffre — Base village (261, 66, 35) [Overworld]",
           "quantity": 7
         },
         {
-          "id": 302,
+          "id": 305,
           "location": "Coffre — Base village (272, 66, 36) [Overworld]",
-          "quantity": 4
+          "quantity": 6
         },
         {
-          "id": 303,
+          "id": 306,
           "location": "Baril — Spawn zombie (-76, 92, -76) [Overworld]",
-          "quantity": 2
-        },
-        {
-          "id": 304,
-          "location": "Inventaire de « N3SK3 »",
           "quantity": 2
         }
       ],
@@ -3442,7 +3452,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 305,
+          "id": 307,
           "location": "Coffre — Base village (226, 68, 43) [Overworld]",
           "quantity": 33
         }
@@ -3460,7 +3470,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 306,
+          "id": 308,
           "location": "Coffre — Base village (225, 68, 48) [Overworld]",
           "quantity": 1
         }
@@ -3478,7 +3488,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 307,
+          "id": 309,
           "location": "Inventaire de « N3SK3 »",
           "quantity": 1
         }
@@ -3496,12 +3506,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 308,
+          "id": 310,
           "location": "Coffre — Base village (225, 66, 51) [Overworld]",
           "quantity": 4
         },
         {
-          "id": 309,
+          "id": 311,
           "location": "Coffre — Base village (268, 67, 34) [Overworld]",
           "quantity": 4
         }
@@ -3519,28 +3529,28 @@
       "notes": "",
       "stacks": [
         {
-          "id": 310,
+          "id": 312,
           "location": "Coffre — Base village (226, 66, 47) [Overworld]",
-          "quantity": 29
+          "quantity": 30
         },
         {
-          "id": 311,
+          "id": 313,
           "location": "Coffre — Base village (224, 66, 51) [Overworld]",
           "quantity": 5
         },
         {
-          "id": 312,
+          "id": 314,
           "location": "Coffre — Base village (225, 66, 51) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 313,
-          "location": "Coffre (696, 63, -2266) [Overworld]",
-          "quantity": 1
+          "id": 315,
+          "location": "Coffre — Base village (269, 67, 34) [Overworld]",
+          "quantity": 2
         },
         {
-          "id": 314,
-          "location": "Inventaire de « N3SK3 »",
+          "id": 316,
+          "location": "Coffre (696, 63, -2266) [Overworld]",
           "quantity": 1
         }
       ],
@@ -3557,7 +3567,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 315,
+          "id": 317,
           "location": "Coffre — Base village (225, 68, 45) [Overworld]",
           "quantity": 4
         }
@@ -3575,22 +3585,22 @@
       "notes": "",
       "stacks": [
         {
-          "id": 316,
+          "id": 318,
           "location": "Coffre — Maison #1 (96, 95, -64) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 317,
+          "id": 319,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 7
         },
         {
-          "id": 318,
+          "id": 320,
           "location": "Coffre (-532, 66, -302) [Overworld]",
           "quantity": 4
         },
         {
-          "id": 319,
+          "id": 321,
           "location": "Coffre — Base village (243, 66, 35) [Overworld]",
           "quantity": 9
         }
@@ -3608,12 +3618,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 320,
+          "id": 322,
           "location": "Coffre (3112, 64, -872) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 321,
+          "id": 323,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 1
         }
@@ -3631,17 +3641,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 322,
+          "id": 324,
           "location": "Coffre (-592, 51, -1838) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 323,
+          "id": 325,
           "location": "Coffre — Maison #1 (63, 89, -45) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 324,
+          "id": 326,
           "location": "Coffre — Base village (226, 66, 47) [Overworld]",
           "quantity": 2
         }
@@ -3659,7 +3669,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 325,
+          "id": 327,
           "location": "Coffre — Base village (225, 66, 48) [Overworld]",
           "quantity": 2
         }
@@ -3668,24 +3678,6 @@
     },
     {
       "id": 158,
-      "name": "Firework rocket",
-      "icon": "",
-      "category": "Autre",
-      "unit": "item",
-      "targetQuantity": null,
-      "renewable": false,
-      "notes": "",
-      "stacks": [
-        {
-          "id": 326,
-          "location": "Inventaire de « N3SK3 »",
-          "quantity": 24
-        }
-      ],
-      "updatedAt": ""
-    },
-    {
-      "id": 159,
       "name": "Fishing rod",
       "icon": "",
       "category": "Outils",
@@ -3695,7 +3687,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 327,
+          "id": 328,
           "location": "Coffre — Base village (232, 67, 49) [Overworld]",
           "quantity": 1
         }
@@ -3703,7 +3695,7 @@
       "updatedAt": ""
     },
     {
-      "id": 160,
+      "id": 159,
       "name": "Flint",
       "icon": "",
       "category": "Autre",
@@ -3713,12 +3705,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 328,
+          "id": 329,
           "location": "Coffre — Base village (243, 66, 35) [Overworld]",
           "quantity": 27
         },
         {
-          "id": 329,
+          "id": 330,
           "location": "Coffre (696, 63, -2266) [Overworld]",
           "quantity": 5
         }
@@ -3726,7 +3718,7 @@
       "updatedAt": ""
     },
     {
-      "id": 161,
+      "id": 160,
       "name": "Flint and steel",
       "icon": "",
       "category": "Outils",
@@ -3736,37 +3728,37 @@
       "notes": "",
       "stacks": [
         {
-          "id": 330,
+          "id": 331,
           "location": "Coffre (-522, 85, 53) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 331,
+          "id": 332,
           "location": "Coffre (-592, 51, -1838) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 332,
+          "id": 333,
           "location": "Coffre — Maison #1 (62, 94, -50) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 333,
+          "id": 334,
           "location": "Coffre — Maison #1 (63, 89, -44) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 334,
+          "id": 335,
           "location": "Coffre — Base village (226, 66, 47) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 335,
+          "id": 336,
           "location": "Coffre — Hub nether (8, 81, -17) [Nether]",
           "quantity": 1
         },
         {
-          "id": 336,
+          "id": 337,
           "location": "Enderchest perso de « N3SK3 »",
           "quantity": 1
         }
@@ -3774,7 +3766,7 @@
       "updatedAt": ""
     },
     {
-      "id": 162,
+      "id": 161,
       "name": "Furnace",
       "icon": "",
       "category": "Autre",
@@ -3784,12 +3776,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 337,
+          "id": 338,
           "location": "Coffre — Base village (226, 66, 42) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 338,
+          "id": 339,
           "location": "Coffre — Base village (224, 66, 51) [Overworld]",
           "quantity": 1
         }
@@ -3797,7 +3789,7 @@
       "updatedAt": ""
     },
     {
-      "id": 163,
+      "id": 162,
       "name": "Gilded blackstone",
       "icon": "",
       "category": "Blocs",
@@ -3807,12 +3799,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 339,
+          "id": 340,
           "location": "Coffre — Maison #1 (62, 94, -50) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 340,
+          "id": 341,
           "location": "Coffre — Base village (226, 68, 50) [Overworld]",
           "quantity": 5
         }
@@ -3820,7 +3812,7 @@
       "updatedAt": ""
     },
     {
-      "id": 164,
+      "id": 163,
       "name": "Glass",
       "icon": "",
       "category": "Blocs",
@@ -3830,27 +3822,27 @@
       "notes": "",
       "stacks": [
         {
-          "id": 341,
+          "id": 342,
           "location": "Coffre — Base village (225, 68, 45) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 342,
+          "id": 343,
           "location": "Coffre — Base village (226, 68, 45) [Overworld]",
           "quantity": 365
         },
         {
-          "id": 343,
+          "id": 344,
           "location": "Coffre — Base village (226, 66, 44) [Overworld]",
           "quantity": 343
         },
         {
-          "id": 344,
+          "id": 345,
           "location": "Coffre — Base village (249, 66, 35) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 345,
+          "id": 346,
           "location": "Coffre — Hub nether (17, 81, -17) [Nether]",
           "quantity": 64
         }
@@ -3858,7 +3850,7 @@
       "updatedAt": ""
     },
     {
-      "id": 165,
+      "id": 164,
       "name": "Glass bottle",
       "icon": "",
       "category": "Blocs",
@@ -3868,17 +3860,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 346,
+          "id": 347,
           "location": "Coffre — Maison #1 (62, 94, -50) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 347,
+          "id": 348,
           "location": "Baril — Base village (257, 66, 47) [Overworld]",
           "quantity": 15
         },
         {
-          "id": 348,
+          "id": 349,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 2
         }
@@ -3886,7 +3878,7 @@
       "updatedAt": ""
     },
     {
-      "id": 166,
+      "id": 165,
       "name": "Glass pane",
       "icon": "",
       "category": "Blocs",
@@ -3896,12 +3888,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 349,
+          "id": 350,
           "location": "Coffre — Base village (226, 66, 44) [Overworld]",
           "quantity": 10
         },
         {
-          "id": 350,
+          "id": 351,
           "location": "Coffre — Base village (249, 66, 35) [Overworld]",
           "quantity": 505
         }
@@ -3909,7 +3901,7 @@
       "updatedAt": ""
     },
     {
-      "id": 167,
+      "id": 166,
       "name": "Glistering melon slice",
       "icon": "",
       "category": "Nourriture",
@@ -3919,12 +3911,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 351,
+          "id": 352,
           "location": "Coffre — Base village (225, 68, 47) [Overworld]",
           "quantity": 5
         },
         {
-          "id": 352,
+          "id": 353,
           "location": "Coffre — Base village (268, 67, 34) [Overworld]",
           "quantity": 2
         }
@@ -3932,7 +3924,7 @@
       "updatedAt": ""
     },
     {
-      "id": 168,
+      "id": 167,
       "name": "Globe banner pattern",
       "icon": "",
       "category": "Décoration",
@@ -3942,7 +3934,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 353,
+          "id": 354,
           "location": "Coffre — Base village (268, 67, 34) [Overworld]",
           "quantity": 1
         }
@@ -3950,7 +3942,7 @@
       "updatedAt": ""
     },
     {
-      "id": 169,
+      "id": 168,
       "name": "Glow berries",
       "icon": "",
       "category": "Nourriture",
@@ -3960,12 +3952,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 354,
+          "id": 355,
           "location": "Coffre — Maison #1 (64, 89, -45) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 355,
+          "id": 356,
           "location": "Coffre — Base village (225, 66, 51) [Overworld]",
           "quantity": 1
         }
@@ -3973,7 +3965,7 @@
       "updatedAt": ""
     },
     {
-      "id": 170,
+      "id": 169,
       "name": "Glow ink sac",
       "icon": "",
       "category": "Autre",
@@ -3983,7 +3975,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 356,
+          "id": 357,
           "location": "Coffre — Base village (225, 68, 47) [Overworld]",
           "quantity": 3
         }
@@ -3991,7 +3983,7 @@
       "updatedAt": ""
     },
     {
-      "id": 171,
+      "id": 170,
       "name": "Glowstone",
       "icon": "",
       "category": "Blocs",
@@ -4001,12 +3993,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 357,
+          "id": 358,
           "location": "Coffre — Base village (225, 68, 43) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 358,
+          "id": 359,
           "location": "Coffre — Base village (225, 68, 50) [Overworld]",
           "quantity": 3
         }
@@ -4014,7 +4006,7 @@
       "updatedAt": ""
     },
     {
-      "id": 172,
+      "id": 171,
       "name": "Glowstone dust",
       "icon": "",
       "category": "Blocs",
@@ -4024,12 +4016,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 359,
+          "id": 360,
           "location": "Coffre — Base village (225, 68, 48) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 360,
+          "id": 361,
           "location": "Coffre — Base village (225, 68, 50) [Overworld]",
           "quantity": 3
         }
@@ -4037,7 +4029,7 @@
       "updatedAt": ""
     },
     {
-      "id": 173,
+      "id": 172,
       "name": "Gold block",
       "icon": "",
       "category": "Autre",
@@ -4047,7 +4039,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 361,
+          "id": 362,
           "location": "Coffre — Maison #1 (62, 94, -50) [Overworld]",
           "quantity": 1
         }
@@ -4055,7 +4047,7 @@
       "updatedAt": ""
     },
     {
-      "id": 174,
+      "id": 173,
       "name": "Gold ingot",
       "icon": "",
       "category": "Minerais",
@@ -4065,12 +4057,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 362,
+          "id": 363,
           "location": "Coffre — Base village (226, 66, 45) [Overworld]",
           "quantity": 89
         },
         {
-          "id": 363,
+          "id": 364,
           "location": "Coffre — Base village (249, 66, 41) [Overworld]",
           "quantity": 1
         }
@@ -4078,7 +4070,7 @@
       "updatedAt": ""
     },
     {
-      "id": 175,
+      "id": 174,
       "name": "Gold nugget",
       "icon": "",
       "category": "Minerais",
@@ -4088,22 +4080,22 @@
       "notes": "",
       "stacks": [
         {
-          "id": 364,
+          "id": 365,
           "location": "Coffre — Maison #1 (62, 94, -50) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 365,
+          "id": 366,
           "location": "Coffre — Base village (226, 66, 45) [Overworld]",
           "quantity": 11
         },
         {
-          "id": 366,
+          "id": 367,
           "location": "Coffre — Base village (232, 65, 50) [Overworld]",
-          "quantity": 5
+          "quantity": 7
         },
         {
-          "id": 367,
+          "id": 368,
           "location": "Coffre — Base village (249, 66, 41) [Overworld]",
           "quantity": 6
         }
@@ -4111,7 +4103,7 @@
       "updatedAt": ""
     },
     {
-      "id": 176,
+      "id": 175,
       "name": "Golden apple",
       "icon": "",
       "category": "Nourriture",
@@ -4121,17 +4113,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 368,
+          "id": 369,
           "location": "Coffre — Maison #1 (62, 94, -50) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 369,
+          "id": 370,
           "location": "Inventaire de « N3SK3 »",
           "quantity": 4
         },
         {
-          "id": 370,
+          "id": 371,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 1
         }
@@ -4139,7 +4131,7 @@
       "updatedAt": ""
     },
     {
-      "id": 177,
+      "id": 176,
       "name": "Golden axe",
       "icon": "",
       "category": "Outils",
@@ -4149,7 +4141,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 371,
+          "id": 372,
           "location": "Coffre (-592, 51, -1838) [Overworld]",
           "quantity": 1
         }
@@ -4157,7 +4149,7 @@
       "updatedAt": ""
     },
     {
-      "id": 178,
+      "id": 177,
       "name": "Golden carrot",
       "icon": "",
       "category": "Nourriture",
@@ -4167,12 +4159,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 372,
+          "id": 373,
           "location": "Inventaire de « N3SK3 »",
           "quantity": 33
         },
         {
-          "id": 373,
+          "id": 374,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 17
         }
@@ -4180,7 +4172,7 @@
       "updatedAt": ""
     },
     {
-      "id": 179,
+      "id": 178,
       "name": "Golden chestplate",
       "icon": "",
       "category": "Armure",
@@ -4190,25 +4182,20 @@
       "notes": "",
       "stacks": [
         {
-          "id": 374,
+          "id": 375,
           "location": "Coffre (-532, 66, -302) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 375,
-          "location": "Coffre — Spawn zombie (-68, 88, -75) [Overworld]",
-          "quantity": 1
-        },
-        {
           "id": 376,
-          "location": "Inventaire de « N3SK3 »",
+          "location": "Coffre — Spawn zombie (-68, 88, -75) [Overworld]",
           "quantity": 1
         }
       ],
       "updatedAt": ""
     },
     {
-      "id": 180,
+      "id": 179,
       "name": "Golden helmet",
       "icon": "",
       "category": "Armure",
@@ -4231,17 +4218,12 @@
           "id": 379,
           "location": "Coffre — Spawn zombie (-68, 88, -75) [Overworld]",
           "quantity": 1
-        },
-        {
-          "id": 380,
-          "location": "Inventaire de « N3SK3 »",
-          "quantity": 1
         }
       ],
       "updatedAt": ""
     },
     {
-      "id": 181,
+      "id": 180,
       "name": "Golden hoe",
       "icon": "",
       "category": "Outils",
@@ -4251,7 +4233,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 381,
+          "id": 380,
           "location": "Coffre (1411, 65, -1742) [Overworld]",
           "quantity": 1
         }
@@ -4259,7 +4241,7 @@
       "updatedAt": ""
     },
     {
-      "id": 182,
+      "id": 181,
       "name": "Golden horse armor",
       "icon": "",
       "category": "Autre",
@@ -4269,17 +4251,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 382,
+          "id": 381,
           "location": "Coffre — Maison #1 (62, 94, -50) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 383,
+          "id": 382,
           "location": "Coffre (-532, 66, -302) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 384,
+          "id": 383,
           "location": "Coffre (902, 50, -1336) [Overworld]",
           "quantity": 1
         }
@@ -4287,7 +4269,7 @@
       "updatedAt": ""
     },
     {
-      "id": 183,
+      "id": 182,
       "name": "Golden leggings",
       "icon": "",
       "category": "Nourriture",
@@ -4297,17 +4279,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 385,
+          "id": 384,
           "location": "Coffre (1411, 65, -1742) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 386,
+          "id": 385,
           "location": "Coffre — Spawn zombie (-65, 90, -75) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 387,
+          "id": 386,
           "location": "Coffre — Spawn zombie (-68, 88, -75) [Overworld]",
           "quantity": 1
         }
@@ -4315,7 +4297,7 @@
       "updatedAt": ""
     },
     {
-      "id": 184,
+      "id": 183,
       "name": "Golden shovel",
       "icon": "",
       "category": "Outils",
@@ -4325,7 +4307,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 388,
+          "id": 387,
           "location": "Coffre (-522, 85, 53) [Overworld]",
           "quantity": 1
         }
@@ -4333,7 +4315,7 @@
       "updatedAt": ""
     },
     {
-      "id": 185,
+      "id": 184,
       "name": "Golden spear",
       "icon": "",
       "category": "Autre",
@@ -4343,7 +4325,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 389,
+          "id": 388,
           "location": "Coffre — Spawn zombie (-65, 90, -75) [Overworld]",
           "quantity": 1
         }
@@ -4351,7 +4333,7 @@
       "updatedAt": ""
     },
     {
-      "id": 186,
+      "id": 185,
       "name": "Golden sword",
       "icon": "",
       "category": "Outils",
@@ -4361,7 +4343,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 390,
+          "id": 389,
           "location": "Coffre (3103, 63, -863) [Overworld]",
           "quantity": 1
         }
@@ -4369,7 +4351,7 @@
       "updatedAt": ""
     },
     {
-      "id": 187,
+      "id": 186,
       "name": "Granite",
       "icon": "",
       "category": "Blocs",
@@ -4379,22 +4361,22 @@
       "notes": "",
       "stacks": [
         {
-          "id": 391,
+          "id": 390,
           "location": "Coffre — Maison #1 (63, 89, -52) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 392,
+          "id": 391,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 393,
+          "id": 392,
           "location": "Coffre — Base village (226, 68, 43) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 394,
+          "id": 393,
           "location": "Coffre — Base village (255, 66, 41) [Overworld]",
           "quantity": 12
         }
@@ -4402,7 +4384,7 @@
       "updatedAt": ""
     },
     {
-      "id": 188,
+      "id": 187,
       "name": "Granite stairs",
       "icon": "",
       "category": "Blocs",
@@ -4412,7 +4394,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 395,
+          "id": 394,
           "location": "Coffre — Maison #1 (63, 90, -52) [Overworld]",
           "quantity": 5
         }
@@ -4420,7 +4402,7 @@
       "updatedAt": ""
     },
     {
-      "id": 189,
+      "id": 188,
       "name": "Grass block",
       "icon": "",
       "category": "Autre",
@@ -4430,30 +4412,30 @@
       "notes": "",
       "stacks": [
         {
-          "id": 396,
+          "id": 395,
           "location": "Coffre (69, 53, -915) [Overworld]",
           "quantity": 4
         },
         {
-          "id": 397,
+          "id": 396,
           "location": "Coffre — Base village (225, 66, 43) [Overworld]",
-          "quantity": 3
+          "quantity": 4
         },
         {
-          "id": 398,
+          "id": 397,
           "location": "Coffre — Base village (224, 66, 51) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 399,
-          "location": "Inventaire de « N3SK3 »",
+          "id": 398,
+          "location": "Coffre — Base village (269, 67, 34) [Overworld]",
           "quantity": 1
         }
       ],
       "updatedAt": ""
     },
     {
-      "id": 190,
+      "id": 189,
       "name": "Gravel",
       "icon": "",
       "category": "Blocs",
@@ -4463,47 +4445,47 @@
       "notes": "",
       "stacks": [
         {
-          "id": 400,
+          "id": 399,
           "location": "Coffre — Maison #1 (63, 89, -51) [Overworld]",
           "quantity": 128
         },
         {
-          "id": 401,
+          "id": 400,
           "location": "Coffre — Maison #1 (64, 90, -52) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 402,
+          "id": 401,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 403,
-          "location": "Coffre — Base village (224, 66, 41) [Overworld]",
-          "quantity": 16
-        },
-        {
-          "id": 404,
+          "id": 402,
           "location": "Coffre — Base village (225, 68, 43) [Overworld]",
           "quantity": 192
         },
         {
-          "id": 405,
+          "id": 403,
           "location": "Coffre — Base village (226, 68, 43) [Overworld]",
           "quantity": 192
         },
         {
-          "id": 406,
+          "id": 404,
+          "location": "Coffre — Base village (225, 66, 43) [Overworld]",
+          "quantity": 16
+        },
+        {
+          "id": 405,
           "location": "Coffre — Base village (225, 68, 50) [Overworld]",
           "quantity": 7
         },
         {
-          "id": 407,
+          "id": 406,
           "location": "Coffre — Base village (225, 66, 51) [Overworld]",
           "quantity": 23
         },
         {
-          "id": 408,
+          "id": 407,
           "location": "Coffre (697, 63, -2264) [Overworld]",
           "quantity": 20
         }
@@ -4511,7 +4493,7 @@
       "updatedAt": ""
     },
     {
-      "id": 191,
+      "id": 190,
       "name": "Gray dye",
       "icon": "",
       "category": "Autre",
@@ -4521,7 +4503,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 409,
+          "id": 408,
           "location": "Coffre — Base village (213, 66, 35) [Overworld]",
           "quantity": 4
         }
@@ -4529,7 +4511,7 @@
       "updatedAt": ""
     },
     {
-      "id": 192,
+      "id": 191,
       "name": "Gray shulker box",
       "icon": "",
       "category": "Autre",
@@ -4539,7 +4521,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 410,
+          "id": 409,
           "location": "Inventaire de « N3SK3 »",
           "quantity": 1
         }
@@ -4547,7 +4529,7 @@
       "updatedAt": ""
     },
     {
-      "id": 193,
+      "id": 192,
       "name": "Gray wool",
       "icon": "",
       "category": "Blocs",
@@ -4557,7 +4539,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 411,
+          "id": 410,
           "location": "Coffre — Base village (237, 66, 41) [Overworld]",
           "quantity": 15
         }
@@ -4565,7 +4547,7 @@
       "updatedAt": ""
     },
     {
-      "id": 194,
+      "id": 193,
       "name": "Grindstone",
       "icon": "",
       "category": "Blocs",
@@ -4575,7 +4557,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 412,
+          "id": 411,
           "location": "Coffre — Base village (268, 67, 34) [Overworld]",
           "quantity": 5
         }
@@ -4583,7 +4565,7 @@
       "updatedAt": ""
     },
     {
-      "id": 195,
+      "id": 194,
       "name": "Gunpowder",
       "icon": "",
       "category": "Mobs",
@@ -4593,30 +4575,30 @@
       "notes": "",
       "stacks": [
         {
-          "id": 413,
+          "id": 412,
           "location": "Coffre — Maison #1 (63, 89, -45) [Overworld]",
           "quantity": 1
         },
         {
+          "id": 413,
+          "location": "Coffre — Squelettons farm (179, 10, -35) [Overworld]",
+          "quantity": 2
+        },
+        {
           "id": 414,
-          "location": "Coffre (179, 10, -35) [Overworld]",
+          "location": "Coffre — Base village (226, 66, 47) [Overworld]",
           "quantity": 2
         },
         {
           "id": 415,
           "location": "Coffre — Base village (225, 66, 51) [Overworld]",
           "quantity": 9
-        },
-        {
-          "id": 416,
-          "location": "Inventaire de « N3SK3 »",
-          "quantity": 2
         }
       ],
       "updatedAt": ""
     },
     {
-      "id": 196,
+      "id": 195,
       "name": "Hay block",
       "icon": "",
       "category": "Autre",
@@ -4626,15 +4608,15 @@
       "notes": "",
       "stacks": [
         {
-          "id": 417,
+          "id": 416,
           "location": "Inventaire de « N3SK3 »",
-          "quantity": 6
+          "quantity": 21
         }
       ],
       "updatedAt": ""
     },
     {
-      "id": 197,
+      "id": 196,
       "name": "Heart of the sea",
       "icon": "",
       "category": "Autre",
@@ -4644,7 +4626,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 418,
+          "id": 417,
           "location": "Coffre — Base village (226, 66, 45) [Overworld]",
           "quantity": 1
         }
@@ -4652,7 +4634,7 @@
       "updatedAt": ""
     },
     {
-      "id": 198,
+      "id": 197,
       "name": "Honeycomb",
       "icon": "",
       "category": "Autre",
@@ -4662,7 +4644,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 419,
+          "id": 418,
           "location": "Coffre — Base village (219, 66, 35) [Overworld]",
           "quantity": 115
         }
@@ -4670,7 +4652,7 @@
       "updatedAt": ""
     },
     {
-      "id": 199,
+      "id": 198,
       "name": "Hopper",
       "icon": "",
       "category": "Autre",
@@ -4680,7 +4662,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 420,
+          "id": 419,
           "location": "Coffre — Base village (226, 66, 42) [Overworld]",
           "quantity": 8
         }
@@ -4688,7 +4670,7 @@
       "updatedAt": ""
     },
     {
-      "id": 200,
+      "id": 199,
       "name": "Ink sac",
       "icon": "",
       "category": "Autre",
@@ -4698,7 +4680,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 421,
+          "id": 420,
           "location": "Coffre — Base village (226, 68, 47) [Overworld]",
           "quantity": 5
         }
@@ -4706,7 +4688,7 @@
       "updatedAt": ""
     },
     {
-      "id": 201,
+      "id": 200,
       "name": "Iron bars",
       "icon": "",
       "category": "Autre",
@@ -4716,12 +4698,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 422,
+          "id": 421,
           "location": "Coffre — Base village (226, 68, 45) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 423,
+          "id": 422,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 14
         }
@@ -4729,7 +4711,7 @@
       "updatedAt": ""
     },
     {
-      "id": 202,
+      "id": 201,
       "name": "Iron boots",
       "icon": "",
       "category": "Armure",
@@ -4739,12 +4721,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 424,
+          "id": 423,
           "location": "Coffre (-954, 118, -570) [End]",
           "quantity": 1
         },
         {
-          "id": 425,
+          "id": 424,
           "location": "Coffre (-939, 96, -654) [End]",
           "quantity": 1
         }
@@ -4752,7 +4734,7 @@
       "updatedAt": ""
     },
     {
-      "id": 203,
+      "id": 202,
       "name": "Iron chain",
       "icon": "",
       "category": "Autre",
@@ -4762,7 +4744,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 426,
+          "id": 425,
           "location": "Coffre — Base village (226, 66, 44) [Overworld]",
           "quantity": 17
         }
@@ -4770,7 +4752,7 @@
       "updatedAt": ""
     },
     {
-      "id": 204,
+      "id": 203,
       "name": "Iron chestplate",
       "icon": "",
       "category": "Armure",
@@ -4780,7 +4762,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 427,
+          "id": 426,
           "location": "Coffre (-931, 134, -556) [End]",
           "quantity": 1
         }
@@ -4788,7 +4770,7 @@
       "updatedAt": ""
     },
     {
-      "id": 205,
+      "id": 204,
       "name": "Iron door",
       "icon": "",
       "category": "Autre",
@@ -4798,12 +4780,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 428,
+          "id": 427,
           "location": "Coffre — Base village (226, 66, 44) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 429,
+          "id": 428,
           "location": "Coffre (697, 63, -2265) [Overworld]",
           "quantity": 9
         }
@@ -4811,7 +4793,7 @@
       "updatedAt": ""
     },
     {
-      "id": 206,
+      "id": 205,
       "name": "Iron helmet",
       "icon": "",
       "category": "Armure",
@@ -4821,7 +4803,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 430,
+          "id": 429,
           "location": "Coffre (-929, 134, -554) [End]",
           "quantity": 1
         }
@@ -4829,7 +4811,7 @@
       "updatedAt": ""
     },
     {
-      "id": 207,
+      "id": 206,
       "name": "Iron hoe",
       "icon": "",
       "category": "Outils",
@@ -4839,17 +4821,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 431,
+          "id": 430,
           "location": "Coffre — Base village (226, 66, 42) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 432,
+          "id": 431,
           "location": "Coffre (696, 63, -2265) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 433,
+          "id": 432,
           "location": "Coffre — Spawn zombie (-65, 90, -75) [Overworld]",
           "quantity": 1
         }
@@ -4857,7 +4839,7 @@
       "updatedAt": ""
     },
     {
-      "id": 208,
+      "id": 207,
       "name": "Iron horse armor",
       "icon": "",
       "category": "Autre",
@@ -4867,7 +4849,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 434,
+          "id": 433,
           "location": "Coffre (-939, 96, -654) [End]",
           "quantity": 1
         }
@@ -4875,7 +4857,7 @@
       "updatedAt": ""
     },
     {
-      "id": 209,
+      "id": 208,
       "name": "Iron ingot",
       "icon": "",
       "category": "Minerais",
@@ -4885,22 +4867,22 @@
       "notes": "",
       "stacks": [
         {
-          "id": 435,
+          "id": 434,
           "location": "Coffre — Base village (232, 65, 50) [Overworld]",
           "quantity": 57
         },
         {
-          "id": 436,
+          "id": 435,
           "location": "Coffre — Base village (255, 66, 35) [Overworld]",
           "quantity": 97
         },
         {
-          "id": 437,
+          "id": 436,
           "location": "Coffre (696, 63, -2266) [Overworld]",
           "quantity": 45
         },
         {
-          "id": 438,
+          "id": 437,
           "location": "Coffre — Spawn zombie (-74, 92, -76) [Overworld]",
           "quantity": 10
         }
@@ -4908,7 +4890,7 @@
       "updatedAt": ""
     },
     {
-      "id": 210,
+      "id": 209,
       "name": "Iron nautilus armor",
       "icon": "",
       "category": "Autre",
@@ -4918,22 +4900,22 @@
       "notes": "",
       "stacks": [
         {
-          "id": 439,
+          "id": 438,
           "location": "Coffre (50, 62, -1525) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 440,
+          "id": 439,
           "location": "Coffre (51, 62, -1514) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 441,
+          "id": 440,
           "location": "Coffre — Maison #2 (366, 69, 62) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 442,
+          "id": 441,
           "location": "Coffre (902, 50, -1336) [Overworld]",
           "quantity": 1
         }
@@ -4941,7 +4923,7 @@
       "updatedAt": ""
     },
     {
-      "id": 211,
+      "id": 210,
       "name": "Iron nugget",
       "icon": "",
       "category": "Minerais",
@@ -4951,12 +4933,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 443,
+          "id": 442,
           "location": "Coffre — Base village (232, 65, 50) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 444,
+          "id": 443,
           "location": "Coffre — Base village (249, 66, 41) [Overworld]",
           "quantity": 3
         }
@@ -4964,7 +4946,7 @@
       "updatedAt": ""
     },
     {
-      "id": 212,
+      "id": 211,
       "name": "Iron spear",
       "icon": "",
       "category": "Autre",
@@ -4974,12 +4956,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 445,
+          "id": 444,
           "location": "Baril — Maison #1 (65, 95, -45) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 446,
+          "id": 445,
           "location": "Coffre — Spawn zombie (-68, 88, -75) [Overworld]",
           "quantity": 1
         }
@@ -4987,7 +4969,7 @@
       "updatedAt": ""
     },
     {
-      "id": 213,
+      "id": 212,
       "name": "Iron sword",
       "icon": "",
       "category": "Outils",
@@ -4997,12 +4979,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 447,
-          "location": "Coffre (180, 10, -35) [Overworld]",
+          "id": 446,
+          "location": "Coffre — Squelettons farm (180, 10, -35) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 448,
+          "id": 447,
           "location": "Coffre — Spawn zombie (-65, 90, -75) [Overworld]",
           "quantity": 4
         }
@@ -5010,7 +4992,7 @@
       "updatedAt": ""
     },
     {
-      "id": 214,
+      "id": 213,
       "name": "Item frame",
       "icon": "",
       "category": "Décoration",
@@ -5020,7 +5002,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 449,
+          "id": 448,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 13
         }
@@ -5028,7 +5010,7 @@
       "updatedAt": ""
     },
     {
-      "id": 215,
+      "id": 214,
       "name": "Jungle leaves",
       "icon": "",
       "category": "Autre",
@@ -5038,12 +5020,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 450,
+          "id": 449,
           "location": "Coffre (-592, 51, -1838) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 451,
+          "id": 450,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 51
         }
@@ -5051,7 +5033,7 @@
       "updatedAt": ""
     },
     {
-      "id": 216,
+      "id": 215,
       "name": "Jungle log",
       "icon": "",
       "category": "Blocs",
@@ -5061,15 +5043,20 @@
       "notes": "",
       "stacks": [
         {
-          "id": 452,
+          "id": 451,
           "location": "Coffre — Base village (225, 68, 46) [Overworld]",
           "quantity": 44
+        },
+        {
+          "id": 452,
+          "location": "Inventaire de « N3SK3 »",
+          "quantity": 15
         }
       ],
       "updatedAt": ""
     },
     {
-      "id": 217,
+      "id": 216,
       "name": "Jungle sapling",
       "icon": "",
       "category": "Autre",
@@ -5087,7 +5074,7 @@
       "updatedAt": ""
     },
     {
-      "id": 218,
+      "id": 217,
       "name": "Jungle stairs",
       "icon": "",
       "category": "Autre",
@@ -5105,7 +5092,7 @@
       "updatedAt": ""
     },
     {
-      "id": 219,
+      "id": 218,
       "name": "Kelp",
       "icon": "",
       "category": "Nourriture",
@@ -5123,7 +5110,7 @@
       "updatedAt": ""
     },
     {
-      "id": 220,
+      "id": 219,
       "name": "Ladder",
       "icon": "",
       "category": "Autre",
@@ -5146,7 +5133,7 @@
       "updatedAt": ""
     },
     {
-      "id": 221,
+      "id": 220,
       "name": "Lantern",
       "icon": "",
       "category": "Autre",
@@ -5164,7 +5151,7 @@
       "updatedAt": ""
     },
     {
-      "id": 222,
+      "id": 221,
       "name": "Lapis block",
       "icon": "",
       "category": "Autre",
@@ -5182,7 +5169,7 @@
       "updatedAt": ""
     },
     {
-      "id": 223,
+      "id": 222,
       "name": "Lapis lazuli",
       "icon": "",
       "category": "Minerais",
@@ -5210,7 +5197,7 @@
       "updatedAt": ""
     },
     {
-      "id": 224,
+      "id": 223,
       "name": "Large fern",
       "icon": "",
       "category": "Autre",
@@ -5228,7 +5215,7 @@
       "updatedAt": ""
     },
     {
-      "id": 225,
+      "id": 224,
       "name": "Lava bucket",
       "icon": "",
       "category": "Autre",
@@ -5239,8 +5226,8 @@
       "stacks": [
         {
           "id": 464,
-          "location": "Four — Base village (232, 67, 51) [Overworld]",
-          "quantity": 1
+          "location": "Coffre — Base village (232, 66, 49) [Overworld]",
+          "quantity": 2
         },
         {
           "id": 465,
@@ -5251,7 +5238,7 @@
       "updatedAt": ""
     },
     {
-      "id": 226,
+      "id": 225,
       "name": "Lead",
       "icon": "",
       "category": "Autre",
@@ -5279,7 +5266,7 @@
       "updatedAt": ""
     },
     {
-      "id": 227,
+      "id": 226,
       "name": "Leaf litter",
       "icon": "",
       "category": "Autre",
@@ -5302,7 +5289,7 @@
       "updatedAt": ""
     },
     {
-      "id": 228,
+      "id": 227,
       "name": "Leather",
       "icon": "",
       "category": "Mobs",
@@ -5325,7 +5312,7 @@
       "updatedAt": ""
     },
     {
-      "id": 229,
+      "id": 228,
       "name": "Leather boots",
       "icon": "",
       "category": "Armure",
@@ -5343,7 +5330,7 @@
       "updatedAt": ""
     },
     {
-      "id": 230,
+      "id": 229,
       "name": "Leather chestplate",
       "icon": "",
       "category": "Armure",
@@ -5361,7 +5348,7 @@
       "updatedAt": ""
     },
     {
-      "id": 231,
+      "id": 230,
       "name": "Leather helmet",
       "icon": "",
       "category": "Armure",
@@ -5384,7 +5371,7 @@
       "updatedAt": ""
     },
     {
-      "id": 232,
+      "id": 231,
       "name": "Leather leggings",
       "icon": "",
       "category": "Nourriture",
@@ -5402,7 +5389,7 @@
       "updatedAt": ""
     },
     {
-      "id": 233,
+      "id": 232,
       "name": "Lever",
       "icon": "",
       "category": "Redstone",
@@ -5420,7 +5407,7 @@
       "updatedAt": ""
     },
     {
-      "id": 234,
+      "id": 233,
       "name": "Light blue dye",
       "icon": "",
       "category": "Autre",
@@ -5438,7 +5425,7 @@
       "updatedAt": ""
     },
     {
-      "id": 235,
+      "id": 234,
       "name": "Light gray bed",
       "icon": "",
       "category": "Autre",
@@ -5456,7 +5443,7 @@
       "updatedAt": ""
     },
     {
-      "id": 236,
+      "id": 235,
       "name": "Light gray dye",
       "icon": "",
       "category": "Autre",
@@ -5479,7 +5466,7 @@
       "updatedAt": ""
     },
     {
-      "id": 237,
+      "id": 236,
       "name": "Light gray glazed terracotta",
       "icon": "",
       "category": "Blocs",
@@ -5497,7 +5484,7 @@
       "updatedAt": ""
     },
     {
-      "id": 238,
+      "id": 237,
       "name": "Light gray terracotta",
       "icon": "",
       "category": "Blocs",
@@ -5520,7 +5507,7 @@
       "updatedAt": ""
     },
     {
-      "id": 239,
+      "id": 238,
       "name": "Light gray wool",
       "icon": "",
       "category": "Blocs",
@@ -5538,7 +5525,7 @@
       "updatedAt": ""
     },
     {
-      "id": 240,
+      "id": 239,
       "name": "Lily pad",
       "icon": "",
       "category": "Autre",
@@ -5561,7 +5548,7 @@
       "updatedAt": ""
     },
     {
-      "id": 241,
+      "id": 240,
       "name": "Lodestone",
       "icon": "",
       "category": "Blocs",
@@ -5599,7 +5586,7 @@
       "updatedAt": ""
     },
     {
-      "id": 242,
+      "id": 241,
       "name": "Magenta bed",
       "icon": "",
       "category": "Autre",
@@ -5610,14 +5597,14 @@
       "stacks": [
         {
           "id": 494,
-          "location": "Coffre — Base village (272, 66, 36) [Overworld]",
+          "location": "Inventaire de « N3SK3 »",
           "quantity": 1
         }
       ],
       "updatedAt": ""
     },
     {
-      "id": 243,
+      "id": 242,
       "name": "Magenta dye",
       "icon": "",
       "category": "Autre",
@@ -5640,7 +5627,7 @@
       "updatedAt": ""
     },
     {
-      "id": 244,
+      "id": 243,
       "name": "Magma block",
       "icon": "",
       "category": "Autre",
@@ -5673,7 +5660,7 @@
       "updatedAt": ""
     },
     {
-      "id": 245,
+      "id": 244,
       "name": "Magma cream",
       "icon": "",
       "category": "Autre",
@@ -5691,7 +5678,7 @@
       "updatedAt": ""
     },
     {
-      "id": 246,
+      "id": 245,
       "name": "Mangrove leaves",
       "icon": "",
       "category": "Autre",
@@ -5709,7 +5696,7 @@
       "updatedAt": ""
     },
     {
-      "id": 247,
+      "id": 246,
       "name": "Mangrove log",
       "icon": "",
       "category": "Blocs",
@@ -5727,7 +5714,7 @@
       "updatedAt": ""
     },
     {
-      "id": 248,
+      "id": 247,
       "name": "Mangrove propagule",
       "icon": "",
       "category": "Autre",
@@ -5745,7 +5732,7 @@
       "updatedAt": ""
     },
     {
-      "id": 249,
+      "id": 248,
       "name": "Mangrove roots",
       "icon": "",
       "category": "Autre",
@@ -5763,7 +5750,7 @@
       "updatedAt": ""
     },
     {
-      "id": 250,
+      "id": 249,
       "name": "Mangrove trapdoor",
       "icon": "",
       "category": "Autre",
@@ -5781,7 +5768,7 @@
       "updatedAt": ""
     },
     {
-      "id": 251,
+      "id": 250,
       "name": "Melon",
       "icon": "",
       "category": "Autre",
@@ -5799,7 +5786,7 @@
       "updatedAt": ""
     },
     {
-      "id": 252,
+      "id": 251,
       "name": "Melon seeds",
       "icon": "",
       "category": "Autre",
@@ -5817,7 +5804,7 @@
       "updatedAt": ""
     },
     {
-      "id": 253,
+      "id": 252,
       "name": "Melon slice",
       "icon": "",
       "category": "Nourriture",
@@ -5840,7 +5827,7 @@
       "updatedAt": ""
     },
     {
-      "id": 254,
+      "id": 253,
       "name": "Minecart",
       "icon": "",
       "category": "Autre",
@@ -5858,7 +5845,7 @@
       "updatedAt": ""
     },
     {
-      "id": 255,
+      "id": 254,
       "name": "Moss block",
       "icon": "",
       "category": "Autre",
@@ -5886,7 +5873,7 @@
       "updatedAt": ""
     },
     {
-      "id": 256,
+      "id": 255,
       "name": "Moss carpet",
       "icon": "",
       "category": "Décoration",
@@ -5904,7 +5891,7 @@
       "updatedAt": ""
     },
     {
-      "id": 257,
+      "id": 256,
       "name": "Mossy cobblestone",
       "icon": "",
       "category": "Blocs",
@@ -5927,12 +5914,17 @@
           "id": 518,
           "location": "Coffre — Base village (226, 68, 43) [Overworld]",
           "quantity": 62
+        },
+        {
+          "id": 519,
+          "location": "Inventaire de « N3SK3 »",
+          "quantity": 2
         }
       ],
       "updatedAt": ""
     },
     {
-      "id": 258,
+      "id": 257,
       "name": "Mossy cobblestone stairs",
       "icon": "",
       "category": "Blocs",
@@ -5942,12 +5934,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 519,
+          "id": 520,
           "location": "Coffre — Base village (225, 68, 44) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 520,
+          "id": 521,
           "location": "Coffre — Hub nether (17, 81, -17) [Nether]",
           "quantity": 4
         }
@@ -5955,7 +5947,7 @@
       "updatedAt": ""
     },
     {
-      "id": 259,
+      "id": 258,
       "name": "Mud",
       "icon": "",
       "category": "Autre",
@@ -5965,17 +5957,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 521,
+          "id": 522,
           "location": "Coffre — Maison #1 (63, 90, -51) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 522,
+          "id": 523,
           "location": "Coffre — Base village (225, 68, 43) [Overworld]",
           "quantity": 192
         },
         {
-          "id": 523,
+          "id": 524,
           "location": "Coffre — Base village (226, 68, 43) [Overworld]",
           "quantity": 135
         }
@@ -5983,7 +5975,7 @@
       "updatedAt": ""
     },
     {
-      "id": 260,
+      "id": 259,
       "name": "Mud bricks",
       "icon": "",
       "category": "Blocs",
@@ -5993,7 +5985,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 524,
+          "id": 525,
           "location": "Coffre — Base village (226, 68, 43) [Overworld]",
           "quantity": 12
         }
@@ -6001,7 +5993,7 @@
       "updatedAt": ""
     },
     {
-      "id": 261,
+      "id": 260,
       "name": "Muddy mangrove roots",
       "icon": "",
       "category": "Autre",
@@ -6011,7 +6003,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 525,
+          "id": 526,
           "location": "Coffre — Base village (225, 68, 43) [Overworld]",
           "quantity": 38
         }
@@ -6019,7 +6011,7 @@
       "updatedAt": ""
     },
     {
-      "id": 262,
+      "id": 261,
       "name": "Mushroom stem",
       "icon": "",
       "category": "Autre",
@@ -6029,7 +6021,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 526,
+          "id": 527,
           "location": "Coffre — Base village (226, 68, 47) [Overworld]",
           "quantity": 9
         }
@@ -6037,7 +6029,7 @@
       "updatedAt": ""
     },
     {
-      "id": 263,
+      "id": 262,
       "name": "Music disc cat",
       "icon": "",
       "category": "Autre",
@@ -6047,12 +6039,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 527,
+          "id": 528,
           "location": "Coffre — Maison #1 (62, 94, -50) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 528,
+          "id": 529,
           "location": "Coffre — Base village (226, 66, 42) [Overworld]",
           "quantity": 1
         }
@@ -6060,7 +6052,7 @@
       "updatedAt": ""
     },
     {
-      "id": 264,
+      "id": 263,
       "name": "Mutton",
       "icon": "",
       "category": "Nourriture",
@@ -6070,7 +6062,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 529,
+          "id": 530,
           "location": "Coffre (696, 63, -2266) [Overworld]",
           "quantity": 2
         }
@@ -6078,7 +6070,7 @@
       "updatedAt": ""
     },
     {
-      "id": 265,
+      "id": 264,
       "name": "Name tag",
       "icon": "",
       "category": "Autre",
@@ -6088,12 +6080,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 530,
+          "id": 531,
           "location": "Coffre — Maison #1 (62, 94, -50) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 531,
+          "id": 532,
           "location": "Coffre — Base village (269, 67, 34) [Overworld]",
           "quantity": 17
         }
@@ -6101,7 +6093,7 @@
       "updatedAt": ""
     },
     {
-      "id": 266,
+      "id": 265,
       "name": "Nether brick",
       "icon": "",
       "category": "Blocs",
@@ -6111,12 +6103,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 532,
+          "id": 533,
           "location": "Coffre — Base village (225, 68, 44) [Overworld]",
           "quantity": 142
         },
         {
-          "id": 533,
+          "id": 534,
           "location": "Coffre — Base village (225, 68, 48) [Overworld]",
           "quantity": 52
         }
@@ -6124,26 +6116,8 @@
       "updatedAt": ""
     },
     {
-      "id": 267,
+      "id": 266,
       "name": "Nether brick fence",
-      "icon": "",
-      "category": "Blocs",
-      "unit": "item",
-      "targetQuantity": null,
-      "renewable": false,
-      "notes": "",
-      "stacks": [
-        {
-          "id": 534,
-          "location": "Coffre — Base village (225, 68, 44) [Overworld]",
-          "quantity": 4
-        }
-      ],
-      "updatedAt": ""
-    },
-    {
-      "id": 268,
-      "name": "Nether brick stairs",
       "icon": "",
       "category": "Blocs",
       "unit": "item",
@@ -6154,14 +6128,14 @@
         {
           "id": 535,
           "location": "Coffre — Base village (225, 68, 44) [Overworld]",
-          "quantity": 1
+          "quantity": 4
         }
       ],
       "updatedAt": ""
     },
     {
-      "id": 269,
-      "name": "Nether bricks",
+      "id": 267,
+      "name": "Nether brick stairs",
       "icon": "",
       "category": "Blocs",
       "unit": "item",
@@ -6172,15 +6146,33 @@
         {
           "id": 536,
           "location": "Coffre — Base village (225, 68, 44) [Overworld]",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": ""
+    },
+    {
+      "id": 268,
+      "name": "Nether bricks",
+      "icon": "",
+      "category": "Blocs",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 537,
+          "location": "Coffre — Base village (225, 68, 44) [Overworld]",
           "quantity": 69
         },
         {
-          "id": 537,
+          "id": 538,
           "location": "Coffre — Hub nether (7, 81, -17) [Nether]",
           "quantity": 12
         },
         {
-          "id": 538,
+          "id": 539,
           "location": "Coffre — Hub nether (17, 81, -17) [Nether]",
           "quantity": 96
         }
@@ -6188,7 +6180,7 @@
       "updatedAt": ""
     },
     {
-      "id": 270,
+      "id": 269,
       "name": "Nether wart",
       "icon": "",
       "category": "Autre",
@@ -6198,7 +6190,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 539,
+          "id": 540,
           "location": "Coffre — Base village (225, 68, 48) [Overworld]",
           "quantity": 25
         }
@@ -6206,7 +6198,7 @@
       "updatedAt": ""
     },
     {
-      "id": 271,
+      "id": 270,
       "name": "Nether wart block",
       "icon": "",
       "category": "Autre",
@@ -6216,12 +6208,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 540,
+          "id": 541,
           "location": "Coffre — Base village (226, 68, 48) [Overworld]",
           "quantity": 44
         },
         {
-          "id": 541,
+          "id": 542,
           "location": "Coffre — Hub nether (7, 81, -24) [Nether]",
           "quantity": 15
         }
@@ -6229,7 +6221,7 @@
       "updatedAt": ""
     },
     {
-      "id": 272,
+      "id": 271,
       "name": "Netherrack",
       "icon": "",
       "category": "Blocs",
@@ -6239,17 +6231,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 542,
+          "id": 543,
           "location": "Coffre — Base village (226, 68, 44) [Overworld]",
           "quantity": 14
         },
         {
-          "id": 543,
+          "id": 544,
           "location": "Coffre — Base village (225, 68, 48) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 544,
+          "id": 545,
           "location": "Coffre — Hub nether (7, 81, -24) [Nether]",
           "quantity": 38
         }
@@ -6257,7 +6249,7 @@
       "updatedAt": ""
     },
     {
-      "id": 273,
+      "id": 272,
       "name": "Oak boat",
       "icon": "",
       "category": "Autre",
@@ -6267,25 +6259,25 @@
       "notes": "",
       "stacks": [
         {
-          "id": 545,
+          "id": 546,
           "location": "Coffre — Base village (226, 66, 42) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 546,
+          "id": 547,
           "location": "Coffre — Base village (272, 66, 36) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 547,
+          "id": 548,
           "location": "Inventaire de « N3SK3 »",
-          "quantity": 1
+          "quantity": 2
         }
       ],
       "updatedAt": ""
     },
     {
-      "id": 274,
+      "id": 273,
       "name": "Oak door",
       "icon": "",
       "category": "Autre",
@@ -6295,17 +6287,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 548,
+          "id": 549,
           "location": "Coffre — Maison #1 (64, 89, -51) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 549,
+          "id": 550,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 5
         },
         {
-          "id": 550,
+          "id": 551,
           "location": "Coffre (697, 63, -2265) [Overworld]",
           "quantity": 1
         }
@@ -6313,7 +6305,7 @@
       "updatedAt": ""
     },
     {
-      "id": 275,
+      "id": 274,
       "name": "Oak fence",
       "icon": "",
       "category": "Autre",
@@ -6323,12 +6315,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 551,
+          "id": 552,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 552,
+          "id": 553,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 24
         }
@@ -6336,7 +6328,7 @@
       "updatedAt": ""
     },
     {
-      "id": 276,
+      "id": 275,
       "name": "Oak leaves",
       "icon": "",
       "category": "Autre",
@@ -6346,25 +6338,30 @@
       "notes": "",
       "stacks": [
         {
-          "id": 553,
+          "id": 554,
           "location": "Coffre — Village desert (-1935, 79, -443) [Overworld]",
           "quantity": 6
         },
         {
-          "id": 554,
+          "id": 555,
           "location": "Coffre — Base village (225, 68, 46) [Overworld]",
           "quantity": 6
         },
         {
-          "id": 555,
+          "id": 556,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 48
+        },
+        {
+          "id": 557,
+          "location": "Inventaire de « N3SK3 »",
+          "quantity": 5
         }
       ],
       "updatedAt": ""
     },
     {
-      "id": 277,
+      "id": 276,
       "name": "Oak log",
       "icon": "",
       "category": "Blocs",
@@ -6374,30 +6371,35 @@
       "notes": "",
       "stacks": [
         {
-          "id": 556,
+          "id": 558,
           "location": "Coffre — Maison #1 (97, 95, -42) [Overworld]",
           "quantity": 64
         },
         {
-          "id": 557,
+          "id": 559,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 5
         },
         {
-          "id": 558,
+          "id": 560,
           "location": "Coffre — Base village (225, 68, 46) [Overworld]",
           "quantity": 98
         },
         {
-          "id": 559,
+          "id": 561,
           "location": "Coffre — Base village (225, 66, 46) [Overworld]",
           "quantity": 48
+        },
+        {
+          "id": 562,
+          "location": "Inventaire de « N3SK3 »",
+          "quantity": 7
         }
       ],
       "updatedAt": ""
     },
     {
-      "id": 278,
+      "id": 277,
       "name": "Oak planks",
       "icon": "",
       "category": "Blocs",
@@ -6407,35 +6409,35 @@
       "notes": "",
       "stacks": [
         {
-          "id": 560,
+          "id": 563,
           "location": "Coffre (3112, 63, -904) [Overworld]",
           "quantity": 11
         },
         {
-          "id": 561,
+          "id": 564,
           "location": "Coffre — Village desert (-1935, 79, -443) [Overworld]",
           "quantity": 24
         },
         {
-          "id": 562,
-          "location": "Coffre — Base village (225, 66, 51) [Overworld]",
-          "quantity": 1
-        },
-        {
-          "id": 563,
+          "id": 565,
           "location": "Coffre (313, -2, 33) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 564,
+          "id": 566,
           "location": "Coffre — Hub nether (7, 81, -17) [Nether]",
           "quantity": 2
+        },
+        {
+          "id": 567,
+          "location": "Inventaire de « N3SK3 »",
+          "quantity": 5
         }
       ],
       "updatedAt": ""
     },
     {
-      "id": 279,
+      "id": 278,
       "name": "Oak pressure plate",
       "icon": "",
       "category": "Autre",
@@ -6445,7 +6447,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 565,
+          "id": 568,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 1
         }
@@ -6453,7 +6455,7 @@
       "updatedAt": ""
     },
     {
-      "id": 280,
+      "id": 279,
       "name": "Oak sapling",
       "icon": "",
       "category": "Autre",
@@ -6463,45 +6465,40 @@
       "notes": "",
       "stacks": [
         {
-          "id": 566,
+          "id": 569,
           "location": "Coffre (3103, 63, -855) [Overworld]",
           "quantity": 7
         },
         {
-          "id": 567,
+          "id": 570,
           "location": "Coffre (3112, 63, -904) [Overworld]",
           "quantity": 5
         },
         {
-          "id": 568,
+          "id": 571,
           "location": "Coffre — Village desert (-1935, 79, -443) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 569,
-          "location": "Coffre (56, 101, -290) [Overworld]",
-          "quantity": 1
-        },
-        {
-          "id": 570,
+          "id": 572,
           "location": "Coffre — Maison #1 (64, 89, -51) [Overworld]",
           "quantity": 62
         },
         {
-          "id": 571,
+          "id": 573,
           "location": "Coffre — Base village (225, 68, 46) [Overworld]",
           "quantity": 48
         },
         {
-          "id": 572,
-          "location": "Coffre (-180, 69, -1026) [Overworld]",
-          "quantity": 1
+          "id": 574,
+          "location": "Inventaire de « N3SK3 »",
+          "quantity": 8
         }
       ],
       "updatedAt": ""
     },
     {
-      "id": 281,
+      "id": 280,
       "name": "Oak shelf",
       "icon": "",
       "category": "Autre",
@@ -6511,7 +6508,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 573,
+          "id": 575,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 1
         }
@@ -6519,7 +6516,7 @@
       "updatedAt": ""
     },
     {
-      "id": 282,
+      "id": 281,
       "name": "Oak slab",
       "icon": "",
       "category": "Autre",
@@ -6529,7 +6526,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 574,
+          "id": 576,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 20
         }
@@ -6537,7 +6534,7 @@
       "updatedAt": ""
     },
     {
-      "id": 283,
+      "id": 282,
       "name": "Oak stairs",
       "icon": "",
       "category": "Autre",
@@ -6547,17 +6544,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 575,
+          "id": 577,
           "location": "Coffre — Maison #1 (92, 93, -71) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 576,
+          "id": 578,
           "location": "Coffre — Base village (225, 66, 46) [Overworld]",
           "quantity": 64
         },
         {
-          "id": 577,
+          "id": 579,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 67
         }
@@ -6565,7 +6562,7 @@
       "updatedAt": ""
     },
     {
-      "id": 284,
+      "id": 283,
       "name": "Oak trapdoor",
       "icon": "",
       "category": "Autre",
@@ -6575,7 +6572,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 578,
+          "id": 580,
           "location": "Coffre — Base village (225, 66, 46) [Overworld]",
           "quantity": 2
         }
@@ -6583,7 +6580,7 @@
       "updatedAt": ""
     },
     {
-      "id": 285,
+      "id": 284,
       "name": "Observer",
       "icon": "",
       "category": "Redstone",
@@ -6593,7 +6590,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 579,
+          "id": 581,
           "location": "Coffre — Base village (226, 66, 49) [Overworld]",
           "quantity": 2
         }
@@ -6601,7 +6598,7 @@
       "updatedAt": ""
     },
     {
-      "id": 286,
+      "id": 285,
       "name": "Obsidian",
       "icon": "",
       "category": "Blocs",
@@ -6611,12 +6608,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 580,
+          "id": 582,
           "location": "Coffre — Base village (226, 66, 45) [Overworld]",
           "quantity": 34
         },
         {
-          "id": 581,
+          "id": 583,
           "location": "Coffre — Base village (225, 66, 51) [Overworld]",
           "quantity": 9
         }
@@ -6624,7 +6621,7 @@
       "updatedAt": ""
     },
     {
-      "id": 287,
+      "id": 286,
       "name": "Orange dye",
       "icon": "",
       "category": "Autre",
@@ -6634,7 +6631,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 582,
+          "id": 584,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 2
         }
@@ -6642,7 +6639,7 @@
       "updatedAt": ""
     },
     {
-      "id": 288,
+      "id": 287,
       "name": "Orange glazed terracotta",
       "icon": "",
       "category": "Blocs",
@@ -6652,7 +6649,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 583,
+          "id": 585,
           "location": "Coffre — Base village (226, 66, 43) [Overworld]",
           "quantity": 1
         }
@@ -6660,7 +6657,7 @@
       "updatedAt": ""
     },
     {
-      "id": 289,
+      "id": 288,
       "name": "Orange poplar leaves",
       "icon": "",
       "category": "Autre",
@@ -6670,7 +6667,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 584,
+          "id": 586,
           "location": "Coffre — Base village (226, 68, 46) [Overworld]",
           "quantity": 12
         }
@@ -6678,7 +6675,7 @@
       "updatedAt": ""
     },
     {
-      "id": 290,
+      "id": 289,
       "name": "Orange terracotta",
       "icon": "",
       "category": "Blocs",
@@ -6688,12 +6685,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 585,
+          "id": 587,
           "location": "Coffre — Base village (225, 66, 43) [Overworld]",
           "quantity": 9
         },
         {
-          "id": 586,
+          "id": 588,
           "location": "Coffre — Base village (226, 66, 43) [Overworld]",
           "quantity": 3
         }
@@ -6701,7 +6698,7 @@
       "updatedAt": ""
     },
     {
-      "id": 291,
+      "id": 290,
       "name": "Oxeye daisy",
       "icon": "",
       "category": "Autre",
@@ -6711,7 +6708,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 587,
+          "id": 589,
           "location": "Coffre (-592, 51, -1838) [Overworld]",
           "quantity": 2
         }
@@ -6719,7 +6716,7 @@
       "updatedAt": ""
     },
     {
-      "id": 292,
+      "id": 291,
       "name": "Oxidized copper bars",
       "icon": "",
       "category": "Autre",
@@ -6729,9 +6726,27 @@
       "notes": "",
       "stacks": [
         {
-          "id": 588,
+          "id": 590,
           "location": "Coffre (313, -2, 33) [Overworld]",
           "quantity": 2
+        }
+      ],
+      "updatedAt": ""
+    },
+    {
+      "id": 292,
+      "name": "Oxidized copper chest",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 591,
+          "location": "Inventaire de « N3SK3 »",
+          "quantity": 1
         }
       ],
       "updatedAt": ""
@@ -6747,7 +6762,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 589,
+          "id": 592,
           "location": "Coffre — Base village (226, 68, 44) [Overworld]",
           "quantity": 70
         }
@@ -6765,7 +6780,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 590,
+          "id": 593,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 12
         }
@@ -6783,7 +6798,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 591,
+          "id": 594,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 64
         }
@@ -6801,7 +6816,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 592,
+          "id": 595,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 14
         }
@@ -6819,7 +6834,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 593,
+          "id": 596,
           "location": "Coffre — Base village (225, 66, 46) [Overworld]",
           "quantity": 2
         }
@@ -6837,7 +6852,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 594,
+          "id": 597,
           "location": "Coffre (313, -2, 33) [Overworld]",
           "quantity": 3
         }
@@ -6855,7 +6870,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 595,
+          "id": 598,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 18
         }
@@ -6873,12 +6888,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 596,
+          "id": 599,
           "location": "Coffre — Base village (225, 68, 46) [Overworld]",
           "quantity": 105
         },
         {
-          "id": 597,
+          "id": 600,
           "location": "Coffre — Base village (226, 68, 46) [Overworld]",
           "quantity": 64
         }
@@ -6896,7 +6911,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 598,
+          "id": 601,
           "location": "Coffre (313, -2, 33) [Overworld]",
           "quantity": 3
         }
@@ -6914,12 +6929,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 599,
+          "id": 602,
           "location": "Coffre — Base village (225, 68, 46) [Overworld]",
           "quantity": 7
         },
         {
-          "id": 600,
+          "id": 603,
           "location": "Coffre — Base village (226, 68, 46) [Overworld]",
           "quantity": 9
         }
@@ -6937,7 +6952,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 601,
+          "id": 604,
           "location": "Coffre — Base village (225, 66, 46) [Overworld]",
           "quantity": 6
         }
@@ -6955,12 +6970,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 602,
+          "id": 605,
           "location": "Coffre — Base village (226, 66, 45) [Overworld]",
           "quantity": 6
         },
         {
-          "id": 603,
+          "id": 606,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 8
         }
@@ -6978,12 +6993,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 604,
+          "id": 607,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 605,
+          "id": 608,
           "location": "Coffre (313, -2, 33) [Overworld]",
           "quantity": 1
         }
@@ -7001,12 +7016,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 606,
+          "id": 609,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 4
         },
         {
-          "id": 607,
+          "id": 610,
           "location": "Coffre (313, -2, 33) [Overworld]",
           "quantity": 1
         }
@@ -7024,7 +7039,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 608,
+          "id": 611,
           "location": "Coffre — Base village (261, 66, 35) [Overworld]",
           "quantity": 2
         }
@@ -7042,7 +7057,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 609,
+          "id": 612,
           "location": "Coffre — Base village (226, 66, 47) [Overworld]",
           "quantity": 15
         }
@@ -7060,12 +7075,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 610,
+          "id": 613,
           "location": "Coffre — Maison #1 (64, 89, -44) [Overworld]",
           "quantity": 7
         },
         {
-          "id": 611,
+          "id": 614,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 2
         }
@@ -7083,7 +7098,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 612,
+          "id": 615,
           "location": "Coffre — Base village (225, 68, 44) [Overworld]",
           "quantity": 10
         }
@@ -7101,27 +7116,27 @@
       "notes": "",
       "stacks": [
         {
-          "id": 613,
+          "id": 616,
           "location": "Coffre (51, 62, -1514) [Overworld]",
           "quantity": 9
         },
         {
-          "id": 614,
+          "id": 617,
           "location": "Coffre — Base village (226, 68, 47) [Overworld]",
           "quantity": 12
         },
         {
-          "id": 615,
+          "id": 618,
           "location": "Coffre — Base village (261, 66, 41) [Overworld]",
           "quantity": 5
         },
         {
-          "id": 616,
+          "id": 619,
           "location": "Coffre (837, 56, -2392) [Overworld]",
           "quantity": 6
         },
         {
-          "id": 617,
+          "id": 620,
           "location": "Coffre (605, 54, -1601) [Overworld]",
           "quantity": 7
         }
@@ -7139,7 +7154,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 618,
+          "id": 621,
           "location": "Coffre — Base village (225, 68, 43) [Overworld]",
           "quantity": 3
         }
@@ -7157,7 +7172,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 619,
+          "id": 622,
           "location": "Coffre — Base village (225, 68, 44) [Overworld]",
           "quantity": 78
         }
@@ -7175,7 +7190,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 620,
+          "id": 623,
           "location": "Coffre — Maison #1 (63, 90, -51) [Overworld]",
           "quantity": 57
         }
@@ -7193,7 +7208,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 621,
+          "id": 624,
           "location": "Coffre — Base village (226, 68, 44) [Overworld]",
           "quantity": 30
         }
@@ -7211,12 +7226,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 622,
+          "id": 625,
           "location": "Coffre — Base village (225, 68, 46) [Overworld]",
           "quantity": 42
         },
         {
-          "id": 623,
+          "id": 626,
           "location": "Coffre — Base village (226, 68, 46) [Overworld]",
           "quantity": 2
         }
@@ -7234,7 +7249,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 624,
+          "id": 627,
           "location": "Coffre (313, -2, 33) [Overworld]",
           "quantity": 1
         }
@@ -7252,17 +7267,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 625,
+          "id": 628,
           "location": "Coffre — Base village (205, 59, 46) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 626,
+          "id": 629,
           "location": "Coffre — Base village (225, 68, 46) [Overworld]",
           "quantity": 23
         },
         {
-          "id": 627,
+          "id": 630,
           "location": "Coffre — Base village (226, 68, 46) [Overworld]",
           "quantity": 6
         }
@@ -7280,7 +7295,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 628,
+          "id": 631,
           "location": "Coffre — Base village (243, 66, 41) [Overworld]",
           "quantity": 1
         }
@@ -7298,27 +7313,27 @@
       "notes": "",
       "stacks": [
         {
-          "id": 629,
+          "id": 632,
           "location": "Coffre — Maison #1 (64, 90, -45) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 630,
+          "id": 633,
           "location": "Coffre (68, 53, -906) [Overworld]",
           "quantity": 7
         },
         {
-          "id": 631,
+          "id": 634,
           "location": "Coffre — Base village (261, 66, 41) [Overworld]",
           "quantity": 33
         },
         {
-          "id": 632,
+          "id": 635,
           "location": "Coffre — Spawn zombie (-65, 90, -75) [Overworld]",
           "quantity": 21
         },
         {
-          "id": 633,
+          "id": 636,
           "location": "Coffre — Spawn zombie (-68, 88, -75) [Overworld]",
           "quantity": 2
         }
@@ -7336,27 +7351,27 @@
       "notes": "",
       "stacks": [
         {
-          "id": 634,
+          "id": 637,
           "location": "Coffre — Base village (225, 68, 47) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 635,
+          "id": 638,
           "location": "Coffre — Base village (225, 68, 48) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 636,
+          "id": 639,
           "location": "Baril — Base village (257, 66, 47) [Overworld]",
           "quantity": 6
         },
         {
-          "id": 637,
+          "id": 640,
           "location": "Inventaire de « N3SK3 »",
           "quantity": 3
         },
         {
-          "id": 638,
+          "id": 641,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 4
         }
@@ -7374,7 +7389,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 639,
+          "id": 642,
           "location": "Coffre — Base village (231, 66, 35) [Overworld]",
           "quantity": 5
         }
@@ -7392,14 +7407,19 @@
       "notes": "",
       "stacks": [
         {
-          "id": 640,
+          "id": 643,
           "location": "Coffre — Maison #1 (64, 90, -45) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 641,
+          "id": 644,
           "location": "Coffre — Base village (261, 66, 41) [Overworld]",
           "quantity": 4
+        },
+        {
+          "id": 645,
+          "location": "Inventaire de « N3SK3 »",
+          "quantity": 5
         }
       ],
       "updatedAt": ""
@@ -7415,12 +7435,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 642,
+          "id": 646,
           "location": "Coffre — Maison #1 (64, 90, -45) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 643,
+          "id": 647,
           "location": "Coffre — Base village (226, 68, 47) [Overworld]",
           "quantity": 4
         }
@@ -7438,17 +7458,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 644,
+          "id": 648,
           "location": "Coffre — Maison #1 (64, 90, -45) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 645,
+          "id": 649,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 6
         },
         {
-          "id": 646,
+          "id": 650,
           "location": "Coffre — Base village (226, 68, 47) [Overworld]",
           "quantity": 35
         }
@@ -7466,7 +7486,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 647,
+          "id": 651,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 2
         }
@@ -7484,7 +7504,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 648,
+          "id": 652,
           "location": "Coffre — Base village (225, 68, 50) [Overworld]",
           "quantity": 3
         }
@@ -7502,7 +7522,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 649,
+          "id": 653,
           "location": "Coffre — Base village (225, 68, 50) [Overworld]",
           "quantity": 7
         }
@@ -7520,7 +7540,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 650,
+          "id": 654,
           "location": "Coffre — Base village (225, 68, 48) [Overworld]",
           "quantity": 4
         }
@@ -7538,17 +7558,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 651,
+          "id": 655,
           "location": "Coffre — Maison #1 (62, 94, -50) [Overworld]",
           "quantity": 32
         },
         {
-          "id": 652,
+          "id": 656,
           "location": "Coffre — Base village (225, 66, 45) [Overworld]",
           "quantity": 56
         },
         {
-          "id": 653,
+          "id": 657,
           "location": "Coffre — Base village (226, 66, 45) [Overworld]",
           "quantity": 128
         }
@@ -7566,7 +7586,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 654,
+          "id": 658,
           "location": "Coffre — Base village (243, 66, 41) [Overworld]",
           "quantity": 3
         }
@@ -7584,7 +7604,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 655,
+          "id": 659,
           "location": "Coffre — Base village (225, 68, 47) [Overworld]",
           "quantity": 1
         }
@@ -7602,7 +7622,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 656,
+          "id": 660,
           "location": "Coffre — Base village (226, 68, 47) [Overworld]",
           "quantity": 2
         }
@@ -7620,7 +7640,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 657,
+          "id": 661,
           "location": "Coffre — Base village (231, 66, 35) [Overworld]",
           "quantity": 53
         }
@@ -7638,7 +7658,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 658,
+          "id": 662,
           "location": "Coffre (696, 63, -2265) [Overworld]",
           "quantity": 5
         }
@@ -7656,7 +7676,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 659,
+          "id": 663,
           "location": "Coffre — Maison #1 (64, 89, -44) [Overworld]",
           "quantity": 22
         }
@@ -7674,7 +7694,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 660,
+          "id": 664,
           "location": "Coffre — Base village (226, 66, 43) [Overworld]",
           "quantity": 2
         }
@@ -7692,12 +7712,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 661,
+          "id": 665,
           "location": "Coffre — Base village (226, 68, 47) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 662,
+          "id": 666,
           "location": "Coffre — Hub nether (7, 81, -17) [Nether]",
           "quantity": 12
         }
@@ -7715,7 +7735,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 663,
+          "id": 667,
           "location": "Coffre — Base village (226, 68, 47) [Overworld]",
           "quantity": 45
         }
@@ -7733,7 +7753,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 664,
+          "id": 668,
           "location": "Coffre — Base village (225, 68, 46) [Overworld]",
           "quantity": 8
         }
@@ -7751,7 +7771,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 665,
+          "id": 669,
           "location": "Coffre — Base village (226, 68, 43) [Overworld]",
           "quantity": 7
         }
@@ -7769,7 +7789,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 666,
+          "id": 670,
           "location": "Coffre — Base village (226, 68, 43) [Overworld]",
           "quantity": 16
         }
@@ -7787,12 +7807,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 667,
+          "id": 671,
           "location": "Coffre — Base village (225, 66, 43) [Overworld]",
           "quantity": 40
         },
         {
-          "id": 668,
+          "id": 672,
           "location": "Coffre — Base village (226, 66, 43) [Overworld]",
           "quantity": 3
         }
@@ -7810,22 +7830,22 @@
       "notes": "",
       "stacks": [
         {
-          "id": 669,
+          "id": 673,
           "location": "Coffre — Base village (226, 66, 45) [Overworld]",
           "quantity": 12
         },
         {
-          "id": 670,
+          "id": 674,
           "location": "Coffre — Base village (226, 66, 50) [Overworld]",
           "quantity": 5
         },
         {
-          "id": 671,
+          "id": 675,
           "location": "Coffre (313, -2, 32) [Overworld]",
           "quantity": 7
         },
         {
-          "id": 672,
+          "id": 676,
           "location": "Coffre (696, 63, -2266) [Overworld]",
           "quantity": 5
         }
@@ -7843,7 +7863,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 673,
+          "id": 677,
           "location": "Coffre (313, -2, 33) [Overworld]",
           "quantity": 1
         }
@@ -7861,7 +7881,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 674,
+          "id": 678,
           "location": "Coffre — Base village (226, 66, 42) [Overworld]",
           "quantity": 1
         }
@@ -7879,12 +7899,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 675,
+          "id": 679,
           "location": "Coffre — Maison #1 (64, 90, -51) [Overworld]",
           "quantity": 142
         },
         {
-          "id": 676,
+          "id": 680,
           "location": "Coffre — Maison #1 (64, 90, -52) [Overworld]",
           "quantity": 12
         }
@@ -7902,39 +7922,44 @@
       "notes": "",
       "stacks": [
         {
-          "id": 677,
+          "id": 681,
           "location": "Coffre — Maison #1 (63, 89, -44) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 678,
+          "id": 682,
           "location": "Coffre — Maison #1 (63, 89, -45) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 679,
+          "id": 683,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 680,
+          "id": 684,
           "location": "Coffre — Base village (226, 66, 47) [Overworld]",
-          "quantity": 25
+          "quantity": 39
         },
         {
-          "id": 681,
+          "id": 685,
           "location": "Coffre — Base village (249, 66, 41) [Overworld]",
           "quantity": 24
         },
         {
-          "id": 682,
+          "id": 686,
+          "location": "Coffre — Base village (277, 64, 34) [Overworld]",
+          "quantity": 1
+        },
+        {
+          "id": 687,
           "location": "Coffre — Spawn zombie (-68, 88, -75) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 683,
+          "id": 688,
           "location": "Inventaire de « N3SK3 »",
-          "quantity": 14
+          "quantity": 1
         }
       ],
       "updatedAt": ""
@@ -7950,12 +7975,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 684,
+          "id": 689,
           "location": "Coffre — Maison #2 (366, 69, 62) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 685,
+          "id": 690,
           "location": "Coffre (-330, 61, 76) [Nether]",
           "quantity": 2
         }
@@ -7973,22 +7998,22 @@
       "notes": "",
       "stacks": [
         {
-          "id": 686,
-          "location": "Coffre (179, 10, -35) [Overworld]",
+          "id": 691,
+          "location": "Coffre — Squelettons farm (179, 10, -35) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 687,
+          "id": 692,
           "location": "Coffre — Base village (225, 68, 43) [Overworld]",
           "quantity": 134
         },
         {
-          "id": 688,
+          "id": 693,
           "location": "Coffre — Base village (226, 68, 43) [Overworld]",
           "quantity": 64
         },
         {
-          "id": 689,
+          "id": 694,
           "location": "Coffre (697, 63, -2265) [Overworld]",
           "quantity": 7
         }
@@ -8006,12 +8031,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 690,
+          "id": 695,
           "location": "Coffre — Base village (225, 68, 43) [Overworld]",
           "quantity": 64
         },
         {
-          "id": 691,
+          "id": 696,
           "location": "Coffre — Base village (226, 68, 43) [Overworld]",
           "quantity": 7
         }
@@ -8029,7 +8054,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 692,
+          "id": 697,
           "location": "Inventaire de « N3SK3 »",
           "quantity": 62
         }
@@ -8047,7 +8072,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 693,
+          "id": 698,
           "location": "Coffre — Base village (226, 68, 50) [Overworld]",
           "quantity": 42
         }
@@ -8065,7 +8090,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 694,
+          "id": 699,
           "location": "Coffre — Base village (226, 68, 50) [Overworld]",
           "quantity": 3
         }
@@ -8083,7 +8108,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 695,
+          "id": 700,
           "location": "Coffre — Base village (225, 68, 50) [Overworld]",
           "quantity": 9
         }
@@ -8101,7 +8126,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 696,
+          "id": 701,
           "location": "Coffre — Base village (226, 68, 50) [Overworld]",
           "quantity": 2
         }
@@ -8119,7 +8144,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 697,
+          "id": 702,
           "location": "Coffre — Base village (226, 68, 50) [Overworld]",
           "quantity": 22
         }
@@ -8137,27 +8162,27 @@
       "notes": "",
       "stacks": [
         {
-          "id": 698,
+          "id": 703,
           "location": "Coffre — Base village (213, 66, 35) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 699,
+          "id": 704,
           "location": "Coffre — Base village (219, 66, 35) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 700,
+          "id": 705,
           "location": "Coffre — Base village (269, 67, 34) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 701,
+          "id": 706,
           "location": "Coffre (696, 63, -2265) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 702,
+          "id": 707,
           "location": "Coffre — Spawn zombie (-65, 90, -75) [Overworld]",
           "quantity": 1
         }
@@ -8175,7 +8200,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 703,
+          "id": 708,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 10
         }
@@ -8193,27 +8218,27 @@
       "notes": "",
       "stacks": [
         {
-          "id": 704,
+          "id": 709,
           "location": "Baril — Maison #1 (65, 95, -45) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 705,
+          "id": 710,
           "location": "Coffre — Base village (226, 66, 42) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 706,
+          "id": 711,
           "location": "Coffre — Base village (272, 66, 36) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 707,
+          "id": 712,
           "location": "Inventaire de « N3SK3 »",
           "quantity": 1
         },
         {
-          "id": 708,
+          "id": 713,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 1
         }
@@ -8231,7 +8256,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 709,
+          "id": 714,
           "location": "Coffre — Base village (226, 68, 48) [Overworld]",
           "quantity": 2
         }
@@ -8249,7 +8274,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 710,
+          "id": 715,
           "location": "Coffre — Base village (225, 68, 50) [Overworld]",
           "quantity": 1
         }
@@ -8267,7 +8292,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 711,
+          "id": 716,
           "location": "Coffre — Base village (225, 68, 50) [Overworld]",
           "quantity": 16
         }
@@ -8285,7 +8310,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 712,
+          "id": 717,
           "location": "Coffre — Village desert (-1935, 80, -443) [Overworld]",
           "quantity": 1
         }
@@ -8303,17 +8328,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 713,
+          "id": 718,
           "location": "Coffre — Base village (226, 68, 43) [Overworld]",
           "quantity": 25
         },
         {
-          "id": 714,
+          "id": 719,
           "location": "Coffre — Base village (232, 65, 50) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 715,
+          "id": 720,
           "location": "Coffre — Hub nether (8, 81, -17) [Nether]",
           "quantity": 9
         }
@@ -8331,12 +8356,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 716,
+          "id": 721,
           "location": "Coffre — Base village (226, 68, 44) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 717,
+          "id": 722,
           "location": "Coffre (697, 63, -2264) [Overworld]",
           "quantity": 5
         }
@@ -8354,7 +8379,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 718,
+          "id": 723,
           "location": "Coffre — Maison #1 (63, 90, -52) [Overworld]",
           "quantity": 61
         }
@@ -8372,7 +8397,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 719,
+          "id": 724,
           "location": "Coffre — Maison #1 (63, 90, -52) [Overworld]",
           "quantity": 56
         }
@@ -8390,7 +8415,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 720,
+          "id": 725,
           "location": "Coffre — Maison #1 (63, 90, -52) [Overworld]",
           "quantity": 1
         }
@@ -8408,7 +8433,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 721,
+          "id": 726,
           "location": "Coffre — Base village (226, 68, 43) [Overworld]",
           "quantity": 3
         }
@@ -8426,12 +8451,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 722,
+          "id": 727,
           "location": "Coffre — Base village (226, 68, 49) [Overworld]",
           "quantity": 23
         },
         {
-          "id": 723,
+          "id": 728,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 7
         }
@@ -8449,24 +8474,19 @@
       "notes": "",
       "stacks": [
         {
-          "id": 724,
+          "id": 729,
           "location": "Coffre — Maison #1 (63, 89, -45) [Overworld]",
           "quantity": 6
         },
         {
-          "id": 725,
+          "id": 730,
           "location": "Coffre — Base village (226, 66, 47) [Overworld]",
-          "quantity": 4
+          "quantity": 10
         },
         {
-          "id": 726,
+          "id": 731,
           "location": "Coffre — Base village (225, 66, 51) [Overworld]",
           "quantity": 14
-        },
-        {
-          "id": 727,
-          "location": "Inventaire de « N3SK3 »",
-          "quantity": 6
         }
       ],
       "updatedAt": ""
@@ -8482,7 +8502,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 728,
+          "id": 732,
           "location": "Coffre — Base village (225, 66, 48) [Overworld]",
           "quantity": 1
         }
@@ -8500,7 +8520,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 729,
+          "id": 733,
           "location": "Coffre — Base village (226, 66, 42) [Overworld]",
           "quantity": 1
         }
@@ -8518,7 +8538,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 730,
+          "id": 734,
           "location": "Baril — Maison #1 (65, 95, -45) [Overworld]",
           "quantity": 1
         }
@@ -8536,7 +8556,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 731,
+          "id": 735,
           "location": "Coffre (-532, 66, -302) [Overworld]",
           "quantity": 6
         }
@@ -8554,9 +8574,14 @@
       "notes": "",
       "stacks": [
         {
-          "id": 732,
+          "id": 736,
           "location": "Coffre — Base village (225, 68, 46) [Overworld]",
           "quantity": 19
+        },
+        {
+          "id": 737,
+          "location": "Inventaire de « N3SK3 »",
+          "quantity": 1
         }
       ],
       "updatedAt": ""
@@ -8572,9 +8597,14 @@
       "notes": "",
       "stacks": [
         {
-          "id": 733,
+          "id": 738,
           "location": "Coffre (3103, 63, -855) [Overworld]",
           "quantity": 2
+        },
+        {
+          "id": 739,
+          "location": "Inventaire de « N3SK3 »",
+          "quantity": 1
         }
       ],
       "updatedAt": ""
@@ -8590,17 +8620,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 734,
+          "id": 740,
           "location": "Coffre (3111, 64, -912) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 735,
+          "id": 741,
           "location": "Coffre — Maison #1 (64, 89, -52) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 736,
+          "id": 742,
           "location": "Coffre — Base village (225, 68, 46) [Overworld]",
           "quantity": 13
         }
@@ -8618,7 +8648,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 737,
+          "id": 743,
           "location": "Coffre — Base village (226, 66, 42) [Overworld]",
           "quantity": 1
         }
@@ -8636,59 +8666,64 @@
       "notes": "",
       "stacks": [
         {
-          "id": 738,
+          "id": 744,
           "location": "Coffre — Village desert (-1935, 79, -443) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 739,
+          "id": 745,
           "location": "Coffre — Maison #1 (62, 94, -50) [Overworld]",
           "quantity": 43
         },
         {
-          "id": 740,
+          "id": 746,
           "location": "Coffre — Maison #1 (97, 95, -42) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 741,
-          "location": "Coffre (180, 10, -35) [Overworld]",
+          "id": 747,
+          "location": "Coffre — Squelettons farm (180, 10, -35) [Overworld]",
           "quantity": 41
         },
         {
-          "id": 742,
+          "id": 748,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 743,
+          "id": 749,
           "location": "Coffre (-532, 66, -302) [Overworld]",
           "quantity": 23
         },
         {
-          "id": 744,
+          "id": 750,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 9
         },
         {
-          "id": 745,
+          "id": 751,
           "location": "Coffre — Base village (243, 66, 35) [Overworld]",
           "quantity": 9
         },
         {
-          "id": 746,
+          "id": 752,
           "location": "Coffre (696, 63, -2265) [Overworld]",
           "quantity": 11
         },
         {
-          "id": 747,
+          "id": 753,
           "location": "Coffre — Spawn zombie (-65, 90, -75) [Overworld]",
           "quantity": 7
         },
         {
-          "id": 748,
+          "id": 754,
           "location": "Coffre — Hub nether (8, 81, -17) [Nether]",
           "quantity": 2
+        },
+        {
+          "id": 755,
+          "location": "Inventaire de « N3SK3 »",
+          "quantity": 4
         }
       ],
       "updatedAt": ""
@@ -8704,17 +8739,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 749,
+          "id": 756,
           "location": "Coffre — Base village (225, 68, 43) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 750,
+          "id": 757,
           "location": "Coffre — Base village (255, 66, 41) [Overworld]",
           "quantity": 7
         },
         {
-          "id": 751,
+          "id": 758,
           "location": "Coffre (697, 63, -2264) [Overworld]",
           "quantity": 2
         }
@@ -8732,12 +8767,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 752,
+          "id": 759,
           "location": "Coffre — Maison #1 (63, 90, -45) [Overworld]",
           "quantity": 4
         },
         {
-          "id": 753,
+          "id": 760,
           "location": "Coffre — Maison #2 (365, 69, 62) [Overworld]",
           "quantity": 14
         }
@@ -8755,7 +8790,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 754,
+          "id": 761,
           "location": "Coffre — Base village (225, 68, 44) [Overworld]",
           "quantity": 104
         }
@@ -8773,12 +8808,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 755,
+          "id": 762,
           "location": "Coffre — Base village (225, 68, 44) [Overworld]",
           "quantity": 15
         },
         {
-          "id": 756,
+          "id": 763,
           "location": "Coffre — Hub nether (8, 81, -17) [Nether]",
           "quantity": 34
         }
@@ -8796,12 +8831,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 757,
+          "id": 764,
           "location": "Coffre — Base village (268, 67, 34) [Overworld]",
           "quantity": 52
         },
         {
-          "id": 758,
+          "id": 765,
           "location": "Coffre (697, 63, -2265) [Overworld]",
           "quantity": 3
         }
@@ -8819,12 +8854,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 759,
+          "id": 766,
           "location": "Coffre — Base village (226, 66, 46) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 760,
+          "id": 767,
           "location": "Coffre (697, 63, -2264) [Overworld]",
           "quantity": 4
         }
@@ -8842,7 +8877,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 761,
+          "id": 768,
           "location": "Coffre — Maison #1 (63, 90, -45) [Overworld]",
           "quantity": 1
         }
@@ -8860,7 +8895,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 762,
+          "id": 769,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 1
         }
@@ -8878,37 +8913,37 @@
       "notes": "",
       "stacks": [
         {
-          "id": 763,
+          "id": 770,
           "location": "Coffre — Maison #1 (63, 90, -45) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 764,
+          "id": 771,
           "location": "Baril — Maison #1 (65, 95, -45) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 765,
-          "location": "Coffre (180, 10, -35) [Overworld]",
+          "id": 772,
+          "location": "Coffre — Squelettons farm (180, 10, -35) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 766,
+          "id": 773,
           "location": "Coffre — Maison #2 (364, 69, 61) [Overworld]",
           "quantity": 11
         },
         {
-          "id": 767,
+          "id": 774,
           "location": "Coffre — Maison #2 (364, 69, 62) [Overworld]",
           "quantity": 27
         },
         {
-          "id": 768,
+          "id": 775,
           "location": "Coffre (696, 63, -2266) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 769,
+          "id": 776,
           "location": "Coffre (696, 63, -2265) [Overworld]",
           "quantity": 3
         }
@@ -8926,7 +8961,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 770,
+          "id": 777,
           "location": "Coffre — Base village (225, 68, 44) [Overworld]",
           "quantity": 69
         }
@@ -8944,12 +8979,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 771,
+          "id": 778,
           "location": "Coffre — Base village (225, 68, 44) [Overworld]",
           "quantity": 64
         },
         {
-          "id": 772,
+          "id": 779,
           "location": "Coffre — Base village (226, 68, 44) [Overworld]",
           "quantity": 24
         }
@@ -8967,12 +9002,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 773,
+          "id": 780,
           "location": "Baril — Maison #1 (65, 95, -45) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 774,
+          "id": 781,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 2
         }
@@ -8990,34 +9025,34 @@
       "notes": "",
       "stacks": [
         {
-          "id": 775,
+          "id": 782,
           "location": "Coffre — Maison #1 (63, 89, -44) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 776,
+          "id": 783,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 777,
+          "id": 784,
           "location": "Coffre — Base village (226, 66, 47) [Overworld]",
-          "quantity": 9
+          "quantity": 16
         },
         {
-          "id": 778,
+          "id": 785,
           "location": "Coffre — Base village (225, 66, 51) [Overworld]",
           "quantity": 16
         },
         {
-          "id": 779,
+          "id": 786,
           "location": "Coffre — Base village (243, 66, 35) [Overworld]",
           "quantity": 11
         },
         {
-          "id": 780,
+          "id": 787,
           "location": "Inventaire de « N3SK3 »",
-          "quantity": 7
+          "quantity": 26
         }
       ],
       "updatedAt": ""
@@ -9033,7 +9068,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 781,
+          "id": 788,
           "location": "Coffre — Base village (225, 66, 46) [Overworld]",
           "quantity": 1
         }
@@ -9051,22 +9086,22 @@
       "notes": "",
       "stacks": [
         {
-          "id": 782,
+          "id": 789,
           "location": "Coffre — Maison #1 (63, 92, -56) [Overworld]",
-          "quantity": 5
+          "quantity": 7
         },
         {
-          "id": 783,
+          "id": 790,
           "location": "Coffre — Maison #1 (64, 90, -44) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 784,
+          "id": 791,
           "location": "Coffre — Base village (261, 66, 35) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 785,
+          "id": 792,
           "location": "Coffre — Base village (277, 64, 34) [Overworld]",
           "quantity": 6
         }
@@ -9084,7 +9119,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 786,
+          "id": 793,
           "location": "Coffre — Base village (225, 66, 51) [Overworld]",
           "quantity": 8
         }
@@ -9102,7 +9137,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 787,
+          "id": 794,
           "location": "Coffre — Base village (225, 68, 47) [Overworld]",
           "quantity": 3
         }
@@ -9120,22 +9155,22 @@
       "notes": "",
       "stacks": [
         {
-          "id": 788,
+          "id": 795,
           "location": "Coffre — Maison #1 (64, 90, -44) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 789,
+          "id": 796,
           "location": "Coffre — Base village (226, 68, 47) [Overworld]",
           "quantity": 41
         },
         {
-          "id": 790,
+          "id": 797,
           "location": "Coffre — Base village (237, 66, 41) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 791,
+          "id": 798,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 16
         }
@@ -9153,12 +9188,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 792,
+          "id": 799,
           "location": "Coffre — Base village (225, 66, 43) [Overworld]",
           "quantity": 384
         },
         {
-          "id": 793,
+          "id": 800,
           "location": "Coffre — Base village (226, 66, 43) [Overworld]",
           "quantity": 333
         }
@@ -9176,7 +9211,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 794,
+          "id": 801,
           "location": "Coffre (313, -2, 33) [Overworld]",
           "quantity": 7
         }
@@ -9194,7 +9229,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 795,
+          "id": 802,
           "location": "Coffre — Maison #1 (63, 89, -45) [Overworld]",
           "quantity": 1
         }
@@ -9212,7 +9247,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 796,
+          "id": 803,
           "location": "Coffre — Base village (226, 68, 49) [Overworld]",
           "quantity": 1
         }
@@ -9230,24 +9265,24 @@
       "notes": "",
       "stacks": [
         {
-          "id": 797,
-          "location": "Coffre — Base village (225, 66, 51) [Overworld]",
-          "quantity": 59
+          "id": 804,
+          "location": "Coffre — Base village (224, 66, 41) [Overworld]",
+          "quantity": 71
         },
         {
-          "id": 798,
+          "id": 805,
           "location": "Coffre — Base village (272, 66, 36) [Overworld]",
           "quantity": 512
         },
         {
-          "id": 799,
+          "id": 806,
           "location": "Inventaire de « N3SK3 »",
-          "quantity": 185
+          "quantity": 205
         },
         {
-          "id": 800,
+          "id": 807,
           "location": "Enderchest perso de « N3SK3 »",
-          "quantity": 66
+          "quantity": 64
         }
       ],
       "updatedAt": ""
@@ -9263,7 +9298,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 801,
+          "id": 808,
           "location": "Coffre — Base village (225, 66, 49) [Overworld]",
           "quantity": 5
         }
@@ -9281,22 +9316,22 @@
       "notes": "",
       "stacks": [
         {
-          "id": 802,
+          "id": 809,
           "location": "Coffre — Maison #1 (63, 89, -52) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 803,
+          "id": 810,
           "location": "Coffre — Base village (225, 68, 43) [Overworld]",
           "quantity": 33
         },
         {
-          "id": 804,
+          "id": 811,
           "location": "Coffre — Base village (226, 68, 43) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 805,
+          "id": 812,
           "location": "Coffre — Hub nether (7, 81, -17) [Nether]",
           "quantity": 129
         }
@@ -9314,17 +9349,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 806,
+          "id": 813,
           "location": "Coffre — Base village (225, 68, 44) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 807,
+          "id": 814,
           "location": "Coffre — Base village (226, 68, 44) [Overworld]",
           "quantity": 52
         },
         {
-          "id": 808,
+          "id": 815,
           "location": "Coffre — Hub nether (17, 81, -17) [Nether]",
           "quantity": 179
         }
@@ -9342,12 +9377,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 809,
+          "id": 816,
           "location": "Coffre — Base village (226, 68, 44) [Overworld]",
           "quantity": 35
         },
         {
-          "id": 810,
+          "id": 817,
           "location": "Coffre — Hub nether (17, 81, -17) [Nether]",
           "quantity": 176
         }
@@ -9365,7 +9400,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 811,
+          "id": 818,
           "location": "Coffre — Hub nether (17, 81, -17) [Nether]",
           "quantity": 139
         }
@@ -9383,17 +9418,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 812,
+          "id": 819,
           "location": "Coffre — Base village (226, 68, 44) [Overworld]",
           "quantity": 27
         },
         {
-          "id": 813,
+          "id": 820,
           "location": "Coffre — Hub nether (17, 81, -17) [Nether]",
           "quantity": 5
         },
         {
-          "id": 814,
+          "id": 821,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 112
         }
@@ -9411,7 +9446,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 815,
+          "id": 822,
           "location": "Coffre — Base village (226, 68, 47) [Overworld]",
           "quantity": 2
         }
@@ -9429,7 +9464,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 816,
+          "id": 823,
           "location": "Coffre — Base village (226, 68, 48) [Overworld]",
           "quantity": 1
         }
@@ -9447,202 +9482,202 @@
       "notes": "",
       "stacks": [
         {
-          "id": 817,
+          "id": 824,
           "location": "Dispenser (2413, -17, -33) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 818,
+          "id": 825,
           "location": "Dispenser (-967, -18, 65) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 819,
+          "id": 826,
           "location": "Dispenser (3425, -47, -1080) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 820,
+          "id": 827,
           "location": "Dispenser (-1812, 19, -443) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 821,
+          "id": 828,
           "location": "Dispenser (-1805, -22, -448) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 822,
+          "id": 829,
           "location": "Dispenser (-1641, -22, -337) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 823,
+          "id": 830,
           "location": "Dispenser (809, -16, -3663) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 824,
+          "id": 831,
           "location": "Dispenser (841, -39, -3737) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 825,
+          "id": 832,
           "location": "Dispenser (159, 23, -3221) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 826,
+          "id": 833,
           "location": "Dispenser (183, -8, -3281) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 827,
+          "id": 834,
           "location": "Dispenser (1097, -11, -541) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 828,
+          "id": 835,
           "location": "Dispenser (1111, -27, -577) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 829,
+          "id": 836,
           "location": "Dispenser (1353, -13, -863) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 830,
+          "id": 837,
           "location": "Dispenser (1303, -20, -1305) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 831,
+          "id": 838,
           "location": "Coffre — Maison #1 (86, 93, -21) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 832,
+          "id": 839,
           "location": "Dispenser (249, -15, -975) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 833,
+          "id": 840,
           "location": "Dispenser (101, 19, -1460) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 834,
+          "id": 841,
           "location": "Dispenser (131, -17, 271) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 835,
+          "id": 842,
           "location": "Coffre — Base village (232, 66, 49) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 836,
+          "id": 843,
           "location": "Coffre (313, -2, 33) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 837,
+          "id": 844,
           "location": "Dispenser (1071, -19, 1193) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 838,
+          "id": 845,
           "location": "Dispenser (3065, -27, -1439) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 839,
+          "id": 846,
           "location": "Dispenser (1072, -21, 1677) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 840,
+          "id": 847,
           "location": "Dispenser (1137, -11, 1703) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 841,
+          "id": 848,
           "location": "Dispenser (84, -20, 534) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 842,
+          "id": 849,
           "location": "Dispenser (82, -33, 572) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 843,
+          "id": 850,
           "location": "Dispenser (3, -5, 1059) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 844,
+          "id": 851,
           "location": "Coffre (696, 63, -2266) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 845,
+          "id": 852,
           "location": "Dispenser (835, -19, -2511) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 846,
+          "id": 853,
           "location": "Dispenser (553, -23, 1233) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 847,
+          "id": 854,
           "location": "Dispenser (1689, -15, 49) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 848,
+          "id": 855,
           "location": "Dispenser (1919, -10, -471) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 849,
+          "id": 856,
           "location": "Dispenser (1981, 4, -441) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 850,
+          "id": 857,
           "location": "Dispenser (567, -8, 751) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 851,
+          "id": 858,
           "location": "Dispenser (-335, -11, -329) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 852,
+          "id": 859,
           "location": "Dispenser (1725, -46, -979) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 853,
+          "id": 860,
           "location": "Dispenser (712, -14, -1375) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 854,
+          "id": 861,
           "location": "Dispenser (733, -2, -1331) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 855,
+          "id": 862,
           "location": "Dispenser (-207, -19, -1635) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 856,
+          "id": 863,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 1
         }
@@ -9660,7 +9695,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 857,
+          "id": 864,
           "location": "Coffre — Base village (225, 68, 48) [Overworld]",
           "quantity": 9
         }
@@ -9678,42 +9713,42 @@
       "notes": "",
       "stacks": [
         {
-          "id": 858,
+          "id": 865,
           "location": "Coffre — Maison #1 (64, 90, -44) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 859,
+          "id": 866,
           "location": "Coffre — Maison #1 (64, 90, -45) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 860,
+          "id": 867,
           "location": "Coffre — Maison #1 (92, 93, -71) [Overworld]",
           "quantity": 59
         },
         {
-          "id": 861,
+          "id": 868,
           "location": "Coffre — Maison #1 (96, 95, -64) [Overworld]",
           "quantity": 11
         },
         {
-          "id": 862,
+          "id": 869,
           "location": "Coffre — Base village (213, 66, 41) [Overworld]",
           "quantity": 51
         },
         {
-          "id": 863,
+          "id": 870,
           "location": "Coffre — Base village (225, 68, 47) [Overworld]",
           "quantity": 6
         },
         {
-          "id": 864,
+          "id": 871,
           "location": "Coffre — Base village (261, 66, 41) [Overworld]",
           "quantity": 6
         },
         {
-          "id": 865,
+          "id": 872,
           "location": "Inventaire de « N3SK3 »",
           "quantity": 21
         }
@@ -9731,58 +9766,53 @@
       "notes": "",
       "stacks": [
         {
-          "id": 866,
+          "id": 873,
           "location": "Coffre — Maison #1 (64, 90, -44) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 867,
+          "id": 874,
           "location": "Coffre — Maison #1 (64, 90, -45) [Overworld]",
           "quantity": 3
         },
         {
-          "id": 868,
+          "id": 875,
           "location": "Coffre — Maison #1 (96, 95, -64) [Overworld]",
           "quantity": 68
         },
         {
-          "id": 869,
+          "id": 876,
           "location": "Coffre — Maison #1 (97, 95, -42) [Overworld]",
           "quantity": 9
         },
         {
-          "id": 870,
+          "id": 877,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 1
         },
         {
-          "id": 871,
+          "id": 878,
           "location": "Coffre — Base village (219, 66, 41) [Overworld]",
           "quantity": 176
         },
         {
-          "id": 872,
+          "id": 879,
           "location": "Coffre — Base village (225, 68, 47) [Overworld]",
-          "quantity": 25
+          "quantity": 26
         },
         {
-          "id": 873,
+          "id": 880,
           "location": "Coffre — Base village (225, 66, 48) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 874,
+          "id": 881,
           "location": "Coffre (696, 63, -2265) [Overworld]",
           "quantity": 2
         },
         {
-          "id": 875,
+          "id": 882,
           "location": "Coffre (902, 50, -1336) [Overworld]",
-          "quantity": 1
-        },
-        {
-          "id": 876,
-          "location": "Inventaire de « N3SK3 »",
           "quantity": 1
         }
       ],
@@ -9799,12 +9829,17 @@
       "notes": "",
       "stacks": [
         {
-          "id": 877,
+          "id": 883,
           "location": "Coffre — Base village (231, 66, 35) [Overworld]",
           "quantity": 7
         },
         {
-          "id": 878,
+          "id": 884,
+          "location": "Inventaire de « N3SK3 »",
+          "quantity": 4
+        },
+        {
+          "id": 885,
           "location": "Inventaire de « WhiskySec »",
           "quantity": 6
         }
@@ -9822,12 +9857,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 879,
+          "id": 886,
           "location": "Coffre — Base village (237, 66, 41) [Overworld]",
           "quantity": 8
         },
         {
-          "id": 880,
+          "id": 887,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 2
         }
@@ -9845,7 +9880,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 881,
+          "id": 888,
           "location": "Coffre — Base village (226, 66, 43) [Overworld]",
           "quantity": 7
         }
@@ -9863,7 +9898,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 882,
+          "id": 889,
           "location": "Coffre — Base village (226, 66, 44) [Overworld]",
           "quantity": 3
         }
@@ -9881,12 +9916,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 883,
+          "id": 890,
           "location": "Coffre — Base village (225, 66, 43) [Overworld]",
           "quantity": 169
         },
         {
-          "id": 884,
+          "id": 891,
           "location": "Coffre — Base village (226, 66, 43) [Overworld]",
           "quantity": 25
         }
@@ -9904,12 +9939,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 885,
+          "id": 892,
           "location": "Coffre — Base village (237, 66, 41) [Overworld]",
           "quantity": 17
         },
         {
-          "id": 886,
+          "id": 893,
           "location": "Coffre — Hub nether (7, 81, -17) [Nether]",
           "quantity": 1
         }
@@ -9927,7 +9962,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 887,
+          "id": 894,
           "location": "Coffre (-647, 64, -140) [Overworld]",
           "quantity": 1
         }
@@ -9936,6 +9971,24 @@
     },
     {
       "id": 424,
+      "name": "Yellow bed",
+      "icon": "",
+      "category": "Autre",
+      "unit": "item",
+      "targetQuantity": null,
+      "renewable": false,
+      "notes": "",
+      "stacks": [
+        {
+          "id": 895,
+          "location": "Inventaire de « N3SK3 »",
+          "quantity": 1
+        }
+      ],
+      "updatedAt": ""
+    },
+    {
+      "id": 425,
       "name": "Yellow dye",
       "icon": "",
       "category": "Autre",
@@ -9945,12 +9998,12 @@
       "notes": "",
       "stacks": [
         {
-          "id": 888,
+          "id": 896,
           "location": "Coffre — Maison #1 (64, 89, -45) [Overworld]",
           "quantity": 8
         },
         {
-          "id": 889,
+          "id": 897,
           "location": "Coffre — Base village (226, 66, 48) [Overworld]",
           "quantity": 1
         }
@@ -9958,7 +10011,7 @@
       "updatedAt": ""
     },
     {
-      "id": 425,
+      "id": 426,
       "name": "Yellow poplar leaves",
       "icon": "",
       "category": "Autre",
@@ -9968,7 +10021,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 890,
+          "id": 898,
           "location": "Coffre — Base village (225, 68, 46) [Overworld]",
           "quantity": 14
         }
@@ -9976,7 +10029,7 @@
       "updatedAt": ""
     },
     {
-      "id": 426,
+      "id": 427,
       "name": "Yellow shulker box",
       "icon": "",
       "category": "Autre",
@@ -9986,7 +10039,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 891,
+          "id": 899,
           "location": "Inventaire de « N3SK3 »",
           "quantity": 1
         }
@@ -9994,7 +10047,7 @@
       "updatedAt": ""
     },
     {
-      "id": 427,
+      "id": 428,
       "name": "Yellow stained glass pane",
       "icon": "",
       "category": "Blocs",
@@ -10004,7 +10057,7 @@
       "notes": "",
       "stacks": [
         {
-          "id": 892,
+          "id": 900,
           "location": "Coffre — Base village (226, 66, 44) [Overworld]",
           "quantity": 10
         }

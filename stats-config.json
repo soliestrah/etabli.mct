@@ -4,12 +4,12 @@
     {
       "uuid": "5fb31919-bf78-467a-8879-3ea80378a992",
       "name": "N3SK3",
-      "playTimeHours": 126.0,
+      "playTimeHours": 127.1,
       "deaths": 22,
-      "mobKills": 4243,
-      "blocksMined": 82925,
-      "distanceTotalKm": 545.31,
-      "jumps": 42814,
+      "mobKills": 4252,
+      "blocksMined": 83074,
+      "distanceTotalKm": 560.06,
+      "jumps": 43601,
       "villagerTrades": 4135,
       "advancementsDone": 1152,
       "advancementsTotal": 1158,
@@ -283,8 +283,7 @@
           "name": "Wax on"
         }
       ],
-      "lastPosition": null,
-      "equipment": {}
+      "lastPosition": null
     },
     {
       "uuid": "e593b84e-1eb5-3fe8-8f90-b0a891382963",
@@ -592,8 +591,7 @@
           "name": "Wax on"
         }
       ],
-      "lastPosition": null,
-      "equipment": {}
+      "lastPosition": null
     }
   ]
 }

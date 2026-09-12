@@ -197,6 +197,18 @@
       "prefOverrides": {}
     },
     {
+      "id": 73,
+      "name": "Bow (N3SK3)",
+      "type": "bow",
+      "enchants": [
+        {
+          "id": "power",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
       "id": 21,
       "name": "Bow (rangé)",
       "type": "bow",
@@ -248,6 +260,38 @@
         {
           "id": "unbreaking",
           "level": 3
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 75,
+      "name": "Diamond sword (N3SK3)",
+      "type": "sword",
+      "enchants": [
+        {
+          "id": "knockback",
+          "level": 1
+        },
+        {
+          "id": "sweeping",
+          "level": 1
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 75,
+      "name": "Diamond sword (N3SK3)",
+      "type": "sword",
+      "enchants": [
+        {
+          "id": "knockback",
+          "level": 1
+        },
+        {
+          "id": "sweeping",
+          "level": 1
         }
       ],
       "prefOverrides": {}
@@ -328,6 +372,18 @@
         {
           "id": "fortune",
           "level": 3
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 21,
+      "name": "Bow (rangé)",
+      "type": "bow",
+      "enchants": [
+        {
+          "id": "unbreaking",
+          "level": 1
         }
       ],
       "prefOverrides": {}
@@ -609,26 +665,6 @@
       "prefOverrides": {}
     },
     {
-      "id": 58,
-      "name": "cimetière",
-      "type": "shovel",
-      "enchants": [
-        {
-          "id": "mending",
-          "level": 1
-        },
-        {
-          "id": "efficiency",
-          "level": 4
-        },
-        {
-          "id": "unbreaking",
-          "level": 3
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
       "id": 57,
       "name": "hache",
       "type": "axe",
@@ -677,17 +713,25 @@
       "prefOverrides": {}
     },
     {
-      "id": 59,
-      "name": "ailes",
-      "type": "elytra",
+      "id": 68,
+      "name": "cachecoeur",
+      "type": "chestplate",
       "enchants": [
         {
           "id": "mending",
           "level": 1
         },
         {
+          "id": "thorns",
+          "level": 1
+        },
+        {
           "id": "unbreaking",
           "level": 3
+        },
+        {
+          "id": "protection",
+          "level": 4
         }
       ],
       "prefOverrides": {}
@@ -717,78 +761,6 @@
       "prefOverrides": {}
     },
     {
-      "id": 73,
-      "name": "Bow (N3SK3)",
-      "type": "bow",
-      "enchants": [
-        {
-          "id": "power",
-          "level": 1
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 75,
-      "name": "Diamond sword (N3SK3)",
-      "type": "sword",
-      "enchants": [
-        {
-          "id": "knockback",
-          "level": 1
-        },
-        {
-          "id": "sweeping",
-          "level": 1
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 75,
-      "name": "Diamond sword (N3SK3)",
-      "type": "sword",
-      "enchants": [
-        {
-          "id": "knockback",
-          "level": 1
-        },
-        {
-          "id": "sweeping",
-          "level": 1
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 76,
-      "name": "Golden chestplate (N3SK3)",
-      "type": "chestplate",
-      "enchants": [
-        {
-          "id": "projectile_protection",
-          "level": 4
-        },
-        {
-          "id": "unbreaking",
-          "level": 3
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
-      "id": 77,
-      "name": "Golden helmet (N3SK3)",
-      "type": "helmet",
-      "enchants": [
-        {
-          "id": "aqua_affinity",
-          "level": 1
-        }
-      ],
-      "prefOverrides": {}
-    },
-    {
       "id": 63,
       "name": "récolte",
       "type": "axe",
@@ -807,6 +779,26 @@
         },
         {
           "id": "fortune",
+          "level": 3
+        }
+      ],
+      "prefOverrides": {}
+    },
+    {
+      "id": 58,
+      "name": "cimetière",
+      "type": "shovel",
+      "enchants": [
+        {
+          "id": "mending",
+          "level": 1
+        },
+        {
+          "id": "efficiency",
+          "level": 4
+        },
+        {
+          "id": "unbreaking",
           "level": 3
         }
       ],
@@ -2350,7 +2342,7 @@
       "id": 9,
       "enchants": [
         {
-          "id": "respiration",
+          "id": "unbreaking",
           "level": 3
         }
       ]
@@ -2359,13 +2351,22 @@
       "id": 10,
       "enchants": [
         {
+          "id": "respiration",
+          "level": 3
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "enchants": [
+        {
           "id": "protection",
           "level": 4
         }
       ]
     },
     {
-      "id": 11,
+      "id": 12,
       "enchants": [
         {
           "id": "aqua_affinity",
@@ -2374,7 +2375,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": 13,
       "enchants": [
         {
           "id": "projectile_protection",
@@ -2383,7 +2384,16 @@
       ]
     },
     {
-      "id": 13,
+      "id": 14,
+      "enchants": [
+        {
+          "id": "smite",
+          "level": 4
+        }
+      ]
+    },
+    {
+      "id": 15,
       "enchants": [
         {
           "id": "multishot",
@@ -2392,7 +2402,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": 16,
       "enchants": [
         {
           "id": "breach",
@@ -2401,24 +2411,6 @@
         {
           "id": "piercing",
           "level": 3
-        }
-      ]
-    },
-    {
-      "id": 15,
-      "enchants": [
-        {
-          "id": "unbreaking",
-          "level": 3
-        }
-      ]
-    },
-    {
-      "id": 16,
-      "enchants": [
-        {
-          "id": "smite",
-          "level": 4
         }
       ]
     }
