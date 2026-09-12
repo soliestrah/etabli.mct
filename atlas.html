@@ -143,6 +143,7 @@
       <h3 style="margin-top:0;">Sauvegarde de la carte</h3>
       <div class="actions-row">
         <button class="btn btn-ghost" id="ow-btn-download">Télécharger (.json)</button>
+        <button class="btn btn-primary" id="ow-btn-gh-save">Enregistrer en ligne</button>
         <label class="file-label" for="ow-file-import">Importer un fichier</label>
         <input type="file" id="ow-file-import" accept="application/json" style="display:none;">
       </div>
@@ -360,6 +361,7 @@
       <h3 style="margin-top:0;">Sauvegarde de la carte</h3>
       <div class="actions-row">
         <button class="btn btn-ghost" id="nm-btn-download">Télécharger (.json)</button>
+        <button class="btn btn-primary" id="nm-btn-gh-save">Enregistrer en ligne</button>
         <label class="file-label" for="nm-file-import">Importer un fichier</label>
         <input type="file" id="nm-file-import" accept="application/json" style="display:none;">
       </div>
@@ -462,6 +464,7 @@
       <h3 style="margin-top:0;">Sauvegarde de la carte</h3>
       <div class="actions-row">
         <button class="btn btn-ghost" id="end-btn-download">Télécharger (.json)</button>
+        <button class="btn btn-primary" id="end-btn-gh-save">Enregistrer en ligne</button>
         <label class="file-label" for="end-file-import">Importer un fichier</label>
         <input type="file" id="end-file-import" accept="application/json" style="display:none;">
       </div>
@@ -1235,52 +1238,52 @@
   });
   loadGhSettings();
 
-  async function saveToGitHub(){
+  async function githubPutFile(path, content){
     const owner = document.getElementById('gh-owner').value.trim();
     const repo = document.getElementById('gh-repo').value.trim();
     const branch = document.getElementById('gh-branch').value.trim() || 'main';
     const token = document.getElementById('gh-token').value.trim();
     if (!owner || !repo || !token){
-      showSaveMsg('Renseigne utilisateur, dépôt et jeton GitHub.');
-      return;
+      throw new Error('Renseigne utilisateur, dépôt et jeton GitHub.');
     }
     saveGhSettings();
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+    let sha = null;
+    const getRes = await fetch(`${apiUrl}?ref=${encodeURIComponent(branch)}`, {
+      headers: {'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json'}
+    });
+    if (getRes.ok){
+      const info = await getRes.json();
+      sha = info.sha;
+    } else if (getRes.status !== 404){
+      const err = await getRes.json().catch(() => ({}));
+      throw new Error(err.message || ('Erreur ' + getRes.status));
+    }
+    const body = {
+      message: `Mise à jour ${path} depuis l'outil`,
+      content: btoa(unescape(encodeURIComponent(content))),
+      branch
+    };
+    if (sha) body.sha = sha;
+    const putRes = await fetch(apiUrl, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Accept': 'application/vnd.github+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+    if (!putRes.ok){
+      const err = await putRes.json().catch(() => ({}));
+      throw new Error(err.message || ('Erreur ' + putRes.status));
+    }
+  }
+
+  async function saveToGitHub(){
     showSaveMsg('Envoi vers GitHub...');
-    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${GH_FILE_PATH}`;
     try {
-      let sha = null;
-      const getRes = await fetch(`${apiUrl}?ref=${encodeURIComponent(branch)}`, {
-        headers: {'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json'}
-      });
-      if (getRes.ok){
-        const info = await getRes.json();
-        sha = info.sha;
-      } else if (getRes.status !== 404){
-        const err = await getRes.json().catch(() => ({}));
-        throw new Error(err.message || ('Erreur ' + getRes.status));
-      }
-
-      const content = exportPointsJSON();
-      const body = {
-        message: 'Mise à jour atlas-config.json depuis l\'outil',
-        content: btoa(unescape(encodeURIComponent(content))),
-        branch
-      };
-      if (sha) body.sha = sha;
-
-      const putRes = await fetch(apiUrl, {
-        method: 'PUT',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Accept': 'application/vnd.github+json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-      });
-      if (!putRes.ok){
-        const err = await putRes.json().catch(() => ({}));
-        throw new Error(err.message || ('Erreur ' + putRes.status));
-      }
+      await githubPutFile(GH_FILE_PATH, exportPointsJSON());
       showSaveMsg('Enregistré sur GitHub ✓');
     } catch (err){
       showSaveMsg('Échec : ' + err.message);
@@ -1670,6 +1673,17 @@
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
       showSaveMsg(`Fichier téléchargé (${fileName}).`);
+    });
+
+    document.getElementById(`${ns}-btn-gh-save`).addEventListener('click', async () => {
+      if (!state.image){ showSaveMsg('Importe d\'abord une carte.'); return; }
+      showSaveMsg('Envoi vers GitHub...');
+      try {
+        await githubPutFile(fileName, JSON.stringify(state, null, 2));
+        showSaveMsg('Enregistré sur GitHub ✓');
+      } catch (err){
+        showSaveMsg('Échec : ' + err.message);
+      }
     });
 
     function loadFromJSON(text){
