@@ -7,11 +7,13 @@
 (function(){
   const PAGES = [
     { id: 'etabli',      label: "Établi",     icon: '🪵', href: 'etabli.html' },
+    { id: 'actualite',   label: 'Actualité',  icon: '📰', href: 'actualite.html' },
     { id: 'atlas',       label: 'Atlas',      icon: '🗺️', href: 'atlas.html' },
     { id: 'grimoire',    label: 'Grimoire',   icon: '📖', href: 'grimoire.html' },
     { id: 'carnet',      label: 'Carnet',     icon: '📓', href: 'carnet.html' },
     { id: 'inventaire',  label: 'Inventaire', icon: '📦', href: 'inventaire.html' },
     { id: 'projets',     label: 'Projets',    icon: '🧱', href: 'projets.html' },
+    { id: 'historique',  label: 'Historique', icon: '📜', href: 'historique.html' },
   ];
 
   function renderNav(){
