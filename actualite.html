@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fil d'actualité</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/actualite.css">
+</head>
+<body class="theme-actualite">
+
+<div id="site-nav" data-current="actualite"></div>
+<script src="assets/nav.js" defer></script>
+
+<header>
+  <h1>fil d'actualité</h1>
+  <p>ce qu'il s'est passé, sans avoir à tout relire</p>
+</header>
+
+<main>
+
+  <div class="feed-summary" id="feed-summary"></div>
+
+  <div class="filters" id="filters">
+    <button type="button" class="active" data-filter="all">Tout</button>
+    <button type="button" data-filter="session">Sessions de jeu</button>
+    <button type="button" data-filter="note">Notes du carnet</button>
+    <button type="button" data-filter="project">Projets</button>
+  </div>
+
+  <div class="feed" id="feed"></div>
+  <div class="empty-note" id="empty-note" style="display:none;">
+    Rien à raconter pour l'instant. Le fil se remplit tout seul : chaque relance de <code>generer_tout.py</code>
+    ajoute un instantané, et chaque note ou projet créé sur le site vient s'y ajouter aussi.
+  </div>
+
+</main>
+
+<footer class="site-footer">l'établi</footer>
+
+<script>
+  let events = [];
+  let currentFilter = 'all';
+
+  const TYPE_ICON = { session: '🎮', note: '📓', project: '🧱', milestone: '🎖️' };
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  function dayKey(iso){
+    return iso.slice(0, 10); // YYYY-MM-DD
+  }
+  function dayLabel(iso){
+    const d = new Date(iso);
+    let label = d.toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    return label.charAt(0).toUpperCase() + label.slice(1);
+  }
+  function timeLabel(iso){
+    return new Date(iso).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+  }
+
+  function buildSessionEvents(snapshots){
+    const out = [];
+    const sorted = [...snapshots].sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+    for (let i = 1; i < sorted.length; i++){
+      const prev = sorted[i - 1], cur = sorted[i];
+      (cur.players || []).forEach(p => {
+        const before = (prev.players || []).find(x => x.player === p.player);
+        if (!before) return;
+        const dPlay = +(p.playTimeHours - before.playTimeHours).toFixed(1);
+        const dKills = p.mobKills - before.mobKills;
+        const dMined = p.blocksMined - before.blocksMined;
+        const dDeaths = p.deaths - before.deaths;
+        const dAdv = (p.advancementsDone || 0) - (before.advancementsDone || 0);
+        if (dPlay <= 0 && dKills <= 0 && dMined <= 0 && dDeaths <= 0 && dAdv <= 0) return;
+
+        const bits = [];
+        if (dPlay > 0) bits.push(`+${dPlay}h de jeu`);
+        if (dMined > 0) bits.push(`${dMined.toLocaleString('fr-FR')} blocs minés`);
+        if (dKills > 0) bits.push(`${dKills.toLocaleString('fr-FR')} mobs tués`);
+        if (dDeaths > 0) bits.push(`${dDeaths} mort${dDeaths > 1 ? 's' : ''}`);
+        out.push({
+          type: 'session',
+          date: cur.timestamp,
+          title: p.player,
+          detail: bits.join(' · ') || 'Petite session.',
+        });
+        if (dAdv > 0){
+          out.push({
+            type: 'milestone',
+            date: cur.timestamp,
+            title: p.player,
+            detail: `${dAdv} nouvel${dAdv > 1 ? 's' : ''} avancement${dAdv > 1 ? 's' : ''} débloqué${dAdv > 1 ? 's' : ''} 🎉`,
+          });
+        }
+      });
+    }
+    return out;
+  }
+
+  function buildNoteEvents(entries){
+    return (entries || []).map(e => ({
+      type: 'note',
+      date: e.createdAt,
+      title: e.tag ? `Note — ${e.tag}` : 'Note',
+      detail: (e.text || '').split('\n')[0],
+    })).filter(e => e.date);
+  }
+
+  function buildProjectEvents(projects){
+    return (projects || []).map(p => ({
+      type: 'project',
+      date: p.createdAt,
+      title: 'Nouveau projet',
+      detail: p.name,
+    })).filter(e => e.date);
+  }
+
+  function renderSummary(){
+    const counts = { session: 0, note: 0, project: 0, milestone: 0 };
+    events.forEach(e => { counts[e.type] = (counts[e.type] || 0) + 1; });
+    const stat = (n, l) => `<div class="summary-stat"><span class="n">${n}</span><span class="l">${l}</span></div>`;
+    document.getElementById('feed-summary').innerHTML = [
+      stat(events.length, 'événements au total'),
+      stat(counts.session, 'sessions de jeu'),
+      stat(counts.note, 'notes ajoutées'),
+      stat(counts.project, 'projets lancés'),
+    ].join('');
+  }
+
+  function renderFeed(){
+    const wrap = document.getElementById('feed');
+    const emptyNote = document.getElementById('empty-note');
+    const filtered = currentFilter === 'all' ? events : events.filter(e => e.type === currentFilter);
+
+    if (filtered.length === 0){
+      wrap.innerHTML = '';
+      emptyNote.style.display = 'block';
+      return;
+    }
+    emptyNote.style.display = 'none';
+
+    let html = '';
+    let lastDay = null;
+    filtered.forEach(e => {
+      const dk = dayKey(e.date);
+      if (dk !== lastDay){
+        html += `<div class="feed-day">${dayLabel(e.date)}</div>`;
+        lastDay = dk;
+      }
+      html += `<div class="feed-item type-${e.type}">
+        <span class="fi-icon">${TYPE_ICON[e.type] || '•'}</span>
+        <div class="fi-body">
+          <div class="fi-title">${escapeHtml(e.title)}</div>
+          <div class="fi-detail">${escapeHtml(e.detail)}</div>
+        </div>
+        <span class="fi-time">${timeLabel(e.date)}</span>
+      </div>`;
+    });
+    wrap.innerHTML = html;
+  }
+
+  document.getElementById('filters').addEventListener('click', (ev) => {
+    const btn = ev.target.closest('button[data-filter]');
+    if (!btn) return;
+    document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    renderFeed();
+  });
+
+  Promise.all([
+    fetch('historique-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : []).catch(() => []),
+    fetch('carnet-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : { entries: [] }).catch(() => ({ entries: [] })),
+    fetch('projets-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : { projects: [] }).catch(() => ({ projects: [] })),
+  ]).then(([historique, carnet, projets]) => {
+    events = [
+      ...buildSessionEvents(Array.isArray(historique) ? historique : []),
+      ...buildNoteEvents(carnet.entries),
+      ...buildProjectEvents(projets.projects),
+    ].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    renderSummary();
+    renderFeed();
+  }).catch(() => {
+    document.getElementById('empty-note').style.display = 'block';
+    document.getElementById('empty-note').textContent = 'Impossible de charger les données du fil pour l\'instant.';
+  });
+</script>
+</body>
+</html>
