@@ -1,0 +1,107 @@
+/* =========================================================================
+   FIL D'ACTUALITÉ — styles propres à cette page (flux chronologique).
+   Le reste (boutons, filtres, panneaux...) vient de site.css
+   ========================================================================= */
+
+/* la mise en page (main simple) vient de site.css */
+
+.feed-summary{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+.feed-summary .summary-stat{
+  flex:1;
+  min-width:130px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:12px 14px;
+  box-shadow:var(--shadow-sm);
+}
+.feed-summary .summary-stat .n{
+  font-family:var(--font-mono);
+  font-weight:700;
+  font-size:1.3rem;
+  color:var(--accent);
+  display:block;
+}
+.feed-summary .summary-stat .l{
+  font-size:0.72rem;
+  color:var(--muted);
+}
+
+.feed{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.feed-day{
+  font-family:var(--font-mono);
+  font-size:0.72rem;
+  font-weight:700;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin:22px 0 8px;
+  padding-bottom:6px;
+  border-bottom:1px dashed var(--border);
+}
+.feed-day:first-child{ margin-top:0; }
+
+.feed-item{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-left:3px solid var(--item-accent, var(--accent));
+  border-radius:var(--radius-sm);
+  padding:10px 14px;
+  margin-bottom:8px;
+}
+.feed-item .fi-icon{
+  font-size:1.05rem;
+  line-height:1.4;
+  flex-shrink:0;
+}
+.feed-item .fi-body{ flex:1; min-width:0; }
+.feed-item .fi-title{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:0.9rem;
+  color:var(--text);
+}
+.feed-item .fi-title .fi-tag{
+  font-family:var(--font-mono);
+  font-size:0.62rem;
+  font-weight:700;
+  color:var(--item-accent, var(--accent));
+  border:1px solid var(--item-accent, var(--accent));
+  border-radius:20px;
+  padding:1px 7px;
+  margin-right:6px;
+  vertical-align:middle;
+}
+.feed-item .fi-detail{
+  font-size:0.8rem;
+  color:var(--muted);
+  margin-top:2px;
+  white-space:pre-wrap;
+  word-break:break-word;
+}
+.feed-item .fi-time{
+  font-family:var(--font-mono);
+  font-size:0.66rem;
+  color:var(--muted);
+  opacity:0.7;
+  flex-shrink:0;
+  padding-top:2px;
+}
+
+.feed-item.type-note{ --item-accent: var(--green); }
+.feed-item.type-project{ --item-accent: var(--gold); }
+.feed-item.type-session{ --item-accent: var(--lapis); }
+.feed-item.type-milestone{ --item-accent: var(--purple); }
