@@ -284,7 +284,87 @@
         }
       ],
       "lastPosition": null,
-      "equipment": {}
+      "equipment": {},
+      "huntedMobsTotal": 37,
+      "huntedMobsDone": 18,
+      "remainingMobs": [
+        {
+          "id": "minecraft:breeze",
+          "name": "Vent (Breeze)"
+        },
+        {
+          "id": "minecraft:creaking",
+          "name": "Craqueur (Creaking)"
+        },
+        {
+          "id": "minecraft:elder_guardian",
+          "name": "Gardien ancien"
+        },
+        {
+          "id": "minecraft:ender_dragon",
+          "name": "Dragon de l'Ender"
+        },
+        {
+          "id": "minecraft:endermite",
+          "name": "Endermite"
+        },
+        {
+          "id": "minecraft:evoker",
+          "name": "Évocateur"
+        },
+        {
+          "id": "minecraft:ghast",
+          "name": "Ghast"
+        },
+        {
+          "id": "minecraft:guardian",
+          "name": "Gardien"
+        },
+        {
+          "id": "minecraft:husk",
+          "name": "Zombie du désert"
+        },
+        {
+          "id": "minecraft:piglin_brute",
+          "name": "Piglin brute"
+        },
+        {
+          "id": "minecraft:ravager",
+          "name": "Ravageur"
+        },
+        {
+          "id": "minecraft:slime",
+          "name": "Slime"
+        },
+        {
+          "id": "minecraft:stray",
+          "name": "Stray (squelette gelé)"
+        },
+        {
+          "id": "minecraft:vex",
+          "name": "Vex"
+        },
+        {
+          "id": "minecraft:vindicator",
+          "name": "Vindicateur"
+        },
+        {
+          "id": "minecraft:witch",
+          "name": "Sorcière"
+        },
+        {
+          "id": "minecraft:wither",
+          "name": "Wither"
+        },
+        {
+          "id": "minecraft:wither_skeleton",
+          "name": "Squelette du Wither"
+        },
+        {
+          "id": "minecraft:zoglin",
+          "name": "Zoglin"
+        }
+      ]
     },
     {
       "uuid": "e593b84e-1eb5-3fe8-8f90-b0a891382963",
@@ -593,7 +673,95 @@
         }
       ],
       "lastPosition": null,
-      "equipment": {}
+      "equipment": {},
+      "huntedMobsTotal": 37,
+      "huntedMobsDone": 16,
+      "remainingMobs": [
+        {
+          "id": "minecraft:bogged",
+          "name": "Bogged"
+        },
+        {
+          "id": "minecraft:breeze",
+          "name": "Vent (Breeze)"
+        },
+        {
+          "id": "minecraft:creaking",
+          "name": "Craqueur (Creaking)"
+        },
+        {
+          "id": "minecraft:elder_guardian",
+          "name": "Gardien ancien"
+        },
+        {
+          "id": "minecraft:endermite",
+          "name": "Endermite"
+        },
+        {
+          "id": "minecraft:evoker",
+          "name": "Évocateur"
+        },
+        {
+          "id": "minecraft:guardian",
+          "name": "Gardien"
+        },
+        {
+          "id": "minecraft:husk",
+          "name": "Zombie du désert"
+        },
+        {
+          "id": "minecraft:piglin",
+          "name": "Piglin"
+        },
+        {
+          "id": "minecraft:piglin_brute",
+          "name": "Piglin brute"
+        },
+        {
+          "id": "minecraft:ravager",
+          "name": "Ravageur"
+        },
+        {
+          "id": "minecraft:shulker",
+          "name": "Shulker"
+        },
+        {
+          "id": "minecraft:slime",
+          "name": "Slime"
+        },
+        {
+          "id": "minecraft:stray",
+          "name": "Stray (squelette gelé)"
+        },
+        {
+          "id": "minecraft:vex",
+          "name": "Vex"
+        },
+        {
+          "id": "minecraft:vindicator",
+          "name": "Vindicateur"
+        },
+        {
+          "id": "minecraft:witch",
+          "name": "Sorcière"
+        },
+        {
+          "id": "minecraft:wither",
+          "name": "Wither"
+        },
+        {
+          "id": "minecraft:wither_skeleton",
+          "name": "Squelette du Wither"
+        },
+        {
+          "id": "minecraft:zoglin",
+          "name": "Zoglin"
+        },
+        {
+          "id": "minecraft:zombified_piglin",
+          "name": "Piglin zombifié"
+        }
+      ]
     }
   ]
 }
