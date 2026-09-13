@@ -104,6 +104,7 @@
   // stock issu de l'Inventaire, chargé en lecture seule pour comparer les besoins
   let inventoryStock = {}; // { "nom en minuscule": quantitéTotale }
   let inventoryLoaded = false;
+  let inventoryResources = []; // liste complète (avec targetQuantity), pour la règle de réappro auto
 
   // points Atlas connus (les 3 cartes-image + les points du calculateur de
   // tunnels Nether), chargés en lecture seule pour permettre de choisir un
@@ -156,6 +157,7 @@
       .then(r => r.ok ? r.json() : Promise.reject())
       .then(data => {
         const resources = Array.isArray(data.resources) ? data.resources : [];
+        inventoryResources = resources;
         inventoryStock = {};
         resources.forEach(r => {
           const total = (r.stacks || []).reduce((s, st) => s + st.quantity, 0);
@@ -167,12 +169,17 @@
           ? `Connecté à l'inventaire · ${resources.length} ressources suivies`
           : `Connecté à l'inventaire (vide pour l'instant)`;
         document.getElementById('inv-status').className = 'inv-status-line ok';
+        inventoryReady = true;
+        maybeApplyAutoRules();
         renderAll();
       })
       .catch(() => {
         inventoryLoaded = false;
+        inventoryResources = [];
         document.getElementById('inv-status').textContent = "Inventaire introuvable — dépose inventaire-config.json à côté de ce fichier pour comparer automatiquement.";
         document.getElementById('inv-status').className = 'inv-status-line stale';
+        inventoryReady = true;
+        maybeApplyAutoRules();
         renderAll();
       });
   }
@@ -584,10 +591,11 @@
   let projectsReady = false;
   let containersReady = false;
   let statsReady = false;
+  let inventoryReady = false;
   const AUTO_FOODIE_THRESHOLD = 64; // seuil (nb total d'items) sous lequel on relance un projet de réappro
 
   function maybeApplyAutoRules(){
-    if (projectsReady && containersReady && statsReady) applyAutoRules();
+    if (projectsReady && containersReady && statsReady && inventoryReady) applyAutoRules();
   }
 
   function loadContainers(){
@@ -614,8 +622,43 @@
 
   function applyAutoRules(){
     applyFoodieRule();
+    applyResourceStockRule();
     applyAdvancementsRule();
     renderAll();
+  }
+
+  function applyResourceStockRule(){
+    // Version générale de la règle "foodie", mais pour N'IMPORTE QUELLE
+    // ressource (fer, diamant, charbon, redstone, poudre à canon...) :
+    // dès qu'on lui donne un objectif de quantité dans l'Inventaire, si le
+    // stock total tombe sous cet objectif, un projet de réappro s'ouvre
+    // (ou se rouvre) tout seul ; il se ferme tout seul en remontant dessus.
+    const tracked = inventoryResources.filter(r => r.targetQuantity);
+    tracked.forEach(r => {
+      const total = (r.stacks || []).reduce((s, st) => s + st.quantity, 0);
+      const ruleId = `stock-${r.id}`;
+      const existingIdx = projects.findIndex(p => p.autoRule === ruleId);
+
+      if (total < r.targetQuantity){
+        if (existingIdx === -1){
+          projects.push({
+            id: projIdCounter++,
+            name: `Réapprovisionner : ${r.name}`,
+            notes: `Stock actuel détecté : ${total}/${r.targetQuantity}. Projet généré automatiquement depuis l'inventaire.`,
+            status: 'todo',
+            needs: [],
+            location: null,
+            createdAt: new Date().toISOString(),
+            autoRule: ruleId,
+          });
+        } else if (projects[existingIdx].status === 'done'){
+          projects[existingIdx].status = 'todo'; // le stock est retombé bas, on rouvre
+          projects[existingIdx].notes = `Stock actuel détecté : ${total}/${r.targetQuantity}. Rouvert automatiquement.`;
+        }
+      } else if (existingIdx !== -1 && projects[existingIdx].status !== 'done'){
+        projects[existingIdx].status = 'done';
+      }
+    });
   }
 
   function applyFoodieRule(){
