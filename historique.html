@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>historique</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/historique.css">
+</head>
+<body class="theme-historique">
+
+<div id="site-nav" data-current="historique"></div>
+<script src="assets/nav.js" defer></script>
+
+<header>
+  <h1>historique</h1>
+  <p>l'avant / après, instantané par instantané</p>
+</header>
+
+<main>
+
+  <div class="baseline-row">
+    <label for="baseline-select" style="margin:0;">Depuis :</label>
+    <select id="baseline-select"></select>
+    <span id="baseline-hint" style="color:var(--muted); font-size:0.8rem;"></span>
+  </div>
+
+  <div id="content"></div>
+
+  <div class="empty-note" id="empty-note" style="display:none;">
+    Pas encore assez d'instantanés pour comparer. Relance <code>generer_tout.py</code> de temps en temps
+    (à chaque export du monde, par exemple) : chaque lancement ajoute un nouvel instantané ici, sans jamais
+    effacer les précédents.
+  </div>
+
+  <section class="panel plain col-full" style="margin-top:32px;" id="snapshots-section">
+    <h2>Tous les instantanés</h2>
+    <table class="snapshots-table">
+      <thead><tr><th>#</th><th>Date</th><th>Ressources suivies</th><th>Joueurs</th></tr></thead>
+      <tbody id="snapshots-tbody"></tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer class="site-footer">l'établi</footer>
+
+<script>
+  let snapshots = [];
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+  function fmtDate(iso){
+    const d = new Date(iso);
+    let label = d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+    return `${label} à ${d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}`;
+  }
+  function fmtNum(n){ return Math.round(n).toLocaleString('fr-FR'); }
+
+  function buildSparkline(values, w = 260, h = 44){
+    if (values.length < 2) return '';
+    const min = Math.min(...values), max = Math.max(...values);
+    const range = (max - min) || 1;
+    const pts = values.map((v, i) => {
+      const x = (i / (values.length - 1)) * (w - 6) + 3;
+      const y = h - 4 - ((v - min) / range) * (h - 8);
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    });
+    return `<svg class="sparkline" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+      <polyline points="${pts.join(' ')}" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="${pts[pts.length - 1].split(',')[0]}" cy="${pts[pts.length - 1].split(',')[1]}" r="3" fill="var(--accent)"/>
+    </svg>`;
+  }
+
+  function deltaSpan(delta, suffix = ''){
+    if (delta === 0) return '';
+    const cls = delta > 0 ? '' : 'neg';
+    const sign = delta > 0 ? '+' : '';
+    return `<span class="delta ${cls}">${sign}${fmtNum(delta)}${suffix}</span>`;
+  }
+
+  function renderPlayers(baseline, latest){
+    const wrap = document.createElement('div');
+    wrap.className = 'players-grid';
+    (latest.players || []).forEach(p => {
+      const before = (baseline.players || []).find(x => x.player === p.player);
+      const dPlay = before ? +(p.playTimeHours - before.playTimeHours).toFixed(1) : 0;
+      const dMined = before ? p.blocksMined - before.blocksMined : 0;
+      const dKills = before ? p.mobKills - before.mobKills : 0;
+      const dDeaths = before ? p.deaths - before.deaths : 0;
+      const dAdv = before ? (p.advancementsDone || 0) - (before.advancementsDone || 0) : 0;
+
+      const history = snapshots
+        .filter(s => (s.players || []).some(x => x.player === p.player))
+        .map(s => s.players.find(x => x.player === p.player).playTimeHours);
+
+      const card = document.createElement('div');
+      card.className = 'player-hist-card';
+      card.innerHTML = `
+        <h3>${escapeHtml(p.player)}</h3>
+        <div class="player-hist-stats">
+          <div class="phs"><span class="n">${p.playTimeHours}h ${deltaSpan(dPlay, 'h')}</span><span class="l">jouées</span></div>
+          <div class="phs"><span class="n">${fmtNum(p.blocksMined)} ${deltaSpan(dMined)}</span><span class="l">blocs minés</span></div>
+          <div class="phs"><span class="n">${fmtNum(p.mobKills)} ${deltaSpan(dKills)}</span><span class="l">mobs tués</span></div>
+          <div class="phs"><span class="n">${p.deaths} ${deltaSpan(dDeaths)}</span><span class="l">morts</span></div>
+          <div class="phs" style="grid-column:span 2;"><span class="n">${p.advancementsDone}/${p.advancementsTotal} ${deltaSpan(dAdv)}</span><span class="l">avancements</span></div>
+        </div>
+        <div class="sparkline-label">Temps de jeu, tous les instantanés</div>
+        ${buildSparkline(history)}
+      `;
+      wrap.appendChild(card);
+    });
+    return wrap;
+  }
+
+  function renderMovers(baseline, latest){
+    const before = Object.fromEntries((baseline.resources || []).map(r => [r.id, r]));
+    const after = Object.fromEntries((latest.resources || []).map(r => [r.id, r]));
+    const ids = new Set([...Object.keys(before), ...Object.keys(after)]);
+    const deltas = [...ids].map(id => {
+      const b = before[id] ? before[id].total : 0;
+      const a = after[id] ? after[id].total : 0;
+      const name = (after[id] || before[id]).name;
+      return { name, delta: a - b };
+    }).filter(d => d.delta !== 0);
+
+    const gains = deltas.filter(d => d.delta > 0).sort((a, b) => b.delta - a.delta).slice(0, 8);
+    const losses = deltas.filter(d => d.delta < 0).sort((a, b) => a.delta - b.delta).slice(0, 8);
+
+    const row = (d, cls) => `<div class="mover-row ${cls}"><span class="mv-name">${escapeHtml(d.name)}</span><span class="mv-delta">${d.delta > 0 ? '+' : ''}${fmtNum(d.delta)}</span></div>`;
+
+    const wrap = document.createElement('div');
+    wrap.className = 'movers-grid';
+    wrap.innerHTML = `
+      <div class="movers-col">
+        <h3>📈 En hausse</h3>
+        ${gains.length ? gains.map(d => row(d, 'gain')).join('') : '<div class="tile-empty" style="opacity:0.7;">Rien de notable.</div>'}
+      </div>
+      <div class="movers-col">
+        <h3>📉 En baisse</h3>
+        ${losses.length ? losses.map(d => row(d, 'loss')).join('') : '<div class="tile-empty" style="opacity:0.7;">Rien de notable.</div>'}
+      </div>
+    `;
+    return wrap;
+  }
+
+  function renderContent(){
+    const select = document.getElementById('baseline-select');
+    const content = document.getElementById('content');
+    const hint = document.getElementById('baseline-hint');
+    const emptyNote = document.getElementById('empty-note');
+
+    if (snapshots.length < 2){
+      content.innerHTML = '';
+      document.querySelector('.baseline-row').style.display = 'none';
+      emptyNote.style.display = 'block';
+      return;
+    }
+    emptyNote.style.display = 'none';
+    document.querySelector('.baseline-row').style.display = '';
+
+    const latest = snapshots[snapshots.length - 1];
+    const baseline = snapshots[Number(select.value)] || snapshots[0];
+
+    hint.textContent = baseline === latest
+      ? 'Instantané le plus récent sélectionné — rien à comparer.'
+      : `Comparé au dernier instantané (${fmtDate(latest.timestamp)}).`;
+
+    content.innerHTML = '';
+    content.appendChild(renderPlayers(baseline, latest));
+    content.appendChild(renderMovers(baseline, latest));
+  }
+
+  function renderSnapshotsTable(){
+    const tbody = document.getElementById('snapshots-tbody');
+    tbody.innerHTML = [...snapshots].reverse().map(s => `
+      <tr>
+        <td>#${s.id}</td>
+        <td>${fmtDate(s.timestamp)}</td>
+        <td>${(s.resources || []).length}</td>
+        <td>${(s.players || []).map(p => escapeHtml(p.player)).join(', ') || '—'}</td>
+      </tr>
+    `).join('');
+  }
+
+  fetch('historique-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : [])
+    .then(data => {
+      snapshots = (Array.isArray(data) ? data : []).sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+      if (snapshots.length === 0){
+        document.getElementById('empty-note').style.display = 'block';
+        document.querySelector('.baseline-row').style.display = 'none';
+        document.getElementById('snapshots-section').style.display = 'none';
+        return;
+      }
+      const select = document.getElementById('baseline-select');
+      select.innerHTML = snapshots.map((s, i) => `<option value="${i}">${fmtDate(s.timestamp)}</option>`).join('');
+      select.value = '0'; // le plus ancien par défaut
+      select.addEventListener('change', renderContent);
+
+      renderContent();
+      renderSnapshotsTable();
+    })
+    .catch(() => {
+      document.getElementById('empty-note').style.display = 'block';
+      document.getElementById('empty-note').textContent = 'historique-config.json non trouvé.';
+      document.querySelector('.baseline-row').style.display = 'none';
+    });
+</script>
+</body>
+</html>
