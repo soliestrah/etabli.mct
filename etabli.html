@@ -95,6 +95,11 @@
       <div class="tile-body" id="tile-chasse"><div class="tile-empty">chargement…</div></div>
     </div>
 
+    <div class="tile t11">
+      <div class="tile-head"><span class="ti">💡</span><h3>Suggestion de projet</h3></div>
+      <div class="tile-body" id="tile-suggestion"><div class="tile-empty">chargement…</div></div>
+    </div>
+
   </div>
 
   <!-- ==================== COLONNE CHAT / LOGS ==================== -->
@@ -406,6 +411,59 @@
     .catch(() => {
       document.getElementById('tile-chasse').innerHTML = '<div class="tile-offline">stats-config.json non trouvé.</div>';
     });
+
+  // ===================== t11 : SUGGESTION DE PROJET =====================
+  Promise.all([
+    fetch('inventaire-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null),
+    fetch('projets-config.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null),
+  ]).then(([invData, projData]) => {
+    const body = document.getElementById('tile-suggestion');
+
+    if (!projData || !Array.isArray(projData.projects)){
+      body.innerHTML = '<div class="tile-offline">projets-config.json non trouvé.</div>';
+      return;
+    }
+    const todoProjects = projData.projects.filter(p => p.status === 'todo');
+    if (todoProjects.length === 0){
+      body.innerHTML = '<div class="tile-empty">Aucun projet "à faire" pour l\'instant.</div>';
+      return;
+    }
+
+    const stock = {};
+    if (invData && Array.isArray(invData.resources)){
+      invData.resources.forEach(r => {
+        stock[r.name.toLowerCase()] = (r.stacks || []).reduce((s, st) => s + st.quantity, 0);
+      });
+    }
+    const have = (name) => stock[(name || '').toLowerCase()] || 0;
+    const missingNeeds = (proj) => (proj.needs || []).filter(n => have(n.resourceName) < n.quantity);
+
+    const ready = todoProjects.filter(p => missingNeeds(p).length === 0);
+
+    if (ready.length > 0){
+      const pick = ready[0];
+      body.innerHTML = `
+        <div class="suggestion-name">${escapeHtml(pick.name)}</div>
+        <div class="tile-editable-hint" style="margin-top:6px;">Tu as tout ce qu'il faut pour t'y mettre 🎯</div>
+        ${ready.length > 1 ? `<div class="tile-editable-hint">+ ${ready.length - 1} autre${ready.length > 2 ? 's' : ''} déjà prêt${ready.length > 2 ? 's' : ''}</div>` : ''}
+      `;
+      return;
+    }
+
+    const withNeeds = todoProjects.filter(p => (p.needs || []).length > 0);
+    if (withNeeds.length === 0){
+      body.innerHTML = `<div class="suggestion-name">${escapeHtml(todoProjects[0].name)}</div>
+        <div class="tile-editable-hint" style="margin-top:6px;">Aucun besoin défini dessus, tu peux te lancer directement.</div>`;
+      return;
+    }
+    withNeeds.sort((a, b) => missingNeeds(a).length - missingNeeds(b).length);
+    const closest = withNeeds[0];
+    const missingNames = missingNeeds(closest).map(n => n.resourceName);
+    body.innerHTML = `
+      <div class="suggestion-name">${escapeHtml(closest.name)}</div>
+      <div class="tile-editable-hint" style="margin-top:6px;">Presque prêt — il manque : ${missingNames.slice(0, 3).map(escapeHtml).join(', ')}${missingNames.length > 3 ? '…' : ''}</div>
+    `;
+  });
 </script>
 </body>
 </html>
