@@ -90,6 +90,11 @@
       </div>
     </div>
 
+    <div class="tile t10">
+      <div class="tile-head"><span class="ti">🏹</span><h3>Carnet de chasse</h3></div>
+      <div class="tile-body" id="tile-chasse"><div class="tile-empty">chargement…</div></div>
+    </div>
+
   </div>
 
   <!-- ==================== COLONNE CHAT / LOGS ==================== -->
@@ -363,6 +368,43 @@
     })
     .catch(() => {
       document.getElementById('todo-projects').innerHTML = '<li class="tile-offline">projets-config.json non trouvé.</li>';
+    });
+
+  // ===================== t10 : CARNET DE CHASSE (stats-config.json) =====================
+  fetch('stats-config.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(data => {
+      const players = Array.isArray(data.players) ? data.players : [];
+      const body = document.getElementById('tile-chasse');
+      if (players.length === 0 || !players[0].remainingMobs){
+        body.innerHTML = '<div class="tile-empty">Pas encore de données de chasse.</div>';
+        return;
+      }
+      // un mob compte comme "restant" seulement si AUCUN joueur suivi ne l'a encore tué
+      const remainingIds = players
+        .map(p => new Set((p.remainingMobs || []).map(m => m.id)))
+        .reduce((a, b) => new Set([...a].filter(id => b.has(id))));
+      const total = players[0].huntedMobsTotal || 37;
+      const doneCount = total - remainingIds.size;
+      const pct = Math.round(doneCount / total * 100);
+
+      const allRemaining = players[0].remainingMobs.filter(m => remainingIds.has(m.id));
+      const shown = allRemaining.slice(0, 6);
+
+      body.innerHTML = `
+        <div class="dur-row" style="margin-bottom:10px;">
+          <div class="dur-top"><span>Chassés</span><span class="pct">${doneCount}/${total}</span></div>
+          <div class="tile-progress-track"><div class="tile-progress-fill" style="width:${pct}%;"></div></div>
+        </div>
+        ${allRemaining.length === 0
+          ? '<div class="tile-empty">Tous les mobs de l\'avancement ont été chassés 🏆</div>'
+          : `<ul>${shown.map(m => `<li><span>${escapeHtml(m.name)}</span></li>`).join('')}</ul>
+             ${allRemaining.length > shown.length ? `<div class="tile-editable-hint">+ ${allRemaining.length - shown.length} autre${allRemaining.length - shown.length > 1 ? 's' : ''}…</div>` : ''}`
+        }
+      `;
+    })
+    .catch(() => {
+      document.getElementById('tile-chasse').innerHTML = '<div class="tile-offline">stats-config.json non trouvé.</div>';
     });
 </script>
 </body>
