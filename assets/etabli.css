@@ -160,7 +160,8 @@ body.theme-etabli{
 .t5{ grid-column:1/3; grid-row:span 2; transform:rotate(0.5deg); --tile-accent:var(--purple); }
 .t6{ grid-column:3/5; grid-row:span 2; transform:rotate(-0.3deg); --tile-accent:var(--blue); }
 .t7{ grid-column:5/7; grid-row:span 2; transform:rotate(0.4deg); --tile-accent:var(--green); }
-.t8{ grid-column:1/7; grid-row:span 1; transform:rotate(-0.2deg); --tile-accent:var(--iron); }
+.t8{ grid-column:1/7; grid-row:span 2; transform:rotate(-0.2deg); --tile-accent:var(--iron); }
+.t10{ grid-column:1/7; grid-row:span 2; transform:rotate(0.3deg); --tile-accent:var(--red); }
 .t9{ grid-column:1/7; grid-row:span 2; transform:rotate(0.2deg); --tile-accent:var(--copper); }
 
 .todo-widget{
