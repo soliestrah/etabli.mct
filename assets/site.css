@@ -86,6 +86,7 @@ body.theme-carnet{ --accent: var(--green); }
 body.theme-inventaire{ --accent: var(--netherite); }
 body.theme-projets{ --accent: var(--gold); }
 body.theme-actualite{ --accent: var(--lapis); }
+body.theme-historique{ --accent: var(--blue); }
 /* Encore disponibles pour de prochaines pages : --copper, --lapis, --netherite */
 
 /* ========================================================================

@@ -1,0 +1,113 @@
+/* =========================================================================
+   HISTORIQUE — styles propres à cette page (comparaison d'instantanés).
+   Le reste (boutons, panneaux, formulaires...) vient de site.css
+   ========================================================================= */
+
+.baseline-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:22px;
+  font-size:0.88rem;
+}
+.baseline-row select{ width:auto; min-width:220px; }
+
+.players-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:16px;
+  margin-bottom:28px;
+}
+.player-hist-card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:16px 18px;
+  box-shadow:var(--shadow-sm);
+}
+.player-hist-card h3{
+  font-family:var(--font-display);
+  font-size:1.05rem;
+  color:var(--accent);
+  margin:0 0 10px;
+}
+.player-hist-stats{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:8px;
+  margin-bottom:12px;
+}
+.player-hist-stats .phs{
+  background:var(--bg-soft);
+  border-radius:var(--radius-sm);
+  padding:6px 10px;
+}
+.player-hist-stats .phs .n{
+  font-family:var(--font-mono);
+  font-weight:700;
+  font-size:1rem;
+  color:var(--text);
+  display:block;
+}
+.player-hist-stats .phs .n .delta{
+  font-size:0.72rem;
+  font-weight:700;
+  color:var(--green);
+  margin-left:4px;
+}
+.player-hist-stats .phs .n .delta.neg{ color:var(--red); }
+.player-hist-stats .phs .l{ font-size:0.66rem; color:var(--muted); }
+
+.sparkline{ display:block; width:100%; height:44px; }
+.sparkline-label{
+  font-family:var(--font-mono);
+  font-size:0.62rem;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:0.4px;
+  margin-bottom:2px;
+}
+
+.movers-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-bottom:28px;
+}
+@media (max-width:720px){ .movers-grid{ grid-template-columns:1fr; } }
+.movers-col h3{ font-size:0.95rem; margin-bottom:8px; }
+.mover-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:10px;
+  padding:6px 10px;
+  border-radius:var(--radius-sm);
+  background:var(--panel);
+  border:1px solid var(--border);
+  margin-bottom:5px;
+  font-size:0.82rem;
+}
+.mover-row .mv-name{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.mover-row .mv-delta{ font-family:var(--font-mono); font-weight:700; flex-shrink:0; }
+.mover-row.gain .mv-delta{ color:var(--green); }
+.mover-row.loss .mv-delta{ color:var(--red); }
+
+.snapshots-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:0.82rem;
+}
+.snapshots-table th, .snapshots-table td{
+  text-align:left;
+  padding:7px 10px;
+  border-bottom:1px solid var(--border);
+}
+.snapshots-table th{
+  font-family:var(--font-mono);
+  font-size:0.66rem;
+  text-transform:uppercase;
+  letter-spacing:0.4px;
+  color:var(--muted);
+}
